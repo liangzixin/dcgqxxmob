@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="CommonAdapter-0.5.3">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/aT/build/intermediates/exploded-aar/com.github.twiceyuan/CommonAdapter/0.5.3/res" />
+      <root url="jar://$PROJECT_DIR$/aT/build/intermediates/exploded-aar/com.github.twiceyuan/CommonAdapter/0.5.3/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.twiceyuan/CommonAdapter/0.5.3/b35dbdb51164ad38a8bb0ac24b91e46ce382cc0/CommonAdapter-0.5.3-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

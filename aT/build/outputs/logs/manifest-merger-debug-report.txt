@@ -1,0 +1,446 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-179:12
+	xmlns:android
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:11-69
+	package
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:3:5-31
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+uses-permission#android.permission.GET_TASKS
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:9:5-68
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:9:22-65
+uses-permission#android.permission.INTERNET
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:10:5-67
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:10:22-64
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:11:5-80
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:11:22-77
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:12:22-78
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.CAMERA
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:14:5-65
+MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:12:5-65
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:14:22-62
+uses-permission#android.permission.VIBRATE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:15:5-66
+MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:11:5-66
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:15:22-63
+uses-permission#android.permission.SET_DEBUG_APP
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:17:5-72
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:17:22-69
+uses-permission#android.permission.SYSTEM_ALERT_WINDOW
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:18:5-78
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:18:22-75
+uses-permission#android.permission.GET_ACCOUNTS
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:19:5-71
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:19:22-68
+uses-permission#android.permission.USE_CREDENTIALS
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:20:5-74
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:20:22-71
+uses-permission#android.permission.MANAGE_ACCOUNTS
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:21:5-74
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:21:22-71
+uses-permission#android.permission.ACCESS_WIFI_STATE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:22:5-76
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:22:22-73
+uses-permission#android.permission.READ_PHONE_STATE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:23:5-75
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:23:22-72
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:24:5-79
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:24:22-76
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:25:5-81
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:25:22-78
+application
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:5-177:19
+MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:17:5-36:19
+MERGED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\AndroidManifest.xml:12:5-15:51
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:cardview-v7:23.2.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\AndroidManifest.xml:22:5-20
+	android:supportsRtl
+		ADDED from [com.github.twiceyuan:CommonAdapter:0.5.3] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\AndroidManifest.xml:14:9-35
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:30:9-41
+	android:allowBackup
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:28:9-35
+	android:icon
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:9-45
+	android:theme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:31:9-40
+	tools:ignore
+		ADDED from [com.github.twiceyuan:CommonAdapter:0.5.3] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\AndroidManifest.xml:15:9-48
+activity#com.xiangmu.wyxw.welcome.WelcomeActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:32:9-40:20
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:34:13-59
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:33:13-52
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:35:13-39:29
+action#android.intent.action.MAIN
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:36:17-69
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:36:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:38:17-77
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:38:27-74
+activity#com.xiangmu.wyxw.activitys.MainActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:41:9-45:52
+	android:screenOrientation
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:45:13-49
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:44:13-45
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:43:13-74
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:42:13-51
+activity#com.xiangmu.wyxw.activitys.XinWenXiActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:46:9-48:62
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:48:13-59
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:47:13-55
+activity#com.xiangmu.wyxw.activitys.SearchActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:49:9-51:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:51:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:50:13-53
+activity#com.xiangmu.wyxw.activitys.SecondCodeActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:52:9-54:66
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:54:13-63
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:53:13-57
+activity#com.xiangmu.wyxw.activitys.ShangTouTiao_HuiGuDetialActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:55:9-57:84
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:57:13-81
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:56:13-71
+activity#com.xiangmu.wyxw.activitys.ShangTouTiaoActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:58:9-60:69
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:60:13-66
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:59:13-59
+activity#com.xiangmu.wyxw.activitys.WeatherActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:61:9-63:62
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:63:13-59
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:62:13-54
+activity#com.xiangmu.wyxw.activitys.YueDuDetialActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:64:9-66:68
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:66:13-65
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:65:13-58
+activity#com.xiangmu.wyxw.activitys.FullActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:67:9-71:52
+	android:screenOrientation
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:71:13-49
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:70:13-45
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:69:13-74
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:68:13-51
+activity#com.xiangmu.wyxw.activitys.Setting_set_page
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:72:9-74:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:74:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:73:13-55
+activity#com.xiangmu.wyxw.activitys.Setting_DiSanFangLoginActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:75:9-77:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:77:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:76:13-69
+activity#com.xiangmu.wyxw.activitys.Setting_biaoqianPage
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:78:9-80:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:80:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:79:13-59
+activity#com.xiangmu.wyxw.activitys.ReadChievement
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:81:9-83:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:83:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:82:13-53
+activity#com.xiangmu.wyxw.activitys.Setting_set_person
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:84:9-86:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:86:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:85:13-57
+activity#com.xiangmu.wyxw.activitys.Setting_headpage
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:87:9-89:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:89:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:88:13-55
+activity#com.xiangmu.wyxw.activitys.Setting_my_Task
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:90:9-92:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:92:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:91:13-54
+activity#com.xiangmu.wyxw.activitys.Setting_glodmall
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:93:9-95:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:95:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:94:13-55
+activity#com.xiangmu.wyxw.activitys.Setting_Collection
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:96:9-98:61
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:98:13-58
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:97:13-57
+activity#com.xiangmu.wyxw.activitys.WebProductinfoViewActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:99:9-101:63
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:101:13-60
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:100:13-65
+meta-data#UMENG_APPKEY
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:103:9-105:56
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:104:13-40
+	android:value
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:105:13-53
+activity#com.umeng.socialize.view.ShareActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:107:9-113:71
+	android:windowSoftInputMode
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:113:13-68
+	android:noHistory
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:111:13-37
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:109:13-57
+	android:theme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:112:13-50
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:108:13-66
+	android:launchMode
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:110:13-44
+activity#com.umeng.socialize.view.CommentActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:114:9-117:54
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:116:13-57
+	android:theme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:117:13-51
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:115:13-68
+activity#com.umeng.socialize.view.CommentDetail
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:118:9-122:54
+	android:noHistory
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:121:13-37
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:120:13-57
+	android:theme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:122:13-51
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:119:13-66
+activity#com.umeng.socialize.view.CommentDetailNoMap
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:123:9-127:54
+	android:noHistory
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:126:13-37
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:125:13-57
+	android:theme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:127:13-51
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:124:13-71
+activity#com.tencent.tauth.AuthActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:129:9-141:20
+	android:noHistory
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:132:13-37
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:130:13-58
+	android:launchMode
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:131:13-44
+intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:133:13-140:29
+action#android.intent.action.VIEW
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:134:17-69
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:134:25-66
+category#android.intent.category.DEFAULT
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:136:17-76
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:136:27-73
+category#android.intent.category.BROWSABLE
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:137:17-78
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:137:27-75
+data
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:139:17-59
+	android:scheme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:139:23-56
+activity#com.tencent.connect.common.AssistActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:142:9-145:75
+	android:screenOrientation
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:144:13-49
+	android:theme
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:145:13-72
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:143:13-69
+activity#com.renn.rennsdk.oauth.OAuthActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:147:9-149:77
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:149:13-74
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:148:13-64
+activity#com.xiangmu.wyxw.activitys.PictureActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:150:9-152:62
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:152:13-59
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:151:13-54
+activity#com.xiangmu.wyxw.activitys.LoginActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:153:9-155:60
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:155:13-57
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:154:13-52
+activity#com.xiangmu.wyxw.activitys.BackpasswordActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:156:9-158:67
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:158:13-64
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:157:13-59
+activity#com.xiangmu.wyxw.activitys.UpdaterActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:159:9-161:62
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:161:13-59
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:160:13-54
+activity#com.xiangmu.wyxw.activitys.RegisterActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:162:9-164:63
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:164:13-60
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:163:13-55
+activity#com.xiangmu.wyxw.activitys.Setting_GlodPage
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:165:9-167:63
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:167:13-60
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:166:13-55
+activity#com.xiangmu.wyxw.activitys.ReadHistoryActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:168:9-170:63
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:170:13-60
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:169:13-58
+activity#com.xiangmu.wyxw.activitys.Task_ShuoMing
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:171:9-172:20
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:171:19-58
+activity#com.xiangmu.wyxw.activitys.GenTieActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:173:9-176:20
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:175:13-59
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:174:13-53
+uses-sdk
+INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:recyclerview-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:cardview-v7:23.2.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\AndroidManifest.xml:20:5-43
+	android:targetSdkVersion
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:23:9-75
+uses-feature#android.hardware.camera
+ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:14:5-60
+	android:name
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:14:19-57
+uses-feature#android.hardware.camera.autofocus
+ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:15:5-70
+	android:name
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:15:19-67
+activity#com.ericssonlabs.BarCodeTestActivity
+ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:20:9-28:20
+	android:label
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:22:13-45
+	android:name
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:21:13-64
+activity#com.zxing.activity.CaptureActivity
+ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:29:9-35:20
+	android:windowSoftInputMode
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:34:13-60
+	android:screenOrientation
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:32:13-49
+	android:configChanges
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:31:13-63
+	android:theme
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:33:13-71
+	android:name
+		ADDED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:30:13-62
