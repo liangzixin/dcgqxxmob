@@ -15,5 +15,18 @@ public class Utils {
         boolean b = m.matches();
         return b;
     };
-
+    public static String IntToChar(int int0){
+       String inttoc="  ";
+        if(int0!=0){
+            inttoc=int0+"";
+        }
+        return inttoc;
+    };
+    public static String FloatToChar(float int0){
+        String inttoc="  ";
+        if(Float.compare(int0,0.0f)!=0){
+            inttoc=int0+"";
+        }
+        return inttoc;
+    };
 }
