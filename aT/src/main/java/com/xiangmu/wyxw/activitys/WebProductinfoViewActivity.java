@@ -24,6 +24,12 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.lidroid.xutils.BitmapUtils;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.wyxw.Modle.UploadFile;
@@ -38,6 +44,9 @@ import com.xiangmu.wyxw.jieping.ScreenShot;
 import com.xiangmu.wyxw.utils.DateTime;
 import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.MySqlOpenHelper;
+import com.xiangmu.wyxw.utils.ServerURL;
+import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
+import com.xiangmu.wyxw.utils.XinWenURL;
 import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
@@ -47,7 +56,11 @@ import java.util.List;
 
 public class WebProductinfoViewActivity extends AppCompatActivity {
     private XinWenXiData xinWenXiData;
+    private XinWenURL xinWenURL=new XinWenURL();
+    private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
+    private HttpUtils httpUtils;
+    private HttpHandler<String> handler;
     ImageButton fenxiang;
 
     @Override
@@ -251,6 +264,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
+        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId();
+        //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
+       // String data = SharedPreferencesUtil.getData(this, clickcount, "");
+        UpData(clickcount);
+        System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
         //拿到当前日期
         String date = DateTime.getDate();
@@ -328,5 +346,25 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         return photo;
     }
 
+    private void UpData(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
 
+                    handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                        @Override
+                        public void onSuccess(ResponseInfo<String> responseInfo) {
+                            if (responseInfo.result != null) {
+                                SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(HttpException e, String s) {
+                            Toast.makeText(WebProductinfoViewActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
+        }
+    }
 }

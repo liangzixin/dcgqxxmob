@@ -413,6 +413,7 @@ public class TouTiaoFrament extends Fragment {
   List<UploadFile> potolist = new ArrayList<>();
   //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
+        xinWenXi.setId(toutiao_list.get(pos).getId());
         xinWenXi.setBujuType(bujutype);
         xinWenXi.setLanMuType(daohangtype);
         xinWenXi.setReplaycount(toutiao_list.get(pos).getArticlers().size());//跟帖数量

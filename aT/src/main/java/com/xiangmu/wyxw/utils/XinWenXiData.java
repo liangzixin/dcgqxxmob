@@ -14,6 +14,8 @@ import java.util.List;
  * 新闻跳转详细页面的工具类
  */
 public class XinWenXiData implements Serializable{
+
+    private int id;
     private int bujuType;
 
     private int lanMuType;
@@ -29,6 +31,15 @@ public class XinWenXiData implements Serializable{
     private Zpxx zpxx;
     private Fwcs fwcs;
     private ProductCategory ProductCategory;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
 
     public Fwcs getFwcs() {
         return fwcs;

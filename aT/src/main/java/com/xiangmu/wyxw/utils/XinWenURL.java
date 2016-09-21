@@ -11,6 +11,8 @@ import java.util.List;
 public class XinWenURL {
     public int stratPage = 0;
     List<ProductInfo> productInfos=null;
+    String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
+
     //热点
    // String redian="http://c.3g.163.com/nc/article/list/T1429173762551/0-20.html";
 
@@ -41,6 +43,15 @@ public class XinWenURL {
     String yingshi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=11&pageNo=0";//影视
     //String luntan = "http://c.m.163.com/nc/article/list/T1419386592923/" + stratPage + "-" + (stratPage + 20) + ".html";//论坛
     String luntan = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=12&pageNo=0";//论坛
+
+
+    public String getClickcount() {
+        return clickcount;
+    }
+
+    public void setClickcount(String clickcount) {
+        this.clickcount = clickcount;
+    }
     public int getStratPage() {
         return stratPage;
     }
