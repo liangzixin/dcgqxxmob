@@ -44,50 +44,51 @@ public class XinWenproductinfoJson {
 
             switch (type){
                 case XinWen_adapter.rendian:
-                    //array=object.getJSONArray("T1429173762551");//热点
-                    array=object.getJSONArray("T18908805728");//头条
-                    // array = object.fromObject("T18908805728");
+                    array=object.getJSONArray("T18908805728");//热点
                     break;
-                case XinWen_adapter.toutiao:
-                array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.zuixin:
+                    array=object.getJSONArray("T18908805728");//最新
 
+//                    try{
+//                        //获取餐桌列表数据
+//                        ProductInfoService productInfoService = new  ProductInfoService();
+//
+//                        productInfos= productInfoService.QueryAllProductInfo(1,20);
+//
+//                    } catch (Exception e) {
+//                        // TODO Auto-generated catch block
+//                        e.printStackTrace();
+//                    }
                     break;
                 case XinWen_adapter.yule:
-                   // array=object.getJSONArray("T1348648517839");//娱乐T1348648517839
-                    array=object.getJSONArray("T18908805728");//头条
+                    array=object.getJSONArray("T18908805728");//娱乐T1348648517839
                     break;
-                case XinWen_adapter.tiyu:
-                    //array=object.getJSONArray("T1348649079062");//体育
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.zaopin:
+                    array=object.getJSONArray("T18908805728");//招聘
                     break;
-                case XinWen_adapter.caijing:
-                 //   array=object.getJSONArray("T1348648756099");//财经
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.qiuzhi:
+                    array=object.getJSONArray("T18908805728");//求职
                     break;
-                case XinWen_adapter.keji:
-                   // array=object.getJSONArray("T1348649580692");//科技
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.chushou:
+                    array=object.getJSONArray("T18908805728");//出售
                     break;
-                case XinWen_adapter.shishang:
-
-                 //   array=object.getJSONArray("T1348650593803");//时尚
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.chuzu:
+                    array=object.getJSONArray("T18908805728");//出租
                     break;
-                case XinWen_adapter.lishi:
-                   // array=object.getJSONArray("T1368497029546");//历史
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.gongqiu:
+                    array=object.getJSONArray("T18908805728");//供求
                     break;
-                case XinWen_adapter.caipiao:
-                   // array=object.getJSONArray("T1356600029035");//彩票
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.ershou:
+                    array=object.getJSONArray("T18908805728");//二手
                     break;
-                case XinWen_adapter.junshi:
-                    //array=object.getJSONArray("T1348648141035");//军事
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.qita:
+                    array=object.getJSONArray("T18908805728");//其它
                     break;
-                case XinWen_adapter.youxi:
-                  //  array=object.getJSONArray("T1348654151579");//游戏
-                    array=object.getJSONArray("T18908805728");//头条
+                case XinWen_adapter.pumian:
+                    array=object.getJSONArray("T18908805728");//铺面
+                    break;
+                case XinWen_adapter.jiaju:
+                    array=object.getJSONArray("T18908805728");//家具
                     break;
             }
             LogUtils.e("xinwenjsonarray----", "" + array);

@@ -101,11 +101,11 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
         keji.setArguments(bundlekeji);
         xinwen_framentlist.add(keji);
 
-        TouTiaoFrament shishang=new TouTiaoFrament();
+        TouTiaoFrament gongqiao=new TouTiaoFrament();
         Bundle bundleshishang=new Bundle();
         bundleshishang.putString("xinwendaohang","供求");
-        shishang.setArguments(bundleshishang);
-        xinwen_framentlist.add(shishang);
+        gongqiao.setArguments(bundleshishang);
+        xinwen_framentlist.add(gongqiao);
 
         TouTiaoFrament lishi=new TouTiaoFrament();
         Bundle bundlelishi=new Bundle();

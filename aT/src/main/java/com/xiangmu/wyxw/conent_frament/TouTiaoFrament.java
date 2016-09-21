@@ -68,36 +68,35 @@ public class TouTiaoFrament extends Fragment {
     private String geturl(){
         String url=null;
         switch (daohangtype) {
-            case XinWen_adapter.toutiao:
-                url = xinWenURL.getToutiao();//头条url
-
+            case XinWen_adapter.zuixin:
+                url = xinWenURL.getZuixin();//最新url
                 break;
-            case XinWen_adapter.yule:
-                url = xinWenURL.getYule();//娱乐
+            case XinWen_adapter.zaopin:
+                url = xinWenURL.getZaopin();//招聘
                 LogUtils.e("bundle", "XinWen_yule==" + url);
                 break;
-            case XinWen_adapter.tiyu:
-                url = xinWenURL.getTiyu();
+            case XinWen_adapter.qiuzhi://求职
+                url = xinWenURL.getQiuzhi();
                 break;
-            case XinWen_adapter.caijing:
-                url = xinWenURL.getChaijing();
+            case XinWen_adapter.chushou://出售
+                url = xinWenURL.getChushou();
                 break;
-            case XinWen_adapter.keji:
-                url = xinWenURL.getKeji();
+            case XinWen_adapter.chuzu://出租
+                url = xinWenURL.getChuzu();
                 break;
-            case XinWen_adapter.shishang://时尚
-                url = xinWenURL.getShishang();
+            case XinWen_adapter.gongqiu://供求
+                url = xinWenURL.getGongqiu();
                 break;
-            case XinWen_adapter.lishi://历史
-                url = xinWenURL.getLishi();
+            case XinWen_adapter.ershou://二手
+                url = xinWenURL.getErshou();
                 break;
-            case XinWen_adapter.caipiao://彩票
-                url = xinWenURL.getCaipiao();
+            case XinWen_adapter.qita://其它
+                url = xinWenURL.getQita();
                 break;
-            case XinWen_adapter.junshi://军事
-                url = xinWenURL.getJunshi();
+            case XinWen_adapter.pumian://铺面
+                url = xinWenURL.getPumian();
                 break;
-            case XinWen_adapter.youxi://游戏
+            case XinWen_adapter.jiaju://家具
                 url = xinWenURL.getYouxi();
                 break;
         }

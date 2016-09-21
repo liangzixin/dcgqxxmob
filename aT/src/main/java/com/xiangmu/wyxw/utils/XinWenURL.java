@@ -15,32 +15,32 @@ public class XinWenURL {
    // String redian="http://c.3g.163.com/nc/article/list/T1429173762551/0-20.html";
 
   String redian = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";
- String toutiao = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";
+ String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";//最新
     //  String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + stratPage + "-" + (stratPage + 20) + ".html";//头条
-    String yule = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=1&pageNo=0";
+    String zaopin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=1&pageNo=0";//招聘
   //  String yule = "http://c.m.163.com/nc/article/list/T1348648517839/" + stratPage + "-" + (stratPage + 20) + ".html";//娱乐
     //String tiyu = "http://c.m.163.com/nc/article/list/T1348649079062/" + stratPage + "-" + (stratPage + 20) + ".html";//体育
-    String tiyu = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=2&pageNo=0";
+    String qiuzhi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=2&pageNo=0";//求职
     //String chaijing = "http://c.m.163.com/nc/article/list/T1348648756099/" + stratPage + "-" + (stratPage + 20) + ".html";//财经
-    String chaijing = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=3&pageNo=0";
+    String chushou = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=3&pageNo=0";//出售
     //String keji = "http://c.m.163.com/nc/article/list/T1348649580692/" + stratPage + "-" + (stratPage + 20) + ".html";//科技
-    String keji = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=4&pageNo=0";
+    String chuzu = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=4&pageNo=0";//出租
    // String qiche = "http://c.m.163.com/nc/article/list/T1348654060988/" + stratPage + "-" + (stratPage + 20) + ".html";//汽车
-    String qiche = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=5&pageNo=0";
+    String gongqiu = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=5&pageNo=0";//供求
     //String shishang = "http://c.m.163.com/nc/article/list/T1348650593803/" + stratPage + "-" + (stratPage + 20) + ".html";//时尚
-    String shishang = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=6&pageNo=0";
+    String ershou = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=6&pageNo=0";//二手
     //String junshi = "http://c.m.163.com/nc/article/list/T1348648141035/" + stratPage + "-" + (stratPage + 20) + ".html";//军事
-    String junshi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=7&pageNo=0";
+    String qita = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=7&pageNo=0";//其它
   //  String lishi = "http://c.m.163.com/nc/article/list/T1368497029546/" + stratPage + "-" + (stratPage + 20) + ".html";//历史
-    String lishi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=8&pageNo=0";
+    String pumian = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=8&pageNo=0";//铺面
     //String caipiao = "http://c.m.163.com/nc/article/list/T1356600029035/" + stratPage + "-" + (stratPage + 20) + ".html";//彩票
-    String caipiao = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=9&pageNo=0";
+    String jiaju = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=9&pageNo=0";//家具
     //String youxi = "http://c.m.163.com/nc/article/list/T1348654151579/" + stratPage + "-" + (stratPage + 20) + ".html";//游戏
-    String youxi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=10&pageNo=0";
+    String youxi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=10&pageNo=0";//游戏
     //String yingshi = "http://c.m.163.com/nc/article/list/T1348648650048/" + stratPage + "-" + (stratPage + 20) + ".html";//影视
-    String yingshi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=11&pageNo=0";
+    String yingshi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=11&pageNo=0";//影视
     //String luntan = "http://c.m.163.com/nc/article/list/T1419386592923/" + stratPage + "-" + (stratPage + 20) + ".html";//论坛
-    String luntan = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=12&pageNo=0";
+    String luntan = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=12&pageNo=0";//论坛
     public int getStratPage() {
         return stratPage;
     }
@@ -52,83 +52,83 @@ public class XinWenURL {
         return redian;
     }
 
-    public String getToutiao() {
+    public String getZuixin() {
         int page = getStratPage();
   //String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + page + "-" + (page + 20) + ".html";//头条
-        String toutiao = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+page;
-        return toutiao;
+        String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+page;//最新
+        return zuixin;
     }
 
-    public String getYule() {
+    public String getZaopin() {
         int page = getStratPage();
       //  String yule = "http://c.m.163.com/nc/article/list/T1348648517839/" + stratPage + "-" + (stratPage + 20) + ".html";//娱乐
       //  String yule = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  yule = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=1&pageNo="+page;
-        return yule;
+        String  zaopin= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=1&pageNo="+page;//招聘
+        return zaopin;
     }
 
-    public String getTiyu() {
+    public String getQiuzhi() {
         int page = getStratPage();
        // String tiyu = "http://c.m.163.com/nc/article/list/T1348649079062/" + stratPage + "-" + (stratPage + 20) + ".html";//体育
       //  String tiyu = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  tiyu = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=2&pageNo="+page;
-        return tiyu;
+        String  qiuzhi= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=2&pageNo="+page;//求职
+        return qiuzhi;
     }
 
-    public String getChaijing() {
+    public String getChushou() {
         int page = getStratPage();
        // String chaijing = "http://c.m.163.com/nc/article/list/T1348648756099/" + stratPage + "-" + (stratPage + 20) + ".html";//财经
         //String chaijing = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  chaijing = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=3&pageNo="+page;
-        return chaijing;
+        String  chushou = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=3&pageNo="+page;//出售
+        return chushou;
     }
 
-    public String getKeji() {
+    public String getChuzu() {
         int page = getStratPage();
         //String keji = "http://c.m.163.com/nc/article/list/T1348649580692/" + stratPage + "-" + (stratPage + 20) + ".html";//科技
       //  String keji = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  keji= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=4&pageNo="+page;
-        return keji;
+        String  chuzu= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=4&pageNo="+page;//出租
+        return chuzu;
     }
 
-    public String getQiche() {
+    public String getGongqiu() {
         int page = getStratPage();
        // String qiche = "http://c.m.163.com/nc/article/list/T1348654060988/" + stratPage + "-" + (stratPage + 20) + ".html";//汽车
        // String qiche = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  qiche= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=5&pageNo="+page;
-        return qiche;
+        String  gongqiu= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=5&pageNo="+page;//供求
+        return gongqiu;
     }
 
-    public String getShishang() {
+    public String getErshou() {
         int page = getStratPage();
         //String shishang = "http://c.m.163.com/nc/article/list/T1348650593803/" + stratPage + "-" + (stratPage + 20) + ".html";//时尚
       //  String shishang = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  shishang= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=6&pageNo="+page;
-        return shishang;
+        String  ershou= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=6&pageNo="+page;//二手
+        return ershou;
     }
 
-    public String getJunshi() {
+    public String getQita() {
         int page = getStratPage();
         //String junshi = "http://c.m.163.com/nc/article/list/T1348648141035/" + stratPage + "-" + (stratPage + 20) + ".html";//军事
      //   String junshi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  junshi= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=7&pageNo="+page;
-        return junshi;
+        String  qita= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=7&pageNo="+page;//其它
+        return qita;
     }
 
-    public String getLishi() {
+    public String getPumian() {
         int page = getStratPage();
        // String lishi = "http://c.m.163.com/nc/article/list/T1368497029546/" + stratPage + "-" + (stratPage + 20) + ".html";//历史
         //String lishi = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  lishi= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=8&pageNo="+page;
-        return lishi;
+        String  pumian= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=8&pageNo="+page;//铺面
+        return pumian;
     }
 
-    public String getCaipiao() {
+    public String getJiaju() {
         int page = getStratPage();
        // String caipiao = "http://c.m.163.com/nc/article/list/T1356600029035/" + stratPage + "-" + (stratPage + 20) + ".html";//彩票
       //  String caipiao = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0";
-        String  caipiao= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=9&pageNo="+page;
-        return caipiao;
+        String  jiaju= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=9&pageNo="+page;//家具
+        return jiaju;
     }
 
     public String getYouxi() {
