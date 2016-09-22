@@ -16,10 +16,7 @@ public class Article implements ViewTypeItem {
     public String gsdz;
     public String lxr;
     public String lxdh;
-//    public String productinfo_ed;
-//    public String productinfo_sex;
-//    public String productinfo_xj;
-//    public String productinfo_nl;
+
     public Zpxx zpxx;
     public Fwcs fwcs;
     public ProductCategory productCategory;

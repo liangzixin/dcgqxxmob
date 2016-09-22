@@ -32,6 +32,8 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.wyxw.Modle.Liuyuan;
+import com.xiangmu.wyxw.Modle.ProductArticler;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
@@ -40,6 +42,7 @@ import com.xiangmu.wyxw.holder.ArticleHolder;
 import com.xiangmu.wyxw.holder.PhotoHolder;
 import  com.xiangmu.wyxw.Modle.Article;
 import com.xiangmu.wyxw.Modle.Photo;
+import com.xiangmu.wyxw.holder.ProductArticleHolder;
 import com.xiangmu.wyxw.jieping.ScreenShot;
 import com.xiangmu.wyxw.utils.DateTime;
 import com.xiangmu.wyxw.utils.LogUtils;
@@ -59,6 +62,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
+    private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     ImageButton fenxiang;
@@ -70,6 +74,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         Intent intent = getIntent();
         xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
         potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
+        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         initDate();
         initview();
@@ -82,6 +87,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
         adapter.registerViewType(Photo.class, PhotoHolder.class);
         adapter.registerViewType(Article.class, ArticleHolder.class);
+        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
 
         recyclerView.setAdapter(adapter);
         adapter.add(mockArticle(0));
@@ -89,6 +95,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         for (int i = 0; i <((List<UploadFile>)potolist.get(0)).size(); i++) {
 
             adapter.add(mockPhoto(i));
+        }
+        for (int i = 0; i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
+
+            adapter.add(mockLiuyuan(i));
         }
     }
     private void initview() {
@@ -327,7 +337,15 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         article.productCategory=xinWenXiData.getProductCategory();
         return article;
     }
+    public Liuyuan mockLiuyuan(int seed) {
+        Liuyuan liuyuan= new Liuyuan();
 
+       liuyuan.liuyuan_content=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_content();
+        liuyuan.liuyuan_id=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_authorid();
+        liuyuan.liuyuan_date=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_time();
+
+        return liuyuan;
+    }
     public Photo mockPhoto(int seed) {
         Photo photo = new Photo();
         photo.path=((List<UploadFile>)potolist.get(0)).get(seed).getPath();

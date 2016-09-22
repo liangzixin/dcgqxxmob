@@ -106,6 +106,16 @@ public class XinWen_productinfo  implements Serializable{
 
         //	private Set uploadFile=new HashSet();;
     private List<UploadFileEntity> uploadFile;
+
+        public List<ProductArticlerEntity> getProductArticler() {
+            return productArticler;
+        }
+
+        public void setProductArticler(List<ProductArticlerEntity> productArticler) {
+            this.productArticler = productArticler;
+        }
+
+        private List<ProductArticlerEntity> productArticler;
         private Set<Hotel> hotel= new HashSet<Hotel>();
         private Upcomment upcomment;
         private ProductCategory category;// 所属类别
@@ -426,8 +436,25 @@ public class XinWen_productinfo  implements Serializable{
             private Integer artreview_rootid;// 类别名称
             private String artreview_content;
 
-            private Integer artreview_authorid;
-            private Date artreview_time= new Date();
+            public String getArtreview_authorid() {
+                return artreview_authorid;
+            }
+
+            public void setArtreview_authorid(String artreview_authorid) {
+                this.artreview_authorid = artreview_authorid;
+            }
+
+            private String artreview_authorid;
+
+            public String getArtreview_time() {
+                return artreview_time;
+            }
+
+            public void setArtreview_time(String artreview_time) {
+                this.artreview_time = artreview_time;
+            }
+
+            private String  artreview_time;
             //private Set<ProductCategory> children;// 子产品类别
             //private ProductCategory parent;// 父类别
             //private Set<ProductInfo> products = new TreeSet<ProductInfo>();// 包含商品
@@ -459,19 +486,7 @@ public class XinWen_productinfo  implements Serializable{
             public String getArtreview_content() {
                 return artreview_content;
             }
-            public void setArtreview_time(Date artreview_time) {
-                this.artreview_time = artreview_time;
-            }
-            public Date getArtreview_time() {
-                return artreview_time;
-            }
 
-            public void setArtreview_authorid(Integer artreview_authorid) {
-                this.artreview_authorid = artreview_authorid;
-            }
-            public Integer getArtreview_authorid() {
-                return artreview_authorid;
-            }
             public void setCustomer(Customer customer) {
                 this.customer = customer;
             }

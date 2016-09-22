@@ -12,8 +12,25 @@ public class ProductArticler implements Serializable {
     private Integer artreview_rootid;// 类别名称
     private String artreview_content;
 
-    private Integer artreview_authorid;
-    private Date artreview_time= new Date();
+    public String getArtreview_authorid() {
+        return artreview_authorid;
+    }
+
+    public void setArtreview_authorid(String artreview_authorid) {
+        this.artreview_authorid = artreview_authorid;
+    }
+
+    private String artreview_authorid;
+
+    public String getArtreview_time() {
+        return artreview_time;
+    }
+
+    public void setArtreview_time(String artreview_time) {
+        this.artreview_time = artreview_time;
+    }
+
+    private String artreview_time;
     //private Set<ProductCategory> children;// 子产品类别
     //private ProductCategory parent;// 父类别
     //private Set<ProductInfo> products = new TreeSet<ProductInfo>();// 包含商品
@@ -45,12 +62,7 @@ public class ProductArticler implements Serializable {
     public String getArtreview_content() {
         return artreview_content;
     }
-    public void setArtreview_time(Date artreview_time) {
-        this.artreview_time = artreview_time;
-    }
-    public Date getArtreview_time() {
-        return artreview_time;
-    }
+
 
     public ProductInfo getProduct() {
         return product;
@@ -58,12 +70,7 @@ public class ProductArticler implements Serializable {
     public void setProduct(ProductInfo product) {
         this.product = product;
     }
-    public void setArtreview_authorid(Integer artreview_authorid) {
-        this.artreview_authorid = artreview_authorid;
-    }
-    public Integer getArtreview_authorid() {
-        return artreview_authorid;
-    }
+
     public void setCustomer(Customer customer) {
         this.customer = customer;
     }

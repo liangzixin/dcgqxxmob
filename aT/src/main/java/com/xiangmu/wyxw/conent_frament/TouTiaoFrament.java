@@ -21,8 +21,10 @@ import android.widget.TextView;
 //import com.xiangmu.wyxw.CostomAdapter.XinWenBaseAdapter;
 import com.google.gson.Gson;
 import com.xiangmu.wyxw.CostomAdapter.XinWenproductinfoBaseAdapter;
+import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.Photo;
 import com.xiangmu.wyxw.Modle.PhotoImage;
+import com.xiangmu.wyxw.Modle.ProductArticler;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.activitys.WebProductinfoViewActivity;
@@ -411,6 +413,7 @@ public class TouTiaoFrament extends Fragment {
 
         //传入详细页面的数据
   List<UploadFile> potolist = new ArrayList<>();
+        List<ProductArticler> liuyuenlist = new ArrayList<>();
   //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(toutiao_list.get(pos).getId());
@@ -433,6 +436,13 @@ public class TouTiaoFrament extends Fragment {
 
             uploadFile.setPath(toutiao_list.get(pos).getUploadFile().get(i).getPath());
            potolist.add(uploadFile);
+        }
+        for(int i=0;i<toutiao_list.get(pos).getProductArticler().size();i++){
+            ProductArticler productArticler=new ProductArticler();
+            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
+            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
+            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
+           liuyuenlist.add(productArticler);
         }
 //        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
 //        potolist0=(List<XinWen_productinfo.T18908805728Entity.UploadFileEntity>)toutiao_list.get(pos).getUploadFile();
@@ -468,8 +478,11 @@ public class TouTiaoFrament extends Fragment {
 //                bundle.putStringArray("potolist", potolist);
 //                intent.putExtras(bundle);
                 ArrayList bundlelist = new ArrayList();
+                ArrayList bundlelist1 = new ArrayList();
                 bundlelist.add(potolist);
+                bundlelist1.add(liuyuenlist);
                 bundle.putParcelableArrayList("potolist",bundlelist);
+                bundle.putParcelableArrayList("liuyuanlist",bundlelist1);
                 intentzhibo.putExtras(bundle);
 //                intentzhibo.putExtra("bundle", bundle);
                 startActivity(intentzhibo);

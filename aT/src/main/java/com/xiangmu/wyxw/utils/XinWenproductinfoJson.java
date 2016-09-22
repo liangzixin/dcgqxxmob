@@ -170,7 +170,28 @@ public class XinWenproductinfoJson {
                    //     imgextraEntity.setId(id);
                         listimagestra.add(imgextraEntity);
                     }
+
                     t18908805728Entity.setUploadFile(listimagestra);
+                }
+                if (!arrayobj.isNull("articlers")){
+                    JSONArray articlersArray=arrayobj.getJSONArray("articlers");
+                    LogUtils.e("xinwenjsonuploadFileArray",articlersArray + "");
+                    List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> listArticlers=new ArrayList<>();
+                    for (int j=0;j<articlersArray.length();j++){
+                        XinWen_productinfo.T18908805728Entity.ProductArticlerEntity articlerEntity=new XinWen_productinfo.T18908805728Entity.ProductArticlerEntity();
+
+                        JSONObject articler=articlersArray.getJSONObject(j);
+                        String artreview_authorid=articler.getString("artreview_authorid");
+                        String artreview_time=articler.getString("artreview_time");
+                        String artreview_content=articler.getString("artreview_content");
+                        //   int id=imagestra.getInt("id");
+                        articlerEntity.setArtreview_authorid(artreview_authorid);
+                        articlerEntity.setArtreview_time(artreview_time);
+                        articlerEntity.setArtreview_content(artreview_content);
+                        //     imgextraEntity.setId(id);
+                        listArticlers.add(articlerEntity);
+                    }
+                    t18908805728Entity.setProductArticler(listArticlers);
                 }
                 if (!arrayobj.isNull("zpxx")){
                     JSONObject zpxx0=arrayobj.getJSONObject("zpxx");
