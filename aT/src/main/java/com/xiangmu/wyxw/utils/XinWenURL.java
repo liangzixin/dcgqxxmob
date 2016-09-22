@@ -11,6 +11,9 @@ import java.util.List;
 public class XinWenURL {
     public int stratPage = 0;
     List<ProductInfo> productInfos=null;
+
+
+    String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
 
     //热点
@@ -45,6 +48,13 @@ public class XinWenURL {
     String luntan = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=12&pageNo=0";//论坛
 
 
+    public String getCount() {
+        return Count;
+    }
+
+    public void setCount(String count) {
+        Count = count;
+    }
     public String getClickcount() {
         return clickcount;
     }

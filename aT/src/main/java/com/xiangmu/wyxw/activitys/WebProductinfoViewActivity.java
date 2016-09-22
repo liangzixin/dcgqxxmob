@@ -265,9 +265,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId();
+        String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         UpData(clickcount);
+        UpCount(clickcount0);
         System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
         //拿到当前日期
@@ -356,6 +358,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                             if (responseInfo.result != null) {
                                 SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
 
+
                             }
                         }
 
@@ -364,6 +367,28 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                             Toast.makeText(WebProductinfoViewActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
                         }
                     });
+
+        }
+    }
+    private void UpCount(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (responseInfo.result != null) {
+                        SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
+
+
+                    }
+                }
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(WebProductinfoViewActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+                }
+            });
 
         }
     }
