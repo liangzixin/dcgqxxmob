@@ -26,9 +26,10 @@ public class ProductArticleHolder extends CommonHolder<Liuyuan> {
     @ViewId(R.id.articler_content) public TextView articler_content;
 
     @Override public void bindData(Liuyuan liuyuan) {
-        articler_authorid.setText(liuyuan.liuyuan_id);
+       // articler_authorid.setText(liuyuan.liuyuan_id);
+        articler_authorid.setText("东川供求信息网网友");
         articler_content.setText(liuyuan.liuyuan_content);
-        articler_date.setText(liuyuan.liuyuan_date);
+        articler_date.setText(liuyuan.liuyuan_date.substring(0,10));
 
     }
 }
