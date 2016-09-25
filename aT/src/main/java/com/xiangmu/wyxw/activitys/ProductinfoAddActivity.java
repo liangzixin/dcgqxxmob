@@ -18,10 +18,12 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -60,7 +62,9 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebProductinfoViewActivity extends AppCompatActivity {
+import fr.ganfra.materialspinner.MaterialSpinner;
+
+public class ProductinfoAddActivity extends AppCompatActivity {
     private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
@@ -68,50 +72,53 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
+    private static final String[] m={"请选择出差地点","昆明","汤丹","殡仪馆","其它"};
     ImageButton fenxiang;
-    private  ImageButton button;
-    private EditText edit;
+   private Spinner articlerSpinner = null;
+//
     private RecyclerView recyclerView;
-   MultiTypeAdapter adapter;
-   // MultiTypeAdapter adapter1;
+    MultiTypeAdapter adapter;
+    // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_productinfo_image);
-        button = (ImageButton) findViewById(R.id.subbtn);
-        edit = (EditText) findViewById(R.id.edit);
+        setContentView(R.layout.activity_productinfo_add);
+        articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
+        ArrayAdapter adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,m);
+        articlerSpinner.setAdapter(adapter);
         Intent intent = getIntent();
-        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
-        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
-        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
+//        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
+//        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
+//        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        initDate();
-        initview();
+//        initDate();
+//        initview();
         assert recyclerView != null;
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-      //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
-        adapter = new MultiTypeAdapter(this);
-      //  adapter1 = new MultiTypeAdapter(this);
-        // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
-        adapter.registerViewType(Photo.class, PhotoHolder.class);
-        adapter.registerViewType(Article.class, ArticleHolder.class);
-      adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-
-        recyclerView.setAdapter(adapter);
-       // recyclerView.setAdapter(adapter1);
-        adapter.add(mockArticle(0));
-
-        for (int i = 0; i <((List<UploadFile>)potolist.get(0)).size(); i++) {
-
-            adapter.add(mockPhoto(i));
-        }
-        for (int i = 0; i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
-
-            adapter.add(mockLiuyuan(i));
-        }
-        button.setOnClickListener(c);
+        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
+//        adapter = new MultiTypeAdapter(this);
+//        //  adapter1 = new MultiTypeAdapter(this);
+//        // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
+//        adapter.registerViewType(Photo.class, PhotoHolder.class);
+//        adapter.registerViewType(Article.class, ArticleHolder.class);
+//        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
+//
+//        recyclerView.setAdapter(adapter);
+//        // recyclerView.setAdapter(adapter1);
+//        adapter.add(mockArticle(0));
+//
+//        for (int i = 0; i <((List<UploadFile>)potolist.get(0)).size(); i++) {
+//
+//            adapter.add(mockPhoto(i));
+//        }
+//        for (int i = 0; i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
+//
+//            adapter.add(mockLiuyuan(i));
+//        }
+     //   button.setOnClickListener(c);
     }
     private void initview() {
         final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
@@ -127,7 +134,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
         duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
         fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
-       // getdata(url);//获得数据
+        // getdata(url);//获得数据
         //点击finish
         imageback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -140,7 +147,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         duotu_gentie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WebProductinfoViewActivity.this,GenTieActivity.class));
+                startActivity(new Intent(ProductinfoAddActivity.this,GenTieActivity.class));
             }
         });
         //点击打开扩展 详细页面
@@ -155,7 +162,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+                ShareUtils.shareContent(ProductinfoAddActivity.this, xinwentitle, url);
 
             }
         });
@@ -220,50 +227,50 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     /**
      * 提交的监听器
      */
-    View.OnClickListener c = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String msg = edit.getText().toString();
-             if (msg.equals("") || msg == null) {
-                new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
-                return;
-            }else{
-
-            ProductArticler productArticler=new ProductArticler();
-
-
-                productArticler.setArtreview_rootid(xinWenXiData.getId());
-                productArticler.setArtreview_content(msg);
-                DateTime dateTime =new DateTime();
-                 productArticler.setArtreview_time(dateTime.getDateFormatter());
-                    productArticler.setArtreview_authorid(1+"");
-                 ((List<ProductArticler>)liuyuanlist.get(0)).add(0,productArticler);
-                 NotifyFunction();
-            }
-          //  MultiTypeAdapter adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
-           // adapter.add(mockLiuyuan( liuyuanlist.size()));
-            new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
-            edit.setText("");
-        }
-    };
+//    View.OnClickListener c = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            String msg = edit.getText().toString();
+//            if (msg.equals("") || msg == null) {
+//                new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
+//                return;
+//            }else{
+//
+//                ProductArticler productArticler=new ProductArticler();
+//
+//
+//                productArticler.setArtreview_rootid(xinWenXiData.getId());
+//                productArticler.setArtreview_content(msg);
+//                DateTime dateTime =new DateTime();
+//                productArticler.setArtreview_time(dateTime.getDateFormatter());
+//                productArticler.setArtreview_authorid(1+"");
+//                ((List<ProductArticler>)liuyuanlist.get(0)).add(0,productArticler);
+//                NotifyFunction();
+//            }
+//            //  MultiTypeAdapter adapter = new MultiTypeAdapter(ProductinfoAddActivity.this);
+//            // adapter.add(mockLiuyuan( liuyuanlist.size()));
+//            new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
+//            edit.setText("");
+//        }
+//    };
     /**
      * 通知数据发生改变
      */
     public void NotifyFunction() {
         //recyclerView.deferNotifyDataSetChanged();
-      ///  recyclerView.notifyDataSetChanged();
-      //  recyclerView.getChildItemId(item_p)
-     // recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-      //  recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-      //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
-   // adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
-      //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-    // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
-      adapter.add(mockLiuyuan(0));
-        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString();
-     UpData(url);
-     // adapter.add(mockLiuyuan(i));
-    // }
+        ///  recyclerView.notifyDataSetChanged();
+        //  recyclerView.getChildItemId(item_p)
+        // recyclerView.setAdapter(new SaveAdapter(ProductinfoAddActivity.this,liuyuanlist));
+        //  recyclerView.setAdapter(new SaveAdapter(ProductinfoAddActivity.this,liuyuanlist));
+        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
+        // adapter = new MultiTypeAdapter(ProductinfoAddActivity.this);
+        //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
+        // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
+//        adapter.add(mockLiuyuan(0));
+//        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString();
+//        UpData(url);
+        // adapter.add(mockLiuyuan(i));
+        // }
     }
     //popuwindow设置
     private void getpopuwindow(View v) {
@@ -289,17 +296,17 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 popu.dismiss();
                 // TODO: 2015/11/17
 
-                Toast.makeText(WebProductinfoViewActivity.this, "截屏...", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProductinfoAddActivity.this, "截屏...", Toast.LENGTH_SHORT).show();
                 String date_time = DateTime.getDate_Time();
                 File file = new File("sdcard/Photo/Screenshots/");
                 if (!file.exists()) {
                     file.mkdirs();
                 }
-                Bitmap bitmap = ScreenShot.takeScreenShot(WebProductinfoViewActivity.this);
+                Bitmap bitmap = ScreenShot.takeScreenShot(ProductinfoAddActivity.this);
                 String s = "sdcard/Photo/Screenshots/" + date_time;
                 String path = s + ".png";
                 ScreenShot.savePic(bitmap, path);
-                Intent intent = new Intent(WebProductinfoViewActivity.this, PictureActivity.class);
+                Intent intent = new Intent(ProductinfoAddActivity.this, PictureActivity.class);
                 intent.putExtra("path", s);
                 startActivity(intent);
 
@@ -311,7 +318,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 popu.dismiss();
                 // TODO: 2015/11/17
-               // ZiTiScale.zitiStyle2(WebProductinfoViewActivity.this, view);
+                // ZiTiScale.zitiStyle2(ProductinfoAddActivity.this, view);
             }
         });
         //夜间模式按钮
@@ -335,11 +342,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId();
         String clickcount0=xinWenURL.getCount();
-        //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
-       // String data = SharedPreferencesUtil.getData(this, clickcount, "");
+        //String data = xutilsGetData.getData(ProductinfoAddActivity.this, clickcount, null);
+        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         UpData(clickcount);
         UpData(clickcount0);
-     //   UpCount(clickcount0);
+        //   UpCount(clickcount0);
         System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
         //拿到当前日期
@@ -392,7 +399,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         article.lxr=xinWenXiData.getLxr();
         article.lxdh=xinWenXiData.getLxdh();
 
-       if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
+        if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
         if(xinWenXiData.getFwcs()!=null) article.fwcs=xinWenXiData.getFwcs();
         article.productCategory=xinWenXiData.getProductCategory();
         return article;
@@ -400,7 +407,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     public Liuyuan mockLiuyuan(int seed) {
         Liuyuan liuyuan= new Liuyuan();
 
-       liuyuan.liuyuan_content=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_content();
+        liuyuan.liuyuan_content=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_content();
         liuyuan.liuyuan_id=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_authorid();
         liuyuan.liuyuan_date=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_time();
 
@@ -415,11 +422,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                R.drawable.img_sample3,
 //                R.drawable.img_sample4
 //        }[seed % 4];
-      //  photo.description = getResources().getStringArray(R.array.mock_img_desc)[seed % 4];
+        //  photo.description = getResources().getStringArray(R.array.mock_img_desc)[seed % 4];
         photo.photoId = 0;
 
-   //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
-       // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
+        //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
+        // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
 //        BitmapUtils bitmapUtils = new BitmapUtils(this);
 //        bitmapUtils.display(photo.imagePicture,"http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg");
         photo.description =xinWenXiData.getTitle();
@@ -430,21 +437,21 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
 
-                    handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-                        @Override
-                        public void onSuccess(ResponseInfo<String> responseInfo) {
-                            if (responseInfo.result != null) {
-                                SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (responseInfo.result != null) {
+                        SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
 
 
-                            }
-                        }
+                    }
+                }
 
-                        @Override
-                        public void onFailure(HttpException e, String s) {
-                            Toast.makeText(WebProductinfoViewActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
-                        }
-                    });
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(ProductinfoAddActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+                }
+            });
 
         }
     }
@@ -456,7 +463,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                @Override
 //                public void onSuccess(ResponseInfo<String> responseInfo) {
 //                    if (responseInfo.result != null) {
-//                        SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
+//                        SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
 //
 //
 //                    }
@@ -464,10 +471,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //
 //                @Override
 //                public void onFailure(HttpException e, String s) {
-//                    Toast.makeText(WebProductinfoViewActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(ProductinfoAddActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
 //                }
 //            });
 //
 //        }
 //    }
 }
+

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.xiangmu.wyxw.activitys.ProductinfoAddActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#000000"
+        >
+
+
+        <ImageButton
+            android:id="@+id/xinwen_xi_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/xinwen_duotu_gentie"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:background="@mipmap/titlebar_background"
+            android:gravity="center"
+            android:text="0跟帖" />
+        <ImageButton
+            android:id="@+id/xinwen_xi_fenxiang"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/share_alpha" />
+        <ImageButton
+            android:id="@+id/xinwen_xi_kuanzhan_caidan"
+            android:layout_width="50dp"
+            android:clickable="true"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/kuozhan_caidan" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="50dp"
+        />
+    <!--android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        >-->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="60dp"
+        >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="16dp">
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spin_articler"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_arrowColor="#0000FF"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelColor="#00FF00"
+            app:ms_floatingLabelText="部门名称:"
+            android:layout_marginTop="20dp"
+
+            app:ms_multiline="true" />
+    <TextView
+        android:id="@+id/textTitle3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp"
+        android:textColor="#111111"
+        android:textSize="18sp"
+        tools:text="Mock Title"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content"
+
+        >
+
+        <TextView
+            android:id="@+id/xinwen_duotu_org"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="15dp"
+            android:textSize="15dp"
+
+            android:layout_height="wrap_content"
+            android:text="东川供求信息网"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_below="@+id/toutiaop_imgsrc"
+            android:layout_marginTop="5dp"
+            android:src="@mipmap/xinwen_toutiao_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/textContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lineSpacingMultiplier="1.5"
+        android:padding="4dp"
+        android:textColor="#000000"
+        android:layout_marginTop="10dp"
+        android:textSize="15sp"/>
+    </LinearLayout>
+    </android.support.v7.widget.CardView>
+    <LinearLayout
+        android:id="@+id/normal_with_input_text_icon1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+
+        >
+        <TextView
+            android:id="@+id/textTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            tools:text="Mock Title"
+            android:gravity="center_vertical|center_horizontal"
+            />
+        <TextView
+            android:id="@+id/textTitle1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="4dp"
+            android:textColor="#111111"
+            android:textSize="18sp"
+            tools:text="Mock Title"
+            android:gravity="center_vertical|center_horizontal"
+            />
+        <fr.ganfra.materialspinner.MaterialSpinner
+            android:id="@+id/spin_articler1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:ms_arrowColor="#0000FF"
+            app:ms_arrowSize="16dp"
+            app:ms_floatingLabelColor="#00FF00"
+            app:ms_floatingLabelText="部门名称:"
+            android:layout_marginTop="20dp"
+
+            app:ms_multiline="true" />
+
+        <MaterialEditText
+            android:id="@+id/Chuchai_Content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="5"
+            android:hint="出差事由:"
+            android:inputType="textNoSuggestions"
+            android:singleLine="true"
+            android:text=""
+            material:floatingLabel="true"
+            android:layout_marginTop="20dp"
+
+            />
+    </LinearLayout>
+    <!--/android.support.v7.widget.CardView>-->
+</RelativeLayout>
+

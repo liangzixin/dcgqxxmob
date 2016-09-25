@@ -11,8 +11,8 @@ public interface ServerURL {
     String yueDuURLJiaZai = "http://c.3g.163.com/recommend/getSubDocNews?passport=&devId=862949023308336&size=10&version=5.3.6&from=yuedu&net=wifi";
     String yueDuDetial ="http://c.3g.163.com/nc/article/";//前缀
     String yueDuHouzui = "/full.html";//后缀
-    //天气
-    String weatherUrl = "http://api.map.baidu.com/telematics/v3/weather?location=郑州&output=json&ak=mXBIDrvTOwwmYaTtN03Lo0j2";
+
+    String weatherUrl = "http://api.map.baidu.com/telematics/v3/weather?location=东川&output=json&ak=mXBIDrvTOwwmYaTtN03Lo0j2"; //天气
 
     //上头条相关
     String TopUrl = "http://c.3g.163.com/nc/userhead/curopTopic/";

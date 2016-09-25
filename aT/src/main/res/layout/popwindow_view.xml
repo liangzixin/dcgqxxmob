@@ -52,7 +52,7 @@
                         android:layout_height="wrap_content"
                         android:text="12 ~ 8℃"
                         android:textColor="@color/red"
-                        android:textSize="60dp" />
+                        android:textSize="30dp" />
                 </RelativeLayout>
 
                 <TextView
@@ -136,6 +136,19 @@
             android:layout_weight="1">
             <!-- 搜索-->
             <LinearLayout
+                android:id="@+id/shangtoutiao"
+                style="@style/xuanfu">
+
+                <ImageView
+                    style="@style/xuanfu_icon"
+                    android:background="@drawable/xuanfu_shangtoutiao" />
+
+                <TextView
+                    style="@style/xuanfu_tv"
+                    android:text="发布" />
+            </LinearLayout>
+            <!-- 搜索-->
+            <LinearLayout
                 android:id="@+id/search"
                 style="@style/xuanfu">
 
@@ -146,19 +159,6 @@
                 <TextView
                     style="@style/xuanfu_tv"
                     android:text="搜索" />
-            </LinearLayout>
-            <!-- 上头条-->
-            <LinearLayout
-                android:id="@+id/shangtoutiao"
-                style="@style/xuanfu">
-
-                <ImageView
-                    style="@style/xuanfu_icon"
-                    android:background="@drawable/xuanfu_shangtoutiao" />
-
-                <TextView
-                    style="@style/xuanfu_tv"
-                    android:text="上头条" />
             </LinearLayout>
             <!-- 离线-->
             <LinearLayout

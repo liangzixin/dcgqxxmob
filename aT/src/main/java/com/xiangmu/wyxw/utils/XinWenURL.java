@@ -16,6 +16,8 @@ public class XinWenURL {
     String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
 
+    String savearticler=HttpUtil.BASE_URL+"product!savearticlermob.action?productid=";
+
     //热点
    // String redian="http://c.3g.163.com/nc/article/list/T1429173762551/0-20.html";
 
@@ -47,6 +49,14 @@ public class XinWenURL {
     //String luntan = "http://c.m.163.com/nc/article/list/T1419386592923/" + stratPage + "-" + (stratPage + 20) + ".html";//论坛
     String luntan = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=12&pageNo=0";//论坛
 
+
+    public String getSavearticler() {
+        return savearticler;
+    }
+
+    public void setSavearticler(String savearticler) {
+        this.savearticler = savearticler;
+    }
 
     public String getCount() {
         return Count;

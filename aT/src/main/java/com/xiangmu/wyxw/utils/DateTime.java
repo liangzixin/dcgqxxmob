@@ -2,6 +2,7 @@ package com.xiangmu.wyxw.utils;
 
 import org.junit.Test;
 
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -67,4 +68,9 @@ public class DateTime {
 
     return  dateStr;
    } ;
+    public   String getDateFormatter(){
+        Date date=new Date();
+        DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        return df.format(date);
+    }
 }

@@ -35,6 +35,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.wyxw.Bean.WeatherBean;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
+import com.xiangmu.wyxw.activitys.ProductinfoAddActivity;
 import com.xiangmu.wyxw.activitys.SearchActivity;
 import com.xiangmu.wyxw.activitys.SecondCodeActivity;
 import com.xiangmu.wyxw.activitys.ShangTouTiaoActivity;
@@ -346,7 +347,7 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
                 break;
             case R.id.shangtoutiao:
                 popupWindow.dismiss();
-                intent = new Intent(getActivity(), ShangTouTiaoActivity.class);
+                intent = new Intent(getActivity(), ProductinfoAddActivity.class);
                 startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.zcdh_alpha_in, R.anim.zcdh_set_out);
                 break;
