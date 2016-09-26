@@ -8,6 +8,12 @@ import java.util.List;
  * @author Li Yongqiang
  */
 public enum Sex {
+	ALL{
+		@Override
+		public String getName() {
+			return "性别";
+		}
+	},
 	BOY{
 		@Override
 		public String getName() {
@@ -19,13 +25,8 @@ public enum Sex {
 		public String getName() {
 			return "女";
 		}
-	},
-	ALL{
-		@Override
-		public String getName() {
-			return "不限";
-		}
 	};
+
 	/**
 	 * 获取名称的抽象方法
 	 * @return 名称

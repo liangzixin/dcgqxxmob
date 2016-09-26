@@ -37,9 +37,13 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.wyxw.CostomAdapter.SaveAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.wyxw.Modle.Dxfw;
+import com.xiangmu.wyxw.Modle.Edu;
 import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.ProductArticler;
+import com.xiangmu.wyxw.Modle.Sex;
 import com.xiangmu.wyxw.Modle.UploadFile;
+import com.xiangmu.wyxw.Modle.Zpnl;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
 import com.xiangmu.wyxw.Setting_Utils.ZiTiScale;
@@ -73,9 +77,14 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     private static final String[] m={"请选择出差地点","昆明","汤丹","殡仪馆","其它"};
+    // private static final List msex=new List() { };
     ImageButton fenxiang;
-   private Spinner articlerSpinner = null;
-//
+    private Spinner articlerSpinner = null;
+    private Spinner spinner_sex = null;
+    private Spinner spinner_dxfw= null;
+    private Spinner spinner_nl= null;
+    private Spinner spinner_xl= null;
+    //
     private RecyclerView recyclerView;
     MultiTypeAdapter adapter;
     // MultiTypeAdapter adapter1;
@@ -84,19 +93,44 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
+        spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
+        spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
+        spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
+        spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
+
+        List  msex=Sex.getValues();
+        List  dxfw= Dxfw.getValues();
+        List  nl= Zpnl.getValues();
+        List  xl= Edu.getValues();
         ArrayAdapter adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
+         adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,msex);
+        spinner_sex.setAdapter(adapter);
+        adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,dxfw);
+        spinner_dxfw.setAdapter(adapter);
+        adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,nl);
+        spinner_nl.setAdapter(adapter);
+        adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,xl);
+
+
+
+        spinner_xl.setAdapter(adapter);
         Intent intent = getIntent();
 //        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        //    recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 //        initDate();
 //        initview();
-        assert recyclerView != null;
+        //    assert recyclerView != null;
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        //   recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
 
         //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
 //        adapter = new MultiTypeAdapter(this);
@@ -118,7 +152,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //
 //            adapter.add(mockLiuyuan(i));
 //        }
-     //   button.setOnClickListener(c);
+        //   button.setOnClickListener(c);
     }
     private void initview() {
         final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
