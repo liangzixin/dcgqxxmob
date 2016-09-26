@@ -39,6 +39,7 @@ import com.xiangmu.wyxw.CostomAdapter.SaveAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.ProductArticler;
+import com.xiangmu.wyxw.Modle.Sex;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
@@ -73,8 +74,10 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     private static final String[] m={"请选择出差地点","昆明","汤丹","殡仪馆","其它"};
+   // private static final List msex=new List() { };
     ImageButton fenxiang;
    private Spinner articlerSpinner = null;
+    private Spinner spinner_sex = null;
 //
     private RecyclerView recyclerView;
     MultiTypeAdapter adapter;
@@ -84,19 +87,25 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
+        spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
+        List  msex=Sex.getValues();
         ArrayAdapter adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
+        ArrayAdapter adapter1= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,msex);
+        spinner_sex.setAdapter(adapter1);
         Intent intent = getIntent();
 //        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+    //    recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 //        initDate();
 //        initview();
-        assert recyclerView != null;
+    //    assert recyclerView != null;
 
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+     //   recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+
 
         //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
 //        adapter = new MultiTypeAdapter(this);
