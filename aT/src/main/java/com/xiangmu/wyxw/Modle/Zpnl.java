@@ -7,7 +7,13 @@ import java.util.List;
  * 性别枚举类
  * @author Li Yongqiang
  */
-public enum Zpnl { 
+public enum Zpnl {
+	ZPNL4{
+		@Override
+		public String getName() {
+			return "年龄";
+		}
+	},
 	ZPNL1{
 		@Override
 		public String getName() {
@@ -25,13 +31,8 @@ public enum Zpnl {
 		public String getName() {
 			return "38-48岁";
 		}
-	},
-	ZPNL4{
-		@Override
-		public String getName() {
-			return "其它岁";
-		}
 	};
+
 	/**
 	 * 获取名称的抽象方法
 	 * @return 名称
