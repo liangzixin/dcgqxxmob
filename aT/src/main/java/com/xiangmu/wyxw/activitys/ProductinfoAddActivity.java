@@ -18,15 +18,18 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import android.widget.AdapterView.OnItemSelectedListener;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -34,6 +37,7 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.twiceyuan.commonadapter.library.ViewId;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.wyxw.CostomAdapter.SaveAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
@@ -78,73 +82,126 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
-    private static final String[] m={"请选择出差地点","昆明","汤丹","殡仪馆","其它"};
+    private static final String[] m={"请选择类别","招聘","求职","出售","出租","供求","二手","其它","铺面","家居"};
     // private static final List msex=new List() { };
     ImageButton fenxiang;
-    private Spinner articlerSpinner = null;
+//
+        private Spinner articlerSpinner = null;
     private Spinner spinner_sex = null;
     private Spinner spinner_dxfw= null;
     private Spinner spinner_nl= null;
     private Spinner spinner_xl= null;
-    //
     private RecyclerView recyclerView;
+  LinearLayout category1;
+ LinearLayout category2;
+//        @ViewId(R.id.category3) public LinearLayout category3;
+//        @ViewId(R.id.category4) public LinearLayout category4;
  //   MultiTypeAdapter adapter;
     // MultiTypeAdapter adapter1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfo_add);
-//        articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
-//        spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
-//        spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
-//        spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
-//        spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
+//        @ViewId(R.id.category1) public LinearLayout category1;
+//        @ViewId(R.id.category2) public LinearLayout category2;
+//        @ViewId(R.id.category3) public LinearLayout category3;
+//        @ViewId(R.id.category4) public LinearLayout category4;
 
+        articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
+        spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
+        spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
+        spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
+        spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
+        category1=(LinearLayout) findViewById(R.id.category1);
+        category2=(LinearLayout) findViewById(R.id.category2);
         List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
         List  nl= Zpnl.getValues();
         List  xl= Edu.getValues();
-//        ArrayAdapter adapter= new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,m);
-//        articlerSpinner.setAdapter(adapter);
-//         adapter= new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,msex);
-//        spinner_sex.setAdapter(adapter);
-//        adapter= new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,dxfw);
-//        spinner_dxfw.setAdapter(adapter);
-//        adapter= new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,nl);
-//        spinner_nl.setAdapter(adapter);
-//        adapter= new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,xl);
-//
-//
-//
-//        spinner_xl.setAdapter(adapter);
+        ArrayAdapter adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,m);
+        articlerSpinner.setAdapter(adapter);
+         adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,msex);
+        spinner_sex.setAdapter(adapter);
+        adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,dxfw);
+        spinner_dxfw.setAdapter(adapter);
+        adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,nl);
+        spinner_nl.setAdapter(adapter);
+        adapter= new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_item,xl);
+
+        spinner_xl.setAdapter(adapter);
+        articlerSpinner.setSelection(0, true);
+        category1.setVisibility(View.VISIBLE);
+        //给Spinner添加事件监听
+        articlerSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
+
+            //当选中某一个数据项时触发该方法
+            /*
+             * parent接收的是被选择的数据项所属的 Spinner对象，
+             * view参数接收的是显示被选择的数据项的TextView对象
+             * position接收的是被选择的数据项在适配器中的位置
+             * id被选择的数据项的行号
+             */
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                //System.out.println(spinner==parent);//true
+                //System.out.println(view);
+                //String data = adapter.getItem(position);//从适配器中获取被选择的数据项
+                //String data = list.get(position);//从集合中获取被选择的数据项
+                int data =(int)articlerSpinner.getItemAtPosition(position);//从spinner中获取被选择的数据
+                switch (data) {
+                    case 0:
+                    case 1:
+                        category1.setVisibility(View.VISIBLE);
+                        category2.setVisibility(View.INVISIBLE);
+                        break;
+                    case 2:
+                        category1.setVisibility(View.INVISIBLE);
+                        category2.setVisibility(View.VISIBLE);
+                        break;
+//                    case 3:
+//                        category3.setVisibility(View.VISIBLE);
+//                        break;
+//                    case 4:
+//                        category4.setVisibility(View.VISIBLE);
+//                        break;
+                }
+//                Toast.makeText(MainActivity.this, data, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
   //      Intent intent = getIntent();
 //        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
-          recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+//          recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 //        initDate();
 //        initview();
         //    assert recyclerView != null;
 
-          recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//          recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
 
-       MultiTypeAdapter adapter1 = new MultiTypeAdapter(this);
+//       MultiTypeAdapter adapter1 = new MultiTypeAdapter(this);
 //        adapter = new MultiTypeAdapter(this);
 //        //  adapter1 = new MultiTypeAdapter(this);
 //        // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
 //        adapter.registerViewType(Photo.class, PhotoHolder.class);
-        adapter1.registerViewType(Article.class, ProductinfoAddHolder.class);
+//        adapter1.registerViewType(Article.class, ProductinfoAddHolder.class);
 //        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
 //
 //        recyclerView.setAdapter(adapter1);
-        recyclerView.setAdapter(adapter1);
-      adapter1.add(mockArticle(0));
+//        recyclerView.setAdapter(adapter1);
+//      adapter1.add(mockArticle(0));
 //
 //        for (int i = 0; i <((List<UploadFile>)potolist.get(0)).size(); i++) {
 //
