@@ -41,6 +41,7 @@ import com.xiangmu.wyxw.Modle.Dxfw;
 import com.xiangmu.wyxw.Modle.Edu;
 import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.ProductArticler;
+import com.xiangmu.wyxw.Modle.ProductCategory;
 import com.xiangmu.wyxw.Modle.Sex;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.Modle.Zpnl;
@@ -52,6 +53,7 @@ import com.xiangmu.wyxw.holder.PhotoHolder;
 import  com.xiangmu.wyxw.Modle.Article;
 import com.xiangmu.wyxw.Modle.Photo;
 import com.xiangmu.wyxw.holder.ProductArticleHolder;
+import com.xiangmu.wyxw.holder.ProductinfoAddHolder;
 import com.xiangmu.wyxw.jieping.ScreenShot;
 import com.xiangmu.wyxw.utils.DateTime;
 import com.xiangmu.wyxw.utils.LogUtils;
@@ -92,35 +94,35 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfo_add);
-        articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
-        spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
-        spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
-        spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
-        spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
+//        articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
+//        spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
+//        spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
+//        spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
+//        spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
 
         List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
         List  nl= Zpnl.getValues();
         List  xl= Edu.getValues();
-        ArrayAdapter adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,m);
-        articlerSpinner.setAdapter(adapter);
-         adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,msex);
-        spinner_sex.setAdapter(adapter);
-        adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,dxfw);
-        spinner_dxfw.setAdapter(adapter);
-        adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,nl);
-        spinner_nl.setAdapter(adapter);
-        adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,xl);
-
-
-
-        spinner_xl.setAdapter(adapter);
-        Intent intent = getIntent();
+//        ArrayAdapter adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,m);
+//        articlerSpinner.setAdapter(adapter);
+//         adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,msex);
+//        spinner_sex.setAdapter(adapter);
+//        adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,dxfw);
+//        spinner_dxfw.setAdapter(adapter);
+//        adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,nl);
+//        spinner_nl.setAdapter(adapter);
+//        adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,xl);
+//
+//
+//
+//        spinner_xl.setAdapter(adapter);
+  //      Intent intent = getIntent();
 //        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
@@ -137,7 +139,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //        //  adapter1 = new MultiTypeAdapter(this);
 //        // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
 //        adapter.registerViewType(Photo.class, PhotoHolder.class);
-        adapter1.registerViewType(Article.class, ArticleHolder.class);
+        adapter1.registerViewType(Article.class, ProductinfoAddHolder.class);
 //        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
 //
 //        recyclerView.setAdapter(adapter1);
@@ -429,6 +431,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         article.title =xinWenXiData.getTitle();
         article.content =xinWenXiData.getXinwentext();
 //        article.dat =xinWenXiData.getCreateDate().substring(0,10);
+        article.dat ="aaaa";
+
         article.gsmz=xinWenXiData.getGsmz();
         article.gsdz=xinWenXiData.getGsdz();
         article.lxr=xinWenXiData.getLxr();
@@ -436,8 +440,13 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 
         if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
         if(xinWenXiData.getFwcs()!=null) article.fwcs=xinWenXiData.getFwcs();
-        article.productCategory=xinWenXiData.getProductCategory();
+//        article.productCategory=xinWenXiData.getProductCategory();
+        ProductCategory productCategory0=new ProductCategory();
+        productCategory0.setId(1);
+
+        article.productCategory=productCategory0;
         return article;
+
     }
     public Liuyuan mockLiuyuan(int seed) {
         Liuyuan liuyuan= new Liuyuan();
