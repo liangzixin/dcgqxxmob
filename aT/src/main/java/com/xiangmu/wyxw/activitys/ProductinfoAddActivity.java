@@ -86,7 +86,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private Spinner spinner_xl= null;
     //
     private RecyclerView recyclerView;
-    MultiTypeAdapter adapter;
+ //   MultiTypeAdapter adapter;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -124,25 +124,25 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
-        //    recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+          recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 //        initDate();
 //        initview();
         //    assert recyclerView != null;
 
-        //   recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+          recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
 
-        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
+       MultiTypeAdapter adapter1 = new MultiTypeAdapter(this);
 //        adapter = new MultiTypeAdapter(this);
 //        //  adapter1 = new MultiTypeAdapter(this);
 //        // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
 //        adapter.registerViewType(Photo.class, PhotoHolder.class);
-//        adapter.registerViewType(Article.class, ArticleHolder.class);
+        adapter1.registerViewType(Article.class, ArticleHolder.class);
 //        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
 //
-//        recyclerView.setAdapter(adapter);
-//        // recyclerView.setAdapter(adapter1);
-//        adapter.add(mockArticle(0));
+//        recyclerView.setAdapter(adapter1);
+        recyclerView.setAdapter(adapter1);
+      adapter1.add(mockArticle(0));
 //
 //        for (int i = 0; i <((List<UploadFile>)potolist.get(0)).size(); i++) {
 //
@@ -423,11 +423,12 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     }
     public Article mockArticle(int seed) {
         Article article = new Article();
+        XinWenXiData xinWenXiData=new XinWenXiData();
 //        article.title = getResources().getStringArray(R.array.mock_title)[seed % 4];
 //        article.content = getResources().getStringArray(R.array.mock_content)[seed % 4];
         article.title =xinWenXiData.getTitle();
         article.content =xinWenXiData.getXinwentext();
-        article.dat =xinWenXiData.getCreateDate().substring(0,10);
+//        article.dat =xinWenXiData.getCreateDate().substring(0,10);
         article.gsmz=xinWenXiData.getGsmz();
         article.gsdz=xinWenXiData.getGsdz();
         article.lxr=xinWenXiData.getLxr();
