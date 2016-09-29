@@ -3,7 +3,6 @@ package com.xiangmu.wyxw.holder;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.twiceyuan.commonadapter.library.LayoutId;
@@ -57,12 +56,8 @@ public class ProductinfoAddHolder extends CommonHolder<Article> {
     @ViewId(R.id.category2) public LinearLayout category2;
     @ViewId(R.id.category3) public LinearLayout category3;
     @ViewId(R.id.category4) public LinearLayout category4;
-
     @Override public void bindData(Article article) {
-//                ArrayAdapter adapter= new ArrayAdapter<String>(this,
-//                android.R.layout.simple_spinner_item,article.m);
-//        spin_articler.setAdapter(adapter);
-//        spring_category.s
+
         textTitle.setText(article.title);
         textContent.setText(article.content);
         xinwen_duotu_date.setText(article.dat);

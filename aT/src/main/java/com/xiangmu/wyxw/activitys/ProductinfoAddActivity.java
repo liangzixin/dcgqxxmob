@@ -85,18 +85,18 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private static final String[] m={"请选择类别","招聘","求职","出售","出租","供求","二手","其它","铺面","家居"};
     // private static final List msex=new List() { };
     ImageButton fenxiang;
-//
-        private Spinner articlerSpinner = null;
+    //
+    private Spinner articlerSpinner = null;
     private Spinner spinner_sex = null;
     private Spinner spinner_dxfw= null;
     private Spinner spinner_nl= null;
     private Spinner spinner_xl= null;
     private RecyclerView recyclerView;
-  LinearLayout category1;
- LinearLayout category2;
+    LinearLayout category1;
+    LinearLayout category2;
 //        @ViewId(R.id.category3) public LinearLayout category3;
 //        @ViewId(R.id.category4) public LinearLayout category4;
- //   MultiTypeAdapter adapter;
+    //   MultiTypeAdapter adapter;
     // MultiTypeAdapter adapter1;
 
     @Override
@@ -122,7 +122,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         ArrayAdapter adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
-         adapter= new ArrayAdapter<String>(this,
+        adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,msex);
         spinner_sex.setAdapter(adapter);
         adapter= new ArrayAdapter<String>(this,
@@ -153,7 +153,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 //System.out.println(view);
                 //String data = adapter.getItem(position);//从适配器中获取被选择的数据项
                 //String data = list.get(position);//从集合中获取被选择的数据项
-                int data =(int)articlerSpinner.getItemAtPosition(position);//从spinner中获取被选择的数据
+              //  int data =(int)articlerSpinner.getItemAtPosition(position);//从spinner中获取被选择的数据
+                int data =2;
                 switch (data) {
                     case 0:
                     case 1:
@@ -179,7 +180,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 // TODO Auto-generated method stub
             }
         });
-  //      Intent intent = getIntent();
+        //      Intent intent = getIntent();
 //        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
