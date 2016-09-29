@@ -154,15 +154,15 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 //String data = adapter.getItem(position);//从适配器中获取被选择的数据项
                 //String data = list.get(position);//从集合中获取被选择的数据项
               //  int data =(int)articlerSpinner.getItemAtPosition(position);//从spinner中获取被选择的数据
-                int data =2;
-                switch (data) {
+             //   int data =1;
+                switch (position) {
                     case 0:
                     case 1:
                         category1.setVisibility(View.VISIBLE);
-                        category2.setVisibility(View.INVISIBLE);
+                        category2.setVisibility(View.GONE);
                         break;
                     case 2:
-                        category1.setVisibility(View.INVISIBLE);
+                        category1.setVisibility(View.GONE);
                         category2.setVisibility(View.VISIBLE);
                         break;
 //                    case 3:

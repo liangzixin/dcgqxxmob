@@ -91,6 +91,22 @@
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
             android:padding="10dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:gravity="center"
+                android:layout_height="wrap_content">
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/spin_articler"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:ms_arrowColor="#0000FF"
+                    app:ms_arrowSize="16dp"
+                    app:ms_floatingLabelColor="#00FF00"
+                    app:ms_floatingLabelText="部门名称:"
+
+                    android:gravity="center"
+                    app:ms_multiline="true" />
+            </LinearLayout>
             <!--招聘-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -98,22 +114,7 @@
                 android:orientation="vertical"
                 android:id="@+id/category1"
                 >
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:gravity="center"
-                    android:layout_height="wrap_content">
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_articler"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-                        app:ms_floatingLabelColor="#00FF00"
-                        app:ms_floatingLabelText="部门名称:"
 
-                        android:gravity="center"
-                        app:ms_multiline="true" />
-                </LinearLayout>
                 <MaterialEditText
                     android:id="@+id/productinfo_name"
                     android:layout_width="match_parent"
