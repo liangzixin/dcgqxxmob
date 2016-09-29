@@ -57,9 +57,7 @@ public class ProductinfoAddHolder extends CommonHolder<Article> {
     @ViewId(R.id.category3) public LinearLayout category3;
     @ViewId(R.id.category4) public LinearLayout category4;
     @Override public void bindData(Article article) {
-                ArrayAdapter adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,article.categoryList);
-        spin_articler.setAdapter(adapter);
+
         textTitle.setText(article.title);
         textContent.setText(article.content);
         xinwen_duotu_date.setText(article.dat);
