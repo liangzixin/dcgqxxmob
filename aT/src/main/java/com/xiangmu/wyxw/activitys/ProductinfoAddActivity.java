@@ -24,6 +24,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.MaterialEditText;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -88,12 +89,24 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     //
     private Spinner articlerSpinner = null;
     private Spinner spinner_sex = null;
+    private Spinner spinner_sex2 = null;
     private Spinner spinner_dxfw= null;
+    private Spinner spinner_dxfw2= null;
     private Spinner spinner_nl= null;
     private Spinner spinner_xl= null;
+    private Spinner spinner_xl2= null;
     private RecyclerView recyclerView;
+    private MaterialEditText productinfo_name;
+    private MaterialEditText productinfo_sxcy;
+
     LinearLayout category1;
     LinearLayout category2;
+        @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
+ //@ViewId(R.id.productinfo_sxcy) public MaterialEditText productinfo_sxcy;
+//    @ViewId(R.id.productinfo_qjnl)  MaterialEditText productinfo_qjnl;
+   // @ViewId(R.id.spin_sex2) public MaterialSpinner spin_sex2;
+//    @ViewId(R.id.spin_dxfw2) public MaterialSpinner spin_dxfw2;
+//    @ViewId(R.id.spin_xl2) public MaterialSpinner spin_xl2;
 //        @ViewId(R.id.category3) public LinearLayout category3;
 //        @ViewId(R.id.category4) public LinearLayout category4;
     //   MultiTypeAdapter adapter;
@@ -108,6 +121,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //        @ViewId(R.id.category3) public LinearLayout category3;
 //        @ViewId(R.id.category4) public LinearLayout category4;
 
+
+        productinfo_name= (MaterialEditText) findViewById(R.id.productinfo_name);
         articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
         spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
         spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
@@ -115,6 +130,11 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
         category1=(LinearLayout) findViewById(R.id.category1);
         category2=(LinearLayout) findViewById(R.id.category2);
+
+        spinner_sex2 = (MaterialSpinner) findViewById(R.id.spin_sex2);
+        spinner_dxfw2= (MaterialSpinner) findViewById(R.id.spin_dxfw2);
+        spinner_xl2= (MaterialSpinner) findViewById(R.id.spin_xl2);
+
         List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
         List  nl= Zpnl.getValues();
@@ -125,9 +145,12 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,msex);
         spinner_sex.setAdapter(adapter);
+        spinner_sex2.setAdapter(adapter);
+
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,dxfw);
         spinner_dxfw.setAdapter(adapter);
+        spinner_dxfw2.setAdapter(adapter);
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,nl);
         spinner_nl.setAdapter(adapter);
@@ -135,6 +158,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item,xl);
 
         spinner_xl.setAdapter(adapter);
+        spinner_xl2.setAdapter(adapter);
         articlerSpinner.setSelection(0, true);
         category1.setVisibility(View.VISIBLE);
         //给Spinner添加事件监听
@@ -158,10 +182,12 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                     case 1:
+                        productinfo_name.setHint("招聘标题");
                         category1.setVisibility(View.VISIBLE);
                         category2.setVisibility(View.GONE);
                         break;
                     case 2:
+                     productinfo_name.setHint("求职标题");
                         category1.setVisibility(View.GONE);
                         category2.setVisibility(View.VISIBLE);
                         break;
@@ -186,7 +212,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
 //          recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 //        initDate();
-//        initview();
+      initview();
         //    assert recyclerView != null;
 
 //          recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -215,8 +241,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         //   button.setOnClickListener(c);
     }
     private void initview() {
-        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
-        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
+//        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
+//        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
 
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
@@ -226,7 +252,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
 //        webView = null;
 //        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
-        duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
+//        duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
         fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
@@ -256,7 +282,11 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(ProductinfoAddActivity.this, xinwentitle, url);
+              //  ShareUtils.shareContent(ProductinfoAddActivity.this, xinwentitle, url);
+              if(articlerSpinner.getSelectedItemPosition()==0||productinfo_name.equals("")||productinfo_content.equals(""))  {
+                  Toast.makeText(ProductinfoAddActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+
+              }
 
             }
         });
