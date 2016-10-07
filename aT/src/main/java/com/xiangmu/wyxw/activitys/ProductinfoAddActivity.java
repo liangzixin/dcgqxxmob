@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -35,6 +37,7 @@ import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
@@ -44,12 +47,14 @@ import com.xiangmu.wyxw.CostomAdapter.SaveAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.wyxw.Modle.Dxfw;
 import com.xiangmu.wyxw.Modle.Edu;
+import com.xiangmu.wyxw.Modle.Fzfs;
 import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.ProductArticler;
 import com.xiangmu.wyxw.Modle.ProductCategory;
 import com.xiangmu.wyxw.Modle.Sex;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.Modle.Zpnl;
+import com.xiangmu.wyxw.Modle.Zpxx;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
 import com.xiangmu.wyxw.Setting_Utils.ZiTiScale;
@@ -70,8 +75,11 @@ import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
 import java.io.File;
+import java.net.URLEncoder;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
@@ -96,12 +104,41 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private Spinner spinner_xl= null;
     private Spinner spinner_xl2= null;
     private RecyclerView recyclerView;
-    private MaterialEditText productinfo_name;
+    private MaterialEditText name;
+    private MaterialEditText productinfo_gsdz;
+    private MaterialEditText productinfo_gsmz;
+    private MaterialEditText productinfo_lxr;
+    private MaterialEditText productinfo_lxdh;
     private MaterialEditText productinfo_sxcy;
+    private MaterialEditText productinfo_content;
+    private MaterialEditText productinfo_qjnl;
+
+    private MaterialEditText productinfo_xcmz;
+    private MaterialEditText fwzs_jzmj;
+    private MaterialEditText fwzs_fwzj;
+    private MaterialEditText fwzs_hxs;
+    private MaterialEditText fwzs_hxt;
+    private MaterialEditText fwzs_hxw;
+    private MaterialEditText fwzs_hxc;
+    private MaterialEditText fwzs_fwlz;
+    private MaterialEditText fwzs_fwzc;
+
+    private MaterialEditText productinfo_xcmz4;
+    private MaterialEditText fwzs_jzmj4;
+    private MaterialEditText fwzs_fwcj4;
+    private MaterialEditText fwzs_hxs4;
+    private MaterialEditText fwzs_hxt4;
+    private MaterialEditText fwzs_hxw4;
+    private MaterialEditText fwzs_hxc4;
+    private MaterialEditText fwzs_fwlz4;
+    private MaterialEditText fwzs_fwzc4;
+    private Spinner spinner_cjfs4= null;
 
     LinearLayout category1;
     LinearLayout category2;
-        @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
+    LinearLayout category3;
+    LinearLayout category4;
+    //    @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
  //@ViewId(R.id.productinfo_sxcy) public MaterialEditText productinfo_sxcy;
 //    @ViewId(R.id.productinfo_qjnl)  MaterialEditText productinfo_qjnl;
    // @ViewId(R.id.spin_sex2) public MaterialSpinner spin_sex2;
@@ -122,30 +159,65 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //        @ViewId(R.id.category4) public LinearLayout category4;
 
 
-        productinfo_name= (MaterialEditText) findViewById(R.id.productinfo_name);
+        name= (MaterialEditText) findViewById(R.id.productinfo_name);
+        productinfo_gsdz= (MaterialEditText) findViewById(R.id.productinfo_gsdz);
+        productinfo_gsmz= (MaterialEditText) findViewById(R.id.productinfo_gsmz);
+        productinfo_lxr= (MaterialEditText) findViewById(R.id.productinfo_lxr);
+        productinfo_lxdh= (MaterialEditText) findViewById(R.id.productinfo_lxdh);
         articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
+        productinfo_content= (MaterialEditText) findViewById(R.id.productinfo_content);
+
         spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
         spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
         spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
         spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
         category1=(LinearLayout) findViewById(R.id.category1);
         category2=(LinearLayout) findViewById(R.id.category2);
+        category3=(LinearLayout) findViewById(R.id.category3);
+        category4=(LinearLayout) findViewById(R.id.category4);
 
         spinner_sex2 = (MaterialSpinner) findViewById(R.id.spin_sex2);
         spinner_dxfw2= (MaterialSpinner) findViewById(R.id.spin_dxfw2);
         spinner_xl2= (MaterialSpinner) findViewById(R.id.spin_xl2);
+        productinfo_sxcy= (MaterialEditText) findViewById(R.id. productinfo_sxcy);
+        productinfo_qjnl= (MaterialEditText) findViewById(R.id. productinfo_qjnl);
 
-        List  msex=Sex.getValues();
+        productinfo_xcmz= (MaterialEditText) findViewById(R.id. productinfo_xcmz);
+       fwzs_jzmj= (MaterialEditText) findViewById(R.id. productinfo_jzmj);
+       fwzs_fwzj= (MaterialEditText) findViewById(R.id. productinfo_fwzj);
+        fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
+        fwzs_hxt= (MaterialEditText) findViewById(R.id. productinfo_hxt);
+        fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
+        fwzs_hxw= (MaterialEditText) findViewById(R.id. productinfo_hxw);
+        fwzs_hxc= (MaterialEditText) findViewById(R.id. productinfo_hxc);
+        fwzs_fwlz= (MaterialEditText) findViewById(R.id. productinfo_fwlz);
+        fwzs_fwzc= (MaterialEditText) findViewById(R.id. productinfo_fwzc);
+
+        productinfo_xcmz4= (MaterialEditText) findViewById(R.id. productinfo_xcmz4);
+        fwzs_jzmj4= (MaterialEditText) findViewById(R.id. productinfo_jzmj4);
+        fwzs_fwcj4= (MaterialEditText) findViewById(R.id. productinfo_fwcj4);
+        fwzs_hxs4= (MaterialEditText) findViewById(R.id. productinfo_hxs4);
+        fwzs_hxt4= (MaterialEditText) findViewById(R.id. productinfo_hxt4);
+        fwzs_hxs4= (MaterialEditText) findViewById(R.id. productinfo_hxs4);
+        fwzs_hxw4= (MaterialEditText) findViewById(R.id. productinfo_hxw4);
+        fwzs_hxc4= (MaterialEditText) findViewById(R.id. productinfo_hxc);
+        fwzs_fwlz4= (MaterialEditText) findViewById(R.id. productinfo_fwlz4);
+        fwzs_fwzc4= (MaterialEditText) findViewById(R.id. productinfo_fwzc4);
+        spinner_cjfs4= (MaterialSpinner) findViewById(R.id.spin_cjfs4);
+
+      List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
         List  nl= Zpnl.getValues();
         List  xl= Edu.getValues();
+        List  listcjfs= Fzfs.getValues();
         ArrayAdapter adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
-        adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,msex);
-        spinner_sex.setAdapter(adapter);
-        spinner_sex2.setAdapter(adapter);
+//        adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,Sex.values());
+//        spinner_sex.setAdapter(adapter);
+        spinner_sex.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,msex));
+        spinner_sex2.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,msex));
 
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,dxfw);
@@ -159,8 +231,10 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 
         spinner_xl.setAdapter(adapter);
         spinner_xl2.setAdapter(adapter);
+        spinner_cjfs4.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,listcjfs));
         articlerSpinner.setSelection(0, true);
         category1.setVisibility(View.VISIBLE);
+
         //给Spinner添加事件监听
         articlerSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
 
@@ -182,14 +256,27 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 switch (position) {
                     case 0:
                     case 1:
-                        productinfo_name.setHint("招聘标题");
+                        name.setHint("招聘标题");
                         category1.setVisibility(View.VISIBLE);
                         category2.setVisibility(View.GONE);
                         break;
                     case 2:
-                     productinfo_name.setHint("求职标题");
+                     name.setHint("求职标题");
                         category1.setVisibility(View.GONE);
                         category2.setVisibility(View.VISIBLE);
+                        break;
+                    case 3:
+                        name.setHint("房屋出售标题");
+                        category1.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.VISIBLE);
+                        break;
+                    case 4:
+                        name.setHint("房屋出租标题");
+                        category1.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
+                        category4.setVisibility(View.VISIBLE);
                         break;
 //                    case 3:
 //                        category3.setVisibility(View.VISIBLE);
@@ -204,6 +291,56 @@ public class ProductinfoAddActivity extends AppCompatActivity {
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 // TODO Auto-generated method stub
+            }
+        });
+        fwzs_jzmj.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if ( fwzs_jzmj.getText().toString().indexOf(".") >= 0) {
+                    if ( fwzs_jzmj.getText().toString().indexOf(".",  fwzs_jzmj.getText().toString().indexOf(".") + 1) > 0) {
+                      //  tv_numOfChar.setText("已经输入\".\"不能重复输入");
+                        fwzs_jzmj.setText( fwzs_jzmj.getText().toString().substring(0, fwzs_jzmj.getText().toString().length() - 1));
+                        fwzs_jzmj.setSelection( fwzs_jzmj.getText().toString().length());
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        fwzs_fwzj.addTextChangedListener(new TextWatcher() {
+
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if ( fwzs_fwzj.getText().toString().indexOf(".") >= 0) {
+                    if ( fwzs_fwzj.getText().toString().indexOf(".",fwzs_fwzj.getText().toString().indexOf(".") + 1) > 0) {
+                        //  tv_numOfChar.setText("已经输入\".\"不能重复输入");
+                        fwzs_fwzj.setText( fwzs_fwzj.getText().toString().substring(0,fwzs_fwzj.getText().toString().length() - 1));
+                        fwzs_fwzj.setSelection( fwzs_fwzj.getText().toString().length());
+                    }
+
+                }
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
             }
         });
         //      Intent intent = getIntent();
@@ -283,11 +420,33 @@ public class ProductinfoAddActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
               //  ShareUtils.shareContent(ProductinfoAddActivity.this, xinwentitle, url);
-              if(articlerSpinner.getSelectedItemPosition()==0||productinfo_name.equals("")||productinfo_content.equals(""))  {
-                  Toast.makeText(ProductinfoAddActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
+                System.out.println("name="+name.getText()+"");
+              if(articlerSpinner.getSelectedItemPosition()==0)  {
 
+               //   Toast.makeText(ProductinfoAddActivity.this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+                  new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请选择发布类型！！").setPositiveButton("确定", null).show();
+              return;
               }
 
+                if(name.getText().toString().trim().equals(""))  {
+                    //   Toast.makeText(ProductinfoAddActivity.this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+                if(productinfo_content.getText().toString().trim().equals(""))  {
+                    //   Toast.makeText(ProductinfoAddActivity.this, "请选择发布类型！！", Toast.　).show();
+                    new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+                if(productinfo_lxdh.getText().toString().trim().equals(""))  {
+
+                    new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请输入联系电话！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+
+               String saveproduct=xinWenURL.getSaveproductinfo();
+                SaveData(saveproduct);
             }
         });
     }
@@ -468,8 +627,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(ProductinfoAddActivity.this, clickcount, null);
         // String data = SharedPreferencesUtil.getData(this, clickcount, "");
-        UpData(clickcount);
-        UpData(clickcount0);
+    //    UpData(clickcount);
+       // UpData(clickcount0);
         //   UpCount(clickcount0);
         System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
@@ -565,23 +724,77 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         return photo;
     }
 
-    private void UpData(final String url) {
+    private void SaveData(final String url) {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
+            RequestParams params = new RequestParams();
+//            Zpxx zpxx=new Zpxx();
+//            zpxx.setSxcy("应用");
+//            zpxx.setSexrequest(Sex.GIRL);
+//          String a=URLEncoder.encode("招聘", "utf-8");
+//         String name1=URLEncoder.encode(name.getText().toString(), "utf-8");
+            params.addQueryStringParameter("zpxxsxcy",productinfo_sxcy.getText().toString());
 
-            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+
+            params.addQueryStringParameter("zpxxsexrequest",spinner_sex.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxxnl",spinner_nl.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxxdxfw",spinner_dxfw.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxxxl",spinner_xl.getSelectedItem().toString());
+
+          params.addQueryStringParameter("name1",name.getText().toString());
+            params.addQueryStringParameter("gsdz1",productinfo_gsdz.getText().toString());
+            params.addQueryStringParameter("gsmz1",productinfo_gsmz.getText().toString());
+            params.addQueryStringParameter("lxr1",productinfo_lxr.getText().toString());
+            params.addQueryStringParameter("lxdh1",productinfo_lxdh.getText().toString());
+            params.addQueryStringParameter("category1",articlerSpinner.getSelectedItemPosition()+"");
+            params.addQueryStringParameter("content1",productinfo_content.getText().toString());
+
+            params.addQueryStringParameter("spinnersex2",spinner_sex2.getSelectedItem().toString());
+            params.addQueryStringParameter("spinnerdxfw2",spinner_dxfw2.getSelectedItem().toString());
+            params.addQueryStringParameter("spinnerxl2", spinner_xl2.getSelectedItem().toString());
+            params.addQueryStringParameter("productinfoqjnl2",productinfo_qjnl.getText().toString());
+            params.addQueryStringParameter("productinfosxcy2",productinfo_sxcy.getText().toString());
+
+            params.addQueryStringParameter("fwcsxcmz",productinfo_xcmz.getText().toString());
+            params.addQueryStringParameter("fwcsjzmj",fwzs_jzmj.getText().toString());
+            params.addQueryStringParameter("fwcsfwzj",fwzs_fwzj.getText().toString());
+            params.addQueryStringParameter("fwcshxs",fwzs_hxs.getText().toString());
+            params.addQueryStringParameter("fwcshxt",fwzs_hxt.getText().toString());
+            params.addQueryStringParameter("fwcshxs",fwzs_hxs.getText().toString());
+            params.addQueryStringParameter("fwcshxw",fwzs_hxw.getText().toString());
+            params.addQueryStringParameter("fwcshxc",fwzs_hxc.getText().toString());
+            params.addQueryStringParameter("fwcsfwlz",fwzs_fwlz.getText().toString());
+            params.addQueryStringParameter("fwcsfwzc",fwzs_fwzc.getText().toString());
+
+            params.addQueryStringParameter("fwcsxcmz4",productinfo_xcmz4.getText().toString());
+            params.addQueryStringParameter("fwcsjzmj4",fwzs_jzmj4.getText().toString());
+            params.addQueryStringParameter("fwcsfwcj4",fwzs_fwcj4.getText().toString());
+            params.addQueryStringParameter("fwcshxs4",fwzs_hxs4.getText().toString());
+            params.addQueryStringParameter("fwcshxt4",fwzs_hxt4.getText().toString());
+            params.addQueryStringParameter("fwcshxs4",fwzs_hxs4.getText().toString());
+            params.addQueryStringParameter("fwcshxw4",fwzs_hxw4.getText().toString());
+            params.addQueryStringParameter("fwcshxc4",fwzs_hxc4.getText().toString());
+            params.addQueryStringParameter("fwcsfwlz4",fwzs_fwlz4.getText().toString());
+            params.addQueryStringParameter("fwcsfwzc4",fwzs_fwzc4.getText().toString());
+            params.addQueryStringParameter("fwcscjfs4",spinner_cjfs4.getSelectedItem().toString());
+
+            // params.addQueryStringParameter("product.gsdz","东川");
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result != null) {
-                        SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
-
+                        Toast.makeText(ProductinfoAddActivity.this, "发布信息成功！", Toast.LENGTH_SHORT).show();
+                    //    SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
+                        Intent intent = new Intent();
+                        intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
+                        startActivity(intent);
 
                     }
                 }
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    Toast.makeText(ProductinfoAddActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductinfoAddActivity.this, "发布信息失败！", Toast.LENGTH_SHORT).show();
                 }
             });
 

@@ -8,6 +8,12 @@ import java.util.List;
  * @author Li Yongqiang
  */
 public enum Fzfs {
+	OTHER{
+		@Override
+		public String getName() {
+			return "交费方式";
+		}
+	},
 	FZFS1{
 		@Override
 		public String getName() {

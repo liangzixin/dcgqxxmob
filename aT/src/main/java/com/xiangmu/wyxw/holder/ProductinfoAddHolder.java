@@ -96,6 +96,8 @@ public class ProductinfoAddHolder extends CommonHolder<Article> {
                 if (article.zpxx.getSexrequest() != null) {
                     productinfo_sex.setText(article.zpxx.getSexrequest().getName());
                     productinfo_sex2.setText(article.zpxx.getSexrequest().getName());
+//                    productinfo_sex.setText(article.zpxx.getSexrequest().toString());
+//                    productinfo_sex2.setText(article.zpxx.getSexrequest().toString());
                 }
                 if (article.zpxx.getQjnl() != null)
                     productinfo_nl2.setText(article.zpxx.getQjnl() + "");

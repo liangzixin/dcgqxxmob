@@ -8,7 +8,7 @@ import java.util.List;
  * @author Li Yongqiang
  */
 public enum Edu {
-	EDU4 {
+	OTHER{
 		@Override
 		public String getName() {
 			return "学历";
@@ -32,6 +32,12 @@ public enum Edu {
 			return "专科生";
 		}
 
+	},
+	EDU4 {
+		@Override
+		public String getName() {
+			return "不限";
+		}
 	};
 	/**
 	 * 获取名称的抽象方法

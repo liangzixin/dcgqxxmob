@@ -8,7 +8,7 @@ import java.util.List;
  * @author Li Yongqiang
  */
 public enum Zpnl {
-	ZPNL4{
+	OTHER{
 		@Override
 		public String getName() {
 			return "年龄";
@@ -31,7 +31,14 @@ public enum Zpnl {
 		public String getName() {
 			return "38-48岁";
 		}
-	};
+	},
+	ZPNL4{
+		@Override
+		public String getName() {
+			return "其它";
+		}
+	}
+	;
 
 	/**
 	 * 获取名称的抽象方法

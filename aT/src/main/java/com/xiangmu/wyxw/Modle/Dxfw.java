@@ -8,7 +8,7 @@ import java.util.List;
  * @author Li Yongqiang
  */
 public enum Dxfw {
-	GZDX5{
+	OTHER{
 		@Override
 		public String getName() {
 			return "底薪";
@@ -37,7 +37,14 @@ public enum Dxfw {
 		public String getName() {
 			return "2000-1000元";
 		}
-	};
+	},
+	GZDX5{
+		@Override
+		public String getName() {
+			return "其它";
+		}
+	}
+	;
 
 
 	

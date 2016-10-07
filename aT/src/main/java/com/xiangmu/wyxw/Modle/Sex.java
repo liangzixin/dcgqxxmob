@@ -8,7 +8,7 @@ import java.util.List;
  * @author Li Yongqiang
  */
 public enum Sex {
-	ALL{
+	OTHER{
 		@Override
 		public String getName() {
 			return "性别";
@@ -25,7 +25,14 @@ public enum Sex {
 		public String getName() {
 			return "女";
 		}
-	};
+	},
+	ALL{
+		@Override
+		public String getName() {
+			return "不限";
+		}
+	}
+	;
 
 	/**
 	 * 获取名称的抽象方法
@@ -39,4 +46,21 @@ public enum Sex {
 		}
 		return list;
 	}
+//    All("不限"),
+//	BOY("男"),
+//	GIRL("女");
+//	private  String friendlyName;
+//
+//	 Sex(String friendlyName){
+//		this.friendlyName = friendlyName;
+//	}
+//
+//	@Override public String toString(){
+//		return friendlyName;
+//	}
+//	public String shortCode() {
+//		return friendlyName;
+//	}
+//
+
 }

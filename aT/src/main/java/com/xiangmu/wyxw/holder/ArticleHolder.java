@@ -79,24 +79,23 @@ public class ArticleHolder extends CommonHolder<Article> {
             case 1:
             case 2:
             if (article.zpxx != null) {
-                if (article.zpxx.getZpnlrequest() != null)
+                   System.out.println(article.zpxx.getZpnlrequest().getName());
                     productinfo_nl.setText(article.zpxx.getZpnlrequest().getName());
-                if (article.zpxx.getEdurequest() != null) {
+
                     productinfo_ed.setText(article.zpxx.getEdurequest().getName());
                     productinfo_ed2.setText(article.zpxx.getEdurequest().getName());
-                }
-                if (article.zpxx.getGzdx() != null) {
+
+
                     productinfo_xj.setText(article.zpxx.getGzdx().getName());
                     productinfo_xj2.setText(article.zpxx.getGzdx().getName());
-                }
-                if (article.zpxx.getSexrequest() != null) {
+
                     productinfo_sex.setText(article.zpxx.getSexrequest().getName());
                     productinfo_sex2.setText(article.zpxx.getSexrequest().getName());
-                }
-                if (article.zpxx.getQjnl() != null)
+
+
                     productinfo_nl2.setText(article.zpxx.getQjnl() + "");
 
-                if (article.zpxx.getSxcy() != null)
+
                     productinfo_sxcy2.setText(article.zpxx.getSxcy());
 
             }

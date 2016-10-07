@@ -85,16 +85,16 @@ public class ProductinfoAddActivity1 extends AppCompatActivity {
         spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
         spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
 
-        List  msex=Sex.getValues();
+      //  List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
         List  nl= Zpnl.getValues();
         List  xl= Edu.getValues();
         ArrayAdapter adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
-         adapter= new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item,msex);
-        spinner_sex.setAdapter(adapter);
+//         adapter= new ArrayAdapter<String>(this,
+//                android.R.layout.simple_spinner_item,msex);
+//        spinner_sex.setAdapter(adapter);
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,dxfw);
         spinner_dxfw.setAdapter(adapter);

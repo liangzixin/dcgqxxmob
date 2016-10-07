@@ -22,5 +22,5 @@ public class Article implements ViewTypeItem {
     public Zpxx zpxx;
     public Fwcs fwcs;
     public ProductCategory productCategory;
-    public String[] m={"请选择出差地点","昆明","汤丹","殡仪馆","其它"};
+
 }
