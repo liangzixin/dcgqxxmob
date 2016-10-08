@@ -150,18 +150,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
 
-                android:hint="专业:"
+                android:hint="所学专业:"
                 android:inputType="textNoSuggestions"
                 android:singleLine="true"
                 android:text=""
                 material:floatingLabel="true"
-                android:padding="6dp"
                 android:visibility="gone"
                 />
-            <LinearLayout
-                android:layout_width="match_parent"
+            <com.xiangmu.wyxw.utils.AutoNextLineLinearlayout
+                android:layout_width="fill_parent"
                 android:orientation="horizontal"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/category2"
+                >
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spin_nl"
                     android:layout_width="wrap_content"
@@ -177,11 +179,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
+                    app:ms_arrowSize="16dp"
                     android:hint="年龄:"
                     android:inputType="number"
-                    android:singleLine="true"
+
                     android:text=""
-                    material:floatingLabel="true"
+                    app:ms_multiline="true"
                     android:visibility="gone"
                     />
 
@@ -225,38 +228,9 @@
                     android:visibility="gone"
 
                     app:ms_multiline="true" />
-            </LinearLayout>
+            </com.xiangmu.wyxw.utils.AutoNextLineLinearlayout>
 
-
-            <!--求职-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/category2"
-                android:visibility="gone"
-                >
-
-
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-
-                    </LinearLayout>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-
-
-
-                </LinearLayout>
-
-
-            </LinearLayout>
-            <!--ppppp-->
-            <!--出售-->
+            <!--房屋-->
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -264,50 +238,6 @@
                 android:id="@+id/category3"
                 android:visibility="gone"
                 >
-
-                <MaterialEditText
-                    android:id="@+id/productinfo_xcmz"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:hint="小区名称:"
-                    android:inputType="textNoSuggestions"
-                    android:singleLine="true"
-                    android:text=""
-                    material:floatingLabel="true"
-                    android:padding="6dp"
-                    />
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    >
-                <MaterialEditText
-                    android:id="@+id/productinfo_jzmj"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
-                    android:hint="建筑面积:"
-
-                    android:singleLine="true"
-                    android:text=""
-                    material:floatingLabel="true"
-                    android:padding="6dp"
-                    />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_fwzj"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:hint="总价:"
-                        android:inputType="numberDecimal"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        android:padding="6dp"
-                        />
-                  </LinearLayout>
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
@@ -317,7 +247,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="10dp"
-                         android:text="户型"
+                        android:text="户型"
 
                         />
                     <MaterialEditText
@@ -368,15 +298,35 @@
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/productinfo_fwlz0"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    >
+                <MaterialEditText
+                    android:id="@+id/productinfo_jzmj"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="numberDecimal"
+                    android:hint="建筑面积:"
+
+                    android:singleLine="true"
+                    android:text=""
+                    material:floatingLabel="true"
+                    android:padding="6dp"
+                    />
+                    <MaterialEditText
+                        android:id="@+id/productinfo_fwzj"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="所在楼层："
-
+                        android:layout_marginLeft="50dp"
+                        android:hint="总价(万元):"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:text=""
+                        material:floatingLabel="true"
+                        android:padding="6dp"
+                        android:visibility="gone"
                         />
+
                     <MaterialEditText
                         android:id="@+id/productinfo_fwlz"
                         android:layout_width="wrap_content"
@@ -399,170 +349,18 @@
                         android:text=""
                         material:floatingLabel="true"
                         />
-
-                </LinearLayout>
-
-
-
-            </LinearLayout>
-            <!--ppppp-->
-            <!--出租-->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/category4"
-                android:visibility="gone"
-                >
-
-                <MaterialEditText
-                    android:id="@+id/productinfo_xcmz4"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-
-                    android:hint="小区名称:"
-                    android:inputType="textNoSuggestions"
-                    android:singleLine="true"
-                    android:text=""
-                    material:floatingLabel="true"
-                    android:padding="6dp"
-                    />
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    >
-                    <MaterialEditText
-                        android:id="@+id/productinfo_jzmj4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:inputType="numberDecimal"
-                        android:hint="建筑面积:"
-
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        android:padding="6dp"
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_fwcj4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="40dp"
-                        android:hint="租金:"
-                        android:inputType="numberDecimal"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        android:padding="6dp"
-                        />
                     <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_cjfs4"
+                        android:id="@+id/spin_cjfs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        app:ms_arrowColor="#0000FF"
+
                         app:ms_arrowSize="16dp"
                         android:layout_marginLeft="40dp"
                         app:ms_floatingLabelText="交租金方式:"
-
+                        android:visibility="gone"
 
                         app:ms_multiline="true" />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/productinfo_hx40"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="户型"
-
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_hxs4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:hint="室:"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_hxt4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:hint="厅:"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_hxc4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:hint="厨:"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_hxw4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="30dp"
-                        android:hint="卫:"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        />
-                </LinearLayout>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-                    <TextView
-                        android:id="@+id/productinfo_fwlz40"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:text="所在楼层："
-
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_fwlz4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:hint="楼层:"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        />
-                    <MaterialEditText
-                        android:id="@+id/productinfo_fwzc4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        android:hint="总楼层:"
-                        android:inputType="number"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        />
-
-                </LinearLayout>
-
+                  </LinearLayout>
 
 
             </LinearLayout>
@@ -573,44 +371,51 @@
                 android:layout_height="wrap_content"
 
                 android:hint="详情:"
-                android:minLines="8"
-                android:maxLines="10"
+                android:minLines="3"
+                android:maxLines="5"
                 android:inputType="textMultiLine"
                 android:scrollbars="vertical"
                 android:singleLine="true"
                 android:text=""
                 material:floatingLabel="true"
                 />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
             <MaterialEditText
                 android:id="@+id/productinfo_lxr"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                android:hint="联系人:"
+                android:layout_gravity="left"
+                android:hint="联系人"
                 android:inputType="textNoSuggestions"
                 android:singleLine="true"
+                android:layout_marginLeft="10dp"
                 android:text=""
                 material:floatingLabel="true"
                 android:padding="6dp"
                 />
             <MaterialEditText
                 android:id="@+id/productinfo_lxdh"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:layout_gravity="right"
                 android:hint="联系电话:"
                 android:inputType="textNoSuggestions"
                 android:singleLine="true"
+                android:layout_marginLeft="50dp"
                 android:text=""
                 material:floatingLabel="true"
                 />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
                 android:layout_height="wrap_content">
                 <ImageView
                     android:layout_below="@+id/toutiaop_imgsrc"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="50dp"
                     android:src="@mipmap/xinwen_toutiao_item"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content" />

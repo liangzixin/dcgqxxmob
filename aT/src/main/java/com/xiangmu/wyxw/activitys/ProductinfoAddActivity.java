@@ -91,7 +91,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
-    private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
+    private static final String[] m={"请选择发布类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
     ImageButton fenxiang;
     //
@@ -113,7 +113,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private MaterialEditText productinfo_content;
     private MaterialEditText productinfo_qjnl;
 
-    private MaterialEditText productinfo_xcmz;
+
     private MaterialEditText fwzs_jzmj;
     private MaterialEditText fwzs_fwzj;
     private MaterialEditText fwzs_hxs;
@@ -122,21 +122,14 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private MaterialEditText fwzs_hxc;
     private MaterialEditText fwzs_fwlz;
     private MaterialEditText fwzs_fwzc;
-
-    private MaterialEditText productinfo_xcmz4;
-    private MaterialEditText fwzs_jzmj4;
-    private MaterialEditText fwzs_fwcj4;
-    private MaterialEditText fwzs_hxs4;
-    private MaterialEditText fwzs_hxt4;
-    private MaterialEditText fwzs_hxw4;
-    private MaterialEditText fwzs_hxc4;
-    private MaterialEditText fwzs_fwlz4;
-    private MaterialEditText fwzs_fwzc4;
-    private Spinner spinner_cjfs4= null;
+    private Spinner fwzs_zjfs;
 
 
+
+
+    LinearLayout category2;
     LinearLayout category3;
-    LinearLayout category4;
+
     //    @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
  //@ViewId(R.id.productinfo_sxcy) public MaterialEditText productinfo_sxcy;
 //    @ViewId(R.id.productinfo_qjnl)  MaterialEditText productinfo_qjnl;
@@ -166,14 +159,16 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
         productinfo_content= (MaterialEditText) findViewById(R.id.productinfo_content);
 
+
         spinner_sex = (MaterialSpinner) findViewById(R.id.spin_sex);
         spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
         spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
         spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
 
 
+        category2=(LinearLayout) findViewById(R.id.category2);
         category3=(LinearLayout) findViewById(R.id.category3);
-        category4=(LinearLayout) findViewById(R.id.category4);
+
 
 
 
@@ -181,7 +176,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         productinfo_sxcy= (MaterialEditText) findViewById(R.id. productinfo_sxcy);
         productinfo_qjnl= (MaterialEditText) findViewById(R.id. productinfo_qjnl);
 
-        productinfo_xcmz= (MaterialEditText) findViewById(R.id. productinfo_xcmz);
+
        fwzs_jzmj= (MaterialEditText) findViewById(R.id. productinfo_jzmj);
        fwzs_fwzj= (MaterialEditText) findViewById(R.id. productinfo_fwzj);
         fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
@@ -192,17 +187,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         fwzs_fwlz= (MaterialEditText) findViewById(R.id. productinfo_fwlz);
         fwzs_fwzc= (MaterialEditText) findViewById(R.id. productinfo_fwzc);
 
-        productinfo_xcmz4= (MaterialEditText) findViewById(R.id. productinfo_xcmz4);
-        fwzs_jzmj4= (MaterialEditText) findViewById(R.id. productinfo_jzmj4);
-        fwzs_fwcj4= (MaterialEditText) findViewById(R.id. productinfo_fwcj4);
-        fwzs_hxs4= (MaterialEditText) findViewById(R.id. productinfo_hxs4);
-        fwzs_hxt4= (MaterialEditText) findViewById(R.id. productinfo_hxt4);
-        fwzs_hxs4= (MaterialEditText) findViewById(R.id. productinfo_hxs4);
-        fwzs_hxw4= (MaterialEditText) findViewById(R.id. productinfo_hxw4);
-        fwzs_hxc4= (MaterialEditText) findViewById(R.id. productinfo_hxc);
-        fwzs_fwlz4= (MaterialEditText) findViewById(R.id. productinfo_fwlz4);
-        fwzs_fwzc4= (MaterialEditText) findViewById(R.id. productinfo_fwzc4);
-        spinner_cjfs4= (MaterialSpinner) findViewById(R.id.spin_cjfs4);
+
+        fwzs_zjfs= (MaterialSpinner) findViewById(R.id.spin_cjfs);
 
       List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
@@ -230,7 +216,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 
         spinner_xl.setAdapter(adapter);
 
-        spinner_cjfs4.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,listcjfs));
+        fwzs_zjfs.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,listcjfs));
         articlerSpinner.setSelection(0, true);
 
 
@@ -266,7 +252,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         spinner_sex.setVisibility(View.VISIBLE);
                         spinner_dxfw.setVisibility(View.VISIBLE);
                         spinner_xl.setVisibility(View.VISIBLE);
-
+                        category2.setVisibility(View.VISIBLE);
                         break;
                     case 2:
                      name.setHint("求职标题");
@@ -280,19 +266,40 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         spinner_sex.setVisibility(View.VISIBLE);
                         spinner_dxfw.setVisibility(View.VISIBLE);
                         spinner_xl.setVisibility(View.VISIBLE);
+                        category2.setVisibility(View.VISIBLE);
                         break;
                     case 3:
                         name.setHint("房屋出售标题");
-
-
+                        productinfo_gsmz.setHint("小区名称");
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
                         category3.setVisibility(View.VISIBLE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.GONE);
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
+                     fwzs_fwzj.setHint("租金(元)");
+                        productinfo_gsmz.setHint("小区名称");
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.VISIBLE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.VISIBLE);
 
 
-                        category3.setVisibility(View.GONE);
-                        category4.setVisibility(View.VISIBLE);
                         break;
 //                    case 3:
 //                        category3.setVisibility(View.VISIBLE);
@@ -767,7 +774,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
             params.addQueryStringParameter("productinfoqjnl2",productinfo_qjnl.getText().toString());
             params.addQueryStringParameter("productinfosxcy2",productinfo_sxcy.getText().toString());
 
-            params.addQueryStringParameter("fwcsxcmz",productinfo_xcmz.getText().toString());
+
             params.addQueryStringParameter("fwcsjzmj",fwzs_jzmj.getText().toString());
             params.addQueryStringParameter("fwcsfwzj",fwzs_fwzj.getText().toString());
             params.addQueryStringParameter("fwcshxs",fwzs_hxs.getText().toString());
@@ -777,18 +784,6 @@ public class ProductinfoAddActivity extends AppCompatActivity {
             params.addQueryStringParameter("fwcshxc",fwzs_hxc.getText().toString());
             params.addQueryStringParameter("fwcsfwlz",fwzs_fwlz.getText().toString());
             params.addQueryStringParameter("fwcsfwzc",fwzs_fwzc.getText().toString());
-
-            params.addQueryStringParameter("fwcsxcmz4",productinfo_xcmz4.getText().toString());
-            params.addQueryStringParameter("fwcsjzmj4",fwzs_jzmj4.getText().toString());
-            params.addQueryStringParameter("fwcsfwcj4",fwzs_fwcj4.getText().toString());
-            params.addQueryStringParameter("fwcshxs4",fwzs_hxs4.getText().toString());
-            params.addQueryStringParameter("fwcshxt4",fwzs_hxt4.getText().toString());
-            params.addQueryStringParameter("fwcshxs4",fwzs_hxs4.getText().toString());
-            params.addQueryStringParameter("fwcshxw4",fwzs_hxw4.getText().toString());
-            params.addQueryStringParameter("fwcshxc4",fwzs_hxc4.getText().toString());
-            params.addQueryStringParameter("fwcsfwlz4",fwzs_fwlz4.getText().toString());
-            params.addQueryStringParameter("fwcsfwzc4",fwzs_fwzc4.getText().toString());
-            params.addQueryStringParameter("fwcscjfs4",spinner_cjfs4.getSelectedItem().toString());
 
             // params.addQueryStringParameter("product.gsdz","东川");
             handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
