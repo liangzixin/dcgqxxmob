@@ -91,18 +91,18 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
-    private static final String[] m={"请选择类别","招聘","求职","出售","出租","供求","二手","其它","铺面","家居"};
+    private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
     ImageButton fenxiang;
     //
     private Spinner articlerSpinner = null;
     private Spinner spinner_sex = null;
-    private Spinner spinner_sex2 = null;
+
     private Spinner spinner_dxfw= null;
-    private Spinner spinner_dxfw2= null;
+
     private Spinner spinner_nl= null;
     private Spinner spinner_xl= null;
-    private Spinner spinner_xl2= null;
+
     private RecyclerView recyclerView;
     private MaterialEditText name;
     private MaterialEditText productinfo_gsdz;
@@ -134,8 +134,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private MaterialEditText fwzs_fwzc4;
     private Spinner spinner_cjfs4= null;
 
-    LinearLayout category1;
-    LinearLayout category2;
+
     LinearLayout category3;
     LinearLayout category4;
     //    @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
@@ -171,14 +170,14 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         spinner_dxfw= (MaterialSpinner) findViewById(R.id.spin_dxfw);
         spinner_nl= (MaterialSpinner) findViewById(R.id.spin_nl);
         spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
-        category1=(LinearLayout) findViewById(R.id.category1);
-        category2=(LinearLayout) findViewById(R.id.category2);
+
+
         category3=(LinearLayout) findViewById(R.id.category3);
         category4=(LinearLayout) findViewById(R.id.category4);
 
-        spinner_sex2 = (MaterialSpinner) findViewById(R.id.spin_sex2);
-        spinner_dxfw2= (MaterialSpinner) findViewById(R.id.spin_dxfw2);
-        spinner_xl2= (MaterialSpinner) findViewById(R.id.spin_xl2);
+
+
+
         productinfo_sxcy= (MaterialEditText) findViewById(R.id. productinfo_sxcy);
         productinfo_qjnl= (MaterialEditText) findViewById(R.id. productinfo_qjnl);
 
@@ -217,12 +216,12 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 //                android.R.layout.simple_spinner_item,Sex.values());
 //        spinner_sex.setAdapter(adapter);
         spinner_sex.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,msex));
-        spinner_sex2.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,msex));
+
 
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,dxfw);
         spinner_dxfw.setAdapter(adapter);
-        spinner_dxfw2.setAdapter(adapter);
+
         adapter= new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item,nl);
         spinner_nl.setAdapter(adapter);
@@ -230,10 +229,10 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item,xl);
 
         spinner_xl.setAdapter(adapter);
-        spinner_xl2.setAdapter(adapter);
+
         spinner_cjfs4.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,listcjfs));
         articlerSpinner.setSelection(0, true);
-        category1.setVisibility(View.VISIBLE);
+
 
         //给Spinner添加事件监听
         articlerSpinner.setOnItemSelectedListener(new OnItemSelectedListener() {
@@ -257,24 +256,41 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                     case 0:
                     case 1:
                         name.setHint("招聘标题");
-                        category1.setVisibility(View.VISIBLE);
-                        category2.setVisibility(View.GONE);
+
+                        productinfo_gsdz.setVisibility(View.VISIBLE);
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+
+                        productinfo_sxcy.setVisibility(View.GONE);
+                       spinner_nl.setVisibility(View.VISIBLE);
+                       productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.VISIBLE);
+                        spinner_dxfw.setVisibility(View.VISIBLE);
+                        spinner_xl.setVisibility(View.VISIBLE);
+
                         break;
                     case 2:
                      name.setHint("求职标题");
-                        category1.setVisibility(View.GONE);
-                        category2.setVisibility(View.VISIBLE);
+
+
+                        productinfo_sxcy.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.GONE);
+                        productinfo_gsmz.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.VISIBLE);
+                        spinner_sex.setVisibility(View.VISIBLE);
+                        spinner_dxfw.setVisibility(View.VISIBLE);
+                        spinner_xl.setVisibility(View.VISIBLE);
                         break;
                     case 3:
                         name.setHint("房屋出售标题");
-                        category1.setVisibility(View.GONE);
-                        category2.setVisibility(View.GONE);
+
+
                         category3.setVisibility(View.VISIBLE);
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
-                        category1.setVisibility(View.GONE);
-                        category2.setVisibility(View.GONE);
+
+
                         category3.setVisibility(View.GONE);
                         category4.setVisibility(View.VISIBLE);
                         break;
@@ -728,30 +744,26 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
             RequestParams params = new RequestParams();
-//            Zpxx zpxx=new Zpxx();
-//            zpxx.setSxcy("应用");
-//            zpxx.setSexrequest(Sex.GIRL);
-//          String a=URLEncoder.encode("招聘", "utf-8");
-//         String name1=URLEncoder.encode(name.getText().toString(), "utf-8");
-            params.addQueryStringParameter("zpxxsxcy",productinfo_sxcy.getText().toString());
+
+            params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
 
 
-            params.addQueryStringParameter("zpxxsexrequest",spinner_sex.getSelectedItem().toString());
-            params.addQueryStringParameter("zpxxnl",spinner_nl.getSelectedItem().toString());
-            params.addQueryStringParameter("zpxxdxfw",spinner_dxfw.getSelectedItem().toString());
-            params.addQueryStringParameter("zpxxxl",spinner_xl.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxx.sexrequest",spinner_sex.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxx.zpnlrequest",spinner_nl.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxx.gzdx",spinner_dxfw.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxx.edurequest",spinner_xl.getSelectedItem().toString());
 
-          params.addQueryStringParameter("name1",name.getText().toString());
-            params.addQueryStringParameter("gsdz1",productinfo_gsdz.getText().toString());
-            params.addQueryStringParameter("gsmz1",productinfo_gsmz.getText().toString());
-            params.addQueryStringParameter("lxr1",productinfo_lxr.getText().toString());
-            params.addQueryStringParameter("lxdh1",productinfo_lxdh.getText().toString());
-            params.addQueryStringParameter("category1",articlerSpinner.getSelectedItemPosition()+"");
-            params.addQueryStringParameter("content1",productinfo_content.getText().toString());
+          params.addQueryStringParameter("name",name.getText().toString());
+            params.addQueryStringParameter("gsdz",productinfo_gsdz.getText().toString());
+            params.addQueryStringParameter("gsmz",productinfo_gsmz.getText().toString());
+            params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
+            params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
+            params.addQueryStringParameter("category",articlerSpinner.getSelectedItemPosition()+"");
+            params.addQueryStringParameter("content",productinfo_content.getText().toString());
 
-            params.addQueryStringParameter("spinnersex2",spinner_sex2.getSelectedItem().toString());
-            params.addQueryStringParameter("spinnerdxfw2",spinner_dxfw2.getSelectedItem().toString());
-            params.addQueryStringParameter("spinnerxl2", spinner_xl2.getSelectedItem().toString());
+
+
+
             params.addQueryStringParameter("productinfoqjnl2",productinfo_qjnl.getText().toString());
             params.addQueryStringParameter("productinfosxcy2",productinfo_sxcy.getText().toString());
 

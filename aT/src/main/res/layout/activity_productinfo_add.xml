@@ -99,10 +99,10 @@
                     android:id="@+id/spin_articler"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:ms_arrowColor="#0000FF"
-                    app:ms_arrowSize="16dp"
 
-                    app:ms_floatingLabelText="发布类别:"
+                    app:ms_arrowSize="18dp"
+
+                    app:ms_floatingLabelText="请选择发布类别:"
 
                     android:gravity="center"
                     app:ms_multiline="true" />
@@ -118,102 +118,116 @@
                 android:singleLine="true"
                 android:text=""
                 material:floatingLabel="true"
-
-
                 />
-            <!--招聘-->
-            <LinearLayout
+
+            <MaterialEditText
+                android:id="@+id/productinfo_gsmz"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:id="@+id/category1"
-                >
 
-                <MaterialEditText
-                    android:id="@+id/productinfo_gsmz"
-                    android:layout_width="match_parent"
+                android:hint="公司名称:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                android:padding="6dp"
+                android:visibility="gone"
+                />
+            <MaterialEditText
+            android:id="@+id/productinfo_gsdz"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:hint="公司地址:"
+            android:inputType="textNoSuggestions"
+            android:singleLine="true"
+            android:text=""
+            material:floatingLabel="true"
+           android:visibility="gone"
+            />
+            <MaterialEditText
+                android:id="@+id/productinfo_sxcy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="专业:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                android:padding="6dp"
+                android:visibility="gone"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:layout_height="wrap_content">
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/spin_nl"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:hint="公司名称:"
-                    android:inputType="textNoSuggestions"
+                    app:ms_arrowSize="16dp"
+                    android:layout_marginLeft="10dp"
+                    app:ms_floatingLabelText="年龄:"
+                    android:visibility="gone"
+                    app:ms_multiline="true" />
+                <MaterialEditText
+                    android:id="@+id/productinfo_qjnl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:hint="年龄:"
+                    android:inputType="number"
                     android:singleLine="true"
                     android:text=""
                     material:floatingLabel="true"
-                    android:padding="6dp"
+                    android:visibility="gone"
                     />
-                <MaterialEditText
-                    android:id="@+id/productinfo_gsdz"
-                    android:layout_width="match_parent"
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/spin_sex"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+
+                    app:ms_arrowSize="16dp"
+
+                    app:ms_floatingLabelText="性别:"
+                    android:visibility="gone"
+                    app:ms_multiline="true"
+                    android:hint="性别:"
+                    />
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/spin_dxfw"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="30dp"
+                    android:visibility="gone"
+
+                    app:ms_arrowSize="16dp"
+
+                    app:ms_floatingLabelText="底薪:"
+
+                    app:ms_multiline="true" />
+
+
+                <fr.ganfra.materialspinner.MaterialSpinner
+                    android:id="@+id/spin_xl"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
 
-                    android:hint="公司地址:"
-                    android:inputType="textNoSuggestions"
-                    android:singleLine="true"
-                    android:text=""
-                    material:floatingLabel="true"
-                    />
+                    app:ms_arrowSize="16dp"
+                    android:layout_marginLeft="30dp"
+                    app:ms_floatingLabelText="学历:"
+                    android:visibility="gone"
 
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_nl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-                        android:layout_marginLeft="50dp"
-                        app:ms_floatingLabelText="年龄:"
-
-                        app:ms_multiline="true" />
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_sex"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-
-                        app:ms_floatingLabelText="性别:"
-
-                        app:ms_multiline="true"
-                        android:hint="性别:"
-                        />
-                    </LinearLayout>
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:orientation="horizontal"
-                    android:layout_height="wrap_content">
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_dxfw"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="50dp"
-
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-
-                        app:ms_floatingLabelText="底薪:"
-
-                        app:ms_multiline="true" />
-
-
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_xl"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-                        android:layout_marginLeft="50dp"
-                        app:ms_floatingLabelText="学历:"
-
-
-                        app:ms_multiline="true" />
-                </LinearLayout>
-
+                    app:ms_multiline="true" />
             </LinearLayout>
+
+
             <!--求职-->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -223,76 +237,20 @@
                 android:visibility="gone"
                 >
 
-                <MaterialEditText
-                    android:id="@+id/productinfo_sxcy"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
 
-                    android:hint="专业:"
-                    android:inputType="textNoSuggestions"
-                    android:singleLine="true"
-                    android:text=""
-                    material:floatingLabel="true"
-                    android:padding="6dp"
-                    />
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
-                <MaterialEditText
-                    android:id="@+id/productinfo_qjnl"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:hint="年龄:"
-                    android:inputType="number"
-                    android:singleLine="true"
-                    android:text=""
-                    material:floatingLabel="true"
-                    />
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_sex2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="70dp"
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
 
-                        app:ms_floatingLabelText="性别:"
-
-                        app:ms_multiline="true"
-                        android:hint="性别:"
-                        />
                     </LinearLayout>
                 <LinearLayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content">
 
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_dxfw2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentRight="true"
-                        android:layout_marginLeft="20dp"
-
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-
-                        app:ms_floatingLabelText="底薪:"
-
-                        app:ms_multiline="true" />
-                    <fr.ganfra.materialspinner.MaterialSpinner
-                        android:id="@+id/spin_xl2"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        app:ms_arrowColor="#0000FF"
-                        app:ms_arrowSize="16dp"
-                        android:layout_marginLeft="50dp"
-                        app:ms_floatingLabelText="学历:"
 
 
-                        app:ms_multiline="true" />
                 </LinearLayout>
 
 
