@@ -169,6 +169,18 @@
                 material:floatingLabel="true"
                 android:visibility="gone"
                 />
+            <MaterialEditText
+                android:id="@+id/gqxx_spsj"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="经营范围:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                android:visibility="gone"
+                />
             <com.xiangmu.wyxw.utils.AutoNextLineLinearlayout
                 android:layout_width="fill_parent"
                 android:orientation="horizontal"

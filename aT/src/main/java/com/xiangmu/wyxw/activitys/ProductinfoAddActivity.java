@@ -91,7 +91,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
-    private static final String[] m={"请选择发布类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
+    private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
     ImageButton fenxiang;
     //
@@ -126,7 +126,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 
 
     private MaterialEditText gqxx_gqsl;
-
+    private MaterialEditText gqxx_spsj;
     LinearLayout category2;
     LinearLayout category3;
 
@@ -192,7 +192,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         fwzs_zjfs= (MaterialSpinner) findViewById(R.id.spin_cjfs);
 
         gqxx_gqsl= (MaterialEditText) findViewById(R.id.gqxx_gqsl);
-
+        gqxx_spsj= (MaterialEditText) findViewById(R.id.gqxx_spsj);
       List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
         List  nl= Zpnl.getValues();
@@ -257,6 +257,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         spinner_xl.setVisibility(View.VISIBLE);
                         category2.setVisibility(View.VISIBLE);
                         gqxx_gqsl.setVisibility(View.GONE);
+                        gqxx_spsj.setVisibility(View.GONE);
                         break;
                     case 2:
                      name.setHint("求职标题");
@@ -272,6 +273,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         spinner_xl.setVisibility(View.VISIBLE);
                         category2.setVisibility(View.VISIBLE);
                         gqxx_gqsl.setVisibility(View.GONE);
+                        gqxx_spsj.setVisibility(View.GONE);
                         break;
                     case 3:
                         name.setHint("房屋出售标题");
@@ -290,6 +292,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         fwzs_fwzj.setVisibility(View.VISIBLE);
                         fwzs_fwzj.setHint("总价(万元)");
                         gqxx_gqsl.setVisibility(View.GONE);
+                        gqxx_spsj.setVisibility(View.GONE);
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
@@ -308,10 +311,11 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         fwzs_zjfs.setVisibility(View.VISIBLE);
                         fwzs_fwzj.setVisibility(View.GONE);
                         gqxx_gqsl.setVisibility(View.GONE);
+                        gqxx_spsj.setVisibility(View.GONE);
                         break;
                     case 5:
                         name.setHint("供求信息标题");
-
+                        productinfo_gsmz.setHint("公司名称");
                         productinfo_gsmz.setVisibility(View.VISIBLE);
                         productinfo_gsdz.setVisibility(View.VISIBLE);
                         spinner_nl.setVisibility(View.GONE);
@@ -325,6 +329,87 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         fwzs_zjfs.setVisibility(View.VISIBLE);
                         fwzs_fwzj.setVisibility(View.GONE);
                         gqxx_gqsl.setVisibility(View.VISIBLE);
+                        gqxx_spsj.setVisibility(View.GONE);
+                        break;
+                    case 6:
+                        name.setHint("二手信息标题");
+                        productinfo_gsmz.setHint("成色");
+                        productinfo_gsdz.setHint("具体位置");
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.VISIBLE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setVisibility(View.GONE);
+                        gqxx_gqsl.setHint("供应数量");
+                        gqxx_gqsl.setVisibility(View.VISIBLE);
+                        gqxx_spsj.setVisibility(View.GONE);
+                        break;
+                    case 7:
+                        name.setHint("其它信息标题");
+                        productinfo_gsmz.setHint("公司名称");
+                        productinfo_gsdz.setHint("公司地址");
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.VISIBLE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setVisibility(View.GONE);
+
+                        gqxx_gqsl.setVisibility(View.GONE);
+                        gqxx_spsj.setVisibility(View.GONE);
+                        break;
+                    case 8:
+                        name.setHint("铺面信息标题");
+
+                        productinfo_gsdz.setHint("铺面地址");
+                        productinfo_gsmz.setVisibility(View.GONE);
+                        productinfo_gsdz.setVisibility(View.VISIBLE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setVisibility(View.GONE);
+
+                        gqxx_gqsl.setVisibility(View.GONE);
+                        gqxx_spsj.setVisibility(View.GONE);
+                        break;
+                    case 9:
+                        name.setHint("家具建材信息标题");
+                        productinfo_gsmz.setHint("家居建材商店名称");
+                        productinfo_gsdz.setHint("家居建材地址");
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.VISIBLE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setVisibility(View.GONE);
+
+                        gqxx_gqsl.setVisibility(View.VISIBLE);
+                        gqxx_spsj.setVisibility(View.VISIBLE);
                         break;
 //                    case 3:
 //                        category3.setVisibility(View.VISIBLE);
@@ -473,7 +558,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
               if(articlerSpinner.getSelectedItemPosition()==0)  {
 
                //   Toast.makeText(ProductinfoAddActivity.this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                  new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请选择发布类型！！").setPositiveButton("确定", null).show();
+                  new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
               return;
               }
 
