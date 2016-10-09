@@ -125,7 +125,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private Spinner fwzs_zjfs;
 
 
-
+    private MaterialEditText gqxx_gqsl;
 
     LinearLayout category2;
     LinearLayout category3;
@@ -166,6 +166,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
         spinner_xl= (MaterialSpinner) findViewById(R.id.spin_xl);
 
 
+
         category2=(LinearLayout) findViewById(R.id.category2);
         category3=(LinearLayout) findViewById(R.id.category3);
 
@@ -189,6 +190,8 @@ public class ProductinfoAddActivity extends AppCompatActivity {
 
 
         fwzs_zjfs= (MaterialSpinner) findViewById(R.id.spin_cjfs);
+
+        gqxx_gqsl= (MaterialEditText) findViewById(R.id.gqxx_gqsl);
 
       List  msex=Sex.getValues();
         List  dxfw= Dxfw.getValues();
@@ -253,6 +256,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         spinner_dxfw.setVisibility(View.VISIBLE);
                         spinner_xl.setVisibility(View.VISIBLE);
                         category2.setVisibility(View.VISIBLE);
+                        gqxx_gqsl.setVisibility(View.GONE);
                         break;
                     case 2:
                      name.setHint("求职标题");
@@ -267,6 +271,7 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         spinner_dxfw.setVisibility(View.VISIBLE);
                         spinner_xl.setVisibility(View.VISIBLE);
                         category2.setVisibility(View.VISIBLE);
+                        gqxx_gqsl.setVisibility(View.GONE);
                         break;
                     case 3:
                         name.setHint("房屋出售标题");
@@ -282,6 +287,9 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         category3.setVisibility(View.VISIBLE);
                         productinfo_sxcy.setVisibility(View.GONE);
                         fwzs_zjfs.setVisibility(View.GONE);
+                        fwzs_fwzj.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setHint("总价(万元)");
+                        gqxx_gqsl.setVisibility(View.GONE);
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
@@ -298,8 +306,25 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                         category3.setVisibility(View.VISIBLE);
                         productinfo_sxcy.setVisibility(View.GONE);
                         fwzs_zjfs.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setVisibility(View.GONE);
+                        gqxx_gqsl.setVisibility(View.GONE);
+                        break;
+                    case 5:
+                        name.setHint("供求信息标题");
 
-
+                        productinfo_gsmz.setVisibility(View.VISIBLE);
+                        productinfo_gsdz.setVisibility(View.VISIBLE);
+                        spinner_nl.setVisibility(View.GONE);
+                        productinfo_qjnl.setVisibility(View.GONE);
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        fwzs_zjfs.setVisibility(View.VISIBLE);
+                        fwzs_fwzj.setVisibility(View.GONE);
+                        gqxx_gqsl.setVisibility(View.VISIBLE);
                         break;
 //                    case 3:
 //                        category3.setVisibility(View.VISIBLE);

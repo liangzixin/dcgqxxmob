@@ -157,6 +157,18 @@
                 material:floatingLabel="true"
                 android:visibility="gone"
                 />
+            <MaterialEditText
+                android:id="@+id/gqxx_gqsl"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="供求数量:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                android:visibility="gone"
+                />
             <com.xiangmu.wyxw.utils.AutoNextLineLinearlayout
                 android:layout_width="fill_parent"
                 android:orientation="horizontal"
@@ -295,7 +307,7 @@
                         material:floatingLabel="true"
                         />
                 </LinearLayout>
-                <LinearLayout
+                <com.xiangmu.wyxw.utils.AutoNextLineLinearlayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content"
@@ -306,7 +318,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:inputType="numberDecimal"
-                    android:hint="建筑面积:"
+                    android:hint="面积:"
 
                     android:singleLine="true"
                     android:text=""
@@ -317,7 +329,7 @@
                         android:id="@+id/productinfo_fwzj"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="10dp"
                         android:hint="总价(万元):"
                         android:inputType="numberDecimal"
                         android:singleLine="true"
@@ -331,7 +343,7 @@
                         android:id="@+id/productinfo_fwlz"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
+                        android:layout_marginLeft="10dp"
                         android:hint="楼层:"
                         android:inputType="number"
                         android:singleLine="true"
@@ -342,7 +354,7 @@
                         android:id="@+id/productinfo_fwzc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="50dp"
+                        android:layout_marginLeft="10dp"
                         android:hint="总楼层:"
                         android:inputType="number"
                         android:singleLine="true"
@@ -360,7 +372,7 @@
                         android:visibility="gone"
 
                         app:ms_multiline="true" />
-                  </LinearLayout>
+                  </com.xiangmu.wyxw.utils.AutoNextLineLinearlayout>
 
 
             </LinearLayout>
