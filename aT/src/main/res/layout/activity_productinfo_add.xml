@@ -391,17 +391,18 @@
             <!--ppppp-->
             <MaterialEditText
                 android:id="@+id/productinfo_content"
-                android:layout_width="match_parent"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-
-                android:hint="详情:"
+                android:enabled="true"
+                android:gravity="top"
+                android:inputType="textMultiLine"
                 android:minLines="3"
                 android:maxLines="5"
-                android:inputType="textMultiLine"
-                android:scrollbars="vertical"
+                android:hint="详情"
                 android:singleLine="true"
-                android:text=""
                 material:floatingLabel="true"
+                android:scrollbars="vertical"
+                android:background="@android:drawable/edit_text"
                 />
         <LinearLayout
             android:layout_width="fill_parent"
