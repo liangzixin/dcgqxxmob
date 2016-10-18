@@ -173,7 +173,7 @@
                     android:textSize="15dp"
                     android:textColor="#000000"
                     android:layout_height="wrap_content"
-                    android:text="性别要求"
+                    android:text=""
                     />
                     </LinearLayout>
                 <LinearLayout
@@ -200,7 +200,7 @@
                     android:textSize="15dp"
                     android:textColor="#000000"
                     android:layout_height="wrap_content"
-                    android:text="年龄要求"
+                    android:text=""
                     />
                     </LinearLayout>
                 <LinearLayout
@@ -227,7 +227,7 @@
                     android:textSize="15dp"
                     android:textColor="#000000"
                     android:layout_height="wrap_content"
-                    android:text="月薪范围"
+                    android:text=""
                     />
                     </LinearLayout>
                 <LinearLayout
@@ -254,7 +254,7 @@
                     android:textSize="15dp"
                     android:textColor="#000000"
                     android:layout_height="wrap_content"
-                    android:text="学历要求"
+                    android:text=""
                     />
                     </LinearLayout>
         </LinearLayout>
@@ -748,7 +748,7 @@
                     android:textSize="15dp"
                     android:textColor="#000000"
                     android:layout_height="wrap_content"
-                    android:text="联系人"
+                    android:text=""
                     />
                     </LinearLayout>
 
@@ -775,7 +775,7 @@
                     android:textSize="15dp"
                     android:textColor="#000000"
                     android:layout_height="wrap_content"
-                    android:text="联系电话"
+                    android:text=""
                     />
 
 　  </LinearLayout>

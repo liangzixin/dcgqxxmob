@@ -43,6 +43,7 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.litao.android.lib.Utils.GridSpacingItemDecoration;
+import com.litao.android.lib.entity.PhotoEntry;
 import com.twiceyuan.commonadapter.library.ViewId;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.wyxw.CostomAdapter.ChooseAdapter;
@@ -78,6 +79,8 @@ import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
+import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
 import java.net.URLEncoder;
@@ -526,6 +529,11 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 //        }
         //   button.setOnClickListener(c);
     }
+    @Override
+    protected void onDestroy() {
+        EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
     private void initview() {
 //        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
@@ -940,6 +948,17 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             startActivity(new Intent(ProductinfoAddActivity.this, PhotosActivity.class));
             EventBus.getDefault().postSticky(new EventEntry(mAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
         }
+    }
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void photosMessageEvent(EventEntry entries){
+        if (entries.id == EventEntry.RECEIVED_PHOTOS_ID) {
+            mAdapter.reloadList(entries.photos);
+        }
+    }
+
+    @Subscribe(threadMode = ThreadMode.MAIN)
+    public void photoMessageEvent(PhotoEntry entry){
+        mAdapter.appendPhoto(entry);
     }
 //    private void UpCount(final String url) {
 //        if (!url.equals("")) {

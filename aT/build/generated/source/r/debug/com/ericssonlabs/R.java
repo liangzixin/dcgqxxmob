@@ -8,70 +8,70 @@ package com.ericssonlabs;
 
 public final class R {
 	public static final class color {
-		public static final int bg_color = 0x7f0d000a;
-		public static final int contents_text = 0x7f0d0021;
-		public static final int encode_view = 0x7f0d0028;
-		public static final int grgray = 0x7f0d002c;
-		public static final int header = 0x7f0d002d;
-		public static final int help_button_view = 0x7f0d002e;
-		public static final int help_view = 0x7f0d002f;
-		public static final int possible_result_points = 0x7f0d0043;
-		public static final int result_image_border = 0x7f0d004e;
-		public static final int result_minor_text = 0x7f0d004f;
-		public static final int result_points = 0x7f0d0050;
-		public static final int result_text = 0x7f0d0051;
-		public static final int result_view = 0x7f0d0052;
-		public static final int sbc_header_text = 0x7f0d0055;
-		public static final int sbc_header_view = 0x7f0d0056;
-		public static final int sbc_layout_view = 0x7f0d0057;
-		public static final int sbc_list_item = 0x7f0d0058;
-		public static final int sbc_page_number_text = 0x7f0d0059;
-		public static final int sbc_snippet_text = 0x7f0d005a;
-		public static final int share_text = 0x7f0d0062;
-		public static final int share_view = 0x7f0d0063;
-		public static final int status_text = 0x7f0d0064;
-		public static final int status_view = 0x7f0d0065;
-		public static final int transparent = 0x7f0d006b;
-		public static final int viewfinder_frame = 0x7f0d007a;
-		public static final int viewfinder_laser = 0x7f0d007b;
-		public static final int viewfinder_mask = 0x7f0d007c;
+		public static final int bg_color = 0x7f0e000b;
+		public static final int contents_text = 0x7f0e0022;
+		public static final int encode_view = 0x7f0e0034;
+		public static final int grgray = 0x7f0e0039;
+		public static final int header = 0x7f0e003c;
+		public static final int help_button_view = 0x7f0e003d;
+		public static final int help_view = 0x7f0e003e;
+		public static final int possible_result_points = 0x7f0e0055;
+		public static final int result_image_border = 0x7f0e0060;
+		public static final int result_minor_text = 0x7f0e0061;
+		public static final int result_points = 0x7f0e0062;
+		public static final int result_text = 0x7f0e0063;
+		public static final int result_view = 0x7f0e0064;
+		public static final int sbc_header_text = 0x7f0e0067;
+		public static final int sbc_header_view = 0x7f0e0068;
+		public static final int sbc_layout_view = 0x7f0e0069;
+		public static final int sbc_list_item = 0x7f0e006a;
+		public static final int sbc_page_number_text = 0x7f0e006b;
+		public static final int sbc_snippet_text = 0x7f0e006c;
+		public static final int share_text = 0x7f0e0075;
+		public static final int share_view = 0x7f0e0076;
+		public static final int status_text = 0x7f0e0077;
+		public static final int status_view = 0x7f0e0078;
+		public static final int transparent = 0x7f0e007e;
+		public static final int viewfinder_frame = 0x7f0e008d;
+		public static final int viewfinder_laser = 0x7f0e008e;
+		public static final int viewfinder_mask = 0x7f0e008f;
 	}
 	public static final class drawable {
-		public static final int ic_launcher = 0x7f020079;
-		public static final int navbar = 0x7f020092;
+		public static final int ic_launcher = 0x7f02007b;
+		public static final int navbar = 0x7f020096;
 	}
 	public static final class id {
-		public static final int auto_focus = 0x7f0e0004;
-		public static final int btn_add_qrcode = 0x7f0e01ad;
-		public static final int btn_cancel_scan = 0x7f0e00f0;
-		public static final int btn_scan_barcode = 0x7f0e01aa;
-		public static final int decode = 0x7f0e0005;
-		public static final int decode_failed = 0x7f0e0006;
-		public static final int decode_succeeded = 0x7f0e0007;
-		public static final int encode_failed = 0x7f0e0008;
-		public static final int encode_succeeded = 0x7f0e0009;
-		public static final int et_qr_string = 0x7f0e01ac;
-		public static final int iv_qr_image = 0x7f0e01ae;
-		public static final int launch_product_query = 0x7f0e000c;
-		public static final int preview_view = 0x7f0e00ee;
-		public static final int quit = 0x7f0e000f;
-		public static final int restart_preview = 0x7f0e0010;
-		public static final int return_scan_result = 0x7f0e0011;
-		public static final int search_book_contents_failed = 0x7f0e0012;
-		public static final int search_book_contents_succeeded = 0x7f0e0013;
-		public static final int tv_scan_result = 0x7f0e01ab;
-		public static final int viewfinder_view = 0x7f0e00ef;
+		public static final int auto_focus = 0x7f0f0004;
+		public static final int btn_add_qrcode = 0x7f0f01f2;
+		public static final int btn_cancel_scan = 0x7f0f012b;
+		public static final int btn_scan_barcode = 0x7f0f01ef;
+		public static final int decode = 0x7f0f0005;
+		public static final int decode_failed = 0x7f0f0006;
+		public static final int decode_succeeded = 0x7f0f0007;
+		public static final int encode_failed = 0x7f0f0008;
+		public static final int encode_succeeded = 0x7f0f0009;
+		public static final int et_qr_string = 0x7f0f01f1;
+		public static final int iv_qr_image = 0x7f0f01f3;
+		public static final int launch_product_query = 0x7f0f000c;
+		public static final int preview_view = 0x7f0f0129;
+		public static final int quit = 0x7f0f000f;
+		public static final int restart_preview = 0x7f0f0010;
+		public static final int return_scan_result = 0x7f0f0011;
+		public static final int search_book_contents_failed = 0x7f0f0012;
+		public static final int search_book_contents_succeeded = 0x7f0f0013;
+		public static final int tv_scan_result = 0x7f0f01f0;
+		public static final int viewfinder_view = 0x7f0f012a;
 	}
 	public static final class layout {
-		public static final int camera = 0x7f040030;
-		public static final int main = 0x7f04004b;
+		public static final int camera = 0x7f040033;
+		public static final int main = 0x7f040061;
 	}
 	public static final class raw {
-		public static final int beep = 0x7f060000;
-		public static final int realm_properties = 0x7f060001;
+		public static final int beep = 0x7f070000;
+		public static final int realm_properties = 0x7f070001;
 	}
 	public static final class string {
-		public static final int app_name = 0x7f070015;
-		public static final int hello = 0x7f070016;
+		public static final int app_name = 0x7f080018;
+		public static final int hello = 0x7f08001c;
 	}
 }

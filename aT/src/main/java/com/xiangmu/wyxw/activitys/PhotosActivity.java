@@ -9,6 +9,7 @@ import android.widget.TextView;
 import com.litao.android.lib.BaseGalleryActivity;
 import com.litao.android.lib.Configuration;
 import com.litao.android.lib.entity.PhotoEntry;
+import com.xiangmu.wyxw.R;
 
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;

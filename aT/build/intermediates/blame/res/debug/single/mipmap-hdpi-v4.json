@@ -44,6 +44,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\share.png"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\add.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\add.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\content_radiogroup_backgroup.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\content_radiogroup_backgroup.png"
     },
@@ -118,6 +122,10 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\redian_head.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\redian_head.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\check.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\photolib\\unspecified\\res\\mipmap-hdpi-v4\\check.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\stt_bg.png",

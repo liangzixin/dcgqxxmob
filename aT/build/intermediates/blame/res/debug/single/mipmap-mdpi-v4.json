@@ -316,6 +316,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\ic_launcher1.png"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\check.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\photolib\\unspecified\\res\\mipmap-mdpi-v4\\check.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\weather_background_big.jpg",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\weather_background_big.jpg"
     },

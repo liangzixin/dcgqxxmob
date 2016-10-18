@@ -29,7 +29,7 @@
             android:drawablePadding="5dp"
             android:gravity="center"
             android:singleLine="true"
-            android:text="新闻资讯" />
+            android:text="东川供求信息" />
     </RelativeLayout>
 
 

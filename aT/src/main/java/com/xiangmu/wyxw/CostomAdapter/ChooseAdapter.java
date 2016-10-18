@@ -9,6 +9,7 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.litao.android.lib.entity.PhotoEntry;
+import com.xiangmu.wyxw.R;
 
 import java.io.File;
 import java.util.ArrayList;
