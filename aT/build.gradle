@@ -33,6 +33,7 @@ repositories {
 }
 dependencies {
     compile project(':barCodeTest')
+    compile project(':photolib')
     compile 'com.android.support:appcompat-v7:23.0.1'
     compile 'com.google.code.gson:gson:2.2.1'
     compile files('libs/org.apache.http.legacy.jar')
@@ -55,4 +56,5 @@ dependencies {
     compile 'fr.erictruong:materialedittext:0.2.0'
     compile 'com.github.ganfra:material-spinner:1.1.1'
     compile 'com.jakewharton:butterknife:5.1.1'
+    compile 'org.greenrobot:eventbus:3.0.0'
 }

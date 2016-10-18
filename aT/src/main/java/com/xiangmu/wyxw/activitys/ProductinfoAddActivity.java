@@ -10,6 +10,7 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
@@ -41,8 +42,10 @@ import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.litao.android.lib.Utils.GridSpacingItemDecoration;
 import com.twiceyuan.commonadapter.library.ViewId;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
+import com.xiangmu.wyxw.CostomAdapter.ChooseAdapter;
 import com.xiangmu.wyxw.CostomAdapter.SaveAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.wyxw.Modle.Dxfw;
@@ -74,6 +77,8 @@ import com.xiangmu.wyxw.utils.XinWenURL;
 import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.io.File;
 import java.net.URLEncoder;
 import java.util.ArrayList;
@@ -83,7 +88,7 @@ import java.util.Map;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
-public class ProductinfoAddActivity extends AppCompatActivity {
+public class ProductinfoAddActivity extends AppCompatActivity implements ChooseAdapter.OnItmeClickListener {
     private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
@@ -91,6 +96,9 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
+    private RecyclerView mRecyclerView;
+
+    private ChooseAdapter mAdapter;
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
     ImageButton fenxiang;
@@ -145,6 +153,14 @@ public class ProductinfoAddActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfo_add);
+        EventBus.getDefault().register(this);
+
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mAdapter = new ChooseAdapter(this);
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.setAdapter(mAdapter);
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(3, 4, true));
+
 //        @ViewId(R.id.category1) public LinearLayout category1;
 //        @ViewId(R.id.category2) public LinearLayout category2;
 //        @ViewId(R.id.category3) public LinearLayout category3;
@@ -915,6 +931,14 @@ public class ProductinfoAddActivity extends AppCompatActivity {
                 }
             });
 
+        }
+    }
+
+    @Override
+    public void onItemClicked(int position) {
+        if (position == mAdapter.getItemCount()-1) {
+            startActivity(new Intent(ProductinfoAddActivity.this, PhotosActivity.class));
+            EventBus.getDefault().postSticky(new EventEntry(mAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
         }
     }
 //    private void UpCount(final String url) {

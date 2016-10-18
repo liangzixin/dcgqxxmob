@@ -1,2 +1,3 @@
 include ':barCodeTest'
 include ':aT'
+include ':photolib'
