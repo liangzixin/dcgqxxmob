@@ -42,4 +42,5 @@
     </string-array>
     <string name="search_hint">姓名</string>
     <string name="app_label">标签</string>
+
 </resources>

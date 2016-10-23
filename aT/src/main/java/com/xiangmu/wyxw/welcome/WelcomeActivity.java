@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.activitys.MainActivity;
+import com.xiangmu.wyxw.activitys.MainPotoActivity;
 
 public class WelcomeActivity extends AppCompatActivity implements ScrollViewListener {
     private LinearLayout mLLAnim;
@@ -31,7 +32,7 @@ public class WelcomeActivity extends AppCompatActivity implements ScrollViewList
             setView();
             //跳转页面  不再加载引导页面
         } else {
-            startActivity(new Intent(this,MainActivity.class));
+            startActivity(new Intent(this,MainPotoActivity.class));
             finish();
         }
     }
@@ -48,7 +49,7 @@ public class WelcomeActivity extends AppCompatActivity implements ScrollViewList
             @Override
             public void onClick(View v) {
                 //同上  跳转页面
-                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, MainPotoActivity.class));
                 getSharedPreferences("welcome", MODE_PRIVATE).edit().putBoolean("isfirst", false).commit();
                 finish();
             }

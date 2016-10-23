@@ -8,33 +8,33 @@ package com.ericssonlabs;
 
 public final class R {
 	public static final class color {
-		public static final int bg_color = 0x7f0e000b;
-		public static final int contents_text = 0x7f0e0022;
-		public static final int encode_view = 0x7f0e0034;
-		public static final int grgray = 0x7f0e0039;
-		public static final int header = 0x7f0e003c;
-		public static final int help_button_view = 0x7f0e003d;
-		public static final int help_view = 0x7f0e003e;
-		public static final int possible_result_points = 0x7f0e0055;
-		public static final int result_image_border = 0x7f0e0060;
-		public static final int result_minor_text = 0x7f0e0061;
-		public static final int result_points = 0x7f0e0062;
-		public static final int result_text = 0x7f0e0063;
-		public static final int result_view = 0x7f0e0064;
-		public static final int sbc_header_text = 0x7f0e0067;
-		public static final int sbc_header_view = 0x7f0e0068;
-		public static final int sbc_layout_view = 0x7f0e0069;
-		public static final int sbc_list_item = 0x7f0e006a;
-		public static final int sbc_page_number_text = 0x7f0e006b;
-		public static final int sbc_snippet_text = 0x7f0e006c;
-		public static final int share_text = 0x7f0e0075;
-		public static final int share_view = 0x7f0e0076;
-		public static final int status_text = 0x7f0e0077;
-		public static final int status_view = 0x7f0e0078;
-		public static final int transparent = 0x7f0e007e;
-		public static final int viewfinder_frame = 0x7f0e008d;
-		public static final int viewfinder_laser = 0x7f0e008e;
-		public static final int viewfinder_mask = 0x7f0e008f;
+		public static final int bg_color = 0x7f0e000c;
+		public static final int contents_text = 0x7f0e0023;
+		public static final int encode_view = 0x7f0e0035;
+		public static final int grgray = 0x7f0e003a;
+		public static final int header = 0x7f0e003d;
+		public static final int help_button_view = 0x7f0e003e;
+		public static final int help_view = 0x7f0e003f;
+		public static final int possible_result_points = 0x7f0e0056;
+		public static final int result_image_border = 0x7f0e0061;
+		public static final int result_minor_text = 0x7f0e0062;
+		public static final int result_points = 0x7f0e0063;
+		public static final int result_text = 0x7f0e0064;
+		public static final int result_view = 0x7f0e0065;
+		public static final int sbc_header_text = 0x7f0e0068;
+		public static final int sbc_header_view = 0x7f0e0069;
+		public static final int sbc_layout_view = 0x7f0e006a;
+		public static final int sbc_list_item = 0x7f0e006b;
+		public static final int sbc_page_number_text = 0x7f0e006c;
+		public static final int sbc_snippet_text = 0x7f0e006d;
+		public static final int share_text = 0x7f0e0076;
+		public static final int share_view = 0x7f0e0077;
+		public static final int status_text = 0x7f0e0078;
+		public static final int status_view = 0x7f0e0079;
+		public static final int transparent = 0x7f0e007f;
+		public static final int viewfinder_frame = 0x7f0e008e;
+		public static final int viewfinder_laser = 0x7f0e008f;
+		public static final int viewfinder_mask = 0x7f0e0090;
 	}
 	public static final class drawable {
 		public static final int ic_launcher = 0x7f02007b;
@@ -63,8 +63,8 @@ public final class R {
 		public static final int viewfinder_view = 0x7f0f012a;
 	}
 	public static final class layout {
-		public static final int camera = 0x7f040033;
-		public static final int main = 0x7f040061;
+		public static final int camera = 0x7f040034;
+		public static final int main = 0x7f040062;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f070000;

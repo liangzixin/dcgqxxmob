@@ -39,6 +39,7 @@
     <color name="accent_material_dark">@color/material_deep_teal_200</color>
     <color name="accent_material_light">@color/material_deep_teal_500</color>
     <color name="album_text_background_color">#FFFFFFFF</color>
+    <color name="album_tip_background_color">#66000000</color>
     <color name="background_floating_material_dark">@color/material_grey_800</color>
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
@@ -65,7 +66,7 @@
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="colorAccent">#FF4081</color>
     <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorPrimaryDark">#3F51B5</color>
     <color name="contents_text">#ff000000</color>
     <color name="default_bg">#aa000000</color>
     <color name="design_fab_shadow_end_color">@android:color/transparent</color>
@@ -90,7 +91,7 @@
     <color name="foreground_material_light">@android:color/black</color>
     <color name="gold_yanse">#b17e27</color>
     <color name="grgray">#686868</color>
-    <color name="grid_background_color">#FF212121</color>
+    <color name="grid_background_color">#212121</color>
     <color name="grid_click_background_color">#FF424242</color>
     <color name="header">#58567D</color>
     <color name="help_button_view">#ffcccccc</color>
@@ -540,6 +541,12 @@
         <item name="android:windowExitAnimation">@anim/out_righttoleft</item>
     </style>
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+    <style name="AppThemeLzx" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

@@ -17,6 +17,7 @@ android {
             targetCompatibility JavaVersion.VERSION_1_7
 
         }
+        vectorDrawables.useSupportLibrary = true
         versionCode 2
         versionName "2.9.30"
     }
