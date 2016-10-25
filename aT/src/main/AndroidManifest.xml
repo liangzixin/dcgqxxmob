@@ -30,7 +30,7 @@
         android:label="@string/app_name"
         android:theme="@style/AppThemeLzx" >
         <activity
-            android:name=".welcome.WelcomeActivity"
+            android:name=".activitys.MainPotoActivity"
             android:label="@string/title_activity_welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -44,7 +44,7 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activitys.MainPotoActivity"
+            android:name=".welcome.WelcomeActivity"
 
             android:label="@string/app_name"
        />

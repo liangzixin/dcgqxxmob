@@ -6,6 +6,7 @@ import android.database.Cursor;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
+import android.widget.Toast;
 
 import com.litao.android.lib.entity.AlbumEntry;
 import com.litao.android.lib.entity.PhotoEntry;
@@ -67,6 +68,7 @@ public class MediaController {
                 Cursor cursor = null;
 
                 try {
+                 //   Thread.sleep(10000);
                     cursor = MediaStore.Images.Media.query(mContext.getContentResolver(), MediaStore.Images.Media.EXTERNAL_CONTENT_URI, projectionPhotos, "", null, MediaStore.Images.Media.DATE_TAKEN + " DESC");
                     if (cursor != null) {
                         int imageIdColumn = cursor.getColumnIndex(MediaStore.Images.Media._ID);
@@ -108,7 +110,9 @@ public class MediaController {
                         mContext.runOnUiThread(new Runnable() {
                             @Override
                             public void run() {
-                                listener.onLoadFinished(albumsSorted);
+                           listener.onLoadFinished(albumsSorted);
+                      //        System.out.println("UI操作...");
+//                                Toast.makeText(mContext, "UI操作...",Toast.LENGTH_LONG).show();
                             }
                         });
                     }
