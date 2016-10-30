@@ -1,7 +1,23 @@
 [
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_shang_tou_tiao.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_shang_tou_tiao.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_login.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_second_code.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_second_code.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_updater.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_updater.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_yue_du_detial.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_yue_du_detial.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_main.xml",
@@ -12,12 +28,8 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_yue_du.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_shang_tou_tiao.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_shang_tou_tiao.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_web_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_web_view.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_xin_wen_xi.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_xin_wen_xi.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_welcome.xml",
@@ -28,47 +40,35 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_read_history.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_search.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_search.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_web_view.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_web_view.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_register.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_register.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_backpassword.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_backpassword.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_xin_wen_xi.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_xin_wen_xi.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_weather.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_weather.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_yue_du_detial.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_yue_du_detial.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_picture.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_picture.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_gen_tie.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_gen_tie.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_shang_tou_tiao__hui_gu_detial.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_shang_tou_tiao__hui_gu_detial.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_gen_tie.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_gen_tie.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_backpassword.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_backpassword.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_login.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_login.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_search.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_search.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_second_code.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_second_code.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_picture.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_picture.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_weather.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_weather.xml"
     }
 ]

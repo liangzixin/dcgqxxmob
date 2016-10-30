@@ -32,7 +32,7 @@ public class WelcomeActivity extends AppCompatActivity implements ScrollViewList
             setView();
             //跳转页面  不再加载引导页面
         } else {
-            startActivity(new Intent(this,MainPotoActivity.class));
+            startActivity(new Intent(this,MainActivity.class));
             finish();
         }
     }

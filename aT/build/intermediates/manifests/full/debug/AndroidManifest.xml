@@ -40,7 +40,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppThemeLzx" >
+        android:theme="@style/AppTheme" >
         <activity
             android:name="com.xiangmu.wyxw.welcome.WelcomeActivity"
             android:label="@string/title_activity_welcome" >
@@ -63,7 +63,9 @@
             android:label="发布"
             android:parentActivityName="com.xiangmu.wyxw.activitys.MainActivity" >
         </activity>
-        <activity android:name="com.xiangmu.wyxw.activitys.PhotosActivity" >
+        <activity
+            android:name="com.xiangmu.wyxw.activitys.PhotosActivity"
+            android:theme="@style/AppThemeLzx" >
         </activity>
         <activity
             android:name="com.xiangmu.wyxw.activitys.XinWenXiActivity"

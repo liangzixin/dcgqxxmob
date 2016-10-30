@@ -31,9 +31,9 @@ public class MainPotoActivity extends AppCompatActivity implements ChooseAdapter
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mAdapter = new ChooseAdapter(this);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(3, 4, true));
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
 
     }
 

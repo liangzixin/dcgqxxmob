@@ -148,9 +148,9 @@ public class PhotosActivity extends BaseGalleryActivity implements View.OnClickL
 
     @Subscribe(sticky = true,threadMode = ThreadMode.MAIN)
     public void photosMessageEvent(EventEntry entry){
-        if (entry.id == EventEntry.SELECTED_PHOTOS_ID) {
-            mSelectedPhotos = entry.photos;
-        }
+//        if (entry.id == EventEntry.SELECTED_PHOTOS_ID) {
+//            mSelectedPhotos = entry.photos;
+//        }
     }
 
 

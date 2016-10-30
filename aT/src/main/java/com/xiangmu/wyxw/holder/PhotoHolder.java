@@ -1,7 +1,6 @@
 package com.xiangmu.wyxw.holder;
 
 import android.content.Context;
-import android.support.v4.content.ContextCompat;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -17,7 +16,7 @@ import com.xiangmu.wyxw.utils.XutilsGetData;
  * Email: i@twiceyuan.com
  * Site: http://twiceyuan.com
  */
-@LayoutId(R.layout.item_photo)
+@LayoutId(R.layout.item_photolzx)
 public class PhotoHolder extends CommonHolder<Photo> {
 
     @ViewId(R.id.imagePicture) ImageView imagePicture;

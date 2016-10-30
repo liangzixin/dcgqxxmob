@@ -100,7 +100,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     private RecyclerView mRecyclerView;
-
+    private List<PhotoEntry> mSelectedPhotos;
     private ChooseAdapter mAdapter;
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
@@ -158,11 +158,11 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         setContentView(R.layout.activity_productinfo_add);
         EventBus.getDefault().register(this);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view1);
         mAdapter = new ChooseAdapter(this);
-        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 3));
+        mRecyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(3, 4, true));
+        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
 
 //        @ViewId(R.id.category1) public LinearLayout category1;
 //        @ViewId(R.id.category2) public LinearLayout category2;
@@ -884,6 +884,8 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private void SaveData(final String url) {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
+
+//          mSelectedPhotos=Entries.photos;
             RequestParams params = new RequestParams();
 
             params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
@@ -919,6 +921,12 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("fwcsfwlz",fwzs_fwlz.getText().toString());
             params.addQueryStringParameter("fwcsfwzc",fwzs_fwzc.getText().toString());
 
+            if(mSelectedPhotos.size()>0){
+                for(int i=0;i<mSelectedPhotos.size();i++){
+
+                }
+            }
+
             // params.addQueryStringParameter("product.gsdz","东川");
             handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
                 @Override
@@ -953,6 +961,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     public void photosMessageEvent(EventEntry entries){
         if (entries.id == EventEntry.RECEIVED_PHOTOS_ID) {
             mAdapter.reloadList(entries.photos);
+            mSelectedPhotos=entries.photos;
         }
     }
 

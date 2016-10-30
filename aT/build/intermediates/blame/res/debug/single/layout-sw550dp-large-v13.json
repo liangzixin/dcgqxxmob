@@ -1,9 +1,5 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\item_productinfo_imeg.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\item_productinfo_imeg.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\umeng_socialize_oauth_dialog.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\umeng_socialize_oauth_dialog.xml"
     },
@@ -12,15 +8,19 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\umeng_socialize_full_alert_dialog.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\umeng_socialize_titile_bar.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\umeng_socialize_titile_bar.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\umeng_socialize_post_comment.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\umeng_socialize_post_comment.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\umeng_socialize_post_share.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\umeng_socialize_post_share.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\item_productinfo_imeg.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\item_productinfo_imeg.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout-sw550dp-large-v13\\umeng_socialize_titile_bar.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout-sw550dp-large\\umeng_socialize_titile_bar.xml"
     }
 ]
