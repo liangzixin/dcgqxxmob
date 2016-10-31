@@ -901,7 +901,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("gsmz",productinfo_gsmz.getText().toString());
             params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
             params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
-            params.addQueryStringParameter("category",articlerSpinner.getSelectedItemPosition()+"");
+            params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
             params.addQueryStringParameter("content",productinfo_content.getText().toString());
 
 
@@ -921,11 +921,14 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("fwcsfwlz",fwzs_fwlz.getText().toString());
             params.addQueryStringParameter("fwcsfwzc",fwzs_fwzc.getText().toString());
 
-            if(mSelectedPhotos.size()>0){
-                for(int i=0;i<mSelectedPhotos.size();i++){
+            String[] upload= new String[mSelectedPhotos.size()];
 
-                }
+            int size =mSelectedPhotos.size();
+            for (int i = 0; i < size; i++) {
+                upload[i] =mSelectedPhotos.get(i).getPath();
+                params.addQueryStringParameter("upload["+i+"] ", upload[i]);
             }
+
 
             // params.addQueryStringParameter("product.gsdz","东川");
             handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
