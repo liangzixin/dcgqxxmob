@@ -26,7 +26,7 @@ public class XinWenURL {
         this.saveproductinfo = saveproductinfo;
     }
 
-    String saveproductinfo=HttpUtil.BASE_URL+"product!saveproductinfomob.action?map=";
+    String saveproductinfo=HttpUtil.BASE_URL+"product!saveproductinfomob.action";
 
     //热点
    // String redian="http://c.3g.163.com/nc/article/list/T1429173762551/0-20.html";

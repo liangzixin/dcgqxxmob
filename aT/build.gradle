@@ -20,6 +20,7 @@ android {
         vectorDrawables.useSupportLibrary = true
         versionCode 2
         versionName "2.9.30"
+
     }
 
     buildTypes {
@@ -60,4 +61,6 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.sd6352051:android-image-picker:v1.0.1'
+    compile files('libs/glide-3.7.0.jar')
+    compile files('libs/httpmime-4.2.5.jar')
 }

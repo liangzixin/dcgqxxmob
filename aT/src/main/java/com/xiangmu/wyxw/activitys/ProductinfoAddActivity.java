@@ -74,6 +74,7 @@ import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.MySqlOpenHelper;
 import com.xiangmu.wyxw.utils.ServerURL;
 import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
+import com.xiangmu.wyxw.utils.Upload;
 import com.xiangmu.wyxw.utils.XinWenURL;
 import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
@@ -101,6 +102,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private HttpHandler<String> handler;
     private RecyclerView mRecyclerView;
     private List<PhotoEntry> mSelectedPhotos;
+    List<String> listfile = new ArrayList<String>();
     private ChooseAdapter mAdapter;
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
@@ -158,7 +160,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         setContentView(R.layout.activity_productinfo_add);
         EventBus.getDefault().register(this);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view1);
         mAdapter = new ChooseAdapter(this);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         mRecyclerView.setAdapter(mAdapter);
@@ -534,6 +536,16 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         EventBus.getDefault().unregister(this);
         super.onDestroy();
     }
+    Runnable runnable = new Runnable() {
+
+        @Override
+        public void run() {
+
+            Upload load = new Upload();
+            load.postMethod(listfile);
+
+        }
+    };
     private void initview() {
 //        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
@@ -573,6 +585,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             }
         });
 
+
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -603,7 +616,14 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                 }
 
                String saveproduct=xinWenURL.getSaveproductinfo();
-                SaveData(saveproduct);
+//                SaveData(saveproduct);
+                int size =mSelectedPhotos.size();
+                for (int i = 0; i < size; i++) {
+                 listfile.add(mSelectedPhotos.get(i).getPath().toString());
+
+                }
+
+                new Thread(runnable).start();
             }
         });
     }
@@ -925,8 +945,10 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
             int size =mSelectedPhotos.size();
             for (int i = 0; i < size; i++) {
-                upload[i] =mSelectedPhotos.get(i).getPath();
-                params.addQueryStringParameter("upload["+i+"] ", upload[i]);
+                upload[i] =mSelectedPhotos.get(i).getPath().toString();
+                String ii="uploadl["+i+"] ";
+                System.out.println(ii);
+                params.addQueryStringParameter(ii, upload[i]);
             }
 
 
