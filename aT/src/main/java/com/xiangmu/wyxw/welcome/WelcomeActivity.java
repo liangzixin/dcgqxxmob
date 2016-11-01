@@ -49,7 +49,7 @@ public class WelcomeActivity extends AppCompatActivity implements ScrollViewList
             @Override
             public void onClick(View v) {
                 //同上  跳转页面
-                startActivity(new Intent(WelcomeActivity.this, MainPotoActivity.class));
+                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
                 getSharedPreferences("welcome", MODE_PRIVATE).edit().putBoolean("isfirst", false).commit();
                 finish();
             }

@@ -158,7 +158,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         setContentView(R.layout.activity_productinfo_add);
         EventBus.getDefault().register(this);
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view1);
+        mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view);
         mAdapter = new ChooseAdapter(this);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         mRecyclerView.setAdapter(mAdapter);
