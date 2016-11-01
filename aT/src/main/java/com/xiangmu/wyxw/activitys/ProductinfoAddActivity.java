@@ -616,14 +616,14 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                 }
 
                String saveproduct=xinWenURL.getSaveproductinfo();
-//                SaveData(saveproduct);
-                int size =mSelectedPhotos.size();
-                for (int i = 0; i < size; i++) {
-                 listfile.add(mSelectedPhotos.get(i).getPath().toString());
-
-                }
-
-                new Thread(runnable).start();
+                SaveData(saveproduct);
+//                int size =mSelectedPhotos.size();
+//                for (int i = 0; i < size; i++) {
+//                 listfile.add(mSelectedPhotos.get(i).getPath().toString());
+//
+//                }
+//
+//                new Thread(runnable).start();
             }
         });
     }
@@ -946,9 +946,9 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             int size =mSelectedPhotos.size();
             for (int i = 0; i < size; i++) {
                 upload[i] =mSelectedPhotos.get(i).getPath().toString();
-                String ii="uploadl["+i+"] ";
+                String ii="upload["+i+"] ";
                 System.out.println(ii);
-                params.addQueryStringParameter(ii, upload[i]);
+                params.addQueryStringParameter("uploadl[0]", upload[0]);
             }
 
 
