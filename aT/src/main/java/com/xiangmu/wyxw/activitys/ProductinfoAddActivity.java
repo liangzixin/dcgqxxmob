@@ -941,14 +941,15 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("fwcsfwlz",fwzs_fwlz.getText().toString());
             params.addQueryStringParameter("fwcsfwzc",fwzs_fwzc.getText().toString());
 
-            String[] upload= new String[mSelectedPhotos.size()];
+            String[] upload1= new String[mSelectedPhotos.size()];
 
             int size =mSelectedPhotos.size();
             for (int i = 0; i < size; i++) {
-                upload[i] =mSelectedPhotos.get(i).getPath().toString();
+                upload1[i] =mSelectedPhotos.get(i).getPath().toString();
                 String ii="upload["+i+"] ";
-                System.out.println(ii);
-                params.addQueryStringParameter("uploadl[0]", upload[0]);
+                System.out.println(ii+upload1[i]);
+                params.addBodyParameter(ii,new File(upload1[i]),null); // 如果文件没有扩展名, 最好设置contentType参数.
+
             }
 
 
