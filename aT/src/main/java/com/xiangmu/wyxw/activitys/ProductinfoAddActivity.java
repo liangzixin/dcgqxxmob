@@ -102,7 +102,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private HttpHandler<String> handler;
     private RecyclerView mRecyclerView;
     private List<PhotoEntry> mSelectedPhotos;
-    List<String> listfile = new ArrayList<String>();
+    private List<String> listfile = new ArrayList<String>();
     private ChooseAdapter mAdapter;
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
@@ -943,14 +943,14 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
             String[] upload1= new String[mSelectedPhotos.size()];
 
-            int size =mSelectedPhotos.size();
-            for (int i = 0; i < size; i++) {
-                upload1[i] =mSelectedPhotos.get(i).getPath().toString();
-                String ii="upload["+i+"] ";
-                System.out.println(ii+upload1[i]);
-                params.addBodyParameter(ii,new File(upload1[i]),null); // 如果文件没有扩展名, 最好设置contentType参数.
+            int size0 =mSelectedPhotos.size();
 
-            }
+                for(int i=0;i<listfile.size();i++)
+                {
+                    params.addBodyParameter("file",new File(mSelectedPhotos.get(i).getPath()));
+                }
+
+
 
 
             // params.addQueryStringParameter("product.gsdz","东川");
