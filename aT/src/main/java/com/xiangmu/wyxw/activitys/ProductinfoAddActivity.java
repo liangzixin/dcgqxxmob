@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
@@ -84,6 +85,8 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -103,6 +106,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private RecyclerView mRecyclerView;
     private List<PhotoEntry> mSelectedPhotos;
     private List<String> listfile = new ArrayList<String>();
+    private List<File> list=new ArrayList<>();
     private ChooseAdapter mAdapter;
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
@@ -142,6 +146,8 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private MaterialEditText gqxx_spsj;
     LinearLayout category2;
     LinearLayout category3;
+    private String filepath;
+    private String filepath1;
 
     //    @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
  //@ViewId(R.id.productinfo_sxcy) public MaterialEditText productinfo_sxcy;
@@ -902,6 +908,15 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     }
 
     private void SaveData(final String url) {
+        filepath= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator;
+        filepath1= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+"abc.txt";
+        FileInputStream fis = null;//文件输入流
+        try {
+            fis = new FileInputStream(new File(filepath));
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        }
+
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
 
@@ -943,11 +958,16 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
             String[] upload1= new String[mSelectedPhotos.size()];
 
-            int size0 =mSelectedPhotos.size();
+            for(int i=1;i<=mSelectedPhotos.size();i++)
+            {
+                Log.i("F",filepath+"a0"+i+"jpg");
+                list.add(new File(filepath+"a0"+i+".jpg"));
+            }
+            list.add(new File(filepath1));
 
-                for(int i=0;i<size0;i++)
+            for(int i=0;i<mSelectedPhotos.size();i++)
                 {
-                    params.addBodyParameter("upload",new File(mSelectedPhotos.get(i).getPath()));
+                    params.addBodyParameter("upload",list.get(i));
                 }
 
 
