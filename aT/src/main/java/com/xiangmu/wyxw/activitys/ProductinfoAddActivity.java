@@ -945,9 +945,9 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
             int size0 =mSelectedPhotos.size();
 
-                for(int i=0;i<listfile.size();i++)
+                for(int i=0;i<size0;i++)
                 {
-                    params.addBodyParameter("file",new File(mSelectedPhotos.get(i).getPath()));
+                    params.addBodyParameter("upload",new File(mSelectedPhotos.get(i).getPath()));
                 }
 
 
