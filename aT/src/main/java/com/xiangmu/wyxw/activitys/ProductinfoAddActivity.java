@@ -937,7 +937,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
             params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
             params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
-            params.addQueryStringParameter("content",productinfo_content.getText().toString());
+            params.addQueryStringParameter("description",productinfo_content.getText().toString());
 
 
 
@@ -958,16 +958,16 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
             String[] upload1= new String[mSelectedPhotos.size()];
 
-            for(int i=1;i<=mSelectedPhotos.size();i++)
+            for(int i=0;i<mSelectedPhotos.size();i++)
             {
                 Log.i("F",filepath+"a0"+i+"jpg");
-                list.add(new File(filepath+"a0"+i+".jpg"));
+                list.add(new File(mSelectedPhotos.get(i).getPath()));
             }
-            list.add(new File(filepath1));
+//            list.add(new File(filepath1));
 
             for(int i=0;i<mSelectedPhotos.size();i++)
                 {
-                    params.addBodyParameter("upload",list.get(i));
+                    params.addBodyParameter("upload["+i+"]",list.get(i));
                 }
 
 
