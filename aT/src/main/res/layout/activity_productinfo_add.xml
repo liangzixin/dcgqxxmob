@@ -298,7 +298,7 @@
                         material:floatingLabel="true"
                         />
                 </LinearLayout>
-                <com.xiangmu.wyxw.utils.AutoNextLineLinearlayout
+                <LinearLayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content"
@@ -316,6 +316,9 @@
                     material:floatingLabel="true"
                     android:padding="6dp"
                     />
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
                     <MaterialEditText
                         android:id="@+id/productinfo_fwzj"
                         android:layout_width="wrap_content"
@@ -329,7 +332,24 @@
                         android:padding="6dp"
                         android:visibility="gone"
                         />
-
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+                    <MaterialEditText
+                        android:id="@+id/productinfo_fwcj"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="10dp"
+                        android:hint="租金(元/月):"
+                        android:inputType="numberDecimal"
+                        android:singleLine="true"
+                        android:text=""
+                        material:floatingLabel="true"
+                        android:padding="6dp"
+                        android:visibility="gone"
+                        />
+                    </LinearLayout>
                     <MaterialEditText
                         android:id="@+id/productinfo_fwlz"
                         android:layout_width="wrap_content"
@@ -363,7 +383,7 @@
                         android:visibility="gone"
 
                         app:ms_multiline="true" />
-                  </com.xiangmu.wyxw.utils.AutoNextLineLinearlayout>
+                  </LinearLayout>
 
 
             </LinearLayout>

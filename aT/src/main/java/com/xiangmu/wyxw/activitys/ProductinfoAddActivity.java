@@ -133,6 +133,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
     private MaterialEditText fwzs_jzmj;
     private MaterialEditText fwzs_fwzj;
+    private MaterialEditText fwzs_fwcj;
     private MaterialEditText fwzs_hxs;
     private MaterialEditText fwzs_hxt;
     private MaterialEditText fwzs_hxw;
@@ -207,6 +208,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
        fwzs_jzmj= (MaterialEditText) findViewById(R.id. productinfo_jzmj);
        fwzs_fwzj= (MaterialEditText) findViewById(R.id. productinfo_fwzj);
+        fwzs_fwcj= (MaterialEditText) findViewById(R.id. productinfo_fwcj);
         fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
         fwzs_hxt= (MaterialEditText) findViewById(R.id. productinfo_hxt);
         fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
@@ -296,13 +298,13 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         productinfo_gsdz.setVisibility(View.GONE);
                         productinfo_gsmz.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
-                        LinearLayout.LayoutParams sp_params = new LinearLayout.LayoutParams(
-
-                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
-
-                        sp_params.width = 0;
-
-                        spinner_nl.setLayoutParams(sp_params);
+//                        LinearLayout.LayoutParams sp_params = new LinearLayout.LayoutParams(
+//
+//                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
+//
+//                        sp_params.width =10;
+//
+//                        spinner_nl.setLayoutParams(sp_params);
                         productinfo_qjnl.setVisibility(View.VISIBLE);
                         spinner_sex.setVisibility(View.VISIBLE);
                         spinner_dxfw.setVisibility(View.VISIBLE);
@@ -327,6 +329,13 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         productinfo_sxcy.setVisibility(View.GONE);
                         fwzs_zjfs.setVisibility(View.GONE);
                         fwzs_fwzj.setVisibility(View.VISIBLE);
+                        fwzs_fwcj.setVisibility(View.GONE);
+//                        LinearLayout.LayoutParams sp_params1 = new LinearLayout.LayoutParams(
+//
+//                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
+//
+//                        sp_params1.width = 10;
+//                        fwzs_fwcj.setLayoutParams(sp_params1);
                         fwzs_fwzj.setHint("总价(万元)");
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
@@ -334,7 +343,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
-                     fwzs_fwzj.setHint("租金(元)");
+                     fwzs_fwcj.setHint("租金(元)");
                         productinfo_gsmz.setHint("小区名称");
                         productinfo_gsmz.setVisibility(View.VISIBLE);
                         productinfo_gsdz.setVisibility(View.GONE);
@@ -348,6 +357,8 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         productinfo_sxcy.setVisibility(View.GONE);
                         fwzs_zjfs.setVisibility(View.VISIBLE);
                         fwzs_fwzj.setVisibility(View.GONE);
+
+                        fwzs_fwcj.setVisibility(View.VISIBLE);
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
                         category2.setVisibility(View.GONE);
@@ -959,15 +970,15 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
 
 
-            params.addQueryStringParameter("fwcsjzmj",fwzs_jzmj.getText().toString());
-            params.addQueryStringParameter("fwcsfwzj",fwzs_fwzj.getText().toString());
-            params.addQueryStringParameter("fwcshxs",fwzs_hxs.getText().toString());
-            params.addQueryStringParameter("fwcshxt",fwzs_hxt.getText().toString());
-            params.addQueryStringParameter("fwcshxs",fwzs_hxs.getText().toString());
-            params.addQueryStringParameter("fwcshxw",fwzs_hxw.getText().toString());
-            params.addQueryStringParameter("fwcshxc",fwzs_hxc.getText().toString());
-            params.addQueryStringParameter("fwcsfwlz",fwzs_fwlz.getText().toString());
-            params.addQueryStringParameter("fwcsfwzc",fwzs_fwzc.getText().toString());
+            params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
+            params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
+            params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
+            params.addQueryStringParameter("fwcs.fwt",fwzs_hxt.getText().toString());
+            params.addQueryStringParameter("fwcs.hxs",fwzs_hxs.getText().toString());
+            params.addQueryStringParameter("fwcs.fww",fwzs_hxw.getText().toString());
+            params.addQueryStringParameter("fwcs.fwzf",fwzs_hxc.getText().toString());
+            params.addQueryStringParameter("fwcs.fwlz",fwzs_fwlz.getText().toString());
+            params.addQueryStringParameter("fwcs.fwzc",fwzs_fwzc.getText().toString());
 
             String[] upload1= new String[mSelectedPhotos.size()];
 
