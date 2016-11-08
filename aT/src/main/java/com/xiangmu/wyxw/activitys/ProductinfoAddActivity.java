@@ -285,6 +285,8 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         category2.setVisibility(View.VISIBLE);
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
+
+                        category3.setVisibility(View.GONE);
                         break;
                     case 2:
                      name.setHint("求职标题");
@@ -294,6 +296,13 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         productinfo_gsdz.setVisibility(View.GONE);
                         productinfo_gsmz.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
+                        LinearLayout.LayoutParams sp_params = new LinearLayout.LayoutParams(
+
+                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
+
+                        sp_params.width = 0;
+
+                        spinner_nl.setLayoutParams(sp_params);
                         productinfo_qjnl.setVisibility(View.VISIBLE);
                         spinner_sex.setVisibility(View.VISIBLE);
                         spinner_dxfw.setVisibility(View.VISIBLE);
@@ -301,6 +310,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         category2.setVisibility(View.VISIBLE);
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
+                        category3.setVisibility(View.GONE);
                         break;
                     case 3:
                         name.setHint("房屋出售标题");
@@ -320,6 +330,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         fwzs_fwzj.setHint("总价(万元)");
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
@@ -339,6 +350,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         fwzs_fwzj.setVisibility(View.GONE);
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
+                        category2.setVisibility(View.GONE);
                         break;
                     case 5:
                         name.setHint("供求信息标题");
@@ -926,10 +938,12 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
 
 
-            params.addQueryStringParameter("zpxx.sexrequest",spinner_sex.getSelectedItem().toString());
+          params.addQueryStringParameter("zpxx.sexrequest",spinner_sex.getSelectedItem().toString());
+
             params.addQueryStringParameter("zpxx.zpnlrequest",spinner_nl.getSelectedItem().toString());
             params.addQueryStringParameter("zpxx.gzdx",spinner_dxfw.getSelectedItem().toString());
             params.addQueryStringParameter("zpxx.edurequest",spinner_xl.getSelectedItem().toString());
+            params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
 
           params.addQueryStringParameter("name",name.getText().toString());
             params.addQueryStringParameter("gsdz",productinfo_gsdz.getText().toString());
@@ -942,8 +956,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
 
 
-            params.addQueryStringParameter("productinfoqjnl2",productinfo_qjnl.getText().toString());
-            params.addQueryStringParameter("productinfosxcy2",productinfo_sxcy.getText().toString());
+
 
 
             params.addQueryStringParameter("fwcsjzmj",fwzs_jzmj.getText().toString());
@@ -1037,5 +1050,26 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 //
 //        }
 //    }
+
+//    @Override      public View getView(int position, View convertView, ViewGroup arg2) {
+//        if (convertView == null) {              convertView = inflater.inflate(R.layout.test_layout, null);          }
+//        /**           * 状态为1、2时需要显示Item，其他情况不显示Item           */
+//        int itemState = 0;          switch(itemState){
+//            case 1:
+//            convertView.setVisibility(View.VISIBLE);
+//                break;
+//            case 2:
+//                convertView.setVisibility(View.VISIBLE);
+//                break;
+//            default://下面这段代码就是让GridView中的指定的item不显示并且不占用界面空间的方法
+//                              convertView.setVisibility(View.GONE);
+//                             AbsListView.LayoutParams param = new AbsListView.LayoutParams(0, 0);
+//                // 将设置好的布局属性应用到GridView的Item上
+//                            convertView.setLayoutParams(param);
+//                                 break;
+//                       }
+//                  return convertView;
+//                    }
+
 }
 

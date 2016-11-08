@@ -54,32 +54,6 @@
             android:src="@mipmap/kuozhan_caidan" />
     </LinearLayout>
 
-
-    <!--android.support.v7.widget.RecyclerView
-        android:id="@+id/recyclerView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="40dp"
-        android:layout_marginTop="50dp"
-        />
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="4dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="50dp"
-        >
-    <android.support.v7.widget.CardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="4dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="55dp"
-        >-->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -190,16 +164,19 @@
                 android:visibility="gone"
                 android:id="@+id/category2"
                 >
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spin_nl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-
                     app:ms_arrowSize="16dp"
                     android:layout_marginLeft="10dp"
                     app:ms_floatingLabelText="年龄:"
                     android:visibility="gone"
                     app:ms_multiline="true" />
+                </LinearLayout>
                 <MaterialEditText
                     android:id="@+id/productinfo_qjnl"
                     android:layout_width="wrap_content"
@@ -208,7 +185,7 @@
                     app:ms_arrowSize="16dp"
                     android:hint="年龄:"
                     android:inputType="number"
-
+                    material:floatingLabel="true"
                     android:text=""
                     app:ms_multiline="true"
                     android:visibility="gone"
