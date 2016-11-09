@@ -974,11 +974,11 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
             params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
             params.addQueryStringParameter("fwcs.fwt",fwzs_hxt.getText().toString());
-            params.addQueryStringParameter("fwcs.hxs",fwzs_hxs.getText().toString());
+//            params.addQueryStringParameter("fwcs.hxs",fwzs_hxs.getText().toString());
             params.addQueryStringParameter("fwcs.fww",fwzs_hxw.getText().toString());
             params.addQueryStringParameter("fwcs.fwzf",fwzs_hxc.getText().toString());
-            params.addQueryStringParameter("fwcs.fwlz",fwzs_fwlz.getText().toString());
-            params.addQueryStringParameter("fwcs.fwzc",fwzs_fwzc.getText().toString());
+            params.addQueryStringParameter("fwcs.fwlj",fwzs_fwlz.getText().toString());
+            params.addQueryStringParameter("fwcs.fwcj",fwzs_fwzc.getText().toString());
 
             String[] upload1= new String[mSelectedPhotos.size()];
 
