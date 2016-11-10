@@ -106,13 +106,13 @@ public class ArticleHolder extends CommonHolder<Article> {
                     productinfo_fwcs_xqmz.setText(article.gsmz);
                     productinfo_fwcs_jzmj.setText(Utils.FloatToChar(article.fwcs.getJzmj())+" 平米");
                     productinfo_fwcs_hx.setText(Utils.IntToChar(article.fwcs.getFws())+" 室 "+Utils.IntToChar(+article.fwcs.getFwt())+" 厅 "+Utils.IntToChar(article.fwcs.getFwzf())+" 厨 "+Utils.IntToChar(article.fwcs.getFww())+" 卫 ");
-                    productinfo_fwcs_lz.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwzs())+" 层 ");
+                    productinfo_fwcs_lz.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwcj())+" 层 ");
                     productinfo_fwcs_fwzj.setText(Utils.FloatToChar(article.fwcs.getFwzj())+" 万元");
 
                     productinfo_fwcs_xqmz4.setText(article.gsmz);
                     productinfo_fwcs_jzmj4.setText(Utils.FloatToChar(article.fwcs.getJzmj())+" 平米");
                     productinfo_fwcs_hx4.setText(Utils.IntToChar(article.fwcs.getFws())+" 室 "+Utils.IntToChar(article.fwcs.getFwt())+" 厅 "+Utils.IntToChar(article.fwcs.getFwzf())+" 厨 "+Utils.IntToChar(article.fwcs.getFww())+" 卫 ");
-                    productinfo_fwcs_lz4.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwzs())+" 层 ");
+                    productinfo_fwcs_lz4.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwcj())+" 层 ");
                     productinfo_fwcs_fwcj4.setText(Utils.FloatToChar(article.fwcs.getFwcj())+" 万元");
                     productinfo_fwcs_fwcjfx.setText(article.fwcs.getFzfsrequest().getName());
 
