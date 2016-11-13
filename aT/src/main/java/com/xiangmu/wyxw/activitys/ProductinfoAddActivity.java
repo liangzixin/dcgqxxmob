@@ -965,35 +965,29 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("description",productinfo_content.getText().toString());
 
 
-
-
-
-
-
             params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
             params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
             params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
             params.addQueryStringParameter("fwcs.fwt",fwzs_hxt.getText().toString());
-//            params.addQueryStringParameter("fwcs.hxs",fwzs_hxs.getText().toString());
             params.addQueryStringParameter("fwcs.fww",fwzs_hxw.getText().toString());
             params.addQueryStringParameter("fwcs.fwzf",fwzs_hxc.getText().toString());
             params.addQueryStringParameter("fwcs.fwlj",fwzs_fwlz.getText().toString());
             params.addQueryStringParameter("fwcs.fwcj",fwzs_fwzc.getText().toString());
 
-            String[] upload1= new String[mSelectedPhotos.size()];
+            params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
 
-            for(int i=0;i<mSelectedPhotos.size();i++)
-            {
-                Log.i("F",filepath+"a0"+i+"jpg");
-                list.add(new File(mSelectedPhotos.get(i).getPath()));
-            }
+
+           if(mSelectedPhotos.size()>0) {
+               for (int i = 0; i < mSelectedPhotos.size(); i++) {
+                   Log.i("F", filepath + "a0" + i + "jpg");
+                   list.add(new File(mSelectedPhotos.get(i).getPath()));
+               }
 //            list.add(new File(filepath1));
 
-            for(int i=0;i<mSelectedPhotos.size();i++)
-                {
-                    params.addBodyParameter("upload["+i+"]",list.get(i));
-                }
-
+               for (int i = 0; i < mSelectedPhotos.size(); i++) {
+                   params.addBodyParameter("upload[" + i + "]", list.get(i));
+               }
+           }
 
 
 

@@ -6,6 +6,7 @@ import com.xiangmu.wyxw.Modle.Dxfw;
 import com.xiangmu.wyxw.Modle.Edu;
 import com.xiangmu.wyxw.Modle.Fwcs;
 import com.xiangmu.wyxw.Modle.Fzfs;
+import com.xiangmu.wyxw.Modle.Gqxx;
 import com.xiangmu.wyxw.Modle.ProductCategory;
 import com.xiangmu.wyxw.Modle.ProductInfo;
 import com.xiangmu.wyxw.Modle.Sex;
@@ -237,10 +238,14 @@ public class XinWenproductinfoJson {
                     fwcs.setFwzj((float)fwzj);
                     fwcs.setJzmj((float)jzmj);
                     fwcs.setFzfsrequest(Enum.valueOf(Fzfs.class, fzfsrequest));
-
-
                     t18908805728Entity.setFwcs(fwcs);
-
+                }
+                if (!arrayobj.isNull("gqxx")){
+                    JSONObject gqxx0=arrayobj.getJSONObject("gqxx");
+                    Gqxx gqxx=new Gqxx();
+                    int  gqsl=gqxx0.getInt("gqsl");
+                  gqxx.setGqsl(gqsl);
+                    t18908805728Entity.setGqxx(gqxx);
                 }
                 if (!arrayobj.isNull("category")){
                     JSONObject category0=arrayobj.getJSONObject("category");

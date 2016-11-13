@@ -21,6 +21,7 @@ public class Article implements ViewTypeItem {
 
     public Zpxx zpxx;
     public Fwcs fwcs;
+    public Gqxx gqxx;
     public ProductCategory productCategory;
 
 }

@@ -3,6 +3,7 @@ package com.xiangmu.wyxw.utils;
 //import com.xiangmu.wyxw.Modle.UploadFile;
 
 import com.xiangmu.wyxw.Modle.Fwcs;
+import com.xiangmu.wyxw.Modle.Gqxx;
 import com.xiangmu.wyxw.Modle.ProductCategory;
 import com.xiangmu.wyxw.Modle.Zpxx;
 
@@ -30,6 +31,7 @@ public class XinWenXiData implements Serializable{
     private String lxdh;
     private Zpxx zpxx;
     private Fwcs fwcs;
+    private Gqxx gqxx;
     private ProductCategory ProductCategory;
 
     public int getId() {
@@ -159,5 +161,13 @@ public class XinWenXiData implements Serializable{
 
     public void setReplaycount(int replaycount) {
         this.replaycount = replaycount;
+    }
+
+    public Gqxx getGqxx() {
+        return gqxx;
+    }
+
+    public void setGqxx(Gqxx gqxx) {
+        this.gqxx = gqxx;
     }
 }
