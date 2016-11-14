@@ -394,6 +394,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
        if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
         if(xinWenXiData.getFwcs()!=null) article.fwcs=xinWenXiData.getFwcs();
+        if(xinWenXiData.getGqxx()!=null) article.gqxx=xinWenXiData.getGqxx();
         article.productCategory=xinWenXiData.getProductCategory();
         return article;
     }

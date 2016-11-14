@@ -47,12 +47,18 @@ public class ArticleHolder extends CommonHolder<Article> {
     @ViewId(R.id.productinfo_fwcs_fwcj4) public TextView productinfo_fwcs_fwcj4;
     @ViewId(R.id.productinfo_fwcs_fwcjfx) public TextView productinfo_fwcs_fwcjfx;
 
+    @ViewId(R.id.productinfo_gqxx_gsmz5) public TextView productinfo_gqxx_gsmz5;
+    @ViewId(R.id.productinfo_gqxx_gsdz5) public TextView productinfo_gqxx_gsdz5;
+    @ViewId(R.id.productinfo_gqxx_gqsl5) public TextView productinfo_gqxx_gqsl5;
+
+
     @ViewId(R.id.productinfo_lxr) public TextView lxr;
     @ViewId(R.id.productinfo_lxdh) public TextView lxdh;
     @ViewId(R.id.category1) public LinearLayout category1;
     @ViewId(R.id.category2) public LinearLayout category2;
     @ViewId(R.id.category3) public LinearLayout category3;
     @ViewId(R.id.category4) public LinearLayout category4;
+    @ViewId(R.id.category5) public LinearLayout category5;
     @Override public void bindData(Article article) {
         textTitle.setText(article.title);
         textContent.setText(article.content);
@@ -73,6 +79,9 @@ public class ArticleHolder extends CommonHolder<Article> {
                     break;
                 case 4:
                     category4.setVisibility(View.VISIBLE);
+                    break;
+                case 5:
+                    category5.setVisibility(View.VISIBLE);
                     break;
         }
         switch (article.productCategory.getId()) {
@@ -106,16 +115,23 @@ public class ArticleHolder extends CommonHolder<Article> {
                     productinfo_fwcs_xqmz.setText(article.gsmz);
                     productinfo_fwcs_jzmj.setText(Utils.FloatToChar(article.fwcs.getJzmj())+" 平米");
                     productinfo_fwcs_hx.setText(Utils.IntToChar(article.fwcs.getFws())+" 室 "+Utils.IntToChar(+article.fwcs.getFwt())+" 厅 "+Utils.IntToChar(article.fwcs.getFwzf())+" 厨 "+Utils.IntToChar(article.fwcs.getFww())+" 卫 ");
-                    productinfo_fwcs_lz.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwzs())+" 层 ");
+                    productinfo_fwcs_lz.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwcj())+" 层 ");
                     productinfo_fwcs_fwzj.setText(Utils.FloatToChar(article.fwcs.getFwzj())+" 万元");
 
                     productinfo_fwcs_xqmz4.setText(article.gsmz);
                     productinfo_fwcs_jzmj4.setText(Utils.FloatToChar(article.fwcs.getJzmj())+" 平米");
                     productinfo_fwcs_hx4.setText(Utils.IntToChar(article.fwcs.getFws())+" 室 "+Utils.IntToChar(article.fwcs.getFwt())+" 厅 "+Utils.IntToChar(article.fwcs.getFwzf())+" 厨 "+Utils.IntToChar(article.fwcs.getFww())+" 卫 ");
-                    productinfo_fwcs_lz4.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwzs())+" 层 ");
-                    productinfo_fwcs_fwcj4.setText(Utils.FloatToChar(article.fwcs.getFwcj())+" 万元");
+                    productinfo_fwcs_lz4.setText(Utils.IntToChar(article.fwcs.getFwlj())+"  层，楼层总数： "+Utils.IntToChar(article.fwcs.getFwcj())+" 层 ");
+                    productinfo_fwcs_fwcj4.setText(Utils.FloatToChar(article.fwcs.getFwzj())+" 元");
                     productinfo_fwcs_fwcjfx.setText(article.fwcs.getFzfsrequest().getName());
 
+                }
+                break;
+            case 5:
+                productinfo_gqxx_gsmz5.setText(article.gsmz);
+                productinfo_gqxx_gsdz5.setText(article.gsdz);
+                if (article.gqxx!= null) {
+                    productinfo_gqxx_gqsl5.setText(article.gqxx.getGqsl());
                 }
                 break;
         }
