@@ -621,6 +621,16 @@
 
                     >
                     <TextView
+                        android:id="@+id/productinfo_gqxx_gqsl50"
+                        android:layout_width="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginLeft="20dp"
+                        android:textSize="15dp"
+                        android:text="供应数量："
+                        android:layout_height="wrap_content"
+                        android:textColor="#000000"
+                        />
+                    <TextView
                         android:id="@+id/productinfo_gqxx_gqsl5"
                         android:layout_width="wrap_content"
                         android:layout_marginTop="15dp"

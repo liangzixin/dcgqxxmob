@@ -29,21 +29,52 @@
             android:layout_weight="1" />
 
         <TextView
-            android:id="@+id/xinwen_duotu_gentie"
-            android:layout_width="100dp"
+            android:id="@+id/bt_fpxx"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:layout_margin="15dp"
+            android:layout_margin="5dp"
             android:clickable="true"
-            android:background="@mipmap/titlebar_background"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
             android:gravity="center"
-            android:text="0跟帖" />
+            android:text="点击发布信息" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <!--RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" >
+
+            <TextView
+                android:id="@+id/bt_fpxx"
+                android:textSize="20sp"
+                android:textColor="#ffffff"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:drawablePadding="5dp"
+                android:gravity="center"
+                android:singleLine="true"
+                android:text="发布信息"
+                android:clickable="true"
+                />
+        </RelativeLayout>
+        <Button
+            android:id="@+id/bt_fpxx"
+            android:layout_margin="10dp"
+
+            style="@style/button_stylelzx"
+            android:text="发布信息"
+            android:clickable="true" />
         <ImageButton
             android:id="@+id/xinwen_xi_fenxiang"
             android:layout_width="50dp"
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:background="@android:color/transparent"
-            android:src="@mipmap/share_alpha" />
+            android:src="@mipmap/share_alpha" />-->
         <ImageButton
             android:id="@+id/xinwen_xi_kuanzhan_caidan"
             android:layout_width="50dp"
@@ -135,7 +166,7 @@
                 />
             <MaterialEditText
                 android:id="@+id/gqxx_gqsl"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
 
                 android:hint="供求数量:"
@@ -164,9 +195,9 @@
                 android:visibility="gone"
                 android:id="@+id/category2"
                 >
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
+             <LinearLayout
+                 android:layout_width="wrap_content"
+                 android:layout_height="wrap_content">
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spin_nl"
                     android:layout_width="wrap_content"
@@ -174,9 +205,9 @@
                     app:ms_arrowSize="16dp"
                     android:layout_marginLeft="10dp"
                     app:ms_floatingLabelText="年龄:"
-                    android:visibility="gone"
+
                     app:ms_multiline="true" />
-                </LinearLayout>
+             </LinearLayout>
                 <MaterialEditText
                     android:id="@+id/productinfo_qjnl"
                     android:layout_width="wrap_content"
@@ -190,7 +221,12 @@
                     app:ms_multiline="true"
                     android:visibility="gone"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="间隔"
+                    android:visibility="invisible"
+                    />
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spin_sex"
                     android:layout_width="wrap_content"
@@ -204,7 +240,12 @@
                     app:ms_multiline="true"
                     android:hint="性别:"
                     />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="间隔"
+                    android:visibility="invisible"
+                    />
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spin_dxfw"
                     android:layout_width="wrap_content"
@@ -218,7 +259,12 @@
                     app:ms_floatingLabelText="底薪:"
 
                     app:ms_multiline="true" />
-
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:text="间隔"
+                    android:visibility="invisible"
+                    />
 
                 <fr.ganfra.materialspinner.MaterialSpinner
                     android:id="@+id/spin_xl"
@@ -298,12 +344,13 @@
                         material:floatingLabel="true"
                         />
                 </LinearLayout>
-                <LinearLayout
+
+                <com.xiangmu.wyxw.utils.AutoNextLineLinearlayout
                     android:layout_width="fill_parent"
                     android:orientation="horizontal"
                     android:layout_height="wrap_content"
-                    android:gravity="center_horizontal"
-                    >
+
+                       >
                 <MaterialEditText
                     android:id="@+id/productinfo_jzmj"
                     android:layout_width="wrap_content"
@@ -316,9 +363,12 @@
                     material:floatingLabel="true"
                     android:padding="6dp"
                     />
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                        android:layout_height="match_parent"
+                        android:text="间隔"
+                        android:visibility="invisible"
+                        />
                     <MaterialEditText
                         android:id="@+id/productinfo_fwzj"
                         android:layout_width="wrap_content"
@@ -332,24 +382,13 @@
                         android:padding="6dp"
                         android:visibility="gone"
                         />
-                    </LinearLayout>
-                    <LinearLayout
+                    <TextView
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-                    <MaterialEditText
-                        android:id="@+id/productinfo_fwcj"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
-                        android:hint="租金(元/月):"
-                        android:inputType="numberDecimal"
-                        android:singleLine="true"
-                        android:text=""
-                        material:floatingLabel="true"
-                        android:padding="6dp"
-                        android:visibility="gone"
+                        android:layout_height="match_parent"
+                        android:text="间隔"
+                        android:visibility="invisible"
                         />
-                    </LinearLayout>
+
                     <MaterialEditText
                         android:id="@+id/productinfo_fwlz"
                         android:layout_width="wrap_content"
@@ -361,29 +400,43 @@
                         android:text=""
                         material:floatingLabel="true"
                         />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="间隔"
+                        android:visibility="invisible"
+                        />
                     <MaterialEditText
                         android:id="@+id/productinfo_fwzc"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginLeft="10dp"
+
                         android:hint="总楼层:"
                         android:inputType="number"
                         android:singleLine="true"
                         android:text=""
                         material:floatingLabel="true"
+
                         />
+                    <!--TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="间隔"
+                        android:visibility="invisible"
+                        />-->
                     <fr.ganfra.materialspinner.MaterialSpinner
                         android:id="@+id/spin_cjfs"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
 
                         app:ms_arrowSize="16dp"
-                        android:layout_marginLeft="40dp"
+
                         app:ms_floatingLabelText="交租金方式:"
                         android:visibility="gone"
 
                         app:ms_multiline="true" />
-                  </LinearLayout>
+                </com.xiangmu.wyxw.utils.AutoNextLineLinearlayout>
+
 
 
             </LinearLayout>

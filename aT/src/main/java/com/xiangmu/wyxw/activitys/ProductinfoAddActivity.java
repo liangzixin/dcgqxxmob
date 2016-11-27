@@ -73,6 +73,7 @@ import com.xiangmu.wyxw.jieping.ScreenShot;
 import com.xiangmu.wyxw.utils.DateTime;
 import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.MySqlOpenHelper;
+import com.xiangmu.wyxw.utils.PictureUtil;
 import com.xiangmu.wyxw.utils.ServerURL;
 import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
 import com.xiangmu.wyxw.utils.Upload;
@@ -80,6 +81,8 @@ import com.xiangmu.wyxw.utils.XinWenURL;
 import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
+import org.apache.http.client.ClientProtocolException;
+import org.apache.http.entity.mime.content.FileBody;
 import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
@@ -87,6 +90,7 @@ import org.greenrobot.eventbus.ThreadMode;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -107,10 +111,11 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private List<PhotoEntry> mSelectedPhotos;
     private List<String> listfile = new ArrayList<String>();
     private List<File> list=new ArrayList<>();
+    private List<String> imgstmppath=new ArrayList<String>();
     private ChooseAdapter mAdapter;
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
-    ImageButton fenxiang;
+//    ImageButton fenxiang;
     //
     private Spinner articlerSpinner = null;
     private Spinner spinner_sex = null;
@@ -133,7 +138,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
     private MaterialEditText fwzs_jzmj;
     private MaterialEditText fwzs_fwzj;
-    private MaterialEditText fwzs_fwcj;
+//    private MaterialEditText fwzs_fwcj;
     private MaterialEditText fwzs_hxs;
     private MaterialEditText fwzs_hxt;
     private MaterialEditText fwzs_hxw;
@@ -149,6 +154,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     LinearLayout category3;
     private String filepath;
     private String filepath1;
+    private TextView fpxx;
 
     //    @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
  //@ViewId(R.id.productinfo_sxcy) public MaterialEditText productinfo_sxcy;
@@ -208,7 +214,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
        fwzs_jzmj= (MaterialEditText) findViewById(R.id. productinfo_jzmj);
        fwzs_fwzj= (MaterialEditText) findViewById(R.id. productinfo_fwzj);
-        fwzs_fwcj= (MaterialEditText) findViewById(R.id. productinfo_fwcj);
+
         fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
         fwzs_hxt= (MaterialEditText) findViewById(R.id. productinfo_hxt);
         fwzs_hxs= (MaterialEditText) findViewById(R.id. productinfo_hxs);
@@ -274,7 +280,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                     case 0:
                     case 1:
                         name.setHint("招聘标题");
-
+                        spinner_nl.setVisibility(View.VISIBLE);
                         productinfo_gsdz.setVisibility(View.VISIBLE);
                         productinfo_gsmz.setVisibility(View.VISIBLE);
 
@@ -298,13 +304,13 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         productinfo_gsdz.setVisibility(View.GONE);
                         productinfo_gsmz.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
-//                        LinearLayout.LayoutParams sp_params = new LinearLayout.LayoutParams(
-//
-//                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
-//
-//                        sp_params.width =10;
-//
-//                        spinner_nl.setLayoutParams(sp_params);
+                        LinearLayout.LayoutParams sp_params = new LinearLayout.LayoutParams(
+
+                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
+
+                        sp_params.width =1;
+
+                        spinner_nl.setLayoutParams(sp_params);
                         productinfo_qjnl.setVisibility(View.VISIBLE);
                         spinner_sex.setVisibility(View.VISIBLE);
                         spinner_dxfw.setVisibility(View.VISIBLE);
@@ -329,7 +335,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         productinfo_sxcy.setVisibility(View.GONE);
                         fwzs_zjfs.setVisibility(View.GONE);
                         fwzs_fwzj.setVisibility(View.VISIBLE);
-                        fwzs_fwcj.setVisibility(View.GONE);
+
 //                        LinearLayout.LayoutParams sp_params1 = new LinearLayout.LayoutParams(
 //
 //                                GridLayoutManager.LayoutParams.WRAP_CONTENT, GridLayoutManager.LayoutParams.WRAP_CONTENT);
@@ -343,7 +349,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         break;
                     case 4:
                         name.setHint("房屋出租标题");
-                     fwzs_fwcj.setHint("租金(元)");
+                     fwzs_fwzj.setHint("租金(元/月)");
                         productinfo_gsmz.setHint("小区名称");
                         productinfo_gsmz.setVisibility(View.VISIBLE);
                         productinfo_gsdz.setVisibility(View.GONE);
@@ -356,9 +362,9 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                         category3.setVisibility(View.VISIBLE);
                         productinfo_sxcy.setVisibility(View.GONE);
                         fwzs_zjfs.setVisibility(View.VISIBLE);
-                        fwzs_fwzj.setVisibility(View.GONE);
+                        fwzs_fwzj.setVisibility(View.VISIBLE);
 
-                        fwzs_fwcj.setVisibility(View.VISIBLE);
+                        fwzs_fwzc.setVisibility(View.VISIBLE);
                         gqxx_gqsl.setVisibility(View.GONE);
                         gqxx_spsj.setVisibility(View.GONE);
                         category2.setVisibility(View.GONE);
@@ -532,7 +538,11 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
 //          recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 //        initDate();
-      initview();
+        try {
+            initview();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         //    assert recyclerView != null;
 
 //          recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
@@ -575,20 +585,22 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 
         }
     };
-    private void initview() {
+    private void initview() throws   IOException{
 //        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
 
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
-        TextView duotu_gentie = null;
-        duotu_gentie = (TextView) findViewById(R.id.xinwen_duotu_gentie);//跟帖
+
+        fpxx=(TextView)findViewById(R.id.bt_fpxx);
+//        TextView duotu_gentie = null;
+//        duotu_gentie = (TextView) findViewById(R.id.xinwen_duotu_gentie);//跟帖
         ImageButton caidan = null;
         caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
 //        webView = null;
 //        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
 //        duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
-        fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
+//        fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
         imageback.setOnClickListener(new View.OnClickListener() {
@@ -599,12 +611,12 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         });
         //点击进入跟帖 详细页面
         //// TODO: 2015/11/14 点击进入跟帖 详细页面 完成
-        duotu_gentie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(ProductinfoAddActivity.this,GenTieActivity.class));
-            }
-        });
+//        duotu_gentie.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(ProductinfoAddActivity.this,GenTieActivity.class));
+//            }
+//        });
         //点击打开扩展 详细页面
         //// TODO: 2015/11/14
         caidan.setOnClickListener(new View.OnClickListener() {
@@ -615,12 +627,12 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         });
 
 
-        fenxiang.setOnClickListener(new View.OnClickListener() {
+        fpxx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
               //  ShareUtils.shareContent(ProductinfoAddActivity.this, xinwentitle, url);
-               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
-                System.out.println("name="+name.getText()+"");
+//               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
+//                System.out.println("name="+name.getText()+"");
               if(articlerSpinner.getSelectedItemPosition()==0)  {
 
                //   Toast.makeText(ProductinfoAddActivity.this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
@@ -645,6 +657,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                 }
 
                String saveproduct=xinWenURL.getSaveproductinfo();
+                Toast.makeText(ProductinfoAddActivity.this, "发布中.....", Toast.LENGTH_LONG).show();
                 SaveData(saveproduct);
 //                int size =mSelectedPhotos.size();
 //                for (int i = 0; i < size; i++) {
@@ -930,7 +943,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         return photo;
     }
 
-    private void SaveData(final String url) {
+    private void SaveData(final String url){
         filepath= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator;
         filepath1= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+"abc.txt";
         FileInputStream fis = null;//文件输入流
@@ -974,13 +987,28 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("fwcs.fwlj",fwzs_fwlz.getText().toString());
             params.addQueryStringParameter("fwcs.fwcj",fwzs_fwzc.getText().toString());
 
+               params.addQueryStringParameter("fwcs.fzfsrequest", fwzs_zjfs.getSelectedItem().toString());
+
             params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
 
 
            if(mSelectedPhotos.size()>0) {
                for (int i = 0; i < mSelectedPhotos.size(); i++) {
                    Log.i("F", filepath + "a0" + i + "jpg");
-                   list.add(new File(mSelectedPhotos.get(i).getPath()));
+
+                   String tmepName = null;
+                   try {
+                       tmepName = PictureUtil.bitmapToPath(mSelectedPhotos.get(i).getPath());
+                   } catch (IOException e) {
+                       e.printStackTrace();
+                   }
+
+//                   File file = new File(tmepName);
+//                   FileBody fileBody = new FileBody(file);
+
+                   //存储临时文件名
+                   imgstmppath.add(tmepName);
+                   list.add(new File(tmepName));
                }
 //            list.add(new File(filepath1));
 
@@ -998,9 +1026,12 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                     if (responseInfo.result != null) {
                         Toast.makeText(ProductinfoAddActivity.this, "发布信息成功！", Toast.LENGTH_SHORT).show();
                     //    SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
+                        PictureUtil.deleteImgTmp(imgstmppath);
                         Intent intent = new Intent();
                         intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
+
                         startActivity(intent);
+                        finish();
 
                     }
                 }
