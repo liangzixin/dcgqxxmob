@@ -47,10 +47,12 @@ public class ArticleHolder extends CommonHolder<Article> {
     @ViewId(R.id.productinfo_fwcs_fwcj4) public TextView productinfo_fwcs_fwcj4;
     @ViewId(R.id.productinfo_fwcs_fwcjfx) public TextView productinfo_fwcs_fwcjfx;
 
+    @ViewId(R.id.productinfo_gsmz50) public TextView productinfo_gqxx_gsmz50;
     @ViewId(R.id.productinfo_gqxx_gsmz5) public TextView productinfo_gqxx_gsmz5;
+    @ViewId(R.id.productinfo_gsdz50) public TextView productinfo_gqxx_gsdz50;
     @ViewId(R.id.productinfo_gqxx_gsdz5) public TextView productinfo_gqxx_gsdz5;
     @ViewId(R.id.productinfo_gqxx_gqsl5) public TextView productinfo_gqxx_gqsl5;
-
+    @ViewId(R.id.productinfo_gqxx_gqsl50) public TextView productinfo_gqxx_gqsl50;
 
     @ViewId(R.id.productinfo_lxr) public TextView lxr;
     @ViewId(R.id.productinfo_lxdh) public TextView lxdh;
@@ -80,7 +82,7 @@ public class ArticleHolder extends CommonHolder<Article> {
                 case 4:
                     category4.setVisibility(View.VISIBLE);
                     break;
-                case 5:
+                default:
                     category5.setVisibility(View.VISIBLE);
                     break;
         }
@@ -131,7 +133,47 @@ public class ArticleHolder extends CommonHolder<Article> {
                 productinfo_gqxx_gsmz5.setText(article.gsmz);
                 productinfo_gqxx_gsdz5.setText(article.gsdz);
                 if (article.gqxx!= null) {
-                    productinfo_gqxx_gqsl5.setText(article.gqxx.getGqsl());
+                    productinfo_gqxx_gqsl5.setText(Utils.IntToChar(article.gqxx.getGqsl()));
+                }else{
+                    productinfo_gqxx_gqsl5.setVisibility(View.GONE);
+                }
+                break;
+            case 6:
+                productinfo_gqxx_gsmz50.setText("成色：");
+                productinfo_gqxx_gsmz5.setText(article.gsmz);
+                productinfo_gqxx_gsdz50.setText("具体位置：");
+                productinfo_gqxx_gsdz5.setText(article.gsdz);
+
+                if (article.gqxx!= null) {
+                    productinfo_gqxx_gqsl5.setText(Utils.IntToChar(article.gqxx.getGqsl()));
+                }else{
+                    productinfo_gqxx_gqsl5.setVisibility(View.GONE);
+                }
+                break;
+            case 7:
+                productinfo_gqxx_gsmz5.setText(article.gsmz);
+                productinfo_gqxx_gsdz5.setText(article.gsdz);
+                productinfo_gqxx_gqsl50.setVisibility(View.GONE);
+                productinfo_gqxx_gqsl5.setVisibility(View.GONE);
+                break;
+            case 8:
+                productinfo_gqxx_gsmz5.setVisibility(View.GONE);
+                productinfo_gqxx_gsmz50.setVisibility(View.GONE);
+                productinfo_gqxx_gsdz5.setText(article.gsdz);
+                productinfo_gqxx_gsdz50.setText("铺面位置：");
+                productinfo_gqxx_gqsl50.setVisibility(View.GONE);
+                productinfo_gqxx_gqsl5.setVisibility(View.GONE);
+                break;
+            case 9:
+
+                productinfo_gqxx_gsmz5.setText(article.gsmz);
+                productinfo_gqxx_gsdz5.setText(article.gsdz);
+                productinfo_gqxx_gsmz50.setText("家具建材店名称：");
+                productinfo_gqxx_gsdz50.setText("家具建材店地址：");
+                if (article.gqxx!= null) {
+                    productinfo_gqxx_gqsl5.setText(Utils.IntToChar(article.gqxx.getGqsl()));
+                }else{
+                    productinfo_gqxx_gqsl5.setVisibility(View.GONE);
                 }
                 break;
         }

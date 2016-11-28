@@ -429,6 +429,7 @@ public class TouTiaoFrament extends Fragment {
         xinWenXi.setLxdh(toutiao_list.get(pos).getLxdh());
         xinWenXi.setZpxx(toutiao_list.get(pos).getZpxx());
         xinWenXi.setFwcs(toutiao_list.get(pos).getFwcs());
+        xinWenXi.setGqxx(toutiao_list.get(pos).getGqxx());
         xinWenXi.setProductCategory(toutiao_list.get(pos).getProductcategory());
 //xinWenXi.setUploadFiles(toutiao_list.get(pos).getUploadFile());
        for(int i=0;i<toutiao_list.get(pos).getUploadFile().size();i++){
