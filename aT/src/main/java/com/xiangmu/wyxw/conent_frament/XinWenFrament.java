@@ -59,6 +59,9 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
     @Nullable
     private View contentview;
 
+
+
+
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         if (contentview == null) {
             contentview = initview(inflater);
@@ -348,7 +351,8 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
             case R.id.shangtoutiao:
                 popupWindow.dismiss();
                 intent = new Intent(getActivity(), ProductinfoAddActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent,1);
+//                startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.zcdh_alpha_in, R.anim.zcdh_set_out);
                 break;
             case R.id.lixian:
