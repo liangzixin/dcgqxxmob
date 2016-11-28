@@ -64,6 +64,7 @@ import com.xiangmu.wyxw.Modle.Zpxx;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
 import com.xiangmu.wyxw.Setting_Utils.ZiTiScale;
+import com.xiangmu.wyxw.conent_frament.XinWenFrament;
 import com.xiangmu.wyxw.holder.ArticleHolder;
 import com.xiangmu.wyxw.holder.PhotoHolder;
 import  com.xiangmu.wyxw.Modle.Article;
@@ -156,6 +157,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private String filepath;
     private String filepath1;
     private TextView fpxx;
+    public static  final int RESULT_CODE=101;
 
     //    @ViewId(R.id.productinfo_content)  MaterialEditText productinfo_content;
  //@ViewId(R.id.productinfo_sxcy) public MaterialEditText productinfo_sxcy;
@@ -1025,14 +1027,16 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
+
                     if (responseInfo.result != null) {
                         Toast.makeText(ProductinfoAddActivity.this, "发布信息成功！", Toast.LENGTH_SHORT).show();
                     //    SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
                         PictureUtil.deleteImgTmp(imgstmppath);
                         Intent intent = new Intent();
-                        intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
-
-                        startActivity(intent);
+//                        intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
+//
+//                        startActivity(intent);
+                        setResult(RESULT_CODE, intent);
                         finish();
 
                     }
