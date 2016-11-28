@@ -479,7 +479,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:hint="联系电话:"
-                android:inputType="textNoSuggestions"
+                android:inputType="phone"
                 android:singleLine="true"
                 android:layout_marginLeft="50dp"
                 android:text=""

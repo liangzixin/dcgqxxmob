@@ -15,6 +15,7 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.Editable;
+import android.text.InputType;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
@@ -190,6 +191,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
         productinfo_gsmz= (MaterialEditText) findViewById(R.id.productinfo_gsmz);
         productinfo_lxr= (MaterialEditText) findViewById(R.id.productinfo_lxr);
         productinfo_lxdh= (MaterialEditText) findViewById(R.id.productinfo_lxdh);
+
         articlerSpinner = (MaterialSpinner) findViewById(R.id.spin_articler);
         productinfo_content= (MaterialEditText) findViewById(R.id.productinfo_content);
 

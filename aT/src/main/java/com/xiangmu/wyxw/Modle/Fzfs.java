@@ -11,7 +11,7 @@ public enum Fzfs {
 	OTHER{
 		@Override
 		public String getName() {
-			return "交费方式";
+			return "缴费方式";
 		}
 	},
 	FZFS1{
