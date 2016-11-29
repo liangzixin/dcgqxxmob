@@ -186,7 +186,8 @@ public class SearchActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 keywords = query;
-                initSearchNews(ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);//执行新闻搜索请求
+//                initSearchNews(ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);//执行新闻搜索请求
+                initSearchNews(ServerURL.searchUrl3 + keywords);//执行新闻搜索请求
                 //添加数据
                 ContentValues contentValues = new ContentValues();
                 contentValues.put("url",ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);

@@ -57,13 +57,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 // 当otherActivity中返回数据的时候，会响应此方法
 // requestCode和resultCode必须与请求startActivityForResult()和返回setResult()的时候传入的值一致。
-        System.out.println("requestCode="+requestCode);
-        System.out.println("resultCode="+resultCode);
-        System.out.println(" ProductinfoAddActivity.RESULT_CODE="+ ProductinfoAddActivity.RESULT_CODE);
-//        if (requestCode == 1 && resultCode == ProductinfoAddActivity.RESULT_CODE) {
-//        if (resultCode == ProductinfoAddActivity.RESULT_CODE) {
-            initdata();//填充数据
-            initview();//填充布局
+//        System.out.println("requestCode="+requestCode);
+//        System.out.println("resultCode="+resultCode);
+//        System.out.println(" ProductinfoAddActivity.RESULT_CODE="+ ProductinfoAddActivity.RESULT_CODE);
+////        if (requestCode == 1 && resultCode == ProductinfoAddActivity.RESULT_CODE) {
+////        if (resultCode == ProductinfoAddActivity.RESULT_CODE) {
+//            initdata();//填充数据
+//            initview();//填充布局
 //            Bundle bundle = data.getExtras();
 //        String strResult = bundle.getString("result");
 //        Log.i(TAG, "onActivityResult: " + strResult);

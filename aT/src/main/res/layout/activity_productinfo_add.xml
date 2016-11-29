@@ -235,7 +235,7 @@
 
                     app:ms_arrowSize="16dp"
 
-                    app:ms_floatingLabelText="性别:"
+                    app:ms_floatingLabelText="性别"
                     android:visibility="gone"
                     app:ms_multiline="true"
                     android:hint="性别:"
@@ -256,7 +256,7 @@
 
                     app:ms_arrowSize="16dp"
 
-                    app:ms_floatingLabelText="底薪:"
+                    app:ms_floatingLabelText="底薪"
 
                     app:ms_multiline="true" />
                 <TextView
@@ -273,7 +273,7 @@
 
                     app:ms_arrowSize="16dp"
                     android:layout_marginLeft="30dp"
-                    app:ms_floatingLabelText="学历:"
+                    app:ms_floatingLabelText="学历"
                     android:visibility="gone"
 
                     app:ms_multiline="true" />
@@ -479,7 +479,8 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="right"
                 android:hint="联系电话:"
-                android:inputType="phone"
+
+                android:digits="0123456789-"
                 android:singleLine="true"
                 android:layout_marginLeft="50dp"
                 android:text=""

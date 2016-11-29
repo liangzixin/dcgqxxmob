@@ -98,6 +98,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import fr.ganfra.materialspinner.MaterialSpinner;
 
@@ -110,7 +112,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     private RecyclerView mRecyclerView;
-    private List<PhotoEntry> mSelectedPhotos;
+    private List<PhotoEntry> mSelectedPhotos=new ArrayList<PhotoEntry>();
     private List<String> listfile = new ArrayList<String>();
     private List<File> list=new ArrayList<>();
     private List<String> imgstmppath=new ArrayList<String>();
@@ -654,11 +656,13 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                     new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
                     return;
                 }
-                if(productinfo_lxdh.getText().toString().trim().equals(""))  {
+                if(!isMobileNO(productinfo_lxdh.getText().toString()))  {
 
-                    new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("请输入联系电话！！").setPositiveButton("确定", null).show();
+
+                    new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
                     return;
                 }
+
 
                String saveproduct=xinWenURL.getSaveproductinfo();
                 Toast.makeText(ProductinfoAddActivity.this, "发布中.....", Toast.LENGTH_LONG).show();
@@ -1016,9 +1020,10 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                }
 //            list.add(new File(filepath1));
 
-               for (int i = 0; i < mSelectedPhotos.size(); i++) {
-                   params.addBodyParameter("upload[" + i + "]", list.get(i));
+               for (int j = 0;j< mSelectedPhotos.size(); j++) {
+                   params.addBodyParameter("upload[" + j + "]", list.get(j));
                }
+
            }
 
 
@@ -1033,10 +1038,10 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
                     //    SharedPreferencesUtil.saveData(ProductinfoAddActivity.this, url, responseInfo.result);
                         PictureUtil.deleteImgTmp(imgstmppath);
                         Intent intent = new Intent();
-//                        intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
-//
-//                        startActivity(intent);
-                        setResult(RESULT_CODE, intent);
+                        intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
+
+                        startActivity(intent);
+//                        setResult(RESULT_CODE, intent);
                         finish();
 
                     }
@@ -1113,5 +1118,19 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 //                  return convertView;
 //                    }
 
+
+    public static boolean isMobileNO(String mobiles) {
+        boolean flag = false;
+        try {
+            //13********* ,15********,18*********
+            Pattern p = Pattern
+                    .compile("^((13[0-9])|(15[^4,\\D])|(18[0,5-9]))\\d{8}$");
+            Matcher m = p.matcher(mobiles);
+            flag = m.matches();
+        } catch (Exception e) {
+            flag = false;
+        }
+        return flag;
+    }
 }
 

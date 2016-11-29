@@ -23,7 +23,7 @@ public interface ServerURL {
     String tuiJianWord = "http://c.3g.163.com/nc/search/hotWord.html";//热词推荐
     String searchUrl1 = "http://c.3g.163.com/search/comp/MA%3D%3D/30/";
     String searchUrl2 = ".html?deviceId=ODYyOTQ5MDIzMzA4MzM2&version=bmV3c2NsaWVudC41LjMuNi5hbmRyb2lk&channel=VDEzNDg2NDc5MDkxMDc%3D";
-
+    String searchUrl3 = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0&searchWord=";//二手
     //视听相关
     String shiTingUrl = "http://c.m.163.com/nc/video/list/V9LG4B3A0/y/0-10.html";
 }
