@@ -56,6 +56,7 @@ public class SearchBean {
             public String dkeys;
             public String title;
             public String ptime;
+            public String name;
         }
     }
 

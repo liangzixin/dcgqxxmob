@@ -315,7 +315,7 @@ public class SearchActivity extends AppCompatActivity {
                 break;
             case 2:
                 SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                LogUtils.e("---", searchBean.doc.result.get(0).title);
+                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 progressDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
