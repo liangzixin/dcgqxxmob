@@ -27,7 +27,7 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/back"
             android:layout_toRightOf="@+id/back"
-            android:text="搜索新闻"
+            android:text="搜索信息"
             android:textColor="@color/white"
             android:textSize="15sp" />
     </RelativeLayout>
@@ -115,11 +115,11 @@
             android:text="搜索结果"
             android:textColor="@color/red" />
 
-        <TextView
+        <!--TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="新闻" />
+            android:text="新闻" />-->
 
         <com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView
             android:id="@+id/lv_searchResult"

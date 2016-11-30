@@ -67,7 +67,7 @@ public class SearchActivity extends AppCompatActivity {
     private SearchResultAdapter searchResultAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
-    private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -318,6 +318,7 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 break;
             case 2:
+               List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
                 XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
                 toutiao_list.addAll(toutiao_object.getT18908805728());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
@@ -327,7 +328,7 @@ public class SearchActivity extends AppCompatActivity {
                 progressDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-                searchResultAdapter = new SearchResultAdapter(toutiao_list, this);
+                searchResultAdapter = new SearchResultAdapter(toutiao_list,this);
                 lv_searchResult.getRefreshableView().setAdapter(searchResultAdapter);
                 break;
         }
