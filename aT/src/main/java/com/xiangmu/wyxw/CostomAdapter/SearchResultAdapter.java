@@ -9,6 +9,7 @@ import android.widget.TextView;
 
 import com.xiangmu.wyxw.Bean.SearchBean;
 import com.xiangmu.wyxw.R;
+import com.xiangmu.wyxw.utils.XinWen_productinfo;
 
 import java.util.List;
 
@@ -16,14 +17,14 @@ import java.util.List;
  * Created by Administrator on 2015/11/16.
  */
 public class SearchResultAdapter extends BaseAdapter {
-    private List<SearchBean.DocEntity.ResultEntity> list;
+    private List<XinWen_productinfo.T18908805728Entity> list;
     private Context context;
 
-    public List<SearchBean.DocEntity.ResultEntity> getList() {
+    public List<XinWen_productinfo.T18908805728Entity> getList() {
         return list;
     }
 
-    public SearchResultAdapter(List<SearchBean.DocEntity.ResultEntity> list, Context context) {
+    public SearchResultAdapter(List<XinWen_productinfo.T18908805728Entity> list, Context context) {
         this.list = list;
         this.context = context;
     }
@@ -49,19 +50,22 @@ public class SearchResultAdapter extends BaseAdapter {
             view = LayoutInflater.from(context).inflate(R.layout.item_searchresult, null);
             viewHoudle2 = new ViewHoudle2();
             viewHoudle2.result_title = (TextView) view.findViewById(R.id.result_title);
+            viewHoudle2.result_digest= (TextView) view.findViewById(R.id.result_digest);
             viewHoudle2.result_ptime = (TextView) view.findViewById(R.id.result_ptime);
+
             view.setTag(viewHoudle2);
         } else {
             viewHoudle2 = (ViewHoudle2) view.getTag();
         }
-        String title = list.get(i).title;//专家：<em>中国</em>需要股权分散的B类企业
+        String title = list.get(i).getName();//专家：<em>中国</em>需要股权分散的B类企业
         String str = title.replace("<em>", "");
         String replace = str.replace("</em>", "");
         viewHoudle2.result_title.setText(replace);
-        viewHoudle2.result_ptime.setText(list.get(i).ptime);
+        viewHoudle2.result_digest.setText(list.get(i).getDescription());
+        viewHoudle2.result_ptime.setText(list.get(i).getCreateTime());
         return view;
     }
     class ViewHoudle2 {
-        TextView result_title,result_ptime;
+        TextView result_title,result_digest,result_ptime;
     }
 }

@@ -22,13 +22,18 @@
             android:id="@+id/result_title"
             android:text="漫评中国方案为G20指明方向"/>
         <TextView
+            android:id="@+id/result_digest"
+            style="@style/xinwen_item_digest"
+
+            android:layout_below="@+id/result_title" />
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginLeft="3dp"
             android:layout_marginBottom="3dp"
             android:id="@+id/result_ptime"
-            android:text="2015-11-16 08:30:20"/>
+            android:text="2015-11-16"/>
 
     </LinearLayout>
 

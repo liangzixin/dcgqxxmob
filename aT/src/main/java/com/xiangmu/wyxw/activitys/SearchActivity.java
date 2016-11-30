@@ -37,6 +37,8 @@ import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.MySqlitehelper;
 import com.xiangmu.wyxw.utils.ServerURL;
 import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
+import com.xiangmu.wyxw.utils.XinWen_productinfo;
+import com.xiangmu.wyxw.utils.XinWenproductinfoJson;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,6 +67,7 @@ public class SearchActivity extends AppCompatActivity {
     private SearchResultAdapter searchResultAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
+    private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -212,7 +215,8 @@ public class SearchActivity extends AppCompatActivity {
         lv_searchResult.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                String docid = searchResultAdapter.getList().get(i).docid;
+//                String docid = searchResultAdapter.getList().get(i).docid;
+                String docid = searchResultAdapter.getList().get(i).getName();
                 Intent intent = new Intent(SearchActivity.this, YueDuDetialActivity.class);
                 intent.putExtra("yueduDetial", docid);
                 startActivity(intent);
@@ -314,12 +318,16 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 break;
             case 2:
-                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                LogUtils.e("---", searchBean.doc.result.get(0).name);
+                XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
+                toutiao_list.addAll(toutiao_object.getT18908805728());
+//                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
+                System.out.println("标题:"+toutiao_list.get(0).getName());
+//                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 progressDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
+//                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
+                searchResultAdapter = new SearchResultAdapter(toutiao_list, this);
                 lv_searchResult.getRefreshableView().setAdapter(searchResultAdapter);
                 break;
         }
