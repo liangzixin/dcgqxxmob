@@ -20,7 +20,8 @@ public interface ServerURL {
     String HuiGuDetialUrl = "http://c.3g.163.com/nc/userhead/optopic/";//前缀; 格式:http://c.3g.163.com/nc/userhead/optopic/150/0-20.html
 
     //搜索相关
-    String tuiJianWord = "http://c.3g.163.com/nc/search/hotWord.html";//热词推荐
+//    String tuiJianWord = "http://c.3g.163.com/nc/search/hotWord.html";//热词推荐
+    String tuiJianWord = HttpUtil.BASE_URL+"tuijianAction!selecttuijian";//二手
     String searchUrl1 = "http://c.3g.163.com/search/comp/MA%3D%3D/30/";
     String searchUrl2 = ".html?deviceId=ODYyOTQ5MDIzMzA4MzM2&version=bmV3c2NsaWVudC41LjMuNi5hbmRyb2lk&channel=VDEzNDg2NDc5MDkxMDc%3D";
     String searchUrl3 = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?pageNo=0&searchWord=";//二手

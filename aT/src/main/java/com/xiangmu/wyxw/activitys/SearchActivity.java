@@ -307,7 +307,7 @@ public class SearchActivity extends AppCompatActivity {
                     JSONArray jsonArray = jsonObject.getJSONArray("hotWordList");
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jo = jsonArray.getJSONObject(i);
-                        String hotWord = jo.getString("hotWord");
+                        String hotWord = jo.getString("title");
                         list.add(hotWord);
                     }
                     gridViewAadapter = new MyGridViewAadapter(list, this);
