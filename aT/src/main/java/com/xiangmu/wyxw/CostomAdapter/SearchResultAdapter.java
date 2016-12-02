@@ -52,7 +52,8 @@ public class SearchResultAdapter extends BaseAdapter {
             viewHoudle2.result_title = (TextView) view.findViewById(R.id.result_title);
             viewHoudle2.result_digest= (TextView) view.findViewById(R.id.result_digest);
             viewHoudle2.result_ptime = (TextView) view.findViewById(R.id.result_ptime);
-
+            viewHoudle2.result_count= (TextView) view.findViewById(R.id.result_count);
+            viewHoudle2.result_articler= (TextView) view.findViewById(R.id.result_articler);
             view.setTag(viewHoudle2);
         } else {
             viewHoudle2 = (ViewHoudle2) view.getTag();
@@ -62,10 +63,12 @@ public class SearchResultAdapter extends BaseAdapter {
         String replace = str.replace("</em>", "");
         viewHoudle2.result_title.setText(replace);
         viewHoudle2.result_digest.setText(list.get(i).getDescription());
-        viewHoudle2.result_ptime.setText(list.get(i).getCreateTime());
+        viewHoudle2.result_ptime.setText(list.get(i).getCreateTime().substring(0,11));
+        viewHoudle2.result_count.setText("人气:"+list.get(i).getClickcount());
+        viewHoudle2.result_articler.setText("留言:"+list.get(i).getArticlers().size());
         return view;
     }
     class ViewHoudle2 {
-        TextView result_title,result_digest,result_ptime;
+        TextView result_title,result_digest,result_ptime,result_count,result_articler;
     }
 }

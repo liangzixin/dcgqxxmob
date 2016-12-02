@@ -1,5 +1,6 @@
 package com.xiangmu.wyxw.activitys;
 
+import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -30,6 +31,8 @@ import com.xiangmu.wyxw.Bean.SearchBean;
 import com.xiangmu.wyxw.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.wyxw.CostomAdapter.SearchResultAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.wyxw.Modle.ProductArticler;
+import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.wyxw.utils.CommonUtil;
@@ -37,6 +40,9 @@ import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.MySqlitehelper;
 import com.xiangmu.wyxw.utils.ServerURL;
 import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
+import com.xiangmu.wyxw.utils.XinWenXiData;
+import com.xiangmu.wyxw.utils.XinWenXiImage;
+import com.xiangmu.wyxw.utils.XinWen_adapter;
 import com.xiangmu.wyxw.utils.XinWen_productinfo;
 import com.xiangmu.wyxw.utils.XinWenproductinfoJson;
 
@@ -67,7 +73,8 @@ public class SearchActivity extends AppCompatActivity {
     private SearchResultAdapter searchResultAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
-
+    private  List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
+    private  List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -215,14 +222,17 @@ public class SearchActivity extends AppCompatActivity {
         lv_searchResult.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
 //                String docid = searchResultAdapter.getList().get(i).docid;
-                String docid = searchResultAdapter.getList().get(i).getName();
-                Intent intent = new Intent(SearchActivity.this, YueDuDetialActivity.class);
-                intent.putExtra("yueduDetial", docid);
-                startActivity(intent);
-                overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
-                layoutsearchResult.setVisibility(View.GONE);//隐藏搜索结果布局
-                queryDB();
+
+//                String docid = searchResultAdapter.getList().get(i).getId().toString();
+//                Intent intent = new Intent(SearchActivity.this, YueDuDetialActivity.class);
+//                intent.putExtra("yueduDetial", docid);
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
+//                layoutsearchResult.setVisibility(View.GONE);//隐藏搜索结果布局
+//                queryDB();
+                frament2activity(i,toutiao_list);
             }
         });
     }
@@ -318,7 +328,7 @@ public class SearchActivity extends AppCompatActivity {
                 }
                 break;
             case 2:
-               List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
+              toutiao_list = new ArrayList<>();
                 XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
                 toutiao_list.addAll(toutiao_object.getT18908805728());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
@@ -343,5 +353,117 @@ public class SearchActivity extends AppCompatActivity {
         if (writableDatabase != null){
             writableDatabase.close();
         }
+    }
+
+    //跳转详细页面方法
+    @SuppressLint("NewApi")
+    private void frament2activity(int position, List<XinWen_productinfo.T18908805728Entity> toutiao_list) {
+        int pos;
+        if (listads == null) {//判断有没有轮播图如果没有就不添加轮播布局  布局就和原来一样
+            pos = position;
+        } else {
+            pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
+        }
+        LogUtils.e("xinwenadapter", "postion==" + pos);
+        //    int bujutype = XinWen_adapter.getType(toutiao_list.get(pos).getId());
+        int bujutype =0;
+        LogUtils.e("xinwenadapter", "type==" + bujutype);
+
+        //传入详细页面的数据
+        List<UploadFile> potolist = new ArrayList<>();
+        List<ProductArticler> liuyuenlist = new ArrayList<>();
+        //List<PhotoImage> potolist2 = new ArrayList<>();
+        XinWenXiData xinWenXi = new XinWenXiData();
+        xinWenXi.setId(toutiao_list.get(pos).getId());
+        xinWenXi.setBujuType(bujutype);
+//        xinWenXi.setLanMuType(daohangtype);
+        xinWenXi.setLanMuType(1);
+        xinWenXi.setReplaycount(toutiao_list.get(pos).getArticlers().size());//跟帖数量
+        xinWenXi.setTitle(toutiao_list.get(pos).getName());//标题
+        xinWenXi.setXinwentext(toutiao_list.get(pos).getDescription());//内容
+        xinWenXi.setCreateDate(toutiao_list.get(pos).getCreateTime());//日期
+        xinWenXi.setGsmz(toutiao_list.get(pos).getGsmz());
+        xinWenXi.setGsdz(toutiao_list.get(pos).getGsdz());
+        xinWenXi.setLxr(toutiao_list.get(pos).getLxr());
+        xinWenXi.setLxdh(toutiao_list.get(pos).getLxdh());
+        xinWenXi.setZpxx(toutiao_list.get(pos).getZpxx());
+        xinWenXi.setFwcs(toutiao_list.get(pos).getFwcs());
+        xinWenXi.setGqxx(toutiao_list.get(pos).getGqxx());
+        xinWenXi.setProductCategory(toutiao_list.get(pos).getProductcategory());
+//xinWenXi.setUploadFiles(toutiao_list.get(pos).getUploadFile());
+        for(int i=0;i<toutiao_list.get(pos).getUploadFile().size();i++){
+            UploadFile uploadFile=new UploadFile();
+
+            uploadFile.setPath(toutiao_list.get(pos).getUploadFile().get(i).getPath());
+            potolist.add(uploadFile);
+        }
+        for(int i=0;i<toutiao_list.get(pos).getProductArticler().size();i++){
+            ProductArticler productArticler=new ProductArticler();
+            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
+            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
+            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
+            liuyuenlist.add(productArticler);
+        }
+//        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
+//        potolist0=(List<XinWen_productinfo.T18908805728Entity.UploadFileEntity>)toutiao_list.get(pos).getUploadFile();
+        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
+        if(potolist!=null) {
+            potolist1= XinWenXiImage.getdata(potolist,SearchActivity.this);
+        }
+//        for(int i=0;i<potolist1.get(pos).getPhotosList().size();i++){
+//            PhotoImage photo=new PhotoImage();
+//
+//           photo.setImagePicture(potolist1.get(pos).getPhotosList().get(i).getImage());
+//            //   photo.setImagePicture(null);
+//            potolist2.add(photo);
+//        }
+        //根据类型选择跳转的详细页面
+        switch (bujutype) {
+            case XinWen_adapter.TYPE_putong:
+            case XinWen_adapter.TYPE_zhuanti:
+            case XinWen_adapter.TYPE_zhibo:
+                LogUtils.e("xinwenadapter", "TYPE_zhibo==" + bujutype);
+                //  String urlzhibo = toutiao_list.get(pos).getUrl();
+                // String urlzhibo = toutiao_list.get(pos).getName();
+                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
+                xinWenXi.setUrl(urlzhibo);//详细页面url
+                //跳转到详细页
+                Intent intentzhibo = new Intent(SearchActivity.this, WebProductinfoViewActivity.class);
+                intentzhibo.putExtra("xinwendata", xinWenXi);
+                //   intentzhibo.putExtra("potolist", potolist);
+                //   intentzhibo.putExtra("xinwendata", new Gson().toJson(xinWenXi));
+                Bundle bundle = new Bundle();
+
+//须定义一个list用于在budnle中传递需要传递的ArrayList<Object>,这个是必须要的
+//                bundle.putStringArray("potolist", potolist);
+//                intent.putExtras(bundle);
+                ArrayList bundlelist = new ArrayList();
+                ArrayList bundlelist1 = new ArrayList();
+                bundlelist.add(potolist);
+                bundlelist1.add(liuyuenlist);
+                bundle.putParcelableArrayList("potolist",bundlelist);
+                bundle.putParcelableArrayList("liuyuanlist",bundlelist1);
+                intentzhibo.putExtras(bundle);
+//                intentzhibo.putExtra("bundle", bundle);
+                startActivity(intentzhibo);
+                SearchActivity.this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
+                break;
+            case XinWen_adapter.type_duotu:
+                LogUtils.e("xinwenadapter", "type_duotu==" + bujutype);
+                //   String urlduotuRight = toutiao_list.get(pos).getId();
+                String urlduotuRight = toutiao_list.get(pos).getName();
+                String urlRighBefor = urlduotuRight.substring(urlduotuRight.lastIndexOf("|") - 4);
+                String urlRight = urlRighBefor.replaceAll("\\|", "/");
+                String urlduotu = "http://c.3g.163.com/photo/api/set/" + urlRight + ".json";
+                //0096|81994    http://c.3g.163.com/photo/api/set/0096/82126.json
+                xinWenXi.setUrl(urlduotu);//详细页面url
+                //跳转到详细页
+                Intent intentduotu = new Intent(SearchActivity.this, XinWenXiActivity.class);
+                intentduotu.putExtra("xinwendata", xinWenXi);
+
+                startActivity(intentduotu);
+                break;
+        }
+
     }
 }
