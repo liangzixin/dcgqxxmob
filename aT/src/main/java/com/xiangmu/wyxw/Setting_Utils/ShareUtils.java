@@ -22,7 +22,8 @@ public class ShareUtils {
         umSocialService.setShareContent(title);
         umSocialService.setShareImage(new UMImage(context, url));
         //分享到qq空间
-        QZoneSsoHandler handler = new QZoneSsoHandler((Activity) context, "1104966900", "voYmRxQSvtpCnGUE");
+//        QZoneSsoHandler handler = new QZoneSsoHandler((Activity) context, "11049669001", "Z72WYfitxSU5HyVO");
+        QZoneSsoHandler handler = new QZoneSsoHandler((Activity) context, "1105789263", "Z72WYfitxSU5HyVO");
         handler.setShareAfterAuthorize(false);
         handler.setTargetUrl("http://f.hiphotos.baidu.com/image/pic/item/21a4462309f79052adae76d108f3d7ca7acbd5af.jpg");
         //添加到分享
@@ -35,7 +36,7 @@ public class ShareUtils {
         handler2.setToCircle(true);
         handler2.addToSocialSDK();
         //分享给QQ好友
-        UMQQSsoHandler handler3 = new UMQQSsoHandler((Activity) context, "1104966900", "voYmRxQSvtpCnGUE");
+        UMQQSsoHandler handler3 = new UMQQSsoHandler((Activity) context, "1105789263", "Z72WYfitxSU5HyVO");
         handler3.addToSocialSDK();
         //分享到人人网
         umSocialService.setAppWebSite(SHARE_MEDIA.RENREN, "http://www.baidu.com");
@@ -48,7 +49,7 @@ public class ShareUtils {
         umSocialService.setShareContent(title);
         umSocialService.setShareImage(new UMImage(context, url));
         //分享给QQ好友
-        UMQQSsoHandler handler3 = new UMQQSsoHandler((Activity) context, "1104966900", "voYmRxQSvtpCnGUE");
+        UMQQSsoHandler handler3 = new UMQQSsoHandler((Activity) context, "1105789263", "Z72WYfitxSU5HyVO");
         handler3.addToSocialSDK();
         umSocialService.openShare((Activity) context, false);
     }
@@ -57,7 +58,7 @@ public class ShareUtils {
         umSocialService.setShareContent(title);
         umSocialService.setShareImage(new UMImage(context, url));
         //分享到qq空间
-        QZoneSsoHandler handler = new QZoneSsoHandler((Activity) context, "1104966900", "voYmRxQSvtpCnGUE");
+        QZoneSsoHandler handler = new QZoneSsoHandler((Activity) context, "1105789263", "Z72WYfitxSU5HyVO");
         handler.setShareAfterAuthorize(false);
         handler.setTargetUrl("http://f.hiphotos.baidu.com/image/pic/item/21a4462309f79052adae76d108f3d7ca7acbd5af.jpg");
         umSocialService.openShare((Activity) context, false);

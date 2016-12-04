@@ -156,7 +156,7 @@ public class SearchActivity extends AppCompatActivity {
                 String word = adapterHistory.getList().get(i);
                 Toast.makeText(SearchActivity.this, word, Toast.LENGTH_SHORT).show();
                 search_view.setQuery(word, false);
-                initSearchNews(ServerURL.searchUrl1 + word + ServerURL.searchUrl2);//执行新闻搜索请求
+                initSearchNews(ServerURL.searchUrl3 + word);//执行新闻搜索请求
             }
         });
 
@@ -200,7 +200,8 @@ public class SearchActivity extends AppCompatActivity {
                 initSearchNews(ServerURL.searchUrl3 + keywords);//执行新闻搜索请求
                 //添加数据
                 ContentValues contentValues = new ContentValues();
-                contentValues.put("url",ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);
+//                contentValues.put("url",ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);
+                contentValues.put("url",ServerURL.searchUrl3 + keywords);
                 contentValues.put("searchWord", keywords);
                 writableDatabase.insert("searchHistory", null, contentValues);
                 return false;
@@ -273,6 +274,7 @@ public class SearchActivity extends AppCompatActivity {
     private void getData(int flag, final String url) {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
+
             switch (flag) {
                 case 1:
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
@@ -291,6 +293,7 @@ public class SearchActivity extends AppCompatActivity {
                     });
                     break;
                 case 2:
+//                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
