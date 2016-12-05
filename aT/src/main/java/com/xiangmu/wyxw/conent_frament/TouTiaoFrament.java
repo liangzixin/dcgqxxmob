@@ -9,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -56,6 +57,7 @@ public class TouTiaoFrament extends Fragment {
     private XinWenproductinfoBaseAdapter toutiao_adapter;
     private XinWenURL xinWenURL = new XinWenURL();
     private int daohangtype;
+
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -226,6 +228,7 @@ public class TouTiaoFrament extends Fragment {
     private LinearLayout linearLayouticon;
     private ImageView beforicon;//轮播上一个icon
     private TouTiaoViewPager lunbo_viewPager;
+    private LinearLayout pagerLayout;
     String xiangxiUrl;//跳转详细页面的url
     List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
     int size =0;
@@ -304,6 +307,15 @@ public class TouTiaoFrament extends Fragment {
         lunbo_viewPager = (TouTiaoViewPager) lunboView.findViewById(R.id.toutiao_lunbo_viewpager);
         lunbo_viewPager.setVisibility(View.VISIBLE);
         lunbo_viewPager.setOffscreenPageLimit(0);
+        //获取屏幕像素相关信息
+//        pagerLayout = (LinearLayout) lunboView.findViewById(R.id.view_pager_content);
+//        DisplayMetrics dm = new DisplayMetrics();
+//        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+//
+//        //根据屏幕信息设置ViewPager广告容器的宽高
+//        lunbo_viewPager.setLayoutParams(new ViewGroup.LayoutParams(dm.widthPixels, dm.heightPixels * 2 / 5));
+        lunbo_viewPager.setLayoutParams(new LinearLayout.LayoutParams(100,
+               LinearLayout.LayoutParams.MATCH_PARENT));
         lunbo_viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
