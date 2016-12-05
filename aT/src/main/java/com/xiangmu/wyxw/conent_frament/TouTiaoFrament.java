@@ -202,14 +202,14 @@ public class TouTiaoFrament extends Fragment {
         View viewlunbo = null;
         if (isrefresh&&showLunbo()!=null) {
 //
-//            viewlunbo = showLunbo();//刷新轮播
-            toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
+            viewlunbo = showLunbo();//刷新轮播
+//            toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
             isrefresh=false;
         }
         if (toutiao_adapter == null) {//在数据之后adapter之前增加轮播才会不anr
-//            if (viewlunbo != null) {
-//                toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
-//            }
+            if (viewlunbo != null) {
+                toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
+            }
             toutiao_adapter = new XinWenproductinfoBaseAdapter(getActivity(), toutiao_list);
             toutiao_lv.getRefreshableView().setAdapter(toutiao_adapter);
         }
@@ -233,9 +233,21 @@ public class TouTiaoFrament extends Fragment {
         lunboList.clear();
         listads = null;
         listads = toutiao_list.get(0).getAds();
-        if (listads == null) {
-            return null;
+        listads=new ArrayList<>();
+//        if (listads == null) {
+//            return null;
+//        }
+        for(int i=0;i<4;i++){
+            XinWen_productinfo.T18908805728Entity.AdsEntity adsEntity=new XinWen_productinfo.T18908805728Entity.AdsEntity();
+            adsEntity.setImgsrc("http://img6.cache.netease.com/3g/2015/11/11/201511110849475d44e.jpg");
+            adsEntity.setSubtitle("aaaaaaaaa"+i);
+            adsEntity.setTag("BBBBB"+i);
+            adsEntity.setTitle("CCCCCCCCCCCCC"+i);
+            adsEntity.setUrl("cccccccc");
+            listads.add(adsEntity);
         }
+
+
          size = listads.size();
         LogUtils.e("size==",size+"");
         lunboView = View.inflate(getActivity(), R.layout.xinwen_toutiao_lunbo, null);
@@ -263,6 +275,7 @@ public class TouTiaoFrament extends Fragment {
             //开辟一个宽和高的空间放入icon
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(30, ViewGroup.LayoutParams.WRAP_CONTENT);
             ImageView icon = new ImageView(getActivity());
+            System.out.println("设置icon宽高"+params);
             icon.setLayoutParams(params);//设置icon宽高
             icon.setImageResource(R.mipmap.toutiao_lunbo_icon);
             linearLayouticon.addView(icon);//添加到布局
@@ -274,9 +287,12 @@ public class TouTiaoFrament extends Fragment {
                     framentlunbo2activity((Integer) view.getTag());
                 }
             });
-            XutilsGetData.xUtilsImageiv(image, toutiao_list.get(0).getAds().get(i).getImgsrc(), getActivity(),false);
-            xiangxiUrl = toutiao_list.get(0).getAds().get(i).getUrl();
-            lunboList.add(new Lunbo(toutiao_list.get(0).getAds().get(i).getTitle(), xiangxiUrl, image));
+//            XutilsGetData.xUtilsImageiv(image, toutiao_list.get(0).getAds().get(i).getImgsrc(), getActivity(),false);
+//            xiangxiUrl = toutiao_list.get(0).getAds().get(i).getUrl();
+//            lunboList.add(new Lunbo(toutiao_list.get(0).getAds().get(i).getTitle(), xiangxiUrl, image));
+            XutilsGetData.xUtilsImageiv(image,listads.get(i).getImgsrc(), getActivity(),false);
+            xiangxiUrl =listads.get(i).getUrl();
+            lunboList.add(new Lunbo(listads.get(i).getTitle(), xiangxiUrl, image));
         }
         //设置第一个图片的标题
         final TextView title = (TextView) lunboView.findViewById(R.id.toutiao_lunbo_title);
