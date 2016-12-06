@@ -18,12 +18,12 @@
             >
 
 
-        <com.xiangmu.wyxw.viewpager.TouTiaoViewPager
+        <!--com.xiangmu.wyxw.viewpager.TouTiaoViewPager
             android:id="@+id/toutiao_lunbo_viewpager"
             android:visibility="gone"
             android:layout_width="match_parent"
             android:layout_height="150dp">
-        </com.xiangmu.wyxw.viewpager.TouTiaoViewPager>
+        </com.xiangmu.wyxw.viewpager.TouTiaoViewPager>-->
         </LinearLayout>
         <ImageView
             android:id="@+id/daohang_lunbo_yitu"
@@ -36,7 +36,7 @@
             android:textStyle="bold"
             android:textColor="#ff0000"
             android:singleLine="true"
-
+        android:layout_alignBottom="@+id/view_pager_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="20dp"
@@ -55,7 +55,7 @@
             android:layout_marginRight="20dp"
             android:id="@+id/toutitao_lunbo_ll"
             android:layout_alignParentRight="true"
-
+            android:layout_alignBottom="@+id/view_pager_content"
             android:layout_marginBottom="10dp"
             android:layout_width="wrap_content"
             android:orientation="horizontal"

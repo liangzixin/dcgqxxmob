@@ -45,6 +45,7 @@ import com.xiangmu.wyxw.utils.XinWen_productinfo;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 import com.xiangmu.wyxw.viewpager.TouTiaoViewPager;
 
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -57,6 +58,7 @@ public class TouTiaoFrament extends Fragment {
     private XinWenproductinfoBaseAdapter toutiao_adapter;
     private XinWenURL xinWenURL = new XinWenURL();
     private int daohangtype;
+//    private TouTiaoViewPager toutiao_lunbo_viewpager;
 
 
     @Override
@@ -304,18 +306,24 @@ public class TouTiaoFrament extends Fragment {
         //设置最后一个的icon图片控件
         beforicon = (ImageView) linearLayouticon.getChildAt(size - 1);
 
-        lunbo_viewPager = (TouTiaoViewPager) lunboView.findViewById(R.id.toutiao_lunbo_viewpager);
+//        lunbo_viewPager = (TouTiaoViewPager) lunboView.findViewById(R.id.toutiao_lunbo_viewpager);
+        pagerLayout = (LinearLayout) lunboView.findViewById(R.id.view_pager_content);
+        lunbo_viewPager=new TouTiaoViewPager(getActivity(),null);
         lunbo_viewPager.setVisibility(View.VISIBLE);
         lunbo_viewPager.setOffscreenPageLimit(0);
         //获取屏幕像素相关信息
-//        pagerLayout = (LinearLayout) lunboView.findViewById(R.id.view_pager_content);
-//        DisplayMetrics dm = new DisplayMetrics();
-//        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
-//
+
+        DisplayMetrics dm = new DisplayMetrics();
+        getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
+        int wpx= dm.widthPixels;
+        int hpx=dm.heightPixels;
+        System.out.println("宽度:"+wpx);
+        System.out.println("宽度:"+hpx);
 //        //根据屏幕信息设置ViewPager广告容器的宽高
-//        lunbo_viewPager.setLayoutParams(new ViewGroup.LayoutParams(dm.widthPixels, dm.heightPixels * 2 / 5));
-        lunbo_viewPager.setLayoutParams(new LinearLayout.LayoutParams(100,
-               LinearLayout.LayoutParams.MATCH_PARENT));
+        lunbo_viewPager.setLayoutParams(new ViewGroup.LayoutParams(dm.widthPixels, dm.heightPixels * 2 / 5));
+        pagerLayout.addView(lunbo_viewPager);
+//        lunbo_viewPager.setLayoutParams(new LinearLayout.LayoutParams(dm.widthPixels,
+//               LinearLayout.LayoutParams.MATCH_PARENT));
         lunbo_viewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
