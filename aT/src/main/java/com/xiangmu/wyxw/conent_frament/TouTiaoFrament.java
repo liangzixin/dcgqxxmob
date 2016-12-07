@@ -238,20 +238,19 @@ public class TouTiaoFrament extends Fragment {
         lunboList.clear();
         listads = null;
         listads = toutiao_list.get(0).getAds();
-        listads=new ArrayList<>();
-//        if (listads == null) {
-//            return null;
-//        }
-        for(int i=0;i<4;i++){
-            XinWen_productinfo.T18908805728Entity.AdsEntity adsEntity=new XinWen_productinfo.T18908805728Entity.AdsEntity();
-            adsEntity.setImgsrc("http://img6.cache.netease.com/3g/2015/11/11/201511110849475d44e.jpg");
-            adsEntity.setSubtitle("aaaaaaaaa"+i);
-            adsEntity.setTag("BBBBB"+i);
-            adsEntity.setTitle("CCCCCCCCCCCCC"+i);
-            adsEntity.setUrl("cccccccc");
-            listads.add(adsEntity);
-        }
+        listads = new ArrayList<>();
+        for (int i = 0; i < toutiao_list.size(); i++){
+            if (toutiao_list.get(i).getUploadFile() != null && toutiao_list.get(i).getEndTime() != null) {
 
+                XinWen_productinfo.T18908805728Entity.AdsEntity adsEntity = new XinWen_productinfo.T18908805728Entity.AdsEntity();
+                adsEntity.setImgsrc("http://www.dcgqxx.com/upload"+toutiao_list.get(i).getUploadFile().get(0).getPath());
+                adsEntity.setSubtitle("aaaaaaaaa" + i);
+                adsEntity.setTag("BBBBB" + i);
+                adsEntity.setTitle(toutiao_list.get(i).getName());
+                adsEntity.setUrl("cccccccc");
+                listads.add(adsEntity);
+            }
+    }
 
          size = listads.size();
         LogUtils.e("size==",size+"");
@@ -317,8 +316,8 @@ public class TouTiaoFrament extends Fragment {
         getActivity().getWindowManager().getDefaultDisplay().getMetrics(dm);
         int wpx= dm.widthPixels;
         int hpx=dm.heightPixels;
-        System.out.println("宽度:"+wpx);
-        System.out.println("宽度:"+hpx);
+//        System.out.println("宽度:"+wpx);
+//        System.out.println("宽度:"+hpx);
 //        //根据屏幕信息设置ViewPager广告容器的宽高
         lunbo_viewPager.setLayoutParams(new ViewGroup.LayoutParams(dm.widthPixels, dm.heightPixels * 2 / 5));
         pagerLayout.addView(lunbo_viewPager);
