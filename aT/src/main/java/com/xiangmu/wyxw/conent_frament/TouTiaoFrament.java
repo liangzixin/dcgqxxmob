@@ -251,7 +251,9 @@ public class TouTiaoFrament extends Fragment {
                 listads.add(adsEntity);
             }
     }
-
+     if(listads.size()==0){
+         return null;
+     }
          size = listads.size();
         LogUtils.e("size==",size+"");
         lunboView = View.inflate(getActivity(), R.layout.xinwen_toutiao_lunbo, null);
