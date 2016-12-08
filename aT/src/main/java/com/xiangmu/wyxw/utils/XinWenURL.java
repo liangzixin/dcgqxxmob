@@ -93,13 +93,20 @@ public class XinWenURL {
         return redian;
     }
 
-    public String getZuixin() {
+    public String getZuixin(int categoryid,boolean lunbo ) {
         int page = getStratPage();
   //String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + page + "-" + (page + 20) + ".html";//头条
         String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+page;//最新
+        String zuixin0 = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&lunbo0=true&pageNo="+page;//最新
         return zuixin;
     }
+    public String getZuixin0() {
+        int page = getStratPage();
+        //String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + page + "-" + (page + 20) + ".html";//头条
 
+        String zuixin0 = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&lunbo0=true&pageNo="+page;//最新
+        return zuixin0;
+    }
     public String getZaopin() {
         int page = getStratPage();
       //  String yule = "http://c.m.163.com/nc/article/list/T1348648517839/" + stratPage + "-" + (stratPage + 20) + ".html";//娱乐

@@ -53,7 +53,7 @@ import java.util.List;
  * Created by Administrator on 2015/11/10.
  */
 public class TouTiaoFrament extends Fragment {
-    private String url = null;//第一页url
+    private List<String> url = null;//第一页url
     private View view;
     private XinWenproductinfoBaseAdapter toutiao_adapter;
     private XinWenURL xinWenURL = new XinWenURL();
@@ -71,41 +71,44 @@ public class TouTiaoFrament extends Fragment {
         LogUtils.e("bundle", "==" + daohangtype);
         url=geturl();
     }
-    private String geturl(){
-        String url=null;
-        switch (daohangtype) {
-            case XinWen_adapter.zuixin:
-                url = xinWenURL.getZuixin();//最新url
-                break;
-            case XinWen_adapter.zaopin:
-                url = xinWenURL.getZaopin();//招聘
-                LogUtils.e("bundle", "XinWen_yule==" + url);
-                break;
-            case XinWen_adapter.qiuzhi://求职
-                url = xinWenURL.getQiuzhi();
-                break;
-            case XinWen_adapter.chushou://出售
-                url = xinWenURL.getChushou();
-                break;
-            case XinWen_adapter.chuzu://出租
-                url = xinWenURL.getChuzu();
-                break;
-            case XinWen_adapter.gongqiu://供求
-                url = xinWenURL.getGongqiu();
-                break;
-            case XinWen_adapter.ershou://二手
-                url = xinWenURL.getErshou();
-                break;
-            case XinWen_adapter.qita://其它
-                url = xinWenURL.getQita();
-                break;
-            case XinWen_adapter.pumian://铺面
-                url = xinWenURL.getPumian();
-                break;
-            case XinWen_adapter.jiaju://家具
-                url = xinWenURL.getYouxi();
-                break;
-        }
+    private List<String> geturl(){
+        List<String> url=null;
+               url.add( xinWenURL.getZuixin(daohangtype,false));//最新url
+               url.add(xinWenURL.getZuixin(daohangtype,true));
+//        switch (daohangtype) {
+//            case XinWen_adapter.zuixin:
+//                url.add( xinWenURL.getZuixin());//最新url
+//                url.add(xinWenURL.getZuixin0());
+//                break;
+//            case XinWen_adapter.zaopin:
+//                url = xinWenURL.getZaopin();//招聘
+//                LogUtils.e("bundle", "XinWen_yule==" + url);
+//                break;
+//            case XinWen_adapter.qiuzhi://求职
+//                url = xinWenURL.getQiuzhi();
+//                break;
+//            case XinWen_adapter.chushou://出售
+//                url = xinWenURL.getChushou();
+//                break;
+//            case XinWen_adapter.chuzu://出租
+//                url = xinWenURL.getChuzu();
+//                break;
+//            case XinWen_adapter.gongqiu://供求
+//                url = xinWenURL.getGongqiu();
+//                break;
+//            case XinWen_adapter.ershou://二手
+//                url = xinWenURL.getErshou();
+//                break;
+//            case XinWen_adapter.qita://其它
+//                url = xinWenURL.getQita();
+//                break;
+//            case XinWen_adapter.pumian://铺面
+//                url = xinWenURL.getPumian();
+//                break;
+//            case XinWen_adapter.jiaju://家具
+//                url = xinWenURL.getYouxi();
+//                break;
+//        }
         return url;
     }
     @Nullable
@@ -149,7 +152,7 @@ public class TouTiaoFrament extends Fragment {
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
                 xinWenURL.setStratPage(xinWenURL.getStratPage() + 20);
                 //默认选择头条栏目
-                String urlfen =geturl();//分页url;
+                List<String> urlfen =geturl();//分页url;
                 LogUtils.e("toutiao", "url:" + urlfen);
                 // 上拉加载
                 getdata(urlfen, false);//加载数据
@@ -169,10 +172,10 @@ public class TouTiaoFrament extends Fragment {
     private XutilsGetData xutilsGetData = new XutilsGetData();
 
     //网络请求获得数据 refresh   true为刷新数据  false为加载数据  存储根据url保存数据
-    public void getdata(String url, final boolean refresh) {
+    public void getdata(List<String> url, final boolean refresh) {
         if (CommonUtil.isNetWork(getActivity())){
             //然后网络请求刷新数据
-            xutilsGetData.xUtilsHttp(getActivity(), url, new XutilsGetData.CallBackHttp() {
+            xutilsGetData.xUtilsHttp(getActivity(), url.get(0), new XutilsGetData.CallBackHttp() {
                 @Override
                 public void handleData(String data) {
                     LogUtils.e("xinwenactivity==data==", data + "");
@@ -181,7 +184,7 @@ public class TouTiaoFrament extends Fragment {
                 }
             },true);
         }else {
-            String data = xutilsGetData.getData(getActivity(), url, null);
+            String data = xutilsGetData.getData(getActivity(), url.get(0), null);
             //判断本地数据是否存在  如果没有网络请求
             if (data != null) {
                 getshowdata(data, refresh);
@@ -190,14 +193,17 @@ public class TouTiaoFrament extends Fragment {
     }
 
     private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
+    private List<XinWen_productinfo.T18908805728Entity> toutiao_list0 = new ArrayList<>();
     private List<XinWenXi.PhotosObj> potolist0 = new ArrayList<>();
     boolean isrefresh=true;
     // 显示数据  或者分页加载数据
     private void getshowdata(String data, boolean refresh) {
         if (refresh) {
             toutiao_list.clear();
+            toutiao_list0.clear();
         }
         XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, daohangtype);//传入类型和数据
+
         LogUtils.e("toutiao_object", "" + toutiao_object);
         toutiao_list.addAll(toutiao_object.getT18908805728());
 //        if(toutiao_object.getT18908805728().g)
