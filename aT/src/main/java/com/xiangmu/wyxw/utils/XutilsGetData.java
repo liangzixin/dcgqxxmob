@@ -20,6 +20,8 @@ import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.activitys.YueDuDetialActivity;
 
+import java.util.List;
+
 /**
  * Created by Administrator on 2015/11/10.
  */
@@ -96,7 +98,7 @@ public class XutilsGetData {
     }
 
     //读取本地缓存数据
-    public  String getData(Context context, String key, String defValue) {
+    public  String getData(Context context,String key, String defValue) {
         if (sp == null) {
             sp = context.getSharedPreferences(CONFIG, Context.MODE_PRIVATE);
         }

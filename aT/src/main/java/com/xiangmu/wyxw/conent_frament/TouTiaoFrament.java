@@ -53,7 +53,7 @@ import java.util.List;
  * Created by Administrator on 2015/11/10.
  */
 public class TouTiaoFrament extends Fragment {
-    private List<String> url = null;//第一页url
+    private List<String> url =new ArrayList<String>();//第一页url
     private View view;
     private XinWenproductinfoBaseAdapter toutiao_adapter;
     private XinWenURL xinWenURL = new XinWenURL();
@@ -72,7 +72,7 @@ public class TouTiaoFrament extends Fragment {
         url=geturl();
     }
     private List<String> geturl(){
-        List<String> url=null;
+        List<String> url=new ArrayList<String>();
                url.add( xinWenURL.getZuixin(daohangtype,false));//最新url
                url.add(xinWenURL.getZuixin(daohangtype,true));
 //        switch (daohangtype) {
@@ -134,7 +134,10 @@ public class TouTiaoFrament extends Fragment {
         toutiao_lv = (PullToRefreshListView) view.findViewById(R.id.xinwen_toutiao_lv);
 //        toutiao_adapter = new XinWenBaseAdapter(getActivity(), toutiao_list);
 //        toutiao_lv.getRefreshableView().setAdapter(toutiao_adapter);
-        getdata(url, true);
+
+        getdata(url.get(0), true);
+
+        getdata0(url.get(1), true);
 
         toutiao_lv.setPullLoadEnabled(false);  //上拉加载，屏蔽
         toutiao_lv.setScrollLoadEnabled(true); //设置滚动加载可用
@@ -143,7 +146,8 @@ public class TouTiaoFrament extends Fragment {
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 //下拉刷新，重新获取数据，填充listview
-                getdata(url, true);//刷新数据
+                getdata(url.get(0), true);//刷新数据
+                getdata(url.get(1), true);//刷新数据
                 String stringDate = CommonUtil.getStringDate();// 下拉刷新时获取当前的刷新时间
                 toutiao_lv.setLastUpdatedLabel(stringDate);//将时间添加到刷新的表头
             }
@@ -155,7 +159,8 @@ public class TouTiaoFrament extends Fragment {
                 List<String> urlfen =geturl();//分页url;
                 LogUtils.e("toutiao", "url:" + urlfen);
                 // 上拉加载
-                getdata(urlfen, false);//加载数据
+                getdata(urlfen.get(0), false);//加载数据
+                getdata(urlfen.get(1), false);//加载数据
             }
         });
         //点击listview调用的方法
@@ -170,12 +175,13 @@ public class TouTiaoFrament extends Fragment {
     }
 
     private XutilsGetData xutilsGetData = new XutilsGetData();
-
+            boolean lunbo=false;
     //网络请求获得数据 refresh   true为刷新数据  false为加载数据  存储根据url保存数据
-    public void getdata(List<String> url, final boolean refresh) {
+    public void getdata( String url, final boolean refresh) {
+        System.out.println(url);
         if (CommonUtil.isNetWork(getActivity())){
             //然后网络请求刷新数据
-            xutilsGetData.xUtilsHttp(getActivity(), url.get(0), new XutilsGetData.CallBackHttp() {
+            xutilsGetData.xUtilsHttp(getActivity(), url, new XutilsGetData.CallBackHttp() {
                 @Override
                 public void handleData(String data) {
                     LogUtils.e("xinwenactivity==data==", data + "");
@@ -184,14 +190,34 @@ public class TouTiaoFrament extends Fragment {
                 }
             },true);
         }else {
-            String data = xutilsGetData.getData(getActivity(), url.get(0), null);
+            String data = xutilsGetData.getData(getActivity(), url, null);
             //判断本地数据是否存在  如果没有网络请求
             if (data != null) {
                 getshowdata(data, refresh);
             }
         }
     }
+    //网络请求获得数据 refresh   true为刷新数据  false为加载数据  存储根据url保存数据
+    public void getdata0( String url, final boolean refresh) {
+        System.out.println(url);
+        if (CommonUtil.isNetWork(getActivity())){
+            //然后网络请求刷新数据
+            xutilsGetData.xUtilsHttp(getActivity(), url, new XutilsGetData.CallBackHttp() {
+                @Override
+                public void handleData(String data) {
+                    LogUtils.e("xinwenactivity==data==", data + "");
+                    getshowdata(data, refresh);
 
+                }
+            },true);
+        }else {
+            String data = xutilsGetData.getData(getActivity(), url, null);
+            //判断本地数据是否存在  如果没有网络请求
+            if (data != null) {
+                getshowdata(data, refresh);
+            }
+        }
+    }
     private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
     private List<XinWen_productinfo.T18908805728Entity> toutiao_list0 = new ArrayList<>();
     private List<XinWenXi.PhotosObj> potolist0 = new ArrayList<>();
@@ -202,30 +228,49 @@ public class TouTiaoFrament extends Fragment {
             toutiao_list.clear();
             toutiao_list0.clear();
         }
-        XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, daohangtype);//传入类型和数据
+        View viewlunbo = null;
 
-        LogUtils.e("toutiao_object", "" + toutiao_object);
-        toutiao_list.addAll(toutiao_object.getT18908805728());
+        if(lunbo){
+            XinWen_productinfo toutiao_object0 = XinWenproductinfoJson.getdata(data, daohangtype);//传入类型和数据
+            toutiao_list0.addAll(toutiao_object0.getT18908805728());
+            if (isrefresh&&showLunbo()!=null) {
+//
+                viewlunbo = showLunbo();//刷新轮播
+//            toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
+                isrefresh=false;
+            }
+
+
+
+
+        }else {
+            XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, daohangtype);//传入类型和数据
+            toutiao_list.addAll(toutiao_object.getT18908805728());
+            if (isrefresh&&showLunbo()!=null) {
+//
+                viewlunbo = showLunbo();//刷新轮播
+//            toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
+                isrefresh=false;
+            }
+            if (toutiao_adapter == null) {//在数据之后adapter之前增加轮播才会不anr
+                if (viewlunbo != null) {
+                    toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
+                }
+                toutiao_adapter = new XinWenproductinfoBaseAdapter(getActivity(), toutiao_list);
+                toutiao_lv.getRefreshableView().setAdapter(toutiao_adapter);
+            }
+            toutiao_adapter.setToutiao_list(toutiao_list);//填充并刷新数据
+            toutiao_lv.onPullDownRefreshComplete();//隐藏下拉头
+            toutiao_lv.onPullUpRefreshComplete();//隐藏上拉头
+        }
+
+//
+
+    ;
+//        toutiao_list0.addAll(toutiao_object0.getT18908805728());
 //        if(toutiao_object.getT18908805728().g)
 //        List<XinWenXi.PhotosObj> potolist2=XinWenXi.getdata(data,getActivity(),daohangtype);
 
-        View viewlunbo = null;
-        if (isrefresh&&showLunbo()!=null) {
-//
-            viewlunbo = showLunbo();//刷新轮播
-//            toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
-            isrefresh=false;
-        }
-        if (toutiao_adapter == null) {//在数据之后adapter之前增加轮播才会不anr
-            if (viewlunbo != null) {
-                toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
-            }
-            toutiao_adapter = new XinWenproductinfoBaseAdapter(getActivity(), toutiao_list);
-            toutiao_lv.getRefreshableView().setAdapter(toutiao_adapter);
-        }
-        toutiao_adapter.setToutiao_list(toutiao_list);//填充并刷新数据
-        toutiao_lv.onPullDownRefreshComplete();//隐藏下拉头
-        toutiao_lv.onPullUpRefreshComplete();//隐藏上拉头
     }
 
 
@@ -245,14 +290,14 @@ public class TouTiaoFrament extends Fragment {
         listads = null;
         listads = toutiao_list.get(0).getAds();
         listads = new ArrayList<>();
-        for (int i = 0; i < toutiao_list.size(); i++){
-            if (toutiao_list.get(i).getUploadFile() != null && toutiao_list.get(i).getEndTime() != null) {
+        for (int i = 0; i < toutiao_list0.size(); i++){
+            if (toutiao_list0.get(i).getUploadFile() != null && toutiao_list0.get(i).getEndTime() != null) {
 
                 XinWen_productinfo.T18908805728Entity.AdsEntity adsEntity = new XinWen_productinfo.T18908805728Entity.AdsEntity();
-                adsEntity.setImgsrc("http://www.dcgqxx.com/upload"+toutiao_list.get(i).getUploadFile().get(0).getPath());
+                adsEntity.setImgsrc("http://www.dcgqxx.com/upload"+toutiao_list0.get(i).getUploadFile().get(0).getPath());
                 adsEntity.setSubtitle("aaaaaaaaa" + i);
                 adsEntity.setTag("BBBBB" + i);
-                adsEntity.setTitle(toutiao_list.get(i).getName());
+                adsEntity.setTitle(toutiao_list0.get(i).getName());
                 adsEntity.setUrl("cccccccc");
                 listads.add(adsEntity);
             }

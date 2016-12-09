@@ -95,9 +95,10 @@ public class XinWenURL {
 
     public String getZuixin(int categoryid,boolean lunbo ) {
         int page = getStratPage();
+//        List<String> zuixin=null;
   //String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + page + "-" + (page + 20) + ".html";//头条
-        String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+page;//最新
-        String zuixin0 = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&lunbo0=true&pageNo="+page;//最新
+//        zuixin.add(HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&pageNo="+page);//最新
+        String zuixin=HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&lunbo0="+lunbo+"&pageNo="+page;//最新
         return zuixin;
     }
     public String getZuixin0() {
