@@ -146,6 +146,16 @@ public class XinWen_productinfo  implements Serializable{
 
         private Integer authorid;
 
+        public Integer getLunbo() {
+            return lunbo;
+        }
+
+        public void setLunbo(Integer lunbo) {
+            this.lunbo = lunbo;
+        }
+
+        private Integer lunbo;
+
         public List<AdsEntity> getAds() {
             return ads;
         }
@@ -822,6 +832,16 @@ public class XinWen_productinfo  implements Serializable{
             //  * imgsrc : http://img4.cache.netease.com/3g/2015/11/11/2015111108492975082.jpg
        //   private int id;
           private String path;
+
+            public String getTitle() {
+                return title;
+            }
+
+            public void setTitle(String title) {
+                this.title = title;
+            }
+
+            private String title;
             public String getPath() {
                 return path;
             }

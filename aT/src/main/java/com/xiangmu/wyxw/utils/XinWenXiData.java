@@ -4,7 +4,9 @@ package com.xiangmu.wyxw.utils;
 
 import com.xiangmu.wyxw.Modle.Fwcs;
 import com.xiangmu.wyxw.Modle.Gqxx;
+import com.xiangmu.wyxw.Modle.ProductArticler;
 import com.xiangmu.wyxw.Modle.ProductCategory;
+import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.Modle.Zpxx;
 
 import java.io.Serializable;
@@ -32,7 +34,28 @@ public class XinWenXiData implements Serializable{
     private Zpxx zpxx;
     private Fwcs fwcs;
     private Gqxx gqxx;
+    private List<UploadFile> uploadFileList;
+
+    public List<ProductArticler> getProductArticlerList() {
+        return productArticlerList;
+    }
+
+    public void setProductArticlerList(List<ProductArticler> productArticlerList) {
+        this.productArticlerList = productArticlerList;
+    }
+
+    private List<ProductArticler> productArticlerList;
     private ProductCategory ProductCategory;
+
+    public List<UploadFile> getUploadFileList() {
+        return uploadFileList;
+    }
+
+    public void setUploadFileList(List<UploadFile> uploadFileList) {
+        this.uploadFileList = uploadFileList;
+    }
+
+
 
     public int getId() {
         return id;

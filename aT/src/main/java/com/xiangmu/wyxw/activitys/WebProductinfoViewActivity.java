@@ -82,8 +82,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         edit = (EditText) findViewById(R.id.edit);
         Intent intent = getIntent();
         xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
-        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
-        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
+        potolist=xinWenXiData.getUploadFileList();
+        liuyuanlist=xinWenXiData.getProductArticlerList();
+//        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
+//        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         initDate();
         initview();
@@ -103,11 +105,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
        // recyclerView.setAdapter(adapter1);
         adapter.add(mockArticle(0));
 
-        for (int i = 0; i <((List<UploadFile>)potolist.get(0)).size(); i++) {
+        for (int i = 0; i <potolist.size(); i++) {
 
             adapter.add(mockPhoto(i));
         }
-        for (int i = 0; i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
+        for (int i = 0; i <liuyuanlist.size(); i++) {
 
             adapter.add(mockLiuyuan(i));
         }
@@ -409,7 +411,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     }
     public Photo mockPhoto(int seed) {
         Photo photo = new Photo();
-        photo.path=((List<UploadFile>)potolist.get(0)).get(seed).getPath();
+        photo.path=potolist.get(seed).getPath();
 //        photo.photoId = new int[]{
 //                R.drawable.img_sample1,
 //                R.drawable.img_sample2,

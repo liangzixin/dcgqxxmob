@@ -143,6 +143,10 @@ public class XinWenproductinfoJson {
                     String description1=arrayobj.getString("description");
                     t18908805728Entity.setDescription(description1);
                 };
+                if (!arrayobj.isNull("lunbo")){
+                   int lunbo=arrayobj.getInt("lunbo");
+                    t18908805728Entity.setLunbo(lunbo);
+                };
                        if (!arrayobj.isNull("articlers")){
                     JSONArray articlerArray=arrayobj.getJSONArray("articlers");
                     LogUtils.e("xinwenjsonimagetraArray",articlerArray + "");
@@ -160,19 +164,38 @@ public class XinWenproductinfoJson {
                 if (!arrayobj.isNull("uploadFile")){
                     JSONArray uploadFileArray=arrayobj.getJSONArray("uploadFile");
                     LogUtils.e("xinwenjsonuploadFileArray", uploadFileArray + "");
-                    List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> listimagestra=new ArrayList<>();
-                    for (int j=0;j<uploadFileArray.length();j++){
-                        XinWen_productinfo.T18908805728Entity.UploadFileEntity imgextraEntity=new XinWen_productinfo.T18908805728Entity.UploadFileEntity();
+//                    if(t18908805728Entity.getLunbo()==0) {
+                        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> listimagestra = new ArrayList<>();
+                        for (int j = 0; j < uploadFileArray.length(); j++) {
+                            XinWen_productinfo.T18908805728Entity.UploadFileEntity imgextraEntity = new XinWen_productinfo.T18908805728Entity.UploadFileEntity();
 
-                        JSONObject imagestra=uploadFileArray.getJSONObject(j);
-                        String imagesra=imagestra.getString("path");
-                     //   int id=imagestra.getInt("id");
-                        imgextraEntity.setPath(imagesra);
-                   //     imgextraEntity.setId(id);
-                        listimagestra.add(imgextraEntity);
-                    }
+                            JSONObject imagestra = uploadFileArray.getJSONObject(j);
+                            String imagesra = imagestra.getString("path");
+                            imgextraEntity.setTitle(t18908805728Entity.getName());
+                            //   int id=imagestra.getInt("id");
+                            imgextraEntity.setPath(imagesra);
+                            //     imgextraEntity.setId(id);
+                            listimagestra.add(imgextraEntity);
+                        }
 
-                    t18908805728Entity.setUploadFile(listimagestra);
+                        t18908805728Entity.setUploadFile(listimagestra);
+//                    }else{
+//                        List<XinWen_productinfo.T18908805728Entity.AdsEntity> adsEntityList= new ArrayList<>();
+//                        for (int j = 0; j < uploadFileArray.length(); j++) {
+//                            XinWen_productinfo.T18908805728Entity.AdsEntity adsEntity = new XinWen_productinfo.T18908805728Entity.AdsEntity();
+//
+//                            JSONObject imagestra = uploadFileArray.getJSONObject(j);
+//                            adsEntity.setImgsrc( imagestra.getString("path"));
+//                            adsEntity.setSubtitle("aaaaaaaaa" + j);
+//                            adsEntity.setTag("photoset");
+//                            adsEntity.setTitle(t18908805728Entity.getName());
+//                            adsEntity.setUrl("cccccccc");
+//
+//                            adsEntityList.add(adsEntity);
+//                        }
+//
+//                        t18908805728Entity.setAds(adsEntityList);
+//                    }
                 }
                 if (!arrayobj.isNull("articlers")){
                     JSONArray articlersArray=arrayobj.getJSONArray("articlers");
