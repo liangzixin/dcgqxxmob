@@ -62,8 +62,8 @@ public class TouTiaoFrament extends Fragment {
     private   List<UploadFile> potolist;
     private  List<ProductArticler> liuyuenlist;
     //List<PhotoImage> potolist2 = new ArrayList<>();
-//    private XinWenXiData xinWenXi;
-    private XinWen_productinfo.T18908805728Entity  xinWenXi;
+    private XinWenXiData xinWenXi;
+//    private XinWen_productinfo.T18908805728Entity  xinWenXi;
 //    private TouTiaoViewPager toutiao_lunbo_viewpager;
 
 
@@ -202,9 +202,10 @@ public class TouTiaoFrament extends Fragment {
         }
     }
 
-     List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
-     List<XinWen_productinfo.T18908805728Entity> toutiao_list2 = new ArrayList<>();
-     List<XinWen_productinfo.T18908805728Entity> toutiao_list0 = new ArrayList<>();
+     List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();//原始数据
+     List<XinWen_productinfo.T18908805728Entity> toutiao_list2 = new ArrayList<>();//多图
+     List<XinWen_productinfo.T18908805728Entity> toutiao_list0 = new ArrayList<>();//普通
+
      List<XinWenXi.PhotosObj> potolist0 = new ArrayList<>();
     boolean isrefresh=true;
     // 显示数据  或者分页加载数据
@@ -216,7 +217,7 @@ public class TouTiaoFrament extends Fragment {
 
         XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, daohangtype);//传入类型和数据
         toutiao_list.addAll(toutiao_object.getT18908805728());
-        List<XinWen_productinfo.T18908805728Entity> toutiao_list0 = new ArrayList<>();
+
         for(int i=0;i<toutiao_list.size();i++){
             if(toutiao_list.get(i).getLunbo()==0){
                 toutiao_list0.add(toutiao_list.get(i));
@@ -476,13 +477,14 @@ public class TouTiaoFrament extends Fragment {
     @SuppressLint("NewApi")
 	private void frament2activity(int position) {
         int pos;
-        xinWenXi=new XinWen_productinfo.T18908805728Entity();
+        xinWenXi =new XinWenXiData();
+        XinWen_productinfo.T18908805728Entity toutiao_listview= new XinWen_productinfo.T18908805728Entity();//获取记录
         if (listads.size()==0) {//判断有没有轮播图如果没有就不添加轮播布局  布局就和原来一样
             pos = position;
-            xinWenXi=toutiao_list.get(pos);
+            toutiao_listview=toutiao_list.get(pos);
         } else {
             pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
-            xinWenXi=toutiao_list0.get(pos);
+            toutiao_listview=toutiao_list0.get(pos);
         }
         LogUtils.e("xinwenadapter", "postion==" + pos);
         //    int bujutype = XinWen_adapter.getType(toutiao_list.get(pos).getId());
@@ -490,44 +492,44 @@ public class TouTiaoFrament extends Fragment {
         LogUtils.e("xinwenadapter", "type==" + bujutype);
 
         //传入详细页面的数据
-//       potolist =new ArrayList<>();
-//        liuyuenlist =new ArrayList<>();
-//  //List<PhotoImage> potolist2 = new ArrayList<>();
-//       xinWenXi =new XinWenXiData();
-//        xinWenXi.setId(toutiao_list.get(pos).getId());
-//        xinWenXi.setBujuType(bujutype);
-//        xinWenXi.setLanMuType(daohangtype);
-//        xinWenXi.setReplaycount(toutiao_list.get(pos).getArticlers().size());//跟帖数量
-//        xinWenXi.setTitle(toutiao_list.get(pos).getName());//标题
-//        xinWenXi.setXinwentext(toutiao_list.get(pos).getDescription());//内容
-//        xinWenXi.setCreateDate(toutiao_list.get(pos).getCreateTime());//日期
-//        xinWenXi.setGsmz(toutiao_list.get(pos).getGsmz());
-//        xinWenXi.setGsdz(toutiao_list.get(pos).getGsdz());
-//        xinWenXi.setLxr(toutiao_list.get(pos).getLxr());
-//        xinWenXi.setLxdh(toutiao_list.get(pos).getLxdh());
-//        xinWenXi.setZpxx(toutiao_list.get(pos).getZpxx());
-//        xinWenXi.setFwcs(toutiao_list.get(pos).getFwcs());
-//        xinWenXi.setGqxx(toutiao_list.get(pos).getGqxx());
-//        xinWenXi.setProductCategory(toutiao_list.get(pos).getProductcategory());
-////xinWenXi.setUploadFiles(toutiao_list.get(pos).getUploadFile());
-//       for(int i=0;i<toutiao_list.get(pos).getUploadFile().size();i++){
-//           UploadFile uploadFile=new UploadFile();
-//
-//            uploadFile.setPath(toutiao_list.get(pos).getUploadFile().get(i).getPath());
-//           potolist.add(uploadFile);
-//        }
-//        xinWenXi.setUploadFileList(potolist);
-//        for(int i=0;i<toutiao_list.get(pos).getProductArticler().size();i++){
-//            ProductArticler productArticler=new ProductArticler();
-//            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
-//            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
-//            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
-//           liuyuenlist.add(productArticler);
-//        }
-//        xinWenXi.setProductArticlerList(liuyuenlist);
-////        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
-////        potolist0=(List<XinWen_productinfo.T18908805728Entity.UploadFileEntity>)toutiao_list.get(pos).getUploadFile();
-//        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
+       potolist =new ArrayList<>();
+        liuyuenlist =new ArrayList<>();
+  //List<PhotoImage> potolist2 = new ArrayList<>();
+
+        xinWenXi.setId(toutiao_listview.getId());
+        xinWenXi.setBujuType(bujutype);
+        xinWenXi.setLanMuType(daohangtype);
+        xinWenXi.setReplaycount(toutiao_listview.getArticlers().size());//跟帖数量
+        xinWenXi.setTitle(toutiao_listview.getName());//标题
+        xinWenXi.setXinwentext(toutiao_listview.getDescription());//内容
+        xinWenXi.setCreateDate(toutiao_listview.getCreateTime());//日期
+        xinWenXi.setGsmz(toutiao_listview.getGsmz());
+        xinWenXi.setGsdz(toutiao_listview.getGsdz());
+        xinWenXi.setLxr(toutiao_listview.getLxr());
+        xinWenXi.setLxdh(toutiao_listview.getLxdh());
+        xinWenXi.setZpxx(toutiao_listview.getZpxx());
+        xinWenXi.setFwcs(toutiao_listview.getFwcs());
+        xinWenXi.setGqxx(toutiao_listview.getGqxx());
+        xinWenXi.setProductCategory(toutiao_listview.getProductcategory());
+//xinWenXi.setUploadFiles(toutiao_listview.getUploadFile());
+       for(int i=0;i<toutiao_listview.getUploadFile().size();i++){
+           UploadFile uploadFile=new UploadFile();
+
+            uploadFile.setPath(toutiao_listview.getUploadFile().get(i).getPath());
+           potolist.add(uploadFile);
+        }
+        xinWenXi.setUploadFileList(potolist);
+        for(int i=0;i<toutiao_listview.getProductArticler().size();i++){
+            ProductArticler productArticler=new ProductArticler();
+            productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
+            productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
+            productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
+           liuyuenlist.add(productArticler);
+        }
+        xinWenXi.setProductArticlerList(liuyuenlist);
+//        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
+//        potolist0=(List<XinWen_productinfo.T18908805728Entity.UploadFileEntity>)toutiao_listview.getUploadFile();
+        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
 //        if(potolist!=null) {
 //            potolist1= XinWenXiImage.getdata(potolist,getActivity());
 //        }
@@ -544,13 +546,13 @@ public class TouTiaoFrament extends Fragment {
             case XinWen_adapter.TYPE_zhuanti:
             case XinWen_adapter.TYPE_zhibo:
                 LogUtils.e("xinwenadapter", "TYPE_zhibo==" + bujutype);
-              //  String urlzhibo = toutiao_list.get(pos).getUrl();
-               // String urlzhibo = toutiao_list.get(pos).getName();
+              //  String urlzhibo = toutiao_listview.getUrl();
+               // String urlzhibo = toutiao_listview.getName();
                 String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
 //                xinWenXi.setUrl(urlzhibo);//详细页面url
                 //跳转到详细页
                 Intent intentzhibo = new Intent(getActivity(), WebProductinfoViewActivity.class);
-//           intentzhibo.putExtra("xinwendata", xinWenXi);
+           intentzhibo.putExtra("xinwendata", xinWenXi);
          //   intentzhibo.putExtra("potolist", potolist);
            //   intentzhibo.putExtra("xinwendata", new Gson().toJson(xinWenXi));
 //                Bundle bundle = new Bundle();
@@ -571,8 +573,8 @@ public class TouTiaoFrament extends Fragment {
                 break;
             case XinWen_adapter.type_duotu:
                 LogUtils.e("xinwenadapter", "type_duotu==" + bujutype);
-             //   String urlduotuRight = toutiao_list.get(pos).getId();
-                String urlduotuRight = toutiao_list.get(pos).getName();
+             //   String urlduotuRight = toutiao_listview.getId();
+                String urlduotuRight = toutiao_listview.getName();
                 String urlRighBefor = urlduotuRight.substring(urlduotuRight.lastIndexOf("|") - 4);
                 String urlRight = urlRighBefor.replaceAll("\\|", "/");
                 String urlduotu = "http://c.3g.163.com/photo/api/set/" + urlRight + ".json";
@@ -593,12 +595,50 @@ public class TouTiaoFrament extends Fragment {
 //
 //        int lanmutype=XinWen_adapter.getType(skiptype);
         int lanmutype=1;
+        XinWen_productinfo.T18908805728Entity toutiao_listview= new XinWen_productinfo.T18908805728Entity();//获取记录
+        toutiao_listview=toutiao_list.get( posion);
 
         //传入详细页面的数据
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setLanMuType(daohangtype);
 //        xinWenXi.setTitle(toutiao_list.get(0).getAds().get(posion).getTitle());//标题
-        xinWenXi.setTitle("标题标题标题标题");
+        xinWenXi.setTitle(toutiao_listview.getName());
+        //传入详细页面的数据
+        potolist =new ArrayList<>();
+        liuyuenlist =new ArrayList<>();
+        //List<PhotoImage> potolist2 = new ArrayList<>();
+         int bujutype=1;
+        xinWenXi.setId(toutiao_listview.getId());
+        xinWenXi.setBujuType(bujutype);
+        xinWenXi.setLanMuType(daohangtype);
+        xinWenXi.setReplaycount(toutiao_listview.getArticlers().size());//跟帖数量
+        xinWenXi.setTitle(toutiao_listview.getName());//标题
+        xinWenXi.setXinwentext(toutiao_listview.getDescription());//内容
+        xinWenXi.setCreateDate(toutiao_listview.getCreateTime());//日期
+        xinWenXi.setGsmz(toutiao_listview.getGsmz());
+        xinWenXi.setGsdz(toutiao_listview.getGsdz());
+        xinWenXi.setLxr(toutiao_listview.getLxr());
+        xinWenXi.setLxdh(toutiao_listview.getLxdh());
+        xinWenXi.setZpxx(toutiao_listview.getZpxx());
+        xinWenXi.setFwcs(toutiao_listview.getFwcs());
+        xinWenXi.setGqxx(toutiao_listview.getGqxx());
+        xinWenXi.setProductCategory(toutiao_listview.getProductcategory());
+//xinWenXi.setUploadFiles(toutiao_listview.getUploadFile());
+        for(int i=0;i<toutiao_listview.getUploadFile().size();i++){
+            UploadFile uploadFile=new UploadFile();
+
+            uploadFile.setPath(toutiao_listview.getUploadFile().get(i).getPath());
+            potolist.add(uploadFile);
+        }
+        xinWenXi.setUploadFileList(potolist);
+        for(int i=0;i<toutiao_listview.getProductArticler().size();i++){
+            ProductArticler productArticler=new ProductArticler();
+            productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
+            productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
+            productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
+            liuyuenlist.add(productArticler);
+        }
+        xinWenXi.setProductArticlerList(liuyuenlist);
         //根据类型选择跳转的详细页面
         switch (lanmutype) {
             case XinWen_adapter.TYPE_putong:

@@ -1,6 +1,7 @@
 package com.xiangmu.wyxw.activitys;
 
 import android.content.ContentValues;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -16,10 +17,12 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
 import com.xiangmu.wyxw.jieping.ScreenShot;
@@ -72,7 +75,7 @@ public class XinWenXiActivity extends AppCompatActivity {
             duotu_gentie.setBackgroundColor(Color.parseColor("#ff000000"));
         }
         duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
-        getdata(url);
+        getdata();
         //点击finish
         imageback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -103,34 +106,38 @@ public class XinWenXiActivity extends AppCompatActivity {
     }
 
     //获得数据
-    private List<XinWenXi.PhotosObj> photoslist;
-
+//    private List<XinWenXi.PhotosObj> photoslist;
+    private List<UploadFile> photoslist;
     private XutilsGetData xutilsGetData = new XutilsGetData();
 
-    public void getdata(String url) {//根据url保存数据
-        if (CommonUtil.isNetWork(XinWenXiActivity.this)){
-            xutilsGetData.xUtilsHttp(this, url, new XutilsGetData.CallBackHttp() {
-                @Override
-                public void handleData(String data) {
-                    LogUtils.e("xinwenactivitydata", data + "");
+    public void getdata() {//根据url保存数据
 
-                    getshowData(data);
-                }
-            },true);
-        }else {
-            String data = xutilsGetData.getData(this, url, null);
-            //判断本地数据是否存在  如果没有网络请求
-            if (data != null) {
-                getshowData(data);
-            }
-        }
+        photoslist=xinWenXiData.getUploadFileList();
+        getshowData();
+//        if (CommonUtil.isNetWork(XinWenXiActivity.this)){
+//            xutilsGetData.xUtilsHttp(this, url, new XutilsGetData.CallBackHttp() {
+//                @Override
+//                public void handleData(String data) {
+//                    LogUtils.e("xinwenactivitydata", data + "");
+//
+//                    getshowData(data);
+//                }
+//            },true);
+//        }else {
+//            String data = xutilsGetData.getData(this, url, null);
+//            //判断本地数据是否存在  如果没有网络请求
+//            if (data != null) {
+//                getshowData(data);
+//            }
+//        }
     }
 
-    private void getshowData(String data) {
-        int lanmuType = xinWenXiData.getLanMuType();//获得是那条栏目  可能会有不同的字段
-        photoslist = XinWenXi.getdata(data, this, lanmuType);
-        String gentie = photoslist.get(0).getGentieUrl();//获得跟帖的URL
-        LogUtils.e("showdata", xinwencontent + "           " + photoslist.get(0).getPhotosList().get(0).getText());
+    private void getshowData() {
+//        int lanmuType = xinWenXiData.getLanMuType();//获得是那条栏目  可能会有不同的字段
+//        photoslist = XinWenXi.getdata(data, this, lanmuType);
+//        String gentie = photoslist.get(0).getGentieUrl();//获得跟帖的URL
+//        photoslist=xinWenXiData.getUploadFileList();
+//        LogUtils.e("showdata", xinwencontent + "           " + photoslist.get(0).getPhotosList().get(0).getText());
 
 
         imagePager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
@@ -142,7 +149,8 @@ public class XinWenXiActivity extends AppCompatActivity {
             @Override
             public void onPageSelected(int position) {
                 //设置滑动改变内容
-                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
+//                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
+                xinwencontent.setText(photoslist.get(position).getPath());
             }
 
             @Override
@@ -157,7 +165,7 @@ public class XinWenXiActivity extends AppCompatActivity {
     class ImagePagerAdapter extends PagerAdapter {
         @Override
         public int getCount() {
-            return photoslist.get(0).getPhotosList().size();
+            return photoslist.size();
         }
 
         @Override
@@ -167,12 +175,16 @@ public class XinWenXiActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(photoslist.get(0).getPhotosList().get(position).getImg());
+//            ImageView imagePicture=null;
+//            Context context =  container.getContext();
+//            //   imagePicture.setImageDrawable(ContextCompat.getDrawable(context, photo.photoId));
+//            XutilsGetData.xUtilsImageiv(imagePicture, "http://www.dcgqxx.com/upload/"+photoslist.get(position),context,false);
+//            container.addView(imagePicture);
             if (position == 0) {//设置第一次初始化内容
-                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
+                xinwencontent.setText(photoslist.get(position).getPath());
             }
 
-            return photoslist.get(0).getPhotosList().get(position).getImg();
+            return super.instantiateItem(container, position);
         }
 
         @Override
