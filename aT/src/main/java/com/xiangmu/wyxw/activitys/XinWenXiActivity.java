@@ -54,6 +54,7 @@ public class XinWenXiActivity extends AppCompatActivity {
     private ViewPager imagePager;
     private XinWenXiData xinWenXiData;
     private TextView duotu_gentie;
+    private TextView duotu_count;
     ImageButton caidan;
     ImageButton fenxiang;
 
@@ -67,7 +68,9 @@ public class XinWenXiActivity extends AppCompatActivity {
         fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
         imagePager = (ViewPager) findViewById(R.id.xinwenxi_viewpager);
         xinwencontent = (TextView) findViewById(R.id.xinwenxi_content);
+        duotu_count = (TextView) findViewById(R.id.xinwen_xi_count);
         final TextView title = (TextView) findViewById(R.id.xinwen_xi_title);
+
         title.setText(xinwentitle);
         int replaycount = xinWenXiData.getReplaycount();
         if (replaycount == 0) {
@@ -109,10 +112,12 @@ public class XinWenXiActivity extends AppCompatActivity {
 //    private List<XinWenXi.PhotosObj> photoslist;
     private List<UploadFile> photoslist;
     private XutilsGetData xutilsGetData = new XutilsGetData();
+//    private XinWenXi xinWenXi= new XinWenXi();
 
     public void getdata() {//根据url保存数据
 
         photoslist=xinWenXiData.getUploadFileList();
+        photoslist=XinWenXi.getdataview(photoslist,this);
         getshowData();
 //        if (CommonUtil.isNetWork(XinWenXiActivity.this)){
 //            xutilsGetData.xUtilsHttp(this, url, new XutilsGetData.CallBackHttp() {
@@ -151,6 +156,7 @@ public class XinWenXiActivity extends AppCompatActivity {
                 //设置滑动改变内容
 //                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
                 xinwencontent.setText(photoslist.get(position).getPath());
+                duotu_count.setText(position + 1 + "/" +photoslist.size());
             }
 
             @Override
@@ -175,16 +181,14 @@ public class XinWenXiActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-//            ImageView imagePicture=null;
-//            Context context =  container.getContext();
-//            //   imagePicture.setImageDrawable(ContextCompat.getDrawable(context, photo.photoId));
-//            XutilsGetData.xUtilsImageiv(imagePicture, "http://www.dcgqxx.com/upload/"+photoslist.get(position),context,false);
-//            container.addView(imagePicture);
+            container.addView(photoslist.get(position).getImageView());
             if (position == 0) {//设置第一次初始化内容
                 xinwencontent.setText(photoslist.get(position).getPath());
-            }
-
-            return super.instantiateItem(container, position);
+                duotu_count.setText("1/" + getCount());
+            } else if(position == photoslist.size()){
+                xinwencontent.setText("广告photoslist.get(position).getPath()");
+        }
+            return photoslist.get(position).getImageView();
         }
 
         @Override

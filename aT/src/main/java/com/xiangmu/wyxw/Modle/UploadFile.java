@@ -1,5 +1,7 @@
 package com.xiangmu.wyxw.Modle;
 
+import android.widget.ImageView;
+
 import java.io.Serializable;
 
 /**
@@ -13,6 +15,16 @@ public class UploadFile implements Serializable {
     private Double wid;
     private Double hig;
     private int rand;
+
+    public ImageView getImageView() {
+        return imageView;
+    }
+
+    public void setImageView(ImageView imageView) {
+        this.imageView = imageView;
+    }
+
+    private ImageView imageView;
 
     // 文件路径
     private String path;

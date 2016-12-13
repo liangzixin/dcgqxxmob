@@ -3,6 +3,8 @@ package com.xiangmu.wyxw.utils;
 import android.content.Context;
 import android.widget.ImageView;
 
+import com.xiangmu.wyxw.Modle.UploadFile;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,6 +57,41 @@ public class XinWenXi {
             e.printStackTrace();
         }
         xutilsGetData.XutilsClose();
+        return list;
+    }
+    public static List<UploadFile> getdataview(List<UploadFile> uploadFiles, Context context) {
+        XutilsGetData xutilsGetData = new XutilsGetData();
+        List<UploadFile> list=new ArrayList<>();
+        for (int i=0;i<uploadFiles.size();i++){
+
+            UploadFile ps= new UploadFile();
+            ps=uploadFiles.get(i);
+            ImageView imageView=new ImageView(context);
+//            JSONObject photo= (JSONObject) photos.get(i);
+//            String imgurl=photo.getString("path");
+            xutilsGetData.xUtilsImageiv(imageView, "http://www.dcgqxx.com/upload/"+uploadFiles.get(i).getPath(), context,true);
+//            String text=null;
+//            switch (lanmuType){
+//                case XinWen_adapter.yule:
+//                case XinWen_adapter.lishi:
+//                    text=photo.getString("imgtitle");
+//                    break;
+//                default:
+//                    text=photo.getString("note");
+//                    break;
+//            }
+
+            ps.setImageView(imageView);
+//            ps.setText(text);
+
+           list.add(ps);
+//        }
+////        list.set(0,photosObj).setPhotosList(photosList);
+//    } catch (JSONException e) {
+//        e.printStackTrace();
+    }
+    xutilsGetData.XutilsClose();
+
         return list;
     }
     public static class PhotosObj{
