@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewParent;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -157,6 +158,7 @@ public class XinWenXiActivity extends AppCompatActivity {
 //                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
                 xinwencontent.setText(photoslist.get(position).getPath());
                 duotu_count.setText(position + 1 + "/" +photoslist.size());
+
             }
 
             @Override
@@ -181,14 +183,21 @@ public class XinWenXiActivity extends AppCompatActivity {
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
-            container.addView(photoslist.get(position).getImageView());
-            if (position == 0) {//设置第一次初始化内容
-                xinwencontent.setText(photoslist.get(position).getPath());
-                duotu_count.setText("1/" + getCount());
-            } else if(position == photoslist.size()){
-                xinwencontent.setText("广告photoslist.get(position).getPath()");
-        }
+            //对ViewPager页号求模取出View列表中要显示的项
+
+//            container.addView(photoslist.get(position).getImageView());
+
+//            if (position == 0) {//设置第一次初始化内容
+//                xinwencontent.setText(photoslist.get(position).getPath());
+//                duotu_count.setText("1/" + getCount());
+//            }
             return photoslist.get(position).getImageView();
+//            try {
+//                container.addView(photoslist.get(position % photoslist.size()).getPath(), 0);
+//            }catch(Exception e){
+//                //handler something
+//            }
+//            return mImageViews[position % mImageViews.length];
         }
 
         @Override
