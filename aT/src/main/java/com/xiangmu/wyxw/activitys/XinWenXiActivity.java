@@ -137,7 +137,7 @@ public class XinWenXiActivity extends AppCompatActivity {
 //            }
 //        }
     }
-
+     private  int   myposition=0;
     private void getshowData() {
 //        int lanmuType = xinWenXiData.getLanMuType();//获得是那条栏目  可能会有不同的字段
 //        photoslist = XinWenXi.getdata(data, this, lanmuType);
@@ -146,7 +146,8 @@ public class XinWenXiActivity extends AppCompatActivity {
 //        LogUtils.e("showdata", xinwencontent + "           " + photoslist.get(0).getPhotosList().get(0).getText());
 
 
-        imagePager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+        imagePager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
             @Override
             public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
@@ -156,14 +157,35 @@ public class XinWenXiActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 //设置滑动改变内容
 //                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
+                myposition=position;
                 xinwencontent.setText(photoslist.get(position).getPath());
                 duotu_count.setText(position + 1 + "/" +photoslist.size());
+//                if(position==photoslist.size()-1){
+//                    imagePager.setCurrentItem(1);
+//                }
 
             }
 
             @Override
             public void onPageScrollStateChanged(int state) {
-
+                //页面到达最后一页，state==0表示页面动画完成状态
+                boolean flag=false;
+                switch (state) {
+                    case ViewPager.SCROLL_STATE_DRAGGING:
+                        flag= false;
+                        break;
+                    case ViewPager.SCROLL_STATE_SETTLING:
+                        flag = true;
+                        break;
+                    case ViewPager.SCROLL_STATE_IDLE:
+                        if (imagePager.getCurrentItem() == imagePager.getAdapter()
+                                .getCount() - 1 && !flag) {
+                            Toast.makeText(XinWenXiActivity.this, "已经是最后一页",
+                                    Toast.LENGTH_LONG).show();
+                        }
+                        flag = true;
+                        break;
+                }
             }
         });
         ImagePagerAdapter imagePagerAdapter = new ImagePagerAdapter();
@@ -184,13 +206,15 @@ public class XinWenXiActivity extends AppCompatActivity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             //对ViewPager页号求模取出View列表中要显示的项
+            container.addView(photoslist.get(position).getImageView());
+//           if(position==getCount()-1) {
+//               container.addView(photoslist.get(0).getImageView());
+//           }
 
-//            container.addView(photoslist.get(position).getImageView());
-
-//            if (position == 0) {//设置第一次初始化内容
-//                xinwencontent.setText(photoslist.get(position).getPath());
-//                duotu_count.setText("1/" + getCount());
-//            }
+            if (position== 0) {//设置第一次初始化内容
+                xinwencontent.setText(photoslist.get(position).getPath());
+                duotu_count.setText("1/" + getCount());
+            }
             return photoslist.get(position).getImageView();
 //            try {
 //                container.addView(photoslist.get(position % photoslist.size()).getPath(), 0);
