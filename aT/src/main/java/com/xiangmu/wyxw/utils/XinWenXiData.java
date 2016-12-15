@@ -10,6 +10,7 @@ import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.Modle.Zpxx;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -34,7 +35,7 @@ public class XinWenXiData implements Serializable{
     private Zpxx zpxx;
     private Fwcs fwcs;
     private Gqxx gqxx;
-    private List<UploadFile> uploadFileList;
+    private ArrayList<UploadFile> uploadFileList;
 
     public List<ProductArticler> getProductArticlerList() {
         return productArticlerList;
@@ -47,11 +48,11 @@ public class XinWenXiData implements Serializable{
     private List<ProductArticler> productArticlerList;
     private ProductCategory ProductCategory;
 
-    public List<UploadFile> getUploadFileList() {
+    public ArrayList<UploadFile> getUploadFileList() {
         return uploadFileList;
     }
 
-    public void setUploadFileList(List<UploadFile> uploadFileList) {
+    public void setUploadFileList(ArrayList<UploadFile> uploadFileList) {
         this.uploadFileList = uploadFileList;
     }
 

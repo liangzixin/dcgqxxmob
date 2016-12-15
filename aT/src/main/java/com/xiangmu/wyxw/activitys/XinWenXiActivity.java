@@ -80,7 +80,10 @@ public class XinWenXiActivity extends AppCompatActivity {
         }
         duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
         getdata();
-        //点击finish
+
+
+
+    //点击finish
         imageback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,7 +114,7 @@ public class XinWenXiActivity extends AppCompatActivity {
 
     //获得数据
 //    private List<XinWenXi.PhotosObj> photoslist;
-    private List<UploadFile> photoslist;
+    private ArrayList<UploadFile> photoslist;
     private XutilsGetData xutilsGetData = new XutilsGetData();
 //    private XinWenXi xinWenXi= new XinWenXi();
 
@@ -119,6 +122,12 @@ public class XinWenXiActivity extends AppCompatActivity {
 
         photoslist=xinWenXiData.getUploadFileList();
         photoslist=XinWenXi.getdataview(photoslist,this);
+//        for(int i=0;i<photoslist.size();i++)
+//        {
+//            if(photoslist.get(i).getImageView()==null){
+//                System.out.println("为空");
+//            }
+//        }
         getshowData();
 //        if (CommonUtil.isNetWork(XinWenXiActivity.this)){
 //            xutilsGetData.xUtilsHttp(this, url, new XutilsGetData.CallBackHttp() {
@@ -157,9 +166,9 @@ public class XinWenXiActivity extends AppCompatActivity {
             public void onPageSelected(int position) {
                 //设置滑动改变内容
 //                xinwencontent.setText(photoslist.get(0).getPhotosList().get(position).getText());
-                myposition=position;
+//                myposition=position;
                 xinwencontent.setText(photoslist.get(position).getPath());
-                duotu_count.setText(position + 1 + "/" +photoslist.size());
+                duotu_count.setText(position +1+"/" +photoslist.size());
 //                if(position==photoslist.size()-1){
 //                    imagePager.setCurrentItem(1);
 //                }
@@ -206,7 +215,7 @@ public class XinWenXiActivity extends AppCompatActivity {
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             //对ViewPager页号求模取出View列表中要显示的项
-            container.addView(photoslist.get(position).getImageView());
+           container.addView(photoslist.get(position).getImageView());
 //           if(position==getCount()-1) {
 //               container.addView(photoslist.get(0).getImageView());
 //           }
@@ -227,6 +236,7 @@ public class XinWenXiActivity extends AppCompatActivity {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
+//            ((ViewPager)container).removeView(photoslist.get(position).getImageView());
         }
     }
 

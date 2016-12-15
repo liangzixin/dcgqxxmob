@@ -59,9 +59,9 @@ public class XinWenXi {
         xutilsGetData.XutilsClose();
         return list;
     }
-    public static List<UploadFile> getdataview(List<UploadFile> uploadFiles, Context context) {
+    public static ArrayList<UploadFile> getdataview(List<UploadFile> uploadFiles, Context context) {
         XutilsGetData xutilsGetData = new XutilsGetData();
-        List<UploadFile> list=new ArrayList<>();
+        ArrayList<UploadFile> list=new ArrayList<>();
         for (int i=0;i<uploadFiles.size();i++){
 
             UploadFile ps= new UploadFile();
