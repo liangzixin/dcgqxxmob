@@ -59,7 +59,7 @@ public class TouTiaoFrament extends Fragment {
     private XinWenproductinfoBaseAdapter toutiao_adapter;
     private XinWenURL xinWenURL = new XinWenURL();
     private int daohangtype;
-    private   List<UploadFile> potolist;
+    private   ArrayList<UploadFile> potolist;
     private  List<ProductArticler> liuyuenlist;
     //List<PhotoImage> potolist2 = new ArrayList<>();
     private XinWenXiData xinWenXi;
