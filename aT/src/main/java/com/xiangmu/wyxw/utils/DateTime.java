@@ -68,6 +68,11 @@ public class DateTime {
 
     return  dateStr;
    } ;
+    public String getYmd(  String str){
+        String dateStr = "";
+        dateStr=str.substring(0,4)+"/"+str.substring(5,7)+"/"+str.substring(8,10);
+        return  dateStr;
+    }
     public   String getDateFormatter(){
         Date date=new Date();
         DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

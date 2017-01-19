@@ -23,6 +23,7 @@
                 android:layout_weight="3"
                 android:layout_width="match_parent">
                 <TextView
+                    android:id="@+id/customer"
                     android:layout_alignParentLeft="true"
                     android:layout_centerInParent="true"
                     android:text="朱朱"
@@ -64,6 +65,7 @@
                 </LinearLayout>
             </RelativeLayout>
             <TextView
+                android:id="@+id/liuyuandate"
                 android:text="南阳  诺基亚用户"
                 android:textColor="#348989"
                 android:layout_height="0dp"
@@ -82,6 +84,7 @@
         android:layout_height="wrap_content">
     </LinearLayout>
     <TextView
+        android:id="@+id/content"
         android:textSize="18sp"
         android:text="老黄真菜!!!!!"
         android:layout_marginLeft="52sp"

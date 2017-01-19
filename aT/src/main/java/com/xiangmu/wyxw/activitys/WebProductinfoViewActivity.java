@@ -239,31 +239,51 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 DateTime dateTime =new DateTime();
                  productArticler.setArtreview_time(dateTime.getDateFormatter());
                     productArticler.setArtreview_authorid(1+"");
-                 ((List<ProductArticler>)liuyuanlist.get(0)).add(0,productArticler);
-                 NotifyFunction();
+                 if(liuyuanlist.size()>0) {
+                    liuyuanlist.add(0, productArticler);
+                 }else{
+                     liuyuanlist.add(productArticler);
+
+                 }
+                 UpArticlerFunction();
+//                 NotifyFunction();
             }
-          //  MultiTypeAdapter adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
-           // adapter.add(mockLiuyuan( liuyuanlist.size()));
-            new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
+            if(liuyuanlist.size()>0) {
+                adapter.add(mockLiuyuan(0));
+            }
             edit.setText("");
+           edit.setFocusable(false);
+            Toast.makeText(WebProductinfoViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
         }
     };
+    /**
+     * 提交留言
+     */
+    public void UpArticlerFunction() {
+        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString();
+        UpData(url);
+    }
     /**
      * 通知数据发生改变
      */
     public void NotifyFunction() {
-        //recyclerView.deferNotifyDataSetChanged();
-      ///  recyclerView.notifyDataSetChanged();
-      //  recyclerView.getChildItemId(item_p)
-     // recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
+//        for (int i = 0; i <liuyuanlist.size(); i++) {
+
+            adapter.add(mockLiuyuan(0));
+        return;
+//        }
+//        recyclerView.deferNotifyDataSetChanged();
+//      /  recyclerView.notifyDataSetChanged();
+//        recyclerView.getChildItemId(item_p)
+//      recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
       //  recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
       //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
    // adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
       //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
     // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
-      adapter.add(mockLiuyuan(0));
-        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString();
-     UpData(url);
+
+//      adapter.add(mockLiuyuan(0));
+
      // adapter.add(mockLiuyuan(i));
     // }
     }
@@ -340,7 +360,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         UpData(clickcount);
-        UpData(clickcount0);
+//        UpData(clickcount0);
      //   UpCount(clickcount0);
         System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
@@ -402,11 +422,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     }
     public Liuyuan mockLiuyuan(int seed) {
         Liuyuan liuyuan= new Liuyuan();
-
-       liuyuan.liuyuan_content=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_content();
-        liuyuan.liuyuan_id=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_authorid();
-        liuyuan.liuyuan_date=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_time();
-
+;
+        liuyuan.liuyuan_content=((ProductArticler)liuyuanlist.get(seed)).getArtreview_content();
+        liuyuan.liuyuan_id=((ProductArticler)liuyuanlist.get(seed)).getArtreview_authorid();
+        liuyuan.liuyuan_date=((ProductArticler)liuyuanlist.get(seed)).getArtreview_time();
         return liuyuan;
     }
     public Photo mockPhoto(int seed) {
@@ -438,14 +457,15 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                         public void onSuccess(ResponseInfo<String> responseInfo) {
                             if (responseInfo.result != null) {
                                 SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
-
+//                                new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
+//                                edit.setText("");
 
                             }
                         }
 
                         @Override
                         public void onFailure(HttpException e, String s) {
-                            Toast.makeText(WebProductinfoViewActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
                         }
                     });
 

@@ -158,7 +158,7 @@ public class TouTiaoFrament extends Fragment {
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-                xinWenURL.setStratPage(xinWenURL.getStratPage() + 20);
+                xinWenURL.setStratPage(xinWenURL.getStratPage() +1);
                 //默认选择头条栏目
                 String urlfen =geturl();//分页url;
                 LogUtils.e("toutiao", "url:" + urlfen);
@@ -210,9 +210,10 @@ public class TouTiaoFrament extends Fragment {
     boolean isrefresh=true;
     // 显示数据  或者分页加载数据
     private void getshowdata(String data, boolean refresh) {
+        toutiao_list.clear();
         if (refresh) {
-            toutiao_list.clear();
 
+            toutiao_list0.clear();
         }
 
         XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, daohangtype);//传入类型和数据
@@ -299,11 +300,11 @@ public class TouTiaoFrament extends Fragment {
         //如果只有一个图片则不轮播
         if (size == 1) {
             TextView title = (TextView) lunboView.findViewById(R.id.toutiao_lunboyitu_title);
-            title.setText(toutiao_list.get(0).getAds().get(0).getTitle());
+            title.setText(listads.get(0).getTitle());
             ImageView lunbo_yitu = (ImageView) lunboView.findViewById(R.id.daohang_lunbo_yitu);
             lunbo_yitu.setVisibility(View.VISIBLE);
-            xiangxiUrl = toutiao_list.get(0).getAds().get(0).getUrl();
-            XutilsGetData.xUtilsImageiv(lunbo_yitu, toutiao_list.get(0).getAds().get(0).getImgsrc(), getActivity(),false);
+            xiangxiUrl ="aaa";
+            XutilsGetData.xUtilsImageiv(lunbo_yitu, "http://www.dcgqxx.com/upload/"+listads.get(0).getPath(), getActivity(),false);
             lunbo_yitu.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -481,7 +482,7 @@ public class TouTiaoFrament extends Fragment {
         XinWen_productinfo.T18908805728Entity toutiao_listview= new XinWen_productinfo.T18908805728Entity();//获取记录
         if (listads.size()==0) {//判断有没有轮播图如果没有就不添加轮播布局  布局就和原来一样
             pos = position;
-            toutiao_listview=toutiao_list.get(pos);
+            toutiao_listview=toutiao_list0.get(pos);
         } else {
             pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
             toutiao_listview=toutiao_list0.get(pos);
@@ -529,7 +530,7 @@ public class TouTiaoFrament extends Fragment {
         xinWenXi.setProductArticlerList(liuyuenlist);
 //        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
 //        potolist0=(List<XinWen_productinfo.T18908805728Entity.UploadFileEntity>)toutiao_listview.getUploadFile();
-        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
+//        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
 //        if(potolist!=null) {
 //            potolist1= XinWenXiImage.getdata(potolist,getActivity());
 //        }
@@ -594,7 +595,7 @@ public class TouTiaoFrament extends Fragment {
 //        String skiptype=toutiao_list.get(0).getAds().get(posion).getTag();
 //
 //        int lanmutype=XinWen_adapter.getType(skiptype);
-        int lanmutype=1;
+
         XinWen_productinfo.T18908805728Entity toutiao_listview= new XinWen_productinfo.T18908805728Entity();//获取记录
         toutiao_listview=toutiao_list.get( posion);
 
@@ -639,16 +640,18 @@ public class TouTiaoFrament extends Fragment {
             liuyuenlist.add(productArticler);
         }
         xinWenXi.setProductArticlerList(liuyuenlist);
+        int lanmutype=1;
+        lanmutype=toutiao_listview.getLanmu();
         //根据类型选择跳转的详细页面
         switch (lanmutype) {
             case XinWen_adapter.TYPE_putong:
             case XinWen_adapter.TYPE_zhuanti:
             case XinWen_adapter.TYPE_zhibo:
-                String urlputong = toutiao_list.get(0).getAds().get(posion).getUrl();
-                LogUtils.e("xinwenactivity==urlputong==", urlputong + "");
-                xinWenXi.setUrl(urlputong);//详细页面url
+//                String urlputong = toutiao_list.get(0).getAds().get(posion).getUrl();
+//                LogUtils.e("xinwenactivity==urlputong==", urlputong + "");
+                xinWenXi.setUrl("bbbb");//详细页面url
                 //跳转到详细页
-                Intent intentputong = new Intent(getActivity(), WebViewActivity.class);
+                Intent intentputong = new Intent(getActivity(), WebProductinfoViewActivity.class);
                 intentputong.putExtra("xinwendata", xinWenXi);
                 startActivity(intentputong);
                 break;

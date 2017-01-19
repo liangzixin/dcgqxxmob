@@ -9,7 +9,7 @@ import java.util.List;
  * Created by Administrator on 2015/11/13.
  */
 public class XinWenURL {
-    public int stratPage = 0;
+    public int stratPage = 1;
     List<ProductInfo> productInfos=null;
 
 
@@ -17,6 +17,16 @@ public class XinWenURL {
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
 
     String savearticler=HttpUtil.BASE_URL+"product!savearticlermob.action?productid=";
+    String addcustmer=HttpUtil.BASE_URL+"login!addcustmermob.action?openid=";
+    public String getAddcustmer() {
+        return addcustmer;
+    }
+
+    public void setAddcustmer(String addcustmer) {
+        this.addcustmer = addcustmer;
+    }
+
+
 
     public String getSaveproductinfo() {
         return saveproductinfo;

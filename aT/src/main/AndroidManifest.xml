@@ -192,6 +192,10 @@
             android:name=".activitys.GenTieActivity"
             android:label="@string/title_activity_gen_tie" >
         </activity>
+        <activity
+            android:name=".activitys.LiuyuanActivity"
+            android:label="@string/title_activity_gen_tie" >
+        </activity>
     </application>
 
 </manifest>

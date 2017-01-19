@@ -21,6 +21,12 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.controller.UMServiceFactory;
 import com.umeng.socialize.controller.UMSocialService;
@@ -31,8 +37,11 @@ import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.sso.UMSsoHandler;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.utils.HttpPostThread;
+import com.xiangmu.wyxw.utils.HttpUtil;
+import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
 import com.xiangmu.wyxw.utils.ThreadPoolUtils;
 import com.xiangmu.wyxw.utils.Utils;
+import com.xiangmu.wyxw.utils.XinWenURL;
 
 import java.util.Map;
 import java.util.Set;
@@ -43,6 +52,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private Button login_button;
     private LinearLayout weixin_login,qq_login,xinlang_login;
     private EditText login_zhanghao,login_password;
+    private HttpHandler<String> handler;
+    private HttpUtils httpUtils;
+    private String url=null;
+    private String opid="";
+    private XinWenURL xinWenURL=new XinWenURL();
     UMSocialService mController;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,8 +81,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        weixin = (Button) findViewById(R.id.main_btn3);
         //设置新浪SSO handler
         mController.getConfig().setSsoHandler(new SinaSsoHandler());
-        UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(this, "1104966900",
-                "voYmRxQSvtpCnGUE");
+        UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(this, "1105789263",
+                "Z72WYfitxSU5HyVO");
         qqSsoHandler.addToSocialSDK();
 
         loginback.setOnClickListener(this);
@@ -164,6 +178,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     @Override
                     public void onComplete(Bundle value, SHARE_MEDIA platform) {
                         Toast.makeText(LoginActivity.this, "授权完成", Toast.LENGTH_SHORT).show();
+                       opid=value.getString("openid");
+                        System.out.println(opid);
 //                        startActivity(new Intent(LoginActivity.this, Main2Activity.class));
                         //获取相关授权信息
                         mController.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, new SocializeListeners.UMDataListener() {
@@ -182,7 +198,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     Log.d("TestData",sb.toString());
                                     String userName = (String)info.get("screen_name");
                                     String profile_image_url = (String)info.get("profile_image_url");
-                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).commit();
+//                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
+                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
+                                    addcustmer(opid,userName,profile_image_url);
+//                                    finish();
+//                                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+//                                    Intent intent1 = new Intent(LoginActivity.class, Setting_headpage.class);
+//                                    startActivity(intent1);
+                                    startActivity(new Intent(LoginActivity.this,Setting_headpage.class));
+                                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                                 }else{
                                     Log.d("TestData","发生错误："+status);
                                 }
@@ -223,6 +247,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         String userName = (String)info.get("screen_name");
                                         String profile_image_url = (String)info.get("profile_image_url");
                                         getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).commit();
+                                   addcustmer(opid,userName,profile_image_url);
+//                                        finish();
+//                                        overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
                                     } else {
                                         Log.d("TestData", "发生错误：" + status);
                                     }
@@ -242,16 +269,37 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 String zhanghao = login_zhanghao.getText().toString().trim();
                 String password = login_password.getText().toString().trim();
                 if (Utils.isnumber(zhanghao)) {
-                    login(zhanghao, password);
+                    login1(zhanghao, password);
                 } else {
                     Toast.makeText(this, "亲 ~,别闹,你账号输错了", Toast.LENGTH_SHORT).show();
                 }
                 break;
         }
     }
-
-    private void login(String zhanghao,String password) {
+    private void login1(String zhanghao,String password) {
         ThreadPoolUtils.execute(new HttpPostThread(this, zhanghao, password, hand));
+    }
+    private void login(String zhanghao,String password) {
+//        ThreadPoolUtils.execute(new HttpPostThread(this, zhanghao, password, hand));
+        httpUtils = new HttpUtils();
+      url= HttpUtil.BASE_URL+"login!logonmob.action?username="+zhanghao+"&password="+password;//最新
+        handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+            @Override
+            public void onSuccess(ResponseInfo<String> responseInfo) {
+                if (responseInfo.result != null) {
+//                    SharedPreferencesUtil.saveData(LoginActivity.this, url, responseInfo.result);
+//                    paserData(1, responseInfo.result);
+                    Toast.makeText(LoginActivity.this, "登陆成功,恭喜你回家!!!", Toast.LENGTH_SHORT).show();
+                    finish();
+                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+                }
+            }
+
+            @Override
+            public void onFailure(HttpException e, String s) {
+                Toast.makeText(LoginActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
     Handler hand=new Handler(){
         @Override
@@ -278,6 +326,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             ssoHandler.authorizeCallBack(requestCode, resultCode, data);
         }
     }
+    /**
+     * 提交用户
+     */
+    public void addcustmer(String openid,String screenname,String imageurl) {
+        String url=xinWenURL.getAddcustmer()+openid+"&screenname="+screenname+"&imageurl="+imageurl;
+        UpData(url);
+    }
+    private void UpData(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
 
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+//                    if (responseInfo.result != null) {
+//                        SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
+//                                new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
+//                                edit.setText("");
+
+//                    }
+                }
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+//                    Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
 }
 

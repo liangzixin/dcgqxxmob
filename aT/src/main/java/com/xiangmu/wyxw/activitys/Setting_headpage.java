@@ -26,6 +26,7 @@ import com.xiangmu.wyxw.Setting_Utils.QieYuanTu;
 import com.xiangmu.wyxw.Setting_Utils.SearchDB;
 import com.xiangmu.wyxw.Setting_Utils.TouXiangCache;
 import com.xiangmu.wyxw.conent_frament.SheZhiFrament;
+import com.xiangmu.wyxw.utils.XutilsGetData;
 
 import java.io.File;
 
@@ -65,8 +66,10 @@ public class Setting_headpage extends AppCompatActivity {
         user_name = SearchDB.createDb(this, "userName");
         if (pic_path != null) {
             Log.e("aaaaaaaa------>", "---pic_path--" + pic_path);
-            Bitmap getphoto = TouXiangCache.getphoto("storage/sdcard0/" + pic_path);
-            header.setImageBitmap(getphoto);
+         //   Bitmap getphoto = TouXiangCache.getphoto("storage/sdcard0/" + pic_path);
+//            Bitmap getphoto = TouXiangCache.getphoto(pic_path);
+//            header.setImageBitmap(getphoto);
+            XutilsGetData.xUtilsImageiv(header,pic_path,getApplication(),false);
         }
         if (user_name != null) {
 

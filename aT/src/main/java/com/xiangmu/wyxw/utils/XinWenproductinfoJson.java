@@ -40,16 +40,17 @@ public class XinWenproductinfoJson {
           //  JSONObject object= JSONObject.fromObject(data);
             LogUtils.e("xinwenjsonobject", object + "");
             JSONArray array = null;
+//            JSONObject arrayobj0=null;
 
 
 
             switch (type){
                 case XinWen_adapter.rendian:
+//                    arrayobj0=object.getJSONObject("T18908805728");//热点
                     array=object.getJSONArray("T18908805728");//热点
                     break;
                 case XinWen_adapter.zuixin:
-                    array=object.getJSONArray("T18908805728");//最新
-
+                    array=object.getJSONArray("T18908805728");//热点
 //                    try{
 //                        //获取餐桌列表数据
 //                        ProductInfoService productInfoService = new  ProductInfoService();
@@ -62,13 +63,13 @@ public class XinWenproductinfoJson {
 //                    }
                     break;
                 case XinWen_adapter.yule:
-                    array=object.getJSONArray("T18908805728");//娱乐T1348648517839
+                    array=object.getJSONArray("T18908805728");//热点
                     break;
                 case XinWen_adapter.zaopin:
-                    array=object.getJSONArray("T18908805728");//招聘
+                    array=object.getJSONArray("T18908805728");//热点
                     break;
                 case XinWen_adapter.qiuzhi:
-                    array=object.getJSONArray("T18908805728");//求职
+                    array=object.getJSONArray("T18908805728");//热点
                     break;
                 case XinWen_adapter.chushou:
                     array=object.getJSONArray("T18908805728");//出售
@@ -93,14 +94,20 @@ public class XinWenproductinfoJson {
                     break;
             }
             LogUtils.e("xinwenjsonarray----", "" + array);
-
+            JSONObject arrayobj00=array.getJSONObject(0);
+                            if (! arrayobj00.isNull("totalRecords")){
+                    int totalRecords= arrayobj00.getInt("totalRecords");
+                    toutiao.setTotalRecords(totalRecords);
+                };
+            JSONArray array00 = null;
+            array00=arrayobj00.getJSONArray("list");
             List<XinWen_productinfo.T18908805728Entity> list=new ArrayList<>();
-            for (int i=0;i<array.length();i++){
+            for (int i=0;i<array00.length();i++){
 
 //                LogUtils.e("xinwenjsonarray",array+"");
 
                 XinWen_productinfo.T18908805728Entity t18908805728Entity=new XinWen_productinfo.T18908805728Entity();
-                JSONObject arrayobj=array.getJSONObject(i);
+                JSONObject arrayobj=array00.getJSONObject(i);
                 if (!arrayobj.isNull("id")){
                     int skipId=arrayobj.getInt("id");
                     t18908805728Entity.setId(skipId);
@@ -147,6 +154,12 @@ public class XinWenproductinfoJson {
                    int lunbo=arrayobj.getInt("lunbo");
                     t18908805728Entity.setLunbo(lunbo);
                 };
+                if (!arrayobj.isNull("lanmu")){
+                    int lanmu=arrayobj.getInt("lanmu");
+                    t18908805728Entity.setLanmu(lanmu);
+                };
+//                int totalRecords0=arrayobj.getInt("totalRecords");
+
                        if (!arrayobj.isNull("articlers")){
                     JSONArray articlerArray=arrayobj.getJSONArray("articlers");
                     LogUtils.e("xinwenjsonimagetraArray",articlerArray + "");
@@ -171,7 +184,9 @@ public class XinWenproductinfoJson {
 
                             JSONObject imagestra = uploadFileArray.getJSONObject(j);
                             String imagesra = imagestra.getString("path");
+
                             imgextraEntity.setTitle(t18908805728Entity.getName());
+                            imgextraEntity.setTag(imagestra.getString("tag"));
                             //   int id=imagestra.getInt("id");
                             imgextraEntity.setPath(imagesra);
                             //     imgextraEntity.setId(id);

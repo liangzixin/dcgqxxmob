@@ -33,6 +33,8 @@ import com.xiangmu.wyxw.activitys.Setting_glodmall;
 import com.xiangmu.wyxw.activitys.Setting_headpage;
 import com.xiangmu.wyxw.activitys.Setting_my_Task;
 import com.xiangmu.wyxw.activitys.Setting_set_page;
+import com.xiangmu.wyxw.utils.XutilsGetData;
+
 /**
  * Created by Administrator on 2015/11/9.
  */
@@ -81,8 +83,10 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             pic_path = SearchDB.TouXiangDb(getActivity(), "pic_path");
             if (pic_path != null) {
                 Log.e("aaa","--------pic_path"+pic_path);
-                Bitmap bitmap = TouXiangCache.getphoto(pic_path);
-                picture.setImageBitmap(bitmap);
+//                Bitmap bitmap = TouXiangCache.getphoto(pic_path);
+//                Bitmap bitmap = TouXiangCache.getBitmapFromFile(pic_path,100,100);
+//                picture.setImageBitmap(bitmap);
+                XutilsGetData.xUtilsImageiv(picture,pic_path, getActivity(),false);
             }
         } else {
             jinbiCount.setVisibility(View.GONE);

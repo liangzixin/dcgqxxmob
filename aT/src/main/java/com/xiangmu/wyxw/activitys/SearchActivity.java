@@ -57,6 +57,7 @@ public class SearchActivity extends AppCompatActivity {
     // Content View Elements
     private ImageButton back;
     private TextView noHotWords;
+    private TextView searchjiekuo;
     private ImageView clear_history;
     private LinearLayout layoutsearchResult;
     private RelativeLayout layout_sousuoHis;
@@ -93,6 +94,7 @@ public class SearchActivity extends AppCompatActivity {
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
         layout_sousuoHis = (RelativeLayout) findViewById(R.id.layout_sousuoHis);//搜索历史布局
         lv_searchResult = (PullToRefreshListView) findViewById(R.id.lv_searchResult);//搜索结果
+        searchjiekuo= (TextView) findViewById(R.id.lv_searchjiekuo);
         houtWord_gridview = (GridView) findViewById(R.id.houtWord_gridview);//热词推荐
         gv_searchHistory = (GridView) findViewById(R.id.gv_searchHistory);//搜索历史
         search_view = (SearchView) findViewById(R.id.search_view);
@@ -337,6 +339,7 @@ public class SearchActivity extends AppCompatActivity {
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
                 System.out.println("标题:"+toutiao_list.get(0).getName());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
+                searchjiekuo.setText("搜索结果: "+toutiao_object.getTotalRecords()+" 条记录");
                 layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 progressDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
@@ -369,8 +372,8 @@ public class SearchActivity extends AppCompatActivity {
         }
         LogUtils.e("xinwenadapter", "postion==" + pos);
         //    int bujutype = XinWen_adapter.getType(toutiao_list.get(pos).getId());
-        int bujutype =0;
-        LogUtils.e("xinwenadapter", "type==" + bujutype);
+
+//        LogUtils.e("xinwenadapter", "type==" + bujutype);
 
         //传入详细页面的数据
         List<UploadFile> potolist = new ArrayList<>();
@@ -378,6 +381,8 @@ public class SearchActivity extends AppCompatActivity {
         //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(toutiao_list.get(pos).getId());
+        int bujutype =0;
+        bujutype=toutiao_list.get(pos).getLanmu();
         xinWenXi.setBujuType(bujutype);
 //        xinWenXi.setLanMuType(daohangtype);
         xinWenXi.setLanMuType(1);
@@ -400,6 +405,7 @@ public class SearchActivity extends AppCompatActivity {
             uploadFile.setPath(toutiao_list.get(pos).getUploadFile().get(i).getPath());
             potolist.add(uploadFile);
         }
+        xinWenXi.setUploadFileList(potolist);
         for(int i=0;i<toutiao_list.get(pos).getProductArticler().size();i++){
             ProductArticler productArticler=new ProductArticler();
             productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
@@ -407,12 +413,13 @@ public class SearchActivity extends AppCompatActivity {
             productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
             liuyuenlist.add(productArticler);
         }
+        xinWenXi.setProductArticlerList(liuyuenlist);
 //        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
 //        potolist0=(List<XinWen_productinfo.T18908805728Entity.UploadFileEntity>)toutiao_list.get(pos).getUploadFile();
-        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
-        if(potolist!=null) {
-            potolist1= XinWenXiImage.getdata(potolist,SearchActivity.this);
-        }
+//        List<XinWenXiImage.PhotosObj> potolist1=new ArrayList<>();
+//        if(potolist!=null) {
+//            potolist1= XinWenXiImage.getdata(potolist,SearchActivity.this);
+//        }
 //        for(int i=0;i<potolist1.get(pos).getPhotosList().size();i++){
 //            PhotoImage photo=new PhotoImage();
 //
@@ -428,38 +435,38 @@ public class SearchActivity extends AppCompatActivity {
                 LogUtils.e("xinwenadapter", "TYPE_zhibo==" + bujutype);
                 //  String urlzhibo = toutiao_list.get(pos).getUrl();
                 // String urlzhibo = toutiao_list.get(pos).getName();
-                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
-                xinWenXi.setUrl(urlzhibo);//详细页面url
+//                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
+                xinWenXi.setUrl("bbbbb");//详细页面url
                 //跳转到详细页
                 Intent intentzhibo = new Intent(SearchActivity.this, WebProductinfoViewActivity.class);
                 intentzhibo.putExtra("xinwendata", xinWenXi);
                 //   intentzhibo.putExtra("potolist", potolist);
                 //   intentzhibo.putExtra("xinwendata", new Gson().toJson(xinWenXi));
-                Bundle bundle = new Bundle();
+//                Bundle bundle = new Bundle();
 
 //须定义一个list用于在budnle中传递需要传递的ArrayList<Object>,这个是必须要的
 //                bundle.putStringArray("potolist", potolist);
 //                intent.putExtras(bundle);
-                ArrayList bundlelist = new ArrayList();
-                ArrayList bundlelist1 = new ArrayList();
-                bundlelist.add(potolist);
-                bundlelist1.add(liuyuenlist);
-                bundle.putParcelableArrayList("potolist",bundlelist);
-                bundle.putParcelableArrayList("liuyuanlist",bundlelist1);
-                intentzhibo.putExtras(bundle);
+//                ArrayList bundlelist = new ArrayList();
+//                ArrayList bundlelist1 = new ArrayList();
+//                bundlelist.add(potolist);
+//                bundlelist1.add(liuyuenlist);
+//                bundle.putParcelableArrayList("potolist",bundlelist);
+//                bundle.putParcelableArrayList("liuyuanlist",bundlelist1);
+//                intentzhibo.putExtras(bundle);
 //                intentzhibo.putExtra("bundle", bundle);
                 startActivity(intentzhibo);
                 SearchActivity.this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
                 break;
             case XinWen_adapter.type_duotu:
-                LogUtils.e("xinwenadapter", "type_duotu==" + bujutype);
-                //   String urlduotuRight = toutiao_list.get(pos).getId();
-                String urlduotuRight = toutiao_list.get(pos).getName();
-                String urlRighBefor = urlduotuRight.substring(urlduotuRight.lastIndexOf("|") - 4);
-                String urlRight = urlRighBefor.replaceAll("\\|", "/");
-                String urlduotu = "http://c.3g.163.com/photo/api/set/" + urlRight + ".json";
+//                LogUtils.e("xinwenadapter", "type_duotu==" + bujutype);
+//                //   String urlduotuRight = toutiao_list.get(pos).getId();
+//                String urlduotuRight = toutiao_list.get(pos).getName();
+//                String urlRighBefor = urlduotuRight.substring(urlduotuRight.lastIndexOf("|") - 4);
+//                String urlRight = urlRighBefor.replaceAll("\\|", "/");
+//                String urlduotu = "http://c.3g.163.com/photo/api/set/" + urlRight + ".json";
                 //0096|81994    http://c.3g.163.com/photo/api/set/0096/82126.json
-                xinWenXi.setUrl(urlduotu);//详细页面url
+                xinWenXi.setUrl("aaaa");//详细页面url
                 //跳转到详细页
                 Intent intentduotu = new Intent(SearchActivity.this, XinWenXiActivity.class);
                 intentduotu.putExtra("xinwendata", xinWenXi);

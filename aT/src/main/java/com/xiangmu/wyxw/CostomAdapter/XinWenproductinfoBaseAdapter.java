@@ -62,8 +62,9 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
     @Override
     public int getItemViewType(int position) {
         //String skipType = toutiao_list.get(position).getProductcategory().getId()+"";
-        String skipType ="0";
-        int type = XinWen_adapter.getType(skipType);
+//        String skipType ="0";
+//        int type = XinWen_adapter.getType(skipType);
+        int type =toutiao_list.get(position).getLanmu();
         return type;
     }
 
@@ -118,6 +119,8 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                     duotu = new ViewholderImage();
                     view = View.inflate(context, R.layout.xinwen_toutiao_item_duotu, null);
                     duotu.toutiaodt_replaycount = (TextView) view.findViewById(R.id.toutiaodt_replaycount);
+                    duotu.toutiaodt_articler = (TextView) view.findViewById(R.id.toutiaodt_articler);
+                    duotu.toutiaodt_createDate= (TextView) view.findViewById(R.id.toutiaodt_createDate);
                     duotu.toutiaodt_title = (TextView) view.findViewById(R.id.toutiaodt_title);
                     duotu.toutiaodt_imagesrc1 = (ImageView) view.findViewById(R.id.toutiaodt_imgsrc1);
                     duotu.toutiaodt_imagesrc2 = (ImageView) view.findViewById(R.id.toutiaodt_imgsrc2);
@@ -154,6 +157,9 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                 if(toutiao_list.get(i).getUploadFile().size()>0) {
                     XutilsGetData.xUtilsImageiv(putong.toutiaop_imagesrc, "http://www.dcgqxx.com/upload/" + toutiao_list.get(i).getUploadFile().get(0).getPath(), context, false);
                     //       XutilsGetData.xUtilsImageiv(putong.toutiaop_imagesrc, toutiao_list.get(i).getUploadFile().get(i).getPath(), context,false);
+                }else{
+                    XutilsGetData.xUtilsImageiv(putong.toutiaop_imagesrc, "http://www.dcgqxx.com/upload/dcgqxxbook.jpg", context, false);
+
                 }
                     break;
             case XinWen_adapter.TYPE_zhuanti:
@@ -168,8 +174,16 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                 break;
             case XinWen_adapter.type_duotu:
                 duotu.toutiaodt_title.setText(toutiao_list.get(i).getName() + "");
-                duotu.toutiaodt_replaycount.setText(toutiao_list.get(i).getLxdh() + "");
-             //   XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc1, toutiao_list.get(i).getImgsrc(), context,false);
+                duotu.toutiaodt_articler.setText(toutiao_list.get(i).getProductArticler().size() + "");
+//                duotu.toutiaodt_articler.setText("5");
+                duotu.toutiaodt_replaycount.setText(toutiao_list.get(i).getClickcount() + "");
+
+                duotu.toutiaodt_createDate.setText(dateTime.getMonthday(toutiao_list.get(i).getCreateTime()) + "");
+
+
+               if(toutiao_list.get(i).getUploadFile().size()>0)    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc1, "http://www.dcgqxx.com/upload/"+toutiao_list.get(i).getUploadFile().get(0).getPath(), context,false);
+                if(toutiao_list.get(i).getUploadFile().size()>1)  XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc2,  "http://www.dcgqxx.com/upload/"+toutiao_list.get(i).getUploadFile().get(1).getPath(), context,false);
+                if(toutiao_list.get(i).getUploadFile().size()>2)  XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc3,  "http://www.dcgqxx.com/upload/"+toutiao_list.get(i).getUploadFile().get(2).getPath(), context,false);
             //    List<XinWen_productinfo.T18908805728Entity.ImgextraEntity> imagextralist=toutiao_list.get(i).getImgextra();
 //                if (imagextralist!=null){
 //                    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc2, imagextralist.get(0).getImgsrc(), context,false);
@@ -202,11 +216,12 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
 
     public class ViewholderImage {
         TextView toutiaodt_title;
-        TextView toutiaodt_replaycount;
+        TextView toutiaodt_articler;
         ImageView toutiaodt_imagesrc1;
         ImageView toutiaodt_imagesrc2;
         ImageView toutiaodt_imagesrc3;
-
+        TextView toutiaodt_createDate;
+        TextView toutiaodt_replaycount;
     }
 }
 

@@ -1,5 +1,6 @@
 package com.xiangmu.wyxw.activitys;
 
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -17,12 +18,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.xiangmu.wyxw.Modle.ProductArticler;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
@@ -31,11 +40,14 @@ import com.xiangmu.wyxw.utils.CommonUtil;
 import com.xiangmu.wyxw.utils.DateTime;
 import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.MySqlOpenHelper;
+import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
+import com.xiangmu.wyxw.utils.XinWenURL;
 import com.xiangmu.wyxw.utils.XinWenXi;
 import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,10 +57,15 @@ public class XinWenXiActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.xinwen_xi_duotu_frament);
+        button = (ImageButton) findViewById(R.id.subbtn);
+        edit = (EditText) findViewById(R.id.edit);
         Intent intent = getIntent();
         xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
+        liuyuanlist=xinWenXiData.getProductArticlerList();
+
         initDate();
         initview();
+        button.setOnClickListener(c);
     }
 
     private TextView xinwencontent;
@@ -56,9 +73,81 @@ public class XinWenXiActivity extends AppCompatActivity {
     private XinWenXiData xinWenXiData;
     private TextView duotu_gentie;
     private TextView duotu_count;
+    private  ImageButton button;
+    private EditText edit;
+    private List<ProductArticler> liuyuanlist;
+    private XinWenURL xinWenURL=new XinWenURL();
+    private HttpUtils httpUtils;
+    private HttpHandler<String> handler;
     ImageButton caidan;
     ImageButton fenxiang;
+    /**
+     * 提交的监听器
+     */
+    View.OnClickListener c = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            String msg = edit.getText().toString();
+            if (msg.equals("") || msg == null) {
+                new AlertDialog.Builder(XinWenXiActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
+                return;
+            }else{
 
+                ProductArticler productArticler=new ProductArticler();
+
+
+                productArticler.setArtreview_rootid(xinWenXiData.getId());
+                productArticler.setArtreview_content(msg);
+                DateTime dateTime =new DateTime();
+                productArticler.setArtreview_time(dateTime.getDateFormatter());
+                productArticler.setArtreview_authorid(1+"");
+                if(liuyuanlist.size()>0) {
+                    liuyuanlist.add(0, productArticler);
+                }else{
+                    liuyuanlist.add(productArticler);
+
+                }
+                UpArticlerFunction();
+//                 NotifyFunction();
+            }
+//            if(liuyuanlist.size()>0) {
+//                adapter.add(mockLiuyuan(0));
+//            }
+            edit.setText("");
+            edit.setFocusable(false);
+            Toast.makeText(XinWenXiActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+        }
+    };
+    /**
+     * 提交留言
+     */
+    public void UpArticlerFunction() {
+        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString();
+        UpData(url);
+    }
+    private void UpData(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (responseInfo.result != null) {
+                        SharedPreferencesUtil.saveData(XinWenXiActivity.this, url, responseInfo.result);
+//                                new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
+//                                edit.setText("");
+
+                    }
+                }
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(XinWenXiActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
     private void initview() {
         final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
@@ -78,7 +167,7 @@ public class XinWenXiActivity extends AppCompatActivity {
             duotu_gentie.setText("");
             duotu_gentie.setBackgroundColor(Color.parseColor("#ff000000"));
         }
-        duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
+        duotu_gentie.setText(liuyuanlist.size()+ "跟帖");
         getdata();
         //点击finish
         imageback.setOnClickListener(new View.OnClickListener() {
@@ -91,7 +180,11 @@ public class XinWenXiActivity extends AppCompatActivity {
         duotu_gentie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(XinWenXiActivity.this,GenTieActivity.class));
+                xinWenXiData.setProductArticlerList(liuyuanlist);
+                Intent intent = new Intent(XinWenXiActivity.this,LiuyuanActivity.class);
+                intent.putExtra("liuyuanlist", (Serializable)liuyuanlist);
+                startActivity(intent);
+
             }
         });
         //// TODO: 2015/11/14         //点击打开扩展 详细页面
@@ -185,12 +278,12 @@ public class XinWenXiActivity extends AppCompatActivity {
         public Object instantiateItem(ViewGroup container, int position) {
             //对ViewPager页号求模取出View列表中要显示的项
 
-//            container.addView(photoslist.get(position).getImageView());
+            container.addView(photoslist.get(position).getImageView());
 
-//            if (position == 0) {//设置第一次初始化内容
-//                xinwencontent.setText(photoslist.get(position).getPath());
-//                duotu_count.setText("1/" + getCount());
-//            }
+            if (position == 0) {//设置第一次初始化内容
+                xinwencontent.setText(photoslist.get(position).getPath());
+                duotu_count.setText("1/" + getCount());
+            }
             return photoslist.get(position).getImageView();
 //            try {
 //                container.addView(photoslist.get(position % photoslist.size()).getPath(), 0);
