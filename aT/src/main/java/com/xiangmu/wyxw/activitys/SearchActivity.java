@@ -376,7 +376,7 @@ public class SearchActivity extends AppCompatActivity {
 //        LogUtils.e("xinwenadapter", "type==" + bujutype);
 
         //传入详细页面的数据
-        List<UploadFile> potolist = new ArrayList<>();
+        ArrayList<UploadFile> potolist = new ArrayList<>();
         List<ProductArticler> liuyuenlist = new ArrayList<>();
         //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();

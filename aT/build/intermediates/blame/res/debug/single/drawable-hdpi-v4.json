@@ -20,12 +20,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\night_sns_qqfriends_icon.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_clear_mtrl_alpha.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-hdpi-v4\\abc_ic_clear_mtrl_alpha.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-hdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\feature_bg.png",
@@ -64,12 +64,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\back.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\naodong_14.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\naodong_14.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\biz_tie_user_avater_default_common.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\biz_tie_user_avater_default_common.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\naodong_14.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\naodong_14.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\abc_scrubber_primary_mtrl_alpha.9.png",
@@ -116,12 +116,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\icon_11.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\biankuang_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\biankuang_view.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\naodong_4.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\naodong_4.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\biankuang_view.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-hdpi\\biankuang_view.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4\\biz_video_progress_thumb.png",
