@@ -34,10 +34,12 @@ public class MainActivity extends AppCompatActivity {
 
     final int RESULT_CODE=101;
     final int REQUEST_CODE=1;
+    private String id ="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);}
@@ -46,8 +48,14 @@ public class MainActivity extends AppCompatActivity {
         myReceiver = new MyReceiver();
         registerReceiver(myReceiver, intentFilter);
 
+        Intent intent =getIntent();
+       if(intent.getStringExtra("fragid")!=null) id =intent.getStringExtra("fragid");
+
         initdata();//填充数据
         initview();//填充布局
+
+
+
     }
 
 
@@ -121,8 +129,13 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
-        contentradiogroup.check(R.id.rb_xinwen);
 
+      //  然后根据这个id跳转即可
+        if(id.equals("lzx")){
+            contentradiogroup.check(R.id.rb_shezhi);
+        }else{
+            contentradiogroup.check(R.id.rb_xinwen);
+        }
     }
 
 
@@ -174,4 +187,9 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
+
+//    @Override
+//    protected void onResume() {
+//    supper.on
+//    }
 }

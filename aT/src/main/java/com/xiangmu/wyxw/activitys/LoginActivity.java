@@ -202,8 +202,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
                                     getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
                                     addcustmer(opid,userName,profile_image_url);
+
+                                    Intent intent= new Intent();
+                                    intent.setClass(LoginActivity.this,MainActivity.class);
+                                    intent.putExtra("fragid","lzx");
+                                    startActivity(intent);
                                     finish();
+
 //                                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+//                                    Intent intent1 = new Intent(LoginActivity.this, SheZhiFrament.class);
+//                                    startActivity(intent1);
+//                                   overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 //                                    Intent intent1 = new Intent(LoginActivity.class, Setting_headpage.class);
 //                                    startActivity(intent1);
 //                                    startActivity(new Intent(LoginActivity.this, SheZhiFrament.class));
