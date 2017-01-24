@@ -44,6 +44,11 @@ import com.xiangmu.wyxw.utils.ThreadPoolUtils;
 import com.xiangmu.wyxw.utils.Utils;
 import com.xiangmu.wyxw.utils.XinWenURL;
 
+import org.apache.http.util.EntityUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
 import java.util.Map;
 import java.util.Set;
 
@@ -200,7 +205,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     String userName = (String)info.get("screen_name");
                                     String profile_image_url = (String)info.get("profile_image_url");
 //                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
-                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
+//                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
                                     addcustmer(opid,userName,profile_image_url);
 
                                     Intent intent= new Intent();
@@ -351,12 +356,21 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
-//                    if (responseInfo.result != null) {
-//                        SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
-//                                new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
-//                                edit.setText("");
 
-//                    }
+                    String result = responseInfo.result;
+                    String userName="";
+                    String profile_image_url ="";
+                    String jinbi ="";
+                    try {
+                        JSONObject myobject = new JSONObject(result);
+                      userName= myobject.getString("username");
+                        profile_image_url = myobject.getString("imageurl");
+                       jinbi = myobject.getString("jinbi");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).commit();
+
                 }
 
                 @Override

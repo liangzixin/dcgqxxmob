@@ -56,6 +56,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     static boolean flag;
     private String user_name;
     private String pic_path;
+    private String  jinbi;
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -74,6 +75,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.hgz_activity_main_fragment, null, false);
         initView(view);
         user_name = SearchDB.createDb(getActivity(), "userName");
+        jinbi = SearchDB.createDb(getActivity(), "jinbi");
         Log.e("aaa","--------user_name"+user_name);
         if (user_name != null) {
             userName.setText(user_name);
@@ -155,7 +157,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         if (!flag) {
             goldNumber.setVisibility(View.GONE);
             jinbiCount.setVisibility(View.VISIBLE);
-            jinbiCount.setText("5");
+            jinbiCount.setText(jinbi);
         }
     }
 

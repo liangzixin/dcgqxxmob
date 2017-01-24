@@ -8,16 +8,17 @@ import android.content.SharedPreferences;
  */
 public class SearchDB {
 
-    public static String createDb(Context context, String user_Name) {
+    public static String createDb(Context context, String Name) {
         String user_name = null;
+
 //        SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
         SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 //        String name_email = preferences.getString("userName", null);
-        String name_email = preferences.getString("username", null);
-        if (name_email != null) {
+        String name0= preferences.getString(Name, null);
+        if (name0!= null) {
 //            user_name = preferences.getString("userName", "");
-            user_name = preferences.getString("username", "");
+            user_name = preferences.getString(Name, "");
 //            String name_eml = "m" + user_name + "_1@163.com";
             return user_name;
         }
