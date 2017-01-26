@@ -20,6 +20,9 @@ import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.xiangmu.wyxw.Modle.Shezhi;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.SearchDB;
 import com.xiangmu.wyxw.Setting_Utils.TouXiangCache;
@@ -35,6 +38,15 @@ import com.xiangmu.wyxw.activitys.Setting_my_Task;
 import com.xiangmu.wyxw.activitys.Setting_set_page;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
+import net.sf.json.JSONArray;
+import net.sf.json.JSONObject;
+
+import org.json.JSONException;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by Administrator on 2015/11/9.
  */
@@ -45,6 +57,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     //所有监听的控件
     static ImageView picture;
     static TextView userName,jinbiCount;
+
     TextView setting, userlevel, read, messageText, goldMallText, myTaskText, myWalletText, mymailboxText;
     ImageView readNumber, collectNumber, gentieNumber;
     static ImageView goldNumber;
@@ -57,6 +70,10 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     private String user_name;
     private String pic_path;
     private String  jinbi;
+    private String  shezhi;
+//    private  String result="";
+    private static Gson gson = new Gson();
+    List<Shezhi> listshezhi=new ArrayList<Shezhi>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -74,8 +91,22 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     public View inFlater(LayoutInflater inflater) {
         view = inflater.inflate(R.layout.hgz_activity_main_fragment, null, false);
         initView(view);
+    shezhi= SearchDB.createDb(getActivity(), "shezhi");
+
         user_name = SearchDB.createDb(getActivity(), "userName");
         jinbi = SearchDB.createDb(getActivity(), "jinbi");
+        shezhi = SearchDB.createDb(getActivity(), "shezhi");
+        if (shezhi!= null)
+        {
+            Gson gson = new Gson();
+            Type type = new TypeToken<List<Shezhi>>(){}.getType();
+           // List<CoordinateAlterSample> alterSamples = new ArrayList<CoordinateAlterSample>();
+            listshezhi= gson.fromJson(shezhi, type);
+            for(int i = 0; i <  listshezhi.size(); i++)
+            {
+               System.out.println("序号:"+listshezhi.get(i).getId());
+            }
+
         Log.e("aaa","--------user_name"+user_name);
         if (user_name != null) {
             userName.setText(user_name);
@@ -90,8 +121,11 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //                picture.setImageBitmap(bitmap);
                 XutilsGetData.xUtilsImageiv(picture,pic_path, getActivity(),false);
             }
+
+
+            }
         } else {
-            jinbiCount.setVisibility(View.GONE);
+            jinbiCount.setVisibility(View.VISIBLE);
             goldNumber.setVisibility(View.VISIBLE);
         }
         return view;
@@ -155,7 +189,8 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
     public void denglujinbi() {
         if (!flag) {
-            goldNumber.setVisibility(View.GONE);
+            goldNumber.setVisibility(View.VISIBLE);
+//            goldNumber.setVisibility(View.GONE);
             jinbiCount.setVisibility(View.VISIBLE);
             jinbiCount.setText(jinbi);
         }
@@ -336,5 +371,8 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
         }
   };
+    public Gson getGson() {
+        return gson;
+    }
 
 }

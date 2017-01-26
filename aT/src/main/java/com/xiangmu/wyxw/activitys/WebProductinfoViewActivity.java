@@ -39,6 +39,7 @@ import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.ProductArticler;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
+import com.xiangmu.wyxw.Setting_Utils.SearchDB;
 import com.xiangmu.wyxw.Setting_Utils.ShareUtils;
 import com.xiangmu.wyxw.Setting_Utils.ZiTiScale;
 import com.xiangmu.wyxw.holder.ArticleHolder;
@@ -72,6 +73,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private  ImageButton button;
     private EditText edit;
     private RecyclerView recyclerView;
+    private String customerid="";
    MultiTypeAdapter adapter;
    // MultiTypeAdapter adapter1;
     @Override
@@ -355,11 +357,18 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
-        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId();
+        int customerid0=0;
+    if(SearchDB.createDb(this, "customerid")!=null)   customerid= SearchDB.createDb(this, "customerid");
+        if(!customerid.equals("")){
+            customerid0=Integer.parseInt(customerid);
+        }
+        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0;
         String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         UpData(clickcount);
+//        user_name = SearchDB.createDb(this, "userName");
+//        if(!user_name.equals(""))
 //        UpData(clickcount0);
      //   UpCount(clickcount0);
         System.out.println("clickcount="+clickcount );

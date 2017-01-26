@@ -21,6 +21,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
@@ -35,20 +37,28 @@ import com.umeng.socialize.exception.SocializeException;
 import com.umeng.socialize.sso.SinaSsoHandler;
 import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.sso.UMSsoHandler;
+import com.xiangmu.wyxw.Modle.Shezhi;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.conent_frament.SheZhiFrament;
 import com.xiangmu.wyxw.utils.HttpPostThread;
 import com.xiangmu.wyxw.utils.HttpUtil;
+import com.xiangmu.wyxw.utils.LogUtils;
 import com.xiangmu.wyxw.utils.SharedPreferencesUtil;
 import com.xiangmu.wyxw.utils.ThreadPoolUtils;
 import com.xiangmu.wyxw.utils.Utils;
 import com.xiangmu.wyxw.utils.XinWenURL;
+import com.xiangmu.wyxw.utils.XinWen_productinfo;
+
+import net.sf.json.JsonConfig;
 
 import org.apache.http.util.EntityUtils;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -64,6 +74,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private String opid="";
     private XinWenURL xinWenURL=new XinWenURL();
     UMSocialService mController;
+    private static Gson gson = new Gson();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -361,15 +372,41 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     String userName="";
                     String profile_image_url ="";
                     String jinbi ="";
+                    String customerid="";
+                    String shezhi="";
+                    List<Shezhi> listshezhi=new ArrayList<Shezhi>();
                     try {
                         JSONObject myobject = new JSONObject(result);
                       userName= myobject.getString("username");
                         profile_image_url = myobject.getString("imageurl");
                        jinbi = myobject.getString("jinbi");
+                        customerid= myobject.getString("id");
+                        shezhi=myobject.getString("shezhi");
+
+                        if (!myobject.isNull("shezhi")){
+                            JSONArray shezhiArray=myobject.getJSONArray("shezhi");
+                            for (int j=0;j<shezhiArray.length();j++){
+                              JSONObject shezhi0=shezhiArray.getJSONObject(j);
+                                JSONObject jsonObject = null;
+                                try {
+                                    jsonObject =shezhiArray.getJSONObject(j);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                if(jsonObject != null){
+                                    Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
+                                    listshezhi.add(tempAccount);
+                                }
+                            }
+
+
+                        }
+
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
-                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).commit();
+                    String shezhi0= gson.toJson(listshezhi);
+           getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 
                 }
 
@@ -380,6 +417,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             });
 
         }
+    }
+    public  Gson getGson() {
+        return gson;
     }
 }
 
