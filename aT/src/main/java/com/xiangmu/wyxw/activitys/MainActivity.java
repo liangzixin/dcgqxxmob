@@ -61,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Fragment> content_list = null;
 
-        //@Override
+        @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 // 当otherActivity中返回数据的时候，会响应此方法
 // requestCode和resultCode必须与请求startActivityForResult()和返回setResult()的时候传入的值一致。
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
 //            Bundle bundle = data.getExtras();
 //        String strResult = bundle.getString("result");
 //        Log.i(TAG, "onActivityResult: " + strResult);
-//        Toast.makeText(MainActivity.this, strResult, Toast.LENGTH_LONG).show();
+        Toast.makeText(MainActivity.this, requestCode, Toast.LENGTH_LONG).show();
 //        }
     }
     private void initdata() {
@@ -192,4 +192,5 @@ public class MainActivity extends AppCompatActivity {
 //    protected void onResume() {
 //    supper.on
 //    }
+
 }

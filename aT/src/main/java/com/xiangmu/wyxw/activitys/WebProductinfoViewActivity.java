@@ -25,6 +25,7 @@ import android.widget.PopupWindow;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.lidroid.xutils.BitmapUtils;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -37,6 +38,7 @@ import com.xiangmu.wyxw.CostomAdapter.SaveAdapter;
 import com.xiangmu.wyxw.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.wyxw.Modle.Liuyuan;
 import com.xiangmu.wyxw.Modle.ProductArticler;
+import com.xiangmu.wyxw.Modle.Shezhi;
 import com.xiangmu.wyxw.Modle.UploadFile;
 import com.xiangmu.wyxw.R;
 import com.xiangmu.wyxw.Setting_Utils.SearchDB;
@@ -57,6 +59,10 @@ import com.xiangmu.wyxw.utils.XinWenURL;
 import com.xiangmu.wyxw.utils.XinWenXiData;
 import com.xiangmu.wyxw.utils.XutilsGetData;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
@@ -75,6 +81,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String customerid="";
    MultiTypeAdapter adapter;
+    private static Gson gson = new Gson();
    // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -466,11 +473,50 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                         public void onSuccess(ResponseInfo<String> responseInfo) {
                             if (responseInfo.result != null) {
                                 SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
-//                                new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
-//                                edit.setText("");
+                                String result = responseInfo.result;
+                                String userName="";
+                                String profile_image_url ="";
+                                String jinbi ="";
+                                String customerid="";
+                                String shezhi="";
+                                List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+                                try {
+                                    JSONObject myobject = new JSONObject(result);
+                                    userName= myobject.getString("username");
+                                    profile_image_url = myobject.getString("imageurl");
+                                    jinbi = myobject.getString("jinbi");
+                                    customerid= myobject.getString("id");
+                                    shezhi=myobject.getString("shezhi");
+
+                                    if (!myobject.isNull("shezhi")){
+                                        JSONArray shezhiArray=myobject.getJSONArray("shezhi");
+                                        for (int j=0;j<shezhiArray.length();j++){
+                                            JSONObject shezhi0=shezhiArray.getJSONObject(j);
+                                            JSONObject jsonObject = null;
+                                            try {
+                                                jsonObject =shezhiArray.getJSONObject(j);
+                                            } catch (JSONException e) {
+                                                e.printStackTrace();
+                                            }
+                                            if(jsonObject != null){
+                                                Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
+                                                listshezhi.add(tempAccount);
+                                            }
+                                        }
+
+
+                                    }
+
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                String shezhi0= gson.toJson(listshezhi);
+                                getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 
                             }
-                        }
+
+                            }
+
 
                         @Override
                         public void onFailure(HttpException e, String s) {
@@ -479,6 +525,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                     });
 
         }
+    }
+    public Gson getGson() {
+        return gson;
     }
 //    private void UpCount(final String url) {
 //        if (!url.equals("")) {

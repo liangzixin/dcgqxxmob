@@ -12,6 +12,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.util.Config;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -75,10 +76,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private XinWenURL xinWenURL=new XinWenURL();
     UMSocialService mController;
     private static Gson gson = new Gson();
+    private static   Message msg = new Message();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+       // Config.REDIRECT_URL = "http://sns.whalecloud.com";
         initView();
     }
     private void initView() {
@@ -98,6 +101,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        weixin = (Button) findViewById(R.id.main_btn3);
         //设置新浪SSO handler
         mController.getConfig().setSsoHandler(new SinaSsoHandler());
+//        getConfig().setSinaCallBackUrl(" 微博开放平台配置的地址");
         UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(this, "1105789263",
                 "Z72WYfitxSU5HyVO");
         qqSsoHandler.addToSocialSDK();
@@ -215,15 +219,23 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                     Log.d("TestData",sb.toString());
                                     String userName = (String)info.get("screen_name");
                                     String profile_image_url = (String)info.get("profile_image_url");
+
 //                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
 //                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
+//                                    Intent   intent = new Intent(LoginActivity.class, MainActivity.class);
+//                                    startActivityForResult(intent,1);
                                     addcustmer(opid,userName,profile_image_url);
 
-                                    Intent intent= new Intent();
-                                    intent.setClass(LoginActivity.this,MainActivity.class);
-                                    intent.putExtra("fragid","lzx");
-                                    startActivity(intent);
+//                                    msg.obj =userName;
+                                    msg.what = 2;
+////                                    SheZhiFrament.handle.sendEmptyMessage(msg);handleMessage
+
                                     finish();
+//                                    Intent intent= new Intent();
+//                                    intent.setClass(LoginActivity.this,MainActivity.class);
+//                                    intent.putExtra("fragid","lzx");
+//                                    startActivity(intent);
+
 
 //                                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
 //                                    Intent intent1 = new Intent(LoginActivity.this, SheZhiFrament.class);
@@ -273,7 +285,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                         }
                                         String userName = (String)info.get("screen_name");
                                         String profile_image_url = (String)info.get("profile_image_url");
-                                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).commit();
+                                 //       getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).commit();
                                    addcustmer(opid,userName,profile_image_url);
 //                                        finish();
 //                                        overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
@@ -369,6 +381,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 public void onSuccess(ResponseInfo<String> responseInfo) {
 
                     String result = responseInfo.result;
+                    msg.obj=result;
                     String userName="";
                     String profile_image_url ="";
                     String jinbi ="";
@@ -407,6 +420,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                     String shezhi0= gson.toJson(listshezhi);
            getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+//            SheZhiFrament.handle.handleMessage(msg);
+                                   Intent intent= new Intent();
+                                    intent.setClass(LoginActivity.this,MainActivity.class);
+                                    intent.putExtra("fragid","lzx");
+                                    startActivity(intent);
+                    finish();
+//                    startActivityForResult(intent,4);
 
                 }
 

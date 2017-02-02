@@ -2,6 +2,9 @@ package com.xiangmu.wyxw.activitys;
 
 import android.app.Application;
 import android.media.MediaPlayer;
+import android.util.Config;
+
+//import com.umeng.socialize.PlatformConfig;
 
 /**
  * Created by Administrator on 2015/11/15.
@@ -33,5 +36,8 @@ public class App extends Application {
     public void onTerminate() {
         super.onTerminate();
     }
+
+//  Config.REDIRECT_URL="http://sns.whalecloud.com/sina2/callback";
+
 }
 

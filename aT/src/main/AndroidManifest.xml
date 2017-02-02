@@ -120,7 +120,8 @@
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="56458e8c67e58e7842000364" />
+            android:value="5890b33607fe652c9f000284" />
+         <!--   android:value="56458e8c67e58e7842000364" />-->
 
         <activity
             android:name="com.umeng.socialize.view.ShareActivity"
@@ -196,6 +197,12 @@
             android:name=".activitys.LiuyuanActivity"
             android:label="@string/title_activity_gen_tie" >
         </activity>
+        <meta-data
+            android:name="WEIBO_APPKEY"
+            android:value="3002552310" />
+        <meta-data
+            android:name="WEIBO_CHANNEL"
+            android:value="weibo" />
     </application>
 
 </manifest>
