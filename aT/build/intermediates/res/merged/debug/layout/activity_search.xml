@@ -122,11 +122,11 @@
             android:layout_margin="8dp"
             android:text="新闻" />-->
 
-        <com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView
+        <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
             android:id="@+id/lv_searchResult"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp"></com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView>
+            android:layout_margin="3dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>
     </LinearLayout>
     <!-- 热词推荐 -->
     <LinearLayout

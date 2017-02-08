@@ -5,7 +5,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <com.xiangmu.wyxw.Setting_Utils.ZDY_TouXiangName_EditText
+        <com.xiangmu.lzx.Setting_Utils.ZDY_TouXiangName_EditText
             android:id="@+id/nickname"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"

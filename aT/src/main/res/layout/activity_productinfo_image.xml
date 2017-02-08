@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    tools:context="com.xiangmu.wyxw.activitys.WebProductinfoViewActivity">
+    tools:context="com.xiangmu.lzx.activitys.WebProductinfoViewActivity">
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xiangmu.wyxw.test">
+    package="com.xiangmu.lzx.test">
 
     <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />
 
@@ -9,8 +9,8 @@
     </application>
 
     <instrumentation android:name="android.test.InstrumentationTestRunner"
-                     android:targetPackage="com.xiangmu.wyxw"
+                     android:targetPackage="com.xiangmu.lzx"
                      android:handleProfiling="false"
                      android:functionalTest="false"
-                     android:label="Tests for com.xiangmu.wyxw"/>
+                     android:label="Tests for com.xiangmu.lzx"/>
 </manifest>

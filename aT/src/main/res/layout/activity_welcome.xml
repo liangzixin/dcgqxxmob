@@ -2,8 +2,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xiangmu.wyxw.welcome.WelcomeActivity">
-    <com.xiangmu.wyxw.welcome.WelcomeScollView
+    tools:context="com.xiangmu.lzx.welcome.WelcomeActivity">
+    <com.xiangmu.lzx.welcome.WelcomeScollView
         android:id="@+id/sv_main"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -115,5 +115,5 @@
                 android:layout_marginTop="50dp"
                 android:src="@drawable/feature_jobs_txt" />
         </LinearLayout>
-    </com.xiangmu.wyxw.welcome.WelcomeScollView>
+    </com.xiangmu.lzx.welcome.WelcomeScollView>
 </RelativeLayout>

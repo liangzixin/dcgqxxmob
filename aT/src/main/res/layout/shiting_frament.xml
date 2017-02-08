@@ -30,12 +30,12 @@
         android:paddingLeft="6dp"
         android:paddingRight="6dp">
 
-        <com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView
+        <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
             android:id="@+id/shiting_refresh"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:divider="#00000000"
-            android:dividerHeight="5dp"></com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView>
+            android:dividerHeight="5dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>
     </LinearLayout>
 
 </RelativeLayout>

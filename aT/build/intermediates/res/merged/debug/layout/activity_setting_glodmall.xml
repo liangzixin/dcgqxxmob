@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.xiangmu.wyxw.activitys.Setting_glodmall">
+    tools:context="com.xiangmu.lzx.activitys.Setting_glodmall">
 
     <LinearLayout
         android:id="@+id/task"

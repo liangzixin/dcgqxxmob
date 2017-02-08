@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView
+    <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
         android:id="@+id/xinwen_toutiao_lv"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

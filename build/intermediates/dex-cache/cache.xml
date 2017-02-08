@@ -1,3 +1,243 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" />
+<items version="2" >
 
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.sd6352051\android-image-picker\v1.0.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d16051e00bfbb30c062bdf79d09fb0735bf7e028">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.sd6352051-android-image-picker-v1.0.1_27062423bcf6b868ae9eff6ee3a515851b7001c7.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.1\d8e711ae108185c59c17b36b3c3f11b20cf9b4d5\gson-2.2.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d8e711ae108185c59c17b36b3c3f11b20cf9b4d5">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\gson-2.2.1_5d4c4cccb7af1b68b63e9708c89456489837003e.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\xUtils.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\xUtils_a88500c9d1d9a681f1204d3bb4d48f9f9e298c30.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\libs\internal_impl-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4da5a4d697d32497c6f85567a5112e62fdfd0676">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\internal_impl-23.3.0_6f6676bd984bc9d00f81f120bdce27ce1342f899.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-analytics-v5.4.2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="75ef4894b1489017838dc57dbe9a5782ab12c427">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\umeng-analytics-v5.4.2_715d30f89b2ebf3f6ce3b060e727f7338aafa799.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\hamcrest-core-1.3_2323b0689b69c651dc52b5f9e0fa5ab289cff959.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\23.3.0\support-annotations-23.3.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="db7791d75a07fef9844d06236c1c59ba7bf6997c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\support-annotations-23.3.0_b5be5e410f8fc8a63b212b888c1ac51d3eae1845.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_QQZone_1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="c184c69f43b1fe46390f7123717c65bd844bccb6">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_QQZone_1_f3be377005967064345bfcc76bd82e90a44c51e8.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="a0b5d60246cd9d4f3f2443611b3b4c25265840b5">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-23.3.0_9b3a4fdf43dadb7e3c5eb9e482c2f105220a66a0.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\httpmime-4.2.5.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="6efc2f9df23c2ac4d3b701a11cab9f9fa6a641d4">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\httpmime-4.2.5_081793959d92dc2bc383bedb2680d89766d0807c.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\org.apache.http.legacy.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\org.apache.http.legacy_dcea264cc03e304fa0768052775d2c93da0bba91.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\library-2.4.0_dd460f45d27a359687729c3c169358b1eda3100b.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\junit-4.12_bca4fc0211375ff0eb614e87bd80b4259fbed036.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="8a034dd16c0dfd75fe86c52c2cd581592acc684a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-v4-23.3.0_71df27bc66f19ccb7c9bd1da76e2abf651903e6b.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng_social_sdk.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="857c78387c5b911f5dc9b20b307f0edfd16befed">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\umeng_social_sdk_53966468782874804d542af0d32a827d4e179efe.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_Sina.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="fd07c18d274be387922d55964e04cb418133c80f">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_Sina_ca84bec77f4981bf75bd77ccd6148d1f103ae240.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\fr.erictruong\materialedittext\0.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d3a6198b1220b5a41c3340f21fa0abc1a1a7e985">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\fr.erictruong-materialedittext-0.2.0_e477cb5ed8dee6f860c974a9a2295ff702b00bde.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\jars\libs\zxing.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="54c9ccf6efadf63cee8e207022eaa34b2dbe3d57">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\zxing_5e9ec28172cfed6d2064e597914fac45e88ea2d4.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f70eead8d8bcc428d1e7fb9a38e0739b884fc931">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\dcgqxxmob-barCodeTest-unspecified_50e23eea63ab73578032447801bf8004aae6d660.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.ganfra\material-spinner\1.1.1\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d0df3bf618b078d102a4234ceff33c44026e64b9">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.ganfra-material-spinner-1.1.1_96405dc0ed55d80e8b2c3567ebf010fcf5de88b6.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.1\b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8\butterknife-5.1.1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\butterknife-5.1.1_4e4ce574f3d72998b594448756183a3048e0c38d.jar" />
+    </item>
+    <item
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\eventbus-3.0.0_338198e230e883acd6c9c82ca46ba5fc3096755c.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_WeiXin_1.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d7c2f29c05b35e8c8713be2b81c41cf18f98b64a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_WeiXin_1_deb2e8199c199722600b8e164e8558f4a33c0730.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="1b8e03daaa43fb0a4cd57e378167c2fd70454c1e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-23.3.0_7beca93f8b1a4a0b930e3e2189014b1e9ecbe527.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\cardview-v7\23.2.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="bc599eb9531da9d18bc58ec4eb0b1a1d895f6839">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-23.2.0_5c91110800ece0e60da0c6379eaba60573fad270.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_WeiXin_2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="ec0faf74d92d4882d9be51b1b9ebb5ebc83fbea7">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_WeiXin_2_1d3e171ed1d60f1cc246263b6df87b55d914653f.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_4809c55fb4cbe563f658b6bd0772097eb6783862.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_QQZone_2.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="4a69b33758dcba3ef519cbd4b6c8af5f41603c4f">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_QQZone_2_3eac7bfc112afa38fc8d17da3845b3eceb05d801.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-design-23.3.0_30623590bcd77742992d7d8c7d43bc296034a075.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="23be6993826b8fd88bbc8d14928bb3b8960d3d4e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-23.3.0_df639fe68cdaf3c5939bd77771b650bf22f7ff3b.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\jars\classes.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="67316178b2265f24d676b8fe10635d4ec908e0ff">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.twiceyuan-CommonAdapter-0.5.3_34f2ae589a8f7ae85b0d0564f5ccd50dd02c3d47.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_QQZone_3.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="d57cae1dcd1eeeec2cd8197fcdd7a0316216481e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_QQZone_3_2d3ecb4859c5bf010800e0edba5e6c6e98ccc31d.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\json-lib-2.2.3-jdk15.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="e9c10548f3d5b260d604818057060cd0ab3b733c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\json-lib-2.2.3-jdk15_a7e06acff270af62409b34584506005341d3ad39.jar" />
+    </item>
+    <item
+        jar="D:\xin\dcgqxxmob\aT\libs\glide-3.7.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\glide-3.7.0_3bfdc7ada9b46882499e54595f5c4dc8415292b1.jar" />
+    </item>
+
+</items>

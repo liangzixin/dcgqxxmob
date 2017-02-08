@@ -4,7 +4,7 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-    <com.xiangmu.wyxw.texturevideo.VideoSuperPlayer
+    <com.xiangmu.lzx.texturevideo.VideoSuperPlayer
         android:id="@+id/textureview"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />

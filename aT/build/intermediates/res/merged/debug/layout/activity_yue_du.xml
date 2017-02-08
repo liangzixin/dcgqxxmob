@@ -27,10 +27,10 @@
             android:layout_toRightOf="@+id/back"
             android:layout_toEndOf="@+id/back" />
     </RelativeLayout>
-    <com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView
+    <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
         android:layout_width="match_parent"
         android:id="@+id/refresh"
         android:divider="@null"
         android:layout_margin="5dp"
-        android:layout_height="match_parent"></com.xiangmu.wyxw.pullrefreshview.PullToRefreshListView>
+        android:layout_height="match_parent"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>
 </LinearLayout>

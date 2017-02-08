@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:padding="12sp"
     android:layout_height="match_parent"
-    tools:context="com.xiangmu.wyxw.activitys.GenTieActivity">
+    tools:context="com.xiangmu.lzx.activitys.GenTieActivity">
     <ListView
         android:id="@+id/listView"
         android:layout_width="wrap_content"
