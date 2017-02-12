@@ -68,7 +68,7 @@ public class Activity_shiting_head_detials extends Activity {
                     indexPostion = -1;
                     isPlaying = false;
                     mAdapter.notifyDataSetChanged();
-                    App.setMediaPlayerNull();
+                    MyApplication.setMediaPlayerNull();
                 }
             }
         });
@@ -208,7 +208,7 @@ public class Activity_shiting_head_detials extends Activity {
                 isPlaying = false;
                 indexPostion = -1;
                 mSuperVideoPlayer.close();
-                App.setMediaPlayerNull();
+                MyApplication.setMediaPlayerNull();
                 mPlayBtnView.setVisibility(View.VISIBLE);
                 mSuperVideoPlayer.setVisibility(View.GONE);
             }
@@ -243,11 +243,11 @@ public class Activity_shiting_head_detials extends Activity {
 
             @Override
             public void onClick(View v) {
-                App.setMediaPlayerNull();
+                MyApplication.setMediaPlayerNull();
                 indexPostion = position;
                 isPlaying = true;
                 mSuperVideoPlayer.setVisibility(View.VISIBLE);
-                mSuperVideoPlayer.loadAndPlay(App.getMediaPlayer(), url, 0,
+                mSuperVideoPlayer.loadAndPlay(MyApplication.getMediaPlayer(), url, 0,
                         false);
                 notifyDataSetChanged();
             }
@@ -271,7 +271,7 @@ public class Activity_shiting_head_detials extends Activity {
 
     @Override
     public void onDestroy() {
-        App.setMediaPlayerNull();
+        MyApplication.setMediaPlayerNull();
         super.onDestroy();
         if (httpUtils != null) {
             httpHandler.cancel();

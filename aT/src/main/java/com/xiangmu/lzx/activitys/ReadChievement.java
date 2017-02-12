@@ -41,7 +41,7 @@ public class ReadChievement extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()) {
             case R.id.backlogin:
 //                Intent intent = new Intent(this, SheZhiFrament.class);
-//                startActivity(intent);
+////                startActivity(intent);
                 overridePendingTransition(R.anim.push_right_out, R.anim.push_right_in);
                 finish();
                 break;

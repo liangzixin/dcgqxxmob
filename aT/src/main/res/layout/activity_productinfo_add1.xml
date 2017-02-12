@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
 
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:myApplication="http://schemas.android.com/apk/res-auto"
     tools:context="com.xiangmu.lzx.activitys.ProductinfoAddActivity">
     <LinearLayout
         android:layout_width="match_parent"
@@ -63,8 +63,8 @@
     <!--android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="4dp"
+        myApplication:cardCornerRadius="0dp"
+        myApplication:cardElevation="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="50dp"
@@ -72,8 +72,8 @@
     <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:cardCornerRadius="0dp"
-        app:cardElevation="4dp"
+        myApplication:cardCornerRadius="0dp"
+        myApplication:cardElevation="4dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="55dp"
@@ -94,13 +94,13 @@
                 android:id="@+id/spin_articler"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:ms_arrowColor="#0000FF"
-                app:ms_arrowSize="16dp"
-                app:ms_floatingLabelColor="#00FF00"
-                app:ms_floatingLabelText="部门名称:"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
+                myApplication:ms_floatingLabelColor="#00FF00"
+                myApplication:ms_floatingLabelText="部门名称:"
 
                 android:gravity="center"
-                app:ms_multiline="true" />
+                myApplication:ms_multiline="true" />
             </LinearLayout>
             <MaterialEditText
                 android:id="@+id/productinfo_name"
@@ -147,12 +147,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-              app:ms_arrowColor="#0000FF"
-                app:ms_arrowSize="16dp"
+              myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
 
-                app:ms_floatingLabelText="性别:"
+                myApplication:ms_floatingLabelText="性别:"
 
-                app:ms_multiline="true"
+                myApplication:ms_multiline="true"
                 android:hint="性别:"
                 />
             <fr.ganfra.materialspinner.MaterialSpinner
@@ -162,12 +162,12 @@
                 android:layout_alignParentRight="true"
                 android:layout_marginLeft="50dp"
 
-                app:ms_arrowColor="#0000FF"
-                app:ms_arrowSize="16dp"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
 
-                app:ms_floatingLabelText="底薪:"
+                myApplication:ms_floatingLabelText="底薪:"
 
-                app:ms_multiline="true" />
+                myApplication:ms_multiline="true" />
             </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -177,23 +177,23 @@
                 android:id="@+id/spin_nl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:ms_arrowColor="#0000FF"
-                app:ms_arrowSize="16dp"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
                 android:layout_marginLeft="10dp"
-                app:ms_floatingLabelText="年龄:"
+                myApplication:ms_floatingLabelText="年龄:"
 
-                app:ms_multiline="true" />
+                myApplication:ms_multiline="true" />
             <fr.ganfra.materialspinner.MaterialSpinner
                 android:id="@+id/spin_xl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:ms_arrowColor="#0000FF"
-                app:ms_arrowSize="16dp"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
                 android:layout_marginLeft="50dp"
-                app:ms_floatingLabelText="学历:"
+                myApplication:ms_floatingLabelText="学历:"
 
 
-                app:ms_multiline="true" />
+                myApplication:ms_multiline="true" />
        </LinearLayout>
             <MaterialEditText
                 android:id="@+id/productinfo_content"

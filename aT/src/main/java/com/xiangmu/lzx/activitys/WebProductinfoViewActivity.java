@@ -74,6 +74,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private String customerid="";
    MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
+    private MyApplication app;
    // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -503,6 +504,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                                 String shezhi0= gson.toJson(listshezhi);
+                                app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
+                                app.setSearchDB0(true);
+//                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                                 getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 
                             }

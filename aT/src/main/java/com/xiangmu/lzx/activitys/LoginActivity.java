@@ -38,7 +38,6 @@ import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.sso.UMSsoHandler;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.conent_frament.SheZhiFrament;
 import com.xiangmu.lzx.utils.HttpPostThread;
 import com.xiangmu.lzx.utils.HttpUtil;
 import com.xiangmu.lzx.utils.ThreadPoolUtils;
@@ -68,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     UMSocialService mController;
     private static Gson gson = new Gson();
     private static   Message msg = new Message();
+    private MyApplication app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -217,11 +217,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                                    startActivityForResult(intent,1);
                                     addcustmer(opid,userName,profile_image_url);
 
-//                                    msg.obj =userName;
-                                    msg.what = 2;
-                                    SheZhiFrament.handle.sendEmptyMessage(2);
 
-                                    finish();
+//                                    msg.obj =userName;
+//                                    msg.what = 2;
+//                                    SheZhiFrament.handle.sendEmptyMessage(2);
+//                                    SheZhiFrament.handle.handleMessage(msg);
+
+//                                    finish();
 //                                    Intent intent= new Intent();
 //                                    intent.setClass(LoginActivity.this,MainActivity.class);
 //                                    intent.putExtra("fragid","lzx");
@@ -410,13 +412,22 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         e.printStackTrace();
                     }
                     String shezhi0= gson.toJson(listshezhi);
+//                    SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
+                    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
+                    app.setSearchDB0(true);
            getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+//                    finish();
+                    Intent intent = new Intent();
+                    setResult(RESULT_OK, intent);
+
+                    finish();
+//            msg.obj=profile_image_url;
 //            SheZhiFrament.handle.handleMessage(msg);
 //                                   Intent intent= new Intent();
 //                                    intent.setClass(LoginActivity.this,MainActivity.class);
 //                                    intent.putExtra("fragid","lzx");
 //                                    startActivity(intent);
-                    finish();
+//                    finish();
 //                    startActivityForResult(intent,4);
 
                 }

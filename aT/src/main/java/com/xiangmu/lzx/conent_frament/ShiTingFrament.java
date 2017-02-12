@@ -30,7 +30,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.Bean.ShitingBean;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.ShareUtils;
-import com.xiangmu.lzx.activitys.App;
+import com.xiangmu.lzx.activitys.MyApplication;
 import com.xiangmu.lzx.activitys.FullActivity;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
@@ -179,7 +179,7 @@ public class ShiTingFrament extends Fragment {
                     indexPostion = -1;
                     isPlaying = false;
                     mAdapter.notifyDataSetChanged();
-                    App.setMediaPlayerNull();
+                    MyApplication.setMediaPlayerNull();
                 }
             }
         });
@@ -302,7 +302,7 @@ public class ShiTingFrament extends Fragment {
                 isPlaying = false;
                 indexPostion = -1;
                 mSuperVideoPlayer.close();
-                App.setMediaPlayerNull();
+                MyApplication.setMediaPlayerNull();
                 mPlayBtnView.setVisibility(View.VISIBLE);
                 mSuperVideoPlayer.setVisibility(View.GONE);
             }
@@ -337,11 +337,11 @@ public class ShiTingFrament extends Fragment {
 
             @Override
             public void onClick(View v) {
-                App.setMediaPlayerNull();
+                MyApplication.setMediaPlayerNull();
                 indexPostion = position;
                 isPlaying = true;
                 mSuperVideoPlayer.setVisibility(View.VISIBLE);
-                mSuperVideoPlayer.loadAndPlay(App.getMediaPlayer(), url, 0,
+                mSuperVideoPlayer.loadAndPlay(MyApplication.getMediaPlayer(), url, 0,
                         false);
                 notifyDataSetChanged();
             }
@@ -375,7 +375,7 @@ public class ShiTingFrament extends Fragment {
 
     @Override
     public void onDestroy() {
-        App.setMediaPlayerNull();
+        MyApplication.setMediaPlayerNull();
         super.onDestroy();
     }
 }

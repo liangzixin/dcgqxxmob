@@ -61,8 +61,13 @@ public class MainActivity extends AppCompatActivity {
 
     private List<Fragment> content_list = null;
 
-        @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//            super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
+//            contentViewPager.notifyDataSetChanged();
+//            contentViewPager.getItem(4);
+////            contentradiogroup.check(R.id.rb_shezhi);
+//            contentViewPager.setCurrentItem(4);
 // 当otherActivity中返回数据的时候，会响应此方法
 // requestCode和resultCode必须与请求startActivityForResult()和返回setResult()的时候传入的值一致。
 //        System.out.println("requestCode="+requestCode);
@@ -75,9 +80,9 @@ public class MainActivity extends AppCompatActivity {
 //            Bundle bundle = data.getExtras();
 //        String strResult = bundle.getString("result");
 //        Log.i(TAG, "onActivityResult: " + strResult);
-        Toast.makeText(MainActivity.this, requestCode, Toast.LENGTH_LONG).show();
+//        Toast.makeText(MainActivity.this, requestCode, Toast.LENGTH_LONG).show();
 //        }
-    }
+//    }
     private void initdata() {
         content_list = new ArrayList<>();
         content_list.add(new XinWenFrament());

@@ -1,12 +1,17 @@
 package com.xiangmu.lzx.Setting_Utils;
 
+import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 /**
  * Created by Administrator on 2015/11/18.
@@ -37,13 +42,20 @@ public class TouXiangCache {
 
     // TODO: 2015/11/18 得到图片
     public static  Bitmap getphoto(String pic_pathload){
-//        BitmapFactory.Options opts = null;
-//        opts = new BitmapFactory.Options();
+        BitmapFactory.Options  options= null;
+        options= new BitmapFactory.Options();
 //        opts.inJustDecodeBounds= true;
-//    //   Bitmap bitmap = BitmapFactory.decodeFile(pic_pathload);
+//       Bitmap bitmap = BitmapFactory.decodeFile(pic_pathload);
 //        opts.inBitmap = null;
         Bitmap bitmap= BitmapFactory.decodeFile(pic_pathload);
-
+//        InputStream inputStream = null ;
+//        try {AssetManager assetManager = getAssets();
+//
+//            inputStream = assetManager.open("b.png");
+//            bitmap = BitmapFactory.decodeStream(inputStream);
+//        } catch (Exception e) {
+//
+//        }
 
 
         return bitmap;
@@ -111,6 +123,34 @@ public class TouXiangCache {
         } else {
             return upperBound;
         }
+    }
+    public static byte[] getImage(String path) throws Exception {
+        URL url = new URL(path);
+        HttpURLConnection httpURLconnection =  (HttpURLConnection)url.openConnection();
+        httpURLconnection.setRequestMethod("GET");
+        httpURLconnection.setReadTimeout(6*1000);
+        InputStream in = null;
+        byte[] b = new byte[1024];
+        int len = -1;
+        if (httpURLconnection.getResponseCode() == 200) {
+            in = httpURLconnection.getInputStream();
+            byte[] result = readStream(in);
+            in.close();
+            return result;
+
+        }
+        return null;
+    }
+    public static byte[] readStream(InputStream in) throws Exception{
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[1024];
+        int len = -1;
+        while((len = in.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, len);
+        }
+        outputStream.close();
+        in.close();
+        return outputStream.toByteArray();
     }
 
 
