@@ -358,7 +358,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
-    if(SearchDB.createDb(this, "customerid")!=null)   customerid= SearchDB.createDb(this, "customerid");
+    if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
         if(!customerid.equals("")){
             customerid0=Integer.parseInt(customerid);
         }

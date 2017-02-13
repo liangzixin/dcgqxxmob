@@ -36,4 +36,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#3F51B5</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="umeng_white">#ffffff</color>
+    <color name="umeng_blue">#0086DC</color>
 </resources>

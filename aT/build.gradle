@@ -9,7 +9,7 @@ android {
     aaptOptions.useNewCruncher = false
 
     defaultConfig {
-        applicationId "com.xiangmu.wyxw"
+        applicationId "com.xiangmu.lzx"
         minSdkVersion 16
         targetSdkVersion 23
         compileOptions {
