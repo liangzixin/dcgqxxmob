@@ -499,6 +499,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                    System.out.println("序号:" + listshezhi.get(i).getId());
                }
            }
+           flag =false;
            denglujinbi();
            flag = true;
            pic_path = SearchDB.TouXiangDb(getActivity(), "pic_path");
