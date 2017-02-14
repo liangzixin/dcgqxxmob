@@ -303,6 +303,20 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 popu.dismiss();
                 // TODO: 2015/11/17
+                int customerid0=0;
+                int shezhitype0=2;
+
+//                if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
+                if(!customerid.equals("")){
+                    customerid0=Integer.parseInt(customerid);
+//                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
+                    String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
+                    UpDataCollent(clickcount);
+                }else{
+                    Toast.makeText(WebProductinfoViewActivity.this, "还没有登录...", Toast.LENGTH_SHORT).show();
+                }
+
+
 
             }
         });
@@ -358,11 +372,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
+        int shezhitype0=1;
     if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
         if(!customerid.equals("")){
             customerid0=Integer.parseInt(customerid);
         }
-        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0;
+        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
         String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
@@ -470,7 +485,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                                 String userName="";
                                 String profile_image_url ="";
                                 String jinbi ="";
-                                String customerid="";
+                                customerid="";
                                 String shezhi="";
                                 List<Shezhi> listshezhi=new ArrayList<Shezhi>();
                                 try {
@@ -522,6 +537,25 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
         }
     }
+    private void UpDataCollent(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    Toast.makeText(WebProductinfoViewActivity.this, "收藏请求成功!!!", Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
+
     public Gson getGson() {
         return gson;
     }
