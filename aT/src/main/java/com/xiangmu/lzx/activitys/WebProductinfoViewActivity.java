@@ -30,7 +30,9 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.lzx.Modle.Article;
 import com.xiangmu.lzx.Modle.Liuyuan;
+import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.Modle.UploadFile;
@@ -39,8 +41,6 @@ import com.xiangmu.lzx.Setting_Utils.SearchDB;
 import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.holder.ArticleHolder;
 import com.xiangmu.lzx.holder.PhotoHolder;
-import  com.xiangmu.lzx.Modle.Article;
-import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.holder.ProductArticleHolder;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
@@ -72,6 +72,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private EditText edit;
     private RecyclerView recyclerView;
     private String customerid="";
+    private boolean login0=false;
    MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
     private MyApplication app;
@@ -89,6 +90,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
+
         initDate();
         initview();
         assert recyclerView != null;
@@ -306,14 +309,19 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 int customerid0=0;
                 int shezhitype0=2;
 
-//                if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
-                if(!customerid.equals("")){
+
+                if(app.isSearchDB0()){
+            if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
                     customerid0=Integer.parseInt(customerid);
 //                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
                     String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
                     UpDataCollent(clickcount);
                 }else{
+
                     Toast.makeText(WebProductinfoViewActivity.this, "还没有登录...", Toast.LENGTH_SHORT).show();
+                    Intent intent9 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
+                    startActivity(intent9);
+//                    this.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
 
 
@@ -373,7 +381,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-    if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
+    if(app.isSearchDB0());
         if(!customerid.equals("")){
             customerid0=Integer.parseInt(customerid);
         }
@@ -479,13 +487,14 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
-                            if (responseInfo.result != null) {
+                            if (!responseInfo.result.equals("true")) {
+                                login0=true;
                                 SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
                                 String result = responseInfo.result;
                                 String userName="";
                                 String profile_image_url ="";
                                 String jinbi ="";
-                                customerid="";
+//                                customerid="";
                                 String shezhi="";
                                 List<Shezhi> listshezhi=new ArrayList<Shezhi>();
                                 try {
@@ -519,7 +528,6 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                                 String shezhi0= gson.toJson(listshezhi);
-                                app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
                                 app.setSearchDB0(true);
 //                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                                 getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
@@ -549,7 +557,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(WebProductinfoViewActivity.this, "收藏请求失败!!!", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -559,6 +567,13 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     public Gson getGson() {
         return gson;
     }
+
+//    @Override
+//    public void onResume() {
+//        //...更新View
+//        super.onResume();
+//        Toast.makeText(WebProductinfoViewActivity.this, "返回详细页面!!!", Toast.LENGTH_SHORT).show();
+//    }
 //    private void UpCount(final String url) {
 //        if (!url.equals("")) {
 //            httpUtils = new HttpUtils();
@@ -581,4 +596,5 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //
 //        }
 //    }
+
 }

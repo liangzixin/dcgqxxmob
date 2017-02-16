@@ -99,7 +99,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     public View inFlater(LayoutInflater inflater) {
         view = inflater.inflate(R.layout.hgz_activity_main_fragment, null, false);
         initView(view);
-    shezhi= SearchDB.createDb(getActivity(), "shezhi");
+       shezhi= SearchDB.createDb(getActivity(), "shezhi");
 
         user_name = SearchDB.createDb(getActivity(), "userName");
         jinbi = SearchDB.createDb(getActivity(), "jinbi");
@@ -107,6 +107,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
         Log.e("aaa","--------user_name"+user_name);
         if (user_name != null&&!user_name.equals("")) {
+            app.setSearchDB0(true);
             userName.setText(user_name);
             userlevel.setText("跟帖局科员ggg");
             if (shezhi!= null&&!shezhi.equals("[]")) {
