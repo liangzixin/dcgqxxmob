@@ -26,14 +26,54 @@
             style="@style/xinwen_item_digest"
 
             android:layout_below="@+id/result_title" />
-        <TextView
+        <!--TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginLeft="3dp"
-            android:layout_marginBottom="3dp"
+            android:layout_marginBottom="1dp"
             android:id="@+id/result_ptime"
             android:text="2015-11-16"/>
+              android:layout_alignBottom="@+id/toutiaop_imgsrc"
+            -->
+        <LinearLayout
+            android:id="@+id/toutiao_putong_ll"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_marginTop="2dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginBottom="1dp"
+
+            android:layout_alignParentRight="true"
+
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/result_ptime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="50dp"
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/result_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="人气 "
+                android:layout_marginRight="10dp"
+                />
+
+            <TextView
+                android:id="@+id/result_articler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="留言 "
+                android:layout_marginRight="10dp"
+                />
+
+        </LinearLayout>
 
     </LinearLayout>
 

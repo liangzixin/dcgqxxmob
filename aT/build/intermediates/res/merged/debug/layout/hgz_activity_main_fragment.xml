@@ -20,7 +20,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <ImageView
+                <com.xiangmu.lzx.utils.RoundImageView
                     android:id="@+id/picture"
                     android:layout_width="80dp"
                     android:layout_height="80dp"

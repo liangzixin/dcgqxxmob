@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xiangmu.wyxw"
+    package="com.xiangmu.lzx"
     android:versionCode="2"
-    android:versionName="2.9.30" >
+    android:versionName="11.8.01" >
 
     <uses-sdk
         android:minSdkVersion="16"
-        android:targetSdkVersion="23" />
+        android:targetSdkVersion="25" />
 
     <!--
         uses-sdk
@@ -31,18 +31,20 @@
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
+        android:name="com.xiangmu.lzx.activitys.MyApplication"
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.xiangmu.wyxw.welcome.WelcomeActivity"
+            android:name="com.xiangmu.lzx.welcome.WelcomeActivity"
             android:label="@string/title_activity_welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,82 +53,82 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.xiangmu.wyxw.activitys.MainActivity"
+            android:name="com.xiangmu.lzx.activitys.MainActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.MainPotoActivity"
+            android:name="com.xiangmu.lzx.activitys.MainPotoActivity"
             android:label="@string/app_name" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.ProductinfoAddActivity"
-            android:label="发布"
-            android:parentActivityName="com.xiangmu.wyxw.activitys.MainActivity" >
+            android:name="com.xiangmu.lzx.activitys.ProductinfoAddActivity"
+            android:label="发布" >
         </activity>
         <activity
-            android:name="com.xiangmu.wyxw.activitys.PhotosActivity"
+            android:name="com.xiangmu.lzx.activitys.PhotosActivity"
             android:theme="@style/AppThemeLzx" >
         </activity>
         <activity
-            android:name="com.xiangmu.wyxw.activitys.XinWenXiActivity"
+            android:name="com.xiangmu.lzx.activitys.XinWenXiActivity"
             android:label="@string/title_xinwenxiactivity" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.SearchActivity"
+            android:name="com.xiangmu.lzx.activitys.SearchActivity"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.SecondCodeActivity"
+            android:name="com.xiangmu.lzx.activitys.SecondCodeActivity"
             android:label="@string/title_activity_second_code" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.ShangTouTiao_HuiGuDetialActivity"
+            android:name="com.xiangmu.lzx.activitys.ShangTouTiao_HuiGuDetialActivity"
             android:label="@string/title_activity_shang_tou_tiao__hui_gu_detial" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.ShangTouTiaoActivity"
+            android:name="com.xiangmu.lzx.activitys.ShangTouTiaoActivity"
             android:label="@string/title_activity_shang_tou_tiao" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.WeatherActivity"
+            android:name="com.xiangmu.lzx.activitys.WeatherActivity"
             android:label="@string/title_activity_weather" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.YueDuDetialActivity"
+            android:name="com.xiangmu.lzx.activitys.YueDuDetialActivity"
             android:label="@string/title_activity_yue_du_detial" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.FullActivity"
+            android:name="com.xiangmu.lzx.activitys.FullActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_set_page"
+            android:name="com.xiangmu.lzx.activitys.Setting_set_page"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_DiSanFangLoginActivity"
+            android:name="com.xiangmu.lzx.activitys.Setting_DiSanFangLoginActivity"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_biaoqianPage"
+            android:name="com.xiangmu.lzx.activitys.Setting_biaoqianPage"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.ReadChievement"
+            android:name="com.xiangmu.lzx.activitys.ReadChievement"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_set_person"
+            android:name="com.xiangmu.lzx.activitys.Setting_set_person"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_headpage"
+            android:name="com.xiangmu.lzx.activitys.Setting_headpage"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_my_Task"
+            android:name="com.xiangmu.lzx.activitys.Setting_my_Task"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_glodmall"
+            android:name="com.xiangmu.lzx.activitys.Setting_glodmall"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_Collection"
+            android:name="com.xiangmu.lzx.activitys.Setting_Collection"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.WebProductinfoViewActivity"
+            android:name="com.xiangmu.lzx.activitys.WebProductinfoViewActivity"
             android:label="@string/title_activity_web_view" />
 
         <meta-data
             android:name="UMENG_APPKEY"
-            android:value="56458e8c67e58e7842000364" />
+            android:value="5890b33607fe652c9f000284" />
+        <!-- android:value="56458e8c67e58e7842000364" /> -->
 
         <activity
             android:name="com.umeng.socialize.view.ShareActivity"
@@ -160,7 +162,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
-                <data android:scheme="tencent100424468" />
+                <data android:scheme="tencent1105789263" />
             </intent-filter>
         </activity>
         <activity
@@ -172,32 +174,44 @@
             android:name="com.renn.rennsdk.oauth.OAuthActivity"
             android:configChanges="orientation|navigation|keyboardHidden" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.PictureActivity"
+            android:name="com.xiangmu.lzx.activitys.PictureActivity"
             android:label="@string/title_activity_picture" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.LoginActivity"
+            android:name="com.xiangmu.lzx.activitys.LoginActivity"
             android:label="@string/title_activity_login" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.BackpasswordActivity"
+            android:name="com.xiangmu.lzx.activitys.BackpasswordActivity"
             android:label="@string/title_activity_backpassword" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.UpdaterActivity"
+            android:name="com.xiangmu.lzx.activitys.UpdaterActivity"
             android:label="@string/title_activity_updater" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.RegisterActivity"
+            android:name="com.xiangmu.lzx.activitys.RegisterActivity"
             android:label="@string/title_activity_register" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.Setting_GlodPage"
+            android:name="com.xiangmu.lzx.activitys.Setting_GlodPage"
             android:label="@string/title_activity_register" />
         <activity
-            android:name="com.xiangmu.wyxw.activitys.ReadHistoryActivity"
+            android:name="com.xiangmu.lzx.activitys.ReadHistoryActivity"
             android:label="@string/title_activity_register" />
-        <activity android:name="com.xiangmu.wyxw.activitys.Task_ShuoMing" >
+        <activity android:name="com.xiangmu.lzx.activitys.Task_ShuoMing" >
         </activity>
         <activity
-            android:name="com.xiangmu.wyxw.activitys.GenTieActivity"
+            android:name="com.xiangmu.lzx.activitys.GenTieActivity"
             android:label="@string/title_activity_gen_tie" >
         </activity>
+        <activity
+            android:name="com.xiangmu.lzx.activitys.LiuyuanActivity"
+            android:label="@string/title_activity_gen_tie" >
+        </activity>
+
+        <meta-data
+            android:name="WEIBO_APPKEY"
+            android:value="3002552310" />
+        <meta-data
+            android:name="WEIBO_CHANNEL"
+            android:value="weibo" />
+
         <activity
             android:name="com.ericssonlabs.BarCodeTestActivity"
             android:label="@string/app_name" >
