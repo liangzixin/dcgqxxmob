@@ -41,6 +41,6 @@ public class SearchDB {
 
     //删除数据
     public static void removeDb(SharedPreferences preferences) {
-        preferences.edit().remove("user_Name").commit();
+        preferences.edit().remove("userName").commit();
     }
 }
