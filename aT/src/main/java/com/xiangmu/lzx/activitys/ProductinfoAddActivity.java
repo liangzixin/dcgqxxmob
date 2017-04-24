@@ -78,6 +78,7 @@ import java.util.regex.Pattern;
 import fr.ganfra.materialspinner.MaterialSpinner;
 
 public class ProductinfoAddActivity extends AppCompatActivity implements ChooseAdapter.OnItmeClickListener {
+//    AppCompatActivity
     private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
@@ -926,14 +927,14 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     }
 
     private void SaveData(final String url){
-        filepath= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator;
-        filepath1= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+"abc.txt";
-        FileInputStream fis = null;//文件输入流
-        try {
-            fis = new FileInputStream(new File(filepath));
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        }
+//        filepath= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator;
+//        filepath1= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+"abc.txt";
+//        FileInputStream fis = null;//文件输入流
+//        try {
+//            fis = new FileInputStream(new File(filepath));
+//        } catch (FileNotFoundException e) {
+//            e.printStackTrace();
+//        }
 
         if (!url.equals("")) {
             httpUtils = new HttpUtils();

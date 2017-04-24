@@ -22,6 +22,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
@@ -36,6 +38,8 @@ import com.umeng.socialize.exception.SocializeException;
 import com.umeng.socialize.sso.SinaSsoHandler;
 import com.umeng.socialize.sso.UMQQSsoHandler;
 import com.umeng.socialize.sso.UMSsoHandler;
+import com.xiangmu.lzx.Bean.CustomerBean;
+import com.xiangmu.lzx.Modle.Customer;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.HttpPostThread;
@@ -68,6 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static Gson gson = new Gson();
     private static   Message msg = new Message();
     private MyApplication app;
+    private Customer customer=new Customer();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -374,6 +379,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 public void onSuccess(ResponseInfo<String> responseInfo) {
 
                     String result = responseInfo.result;
+
+                    //       customer = gson.fromJson(result.toString(),Customer.class);
                     msg.obj=result;
                     String userName="";
                     String profile_image_url ="";
@@ -381,8 +388,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     String customerid="";
                     String shezhi="";
                     List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+                    Gson gson0=new GsonBuilder().create();
+                    Gson gson1 = new Gson();
                     try {
                         JSONObject myobject = new JSONObject(result);
+                   //    customer= gson1.fromJson(myobject.toString(), new TypeToken<Customer>(){}.getType());
+                        //   CustomerBean customerBean= gson1.fromJson(myobject.toString(), new TypeToken<CustomerBean>(){}.getType());
+
+                        //     customer =customerBean.customer;
                       userName= myobject.getString("username");
                         profile_image_url = myobject.getString("imageurl");
                        jinbi = myobject.getString("jinbi");

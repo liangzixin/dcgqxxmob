@@ -75,7 +75,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private boolean login0=false;
    MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
-    private MyApplication app;
+    private String username;
+  //  private MyApplication app;
    // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,8 +91,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-
+        //app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
+        username = SearchDB.createDb(this, "userName");
         initDate();
         initview();
         assert recyclerView != null;
@@ -250,15 +251,23 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                      liuyuanlist.add(productArticler);
 
                  }
-                 UpArticlerFunction();
+                 if(username==null) {
+                     Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
+                     startActivityForResult(intent2, 1000);
+                     //  getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                 }else{
+                     UpArticlerFunction();
+                     if(liuyuanlist.size()>0) {
+                         adapter.add(mockLiuyuan(0));
+                         edit.setText("");
+                         edit.setFocusable(false);
+                         Toast.makeText(WebProductinfoViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+                 }
 //                 NotifyFunction();
             }
-            if(liuyuanlist.size()>0) {
-                adapter.add(mockLiuyuan(0));
+
             }
-            edit.setText("");
-           edit.setFocusable(false);
-            Toast.makeText(WebProductinfoViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+
         }
     };
     /**
@@ -310,7 +319,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 int shezhitype0=2;
 
 
-                if(app.isSearchDB0()){
+                if(username!=null){
             if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
                     customerid0=Integer.parseInt(customerid);
 //                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
@@ -381,7 +390,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-    if(app.isSearchDB0());
+    if(username!=null); if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
         if(!customerid.equals("")){
             customerid0=Integer.parseInt(customerid);
         }
@@ -528,7 +537,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
                                 String shezhi0= gson.toJson(listshezhi);
-                                app.setSearchDB0(true);
+                           //     app.setSearchDB0(true);
 //                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                                 getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 
@@ -567,7 +576,25 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     public Gson getGson() {
         return gson;
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data){
 
+        super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
+
+        switch(requestCode){
+            case 1000:
+                username = SearchDB.createDb(this, "userName");
+//                if(resultCode == getActivity().RESULT_OK) {
+//                    returnshezhi();
+//                }
+                break;
+            case 1:
+//                if(resultCode == getActivity().RESULT_OK){
+//                    Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
+//                }
+                break;
+        }
+    }
 //    @Override
 //    public void onResume() {
 //        //...更新View

@@ -18,7 +18,7 @@ import java.util.List;
 
 public class Upload {
 //	private static String requestURL = "http://192.168.16.101:8086/ServletForUpload/servlet/ImageUploadServlet"; // 服务器的URL
-	private static String requestURL = "http://192.168.16.101:8086/dcgqxx/imageupload!doGet"; // 服务器的URL
+	private static String requestURL = HttpUtil.BASE_URL+"imageupload!doGet"; // 服务器的URL
 //   private XinWenURL xinWenURL=new XinWenURL();
 	private static final String CHARSET = "UTF-8"; // 设置编码
 	private int readTimeOut = 10 * 1000; // 读取超时
