@@ -4,8 +4,24 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shake_umeng_socialize_share_dlg.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow_custom.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_big_media_narrow_custom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_search.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_my__task.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_my__task.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_simple_spinner_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_simple_spinner_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_snackbar_include.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_content.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_content.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_main_fragment.xml",
@@ -20,36 +36,84 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_main.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_item.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_icon.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_action_tombstone.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_item_subheader.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_xi_putong_productinfo_frament.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_xi_putong_productinfo_frament.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_item.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_item_pic32.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_item_pic32.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_article.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_article.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\simple_spinner_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\simple_spinner_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_welcome.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shangtoutiao_detial.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_shangtoutiao_detial.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_composer_header.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_composer_header.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_bar_title_item.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_duotu.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_duotu.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_bind_select_dialog.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_bind_select_dialog.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_oauth_dialog.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_oauth_dialog.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_detail.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_detail.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_news_adapter_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection_news_adapter_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_item_material.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_ziti_scale.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_ziti_scale.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_frament.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_frament.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_select_dialog_material.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_productinfo_image.xml",
@@ -76,380 +140,8 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_head_page.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_biaoqian_page.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_biaoqian_page.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\select_dialog_singlechoice_material.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_failed_load_page.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_failed_load_page.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_view.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_head_dialog.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_head_dialog.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_photolzx.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_photolzx.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_set_page_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_set_page_layout.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_icon_group.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_icon_group.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_item_separator.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_comment.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_comment.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_yue_du.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_yue_du.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_menu_item_action_area.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_updater.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_updater.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_weather.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_weather.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_menu_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_zhibo.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_zhibo.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_searchresult.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_searchresult.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_comment_platform.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_comment_platform.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_pull_to_refresh_header.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_pull_to_refresh_header.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting__glod_page.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_setting__glod_page.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_alert_dialog_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_full_alert_dialog_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gen_tie.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_gen_tie.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_news_fragment.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection_news_fragment.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_big_media.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_read_history.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_read_history.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shangtoutiao_item_huigu.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shangtoutiao_item_huigu.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_curtain.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_full_curtain.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_overlay.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_overlay.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_task__shuo_ming.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_task__shuo_ming.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\frg_shang_tou_tiao.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\frg_shang_tou_tiao.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_photos.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_photos.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_item_pic1.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_item_pic1.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_mode_bar.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_di_san_fang_login.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_di_san_fang_login.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_gridview.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_gridview.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\redian_listviewhead.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\redian_listviewhead.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_part_chronometer.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_more.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\popwindow_more.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_productarticler.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_productarticler.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_load_footer.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\pull_to_load_footer.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shezhi_frament.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shezhi_frament.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_base_alert_dialog_button.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_base_alert_dialog_button.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\full_activity.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\full_activity.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_popup_menu_header_item_layout.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_register.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_liuyuan.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_liuyuan.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_titile_bar.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_titile_bar.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_alert_dialog_material.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_layout.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shiting_frament.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shiting_frament.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shangtoutiao_item_huigu2.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shangtoutiao_item_huigu2.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shiting_head_detials.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_shiting_head_detials.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\redian_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\redian_view.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_bottom_sheet_dialog.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_backpassword.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_backpassword.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_menu_item_layout.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_more.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_more.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_lunbo.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_lunbo.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_yuedu_detial.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_yuedu_detial.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_detail_nomap.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_detail_nomap.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_snackbar.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_tab_icon.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_shareboard_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_shareboard_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_pic_fragment.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection_pic_fragment.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\pull_to_refresh_header.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_activity_chooser_view_list_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_bar_up_container.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_titile_bar_comment.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_titile_bar_comment.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_picture.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_picture.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_lines_media.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_custom.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_big_media_custom.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_search.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_my__task.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_my__task.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_simple_spinner_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_simple_spinner_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_snackbar_include.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_content.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_content.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_icon.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_icon.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_item_subheader.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_xi_putong_productinfo_frament.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_xi_putong_productinfo_frament.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_article.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_article.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\simple_spinner_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\simple_spinner_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_welcome.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_welcome.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shangtoutiao_detial.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_shangtoutiao_detial.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_duotu.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_duotu.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_bind_select_dialog.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_bind_select_dialog.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_oauth_dialog.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_oauth_dialog.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_news_adapter_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection_news_adapter_item.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_item_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\select_dialog_item_material.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_frament.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_frament.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_cancel_action.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_media_cancel_action.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_media_cancel_action.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_productinfo_detailed.xml",
@@ -477,19 +169,43 @@
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_view_list_nav_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_view_list_nav_layout.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_biaoqian_page.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_biaoqian_page.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\gentie_huifu_items.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\gentie_huifu_items.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_singlechoice_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_singlechoice_material.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_read_chievement.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_read_chievement.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_view.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_view.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_failed_load_page.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_failed_load_page.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_head_dialog.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_head_dialog.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\camera.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\dcgqxxmob\\barCodeTest\\unspecified\\res\\layout\\camera.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_photolzx.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_photolzx.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\layout_albums.xml",
@@ -500,32 +216,84 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_bak_platform_item_simple.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_set_page_layout.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_set_page_layout.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\main.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\dcgqxxmob\\barCodeTest\\unspecified\\res\\layout\\main.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\gentie_huifu_item.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\gentie_huifu_item.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_item_separator.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_comment.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_comment.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_yue_du.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_yue_du.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_base_alert_dialog.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_base_alert_dialog.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_updater.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_updater.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_item_pic31.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_item_pic31.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_title_bar.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_title_bar.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_weather.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_weather.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shangtoutiao.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_shangtoutiao.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_searchresult.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_searchresult.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_comment_platform.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_comment_platform.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_title_bar.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_title_bar.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_zhibo.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_zhibo.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_pull_to_refresh_header.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_pull_to_refresh_header.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\select_dialog_multichoice_material.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_xi_putong_frament.xml",
@@ -533,47 +301,103 @@
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media_narrow.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_big_media_narrow.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_big_media_narrow.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_time.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_part_time.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_part_time.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting__glod_page.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_setting__glod_page.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_alert_dialog_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_full_alert_dialog_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_gen_tie.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_gen_tie.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_news_fragment.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection_news_fragment.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_radio.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_radio.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_radio.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_big_media.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_big_media.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_item.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\progress_dialog.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\progress_dialog.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media_custom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_read_history.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_read_history.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\layout_photos.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\layout\\layout_photos.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_screen_toolbar.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shangtoutiao_item_huigu.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shangtoutiao_item_huigu.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_full_curtain.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_full_curtain.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_navigation_item.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_toolbar.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_toolbar.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_lines.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_overlay.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_overlay.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_task__shuo_ming.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_task__shuo_ming.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\redian_title_bar.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\redian_title_bar.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\frg_shang_tou_tiao.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\frg_shang_tou_tiao.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_checkbox.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_checkbox.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\top_remen.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\top_remen.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_photos.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_photos.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_item_pic1.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_item_pic1.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_gentie_fragment.xml",
@@ -588,16 +412,24 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_personalset.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_bar.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_mode_bar.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_di_san_fang_login.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_di_san_fang_login.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_zhuanti.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_zhuanti.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_mode_close_item_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_mode_close_item_material.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_media.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_content.xml",
@@ -605,15 +437,31 @@
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_search_view.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_search_view.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_gridview.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_gridview.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\redian_listviewhead.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\redian_listviewhead.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_setting_glodmall.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_setting_glodmall.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_part_chronometer.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_list_album.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\layout\\item_list_album.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_search_dropdown_item_icons_2line.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_frament.xml",
@@ -632,8 +480,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\super2_vodeo_player_layout.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_action.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_more.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\popwindow_more.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_productarticler.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_productarticler.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_load_footer.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\pull_to_load_footer.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_grid_album.xml",
@@ -644,16 +500,52 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\widget_calendar.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shezhi_frament.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shezhi_frament.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\biz_video_media_controller.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\biz_video_media_controller.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_base_alert_dialog_button.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_base_alert_dialog_button.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\full_activity.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\full_activity.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_register.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_register.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_liuyuan.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_liuyuan.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_titile_bar.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_titile_bar.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_alert_dialog_material.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_list_menu_item_layout.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_list_menu_item_layout.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_share.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_share.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shiting_frament.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shiting_frament.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_personal_nickname.xml",
@@ -665,11 +557,19 @@
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_media_action.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_media_action.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\notification_media_action.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shangtoutiao_item_huigu2.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shangtoutiao_item_huigu2.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_xi_duotu_frament.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_xi_duotu_frament.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_shiting_head_detials.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_shiting_head_detials.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_secondwei.xml",
@@ -684,24 +584,64 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiaoframent.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_activity_chooser_view.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple_overlay_action_mode.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_screen_simple_overlay_action_mode.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_activity_chooser_view.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\redian_view.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\redian_view.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_sheet_dialog.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_bottom_sheet_dialog.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_item_normal.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_item_normal.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_backpassword.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_backpassword.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_item_layout.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_menu_item_layout.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_more.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_more.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_screen_content_include.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_content_include.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_lunbo.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_lunbo.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_yuedu_detial.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_yuedu_detial.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_detail_nomap.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_detail_nomap.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_snackbar.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_login.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_tab_icon.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shangtoutiao_item_topic.xml",
@@ -709,15 +649,27 @@
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_simple.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_screen_simple.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_screen_simple.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_shareboard_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_shareboard_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_pic_fragment.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection_pic_fragment.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_action_menu_layout.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_menu_layout.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_expanded_menu_layout.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_expanded_menu_layout.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\pull_to_refresh_header.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\pull_to_refresh_header.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_view.xml",
@@ -732,16 +684,24 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_bak_at_list_item.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_activity_chooser_view_list_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_activity_chooser_view_list_item.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_button_bar_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_alert_dialog_button_bar_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_selected_photo.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_selected_photo.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_up_container.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_action_bar_up_container.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_item_layout.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_popup_menu_item_layout.xml"
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_popup_menu_item_layout.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_productinfo_imeg.xml",
@@ -754,6 +714,14 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\read_item.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\read_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_titile_bar_comment.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_titile_bar_comment.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_picture.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_picture.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_bak_platform_selector_dialog.xml",
@@ -770,5 +738,9 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_view.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_view.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_collection.xml"
     }
 ]

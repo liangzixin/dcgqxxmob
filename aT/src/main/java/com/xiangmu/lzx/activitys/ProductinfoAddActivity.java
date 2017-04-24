@@ -974,6 +974,8 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
 
 
+
+
            if(mSelectedPhotos.size()>0) {
                for (int i = 0; i < mSelectedPhotos.size(); i++) {
                    Log.i("F", filepath + "a0" + i + "jpg");
@@ -1037,6 +1039,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             EventBus.getDefault().postSticky(new EventEntry(mAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
         }
     }
+
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void photosMessageEvent(EventEntry entries){
         if (entries.id == EventEntry.RECEIVED_PHOTOS_ID) {
@@ -1044,7 +1047,6 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
             mSelectedPhotos=entries.photos;
         }
     }
-
     @Subscribe(threadMode = ThreadMode.MAIN)
     public void photoMessageEvent(PhotoEntry entry){
         mAdapter.appendPhoto(entry);

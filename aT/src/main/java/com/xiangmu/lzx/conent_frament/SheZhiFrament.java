@@ -78,17 +78,18 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     @Nullable
          @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-         app = (MyApplication) getActivity().getApplication(); //获得我们的应用程序MyApplication
+ //        app = (MyApplication) getActivity().getApplication(); //获得我们的应用程序MyApplication
         try {
             if (view == null) {
 
                 view = inFlater(inflater);
-                return view;
-            }else if(app.isSearchDB0()){
-                app.setSearchDB0(false);
-                returnshezhi();
-                return view;
             }
+                return view;
+//            }else if(app.isSearchDB0()){
+//                app.setSearchDB0(false);
+//                returnshezhi();
+//                return view;
+
 
         } catch (Exception e) {
             e.printStackTrace();
@@ -102,12 +103,12 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
        shezhi= SearchDB.createDb(getActivity(), "shezhi");
 
         user_name = SearchDB.createDb(getActivity(), "userName");
-        jinbi = SearchDB.createDb(getActivity(), "jinbi");
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               jinbi = SearchDB.createDb(getActivity(), "jinbi");
         shezhi = SearchDB.createDb(getActivity(), "shezhi");
 
         Log.e("aaa","--------user_name"+user_name);
         if (user_name != null&&!user_name.equals("")) {
-            app.setSearchDB0(true);
+          //  app.setSearchDB0(true);
             userName.setText(user_name);
             userlevel.setText("跟帖局科员ggg");
             if (shezhi!= null&&!shezhi.equals("[]")) {
