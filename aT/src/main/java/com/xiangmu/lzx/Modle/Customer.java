@@ -1,10 +1,6 @@
 package com.xiangmu.lzx.Modle;
 
 import java.io.Serializable;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
-import java.util.Date;
 
 /**
  * Created by admin on 2016-08-17.
@@ -19,13 +15,7 @@ public class Customer implements Serializable {
     private String address;// 住址
     private String mobile;// 手机
     private ProductInfo productInfo;
-   private List<Shezhi> shezhi;
-    private String openid="";
-    private String screenname="";
-    private String imageurl="";
-    private int jinbi=0;
-   private String registerdate;
-   private String logindate;
+    private String imageurl;
 
     public Integer getId() {
         return id;
@@ -76,21 +66,6 @@ public class Customer implements Serializable {
         return productInfo;
     }
 
-    public String getOpenid() {
-        return openid;
-    }
-
-    public void setOpenid(String openid) {
-        this.openid = openid;
-    }
-
-    public String getScreenname() {
-        return screenname;
-    }
-
-    public void setScreenname(String screenname) {
-        this.screenname = screenname;
-    }
 
     public String getImageurl() {
         return imageurl;
@@ -98,37 +73,5 @@ public class Customer implements Serializable {
 
     public void setImageurl(String imageurl) {
         this.imageurl = imageurl;
-    }
-
-    public int getJinbi() {
-        return jinbi;
-    }
-
-    public void setJinbi(int jinbi) {
-        this.jinbi = jinbi;
-    }
-
-    public String getRegisterdate() {
-        return registerdate;
-    }
-
-    public void setRegisterdate(String registerdate) {
-        this.registerdate = registerdate;
-    }
-
-    public String getLogindate() {
-        return logindate;
-    }
-
-    public void setLogindate(String logindate) {
-        this.logindate = logindate;
-    }
-
-    public List<Shezhi> getShezhi() {
-        return shezhi;
-    }
-
-    public void setShezhi(List<Shezhi> shezhi) {
-        this.shezhi = shezhi;
     }
 }

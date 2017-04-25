@@ -1,6 +1,7 @@
 package com.xiangmu.lzx.utils;
 
 import com.google.gson.Gson;
+import com.xiangmu.lzx.Modle.Customer;
 import com.xiangmu.lzx.Modle.Dxfw;
 import com.xiangmu.lzx.Modle.Edu;
 import com.xiangmu.lzx.Modle.Fwcs;
@@ -224,6 +225,14 @@ public class XinWenproductinfoJson {
                         articlerEntity.setArtreview_authorid(artreview_authorid);
                         articlerEntity.setArtreview_time(artreview_time);
                         articlerEntity.setArtreview_content(artreview_content);
+                        if (!arrayobj.isNull("customer")) {
+                            JSONObject customer = articler.getJSONObject("customer");
+                            Customer customer1=new Customer();
+                          customer1.setUsername(customer.getString("username"));
+                          customer1.setImageurl(customer.getString("imageurl"));
+
+                            articlerEntity.setCustomer(customer1);
+                        }
                         //     imgextraEntity.setId(id);
                         listArticlers.add(articlerEntity);
                     }

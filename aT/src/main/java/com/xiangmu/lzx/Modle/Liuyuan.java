@@ -12,5 +12,7 @@ public class Liuyuan implements ViewTypeItem {
     public String liuyuan_id;
     public String liuyuan_content;
     public String liuyuan_date;
+    public String liuyuan_name;
+    public String liuyuan_imag;
 
 }
