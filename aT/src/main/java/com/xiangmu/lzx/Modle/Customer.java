@@ -15,6 +15,7 @@ public class Customer implements Serializable {
     private String address;// 住址
     private String mobile;// 手机
     private ProductInfo productInfo;
+    private String imageurl;
 
     public Integer getId() {
         return id;
@@ -63,5 +64,14 @@ public class Customer implements Serializable {
     }
     public ProductInfo getProductInfo() {
         return productInfo;
+    }
+
+
+    public String getImageurl() {
+        return imageurl;
+    }
+
+    public void setImageurl(String imageurl) {
+        this.imageurl = imageurl;
     }
 }

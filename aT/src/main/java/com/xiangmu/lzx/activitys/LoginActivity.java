@@ -67,7 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     UMSocialService mController;
     private static Gson gson = new Gson();
     private static   Message msg = new Message();
-    private MyApplication app;
+  //  private MyApplication app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -413,8 +413,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     }
                     String shezhi0= gson.toJson(listshezhi);
 //                    SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-                    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-                    app.setSearchDB0(true);
+                //    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
+                 //   app.setSearchDB0(true);
            getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 //                    finish();
                     Intent intent = new Intent();

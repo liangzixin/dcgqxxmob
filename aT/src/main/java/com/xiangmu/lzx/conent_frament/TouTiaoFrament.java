@@ -518,6 +518,7 @@ public class TouTiaoFrament extends Fragment {
             productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
             productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
             productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
+            productArticler.setCustomer(toutiao_listview.getProductArticler().get(i).getCustomer());
            liuyuenlist.add(productArticler);
         }
         xinWenXi.setProductArticlerList(liuyuenlist);

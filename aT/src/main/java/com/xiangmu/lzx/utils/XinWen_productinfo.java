@@ -463,6 +463,7 @@ public class XinWen_productinfo  implements Serializable{
             private Integer id;// 类别编号
             private Integer artreview_rootid;// 类别名称
             private String artreview_content;
+          // private Customer customer;
 
             public String getArtreview_authorid() {
                 return artreview_authorid;

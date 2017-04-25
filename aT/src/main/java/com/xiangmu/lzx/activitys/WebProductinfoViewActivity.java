@@ -73,11 +73,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private RecyclerView recyclerView;
     private String customerid="";
     private boolean login0=false;
-   MultiTypeAdapter adapter;
+    MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
-    //private MyApplication app;
-    private String user_name;
-   // MultiTypeAdapter adapter1;
+    private String username;
+    //  private MyApplication app;
+    // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -91,25 +91,25 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-      //  app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-        user_name = SearchDB.createDb(WebProductinfoViewActivity.this, "userName");
+        //app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
+        username = SearchDB.createDb(this, "userName");
+        customerid = SearchDB.createDb(this, "customerid");
         initDate();
         initview();
-
         assert recyclerView != null;
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
 
-      //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
+        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
         adapter = new MultiTypeAdapter(this);
-      //  adapter1 = new MultiTypeAdapter(this);
+        //  adapter1 = new MultiTypeAdapter(this);
         // 注册两种 ViewType，对应两种数据类型（必须在设置到 RecyclerView 上之前注册！）
         adapter.registerViewType(Photo.class, PhotoHolder.class);
         adapter.registerViewType(Article.class, ArticleHolder.class);
-      adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
+        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
 
         recyclerView.setAdapter(adapter);
-       // recyclerView.setAdapter(adapter1);
+        // recyclerView.setAdapter(adapter1);
         adapter.add(mockArticle(0));
 
         for (int i = 0; i <potolist.size(); i++) {
@@ -136,7 +136,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
         duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
         fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
-       // getdata(url);//获得数据
+        // getdata(url);//获得数据
         //点击finish
         imageback.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -164,7 +164,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
                 //     ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
             }
         });
@@ -233,47 +233,49 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             String msg = edit.getText().toString();
-             if (msg.equals("") || msg == null) {
+            if (msg.equals("") || msg == null) {
                 new AlertDialog.Builder(WebProductinfoViewActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
                 return;
             }else{
 
-            ProductArticler productArticler=new ProductArticler();
+                ProductArticler productArticler=new ProductArticler();
 
 
                 productArticler.setArtreview_rootid(xinWenXiData.getId());
                 productArticler.setArtreview_content(msg);
                 DateTime dateTime =new DateTime();
-                 productArticler.setArtreview_time(dateTime.getDateFormatter());
-                    productArticler.setArtreview_authorid(1+"");
-                 if(liuyuanlist.size()>0) {
+                productArticler.setArtreview_time(dateTime.getDateFormatter());
+                productArticler.setArtreview_authorid(1+"");
+                if(liuyuanlist.size()>0) {
                     liuyuanlist.add(0, productArticler);
-                 }else{
-                     liuyuanlist.add(productArticler);
+                }else{
+                    liuyuanlist.add(productArticler);
 
-                 }
-               if(!user_name.equals("")) {
-                   UpArticlerFunction();
-               }else{
-                   Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
-//                    startActivity(intent2);
-                   startActivityForResult(intent2, 1000);
-               }
+                }
+                if(username==null) {
+                    Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
+                    startActivityForResult(intent2, 1000);
+                    //  getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                }else{
+                    UpArticlerFunction();
+                    if(liuyuanlist.size()>0) {
+                        adapter.add(mockLiuyuan(0));
+                        edit.setText("");
+                        edit.setFocusable(false);
+                        Toast.makeText(WebProductinfoViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+                    }
 //                 NotifyFunction();
+                }
+
             }
-            if(liuyuanlist.size()>0) {
-                adapter.add(mockLiuyuan(0));
-            }
-//            edit.setText("");
-           edit.setFocusable(false);
-//            Toast.makeText(WebProductinfoViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+
         }
     };
     /**
      * 提交留言
      */
     public void UpArticlerFunction() {
-        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString();
+        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid;
         UpData(url);
     }
     /**
@@ -282,23 +284,23 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     public void NotifyFunction() {
 //        for (int i = 0; i <liuyuanlist.size(); i++) {
 
-            adapter.add(mockLiuyuan(0));
+        adapter.add(mockLiuyuan(0));
         return;
 //        }
 //        recyclerView.deferNotifyDataSetChanged();
 //      /  recyclerView.notifyDataSetChanged();
 //        recyclerView.getChildItemId(item_p)
 //      recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-      //  recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-      //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
-   // adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
-      //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-    // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
+        //  recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
+        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
+        // adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
+        //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
+        // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
 
 //      adapter.add(mockLiuyuan(0));
 
-     // adapter.add(mockLiuyuan(i));
-    // }
+        // adapter.add(mockLiuyuan(i));
+        // }
     }
     //popuwindow设置
     private void getpopuwindow(View v) {
@@ -318,9 +320,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 int shezhitype0=2;
 
 
-                if(!user_name.equals("")){
-
-            if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
+                if(username!=null){
+                    if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
                     customerid0=Integer.parseInt(customerid);
 //                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
                     String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
@@ -366,7 +367,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
             public void onClick(View view) {
                 popu.dismiss();
                 // TODO: 2015/11/17
-               // ZiTiScale.zitiStyle2(WebProductinfoViewActivity.this, view);
+                // ZiTiScale.zitiStyle2(WebProductinfoViewActivity.this, view);
             }
         });
         //夜间模式按钮
@@ -390,19 +391,19 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-    if(!user_name.equals(""));
+        if(username!=null); if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
         if(!customerid.equals("")){
             customerid0=Integer.parseInt(customerid);
         }
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
         String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
-       // String data = SharedPreferencesUtil.getData(this, clickcount, "");
+        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         UpData(clickcount);
 //        user_name = SearchDB.createDb(this, "userName");
 //        if(!user_name.equals(""))
 //        UpData(clickcount0);
-     //   UpCount(clickcount0);
+        //   UpCount(clickcount0);
         System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
         //拿到当前日期
@@ -455,7 +456,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         article.lxr=xinWenXiData.getLxr();
         article.lxdh=xinWenXiData.getLxdh();
 
-       if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
+        if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
         if(xinWenXiData.getFwcs()!=null) article.fwcs=xinWenXiData.getFwcs();
         if(xinWenXiData.getGqxx()!=null) article.gqxx=xinWenXiData.getGqxx();
         article.productCategory=xinWenXiData.getProductCategory();
@@ -463,10 +464,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     }
     public Liuyuan mockLiuyuan(int seed) {
         Liuyuan liuyuan= new Liuyuan();
-;
+
         liuyuan.liuyuan_content=((ProductArticler)liuyuanlist.get(seed)).getArtreview_content();
         liuyuan.liuyuan_id=((ProductArticler)liuyuanlist.get(seed)).getArtreview_authorid();
         liuyuan.liuyuan_date=((ProductArticler)liuyuanlist.get(seed)).getArtreview_time();
+        liuyuan.liuyuan_name=((ProductArticler)liuyuanlist.get(seed)).getCustomer().getUsername();
+        liuyuan.liuyuan_imag=((ProductArticler)liuyuanlist.get(seed)).getCustomer().getImageurl();
         return liuyuan;
     }
     public Photo mockPhoto(int seed) {
@@ -478,11 +481,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                R.drawable.img_sample3,
 //                R.drawable.img_sample4
 //        }[seed % 4];
-      //  photo.description = getResources().getStringArray(R.array.mock_img_desc)[seed % 4];
+        //  photo.description = getResources().getStringArray(R.array.mock_img_desc)[seed % 4];
         photo.photoId = 0;
 
-   //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
-       // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
+        //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
+        // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
 //        BitmapUtils bitmapUtils = new BitmapUtils(this);
 //        bitmapUtils.display(photo.imagePicture,"http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg");
         photo.description =xinWenXiData.getTitle();
@@ -493,64 +496,64 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
 
-                    handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-                        @Override
-                        public void onSuccess(ResponseInfo<String> responseInfo) {
-                            if (!responseInfo.result.equals("true")) {
-                                login0=true;
-                                SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
-                                String result = responseInfo.result;
-                                String userName="";
-                                String profile_image_url ="";
-                                String jinbi ="";
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (!responseInfo.result.equals("true")) {
+                        login0=true;
+                        SharedPreferencesUtil.saveData(WebProductinfoViewActivity.this, url, responseInfo.result);
+                        String result = responseInfo.result;
+                        String userName="";
+                        String profile_image_url ="";
+                        String jinbi ="";
 //                                customerid="";
-                                String shezhi="";
-                                List<Shezhi> listshezhi=new ArrayList<Shezhi>();
-                                try {
-                                    JSONObject myobject = new JSONObject(result);
-                                    userName= myobject.getString("username");
-                                    profile_image_url = myobject.getString("imageurl");
-                                    jinbi = myobject.getString("jinbi");
-                                    customerid= myobject.getString("id");
-                                    shezhi=myobject.getString("shezhi");
+                        String shezhi="";
+                        List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+                        try {
+                            JSONObject myobject = new JSONObject(result);
+                            userName= myobject.getString("username");
+                            profile_image_url = myobject.getString("imageurl");
+                            jinbi = myobject.getString("jinbi");
+                            customerid= myobject.getString("id");
+                            shezhi=myobject.getString("shezhi");
 
-                                    if (!myobject.isNull("shezhi")){
-                                        JSONArray shezhiArray=myobject.getJSONArray("shezhi");
-                                        for (int j=0;j<shezhiArray.length();j++){
-                                            JSONObject shezhi0=shezhiArray.getJSONObject(j);
-                                            JSONObject jsonObject = null;
-                                            try {
-                                                jsonObject =shezhiArray.getJSONObject(j);
-                                            } catch (JSONException e) {
-                                                e.printStackTrace();
-                                            }
-                                            if(jsonObject != null){
-                                                Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
-                                                listshezhi.add(tempAccount);
-                                            }
-                                        }
-
-
+                            if (!myobject.isNull("shezhi")){
+                                JSONArray shezhiArray=myobject.getJSONArray("shezhi");
+                                for (int j=0;j<shezhiArray.length();j++){
+                                    JSONObject shezhi0=shezhiArray.getJSONObject(j);
+                                    JSONObject jsonObject = null;
+                                    try {
+                                        jsonObject =shezhiArray.getJSONObject(j);
+                                    } catch (JSONException e) {
+                                        e.printStackTrace();
                                     }
-
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
+                                    if(jsonObject != null){
+                                        Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
+                                        listshezhi.add(tempAccount);
+                                    }
                                 }
-                                String shezhi0= gson.toJson(listshezhi);
-                        //        app.setSearchDB0(true);
-//                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-                                getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+
 
                             }
 
-                            }
-
-
-                        @Override
-                        public void onFailure(HttpException e, String s) {
-                            Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                        } catch (JSONException e) {
+                            e.printStackTrace();
                         }
-                    });
+                        String shezhi0= gson.toJson(listshezhi);
+                        //     app.setSearchDB0(true);
+//                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
+                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+
+                    }
+
+                }
+
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                }
+            });
 
         }
     }
@@ -583,8 +586,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
         switch(requestCode){
             case 1000:
-                user_name = SearchDB.createDb(WebProductinfoViewActivity.this, "userName");
-                Toast.makeText(WebProductinfoViewActivity.this, "返回了详细页面!!!", Toast.LENGTH_SHORT).show();
+                username = SearchDB.createDb(this, "userName");
+                customerid = SearchDB.createDb(this, "customerid");
 //                if(resultCode == getActivity().RESULT_OK) {
 //                    returnshezhi();
 //                }

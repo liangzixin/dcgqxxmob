@@ -477,7 +477,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
        Log.e("aaa","--------user_name"+user_name);
        if (user_name != null&&!user_name.equals("")) {
            userName.setText(user_name);
-           userlevel.setText("跟帖局科员ggg");
+           userlevel.setText("跟帖局科员");
            if (shezhi!= null&&!shezhi.equals("[]")) {
                Gson gson = new Gson();
                Type type = new TypeToken<List<Shezhi>>() {
@@ -516,7 +516,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                    //out.close();
                    int length = data.length;
                    Bitmap bitMap = BitmapFactory.decodeByteArray(data, 0, length);
-                   picture.setImageBitmap(bitMap);
+                 picture.setImageBitmap(bitMap);
                    //imageView.seti
                } catch (Exception e) {
 //                    Log.i(TAG, e.toString());

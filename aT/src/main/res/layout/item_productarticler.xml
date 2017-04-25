@@ -30,19 +30,21 @@
             android:orientation="horizontal"
             android:padding="3dp">
 
-            <TextView
-                android:id="@+id/articler_liuyuanr"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="1dp"
-                android:text="留言人: "
-                />
+            <com.xiangmu.lzx.utils.RoundImageView
+                android:id="@+id/articler_imgurl"
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+
+                android:src="@mipmap/biz_tie_user_avater_default_common" />
+
+
             <TextView
                 android:id="@+id/articler_authorid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:textColor="#111111"
                 android:textSize="15sp"
@@ -52,7 +54,7 @@
                 android:id="@+id/articler_liuyuanS"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="20dp"
                 android:text="时间: "
                 />
@@ -60,7 +62,7 @@
                 android:id="@+id/articler_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="15dp"
+                android:layout_marginTop="10dp"
                 android:layout_marginLeft="5dp"
                 android:textSize="15dp"
                 android:text="东川供求信息网1"
