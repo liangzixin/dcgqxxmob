@@ -72,6 +72,8 @@
             android:layout_height="wrap_content"
             android:text="写留言:"
             android:layout_weight="4" />
+
+
         <!--MaterialEditText
             android:id="@+id/edit"
             android:layout_width="match_parent"
