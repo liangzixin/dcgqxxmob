@@ -31,6 +31,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.Modle.Article;
+import com.xiangmu.lzx.Modle.Customer;
 import com.xiangmu.lzx.Modle.Liuyuan;
 import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.Modle.ProductArticler;
@@ -71,11 +72,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private  ImageButton button;
     private EditText edit;
     private RecyclerView recyclerView;
-    private String customerid="";
+    private int customerid=1;
     private boolean login0=false;
     MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
     private String username;
+    private String pic_path;
     //  private MyApplication app;
     // MultiTypeAdapter adapter1;
     @Override
@@ -88,12 +90,14 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
         potolist=xinWenXiData.getUploadFileList();
         liuyuanlist=xinWenXiData.getProductArticlerList();
+       // Context context = getItemView().getContext();
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         //app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-        username = SearchDB.createDb(this, "userName");
-        customerid = SearchDB.createDb(this, "customerid");
+        username = SearchDB.createDb(getApplication(), "userName");
+        customerid = Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
+        pic_path=SearchDB.createDb(getApplication(), "pic_path");
         initDate();
         initview();
         assert recyclerView != null;
@@ -239,13 +243,16 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
             }else{
 
                 ProductArticler productArticler=new ProductArticler();
-
-
                 productArticler.setArtreview_rootid(xinWenXiData.getId());
                 productArticler.setArtreview_content(msg);
                 DateTime dateTime =new DateTime();
                 productArticler.setArtreview_time(dateTime.getDateFormatter());
-                productArticler.setArtreview_authorid(1+"");
+                productArticler.setArtreview_authorid(customerid+"");
+                Customer customer=new Customer();
+                customer.setUsername(username);
+                customer.setImageurl(pic_path);
+                customer.setId(customerid);
+                productArticler.setCustomer(customer);
                 if(liuyuanlist.size()>0) {
                     liuyuanlist.add(0, productArticler);
                 }else{
@@ -263,6 +270,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                         edit.setText("");
                         edit.setFocusable(false);
                         Toast.makeText(WebProductinfoViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+                        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
                     }
 //                 NotifyFunction();
                 }
@@ -275,6 +283,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
      * 提交留言
      */
     public void UpArticlerFunction() {
+        int customerid0=0;
+
         String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid;
         UpData(url);
     }
@@ -321,10 +331,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
 
                 if(username!=null){
-                    if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
-                    customerid0=Integer.parseInt(customerid);
+                    if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
+                //    customerid0=Integer.parseInt(customerid);
 //                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
-                    String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
+                    String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
                     UpDataCollent(clickcount);
                 }else{
 
@@ -391,11 +401,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-        if(username!=null); if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= SearchDB.createDb(getApplication(), "customerid");
-        if(!customerid.equals("")){
-            customerid0=Integer.parseInt(customerid);
-        }
-        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid0+"&shezhitype="+shezhitype0;
+        if(username!=null); if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
+
+        String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
         String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
         // String data = SharedPreferencesUtil.getData(this, clickcount, "");
@@ -514,7 +522,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                             userName= myobject.getString("username");
                             profile_image_url = myobject.getString("imageurl");
                             jinbi = myobject.getString("jinbi");
-                            customerid= myobject.getString("id");
+                            customerid= Integer.parseInt(myobject.getString("id"));
                             shezhi=myobject.getString("shezhi");
 
                             if (!myobject.isNull("shezhi")){
@@ -542,7 +550,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                         String shezhi0= gson.toJson(listshezhi);
                         //     app.setSearchDB0(true);
 //                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
 
                     }
 
@@ -587,7 +595,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         switch(requestCode){
             case 1000:
                 username = SearchDB.createDb(this, "userName");
-                customerid = SearchDB.createDb(this, "customerid");
+                customerid = Integer.parseInt(SearchDB.createDb(this, "customerid"));
+                pic_path=SearchDB.createDb(this, "pic_path");
 //                if(resultCode == getActivity().RESULT_OK) {
 //                    returnshezhi();
 //                }
