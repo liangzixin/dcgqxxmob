@@ -127,9 +127,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         button.setOnClickListener(c);
     }
     private void initview() {
-        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
-        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-
+       // final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
+        final String url ="http://www.dcgqxx.com/product/product_select.html?id=29547";
+     //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
+        final String xinwentitle ="技术监督局房子";
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         TextView duotu_gentie = null;

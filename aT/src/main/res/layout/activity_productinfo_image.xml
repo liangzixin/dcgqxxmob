@@ -59,19 +59,21 @@
         />
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="36dp"
+        android:layout_height="40dp"
         android:id="@+id/bottoml"
         android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-      android:background="@color/ve_place"
+      android:background="@color/setting_write"
 
         >
         <EditText
             android:id="@+id/edit"
-            android:layout_width="0dp"
+            android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="写留言:"
-            android:layout_weight="4" />
+            android:hint="写留言:"
+            android:layout_weight="4"
+            android:textSize="15sp"
+            />
 
 
         <!--MaterialEditText
@@ -93,6 +95,8 @@
             android:layout_height="match_parent"
             android:layout_marginRight="10dp"
             android:background="@android:color/transparent"
-            android:src="@mipmap/reply_write" />
+            android:src="@mipmap/reply_write"
+            android:text="发送"
+            />
     </LinearLayout>
 </RelativeLayout>
