@@ -415,7 +415,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                    SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                 //    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
                  //   app.setSearchDB0(true);
-           getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+           getApplication().getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 //                    finish();
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);

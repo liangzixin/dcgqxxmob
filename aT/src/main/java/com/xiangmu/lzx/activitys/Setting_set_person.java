@@ -55,7 +55,7 @@ public class Setting_set_person extends AppCompatActivity implements View.OnClic
                 }
                 break;
             case R.id.quit:
-              //  SearchDB.removeDb(getSharedPreferences("hgz", Context.MODE_PRIVATE));
+             //   SearchDB.removeDb(getSharedPreferences("hgz", Context.MODE_PRIVATE));
                 SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                 SheZhiFrament.handle.sendEmptyMessage(1);
                 finish();

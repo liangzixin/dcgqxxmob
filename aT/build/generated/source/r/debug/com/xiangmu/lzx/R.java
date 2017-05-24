@@ -2977,8 +2977,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int articler_authorid=0x7f0f0204;
         public static final int articler_content=0x7f0f0207;
         public static final int articler_date=0x7f0f0206;
+        public static final int articler_imgurl=0x7f0f0203;
         public static final int articler_liuyuanS=0x7f0f0205;
-        public static final int articler_liuyuanr=0x7f0f0203;
         public static final int auto_focus=0x7f0f0004;
         public static final int back=0x7f0f00d1;
         public static final int backlogin=0x7f0f018e;
