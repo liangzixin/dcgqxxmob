@@ -4,20 +4,20 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shake_umeng_socialize_share_dlg.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_my__task.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_my__task.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_search.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_search.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_snackbar_include.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_my__task.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_my__task.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_simple_spinner_item.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_simple_spinner_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_content.xml",

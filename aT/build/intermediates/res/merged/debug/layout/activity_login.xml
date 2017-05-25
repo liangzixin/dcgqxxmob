@@ -177,14 +177,14 @@
                 android:gravity="center"
                 android:layout_height="match_parent">
                 <ImageView
-                    android:background="@drawable/night_sns_weixin_icon"
+                    android:background="@drawable/night_sns_qqfriends_icon"
                     android:layout_width="45sp"
                     android:layout_height="45sp" />
                 <TextView
                     android:background="@drawable/biankuang"
                     android:gravity="center"
                     android:textSize="8sp"
-                    android:text="微信账号登陆"
+                    android:text="QQ账号登陆"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" />
             </LinearLayout>
