@@ -130,9 +130,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     }
     private void initview() {
        // final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
-        final String url ="http://www.dcgqxx.com/product/product_select.html?id=29547";
+     final String url ="http://www.dcgqxx.com/product/product_select.html?id=29547";
+      // final String url ="http://www.dcgqxx.com/product/product_select.html?id="+xinWenXiData.getId()+'"';
      //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-        final String xinwentitle ="技术监督局房子";
+        final String xinwentitle =xinWenXiData.getTitle();
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         TextView duotu_gentie = null;
@@ -171,7 +172,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+                 ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
                 //     ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
             }
         });

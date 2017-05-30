@@ -15,7 +15,8 @@ import com.umeng.socialize.weixin.controller.UMWXHandler;
  * Created by Administrator on 2015/11/18.
  */
 public class ShareUtils {
-    private static UMSocialService umSocialService=UMServiceFactory.getUMSocialService("com.xiangmu.wyxw.conent_frament");;
+//    private static UMSocialService umSocialService=UMServiceFactory.getUMSocialService("com.xiangmu.wyxw.conent_frament");
+    private static UMSocialService umSocialService=UMServiceFactory.getUMSocialService("com.xiangmu.lzx.conent_frament");
 //    UMSocialService umSocialService;
     public static void shareContent(Context context, String title, String url) {
 //        umSocialService = UMServiceFactory.getUMSocialService("com.xiangmu.wyxw.conent_frament");
