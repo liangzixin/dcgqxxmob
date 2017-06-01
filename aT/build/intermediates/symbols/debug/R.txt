@@ -989,8 +989,8 @@ int id always 0x7f0f003f
 int id articler_authorid 0x7f0f0204
 int id articler_content 0x7f0f0207
 int id articler_date 0x7f0f0206
+int id articler_imgurl 0x7f0f0203
 int id articler_liuyuanS 0x7f0f0205
-int id articler_liuyuanr 0x7f0f0203
 int id auto_focus 0x7f0f0004
 int id back 0x7f0f00d1
 int id backlogin 0x7f0f018e
