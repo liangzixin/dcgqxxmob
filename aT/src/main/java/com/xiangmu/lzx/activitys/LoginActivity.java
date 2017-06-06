@@ -139,7 +139,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             public void onTextChanged(CharSequence s, int start, int before, int count) {
 
             }
-
             @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void afterTextChanged(Editable s) {
@@ -156,7 +155,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         });
     }
-
     @Override
     public void onClick(View v) {
         switch (v.getId()) {
