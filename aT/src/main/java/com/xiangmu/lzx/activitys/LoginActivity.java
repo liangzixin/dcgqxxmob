@@ -465,13 +465,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             Toast.makeText( getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
         }
     };
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     }
-
     @Override
     protected void onDestroy() {
         super.onDestroy();
