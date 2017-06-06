@@ -482,5 +482,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onSaveInstanceState(outState);
         UMShareAPI.get(this).onSaveInstanceState(outState);
     }
+
 }
 
