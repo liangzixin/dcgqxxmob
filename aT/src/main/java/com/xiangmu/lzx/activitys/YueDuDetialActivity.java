@@ -30,7 +30,6 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.Setting_Utils.ZiTiScale;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
@@ -208,19 +207,19 @@ public class YueDuDetialActivity extends AppCompatActivity implements View.OnCli
                 overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
                 break;
             case R.id.share:// TODO: 2015/11/12 (加分享) 分享的标题:title;分享链接 DetialUrl; 分享的图片链接src; 分享的具体内容:body;
-                ShareUtils.shareContent(this, title, src);
+          //      ShareUtils.shareContent(this, title, src);
                 break;
             case R.id.pengypuquan:// TODO: 2015/11/12 (分享到朋友圈)分享的标题:title;分享链接 DetialUrl; 分享的图片链接src; 分享的具体内容:body;
-                ShareUtils.shareWeiXin(this, title, src);
+            //    ShareUtils.shareWeiXin(this, title, src);
                 break;
             case R.id.qq:// TODO: 2015/11/12 (qq) 分享的标题:title;分享链接 DetialUrl; 分享的图片链接src; 分享的具体内容:body;
-                ShareUtils.shareQQFriend(this, title, src);
+             //   ShareUtils.shareQQFriend(this, title, src);
                 break;
             case R.id.qq_zone:// TODO: 2015/11/12 (分享到qq空间)分享的标题:title;分享链接 DetialUrl; 分享的图片链接src; 分享的具体内容:body;
-                ShareUtils.shareQQZore(this, title, src);
+            //    ShareUtils.shareQQZore(this, title, src);
                 break;
             case R.id.more:
-                ShareUtils.shareContent(this, title, src);
+         //       ShareUtils.shareContent(this, title, src);
                 break;
         }
     }

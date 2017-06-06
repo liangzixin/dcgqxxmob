@@ -12,7 +12,6 @@ import android.widget.TextView;
 import com.lidroid.xutils.BitmapUtils;
 import com.xiangmu.lzx.Bean.Top;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 
 import java.util.List;
 
@@ -89,7 +88,7 @@ public class TopAdapter extends BaseAdapter{
             @Override
             public void onClick(View view) {// TODO: 2015/11/13 加分享
 //                Toast.makeText(context, "----" + i, Toast.LENGTH_SHORT).show();
-                ShareUtils.shareContent(context,"#"+list.get(i).topicname+"#"+"\n"+entity.city+"\n"+entity.body,entity.imgsrc);
+        //        ShareUtils.shareContent(context,"#"+list.get(i).topicname+"#"+"\n"+entity.city+"\n"+entity.body,entity.imgsrc);
             }
         });
         return view;

@@ -25,7 +25,6 @@ import com.lidroid.xutils.BitmapUtils;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
@@ -119,7 +118,7 @@ public class WebProductinfoViewActivity1 extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(WebProductinfoViewActivity1.this, xinwentitle, url);
+       //         ShareUtils.shareContent(WebProductinfoViewActivity1.this, xinwentitle, url);
 
             }
         });

@@ -22,7 +22,6 @@ import android.widget.Toast;
 
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.Setting_Utils.ZiTiScale;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
@@ -93,7 +92,7 @@ public class WebViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(WebViewActivity.this, xinwentitle, url);
+        //        ShareUtils.shareContent(WebViewActivity.this, xinwentitle, url);
 
             }
         });

@@ -28,7 +28,6 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.Bean.Top;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.conent_frament.Fragment_HuiGu;
 import com.xiangmu.lzx.conent_frament.Fragment_Top;
 import com.xiangmu.lzx.utils.ServerURL;
@@ -201,7 +200,7 @@ public class ShangTouTiaoActivity extends AppCompatActivity implements View.OnCl
                 break;
             case R.id.share://TODO: 2015/11/14 加分享 标题:topicName; 内容:topicDesc; 图片连接:imgsrc
                 popupWindow.dismiss();
-                ShareUtils.shareContent(this, "# " + topicName + " #" + "\n" + topicDesc, imgsrc);
+       //         ShareUtils.shareContent(this, "# " + topicName + " #" + "\n" + topicDesc, imgsrc);
                 break;
             case R.id.quxiao://取消
                 popupWindow.dismiss();

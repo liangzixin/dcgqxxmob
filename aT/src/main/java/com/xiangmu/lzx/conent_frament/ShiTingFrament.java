@@ -29,9 +29,8 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.Bean.ShitingBean;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
-import com.xiangmu.lzx.activitys.MyApplication;
 import com.xiangmu.lzx.activitys.FullActivity;
+import com.xiangmu.lzx.activitys.MyApplication;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.lzx.texturevideo.VideoSuperPlayer;
@@ -275,7 +274,7 @@ public class ShiTingFrament extends Fragment {
             holder.iv_share.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    ShareUtils.shareContent(getActivity(), title, mp4_url);
+           //         ShareUtils.shareContent(getActivity(), title, mp4_url);
                 }
             });
             if (indexPostion == position) {

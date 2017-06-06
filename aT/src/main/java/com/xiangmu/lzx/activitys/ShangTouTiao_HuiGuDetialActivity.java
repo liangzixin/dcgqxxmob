@@ -30,7 +30,6 @@ import com.xiangmu.lzx.Bean.Top;
 import com.xiangmu.lzx.CostomAdapter.TopAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.utils.CommonUtil;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.ServerURL;
@@ -211,7 +210,7 @@ public class ShangTouTiao_HuiGuDetialActivity extends AppCompatActivity implemen
                 break;
             case R.id.share://TODO: 2015/11/14 加分享  详情地址:DetialUrl;标题:topicName;内容:topicDesc;图片连接 imageurl
                 popupWindow.dismiss();
-                ShareUtils.shareContent(this,"# " + topicName + " #"+"\n"+topicDesc,imageurl);
+        //        ShareUtils.shareContent(this,"# " + topicName + " #"+"\n"+topicDesc,imageurl);
                 break;
             case R.id.quxiao:
                 popupWindow.dismiss();

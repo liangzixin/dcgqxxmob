@@ -39,7 +39,6 @@ import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.holder.ArticleHolder;
 import com.xiangmu.lzx.holder.PhotoHolder;
 import com.xiangmu.lzx.holder.ProductArticleHolder;
@@ -173,7 +172,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+       //         ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
                 //       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
             }
         });

@@ -7077,8 +7077,6 @@ containing a value of this type.
            <colgroup align="left" />
            <colgroup align="left" />
            <tr><th>Attribute</th><th>Description</th></tr>
-           <tr><td><code>{@link #CardView_android_minHeight android:minHeight}</code></td><td></td></tr>
-           <tr><td><code>{@link #CardView_android_minWidth android:minWidth}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_cardBackgroundColor com.xiangmu.lzx:cardBackgroundColor}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_cardCornerRadius com.xiangmu.lzx:cardCornerRadius}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_cardElevation com.xiangmu.lzx:cardElevation}</code></td><td></td></tr>
@@ -7091,8 +7089,6 @@ containing a value of this type.
            <tr><td><code>{@link #CardView_contentPaddingRight com.xiangmu.lzx:contentPaddingRight}</code></td><td></td></tr>
            <tr><td><code>{@link #CardView_contentPaddingTop com.xiangmu.lzx:contentPaddingTop}</code></td><td></td></tr>
            </table>
-           @see #CardView_android_minHeight
-           @see #CardView_android_minWidth
            @see #CardView_cardBackgroundColor
            @see #CardView_cardCornerRadius
            @see #CardView_cardElevation
@@ -7106,23 +7102,10 @@ containing a value of this type.
            @see #CardView_contentPaddingTop
          */
         public static final int[] CardView = {
-            0x0101013f, 0x01010140, 0x7f01009c, 0x7f01009d,
-            0x7f01009e, 0x7f01009f, 0x7f0100a0, 0x7f0100a1,
-            0x7f0100a2, 0x7f0100a3, 0x7f0100a4, 0x7f0100a5,
-            0x7f0100a6
+            0x7f01009c, 0x7f01009d, 0x7f01009e, 0x7f01009f,
+            0x7f0100a0, 0x7f0100a1, 0x7f0100a2, 0x7f0100a3,
+            0x7f0100a4, 0x7f0100a5, 0x7f0100a6
         };
-        /**
-          <p>This symbol is the offset where the {@link android.R.attr#minHeight}
-          attribute's value can be found in the {@link #CardView} array.
-          @attr name android:minHeight
-        */
-        public static final int CardView_android_minHeight = 1;
-        /**
-          <p>This symbol is the offset where the {@link android.R.attr#minWidth}
-          attribute's value can be found in the {@link #CardView} array.
-          @attr name android:minWidth
-        */
-        public static final int CardView_android_minWidth = 0;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#cardBackgroundColor}
           attribute's value can be found in the {@link #CardView} array.
@@ -7137,7 +7120,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:cardBackgroundColor
         */
-        public static final int CardView_cardBackgroundColor = 2;
+        public static final int CardView_cardBackgroundColor = 0;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#cardCornerRadius}
           attribute's value can be found in the {@link #CardView} array.
@@ -7153,7 +7136,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:cardCornerRadius
         */
-        public static final int CardView_cardCornerRadius = 3;
+        public static final int CardView_cardCornerRadius = 1;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#cardElevation}
           attribute's value can be found in the {@link #CardView} array.
@@ -7169,7 +7152,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:cardElevation
         */
-        public static final int CardView_cardElevation = 4;
+        public static final int CardView_cardElevation = 2;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#cardMaxElevation}
           attribute's value can be found in the {@link #CardView} array.
@@ -7185,7 +7168,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:cardMaxElevation
         */
-        public static final int CardView_cardMaxElevation = 5;
+        public static final int CardView_cardMaxElevation = 3;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#cardPreventCornerOverlap}
           attribute's value can be found in the {@link #CardView} array.
@@ -7199,7 +7182,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:cardPreventCornerOverlap
         */
-        public static final int CardView_cardPreventCornerOverlap = 7;
+        public static final int CardView_cardPreventCornerOverlap = 5;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#cardUseCompatPadding}
           attribute's value can be found in the {@link #CardView} array.
@@ -7213,7 +7196,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:cardUseCompatPadding
         */
-        public static final int CardView_cardUseCompatPadding = 6;
+        public static final int CardView_cardUseCompatPadding = 4;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#contentPadding}
           attribute's value can be found in the {@link #CardView} array.
@@ -7229,7 +7212,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:contentPadding
         */
-        public static final int CardView_contentPadding = 8;
+        public static final int CardView_contentPadding = 6;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#contentPaddingBottom}
           attribute's value can be found in the {@link #CardView} array.
@@ -7245,7 +7228,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:contentPaddingBottom
         */
-        public static final int CardView_contentPaddingBottom = 12;
+        public static final int CardView_contentPaddingBottom = 10;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#contentPaddingLeft}
           attribute's value can be found in the {@link #CardView} array.
@@ -7261,7 +7244,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:contentPaddingLeft
         */
-        public static final int CardView_contentPaddingLeft = 9;
+        public static final int CardView_contentPaddingLeft = 7;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#contentPaddingRight}
           attribute's value can be found in the {@link #CardView} array.
@@ -7277,7 +7260,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:contentPaddingRight
         */
-        public static final int CardView_contentPaddingRight = 10;
+        public static final int CardView_contentPaddingRight = 8;
         /**
           <p>This symbol is the offset where the {@link com.xiangmu.lzx.R.attr#contentPaddingTop}
           attribute's value can be found in the {@link #CardView} array.
@@ -7293,7 +7276,7 @@ theme attribute (in the form
 containing a value of this type.
           @attr name com.xiangmu.lzx:contentPaddingTop
         */
-        public static final int CardView_contentPaddingTop = 11;
+        public static final int CardView_contentPaddingTop = 9;
         /** Attributes that can be used with a CheckBox_Sample.
            <p>Includes the following attributes:</p>
            <table>

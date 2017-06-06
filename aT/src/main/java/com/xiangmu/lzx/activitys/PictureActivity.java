@@ -17,7 +17,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
 
@@ -114,7 +113,7 @@ public class PictureActivity extends AppCompatActivity {
             super.handleMessage(msg);
             // TODO: 2015/11/18 添加分享功能  地址为 picpath
 //            picpath 为成员变量能直接用  分享成功后销毁本页面
-            ShareUtils.shareContent(PictureActivity.this, "跟帖截屏,值得一看哦!", picpath);
+      //      ShareUtils.shareContent(PictureActivity.this, "跟帖截屏,值得一看哦!", picpath);
 
         }
     };

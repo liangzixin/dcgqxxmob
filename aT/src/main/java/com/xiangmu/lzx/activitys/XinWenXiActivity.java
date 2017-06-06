@@ -31,7 +31,6 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
@@ -192,7 +191,7 @@ public class XinWenXiActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ShareUtils.shareContent(XinWenXiActivity.this, xinwentitle, url);
+       //         ShareUtils.shareContent(XinWenXiActivity.this, xinwentitle, url);
             }
         });
     }

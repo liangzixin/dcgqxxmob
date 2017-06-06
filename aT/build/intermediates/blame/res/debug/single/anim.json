@@ -96,10 +96,6 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_b.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_bottom_sheet_slide_out.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_dlg_scale.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_dlg_scale.xml"
     },
@@ -134,10 +130,6 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_out.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\donghua_frame.xml",

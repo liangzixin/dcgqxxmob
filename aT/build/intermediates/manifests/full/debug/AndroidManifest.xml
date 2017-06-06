@@ -5,7 +5,7 @@
     android:versionName="11.8.01" >
 
     <uses-sdk
-        android:minSdkVersion="16"
+        android:minSdkVersion="21"
         android:targetSdkVersion="23" />
 
     <!--

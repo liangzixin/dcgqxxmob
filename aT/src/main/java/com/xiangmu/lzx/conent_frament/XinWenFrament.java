@@ -34,7 +34,6 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.Bean.WeatherBean;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.activitys.ProductinfoAddActivity;
 import com.xiangmu.lzx.activitys.SearchActivity;
 import com.xiangmu.lzx.activitys.SecondCodeActivity;
@@ -383,7 +382,7 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
             case R.id.friends:
                 popupWindow.dismiss();// TODO: 2015/11/20 加分享 标题:冒泡新闻,世界在你手中,快来加入 一起耍吧......
                 //下载url:http://111.7.131.58/cache/file.ws.126.net/3g/client/netease_newsreader_android.apk?ich_args=41a669ccfae7d6b13b8232b12ec14f7b_1_0_0_3_b1a290dba9ce2d0e3b8de77017b2708b15b4d38e478ad92fd821f1c1174d1238_8a18af6a7bc5c9d6dfdd82240a39a902_1_0&ich_ip=
-                ShareUtils.shareContent(getActivity(), "冒泡新闻,世界在你手中,快来加入 一起耍吧......","http://www.mobipop.cn/style002/images/logo.png");
+          //      ShareUtils.shareContent(getActivity(), "冒泡新闻,世界在你手中,快来加入 一起耍吧......","http://www.mobipop.cn/style002/images/logo.png");
                 break;
         }
     }
