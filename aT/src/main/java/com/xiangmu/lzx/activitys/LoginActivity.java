@@ -3,6 +3,7 @@ package com.xiangmu.lzx.activitys;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.utils.Log;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.HttpPostThread;
@@ -44,6 +46,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 //import com.umeng.socialize.controller.UMServiceFactory;
 //import com.umeng.socialize.controller.UMSocialService;
@@ -67,12 +70,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
   //  UMSocialService mController;
     private static Gson gson = new Gson();
     private static   Message msg = new Message();
-  //  private MyApplication app;
+    private SharedPreferences sp;
+    private  UMShareAPI mShareAPI;
+    //  private MyApplication app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
        // Config.REDIRECT_URL = "http://sns.whalecloud.com";
+        sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
+        mShareAPI = UMShareAPI.get(this);
         initView();
     }
     private void initView() {
@@ -96,6 +103,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //        UMQQSsoHandler qqSsoHandler = new UMQQSsoHandler(this, "1105789263",
 //                "Z72WYfitxSU5HyVO");
 //        qqSsoHandler.addToSocialSDK();
+
 
         loginback.setOnClickListener(this);
         weixin_login.setOnClickListener(this);
@@ -248,8 +256,91 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                    }
 //
 //                } );
-             //   mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
-                UMShareAPI.get(this).getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, umAuthListener);
+                //     mShareAPI.getPlatformInfo(LoginActivity.this, SHARE_MEDIA.QQ, new UMAuthListener() {
+//             mShareAPI.doOauthVerify(LoginActivity.this, SHARE_MEDIA.QQ,new UMAuthListener() {
+//                    @Override
+//                    public void onStart(SHARE_MEDIA platform) {
+//                        //授权开始的回调
+//                    }
+//                    @Override
+//               public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+//                   //     public void onComplete(Bundle value, SHARE_MEDIA platform) {
+//                        Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+//                     //   mShareAPI.getPlatformInfo(LoginActivity.this, platform, umAuthListener);
+//
+////                                if(status == 200 && info != null){Set<String> set = data.keySet();
+//                        Set<String> set = data.keySet();
+//                        SharedPreferences.Editor edit = sp.edit();
+//                        String        image_url="";
+//                        String        name="";
+//                        for (String string : set) {
+//
+//                            // 设置头像
+//                            if (string.equals("profile_image_url")) {
+//                            image_url = data.get(string);
+//                                Log.i("-------image",image_url);
+//                            }
+//                            // 设置昵称
+//                            if (string.equals("screen_name")) {
+//                                   name = data.get(string);
+//                            }
+//                        }
+//                        edit.putString("image",image_url);
+//                        edit.putString("name",name);
+//                        edit.commit();
+////                                    StringBuilder sb = new StringBuilder();
+////                                    Set<String> keys = info.keySet();
+////                                    for(String key : keys){
+////                                        sb.append(key+"="+info.get(key).toString()+"\r\n");
+////                                    }
+////                                    Log.d("TestData",sb.toString());
+////                                    String userName = (String)info.get("screen_name");
+////                                    String profile_image_url = (String)info.get("profile_image_url");
+////
+//////                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
+//////                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
+//////                                    Intent   intent = new Intent(LoginActivity.class, MainActivity.class);
+//////                                    startActivityForResult(intent,1);
+////                                    addcustmer(opid,userName,profile_image_url);
+////
+////
+//////                                    msg.obj =userName;
+//////                                    msg.what = 2;
+//////                                    SheZhiFrament.handle.sendEmptyMessage(2);
+//////                                    SheZhiFrament.handle.handleMessage(msg);
+////
+//////                                    finish();
+//////                                    Intent intent= new Intent();
+//////                                    intent.setClass(LoginActivity.this,MainActivity.class);
+//////                                    intent.putExtra("fragid","lzx");
+//////                                    startActivity(intent);
+////
+////
+//////                                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+//////                                    Intent intent1 = new Intent(LoginActivity.this, SheZhiFrament.class);
+//////                                    startActivity(intent1);
+//////                                   overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+//////                                    Intent intent1 = new Intent(LoginActivity.class, Setting_headpage.class);
+//////                                    startActivity(intent1);
+//////                                    startActivity(new Intent(LoginActivity.this, SheZhiFrament.class));
+//////                                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+////                                }else{
+////                                    Log.d("TestData","发生错误："+status);
+////                                }
+//                    }
+//
+//                    @Override
+//                    public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+//                        Toast.makeText( getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+//                    }
+//
+//                    @Override
+//                    public void onCancel(SHARE_MEDIA platform, int action) {
+//                        Toast.makeText( getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+//                    }
+//                });
+             //   mShareAPI.doOauthVerify(this, SHARE_MEDIA.QQ, umAuthListener);
+                mShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
                 break;
             case R.id.xinlang_login://新浪登陆
 //                mController.doOauthVerify(LoginActivity.this, SHARE_MEDIA.SINA,new SocializeListeners.UMAuthListener() {
@@ -443,32 +534,134 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private UMAuthListener umAuthListener = new UMAuthListener() {
+
         @Override
         public void onStart(SHARE_MEDIA platform) {
-                //授权开始的回调
-            Toast.makeText(LoginActivity.this, "获取平台数据开始...", Toast.LENGTH_SHORT).show();
+            //授权开始的回调
         }
         @Override
         public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+            // Toast.makeText(MainActivity.this, "Authorize succeed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+            Set<String> set = data.keySet();
+            SharedPreferences.Editor edit = sp.edit();
+            String userName ="";
+            String profile_image_url ="";
+            String opid="";
+            for (String string : set) {
 
-       //     Toast.makeText(getApplicationContext(), "Authorize succeed", Toast.LENGTH_SHORT).show();
+                                // 设置头像
+                                if (string.equals("profile_image_url")) {
+                                    profile_image_url = data.get(string);
+                                    Log.i("-------image",profile_image_url);
+                                }
+                                // 设置昵称
+                                if (string.equals("openid")) {
+                                    opid= data.get(string);
+                                }
+                               // 设置昵称
+                              if (string.equals("screen_name")) {
+                                userName= data.get(string);
+                              }
+                            }
 
+
+//                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
+//                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
+//                                    Intent   intent = new Intent(LoginActivity.class, MainActivity.class);
+//                                    startActivityForResult(intent,1);
+                                    addcustmer(opid,userName,profile_image_url);
+
+
+//                                    msg.obj =userName;
+//                                    msg.what = 2;
+//                                    SheZhiFrament.handle.sendEmptyMessage(2);
+//                                    SheZhiFrament.handle.handleMessage(msg);
+
+//                                    finish();
+//                                    Intent intent= new Intent();
+//                                    intent.setClass(LoginActivity.this,MainActivity.class);
+//                                    intent.putExtra("fragid","lzx");
+//                                    startActivity(intent);
+
+
+//                                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+//                                    Intent intent1 = new Intent(LoginActivity.this, SheZhiFrament.class);
+//                                    startActivity(intent1);
+//                                   overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+//                                    Intent intent1 = new Intent(LoginActivity.class, Setting_headpage.class);
+//                                    startActivity(intent1);
+//                                    startActivity(new Intent(LoginActivity.this, SheZhiFrament.class));
+//                                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+//                                }else{
+//                                    Log.d("TestData","发生错误："+status);
+//                                }
+
+            //友盟API获得平台信息
+//            mShareAPI.getPlatformInfo(LoginActivity.this, platform,
+////            mShareAPI.getPlatformInfo(LoginActivity.this, platform,
+//                    new UMAuthListener() {
+//                        @Override
+//                        public void onStart(SHARE_MEDIA platform) {
+//                            //授权开始的回调
+//                        }
+//
+//                        @Override
+//                        public void onError(SHARE_MEDIA arg0, int arg1, Throwable arg2) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onComplete(SHARE_MEDIA arg0, int arg1, Map<String, String> data) {
+//                            Set<String> set = data.keySet();
+//                            SharedPreferences.Editor edit = sp.edit();
+//                            String image_url ="";
+//                            String name ="";
+//                            for (String string : set) {
+//
+//                                // 设置头像
+//                                if (string.equals("profile_image_url")) {
+//                                    image_url = data.get(string);
+//                                    Log.i("-------image",image_url);
+//                                }
+//                                // 设置昵称
+//                                if (string.equals("screen_name")) {
+//                                    name = data.get(string);
+//                                }
+//                            }
+//                            edit.putString("image",image_url);
+//                            edit.putString("name",name);
+//                            edit.commit();
+////                            tv_name.setText(name);
+////                            ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(LoginActivity.this));
+////                            DisplayImageOptions options=new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true).build();
+////                            ImageLoader.getInstance().displayImage(image_url,iv_image , options);
+//
+//                        }
+//
+//                        @Override
+//                        public void onCancel(SHARE_MEDIA arg0, int arg1) {
+//
+//                        }
+//                    });
         }
 
         @Override
         public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-            Toast.makeText( getApplicationContext(), "Authorize fail", Toast.LENGTH_SHORT).show();
+           Toast.makeText(LoginActivity.this, "Authorize fail", Toast.LENGTH_SHORT).show();
+           // Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
         }
 
         @Override
         public void onCancel(SHARE_MEDIA platform, int action) {
-            Toast.makeText( getApplicationContext(), "Authorize cancel", Toast.LENGTH_SHORT).show();
+            Toast.makeText(LoginActivity.this, "登录取消", Toast.LENGTH_SHORT).show();
         }
     };
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    //    Toast.makeText(getApplicationContext(), "Authorize succeed1111", Toast.LENGTH_SHORT).show();
     }
     @Override
     protected void onDestroy() {

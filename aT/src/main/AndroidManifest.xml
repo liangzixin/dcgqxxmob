@@ -24,7 +24,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
-
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
     <application
         android:name=".activitys.MyApplication"
         android:allowBackup="true"
@@ -125,7 +125,11 @@
             android:name="UMENG_APPKEY"
             android:value="5890b33607fe652c9f000284" />
          <!--   android:value="56458e8c67e58e7842000364" />-->
-
+        <activity
+            android:name="com.umeng.socialize.editorpage.ShareActivity"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.UMDefault"
+            />
         <activity
             android:name="com.umeng.socialize.view.ShareActivity"
             android:configChanges="orientation|keyboard"
@@ -133,6 +137,7 @@
             android:noHistory="true"
             android:theme="@style/Theme.UMDialog"
             android:windowSoftInputMode="stateVisible|adjustResize" />
+
         <activity
             android:name="com.umeng.socialize.view.CommentActivity"
             android:configChanges="orientation|keyboard"
@@ -147,14 +152,13 @@
             android:configChanges="orientation|keyboard"
             android:noHistory="true"
             android:theme="@style/Theme.UMDefault" />
-        <!-- 腾讯SSO授权的Activity注册 -->
+        <!-- 腾讯SSO授权的Activity注册-->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
             android:launchMode="singleTask"
             android:noHistory="true" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
 
@@ -165,6 +169,24 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <!--<activity-->
+            <!--android:name="com.umeng.qq.tencent.AuthActivity"-->
+            <!--android:launchMode="singleTask"-->
+            <!--android:noHistory="true">-->
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.VIEW"/>-->
+
+                <!--<category android:name="android.intent.category.DEFAULT"/>-->
+                <!--<category android:name="android.intent.category.BROWSABLE"/>-->
+
+                <!--<data android:scheme="tencent1105789263"/>-->
+            <!--</intent-filter>-->
+        <!--</activity>-->
+        <!--<activity-->
+            <!--android:name="com.umeng.qq.tencent.AssistActivity"-->
+            <!--android:configChanges="orientation|keyboardHidden|screenSize"-->
+            <!--android:screenOrientation="portrait"-->
+            <!--android:theme="@android:style/Theme.Translucent.NoTitleBar"/>-->
         <!-- 人人SSO授权所需的OAuthActivity -->
         <activity
             android:name="com.renn.rennsdk.oauth.OAuthActivity"
