@@ -39,7 +39,6 @@ import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
-import com.xiangmu.lzx.conent_frament.SheZhiFrament;
 import com.xiangmu.lzx.holder.ArticleHolder;
 import com.xiangmu.lzx.holder.PhotoHolder;
 import com.xiangmu.lzx.holder.ProductArticleHolder;
@@ -266,10 +265,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 }
                 if(username==null) {
                   //  Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);getActivity()
-//                    Intent intent2 = new Intent(getApplication(), LoginActivity.class);
-//                    startActivityForResult(intent2, 1000);
-                    SheZhiFrament.handle.sendEmptyMessage(1);
-                    finish();
+                    Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
+                    startActivityForResult(intent2, 1000);
+//                    SheZhiFrament.handle.sendEmptyMessage(1);
+////                    finish();
                     //  getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }else{
                     UpArticlerFunction();
@@ -347,10 +346,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 }else{
 
                     Toast.makeText(WebProductinfoViewActivity.this, "还没有登录...", Toast.LENGTH_SHORT).show();
-                    SheZhiFrament.handle.sendEmptyMessage(1);
-                    finish();
-//                    Intent intent9 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
-//                    startActivity(intent9);
+//                    SheZhiFrament.handle.sendEmptyMessage(1);
+//                    finish();
+                    Intent intent9 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);
+                    startActivity(intent9);
               //    this.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
 
