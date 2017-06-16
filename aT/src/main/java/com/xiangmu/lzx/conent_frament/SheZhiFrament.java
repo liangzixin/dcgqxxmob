@@ -457,7 +457,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     public void onResume() {
         //...更新View
         super.onResume();
-        returnshezhi();
+//        returnshezhi();
     }
     @Override
     public void onPause() {

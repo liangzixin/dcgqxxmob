@@ -565,85 +565,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                               }
                             }
 
-
-//                                    String profile_image_url ="http://h.hiphotos.baidu.com/image/pic/item/6c224f4a20a446239e8d311c9b22720e0cf3d70d.jpg";
-//                                    getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("username", userName).putString("pic_path",profile_image_url).commit();
-//                                    Intent   intent = new Intent(LoginActivity.class, MainActivity.class);
-//                                    startActivityForResult(intent,1);
                                     addcustmer(opid,userName,profile_image_url);
 
-
-//                                    msg.obj =userName;
-//                                    msg.what = 2;
-//                                    SheZhiFrament.handle.sendEmptyMessage(2);
-//                                    SheZhiFrament.handle.handleMessage(msg);
-
-//                                    finish();
-//                                    Intent intent= new Intent();
-//                                    intent.setClass(LoginActivity.this,MainActivity.class);
-//                                    intent.putExtra("fragid","lzx");
-//                                    startActivity(intent);
-
-
-//                                    overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
-//                                    Intent intent1 = new Intent(LoginActivity.this, SheZhiFrament.class);
-//                                    startActivity(intent1);
-//                                   overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-//                                    Intent intent1 = new Intent(LoginActivity.class, Setting_headpage.class);
-//                                    startActivity(intent1);
-//                                    startActivity(new Intent(LoginActivity.this, SheZhiFrament.class));
-//                                    overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-//                                }else{
-//                                    Log.d("TestData","发生错误："+status);
-//                                }
-
-            //友盟API获得平台信息
-//            mShareAPI.getPlatformInfo(LoginActivity.this, platform,
-////            mShareAPI.getPlatformInfo(LoginActivity.this, platform,
-//                    new UMAuthListener() {
-//                        @Override
-//                        public void onStart(SHARE_MEDIA platform) {
-//                            //授权开始的回调
-//                        }
-//
-//                        @Override
-//                        public void onError(SHARE_MEDIA arg0, int arg1, Throwable arg2) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onComplete(SHARE_MEDIA arg0, int arg1, Map<String, String> data) {
-//                            Set<String> set = data.keySet();
-//                            SharedPreferences.Editor edit = sp.edit();
-//                            String image_url ="";
-//                            String name ="";
-//                            for (String string : set) {
-//
-//                                // 设置头像
-//                                if (string.equals("profile_image_url")) {
-//                                    image_url = data.get(string);
-//                                    Log.i("-------image",image_url);
-//                                }
-//                                // 设置昵称
-//                                if (string.equals("screen_name")) {
-//                                    name = data.get(string);
-//                                }
-//                            }
-//                            edit.putString("image",image_url);
-//                            edit.putString("name",name);
-//                            edit.commit();
-////                            tv_name.setText(name);
-////                            ImageLoader.getInstance().init(ImageLoaderConfiguration.createDefault(LoginActivity.this));
-////                            DisplayImageOptions options=new DisplayImageOptions.Builder().cacheInMemory(true).cacheOnDisk(true).build();
-////                            ImageLoader.getInstance().displayImage(image_url,iv_image , options);
-//
-//                        }
-//
-//                        @Override
-//                        public void onCancel(SHARE_MEDIA arg0, int arg1) {
-//
-//                        }
-//                    });
         }
 
         @Override

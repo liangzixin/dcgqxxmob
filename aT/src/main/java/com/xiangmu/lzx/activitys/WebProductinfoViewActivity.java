@@ -94,7 +94,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         //app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-        if(SearchDB.createDb(getApplication(), "userName")!=null&&!SearchDB.createDb(getApplication(), "userName").equals("")) {
+        System.out.println("登录者:"+SearchDB.createDb(getApplication(), "userName"));
+     if(SearchDB.createDb(getApplication(), "userName")!=null&&!SearchDB.createDb(getApplication(), "userName").equals("")) {
             username = SearchDB.createDb(getApplication(), "userName");
             customerid = Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
             pic_path = SearchDB.createDb(getApplication(), "pic_path");
