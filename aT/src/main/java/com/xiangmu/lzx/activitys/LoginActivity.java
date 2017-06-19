@@ -72,12 +72,13 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static   Message msg = new Message();
     private SharedPreferences sp;
     private  UMShareAPI mShareAPI;
-    //  private MyApplication app;
+     private MyApplication app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-       // Config.REDIRECT_URL = "http://sns.whalecloud.com";
+        app =new MyApplication();
+        // Config.REDIRECT_URL = "http://sns.whalecloud.com";
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
         mShareAPI = UMShareAPI.get(this);
         initView();
@@ -504,7 +505,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                    SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                 //    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
                  //   app.setSearchDB0(true);
-           getApplication().getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+
+                    app.getCtx().getSharedPreferences("useInfo", app.getCtx().MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 //                    finish();
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);
@@ -586,16 +588,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
     //    Toast.makeText(getApplicationContext(), "Authorize succeed1111", Toast.LENGTH_SHORT).show();
     }
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        UMShareAPI.get(this).release();
-    }
-    @Override
-    protected void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-        UMShareAPI.get(this).onSaveInstanceState(outState);
-    }
+//    @Override
+//    protected void onDestroy() {
+//        super.onDestroy();
+//        UMShareAPI.get(this).release();
+//    }
+//    @Override
+//    protected void onSaveInstanceState(Bundle outState) {
+//        super.onSaveInstanceState(outState);
+//        UMShareAPI.get(this).onSaveInstanceState(outState);
+//    }
 
 }
 

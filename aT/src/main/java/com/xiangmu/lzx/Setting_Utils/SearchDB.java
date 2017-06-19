@@ -3,16 +3,19 @@ package com.xiangmu.lzx.Setting_Utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.xiangmu.lzx.activitys.MyApplication;
+
 /**
  * Created by Administrator on 2015/11/16.
  */
 public class SearchDB {
+    private static MyApplication app;
 
     public static String createDb(Context context, String Name) {
         String user_name = null;
-
+        app =new MyApplication();
 //        SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
-        SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences("useInfo",app.getCtx().MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 //        String name_email = preferences.getString("userName", null);
         String name0= preferences.getString(Name, null);
@@ -26,6 +29,7 @@ public class SearchDB {
 
     }
     public static String TouXiangDb(Context context, String pic_Path) {
+
         String pic_Pathload = null;
         SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();

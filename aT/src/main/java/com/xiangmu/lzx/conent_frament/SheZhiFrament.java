@@ -78,7 +78,9 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     @Nullable
          @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
- //        app = (MyApplication) getActivity().getApplication(); //获得我们的应用程序MyApplication
+
+       app =new MyApplication(); //获得我们的应用程序MyApplication
+    //    app = (MyApplication) app.getCtx().getApplication(); //获得我们的应用程序MyApplication
         try {
             if (view == null) {
 
@@ -100,11 +102,12 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     public View inFlater(LayoutInflater inflater) {
         view = inflater.inflate(R.layout.hgz_activity_main_fragment, null, false);
         initView(view);
-       shezhi= SearchDB.createDb(getActivity(), "shezhi");
+       shezhi= SearchDB.createDb(app.getCtx(), "shezhi");
 
-        user_name = SearchDB.createDb(getActivity(), "userName");
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               jinbi = SearchDB.createDb(getActivity(), "jinbi");
-      //  shezhi = SearchDB.createDb(getActivity(), "shezhi");
+        user_name = SearchDB.createDb(app.getCtx(), "userName");
+        Log.e("读取网络图片错误","--------shezhi"+shezhi);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       jinbi = SearchDB.createDb(app.getCtx(), "jinbi");
+        Log.e("读取网络图片错误","--------userName"+userName);
+        //  shezhi = SearchDB.createDb(app.getCtx(), "shezhi");
 
         Log.e("aaa","--------user_name"+user_name);
         if (user_name != null&&!user_name.equals("")) {
@@ -139,7 +142,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             }
             denglujinbi();
             flag = true;
-            pic_path = SearchDB.TouXiangDb(getActivity(), "pic_path");
+            pic_path = SearchDB.TouXiangDb(app.getCtx(), "pic_path");
             if (pic_path != null) {
                 Log.e("aaa","--------pic_path"+pic_path);
                 try {
@@ -259,12 +262,12 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.picture:
                 Log.e("------------->", "点击登陆成功后" + flag);
                 if (flag) {
-                    Intent intent1 = new Intent(getActivity(), Setting_headpage.class);
+                    Intent intent1 = new Intent(app.getCtx(), Setting_headpage.class);
                     startActivity(intent1);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {
                     Log.e("------------->", "点击登陆失败后" + flag);
-                    Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+                    Intent intent2 = new Intent(app.getCtx(), LoginActivity.class);
 //                    startActivity(intent2);
                     startActivityForResult(intent2, 1000);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -272,18 +275,18 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 break;
             // TODO: 2015/11/18  设置
             case R.id.setting:
-                Intent intent3 = new Intent(getActivity(), Setting_set_page.class);
+                Intent intent3 = new Intent(app.getCtx(), Setting_set_page.class);
                 startActivity(intent3);
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             // TODO: 2015/11/18  登录名称(立即登录)
             case R.id.userName:
                 if (flag) {
-                    Intent intent4 = new Intent(getActivity(), Setting_headpage.class);
+                    Intent intent4 = new Intent(app.getCtx(), Setting_headpage.class);
                     startActivity(intent4);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {
-                    Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+                    Intent intent2 = new Intent(app.getCtx(), LoginActivity.class);
                     startActivity(intent2);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
@@ -294,7 +297,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 break;
             // TODO: 2015/11/18 阅读量
             case R.id.read:
-                Intent intent5 = new Intent(getActivity(), ReadChievement.class);
+                Intent intent5 = new Intent(app.getCtx(), ReadChievement.class);
                 intent5.putExtra("number", number);
                 startActivity(intent5);
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
@@ -324,33 +327,33 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //                break;
             // TODO: 2015/11/18 阅读  加动画
             case R.id.reader:
-                startActivity(new Intent(getActivity(), ReadHistoryActivity.class));
+                startActivity(new Intent(app.getCtx(), ReadHistoryActivity.class));
 
                 break;
             // TODO: 2015/11/18 收藏
             case R.id.collect:
                 if (flag) {
-                    Intent intent6 = new Intent(getActivity(), Setting_Collection.class);
+                    Intent intent6 = new Intent(app.getCtx(), Setting_Collection.class);
                     startActivity(intent6);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {
-                    Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+                    Intent intent2 = new Intent(app.getCtx(), LoginActivity.class);
                     startActivity(intent2);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
                 break;
             // TODO: 2015/11/18 跟帖  完成
             case R.id.Thread:
-                startActivity(new Intent(getActivity(),GenTieActivity.class));
+                startActivity(new Intent(app.getCtx(),GenTieActivity.class));
                 break;
             // TODO: 2015/11/18 金币
             case R.id.gold:
                 if (flag) {
-                    Intent intent4 = new Intent(getActivity(), Setting_GlodPage.class);
+                    Intent intent4 = new Intent(app.getCtx(), Setting_GlodPage.class);
                     startActivity(intent4);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {
-                    Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+                    Intent intent2 = new Intent(app.getCtx(), LoginActivity.class);
                     startActivity(intent2);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
@@ -364,7 +367,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 break;
             // TODO: 2015/11/18 金币商城
             case R.id.goldMall:
-                Intent intent17 = new Intent(getActivity(), Setting_glodmall.class);
+                Intent intent17 = new Intent(app.getCtx(), Setting_glodmall.class);
                 startActivity(intent17);
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
@@ -374,11 +377,11 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.myTask:
                 //获取数据库对应的数据
                 if (flag) {
-                    Intent intent8 = new Intent(getActivity(), Setting_my_Task.class);
+                    Intent intent8 = new Intent(app.getCtx(), Setting_my_Task.class);
                     startActivity(intent8);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {
-                    Intent intent9 = new Intent(getActivity(), LoginActivity.class);
+                    Intent intent9 = new Intent(app.getCtx(), LoginActivity.class);
                     startActivity(intent9);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
@@ -422,10 +425,12 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                     flag=false;
                     break;
                 case 2:
+
                     Bitmap bp= (Bitmap) msg.obj;
                     if (bp!=null){
                         picture.setImageBitmap(bp);
                     }
+
                     break;
             }
 
@@ -446,7 +451,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 }
                 break;
             case 1:
-                if(resultCode == getActivity().RESULT_OK){
+                if(resultCode ==getActivity().RESULT_OK){
                     Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
                 }
                 break;
@@ -457,21 +462,25 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     public void onResume() {
         //...更新View
         super.onResume();
-//        returnshezhi();
+        boolean login=app.getCtx().getSharedPreferences("login",app.getCtx().MODE_PRIVATE).getBoolean("login", true);
+        Log.e("读取登录login","--------login"+login);
+        if(!login) {
+            returnshezhi();
+        }
     }
-    @Override
-    public void onPause() {
-        super.onPause();
-    }
+//    @Override
+//    public void onPause() {
+//        super.onPause();
+//    }
 
    protected  void  returnshezhi(){
        initView(view);
        userlevel.setText("跟帖局科员bbb");
-       shezhi= SearchDB.createDb(getActivity(), "shezhi");
-
-       user_name = SearchDB.createDb(getActivity(), "userName");
-       jinbi = SearchDB.createDb(getActivity(), "jinbi");
-       shezhi = SearchDB.createDb(getActivity(), "shezhi");
+    //   shezhi= SearchDB.createDb(app.getCtx(), "shezhi");
+       shezhi= SearchDB.createDb(app.getCtx(), "shezhi");
+       user_name = SearchDB.createDb(app.getCtx(), "userName");
+       jinbi = SearchDB.createDb(app.getCtx(), "jinbi");
+       shezhi = SearchDB.createDb(app.getCtx(), "shezhi");
        read0 =0;
        conllect0 =0;
        gentie0 =0;
@@ -505,7 +514,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
            flag =false;
            denglujinbi();
            flag = true;
-           pic_path = SearchDB.TouXiangDb(getActivity(), "pic_path");
+           pic_path = SearchDB.TouXiangDb(app.getCtx(), "pic_path");
            if (pic_path != null) {
                Log.e("aaa","--------pic_path"+pic_path);
                try {

@@ -1,6 +1,7 @@
 package com.xiangmu.lzx.activitys;
 
 import android.app.Application;
+import android.content.Context;
 import android.media.MediaPlayer;
 
 import com.umeng.socialize.Config;
@@ -16,11 +17,12 @@ public class MyApplication extends Application {
     private static final String NAME = "MyApplication";
     public static MediaPlayer mPlayer;
     private  boolean searchDB0;
+    private static Context ctx;
     @Override
     public void onCreate() {
         super.onCreate();
         setSearchDB0(false);
-
+        ctx = getApplicationContext();
         Config.DEBUG = true;
         UMShareAPI.get(this);
     }
@@ -51,6 +53,9 @@ public class MyApplication extends Application {
 
     public void setSearchDB0(boolean searchDB0) {
         this.searchDB0 = searchDB0;
+    }
+    public static Context getCtx() {
+        return ctx;
     }
 
 //  Config.REDIRECT_URL="http://sns.whalecloud.com/sina2/callback";

@@ -76,8 +76,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
     private String username;
+    private String username0;
     private String pic_path;
-    //  private MyApplication app;
+    private String  shezhi;
+      private MyApplication app;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,6 +87,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_productinfo_image);
         button = (ImageButton) findViewById(R.id.subbtn);
         edit = (EditText) findViewById(R.id.edit);
+        app =new MyApplication();
         Intent intent = getIntent();
         xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
         potolist=xinWenXiData.getUploadFileList();
@@ -93,12 +96,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        potolist=(List<UploadFile>)getIntent().getSerializableExtra("potolist");
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        //app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-        System.out.println("登录者:"+SearchDB.createDb(getApplication(), "userName"));
-     if(SearchDB.createDb(getApplication(), "userName")!=null&&!SearchDB.createDb(getApplication(), "userName").equals("")) {
-            username = SearchDB.createDb(getApplication(), "userName");
-            customerid = Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
-            pic_path = SearchDB.createDb(getApplication(), "pic_path");
+        //app = (MyApplication) app.getCtx(); //获得我们的应用程序MyApplication
+        System.out.println("登录者:"+SearchDB.createDb(app.getCtx(), "userName"));
+     if(SearchDB.createDb(app.getCtx(), "userName")!=null&&!SearchDB.createDb(app.getCtx(), "userName").equals("")) {
+            username = SearchDB.createDb(app.getCtx(), "userName");
+            customerid = Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
+            pic_path = SearchDB.createDb(app.getCtx(), "pic_path");
         }
         initDate();
         initview();
@@ -339,7 +342,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
 
                 if(username!=null){
-                    if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid= Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
+                    if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid= Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
                 //    customerid0=Integer.parseInt(customerid);
 //                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
                     String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
@@ -411,7 +414,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-        if(username!=null); if(SearchDB.createDb(getApplication(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
+        if(username!=null); if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
 
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
         String clickcount0=xinWenURL.getCount();
@@ -604,11 +607,15 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
         switch(requestCode){
             case 1000:
+                shezhi= SearchDB.createDb(this, "shezhi");
+
                 username = SearchDB.createDb(this, "userName");
                 customerid = Integer.parseInt(SearchDB.createDb(this, "customerid"));
                 pic_path=SearchDB.createDb(this, "pic_path");
-
-//                Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了"+ RESULT_OK);
+                getSharedPreferences("login", MODE_PRIVATE).edit().putBoolean("login", false).commit();
+                username0 = SearchDB.createDb(this, "userName");
+                Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了"+ username0 );
+                Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了"+ username );
 //                if(resultCode == getActivity().RESULT_OK) {
 //                    returnshezhi();
 //                }
