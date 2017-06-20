@@ -9,6 +9,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -87,7 +88,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_productinfo_image);
         button = (ImageButton) findViewById(R.id.subbtn);
         edit = (EditText) findViewById(R.id.edit);
-        app =new MyApplication();
+        app =(MyApplication)getApplication();
         Intent intent = getIntent();
         xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
         potolist=xinWenXiData.getUploadFileList();
@@ -97,11 +98,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        liuyuanlist=(List<ProductArticler>)getIntent().getSerializableExtra("liuyuanlist");
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
         //app = (MyApplication) app.getCtx(); //获得我们的应用程序MyApplication
-        System.out.println("登录者:"+SearchDB.createDb(app.getCtx(), "userName"));
-     if(SearchDB.createDb(app.getCtx(), "userName")!=null&&!SearchDB.createDb(app.getCtx(), "userName").equals("")) {
-            username = SearchDB.createDb(app.getCtx(), "userName");
-            customerid = Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
-            pic_path = SearchDB.createDb(app.getCtx(), "pic_path");
+        System.out.println("登录者:"+SearchDB.createDb(getApplication(), "userName"));
+     if(SearchDB.createDb(getApplication(), "userName")!=null&&!SearchDB.createDb(getApplication(), "userName").equals("")) {
+            username = SearchDB.createDb(getApplication(), "userName");
+            customerid = Integer.parseInt(SearchDB.createDb(getApplication(), "customerid"));
+            pic_path = SearchDB.createDb(getApplication(), "pic_path");
         }
         initDate();
         initview();
@@ -561,9 +562,13 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                             e.printStackTrace();
                         }
                         String shezhi0= gson.toJson(listshezhi);
-                        //     app.setSearchDB0(true);
+                           app.setSearchDB0(true);
 //                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+                  //      getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+                        PreferenceManager.getDefaultSharedPreferences(getApplication());
+                        getApplication().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
+                        getApplication().getSharedPreferences("useInfo",Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+//                    finish();
 
                     }
 
@@ -608,7 +613,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         switch(requestCode){
             case 1000:
                 shezhi= SearchDB.createDb(this, "shezhi");
-
+           app.setSearchDB0(true);
                 username = SearchDB.createDb(this, "userName");
                 customerid = Integer.parseInt(SearchDB.createDb(this, "customerid"));
                 pic_path=SearchDB.createDb(this, "pic_path");

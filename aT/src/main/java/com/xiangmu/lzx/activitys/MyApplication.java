@@ -16,12 +16,12 @@ import com.umeng.socialize.UMShareAPI;
 public class MyApplication extends Application {
     private static final String NAME = "MyApplication";
     public static MediaPlayer mPlayer;
-    private  boolean searchDB0;
+    private  boolean searchDB0=false;
     private static Context ctx;
     @Override
     public void onCreate() {
         super.onCreate();
-        setSearchDB0(false);
+       // setSearchDB0(false);
         ctx = getApplicationContext();
         Config.DEBUG = true;
         UMShareAPI.get(this);

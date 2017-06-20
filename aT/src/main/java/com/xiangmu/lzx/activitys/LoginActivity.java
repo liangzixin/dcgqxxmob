@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -506,8 +507,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 //    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
                  //   app.setSearchDB0(true);
 
-                    app.getCtx().getSharedPreferences("useInfo", app.getCtx().MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
+
+                 PreferenceManager.getDefaultSharedPreferences(app.getCtx());
+                    app.getCtx().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
+                app.getCtx().getSharedPreferences("useInfo", app.getCtx().MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
 //                    finish();
+//                    SharedPreferences sharedPreferences = getSharedPreferences("useInfo", Context.MODE_PRIVATE);
+//                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
+//                    editor.putString("userName",userName);
+//                    editor.putString("pic_path",profile_image_url);
+//                    editor.commit();//提交修改
+//                    app.setSearchDB0(true);
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);
 
@@ -568,6 +578,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }
 
                                     addcustmer(opid,userName,profile_image_url);
+       //     finish();
 
         }
 

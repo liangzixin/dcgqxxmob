@@ -13,12 +13,13 @@ public class SearchDB {
 
     public static String createDb(Context context, String Name) {
         String user_name = null;
-        app =new MyApplication();
+   //     app =new MyApplication();
 //        SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
-        SharedPreferences preferences = context.getSharedPreferences("useInfo",app.getCtx().MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences("useInfo",Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
 //        String name_email = preferences.getString("userName", null);
         String name0= preferences.getString(Name, null);
+
         if (name0!= null) {
 //            user_name = preferences.getString("userName", "");
             user_name = preferences.getString(Name, "");
@@ -33,7 +34,8 @@ public class SearchDB {
         String pic_Pathload = null;
         SharedPreferences preferences = context.getSharedPreferences("useInfo", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        String pic_path = preferences.getString("pic_path", null);
+     String pic_path = preferences.getString("pic_path", null);
+      //  String pic_path = editor.putString("pic_path", null);
         if (pic_path != null) {
             pic_Pathload = pic_path;
 //            String pic_pathload = "storage/sdcard0/" + pic_Pathload;
