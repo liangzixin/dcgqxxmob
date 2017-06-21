@@ -484,6 +484,8 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
        userlevel.setText("跟帖局科员bbbbaa");
     //   shezhi= SearchDB.createDb(app.getCtx(), "shezhi");
        shezhi= SearchDB.createDb(getActivity(), "shezhi");
+     String username1=SearchDB.createDb(getActivity(), "userName1");
+     System.out.println("姓名:" +username1);
        user_name = SearchDB.createDb(getActivity(), "userName");
        jinbi = SearchDB.createDb(getActivity(), "jinbi");
        shezhi = SearchDB.createDb(getActivity(), "shezhi");

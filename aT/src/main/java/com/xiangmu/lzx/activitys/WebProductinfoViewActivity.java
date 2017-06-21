@@ -72,7 +72,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private  ImageButton button;
     private EditText edit;
     private RecyclerView recyclerView;
-    private int customerid=1;
+    private int customerid=0;
     private boolean login0=false;
     MultiTypeAdapter adapter;
     private static Gson gson = new Gson();
@@ -177,8 +177,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-       //         ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
-                //       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
+//                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+//                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
             }
         });
     }
@@ -296,8 +296,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
      */
     public void UpArticlerFunction() {
         int customerid0=0;
-
-        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid;
+        int shezhitype0=2;
+        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
         UpData(url);
     }
     /**
@@ -415,10 +415,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-        if(username!=null); if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
+      //  if(username!=null);
+      //  if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
 
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
-        String clickcount0=xinWenURL.getCount();
+    //    String clickcount0=xinWenURL.getCount();
         //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
         // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         UpData(clickcount);
@@ -566,8 +567,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
                   //      getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
                         PreferenceManager.getDefaultSharedPreferences(getApplication());
-                        getApplication().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
-                        getApplication().getSharedPreferences("useInfo",Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+                     //   getApplication().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
+                       getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+                      //  getApplication().getSharedPreferences("useInfo",Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
 //                    finish();
 
                     }
