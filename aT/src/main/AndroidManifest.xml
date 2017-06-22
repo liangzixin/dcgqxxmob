@@ -25,6 +25,7 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS"/>
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+
     <application
         android:name=".activitys.MyApplication"
         android:allowBackup="true"

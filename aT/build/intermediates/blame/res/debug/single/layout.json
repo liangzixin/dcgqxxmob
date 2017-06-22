@@ -464,6 +464,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\layout\\abc_search_dropdown_item_icons_2line.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\socialize_share_menu_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\socialize_share_menu_item.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_frament.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_frament.xml"
     },
