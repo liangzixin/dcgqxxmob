@@ -173,26 +173,13 @@
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
             android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!-- <activity -->
-        <!-- android:name="com.umeng.qq.tencent.AuthActivity" -->
-        <!-- android:launchMode="singleTask" -->
-        <!-- android:noHistory="true"> -->
-        <!-- <intent-filter> -->
-        <!-- <action android:name="android.intent.action.VIEW"/> -->
-
-
-        <!-- <category android:name="android.intent.category.DEFAULT"/> -->
-        <!-- <category android:name="android.intent.category.BROWSABLE"/> -->
-
-
-        <!-- <data android:scheme="tencent1105789263"/> -->
-        <!-- </intent-filter> -->
-        <!-- </activity> -->
-        <!-- <activity -->
-        <!-- android:name="com.umeng.qq.tencent.AssistActivity" -->
-        <!-- android:configChanges="orientation|keyboardHidden|screenSize" -->
-        <!-- android:screenOrientation="portrait" -->
-        <!-- android:theme="@android:style/Theme.Translucent.NoTitleBar"/> -->
+        <!-- 微信分享 -->
+        <activity
+            android:name="com.xiangmu.lzx.wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
         <!-- 新浪微博分享 -->
         <activity
             android:name="com.xiangmu.lzx.WBShareActivity"
