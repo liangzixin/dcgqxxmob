@@ -65,7 +65,8 @@ public class MyApplication extends Application {
     //豆瓣RENREN平台目前只能在服务器端配置
     //新浪微博
   //   PlatformConfig.setSinaWeibo("3365617265", "ecfbad353322b9101a18036eaa1a40193");
-    PlatformConfig.setSinaWeibo("3365617265", "ecfbad353322b9101a18036eaa1a40193","http://sns.whalecloud.com");
+    //PlatformConfig.setSinaWeibo("3002552310", "a6f7664f6969ed22d7c3abe9c6c51cf7","http://sns.whalecloud.com/sina2/callback");
+    PlatformConfig.setSinaWeibo("3002552310", "e4364ceed9f8383518e2cfd30e43dd9a","http://sns.whalecloud.com/sina2/callback");
     //易信
     PlatformConfig.setYixin("yxc0614e80c9304c11b0391514d09f13bf");
     PlatformConfig.setQQZone("1105789263", "Z72WYfitxSU5HyVO");

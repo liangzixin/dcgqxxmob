@@ -192,18 +192,18 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
 //                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
                 new ShareAction(WebProductinfoViewActivity.this)
-                        .setDisplayList(SHARE_MEDIA.SINA,SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE)
-                        .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
-                        .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
+                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
+                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
+                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
                         .setShareboardclickCallback(new ShareBoardlistener() {
                             @Override
                             public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
-                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
-                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
-                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
-                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
-
-                                } else {
+//                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
+//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
+//                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
+//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
+//
+//                                } else {
                                     UMWeb web = new UMWeb(url);
                                     web.setTitle(xinwentitle);
                                     web.setDescription(xinwentitle);
@@ -212,7 +212,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                                             .setPlatform(share_media)
                                             .setCallback(mShareListener)
                                             .share();
-                                }
+//                                }
                             }
                         })
                        .open();

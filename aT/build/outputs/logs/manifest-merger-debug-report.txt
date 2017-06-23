@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-234:12
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-244:12
 	package
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
@@ -88,7 +88,7 @@ ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:5-89
 	android:name
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:22-86
 application
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:5-232:19
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:5-242:19
 MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:17:5-36:19
 MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\AndroidManifest.xml:12:5-15:51
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
@@ -381,82 +381,96 @@ ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:169:9-172:75
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:172:13-72
 	android:name
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:170:13-69
-activity#com.renn.rennsdk.oauth.OAuthActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:192:9-194:77
+activity#com.xiangmu.lzx.WBShareActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:192:9-200:20
+	android:screenOrientation
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:195:13-49
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:194:13-74
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:194:13-63
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:193:13-64
-activity#com.xiangmu.lzx.activitys.PictureActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:195:9-197:62
-	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:197:13-59
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:193:13-44
+intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:196:13-199:29
+action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:197:17-92
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:196:13-69
-activity#com.xiangmu.lzx.activitys.LoginActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:198:9-200:60
-	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:200:13-57
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:197:25-89
+activity#com.renn.rennsdk.oauth.OAuthActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:202:9-204:77
+	android:configChanges
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:204:13-74
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:199:13-67
-activity#com.xiangmu.lzx.activitys.BackpasswordActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:201:9-203:67
-	android:label
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:203:13-64
+activity#com.xiangmu.lzx.activitys.PictureActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:205:9-207:62
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:207:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:202:13-74
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:206:13-69
+activity#com.xiangmu.lzx.activitys.LoginActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:208:9-210:60
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:210:13-57
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:209:13-67
+activity#com.xiangmu.lzx.activitys.BackpasswordActivity
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:211:9-213:67
+	android:label
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:213:13-64
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:212:13-74
 activity#com.xiangmu.lzx.activitys.UpdaterActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:204:9-206:62
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:214:9-216:62
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:206:13-59
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:216:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:205:13-69
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:215:13-69
 activity#com.xiangmu.lzx.activitys.RegisterActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:207:9-209:63
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:217:9-219:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:209:13-60
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:219:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:208:13-70
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:218:13-70
 activity#com.xiangmu.lzx.activitys.Setting_GlodPage
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:210:9-212:63
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:220:9-222:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:212:13-60
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:222:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:211:13-70
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:221:13-70
 activity#com.xiangmu.lzx.activitys.ReadHistoryActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:213:9-215:63
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:223:9-225:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:215:13-60
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:225:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:214:13-73
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:224:13-73
 activity#com.xiangmu.lzx.activitys.Task_ShuoMing
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:216:9-217:20
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:226:9-227:20
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:216:19-73
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:226:19-73
 activity#com.xiangmu.lzx.activitys.GenTieActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:218:9-221:20
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:228:9-231:20
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:220:13-59
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:230:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:219:13-68
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:229:13-68
 activity#com.xiangmu.lzx.activitys.LiuyuanActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:222:9-225:20
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:232:9-235:20
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:224:13-59
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:234:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:223:13-69
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:233:13-69
 meta-data#WEIBO_APPKEY
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:226:9-228:42
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:236:9-238:42
 	android:value
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:228:13-39
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:238:13-39
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:227:13-40
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:237:13-40
 meta-data#WEIBO_CHANNEL
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:229:9-231:37
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:239:9-241:37
 	android:value
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:231:13-34
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:241:13-34
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:230:13-41
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:240:13-41
 uses-sdk
 INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:7:5-9:41

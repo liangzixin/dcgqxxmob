@@ -28,6 +28,14 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.umeng.socialize.ShareAction;
+import com.umeng.socialize.UMShareAPI;
+import com.umeng.socialize.UMShareListener;
+import com.umeng.socialize.bean.SHARE_MEDIA;
+import com.umeng.socialize.media.UMImage;
+import com.umeng.socialize.media.UMWeb;
+import com.umeng.socialize.shareboard.SnsPlatform;
+import com.umeng.socialize.utils.ShareBoardlistener;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
@@ -42,6 +50,7 @@ import com.xiangmu.lzx.utils.XutilsGetData;
 
 import java.io.File;
 import java.io.Serializable;
+import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +84,8 @@ public class XinWenXiActivity extends AppCompatActivity {
     private HttpHandler<String> handler;
     ImageButton caidan;
     ImageButton fenxiang;
+    private UMShareListener mShareListener;
+    private ShareAction mShareAction;
     /**
      * 提交的监听器
      */
@@ -145,7 +156,7 @@ public class XinWenXiActivity extends AppCompatActivity {
     private void initview() {
         final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-
+        final String url0 ="http://www.dcgqxx.com/product/product_select.html?id="+xinWenXiData.getId();
         ImageButton imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);
         duotu_gentie = (TextView) findViewById(R.id.xinwen_duotu_gentie);
         caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);
@@ -188,10 +199,37 @@ public class XinWenXiActivity extends AppCompatActivity {
                 getpopuwindow(view);//打开菜单栏
             }
         });
+        mShareListener = new CustomShareListener(this);
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-       //         ShareUtils.shareContent(XinWenXiActivity.this, xinwentitle, url);
+//                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+//                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
+                new ShareAction(XinWenXiActivity.this)
+                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
+                        //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
+                        //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
+                        .setShareboardclickCallback(new ShareBoardlistener() {
+                            @Override
+                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
+//                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
+//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
+//                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
+//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
+//
+//                                } else {
+                                UMWeb web = new UMWeb(url0);
+                                web.setTitle(xinwentitle);
+                                web.setDescription(xinwentitle);
+                                web.setThumb(new UMImage(XinWenXiActivity.this, R.drawable.ic_launcher));
+                                new ShareAction(XinWenXiActivity.this).withMedia(web)
+                                        .setPlatform(share_media)
+                                        .setCallback(mShareListener)
+                                        .share();
+//                                }
+                            }
+                        })
+                        .open();
             }
         });
     }
@@ -361,7 +399,12 @@ public class XinWenXiActivity extends AppCompatActivity {
         super.onDestroy();
         xutilsGetData.XutilsClose();
     }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
 
+        super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
+        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+    }
 
     public void initDate() {
         String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
@@ -410,5 +453,70 @@ public class XinWenXiActivity extends AppCompatActivity {
         writableDatabase.close();
     }
 
-    ;
+    private static class CustomShareListener implements UMShareListener {
+
+        private WeakReference<XinWenXiActivity> mActivity;
+
+        private CustomShareListener(XinWenXiActivity activity) {
+            mActivity = new WeakReference(activity);
+        }
+
+        @Override
+        public void onStart(SHARE_MEDIA platform) {
+
+        }
+
+        @Override
+        public void onResult(SHARE_MEDIA platform) {
+
+            if (platform.name().equals("WEIXIN_FAVORITE")) {
+                Toast.makeText(mActivity.get(), platform + " 收藏成功啦", Toast.LENGTH_SHORT).show();
+            } else {
+                if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
+                        && platform != SHARE_MEDIA.EMAIL
+                        && platform != SHARE_MEDIA.FLICKR
+                        && platform != SHARE_MEDIA.FOURSQUARE
+                        && platform != SHARE_MEDIA.TUMBLR
+                        && platform != SHARE_MEDIA.POCKET
+                        && platform != SHARE_MEDIA.PINTEREST
+
+                        && platform != SHARE_MEDIA.INSTAGRAM
+                        && platform != SHARE_MEDIA.GOOGLEPLUS
+                        && platform != SHARE_MEDIA.YNOTE
+                        && platform != SHARE_MEDIA.EVERNOTE) {
+                    Toast.makeText(mActivity.get(), platform + " 分享成功啦!!!", Toast.LENGTH_SHORT).show();
+                }
+
+            }
+        }
+
+        @Override
+        public void onError(SHARE_MEDIA platform, Throwable t) {
+            if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
+                    && platform != SHARE_MEDIA.EMAIL
+                    && platform != SHARE_MEDIA.FLICKR
+                    && platform != SHARE_MEDIA.FOURSQUARE
+                    && platform != SHARE_MEDIA.TUMBLR
+                    && platform != SHARE_MEDIA.POCKET
+                    && platform != SHARE_MEDIA.PINTEREST
+
+                    && platform != SHARE_MEDIA.INSTAGRAM
+                    && platform != SHARE_MEDIA.GOOGLEPLUS
+                    && platform != SHARE_MEDIA.YNOTE
+                    && platform != SHARE_MEDIA.EVERNOTE) {
+                Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
+                if (t != null) {
+                    com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
+                }
+            }
+
+        }
+
+        @Override
+        public void onCancel(SHARE_MEDIA platform) {
+
+            Toast.makeText(mActivity.get(), platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
