@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    xmlns:myApplication="http://schemas.android.com/apk/res-auto"
+    tools:context="com.xiangmu.lzx.activitys.ProductinfoAddActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:background="#000000"
+        >
+
+
+        <ImageButton
+            android:id="@+id/xinwen_xi_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/xinwen_duotu_gentie"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:clickable="true"
+            android:background="@mipmap/titlebar_background"
+            android:gravity="center"
+            android:text="0跟帖" />
+        <ImageButton
+            android:id="@+id/xinwen_xi_fenxiang"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/share_alpha" />
+        <ImageButton
+            android:id="@+id/xinwen_xi_kuanzhan_caidan"
+            android:layout_width="50dp"
+            android:clickable="true"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/kuozhan_caidan" />
+    </LinearLayout>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="40dp"
+        android:layout_marginTop="50dp"
+        />
+    <!--android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        myApplication:cardCornerRadius="0dp"
+        myApplication:cardElevation="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="50dp"
+        >
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        myApplication:cardCornerRadius="0dp"
+        myApplication:cardElevation="4dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="55dp"
+        >-->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:padding="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content">
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/spin_articler"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
+                myApplication:ms_floatingLabelColor="#00FF00"
+                myApplication:ms_floatingLabelText="部门名称:"
+
+                android:gravity="center"
+                myApplication:ms_multiline="true" />
+            </LinearLayout>
+            <MaterialEditText
+                android:id="@+id/productinfo_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="招聘标题:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+
+
+                />
+            <MaterialEditText
+                android:id="@+id/productinfo_gsmz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="公司名称:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                android:padding="6dp"
+                />
+            <MaterialEditText
+                android:id="@+id/productinfo_gsdz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="公司地址:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/spin_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+              myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
+
+                myApplication:ms_floatingLabelText="性别:"
+
+                myApplication:ms_multiline="true"
+                android:hint="性别:"
+                />
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/spin_dxfw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="50dp"
+
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
+
+                myApplication:ms_floatingLabelText="底薪:"
+
+                myApplication:ms_multiline="true" />
+            </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/spin_nl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
+                android:layout_marginLeft="10dp"
+                myApplication:ms_floatingLabelText="年龄:"
+
+                myApplication:ms_multiline="true" />
+            <fr.ganfra.materialspinner.MaterialSpinner
+                android:id="@+id/spin_xl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                myApplication:ms_arrowColor="#0000FF"
+                myApplication:ms_arrowSize="16dp"
+                android:layout_marginLeft="50dp"
+                myApplication:ms_floatingLabelText="学历:"
+
+
+                myApplication:ms_multiline="true" />
+       </LinearLayout>
+            <MaterialEditText
+                android:id="@+id/productinfo_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="详情:"
+                android:minLines="8"
+                android:maxLines="10"
+                android:inputType="textMultiLine"
+                android:scrollbars="vertical"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                />
+            <MaterialEditText
+                android:id="@+id/productinfo_lxr"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="联系人:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                android:padding="6dp"
+                />
+            <MaterialEditText
+                android:id="@+id/productinfo_lxdh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:hint="联系电话:"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""
+                material:floatingLabel="true"
+                />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:layout_below="@+id/toutiaop_imgsrc"
+                    android:layout_marginTop="5dp"
+                    android:src="@mipmap/xinwen_toutiao_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    <!--/android.support.v7.widget.CardView>-->
+
+    <!--/android.support.v7.widget.CardView>-->
+</RelativeLayout>
+

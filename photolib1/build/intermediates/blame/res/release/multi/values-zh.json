@@ -1,0 +1,45 @@
+[
+    {
+        "outputFile": "D:\\xin\\dcgqxxmob\\photolib\\build\\intermediates\\res\\merged\\release\\values-zh\\values-zh.xml",
+        "map": [
+            {
+                "to": {
+                    "startLine": 2,
+                    "startColumn": 4,
+                    "startOffset": 55,
+                    "endColumn": 36,
+                    "endOffset": 87
+                },
+                "from": {
+                    "file": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 57,
+                        "endColumn": 36,
+                        "endOffset": 89
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 3,
+                    "startColumn": 4,
+                    "startOffset": 92,
+                    "endColumn": 52,
+                    "endOffset": 140
+                },
+                "from": {
+                    "file": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\values-zh\\strings.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 95,
+                        "endColumn": 52,
+                        "endOffset": 143
+                    }
+                }
+            }
+        ]
+    }
+]

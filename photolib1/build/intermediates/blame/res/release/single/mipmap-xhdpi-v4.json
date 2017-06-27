@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\photolib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\icon.png",
+        "source": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\mipmap-xhdpi\\icon.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\photolib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\check.png",
+        "source": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\mipmap-xhdpi\\check.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\photolib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\to.png",
+        "source": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\mipmap-xhdpi\\to.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\photolib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\camera.png",
+        "source": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\mipmap-xhdpi\\camera.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\photolib\\build\\intermediates\\res\\merged\\release\\mipmap-xhdpi-v4\\default_image.png",
+        "source": "D:\\xin\\dcgqxxmob\\photolib\\src\\main\\res\\mipmap-xhdpi\\default_image.png"
+    }
+]
