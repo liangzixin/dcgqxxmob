@@ -61,7 +61,11 @@ public class MyApplication extends Application {
 //  Config.REDIRECT_URL="http://sns.whalecloud.com/sina2/callback";
 {
     //微信 wx12342956d1cab4f9,a5ae111de7d9ea137e88a5e02c07c94d
-    PlatformConfig.setWeixin("wxd2069cc9808ef318", "9c29cc8bc30f5edc087bde312ef083a1");
+ // PlatformConfig.setWeixin("wxd2069cc9808ef318", "5ae42904c7ca2bad8f5ffdb70ad098f0");
+    PlatformConfig.setWeixin("wxdc1e388c3822c80b", "3baf1193c85774b3fd9d18447d76cab0");
+    //微信AppSecret：5ae42904c7ca2bad8f5ffdb70ad098f0
+    //微信应用签名：a6f7664f6969ed22d7c3abe9c6c51cf7
+    //   PlatformConfig.setWeixin("wxdc1e388c3822c80b", "3baf1193c85774b3fd9d18447d76cab0");
     //豆瓣RENREN平台目前只能在服务器端配置
     //新浪微博
   //   PlatformConfig.setSinaWeibo("3365617265", "ecfbad353322b9101a18036eaa1a40193");

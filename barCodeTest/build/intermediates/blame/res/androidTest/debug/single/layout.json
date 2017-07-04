@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
-        "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\main.xml",
+        "source": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\layout\\main.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\camera.xml",
-        "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\layout\\camera.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\layout\\camera.xml",
+        "source": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\layout\\camera.xml"
     }
 ]
