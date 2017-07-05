@@ -54,11 +54,11 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     static ImageView picture;
     static TextView userName,jinbiCount,readnumbe2,readercount2,readerCount;
 
-    TextView setting, userlevel, read, messageText, goldMallText, myTaskText, myWalletText, mymailboxText;
+    TextView setting, userlevel, read, messageText, goldMallText, myTaskText, myWalletText, mymailboxText,mymanagerText;
     ImageView readNumber, collectNumber, gentieNumber;
     static ImageView goldNumber;
     RelativeLayout reader, collect, Thread, gold;
-    LinearLayout myMessage, goldMall, myTask, myWallet, mymailbox;
+    LinearLayout myMessage, goldMall, myTask, myWallet, mymailbox,mymanager;
     String emailAddress;
     View view;
     //判断登录的标记
@@ -189,16 +189,19 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         Thread = (RelativeLayout) view.findViewById(R.id.Thread);
         gold = (RelativeLayout) view.findViewById(R.id.gold);
         mymailbox = (LinearLayout) view.findViewById(R.id.mymailbox);
+        mymanager= (LinearLayout) view.findViewById(R.id.mymanager);
         myWallet = (LinearLayout) view.findViewById(R.id.myWallet);
         myTask = (LinearLayout) view.findViewById(R.id.myTask);
         goldMall = (LinearLayout) view.findViewById(R.id.goldMall);
         myMessage = (LinearLayout) view.findViewById(R.id.myMessage);
         mymailboxText = (TextView) view.findViewById(R.id.mymailboxText);
+        mymanagerText = (TextView) view.findViewById(R.id.mymanagerText);
         myWalletText = (TextView) view.findViewById(R.id.myWalletText);
         myTaskText = (TextView) view.findViewById(R.id.myTaskText);
         goldMallText = (TextView) view.findViewById(R.id.goldMallText);
         messageText = (TextView) view.findViewById(R.id.messageText);
         mymailboxText = (TextView) view.findViewById(R.id.mymailboxText);
+
         goldNumber = (ImageView) view.findViewById(R.id.gold_number);
         gentieNumber = (ImageView) view.findViewById(R.id.gentie_number);
         collectNumber = (ImageView) view.findViewById(R.id.collect_number);
@@ -208,6 +211,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
     private void initOnClick() {
         mymailboxText.setOnClickListener(this);
+        mymanagerText.setOnClickListener(this);
         myWalletText.setOnClickListener(this);
         myTaskText.setOnClickListener(this);
         jinbiCount.setOnClickListener(this);
@@ -227,6 +231,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         Thread.setOnClickListener(this);
         gold.setOnClickListener(this);
         mymailbox.setOnClickListener(this);
+        mymanager.setOnClickListener(this);
         myWallet.setOnClickListener(this);
         myTask.setOnClickListener(this);
         goldMall.setOnClickListener(this);
@@ -279,6 +284,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.setting:
                 Intent intent3 = new Intent(getActivity(), Setting_set_page.class);
                 startActivity(intent3);
+
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             // TODO: 2015/11/18  登录名称(立即登录)
@@ -405,7 +411,18 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.mymailboxText:
 
                 break;
-
+            case R.id.mymanager:
+                Intent intent8 = new Intent(getActivity(), Setting_my_Task.class);
+                //   startActivity(intent8);
+                startActivityForResult(intent8, 1000);
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                break;
+            case R.id.mymanagerText:
+                Intent intent80 = new Intent(getActivity(), Setting_my_Task.class);
+                //  startActivity(intent80);
+                  startActivityForResult(intent80, 1000);
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                break;
         }
     }
     public static Handler handle=new Handler(){

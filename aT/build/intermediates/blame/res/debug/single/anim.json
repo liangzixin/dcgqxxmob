@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_in.xml"
-    },
-    {
         "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_in.xml",
         "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_shareboard_animation_in.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_in.xml"
     },
     {
         "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\alpha_out.xml",
@@ -16,12 +16,12 @@
         "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\out_righttoleft.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\out_righttoleft.xml"
-    },
-    {
         "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_rotate.xml",
         "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_rotate.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\out_righttoleft.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\out_righttoleft.xml"
     },
     {
         "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",

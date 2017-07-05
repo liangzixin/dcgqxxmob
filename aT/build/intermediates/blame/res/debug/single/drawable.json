@@ -16,20 +16,20 @@
         "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wechat.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_fetch_image.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_fetch_image.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close.png"
     },
     {
         "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shangtoutiao_tv.xml",
         "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shangtoutiao_tv.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_fetch_image.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_fetch_image.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wechat.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat.png"
     },
     {
         "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
