@@ -25,6 +25,7 @@ private ImageView backsetting;
                 Intent intent=new Intent(getBaseContext(),Setting_my_Task.class);
                 startActivity(intent);
                 overridePendingTransition(R.anim.push_right_in,R.anim.push_right_out);
+                finish();
             }
         });
     }

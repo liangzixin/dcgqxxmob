@@ -61,9 +61,9 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.backsetting:
-                Intent intent = new Intent(this, MainActivity.class);
-                startActivity(intent);
-                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+//                Intent intent = new Intent(this, MainActivity.class);
+//                startActivity(intent);
+//                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 finish();
                 break;
             case R.id.duihuan:
@@ -72,7 +72,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             case R.id.open_client:
-                Intent intent2 = new Intent(this, Task_ShuoMing.class);
+                Intent intent2 = new Intent(this, ProductinfoListEditActivity.class);
                 startActivity(intent2);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
