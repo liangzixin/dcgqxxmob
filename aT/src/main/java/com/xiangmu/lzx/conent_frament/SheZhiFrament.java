@@ -189,7 +189,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         Thread = (RelativeLayout) view.findViewById(R.id.Thread);
         gold = (RelativeLayout) view.findViewById(R.id.gold);
         mymailbox = (LinearLayout) view.findViewById(R.id.mymailbox);
-        mymanager= (LinearLayout) view.findViewById(R.id.mymanager);
+        mymanager = (LinearLayout) view.findViewById(R.id.mymanager);
         myWallet = (LinearLayout) view.findViewById(R.id.myWallet);
         myTask = (LinearLayout) view.findViewById(R.id.myTask);
         goldMall = (LinearLayout) view.findViewById(R.id.goldMall);
@@ -284,7 +284,6 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.setting:
                 Intent intent3 = new Intent(getActivity(), Setting_set_page.class);
                 startActivity(intent3);
-
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             // TODO: 2015/11/18  登录名称(立即登录)
@@ -404,25 +403,17 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.myWalletText:
 
                 break;
-            // TODO: 2015/11/18 我的邮箱
-            case R.id.mymailbox:
 
+            // TODO: 2015/11/18 我的管理
+            case R.id.mymanagerText:
+                Intent intent8 = new Intent(getActivity(), Setting_my_Task.class);
+                startActivity(intent8);
+                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             case R.id.mymailboxText:
 
                 break;
-            case R.id.mymanager:
-                Intent intent8 = new Intent(getActivity(), Setting_my_Task.class);
-                //   startActivity(intent8);
-                startActivityForResult(intent8, 1000);
-                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                break;
-            case R.id.mymanagerText:
-                Intent intent80 = new Intent(getActivity(), Setting_my_Task.class);
-                //  startActivity(intent80);
-                  startActivityForResult(intent80, 1000);
-                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                break;
+
         }
     }
     public static Handler handle=new Handler(){

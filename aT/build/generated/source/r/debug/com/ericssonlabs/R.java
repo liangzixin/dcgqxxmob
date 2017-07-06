@@ -63,8 +63,8 @@ public final class R {
 		public static final int viewfinder_view = 0x7f0f0130;
 	}
 	public static final class layout {
-		public static final int camera = 0x7f040035;
-		public static final int main = 0x7f040064;
+		public static final int camera = 0x7f040036;
+		public static final int main = 0x7f040065;
 	}
 	public static final class raw {
 		public static final int beep = 0x7f070000;

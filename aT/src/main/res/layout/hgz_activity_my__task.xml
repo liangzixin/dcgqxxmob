@@ -299,7 +299,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:layout_marginLeft="37dp"
-                android:text="打开新闻客户端"
+                android:text="信息管理"
                 android:textColor="@color/text_content"
                 android:textSize="13sp" />
 

@@ -220,6 +220,8 @@
             android:label="@string/title_activity_register" />
         <activity android:name="com.xiangmu.lzx.activitys.Task_ShuoMing" >
         </activity>
+        <activity android:name="com.xiangmu.lzx.activitys.ProductinfoListEditActivity" >
+        </activity>
         <activity
             android:name="com.xiangmu.lzx.activitys.GenTieActivity"
             android:label="@string/title_activity_gen_tie" >

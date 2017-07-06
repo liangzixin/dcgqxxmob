@@ -500,6 +500,7 @@
             android:layout_width="match_parent"
             android:layout_height="8dp"
             android:background="@color/ho_place" />
+
         <LinearLayout
             android:id="@+id/mymailbox"
             android:layout_width="match_parent"
@@ -613,5 +614,6 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="@color/ho_place" />
+
     </LinearLayout>
 </RelativeLayout>
