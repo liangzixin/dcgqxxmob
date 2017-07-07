@@ -56,6 +56,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_item_pic32.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_searcheditresult.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_searcheditresult.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_article.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_article.xml"
     },

@@ -663,7 +663,7 @@ public final class R {
 		public static final int info = 0x7f0f0220;
 		public static final int item_touch_helper_previous_elevation = 0x7f0f000b;
 		public static final int left = 0x7f0f002f;
-		public static final int line1 = 0x7f0f00d9;
+		public static final int line1 = 0x7f0f00d2;
 		public static final int line3 = 0x7f0f021f;
 		public static final int listMode = 0x7f0f0017;
 		public static final int list_item = 0x7f0f004d;
@@ -784,20 +784,20 @@ public final class R {
 		public static final int item_grid_album = 0x7f040059;
 		public static final int item_list_album = 0x7f04005b;
 		public static final int item_photo = 0x7f04005c;
-		public static final int layout_albums = 0x7f040063;
-		public static final int layout_photos = 0x7f040064;
-		public static final int notification_media_action = 0x7f040066;
-		public static final int notification_media_cancel_action = 0x7f040067;
-		public static final int notification_template_big_media = 0x7f040068;
-		public static final int notification_template_big_media_narrow = 0x7f040069;
-		public static final int notification_template_lines = 0x7f04006a;
-		public static final int notification_template_media = 0x7f04006b;
-		public static final int notification_template_part_chronometer = 0x7f04006c;
-		public static final int notification_template_part_time = 0x7f04006d;
-		public static final int select_dialog_item_material = 0x7f04007a;
-		public static final int select_dialog_multichoice_material = 0x7f04007b;
-		public static final int select_dialog_singlechoice_material = 0x7f04007c;
-		public static final int support_simple_spinner_dropdown_item = 0x7f04008a;
+		public static final int layout_albums = 0x7f040064;
+		public static final int layout_photos = 0x7f040065;
+		public static final int notification_media_action = 0x7f040067;
+		public static final int notification_media_cancel_action = 0x7f040068;
+		public static final int notification_template_big_media = 0x7f040069;
+		public static final int notification_template_big_media_narrow = 0x7f04006a;
+		public static final int notification_template_lines = 0x7f04006b;
+		public static final int notification_template_media = 0x7f04006c;
+		public static final int notification_template_part_chronometer = 0x7f04006d;
+		public static final int notification_template_part_time = 0x7f04006e;
+		public static final int select_dialog_item_material = 0x7f04007b;
+		public static final int select_dialog_multichoice_material = 0x7f04007c;
+		public static final int select_dialog_singlechoice_material = 0x7f04007d;
+		public static final int support_simple_spinner_dropdown_item = 0x7f04008b;
 	}
 	public static final class mipmap {
 		public static final int camera = 0x7f030007;

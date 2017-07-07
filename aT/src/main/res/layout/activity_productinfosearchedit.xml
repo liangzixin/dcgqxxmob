@@ -47,7 +47,7 @@
         android:imeOptions="actionSearch"
         myApplication:defaultQueryHint="请输入关键字..."></android.support.v7.widget.SearchView>
 
-    <!-- 搜索历史 -->
+    <!-- 搜索历史
     <RelativeLayout
         android:id="@+id/layout_sousuoHis"
         android:layout_width="match_parent"
@@ -97,7 +97,7 @@
                     android:layout_gravity="center"></GridView>
             </LinearLayout>
         </HorizontalScrollView>
-    </RelativeLayout>
+    </RelativeLayout> -->
 
     <!-- 搜索结果展示 默认隐藏-->
     <LinearLayout
@@ -128,7 +128,7 @@
             android:layout_height="match_parent"
             android:layout_margin="3dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>
     </LinearLayout>
-    <!-- 热词推荐 -->
+    <!-- 热词推荐
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -158,8 +158,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
-            android:numColumns="2"></GridView>
+            android:numColumns="2"></GridView> -->
         <!--水平间方向间隔属性值android:horizontalSpacing-->
         <!--竖直方向间隔属性值android:verticalSpacing-->
-    </LinearLayout>
+    <!--</LinearLayout>-->
 </LinearLayout>
