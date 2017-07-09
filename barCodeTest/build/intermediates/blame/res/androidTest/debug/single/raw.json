@@ -6,5 +6,13 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\beep.ogg",
         "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\realm_properties",
+        "source": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\realm_properties"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\res\\merged\\androidTest\\debug\\raw\\beep.ogg",
+        "source": "D:\\ls\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
     }
 ]

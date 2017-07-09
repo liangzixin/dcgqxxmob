@@ -1,15 +1,15 @@
 [
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_lixian.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_lixian.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\toutiao_stroke.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\toutiao_stroke.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_facebook.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_facebook.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\video_format_switcher_bg.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\video_format_switcher_bg.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_login_normal.png",
@@ -20,40 +20,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_share_btn_style.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_menu_default.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_menu_default.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_blue.9.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_blue.9.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_borderless_material.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_comment_item_bg_shape.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_comment_item_bg_shape.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_douban_on.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_douban_on.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_button_left.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_button_left.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shangtoutiao_tv.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shangtoutiao_tv.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\drawable\\design_fab_background.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\popview_bt.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\popview_bt.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_shrink.png",
@@ -64,36 +40,20 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_pv.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_selected.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_selected.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_holo_light.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_progress_thumb.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_progress_thumb.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_imgview_border.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_imgview_border.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_left_normal.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_left_normal.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_loading_image_02.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\progress_loading_image_02.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_check_material.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_round.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shape_round.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_on.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_share_transparent_corner.xml",
@@ -104,32 +64,32 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_x_button.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_x_button.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_grey.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_grey.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sina.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sina.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_red_blue.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red_blue.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_grey_blue.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_grey_blue.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_white.9.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_white.9.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_ic.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_ic.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone_on.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_twitter.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_twitter.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_text_cursor_material.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_dialog_material_background_light.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_selected.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_selected.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
@@ -156,28 +116,52 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_light_bar_bg.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_lixian.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_lixian.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close_pressed.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close_pressed.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_yuedu_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_yuedu_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_loading_image_01.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\progress_loading_image_01.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_progress_thumb.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_progress_thumb.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_window_shadow_pad.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_window_shadow_pad.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_renren_on.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_renren_on.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shape_solid_grey.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shape_solid_grey.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\video_format_switcher_bg.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\video_format_switcher_bg.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_window_shadow_pad.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_window_shadow_pad.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_grey.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_grey.9.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check_on.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_shezhi_selector.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_shezhi_selector.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone_on.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone_on.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_mark.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_mark.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_shake_layout_corner.xml",
@@ -188,24 +172,20 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq_off.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wxcircle_gray.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wxcircle_gray.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_off.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_off.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_default_avatar.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_default_avatar.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_x_button.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_x_button.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq_on.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq_on.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_back_bt.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_sousuo.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_sousuo.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_commnet_header_bg.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_commnet_header_bg.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check_off.png",
@@ -216,72 +196,64 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.ganfra\\material-spinner\\1.1.1\\res\\drawable\\my_background.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shape_solid_black.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shape_solid_black.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sina_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sina_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_bar_bg.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_bar_bg.9.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_refersh.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_refersh.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt_selected.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt_selected.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_on.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_on.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_preview_edit_corners_style.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_preview_edit_corners_style.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_google.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_google.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_fetch_image.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_fetch_image.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_news_list_ad_video_close_btn.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_news_list_ad_video_close_btn.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_red.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red.9.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_login.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_login.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back_normal.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back_normal.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wxcircle.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wxcircle.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_red_blue.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red_blue.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_item.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_item.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_xinwen_selector.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_xinwen_selector.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_red.9.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red.9.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_guide.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_guide.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_selected.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_selected.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_unlike.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_unlike.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close_button_style.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close_button_style.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt_normal.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt_normal.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_light.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_checked.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_checked.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_right_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_right_normal.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_commnet_header_bg.xml",
@@ -292,36 +264,36 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_nav_bar_bg.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_nav_bar_bg.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_coder.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_coder.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_normal.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_normal.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_edittext_corner.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_edittext_corner.xml"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_left_pressed.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_left_pressed.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_normal.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_normal.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_grey_blue.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_grey_blue.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wechat_gray.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat_gray.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_light.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.gif",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\ic_launcher.gif"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_tx_off.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_tx_off.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_right_pressed.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_right_pressed.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_loading_image_01.png",
@@ -332,6 +304,14 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_renren_off.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_button_right.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_button_right.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sina_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sina_off.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shape_solid_black.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shape_solid_black.xml"
     },
@@ -340,48 +320,40 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone_off.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xinwen_daohang_color_selector.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xinwen_daohang_color_selector.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_normal.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_normal.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_selector.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_button_left.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_button_left.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_popview.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_popview.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_redian_selector.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_redian_selector.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_dark.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_dialog_material_background_dark.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_button_right.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_button_right.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\btnbg.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_comment_bg.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_comment_bg.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_white_blue.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_white_blue.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_grey.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_grey.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_on.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_bind_bg.9.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_bind_bg.9.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
@@ -392,8 +364,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_fetch_location_disabled.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_pause.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_pause.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_news_detailpage_loading_large_icon.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_news_detailpage_loading_large_icon.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_login_pressed.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_login_pressed.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_expand.png",
@@ -404,16 +384,28 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_refersh.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\drawable\\design_snackbar_background.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_view.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_view.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_button.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_button.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check_on.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check_on.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_like.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_like.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_right_pressed.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_right_pressed.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_fetch_location_disabled.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_fetch_location_disabled.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_blue.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_blue.9.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt_selected.png",
@@ -436,6 +428,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_search_icon.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_default_avatar.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_default_avatar.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_tab_indicator_material.xml"
     },
@@ -448,68 +444,72 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\bg_black_a10_selector.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wechat_gray.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat_gray.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_textcolor.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_textcolor.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone_off.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_divider_line.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_divider_line.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_yejian.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_yejian.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_play.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_play.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_tx_on.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_tx_on.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_left_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_left_normal.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_grey.9.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_grey.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_like.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_like.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq_on.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_radio_material.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check.xml"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shape_solid_grey.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shape_solid_grey.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back_selected.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back_selected.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_textfield_search_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_textfield_search_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_light_bar_bg.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_light_bar_bg.9.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_small_material.xml"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_pulltorefresh_arrow.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_pulltorefresh_arrow.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_sousuo.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_sousuo.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_comment_bg.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_comment_bg.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_white_blue.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_white_blue.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close_pressed.png",
@@ -520,28 +520,72 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_twitter.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_twitter.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\popview_bt.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\popview_bt.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_button.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_button.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt_normal.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_back_bt.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_facebook.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_facebook.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_check.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_check.xml"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_tx_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_tx_off.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_divider_line.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_divider_line.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_login_pressed.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_login_pressed.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_top_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_top_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_full_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_left_pressed.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_left_pressed.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shareboard_item_background.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shareboard_item_background.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_ic.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_ic.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_yaoqing.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_yaoqing.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\toutiao_stroke.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\toutiao_stroke.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_expand.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_expand.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_launcher.gif",
@@ -556,12 +600,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_share_to_button.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_login.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_login.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_shangtoutiao.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_shangtoutiao.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
@@ -572,10 +616,6 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_item.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_track_material.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\radio_textcolor.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\radio_textcolor.xml"
     },
@@ -584,16 +624,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_view.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_bar_bg.9.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_bar_bg.9.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wxcircle.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wxcircle.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_douban_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_douban_off.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_on.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\my_background.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.ganfra\\material-spinner\\1.1.1\\res\\drawable\\my_background.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_dialog_material_background_light.xml",
@@ -604,16 +644,28 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_play.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_round.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shape_round.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_check_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_check_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shangtoutiao_tv.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shangtoutiao_tv.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_unlike.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_unlike.png"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_guide.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_guide.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_unlike.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_unlike.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_full_material.xml",
@@ -624,12 +676,612 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_off.png"
     },
     {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_check.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_check.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_search_icon.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_search_icon.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_switch_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_login_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_login_normal.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sina.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sina.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_pulltorefresh_arrow.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_pulltorefresh_arrow.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_textcolor.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_textcolor.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\video_format_switcher_bg.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\video_format_switcher_bg.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_off.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_menu_default.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_menu_default.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_blue.9.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_blue.9.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_borderless_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_borderless_material.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_comment_item_bg_shape.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_comment_item_bg_shape.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_fetch_image.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_fetch_image.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wechat.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_douban_on.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_douban_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_button_left.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_button_left.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\popview_bt.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\popview_bt.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_selected.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_selected.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_progress_thumb.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_progress_thumb.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_left_normal.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_left_normal.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_loading_image_02.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\progress_loading_image_02.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shape_round.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shape_round.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_selected.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_selected.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_x_button.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_x_button.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sina.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sina.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_ic.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_ic.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_white.9.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_white.9.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_text_cursor_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_text_cursor_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_bind_bg.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_bind_bg.9.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_redian_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_redian_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_popview.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_popview.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_nav_bar_bg.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_nav_bar_bg.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_lixian.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_lixian.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_share_to_button.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_share_to_button.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_imgview_border.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_imgview_border.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_renren_on.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_renren_on.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone_on.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone_on.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_mark.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_mark.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wxcircle_gray.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wxcircle_gray.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_follow_off.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_follow_off.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_shake_layout_corner.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_shake_layout_corner.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_default_avatar.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_default_avatar.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt_selected.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt_selected.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_back_bt.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_douban_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_douban_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_shangtoutiao.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_shangtoutiao.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_checked.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_checked.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_news_list_ad_video_close_btn.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_news_list_ad_video_close_btn.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_dark.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_on.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq_off.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_preview_edit_corners_style.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_preview_edit_corners_style.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_google.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_google.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_off.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_news_list_ad_video_close_btn.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_news_list_ad_video_close_btn.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back_normal.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back_normal.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_red_blue.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red_blue.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check_off.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_xinwen_selector.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_xinwen_selector.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_red.9.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red.9.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_guide.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_guide.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_selected.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_selected.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_light.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_holo_light.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\design_fab_background.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\drawable\\design_fab_background.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt_normal.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt_normal.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_small_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_small_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_dark.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_dark.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_nav_bar_bg.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_nav_bar_bg.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_normal.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_normal.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ratingbar_indicator_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_ratingbar_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_item_background_holo_light.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_item_background_holo_light.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_tx_off.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_tx_off.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_coder.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_coder.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xinwen_daohang_color_selector.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xinwen_daohang_color_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_yejian.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_yejian.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_yaoqing.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_yaoqing.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\item_list_click_color.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\drawable\\item_list_click_color.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sidebar_normal.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sidebar_normal.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_renren_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_renren_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\bg_black_a10_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\bg_black_a10_selector.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_button_right.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_button_right.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_redian_selector.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_redian_selector.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\btnbg.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_grey.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_grey.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_share_transparent_corner.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_share_transparent_corner.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_preview_edit_corners_style.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_preview_edit_corners_style.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back_normal.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_back_bt_normal.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_spinner_textfield_background_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt_selected.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_back_bt_selected.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_close_button_style.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_close_button_style.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check_on.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check_on.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_right_pressed.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_right_pressed.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back_selected.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back_selected.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_edittext_corner.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_edittext_corner.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\shake_umeng_socialize_share_btn_style.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_share_btn_style.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_comment_item_bg_shape.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_comment_item_bg_shape.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wechat_gray.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wechat_gray.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_textcolor.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_textcolor.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_location_mark.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_location_mark.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_yejian.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_yejian.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_tab_indicator_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_tab_indicator_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wxcircle_gray.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wxcircle_gray.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_like.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_like.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_right_bt.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_right_bt.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shape_solid_grey.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shape_solid_grey.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_news_detailpage_loading_large_icon.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_news_detailpage_loading_large_icon.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_cab_background_internal_bg.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_cab_background_internal_bg.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_shrink.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_shrink.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_action_back_selected.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_action_back_selected.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_background_transition_holo_light.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_list_selector_background_transition_holo_light.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_at_normal.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_at_normal.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_comment_bg.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_comment_bg.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\progress_loading_image_02.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\progress_loading_image_02.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shareboard_item_background.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shareboard_item_background.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_shareboard_item_background.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_shareboard_item_background.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_yaoqing.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_yaoqing.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_pv.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_pv.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xinwen_daohang_color_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xinwen_daohang_color_selector.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\xuanfu_shangtoutiao.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\xuanfu_shangtoutiao.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_progressbar.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_progressbar.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_track_material.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biz_video_bar_bg.9.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_bar_bg.9.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_wxcircle.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_wxcircle.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_oauth_check.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_oauth_check.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\btnbg.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\btnbg.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_shiting_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_shiting_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_shezhi_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_shezhi_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_renren_off.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_renren_off.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qzone.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qzone.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_button_white.9.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_white.9.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\content_xinwen_selector.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\content_xinwen_selector.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_radio_material.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_btn_radio_material.xml"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_google.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_google.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_tx_on.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_tx_on.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_thumb_material.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable\\abc_seekbar_thumb_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_right_normal.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_right_normal.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_menu_default.png",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_menu_default.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt_normal.png",
@@ -644,11 +1296,11 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biz_video_pause.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_pulltorefresh_arrow.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_pulltorefresh_arrow.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_sina_on.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_sina_on.png"
+    },
+    {
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\radio_textcolor.xml",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\radio_textcolor.xml"
     }
 ]

@@ -42,6 +42,7 @@ public class XinWenURL {
 
   String redian = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";
  String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";//最新
+
     //  String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + stratPage + "-" + (stratPage + 20) + ".html";//头条
     String zaopin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=1&pageNo=0";//招聘
   //  String yule = "http://c.m.163.com/nc/article/list/T1348648517839/" + stratPage + "-" + (stratPage + 20) + ".html";//娱乐

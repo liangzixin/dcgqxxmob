@@ -79,7 +79,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfosearchedit);
         bindViews();
-        url=xinWenURL.getZuixin(0);//最新url
+        url=xinWenURL.getZuixin(101);//最新url
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
         queryDB();//查询数据
@@ -311,6 +311,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                     });
                     break;
                 case 3:
+             //       progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
 //                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
@@ -366,14 +367,14 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
             case 3:
                 toutiao_list = new ArrayList<>();
 
-                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdata(result, 0);//传入类型和数据
+                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdata(result,0);//传入类型和数据
                 toutiao_list.addAll(toutiao_object1.getT18908805728());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
                 System.out.println("标题:"+toutiao_list.get(0).getName());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: "+toutiao_object1.getTotalRecords()+" 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-            //    progressDialog.dismiss();
+             //   progressDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
                 searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
