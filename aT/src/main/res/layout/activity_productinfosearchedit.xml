@@ -1,9 +1,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:myApplication="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res/com.xiangmu.lzx"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
+    <com.xiangmu.lzx.Pointprogressbar
+        android:id="@+id/pointProgressBar"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_centerinparent="true"
+        custom:pointprogressbartype="withNumber"
+        custom:pointprogressbarbg="@mipmap/ic_launcher"
+        custom:firstcirclecolor="#FF888888"
+        custom:secondcirclecolor="#ffffff"
+        custom:linewidth="10dp"
+        custom:totalpoint="10"
+        custom:pointmargin="10dp"
+        custom:pointprogressbartextsize="18sp"
+        custom:pointprogressbartextcolor="#FF888888"
+        custom:pointprogressbarmax="100">
+
+    </com.xiangmu.lzx.Pointprogressbar>
     <!-- titleBar-->
     <RelativeLayout
         android:id="@+id/titlebar"
@@ -45,7 +62,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:imeOptions="actionSearch"
-        myApplication:defaultQueryHint="请输入关键字..."></android.support.v7.widget.SearchView>
+        custom:defaultQueryHint="请输入关键字..."></android.support.v7.widget.SearchView>
 
     <!-- 搜索历史
     <RelativeLayout

@@ -4,44 +4,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\default_image.png"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\check.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\check.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\to.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\to.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\camera.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\camera.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\check.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\check.png"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\icon.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher1.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher1.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\default_image.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\default_image.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher1.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher1.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\to.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\to.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
@@ -58,9 +30,5 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-xhdpi-v4\\icon.png"
-    },
-    {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\add.png",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\add.png"
     }
 ]

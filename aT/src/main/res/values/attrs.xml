@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PointProgressBar">
+        <attr name="firstCircleColor" format="color">
+            <attr name="secondCircleColor" format="color">
+                <attr name="lineWidth" format="dimension">
+                    <attr name="totalPoint" format="integer">
+                        <attr name="pointMargin" format="dimension">
+                            <attr name="pointProgressBarTextSize" format="dimension">
+                                <attr name="pointProgressBarTextColor" format="color">
+                                    <attr name="pointProgressBarMax" format="integer">
+                                        <attr name="pointProgressBarCurrent" format="integer">
+                                            <attr name="pointProgressBarBg" format="reference">
+                                                <attr name="pointProgressBarType">
+                                                    <enum name="none" value="0">
+                                                        <enum name="withNumber" value="1">
+                                                            <enum name="withImage" value="2">
+                                                            </enum></enum></enum></attr>
+                                            </attr></attr></attr></attr></attr></attr></attr></attr></attr></attr></declare-styleable>
+</resources>

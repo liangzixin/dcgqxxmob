@@ -79,11 +79,13 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfosearchedit);
         bindViews();
-        url=xinWenURL.getZuixin(101);//最新url
+        url=xinWenURL.getZuixin(501);//最新url
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
-        queryDB();//查询数据
-        getData(3,url);
+   //     queryDB();//查询数据
+      //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
+        initSearchNews(url);
+      // getData(3,url);
     }
 
     private void bindViews() {
@@ -243,7 +245,22 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     //初始化新闻搜索数据请求
      CustomProgressDialog progressDialog;
     private void initSearchNews(String url) {
-        progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
+    //   progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
+        mPointProgressBar=(PointProgressBar)findViewById(R.id.pointProgressBar);
+        new Thread(){
+            public void run() {
+                for(int i=0;i<=100;i++){
+                    mPointProgressBar.setCurrentPro(i);
+                    try {
+                        sleep(100);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }
+
+            ;
+        }.start();
         if (!CommonUtil.isNetWork(this)) {//无网络读缓存
             if (keywords != null) {
                 LogUtils.e("---", url);
@@ -253,10 +270,10 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 }
             }
         } else {
-            if (keywords != null) {
+        //    if (keywords != null) {
                 getData(2, url);
                 progressDialog.show();
-            }
+         //   }
         }
     }
 
@@ -374,7 +391,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: "+toutiao_object1.getTotalRecords()+" 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-             //   progressDialog.dismiss();
+             progressDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
                 searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);

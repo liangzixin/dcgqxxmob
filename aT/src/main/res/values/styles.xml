@@ -201,6 +201,7 @@
         <item name="android:windowEnterAnimation">@anim/in_lefttoright</item>
         <item name="android:windowExitAnimation">@anim/out_righttoleft</item>
     </style>
+
 </resources>
 
 
