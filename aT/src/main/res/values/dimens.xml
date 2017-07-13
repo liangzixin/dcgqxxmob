@@ -26,5 +26,6 @@
     <dimen name="media_controller_button_height">52dip</dimen>
     <dimen name="media_controller_button_width">71dip</dimen>
     <dimen name="titlebar_height">50dip</dimen>
+    <dimen name="stroke_width">3dp</dimen>
 
 </resources>

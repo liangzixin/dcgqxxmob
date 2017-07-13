@@ -26,6 +26,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
@@ -73,6 +74,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     private  List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
     private XinWenURL xinWenURL = new XinWenURL();
     private  String url=null;
+    private SimpleArcDialog mDialog;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +84,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         url=xinWenURL.getZuixin(501);//最新url
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
+        mDialog = new SimpleArcDialog(ProductinfoListEditActivity.this);
    //     queryDB();//查询数据
       //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
         initSearchNews(url);
@@ -245,22 +248,24 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     //初始化新闻搜索数据请求
      CustomProgressDialog progressDialog;
     private void initSearchNews(String url) {
-    //   progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
-        mPointProgressBar=(PointProgressBar)findViewById(R.id.pointProgressBar);
-        new Thread(){
-            public void run() {
-                for(int i=0;i<=100;i++){
-                    mPointProgressBar.setCurrentPro(i);
-                    try {
-                        sleep(100);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
-                    }
-                }
-            }
 
-            ;
-        }.start();
+      //  mDialog.show();
+    //   progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
+//        mPointProgressBar=(PointProgressBar)findViewById(R.id.pointProgressBar);
+//        new Thread(){
+//            public void run() {
+//                for(int i=0;i<=100;i++){
+//                    mPointProgressBar.setCurrentPro(i);
+//                    try {
+//                        sleep(100);
+//                    } catch (InterruptedException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            }
+//
+//            ;
+//        }.start();
         if (!CommonUtil.isNetWork(this)) {//无网络读缓存
             if (keywords != null) {
                 LogUtils.e("---", url);
@@ -272,7 +277,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         } else {
         //    if (keywords != null) {
                 getData(2, url);
-                progressDialog.show();
+             //   progressDialog.show();
+            mDialog.show();
          //   }
         }
     }
@@ -307,6 +313,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 
                         @Override
                         public void onFailure(HttpException e, String s) {
+                            mDialog.dismiss();
                             Toast.makeText(ProductinfoListEditActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -323,6 +330,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                         }
                         @Override
                         public void onFailure(HttpException e, String s) {
+                            mDialog.dismiss();
                             Toast.makeText(ProductinfoListEditActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -340,6 +348,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                         }
                         @Override
                         public void onFailure(HttpException e, String s) {
+                            mDialog.dismiss();
                             Toast.makeText(ProductinfoListEditActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
                         }
                     });
@@ -375,7 +384,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
         searchjiekuo.setText("搜索结果: "+toutiao_object.getTotalRecords()+" 条记录");
         //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-        progressDialog.dismiss();
+    //    progressDialog.dismiss();
+            mDialog.dismiss();
         layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
         searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
@@ -391,7 +401,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: "+toutiao_object1.getTotalRecords()+" 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-             progressDialog.dismiss();
+        //     progressDialog.dismiss();
+             mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
                 searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);

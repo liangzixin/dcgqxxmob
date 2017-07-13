@@ -128,12 +128,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\drawable-xxxhdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\night_biz_media_bg.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xxxhdpi\\night_biz_media_bg.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\icon_11.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xxxhdpi\\icon_11.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\night_biz_media_bg.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xxxhdpi\\night_biz_media_bg.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4\\abc_ic_menu_moreoverflow_mtrl_alpha.png",

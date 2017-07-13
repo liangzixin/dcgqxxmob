@@ -732,6 +732,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_titile_bar_comment.xml"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\loader_layout.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\loader_layout.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_picture.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_picture.xml"
     },

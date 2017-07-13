@@ -54,7 +54,12 @@ public class SearchEditResultAdapter extends BaseAdapter {
         } else {
             viewHoudle2 = (ViewHoudle2) view.getTag();
         }
-        String title = list.get(i).getName();//专家：<em>中国</em>需要股权分散的B类企业
+        String title ="";
+        if(list.get(i).getName().length()>12) {
+           title = list.get(i).getName().substring(0, 12);//专家：<em>中国</em>需要股权分散的B类企业
+        }else{
+            title = list.get(i).getName();
+        }
         String str = title.replace("<em>", "");
         String replace = str.replace("</em>", "");
         viewHoudle2.result_title.setText(replace);
