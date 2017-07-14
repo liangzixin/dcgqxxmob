@@ -55,8 +55,8 @@ public class SearchEditResultAdapter extends BaseAdapter {
             viewHoudle2 = (ViewHoudle2) view.getTag();
         }
         String title ="";
-        if(list.get(i).getName().length()>12) {
-           title = list.get(i).getName().substring(0, 12);//专家：<em>中国</em>需要股权分散的B类企业
+        if(list.get(i).getName().length()>14) {
+           title = list.get(i).getName().substring(0, 14);//专家：<em>中国</em>需要股权分散的B类企业
         }else{
             title = list.get(i).getName();
         }
