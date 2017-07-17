@@ -31,7 +31,10 @@ android {
     }
 }
 repositories {
-    maven { url "https://jitpack.io" }
+    maven {
+       url "https://jitpack.io"
+        //    url 'https://maven.google.com'
+    }
 }
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
@@ -46,6 +49,7 @@ dependencies {
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.sd6352051:android-image-picker:v1.0.1'
+    compile 'com.github.nisrulz:recyclerviewhelper:25.4.0'
     //compile 'com.android.support:support-v4:23.0.1'
 
 }
