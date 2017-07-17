@@ -1,10 +1,12 @@
 package com.xiangmu.lzx.CostomAdapter;
 
 import android.content.Context;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.xiangmu.lzx.R;
@@ -15,10 +17,17 @@ import java.util.List;
 /**
  * Created by Administrator on 2015/11/16.
  */
-public class SearchEditResultAdapter extends BaseAdapter {
+//public class SearchEditResultAdapter extends BaseAdapter {
+    public class SearchEditResultAdapter extends RecyclerView.Adapter<SearchEditResultAdapter.ViewHolder2> {
     private List<XinWen_productinfo.T18908805728Entity> list;
     private Context context;
+    private LayoutInflater mInflater;
 
+    private OnItmeClickListener mlistener;
+    public  interface OnItmeClickListener{
+        void onItemClicked(int position);
+
+    }
     public List<XinWen_productinfo.T18908805728Entity> getList() {
         return list;
     }
@@ -39,9 +48,25 @@ public class SearchEditResultAdapter extends BaseAdapter {
     }
 
     @Override
+    public ViewHolder2 onCreateViewHolder(ViewGroup parent, int viewType) {
+        return null;
+    }
+
+    @Override
+    public void onBindViewHolder(ViewHolder2 holder, int position) {
+
+    }
+
+    @Override
     public long getItemId(int i) {
         return i;
     }
+
+    @Override
+    public int getItemCount() {
+        return 0;
+    }
+
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHoudle2 viewHoudle2 = null;
@@ -66,7 +91,28 @@ public class SearchEditResultAdapter extends BaseAdapter {
 
         return view;
     }
-    class ViewHoudle2 {
-        TextView result_title;
+  //  class ViewHoudle2 {
+  public class ViewHolder2 extends RecyclerView.ViewHolder implements View.OnClickListener {
+        private TextView result_title;
+      private TextView result_replace;
+      private TextView result_delete;
+      private int position;
+      public ViewHolder2(View itemView, int position) {
+          super(itemView);
+          this.position = position;
+          result_title = (TextView) itemView.findViewById(R.id.result_title);
+          result_replace = (TextView) itemView.findViewById(R.id.result_replace);
+          result_delete= (TextView) itemView.findViewById(R.id.result_delete);
+          result_title.setOnClickListener(this);
+          result_replace.setOnClickListener(this);
+          result_delete.setOnClickListener(this);
+      }
+
+      @Override
+      public void onClick(View view) {
+
+          mlistener.onItemClicked(position);
+      }
+
     }
 }

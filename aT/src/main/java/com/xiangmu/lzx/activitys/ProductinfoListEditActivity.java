@@ -230,7 +230,17 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         lv_searchResult.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+                switch (view.getId()) {
+                    case R.id.result_title://暂不登陆,返回
+                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求标题", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.result_replace://暂不登陆,返回
+                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求修改", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.result_delete://暂不登陆,返回
+                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求删除", Toast.LENGTH_SHORT).show();
+                        break;
+                }
 //                String docid = searchResultAdapter.getList().get(i).docid;
 
 //                String docid = searchResultAdapter.getList().get(i).getId().toString();
@@ -240,7 +250,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
 //                layoutsearchResult.setVisibility(View.GONE);//隐藏搜索结果布局
 //                queryDB();
-                frament2activity(i,toutiao_list);
+             //   frament2activity(i,toutiao_list);
             }
         });
     }
