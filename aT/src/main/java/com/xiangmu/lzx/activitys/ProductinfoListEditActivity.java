@@ -23,6 +23,7 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.xiangmu.lzx.CostomAdapter.BaseEditResultAdapter;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
@@ -67,7 +68,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     private HttpHandler<String> handler;
     private String tuijian;//推荐热词
     private String keywords;//搜索关键字
-    private SearchEditResultAdapter searchEditResultAdapter;
+    private BaseEditResultAdapter searchEditResultAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
     private  List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
@@ -399,7 +400,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
 //       searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
-                searchEditResultAdapter = new SearchEditResultAdapter(this,toutiao_list);
+                searchEditResultAdapter = new BaseEditResultAdapter(toutiao_list,this);
         lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
         break;
             case 3:
