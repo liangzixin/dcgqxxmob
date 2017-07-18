@@ -398,7 +398,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
             mDialog.dismiss();
         layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-        searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
+//       searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
+                searchEditResultAdapter = new SearchEditResultAdapter(this,toutiao_list);
         lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
         break;
             case 3:
@@ -415,7 +416,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
              mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-                searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
+                searchEditResultAdapter = new SearchEditResultAdapter(this,toutiao_list);
                 lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
                 break;
     }

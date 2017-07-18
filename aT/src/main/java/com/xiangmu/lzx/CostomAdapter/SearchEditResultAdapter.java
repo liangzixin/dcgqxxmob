@@ -1,11 +1,13 @@
 package com.xiangmu.lzx.CostomAdapter;
 
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.support.v7.widget.RecyclerView;
 import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListAdapter;
 import android.widget.TextView;
 
 import com.xiangmu.lzx.R;
@@ -14,7 +16,7 @@ import java.util.List;
 
 import github.nisrulz.recyclerviewhelper.RVHAdapter;
 
-public abstract class SearchEditResultAdapter<T> extends RecyclerView.Adapter<SearchEditResultAdapter.BaseRecycleHolder> implements RVHAdapter {
+public  abstract class SearchEditResultAdapter<T> extends RecyclerView.Adapter<SearchEditResultAdapter.BaseRecycleHolder> implements RVHAdapter, ListAdapter {
 
     protected Context mContext;
     protected List<T> mList;
@@ -63,8 +65,43 @@ public abstract class SearchEditResultAdapter<T> extends RecyclerView.Adapter<Se
     }
 
     @Override
+    public void registerDataSetObserver(DataSetObserver observer) {
+
+    }
+
+    @Override
+    public void unregisterDataSetObserver(DataSetObserver observer) {
+
+    }
+
+    @Override
+    public int getCount() {
+        return 0;
+    }
+
+    @Override
+    public Object getItem(int position) {
+        return null;
+    }
+
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+        return null;
+    }
+
+    @Override
     public int getItemViewType(int position) {
         return getLayoutIndex(position, mList.get(position));
+    }
+
+    @Override
+    public int getViewTypeCount() {
+        return 0;
+    }
+
+    @Override
+    public boolean isEmpty() {
+        return false;
     }
 
     /**
@@ -74,9 +111,11 @@ public abstract class SearchEditResultAdapter<T> extends RecyclerView.Adapter<Se
         return 0;
     }
 
-    protected abstract void onBindData(BaseRecycleHolder viewHolder, int position, T item);
+    protected void onBindData(BaseRecycleHolder viewHolder, int position, T item) {
 
-  // @Override
+    }
+
+    // @Override
     public boolean addAll(List<T> list) {
         boolean result = mList.addAll(list);
         notifyDataSetChanged();
@@ -140,6 +179,26 @@ public abstract class SearchEditResultAdapter<T> extends RecyclerView.Adapter<Se
     public void remove(int index) {
         mList.remove(index);
         notifyDataSetChanged();
+    }
+
+    @Override
+    public boolean onItemMove(int fromPosition, int toPosition) {
+        return false;
+    }
+
+    @Override
+    public void onItemDismiss(int position, int direction) {
+
+    }
+
+    @Override
+    public boolean areAllItemsEnabled() {
+        return false;
+    }
+
+    @Override
+    public boolean isEnabled(int position) {
+        return false;
     }
 
     class BaseRecycleHolder extends RecyclerView.ViewHolder{
