@@ -18,7 +18,7 @@ public class ProductinfoEditAdapter extends BaseEditResultAdapter<XinWen_product
     @Override
     protected void bindData(BaseViewHolder holder, int position) {
         // 两个参数，具体的控件id ,  对应的参数数据
-        holder.getView(R.id.result_title,datas.get(position).getName);
+        holder.getView(R.id.result_title);
     }
 
     @Override

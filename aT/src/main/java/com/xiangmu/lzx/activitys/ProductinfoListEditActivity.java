@@ -23,9 +23,8 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.xiangmu.lzx.CostomAdapter.BaseEditResultAdapter;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
-import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
+import com.xiangmu.lzx.CostomAdapter.ProductinfoEditAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
@@ -50,6 +49,8 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
+//import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
+
 public class ProductinfoListEditActivity extends AppCompatActivity {
     // Content View Elements
     private ImageButton back;
@@ -68,7 +69,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     private HttpHandler<String> handler;
     private String tuijian;//推荐热词
     private String keywords;//搜索关键字
-    private BaseEditResultAdapter searchEditResultAdapter;
+    private ProductinfoEditAdapter searchEditResultAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
     private  List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
@@ -400,8 +401,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
 //       searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
-                searchEditResultAdapter = new BaseEditResultAdapter(toutiao_list,this);
-        lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
+                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list,this);
+     //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
         break;
             case 3:
                 toutiao_list = new ArrayList<>();
@@ -417,8 +418,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
              mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-                searchEditResultAdapter = new SearchEditResultAdapter(this,toutiao_list);
-                lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
+                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list,this);
+           //     lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
                 break;
     }
     }
