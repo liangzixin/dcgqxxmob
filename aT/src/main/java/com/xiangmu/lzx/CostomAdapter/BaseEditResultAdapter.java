@@ -1,25 +1,19 @@
 package com.xiangmu.lzx.CostomAdapter;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.support.v7.widget.RecyclerView;
-import android.util.SparseArray;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ListAdapter;
 import android.widget.TextView;
-
-import com.xiangmu.lzx.R;
 
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import github.nisrulz.recyclerviewhelper.RVHAdapter;
-
 public abstract class BaseEditResultAdapter<T> extends RecyclerView.Adapter<BaseEditResultAdapter.BaseViewHolder> {
 
+    private static OnItemClickListener onItemClickListener;
 
     protected List<T> datas;
     private Context context;
@@ -30,6 +24,13 @@ public abstract class BaseEditResultAdapter<T> extends RecyclerView.Adapter<Base
         this.datas = datas;
         this.context = context;
     }
+    public static interface OnItemClickListener<T> {
+        void onItemClick(View view, int bean);
+
+    }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
     @Override
     public BaseViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
 
@@ -38,9 +39,17 @@ public abstract class BaseEditResultAdapter<T> extends RecyclerView.Adapter<Base
     }
 
     @Override
-    public void onBindViewHolder(BaseEditResultAdapter.BaseViewHolder holder, final int position) {
-
+    public void onBindViewHolder( final BaseEditResultAdapter.BaseViewHolder holder, final int position) {
+      final T bean = datas.get(position);
         bindData(holder,position);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (onItemClickListener != null) {
+                    onItemClickListener.onItemClick(holder.itemView,position);
+                }
+            }
+        });
 
     }
 

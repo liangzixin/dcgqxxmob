@@ -137,13 +137,17 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="8dp"
-            android:text="新闻" />-->
+            android:text="新闻" />
 
         <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
             android:id="@+id/lv_searchResult"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="3dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>
+            android:layout_margin="3dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>-->
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/lv_searchResult"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
     </LinearLayout>
     <!-- 热词推荐
     <LinearLayout

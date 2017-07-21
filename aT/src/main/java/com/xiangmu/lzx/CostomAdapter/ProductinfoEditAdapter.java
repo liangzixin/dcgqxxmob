@@ -1,6 +1,7 @@
 package com.xiangmu.lzx.CostomAdapter;
 
 import android.content.Context;
+import android.widget.TextView;
 
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
@@ -18,7 +19,7 @@ public class ProductinfoEditAdapter extends BaseEditResultAdapter<XinWen_product
     @Override
     protected void bindData(BaseViewHolder holder, int position) {
         // 两个参数，具体的控件id ,  对应的参数数据
-        holder.getView(R.id.result_title);
+        ((TextView)  holder.getView(R.id.result_title)).setText(datas.get(position).getName());
     }
 
     @Override

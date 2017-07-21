@@ -7,22 +7,26 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.gms.appindexing.AppIndex;
+import com.google.android.gms.common.api.GoogleApiClient;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.xiangmu.lzx.CostomAdapter.BaseEditResultAdapter;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoEditAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
@@ -30,7 +34,6 @@ import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.lzx.utils.CommonUtil;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlitehelper;
@@ -56,12 +59,12 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     private ImageButton back;
     private TextView noHotWords;
     private TextView searchjiekuo;
-  //  private ImageView clear_history;
+    //  private ImageView clear_history;
     private LinearLayout layoutsearchResult;
-  //  private RelativeLayout layout_sousuoHis;
-    private PullToRefreshListView lv_searchResult;
+    //  private RelativeLayout layout_sousuoHis;
+    private RecyclerView lv_searchResult;
     private SearchView search_view;
-//    private GridView houtWord_gridview;
+    //    private GridView houtWord_gridview;
 //    private GridView gv_searchHistory;
     private MyGridViewAadapter gridViewAadapter;
     private List<String> list = new ArrayList<>();
@@ -72,25 +75,33 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     private ProductinfoEditAdapter searchEditResultAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
-    private  List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
-    private  List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
+    private List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
+    private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
     private XinWenURL xinWenURL = new XinWenURL();
-    private  String url=null;
+    private String url = null;
     private SimpleArcDialog mDialog;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+     */
+    private GoogleApiClient client;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfosearchedit);
         bindViews();
-        url=xinWenURL.getZuixin(501);//最新url
+        url = xinWenURL.getZuixin(501);//最新url
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
         mDialog = new SimpleArcDialog(ProductinfoListEditActivity.this);
-   //     queryDB();//查询数据
-      //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
+        //     queryDB();//查询数据
+        //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
         initSearchNews(url);
-      // getData(3,url);
+        // getData(3,url);
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void bindViews() {
@@ -98,9 +109,12 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         //clear_history = (ImageView) findViewById(R.id.clear_history);
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
-    //   layout_sousuoHis = (RelativeLayout) findViewById(R.id.layout_sousuoHis);//搜索历史布局
-        lv_searchResult = (PullToRefreshListView) findViewById(R.id.lv_searchResult);//搜索结果
-        searchjiekuo= (TextView) findViewById(R.id.lv_searchjiekuo);
+        //   layout_sousuoHis = (RelativeLayout) findViewById(R.id.layout_sousuoHis);//搜索历史布局
+        lv_searchResult = (RecyclerView) findViewById(R.id.lv_searchResult);//搜索结果
+        LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+
+        lv_searchResult.setLayoutManager(manager);
+        searchjiekuo = (TextView) findViewById(R.id.lv_searchjiekuo);
 //        houtWord_gridview = (GridView) findViewById(R.id.houtWord_gridview);//热词推荐
 //        gv_searchHistory = (GridView) findViewById(R.id.gv_searchHistory);//搜索历史
         search_view = (SearchView) findViewById(R.id.search_view);
@@ -110,19 +124,21 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //        app:defaultQueryHint="请输入关键字..."  设置输入框展开默认显示文字
         search_view.onActionViewExpanded();//表示在内容为空时不显示取消的x按钮，内容不为空时显示.
 
-   //     inintHotWordsData();//加载热词推荐数据
-        inintClick();
+        //     inintHotWordsData();//加载热词推荐数据
+     inintClick();
     }
+
     MyGridViewAadapter adapterHistory = null;
+
     //查询数据库
     private void queryDB() {
         String searchWord = null;
         List<String> historyList = new ArrayList<>();
         Cursor cursor = writableDatabase.query("searchHistory", null, null, null, null, null, null, null);
-        while (cursor.moveToNext()){
+        while (cursor.moveToNext()) {
             searchWord = cursor.getString(cursor.getColumnIndex("searchWord"));
             String url = cursor.getString(cursor.getColumnIndex("url"));
-            LogUtils.e("--->searchHistory",searchWord+"  "+url);
+            LogUtils.e("--->searchHistory", searchWord + "  " + url);
             historyList.add(searchWord);
         }
         cursor.close();
@@ -210,7 +226,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 //添加数据
                 ContentValues contentValues = new ContentValues();
 //                contentValues.put("url",ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);
-                contentValues.put("url",ServerURL.searchUrl3 + keywords);
+                contentValues.put("url", ServerURL.searchUrl3 + keywords);
                 contentValues.put("searchWord", keywords);
                 writableDatabase.insert("searchHistory", null, contentValues);
                 return false;
@@ -226,23 +242,23 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
             }
         });
 
-        lv_searchResult.setPullLoadEnabled(false);
-        lv_searchResult.setPullRefreshEnabled(false);
-        lv_searchResult.setScrollLoadEnabled(false);
-        lv_searchResult.getRefreshableView().setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                switch (view.getId()) {
-                    case R.id.result_title://暂不登陆,返回
-                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求标题", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.result_replace://暂不登陆,返回
-                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求修改", Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.result_delete://暂不登陆,返回
-                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求删除", Toast.LENGTH_SHORT).show();
-                        break;
-                }
+//        lv_searchResult.setPullLoadEnabled(false);
+//        lv_searchResult.setPullRefreshEnabled(false);
+//        lv_searchResult.setScrollLoadEnabled(false);
+//        lv_searchResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+//            @Override
+//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                switch (view.getId()) {
+//                    case R.id.result_title://暂不登陆,返回
+//                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求标题", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case R.id.result_replace://暂不登陆,返回
+//                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求修改", Toast.LENGTH_SHORT).show();
+//                        break;
+//                    case R.id.result_delete://暂不登陆,返回
+//                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求删除", Toast.LENGTH_SHORT).show();
+//                        break;
+//                }
 //                String docid = searchResultAdapter.getList().get(i).docid;
 
 //                String docid = searchResultAdapter.getList().get(i).getId().toString();
@@ -252,17 +268,18 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
 //                layoutsearchResult.setVisibility(View.GONE);//隐藏搜索结果布局
 //                queryDB();
-             //   frament2activity(i,toutiao_list);
-            }
-        });
+        //   frament2activity(i,toutiao_list);
+//            }
+//        });
     }
 
     //初始化新闻搜索数据请求
-     CustomProgressDialog progressDialog;
+    CustomProgressDialog progressDialog;
+
     private void initSearchNews(String url) {
 
-      //  mDialog.show();
-    //   progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
+        //  mDialog.show();
+        //   progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
 //        mPointProgressBar=(PointProgressBar)findViewById(R.id.pointProgressBar);
 //        new Thread(){
 //            public void run() {
@@ -287,11 +304,11 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 }
             }
         } else {
-        //    if (keywords != null) {
-                getData(2, url);
-             //   progressDialog.show();
+            //    if (keywords != null) {
+            getData(2, url);
+            //   progressDialog.show();
             mDialog.show();
-         //   }
+            //   }
         }
     }
 
@@ -340,6 +357,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                                 paserData(2, responseInfo.result);
                             }
                         }
+
                         @Override
                         public void onFailure(HttpException e, String s) {
                             mDialog.dismiss();
@@ -348,7 +366,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                     });
                     break;
                 case 3:
-             //       progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
+                    //       progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
 //                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
@@ -358,6 +376,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                                 paserData(3, responseInfo.result);
                             }
                         }
+
                         @Override
                         public void onFailure(HttpException e, String s) {
                             mDialog.dismiss();
@@ -388,40 +407,69 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 }
                 break;
             case 2:
-        toutiao_list = new ArrayList<>();
-        XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
-        toutiao_list.addAll(toutiao_object.getT18908805728());
+                toutiao_list = new ArrayList<>();
+                XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
+                toutiao_list.addAll(toutiao_object.getT18908805728());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-        System.out.println("标题:"+toutiao_list.get(0).getName());
+                System.out.println("标题:" + toutiao_list.get(0).getName());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
-        searchjiekuo.setText("搜索结果: "+toutiao_object.getTotalRecords()+" 条记录");
-        //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-    //    progressDialog.dismiss();
-            mDialog.dismiss();
-        layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
+                searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
+                //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
+                //    progressDialog.dismiss();
+                mDialog.dismiss();
+                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
 //       searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
-                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list,this);
-     //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
-        break;
+                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list, this);
+                //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
+
+                lv_searchResult.setAdapter(searchEditResultAdapter);
+                searchEditResultAdapter.setOnItemClickListener(new BaseEditResultAdapter.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(View v, int position) {
+                        switch (v.getId()) {
+                            case R.id.result_title://详细信息
+                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件信息" + position, Toast.LENGTH_SHORT).show();
+//                                finish();
+//                                overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+                                break;
+                            case R.id.result_replace://修改
+                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件修改" + position, Toast.LENGTH_SHORT).show();
+//                                startActivity(new Intent(this, BackpasswordActivity.class));
+//                                finish();
+//                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+                                break;
+                            case R.id.result_delete://删除
+                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件删除" + position, Toast.LENGTH_SHORT).show();
+//                                startActivity(new Intent(this, BackpasswordActivity.class));
+//                                finish();
+//                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+                                break;
+                        }
+
+                    }
+                });
+                break;
             case 3:
                 toutiao_list = new ArrayList<>();
 
-                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdata(result,0);//传入类型和数据
+                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdata(result, 0);//传入类型和数据
                 toutiao_list.addAll(toutiao_object1.getT18908805728());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                System.out.println("标题:"+toutiao_list.get(0).getName());
+                System.out.println("标题:" + toutiao_list.get(0).getName());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
-                searchjiekuo.setText("搜索结果: "+toutiao_object1.getTotalRecords()+" 条记录");
+                searchjiekuo.setText("搜索结果: " + toutiao_object1.getTotalRecords() + " 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-        //     progressDialog.dismiss();
-             mDialog.dismiss();
+                //     progressDialog.dismiss();
+                mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
+
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list,this);
-           //     lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
+                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list, this);
+                lv_searchResult.setAdapter(searchEditResultAdapter);
+
                 break;
-    }
+        }
     }
 
     @Override
@@ -430,7 +478,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         if (httpUtils != null) {
             handler.cancel();
         }
-        if (writableDatabase != null){
+        if (writableDatabase != null) {
             writableDatabase.close();
         }
     }
@@ -455,8 +503,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(toutiao_list.get(pos).getId());
-        int bujutype =0;
-        bujutype=toutiao_list.get(pos).getLanmu();
+        int bujutype = 0;
+        bujutype = toutiao_list.get(pos).getLanmu();
         xinWenXi.setBujuType(bujutype);
 //        xinWenXi.setLanMuType(daohangtype);
         xinWenXi.setLanMuType(1);
@@ -473,15 +521,15 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         xinWenXi.setGqxx(toutiao_list.get(pos).getGqxx());
         xinWenXi.setProductCategory(toutiao_list.get(pos).getProductcategory());
 //xinWenXi.setUploadFiles(toutiao_list.get(pos).getUploadFile());
-        for(int i=0;i<toutiao_list.get(pos).getUploadFile().size();i++){
-            UploadFile uploadFile=new UploadFile();
+        for (int i = 0; i < toutiao_list.get(pos).getUploadFile().size(); i++) {
+            UploadFile uploadFile = new UploadFile();
 
             uploadFile.setPath(toutiao_list.get(pos).getUploadFile().get(i).getPath());
             potolist.add(uploadFile);
         }
         xinWenXi.setUploadFileList(potolist);
-        for(int i=0;i<toutiao_list.get(pos).getProductArticler().size();i++){
-            ProductArticler productArticler=new ProductArticler();
+        for (int i = 0; i < toutiao_list.get(pos).getProductArticler().size(); i++) {
+            ProductArticler productArticler = new ProductArticler();
             productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
             productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
             productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
@@ -550,4 +598,44 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         }
 
     }
+
+//    @Override
+//    public void onStart() {
+//        super.onStart();
+//
+//        // ATTENTION: This was auto-generated to implement the App Indexing API.
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        client.connect();
+//        Action viewAction = Action.newAction(
+//                Action.TYPE_VIEW, // TODO: choose an action type.
+//                "ProductinfoListEdit Page", // TODO: Define a title for the content shown.
+//                // TODO: If you have web page content that matches this app activity's content,
+//                // make sure this auto-generated web page URL is correct.
+//                // Otherwise, set the URL to null.
+//                Uri.parse("http://host/path"),
+//                // TODO: Make sure this auto-generated app URL is correct.
+//                Uri.parse("android-app://com.xiangmu.lzx.activitys/http/host/path")
+//        );
+//        AppIndex.AppIndexApi.start(client, viewAction);
+//    }
+//
+//    @Override
+//    public void onStop() {
+//        super.onStop();
+//
+//        // ATTENTION: This was auto-generated to implement the App Indexing API.
+//        // See https://g.co/AppIndexing/AndroidStudio for more information.
+//        Action viewAction = Action.newAction(
+//                Action.TYPE_VIEW, // TODO: choose an action type.
+//                "ProductinfoListEdit Page", // TODO: Define a title for the content shown.
+//                // TODO: If you have web page content that matches this app activity's content,
+//                // make sure this auto-generated web page URL is correct.
+//                // Otherwise, set the URL to null.
+//                Uri.parse("http://host/path"),
+//                // TODO: Make sure this auto-generated app URL is correct.
+//                Uri.parse("android-app://com.xiangmu.lzx.activitys/http/host/path")
+//        );
+//        AppIndex.AppIndexApi.end(client, viewAction);
+//        client.disconnect();
+//    }
 }
