@@ -27,4 +27,5 @@ public class ProductinfoEditAdapter extends BaseEditResultAdapter<XinWen_product
         // 条目的布局id
         return R.layout.item_searcheditresult;
     }
+
 }
