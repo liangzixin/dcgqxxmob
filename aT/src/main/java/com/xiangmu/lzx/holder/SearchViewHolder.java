@@ -1,0 +1,51 @@
+package com.xiangmu.lzx.holder;
+
+import android.support.v7.widget.RecyclerView.ViewHolder;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.view.View.OnLongClickListener;
+import android.widget.TextView;
+
+import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.listener.MyItemClickListener;
+import com.xiangmu.lzx.listener.MyItemLongClickListener;
+
+public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLongClickListener{
+
+	//public ImageView iv;
+	public TextView tv;
+	private MyItemClickListener mListener;
+	private MyItemLongClickListener mLongClickListener;
+	
+	public SearchViewHolder(View arg0,MyItemClickListener listener,MyItemLongClickListener longClickListener) {
+		super(arg0);
+	//	iv = (ImageView)arg0.findViewById(R.id.item_iv);
+		tv = (TextView)arg0.findViewById(R.id.result_title);
+		this.mListener = listener;
+		this.mLongClickListener = longClickListener;
+		arg0.setOnClickListener(this);
+		arg0.setOnLongClickListener(this);
+	}
+
+	/**
+	 * 点击监听
+	 */
+	@Override
+	public void onClick(View v) {
+		if(mListener != null){
+			mListener.onItemClick(v,getPosition());
+		}
+	}
+
+	/**
+	 * 长按监听
+	 */
+	@Override
+	public boolean onLongClick(View arg0) {
+		if(mLongClickListener != null){
+			mLongClickListener.onItemLongClick(arg0, getPosition());
+		}
+		return true;
+	}
+
+}

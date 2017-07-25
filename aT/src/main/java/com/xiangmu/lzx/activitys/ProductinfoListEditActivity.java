@@ -26,14 +26,16 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.xiangmu.lzx.CostomAdapter.BaseEditResultAdapter;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
-import com.xiangmu.lzx.CostomAdapter.ProductinfoEditAdapter;
+import com.xiangmu.lzx.CostomAdapter.SearchProductinfoAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.decoration.MyDecoration;
+import com.xiangmu.lzx.listener.MyItemClickListener;
+import com.xiangmu.lzx.listener.MyItemLongClickListener;
 import com.xiangmu.lzx.utils.CommonUtil;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlitehelper;
@@ -54,7 +56,8 @@ import java.util.List;
 
 //import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
 
-public class ProductinfoListEditActivity extends AppCompatActivity {
+//public class ProductinfoListEditActivity extends AppCompatActivity {
+    public class ProductinfoListEditActivity extends AppCompatActivity implements MyItemClickListener,MyItemLongClickListener {
     // Content View Elements
     private ImageButton back;
     private TextView noHotWords;
@@ -72,7 +75,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
     private HttpHandler<String> handler;
     private String tuijian;//推荐热词
     private String keywords;//搜索关键字
-    private ProductinfoEditAdapter searchEditResultAdapter;
+    private SearchProductinfoAdapter searchProductinfoAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
     private List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
@@ -94,7 +97,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         url = xinWenURL.getZuixin(501);//最新url
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
-        mDialog = new SimpleArcDialog(ProductinfoListEditActivity.this);
+        mDialog = new SimpleArcDialog(this);
         //     queryDB();//查询数据
         //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
         initSearchNews(url);
@@ -169,7 +172,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ProductinfoListEditActivity.this.finish();
+           ProductinfoListEditActivity.this.finish();
+           //    finish();
             }
         });
 
@@ -420,35 +424,39 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
 //       searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
-                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list, this);
+                searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
                 //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
 
-                lv_searchResult.setAdapter(searchEditResultAdapter);
-                searchEditResultAdapter.setOnItemClickListener(new BaseEditResultAdapter.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(View v, int position) {
-                        switch (v.getId()) {
-                            case R.id.result_title://详细信息
-                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件信息" + position, Toast.LENGTH_SHORT).show();
-//                                finish();
-//                                overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
-                                break;
-                            case R.id.result_replace://修改
-                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件修改" + position, Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(this, BackpasswordActivity.class));
-//                                finish();
-//                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
-                                break;
-                            case R.id.result_delete://删除
-                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件删除" + position, Toast.LENGTH_SHORT).show();
-//                                startActivity(new Intent(this, BackpasswordActivity.class));
-//                                finish();
-//                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
-                                break;
-                        }
-
-                    }
-                });
+                lv_searchResult.setAdapter(searchProductinfoAdapter);
+                RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+                this.lv_searchResult.addItemDecoration(decoration);
+                this.searchProductinfoAdapter.setOnItemClickListener(this);
+                this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+//                searchEditResultAdapter.setOnItemClickListener(new BaseEditResultAdapter.OnItemClickListener() {
+//                    @Override
+//                    public void onItemClick(View v, int position) {
+//                        switch (v.getId()) {
+//                            case R.id.result_title://详细信息
+//                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件信息" + position, Toast.LENGTH_SHORT).show();
+////                                finish();
+////                                overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+//                                break;
+//                            case R.id.result_replace://修改
+//                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件修改" + position, Toast.LENGTH_SHORT).show();
+////                                startActivity(new Intent(this, BackpasswordActivity.class));
+////                                finish();
+////                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+//                                break;
+//                            case R.id.result_delete://删除
+//                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件删除" + position, Toast.LENGTH_SHORT).show();
+////                                startActivity(new Intent(this, BackpasswordActivity.class));
+////                                finish();
+////                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+//                                break;
+//                        }
+//
+//                    }
+//                });
                 break;
             case 3:
                 toutiao_list = new ArrayList<>();
@@ -465,9 +473,12 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list, this);
-                lv_searchResult.setAdapter(searchEditResultAdapter);
+//                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list, this);
+//                lv_searchResult.setAdapter(searchEditResultAdapter);
+                searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
+                //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
 
+                lv_searchResult.setAdapter(searchProductinfoAdapter);
                 break;
         }
     }
@@ -560,7 +571,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
                 xinWenXi.setUrl("bbbbb");//详细页面url
                 //跳转到详细页
-                Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
+          //      Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
+                Intent intentzhibo = new Intent(this, WebProductinfoViewActivity.class);
                 intentzhibo.putExtra("xinwendata", xinWenXi);
                 //   intentzhibo.putExtra("potolist", potolist);
                 //   intentzhibo.putExtra("xinwendata", new Gson().toJson(xinWenXi));
@@ -578,7 +590,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
 //                intentzhibo.putExtras(bundle);
 //                intentzhibo.putExtra("bundle", bundle);
                 startActivity(intentzhibo);
-                ProductinfoListEditActivity.this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
+             //   ProductinfoListEditActivity.this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
+                this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
                 break;
             case XinWen_adapter.type_duotu:
 //                LogUtils.e("xinwenadapter", "type_duotu==" + bujutype);
@@ -590,7 +603,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
                 //0096|81994    http://c.3g.163.com/photo/api/set/0096/82126.json
                 xinWenXi.setUrl("aaaa");//详细页面url
                 //跳转到详细页
-                Intent intentduotu = new Intent(ProductinfoListEditActivity.this, XinWenXiActivity.class);
+            //    Intent intentduotu = new Intent(ProductinfoListEditActivity.this, XinWenXiActivity.class);
+                Intent intentduotu = new Intent(this, XinWenXiActivity.class);
                 intentduotu.putExtra("xinwendata", xinWenXi);
 
                 startActivity(intentduotu);
@@ -598,44 +612,36 @@ public class ProductinfoListEditActivity extends AppCompatActivity {
         }
 
     }
+    /**
+     * Item click
+     */
+    @Override
+    public void onItemClick(View view, int postion) {
+        XinWen_productinfo.T18908805728Entity bean =toutiao_list.get(postion);
+        switch (view.getId()) {
+            case R.id.result_title://暂不登陆,返回
+                Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
+              //  overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+                break;
+            case R.id.result_replace://找回密码
+                Toast.makeText(this, "LongClick2 "+bean.getName(), Toast.LENGTH_SHORT).show();
+                finish();
+             //   overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+                break;
+            case R.id.result_delete://注册
+                Toast.makeText(this, "LongClick3 "+bean.getName(), Toast.LENGTH_SHORT).show();
+                finish();
+              //  overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+                break;
+        }
+    }
 
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//
-//        // ATTENTION: This was auto-generated to implement the App Indexing API.
-//        // See https://g.co/AppIndexing/AndroidStudio for more information.
-//        client.connect();
-//        Action viewAction = Action.newAction(
-//                Action.TYPE_VIEW, // TODO: choose an action type.
-//                "ProductinfoListEdit Page", // TODO: Define a title for the content shown.
-//                // TODO: If you have web page content that matches this app activity's content,
-//                // make sure this auto-generated web page URL is correct.
-//                // Otherwise, set the URL to null.
-//                Uri.parse("http://host/path"),
-//                // TODO: Make sure this auto-generated app URL is correct.
-//                Uri.parse("android-app://com.xiangmu.lzx.activitys/http/host/path")
-//        );
-//        AppIndex.AppIndexApi.start(client, viewAction);
-//    }
-//
-//    @Override
-//    public void onStop() {
-//        super.onStop();
-//
-//        // ATTENTION: This was auto-generated to implement the App Indexing API.
-//        // See https://g.co/AppIndexing/AndroidStudio for more information.
-//        Action viewAction = Action.newAction(
-//                Action.TYPE_VIEW, // TODO: choose an action type.
-//                "ProductinfoListEdit Page", // TODO: Define a title for the content shown.
-//                // TODO: If you have web page content that matches this app activity's content,
-//                // make sure this auto-generated web page URL is correct.
-//                // Otherwise, set the URL to null.
-//                Uri.parse("http://host/path"),
-//                // TODO: Make sure this auto-generated app URL is correct.
-//                Uri.parse("android-app://com.xiangmu.lzx.activitys/http/host/path")
-//        );
-//        AppIndex.AppIndexApi.end(client, viewAction);
-//        client.disconnect();
-//    }
+    @Override
+    public void onItemLongClick(View view, int postion) {
+        XinWen_productinfo.T18908805728Entity bean = toutiao_list.get(postion);
+        if(bean != null){
+            Toast.makeText(this, "LongClick "+bean.getName(), Toast.LENGTH_SHORT).show();
+        }
+    }
+
 }
