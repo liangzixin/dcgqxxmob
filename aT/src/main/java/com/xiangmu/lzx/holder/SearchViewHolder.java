@@ -14,6 +14,8 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 
 	//public ImageView iv;
 	public TextView tv;
+	public TextView bt_replace;
+	public TextView bt_del;
 	private MyItemClickListener mListener;
 	private MyItemLongClickListener mLongClickListener;
 	
@@ -21,6 +23,8 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 		super(arg0);
 	//	iv = (ImageView)arg0.findViewById(R.id.item_iv);
 		tv = (TextView)arg0.findViewById(R.id.result_title);
+		bt_replace = (TextView)arg0.findViewById(R.id.result_replace);
+		bt_del = (TextView)arg0.findViewById(R.id.result_delete);
 		this.mListener = listener;
 		this.mLongClickListener = longClickListener;
 		arg0.setOnClickListener(this);

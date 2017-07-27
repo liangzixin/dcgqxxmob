@@ -618,6 +618,8 @@ import java.util.List;
     @Override
     public void onItemClick(View view, int postion) {
         XinWen_productinfo.T18908805728Entity bean =toutiao_list.get(postion);
+        Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
+        System.out.println("单击哪个的号:"+view.getId());
         switch (view.getId()) {
             case R.id.result_title://暂不登陆,返回
                 Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
