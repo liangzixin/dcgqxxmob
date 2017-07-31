@@ -32,9 +32,16 @@ public class SearchProductinfoAdapter extends Adapter<SearchViewHolder> {
 	@Override
 	public void onBindViewHolder(SearchViewHolder holder, int position) {
 		XinWen_productinfo.T18908805728Entity bean = mData.get(position);
-		holder.tv.setText(bean.getName());
-		holder.bt_replace.setText("修改1");
-		holder.bt_del.setText("删除1");
+		String title =bean.getName();//专家：<em>中国</em>需要股权分散的B类企业
+		String str = title.replace("<em>", "");
+		String replace = str.replace("</em>", "");
+		if(replace.length()<=14) {
+			holder.tv.setText(bean.getName());
+		}else {
+			holder.tv.setText(bean.getName().substring(0,14));
+		}
+	//	holder.bt_replace.setText("修改");
+	//	holder.bt_del.setText("删除");
 	}
 
 	@Override

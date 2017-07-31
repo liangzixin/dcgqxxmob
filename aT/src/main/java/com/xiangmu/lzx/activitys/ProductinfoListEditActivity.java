@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
@@ -117,6 +118,7 @@ import java.util.List;
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         lv_searchResult.setLayoutManager(manager);
+        lv_searchResult.setItemAnimator(new DefaultItemAnimator());
         searchjiekuo = (TextView) findViewById(R.id.lv_searchjiekuo);
 //        houtWord_gridview = (GridView) findViewById(R.id.houtWord_gridview);//热词推荐
 //        gv_searchHistory = (GridView) findViewById(R.id.gv_searchHistory);//搜索历史
@@ -616,22 +618,22 @@ import java.util.List;
      * Item click
      */
     @Override
-    public void onItemClick(View view, int postion) {
+    public void onItemClick(View view, int postion,int l) {
         XinWen_productinfo.T18908805728Entity bean =toutiao_list.get(postion);
-        Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
-        System.out.println("单击哪个的号:"+view.getId());
-        switch (view.getId()) {
-            case R.id.result_title://暂不登陆,返回
-                Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
+      //  Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
+     //   System.out.println("单击哪个的号:"+view.getId());
+        switch (l) {
+            case 1://暂不登陆,返回
+                Toast.makeText(this, "LongClick1 ", Toast.LENGTH_SHORT).show();
               //  overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
                 break;
-            case R.id.result_replace://找回密码
-                Toast.makeText(this, "LongClick2 "+bean.getName(), Toast.LENGTH_SHORT).show();
+            case 2://找回密码
+                Toast.makeText(this, "LongClick2 ", Toast.LENGTH_SHORT).show();
                 finish();
              //   overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
                 break;
-            case R.id.result_delete://注册
-                Toast.makeText(this, "LongClick3 "+bean.getName(), Toast.LENGTH_SHORT).show();
+            case 3://注册
+                Toast.makeText(this, "LongClick3 ", Toast.LENGTH_SHORT).show();
                 finish();
               //  overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
                 break;

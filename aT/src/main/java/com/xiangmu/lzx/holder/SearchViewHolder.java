@@ -27,8 +27,11 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 		bt_del = (TextView)arg0.findViewById(R.id.result_delete);
 		this.mListener = listener;
 		this.mLongClickListener = longClickListener;
-		arg0.setOnClickListener(this);
-		arg0.setOnLongClickListener(this);
+//		arg0.setOnClickListener(this);
+//		arg0.setOnLongClickListener(this);
+		tv.setOnClickListener(this);
+		bt_replace.setOnClickListener(this);
+		bt_del.setOnClickListener(this);
 	}
 
 	/**
@@ -36,8 +39,28 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 	 */
 	@Override
 	public void onClick(View v) {
-		if(mListener != null){
-			mListener.onItemClick(v,getPosition());
+		int l=0;
+		System.out.println("LongClick1 标题"+v.getId());
+		if(mListener != null) {
+			switch (v.getId()) {
+				case R.id.result_title://暂不登陆,返回
+					//	Toast.makeText(this, "LongClick1 标题", Toast.LENGTH_SHORT).show();
+				//	System.out.println("LongClick1 标题");
+					l = 1;
+					break;
+
+				case R.id.result_replace://暂不登陆,返回
+					//	Toast.makeText(this, "LongClick1 标题", Toast.LENGTH_SHORT).show();
+				//	System.out.println("LongClick1 修改");
+					l = 2;
+					break;
+				case R.id.result_delete://暂不登陆,返回
+					//	Toast.makeText(this, "LongClick1 标题", Toast.LENGTH_SHORT).show();
+				//	System.out.println("LongClick1 删除");
+					l = 3;
+					break;
+			}
+			mListener.onItemClick(v, getPosition(), l);
 		}
 	}
 
