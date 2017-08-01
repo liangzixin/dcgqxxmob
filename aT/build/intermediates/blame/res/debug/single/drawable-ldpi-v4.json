@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\night_biz_video_list_item_play_icon_small.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\night_biz_video_list_item_play_icon_small.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\biz_news_list_ad_video_close_btn.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\biz_news_list_ad_video_close_btn.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\night_biz_video_list_item_play_icon_small.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\night_biz_video_list_item_play_icon_small.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\img_sample3.jpg",
@@ -40,12 +40,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\shape_round.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\biz_video_list_item_tie.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\biz_video_list_item_tie.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\biz_news_tie_share.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\biz_news_tie_share.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\biz_video_list_item_tie.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-ldpi\\biz_video_list_item_tie.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-ldpi-v4\\biz_video_list_play_icon_big.png",

@@ -19,6 +19,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.bigkoo.alertview.AlertView;
+import com.bigkoo.alertview.OnDismissListener;
+import com.bigkoo.alertview.OnItemClickListener;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.lidroid.xutils.HttpUtils;
@@ -58,7 +61,7 @@ import java.util.List;
 //import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
 
 //public class ProductinfoListEditActivity extends AppCompatActivity {
-    public class ProductinfoListEditActivity extends AppCompatActivity implements MyItemClickListener,MyItemLongClickListener {
+    public class ProductinfoListEditActivity extends AppCompatActivity implements MyItemClickListener,MyItemLongClickListener,OnDismissListener,OnItemClickListener {
     // Content View Elements
     private ImageButton back;
     private TextView noHotWords;
@@ -81,9 +84,11 @@ import java.util.List;
     private SQLiteDatabase writableDatabase;
     private List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
     private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
+    private XinWen_productinfo.T18908805728Entity bean;
     private XinWenURL xinWenURL = new XinWenURL();
     private String url = null;
     private SimpleArcDialog mDialog;
+    private AlertView mAlertView;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -94,6 +99,7 @@ import java.util.List;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfosearchedit);
+
         bindViews();
         url = xinWenURL.getZuixin(501);//最新url
         mySqlitehelper = new MySqlitehelper(this);
@@ -618,34 +624,138 @@ import java.util.List;
      * Item click
      */
     @Override
-    public void onItemClick(View view, int postion,int l) {
-        XinWen_productinfo.T18908805728Entity bean =toutiao_list.get(postion);
-      //  Toast.makeText(this, "LongClick1 "+bean.getName(), Toast.LENGTH_SHORT).show();
-     //   System.out.println("单击哪个的号:"+view.getId());
-        switch (l) {
-            case 1://暂不登陆,返回
-                Toast.makeText(this, "LongClick1 ", Toast.LENGTH_SHORT).show();
-              //  overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+    public void onItemClick(View view, int postion) {
+        bean=new  XinWen_productinfo.T18908805728Entity();
+        bean = toutiao_list.get(postion);
+
+        switch (view.getId()) {
+            case R.id.result_title://详细信息
+             //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
+                //	System.out.println("LongClick1 标题");
+            //    l = 1;
+                frament2activity(postion,toutiao_list);
                 break;
-            case 2://找回密码
-                Toast.makeText(this, "LongClick2 ", Toast.LENGTH_SHORT).show();
-                finish();
-             //   overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+
+            case R.id.result_replace://修改
+                	Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
+                //	System.out.println("LongClick1 修改");
+              //  l = 2;
                 break;
-            case 3://注册
-                Toast.makeText(this, "LongClick3 ", Toast.LENGTH_SHORT).show();
-                finish();
-              //  overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
+            case R.id.result_delete://删除
+                mAlertView = new AlertView("删除",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                mAlertView.show();
                 break;
         }
+
     }
 
     @Override
     public void onItemLongClick(View view, int postion) {
-        XinWen_productinfo.T18908805728Entity bean = toutiao_list.get(postion);
+        bean=new  XinWen_productinfo.T18908805728Entity();
+        bean = toutiao_list.get(postion);
         if(bean != null){
             Toast.makeText(this, "LongClick "+bean.getName(), Toast.LENGTH_SHORT).show();
         }
     }
+    @Override
+    public void onItemClick(Object o,int position) {
+      //  closeKeyboard();
+        //判断是否是拓展窗口View，而且点击的是非取消按钮
+//        if(o == mAlertViewExt && position != AlertView.CANCELPOSITION){
+//            String name = etName.getText().toString();
+//            if(name.isEmpty()){
+//                Toast.makeText(this, "啥都没填呢", Toast.LENGTH_SHORT).show();
+//            }
+//            else{
+//                Toast.makeText(this, "hello,"+name, Toast.LENGTH_SHORT).show();
+//            }
+//
+//            return;
+//        }
+        if(position==0) {
+           // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
+            String clickdel=xinWenURL.getClickdel()+bean.getId();
+           DelData(clickdel);
 
+        }else{
+         //   Toast.makeText(this, "点击了第取消按键", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+    @Override
+    public void onDismiss(Object o) {
+    //    closeKeyboard();
+//        Toast.makeText(this, "消失了", Toast.LENGTH_SHORT).show();
+    }
+    private void DelData(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (responseInfo.result.equals("true")) {
+                        Toast.makeText(ProductinfoListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+//                        login0=true;
+//                        SharedPreferencesUtil.saveData(ProductinfoListEditActivity.this, url, responseInfo.result);
+//                        String result = responseInfo.result;
+//                        String userName="";
+//                        String profile_image_url ="";
+//                        String jinbi ="";
+////                                customerid="";
+//                        String shezhi="";
+//                        List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+//                        try {
+//                            JSONObject myobject = new JSONObject(result);
+//                            userName= myobject.getString("username");
+//                            profile_image_url = myobject.getString("imageurl");
+//                            jinbi = myobject.getString("jinbi");
+//                            customerid= Integer.parseInt(myobject.getString("id"));
+//                            shezhi=myobject.getString("shezhi");
+//
+//                            if (!myobject.isNull("shezhi")){
+//                                JSONArray shezhiArray=myobject.getJSONArray("shezhi");
+//                                for (int j=0;j<shezhiArray.length();j++){
+//                                    JSONObject shezhi0=shezhiArray.getJSONObject(j);
+//                                    JSONObject jsonObject = null;
+//                                    try {
+//                                        jsonObject =shezhiArray.getJSONObject(j);
+//                                    } catch (JSONException e) {
+//                                        e.printStackTrace();
+//                                    }
+//                                    if(jsonObject != null){
+//                                        Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
+//                                        listshezhi.add(tempAccount);
+//                                    }
+//                                }
+//
+//
+//                            }
+//
+//                        } catch (JSONException e) {
+//                            e.printStackTrace();
+//                        }
+//                        String shezhi0= gson.toJson(listshezhi);
+//                        app.setSearchDB0(true);
+////                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
+//                        //      getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+//                        PreferenceManager.getDefaultSharedPreferences(getApplication());
+//                        //   getApplication().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
+//                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+                        //  getApplication().getSharedPreferences("useInfo",Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+//                    finish();
+
+                    }
+
+                }
+
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(ProductinfoListEditActivity.this, "删除失败", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
 }

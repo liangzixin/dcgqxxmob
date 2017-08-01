@@ -36,12 +36,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\shezhi.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\titlebar_background.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\titlebar_background.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\location.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\location.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\titlebar_background.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\titlebar_background.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\head_pic_selector_bg.png",
@@ -68,20 +68,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\ic_arrow_left.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\biz_newspage_action_bar_bg.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\biz_newspage_action_bar_bg.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\readnews_chievement_empty.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\readnews_chievement_empty.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\task_empty.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\task_empty.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\biz_newspage_action_bar_bg.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\biz_newspage_action_bar_bg.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\read_icon.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\read_icon.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\task_empty.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\task_empty.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\check.png",
@@ -92,16 +88,20 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\reply_write.png"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\read_icon.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\read_icon.png"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\main_message.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\main_message.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\setting_gentie.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\setting_gentie.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\shangtoutiao_clear_alpha.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\shangtoutiao_clear_alpha.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\setting_gentie.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\setting_gentie.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\stt_huigu1.png",
@@ -136,20 +136,20 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\biz_tie_comment_pk_pos_flag_icon.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\share_more1.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\share_more1.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\login_edit_button_selected.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\login_edit_button_selected.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\content_radiogroup_backgroup.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\content_radiogroup_backgroup.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\share_more1.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\share_more1.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\back_icon.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\back_icon.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\content_radiogroup_backgroup.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\content_radiogroup_backgroup.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\xuanfu_search_press.png",
@@ -196,12 +196,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\xuanfu_firend_press.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\xinwen.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\xinwen.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_arrow_right.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\ic_arrow_right.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\xinwen.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\xinwen.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\main_wallet.png",
@@ -252,12 +252,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\shangtoutiao_bg.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\goldmall.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\goldmall.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\shiting.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\shiting.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\goldmall.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\goldmall.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\xuanfu_shangtoutiao.png",
@@ -304,12 +304,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\share_qq.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\set_open.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\set_open.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\ic_launcher.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\set_open.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\set_open.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\kuozhan_caidan.png",
@@ -320,20 +320,20 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\xinwen_toutiao_item.jpg"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\back.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\back.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\taskbackground.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\taskbackground.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\setting_text_edit_delete.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\setting_text_edit_delete.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\back.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\back.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\head_photo_selector_bg.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\head_photo_selector_bg.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\setting_text_edit_delete.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\setting_text_edit_delete.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\shezhi2.png",
@@ -348,12 +348,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\redian2.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\weather_c.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\weather_c.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\sst_huigu_bg.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\sst_huigu_bg.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\weather_c.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-mdpi\\weather_c.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-mdpi-v4\\biz_tie_user_avater_default_common.png",

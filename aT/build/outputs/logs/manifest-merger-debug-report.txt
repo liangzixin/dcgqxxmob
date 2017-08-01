@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-241:12
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-245:12
 	package
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:3:5-30
 		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
@@ -88,7 +88,7 @@ ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:5-89
 	android:name
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:22-86
 application
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:5-239:19
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:5-243:19
 MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:17:5-36:19
 MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\AndroidManifest.xml:12:5-15:51
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
@@ -120,6 +120,17 @@ MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmo
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.github.nisrulz:recyclerviewhelper:25.4.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.nisrulz\recyclerviewhelper\25.4.0\AndroidManifest.xml:27:5-28:19
+MERGED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:7:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:19:5-20
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:20:5-24:19
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:22:5-20
 	android:label
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:33:9-41
@@ -497,6 +508,13 @@ ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:236:9-238:37
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:238:13-34
 	android:name
 		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:237:13-41
+meta-data#com.google.android.gms.version
+ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:240:9-242:69
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:242:13-66
+	android:name
+		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:241:13-58
 uses-sdk
 INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [dcgqxxmob:barCodeTest:unspecified] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\AndroidManifest.xml:7:5-9:41
@@ -535,6 +553,18 @@ MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\in
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:recyclerview-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.github.nisrulz:recyclerviewhelper:25.4.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.nisrulz\recyclerviewhelper\25.4.0\AndroidManifest.xml:23:5-25:41
+MERGED from [com.bigkoo:alertview:1.0.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.bigkoo\alertview\1.0.0\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:animated-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\23.3.0\AndroidManifest.xml:5:5-44
+MERGED from [com.android.support:support-vector-drawable:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\23.3.0\AndroidManifest.xml:5:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
+MERGED from [com.google.android.gms:play-services-appindexing:8.1.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:8.1.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:support-v4:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\23.3.0\AndroidManifest.xml:20:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:23.3.0] D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\23.3.0\AndroidManifest.xml:23:9-75

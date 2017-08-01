@@ -36,12 +36,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_welcome.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_read_history.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_read_history.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_web_view.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_web_view.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_read_history.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\menu\\menu_read_history.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\menu\\menu_register.xml",

@@ -15,6 +15,16 @@ public class XinWenURL {
     String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
 
+    public String getClickdel() {
+        return clickdel;
+    }
+
+    public void setClickdel(String clickdel) {
+        this.clickdel = clickdel;
+    }
+
+    String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
+
     String savearticler=HttpUtil.BASE_URL+"product!savearticlermob.action?productid=";
     String addcustmer=HttpUtil.BASE_URL+"login!addcustmermob.action?openid=";
     public String getAddcustmer() {

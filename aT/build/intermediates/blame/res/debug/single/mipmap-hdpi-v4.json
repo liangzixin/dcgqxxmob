@@ -24,12 +24,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\toutiao_lunbo_icon2.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\share.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\share.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\check.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\mipmap-hdpi-v4\\check.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\share.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\share.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\ic_launcher.png",
@@ -52,12 +52,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\kuozhan_caidan.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\shiting2.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\shiting2.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\xsearch_msg_pull_arrow_down.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\xsearch_msg_pull_arrow_down.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\shiting2.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-hdpi\\shiting2.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi-v4\\shiting.png",
