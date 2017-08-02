@@ -89,6 +89,8 @@ import java.util.List;
     private String url = null;
     private SimpleArcDialog mDialog;
     private AlertView mAlertView;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
+    private Boolean isPause=false;
+    private int id=0;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -440,31 +442,7 @@ import java.util.List;
                 this.lv_searchResult.addItemDecoration(decoration);
                 this.searchProductinfoAdapter.setOnItemClickListener(this);
                 this.searchProductinfoAdapter.setOnItemLongClickListener(this);
-//                searchEditResultAdapter.setOnItemClickListener(new BaseEditResultAdapter.OnItemClickListener() {
-//                    @Override
-//                    public void onItemClick(View v, int position) {
-//                        switch (v.getId()) {
-//                            case R.id.result_title://详细信息
-//                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件信息" + position, Toast.LENGTH_SHORT).show();
-////                                finish();
-////                                overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
-//                                break;
-//                            case R.id.result_replace://修改
-//                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件修改" + position, Toast.LENGTH_SHORT).show();
-////                                startActivity(new Intent(this, BackpasswordActivity.class));
-////                                finish();
-////                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
-//                                break;
-//                            case R.id.result_delete://删除
-//                                Toast.makeText(ProductinfoListEditActivity.this, "单击事件删除" + position, Toast.LENGTH_SHORT).show();
-////                                startActivity(new Intent(this, BackpasswordActivity.class));
-////                                finish();
-////                                overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
-//                                break;
-//                        }
-//
-//                    }
-//                });
+
                 break;
             case 3:
                 toutiao_list = new ArrayList<>();
@@ -480,11 +458,8 @@ import java.util.List;
                 mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
-//                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-//                searchEditResultAdapter = new ProductinfoEditAdapter(toutiao_list, this);
-//                lv_searchResult.setAdapter(searchEditResultAdapter);
                 searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
-                //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
+
 
                 lv_searchResult.setAdapter(searchProductinfoAdapter);
                 break;
@@ -501,7 +476,33 @@ import java.util.List;
             writableDatabase.close();
         }
     }
+    @Override
+    protected void onPause() {
+        super.onPause();
+     //   Toast.makeText(ProductinfoListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
+        isPause = true; //记录页面已经被暂停
+    }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+     //   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+        if (isPause){ //判断是否暂停
+            isPause = false;
+          // list = 新数据;
+     //     adapter.setList(list); //需要adapter重新设置list的数据
+            searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
+            //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
+
+            lv_searchResult.setAdapter(searchProductinfoAdapter);
+            searchProductinfoAdapter.notifyDataSetChanged();//刷新
+            RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+            this.lv_searchResult.addItemDecoration(decoration);
+            this.searchProductinfoAdapter.setOnItemClickListener(this);
+            this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+       }
+
+    }
     //跳转详细页面方法
     @SuppressLint("NewApi")
     private void frament2activity(int position, List<XinWen_productinfo.T18908805728Entity> toutiao_list) {
@@ -627,7 +628,7 @@ import java.util.List;
     public void onItemClick(View view, int postion) {
         bean=new  XinWen_productinfo.T18908805728Entity();
         bean = toutiao_list.get(postion);
-
+        id=bean.getId();
         switch (view.getId()) {
             case R.id.result_title://详细信息
              //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
@@ -644,6 +645,7 @@ import java.util.List;
             case R.id.result_delete://删除
                 mAlertView = new AlertView("删除",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView.show();
+
                 break;
         }
 
@@ -660,30 +662,20 @@ import java.util.List;
     @Override
     public void onItemClick(Object o,int position) {
       //  closeKeyboard();
-        //判断是否是拓展窗口View，而且点击的是非取消按钮
-//        if(o == mAlertViewExt && position != AlertView.CANCELPOSITION){
-//            String name = etName.getText().toString();
-//            if(name.isEmpty()){
-//                Toast.makeText(this, "啥都没填呢", Toast.LENGTH_SHORT).show();
-//            }
-//            else{
-//                Toast.makeText(this, "hello,"+name, Toast.LENGTH_SHORT).show();
-//            }
-//
-//            return;
-//        }
+
         if(position==0) {
            // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
             String clickdel=xinWenURL.getClickdel()+bean.getId();
            DelData(clickdel);
-
+          //  searchProductinfoAdapter.notifyDataSetChanged();
         }else{
-         //   Toast.makeText(this, "点击了第取消按键", Toast.LENGTH_SHORT).show();
+          Toast.makeText(this, "此功能未完善", Toast.LENGTH_SHORT).show();
 
         }
     }
     @Override
     public void onDismiss(Object o) {
+      //
     //    closeKeyboard();
 //        Toast.makeText(this, "消失了", Toast.LENGTH_SHORT).show();
     }
@@ -696,55 +688,19 @@ import java.util.List;
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result.equals("true")) {
                         Toast.makeText(ProductinfoListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
-//                        login0=true;
-//                        SharedPreferencesUtil.saveData(ProductinfoListEditActivity.this, url, responseInfo.result);
-//                        String result = responseInfo.result;
-//                        String userName="";
-//                        String profile_image_url ="";
-//                        String jinbi ="";
-////                                customerid="";
-//                        String shezhi="";
-//                        List<Shezhi> listshezhi=new ArrayList<Shezhi>();
-//                        try {
-//                            JSONObject myobject = new JSONObject(result);
-//                            userName= myobject.getString("username");
-//                            profile_image_url = myobject.getString("imageurl");
-//                            jinbi = myobject.getString("jinbi");
-//                            customerid= Integer.parseInt(myobject.getString("id"));
-//                            shezhi=myobject.getString("shezhi");
-//
-//                            if (!myobject.isNull("shezhi")){
-//                                JSONArray shezhiArray=myobject.getJSONArray("shezhi");
-//                                for (int j=0;j<shezhiArray.length();j++){
-//                                    JSONObject shezhi0=shezhiArray.getJSONObject(j);
-//                                    JSONObject jsonObject = null;
-//                                    try {
-//                                        jsonObject =shezhiArray.getJSONObject(j);
-//                                    } catch (JSONException e) {
-//                                        e.printStackTrace();
-//                                    }
-//                                    if(jsonObject != null){
-//                                        Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
-//                                        listshezhi.add(tempAccount);
-//                                    }
-//                                }
-//
-//
-//                            }
-//
-//                        } catch (JSONException e) {
-//                            e.printStackTrace();
-//                        }
-//                        String shezhi0= gson.toJson(listshezhi);
-//                        app.setSearchDB0(true);
-////                                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-//                        //      getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
-//                        PreferenceManager.getDefaultSharedPreferences(getApplication());
-//                        //   getApplication().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
-//                        getSharedPreferences("useInfo", Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
-                        //  getApplication().getSharedPreferences("useInfo",Context.MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
-//                    finish();
+                        for (int i = 0; i < toutiao_list.size(); i++) {
 
+                            if (toutiao_list.get(i).getId() ==id) {
+
+                                toutiao_list.remove(i);
+
+                                i--;
+
+                            }
+                        }
+
+                        isPause = true;
+                        onResume();
                     }
 
                 }
