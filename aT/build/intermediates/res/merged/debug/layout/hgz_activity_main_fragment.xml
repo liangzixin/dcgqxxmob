@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xiaohuang.demo.wangyinew.Setting_MainFragment">
+    tools:context="com.xiangmu.lzx.conent_frament.SheZhiFrament">
 
     <LinearLayout
         android:layout_width="match_parent"

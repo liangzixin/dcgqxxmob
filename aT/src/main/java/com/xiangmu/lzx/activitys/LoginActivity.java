@@ -27,7 +27,6 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.umeng.socialize.SocializeException;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
@@ -276,6 +275,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     String jinbi ="";
                     String customerid="";
                     String shezhi="";
+                    String openid="";
                     List<Shezhi> listshezhi=new ArrayList<Shezhi>();
                     try {
                         JSONObject myobject = new JSONObject(result);
@@ -284,6 +284,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                        jinbi = myobject.getString("jinbi");
                         customerid= myobject.getString("id");
                         shezhi=myobject.getString("shezhi");
+                        openid=myobject.getString("openid");
 
                         if (!myobject.isNull("shezhi")){
                             JSONArray shezhiArray=myobject.getJSONArray("shezhi");
@@ -316,7 +317,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
          //        PreferenceManager.getDefaultSharedPreferences(app.getCtx());
                  //   app.getCtx().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
              //   app.getCtx().getSharedPreferences("useInfo", app.getCtx().MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
-                    getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).commit();
+                    getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).putString("openid",openid).commit();
 //                    finish();
 //                    SharedPreferences sharedPreferences = getSharedPreferences("useInfo", Context.MODE_PRIVATE);
 //                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器

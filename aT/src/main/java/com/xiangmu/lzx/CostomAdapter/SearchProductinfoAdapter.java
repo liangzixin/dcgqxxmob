@@ -9,6 +9,7 @@ import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.holder.SearchViewHolder;
 import com.xiangmu.lzx.listener.MyItemClickListener;
 import com.xiangmu.lzx.listener.MyItemLongClickListener;
+import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
 
 import java.util.List;
@@ -18,6 +19,7 @@ public class SearchProductinfoAdapter extends Adapter<SearchViewHolder> {
 	private List<XinWen_productinfo.T18908805728Entity> mData;
 	private MyItemClickListener mItemClickListener;
 	private MyItemLongClickListener mItemLongClickListener;
+	private DateTime dateTime;
 	
 	public SearchProductinfoAdapter(List<XinWen_productinfo.T18908805728Entity> data){
 		this.mData = data;
@@ -32,16 +34,17 @@ public class SearchProductinfoAdapter extends Adapter<SearchViewHolder> {
 	@Override
 	public void onBindViewHolder(SearchViewHolder holder, int position) {
 		XinWen_productinfo.T18908805728Entity bean = mData.get(position);
+		dateTime=new DateTime();
 		String title =bean.getName();//专家：<em>中国</em>需要股权分散的B类企业
 		String str = title.replace("<em>", "");
 		String replace = str.replace("</em>", "");
-		if(replace.length()<=14) {
+		if(replace.length()<=12) {
 			holder.tv.setText(bean.getName());
 		}else {
-			holder.tv.setText(bean.getName().substring(0,14));
+			holder.tv.setText(bean.getName().substring(0,12));
 		}
-	//	holder.bt_replace.setText("修改");
-	//	holder.bt_del.setText("删除");
+		holder.bt_date.setText(dateTime.getmd(bean.getCreateTime()));
+
 	}
 
 	@Override

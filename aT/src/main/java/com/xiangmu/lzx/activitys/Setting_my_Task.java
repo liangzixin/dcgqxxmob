@@ -13,20 +13,33 @@ import android.widget.Toast;
 
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.MyDate;
+import com.xiangmu.lzx.Setting_Utils.SearchDB;
 
 
 public class Setting_my_Task extends AppCompatActivity implements View.OnClickListener{
     private ImageView backsetting;
     private ImageView duihuan;
     private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client;
+    private String openid="";
+    private Boolean manager=false;
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hgz_activity_my__task);
+        openid= SearchDB.createDb(getApplication(), "openid");
+        if(openid.equals("3841D13FC6C1BE0BA0D5CBDE23E5FD23") ){
+            manager=true;
+
+        }else{
+            manager=false;
+
+        }
         initView();
         String date = MyDate.getDate();
+
+        Toast.makeText(this, openid, Toast.LENGTH_SHORT).show();
         if (!date.equals("24:00:00")) {
             Drawable drawable = getResources().getDrawable(R.color.ve_place);
 //            client_glod.setBackground(drawable);
@@ -54,6 +67,11 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         read_text.setOnClickListener(this);
         read_news.setOnClickListener(this);
         open_client.setOnClickListener(this);
+        if(manager){
+            open_client.setVisibility(View.VISIBLE);
+        }else{
+            open_client.setVisibility(View.GONE);
+        }
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)

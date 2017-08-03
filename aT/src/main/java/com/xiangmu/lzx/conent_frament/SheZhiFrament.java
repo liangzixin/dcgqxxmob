@@ -53,12 +53,12 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     //所有监听的控件
     static ImageView picture;
     static TextView userName,jinbiCount,readnumbe2,readercount2,readerCount;
-
+    static   LinearLayout mymanager;
     TextView setting, userlevel, read, messageText, goldMallText, myTaskText, myWalletText, mymailboxText,mymanagerText;
     ImageView readNumber, collectNumber, gentieNumber;
     static ImageView goldNumber;
     RelativeLayout reader, collect, Thread, gold;
-    LinearLayout myMessage, goldMall, myTask, myWallet, mymailbox,mymanager;
+    LinearLayout myMessage, goldMall, myTask, myWallet, mymailbox;
     String emailAddress;
     View view;
     //判断登录的标记
@@ -66,6 +66,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     private static String user_name;
     private String pic_path;
     private  static  String  jinbi;
+    private  static  String  openid;
     private String  shezhi;
     private  static int read0=0;
     private static  int conllect0=0;
@@ -74,6 +75,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //    private  String result="";
     private static Gson gson = new Gson();
     List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+    private static  Boolean manager=false;
 
     @Nullable
          @Override
@@ -104,7 +106,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.hgz_activity_main_fragment, null, false);
         initView(view);
        shezhi= SearchDB.createDb(getActivity(), "shezhi");
-
+       openid= SearchDB.createDb(getActivity(), "openid");
         user_name = SearchDB.createDb(getActivity(), "userName");
         Log.e("读取网络图片错误","--------shezhi"+shezhi);
         jinbi = SearchDB.createDb(getActivity(), "jinbi");
@@ -164,12 +166,19 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //                    Toast.makeText(DataActivity.this, "获取图片失败", 1).show();
                 }
             }
-
+           if(openid.equals("3841D13FC6C1BE0BA0D5CBDE23E5FD23") ){
+                manager=true;
+               mymanager.setVisibility(View.VISIBLE);
+            }else{
+               manager=false;
+               mymanager.setVisibility(View.GONE);
+           }
 
         } else {
             jinbiCount.setVisibility(View.VISIBLE);
             goldNumber.setVisibility(View.VISIBLE);
             readnumbe2.setVisibility(View.VISIBLE);
+            mymanager.setVisibility(View.GONE);
         }
         return view;
     }
@@ -251,6 +260,11 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             readnumbe2.setText(read0+"");
             readercount2.setText(conllect0+"");
            readerCount.setText(gentie0+"");
+            if(manager) {
+                mymanager.setVisibility(View.VISIBLE);
+            }else{
+                mymanager.setVisibility(View.GONE);
+            }
         }else{
 //            goldNumber.setVisibility(View.GONE);
 //            readnumbe2.setVisibility(View.GONE);
@@ -309,9 +323,9 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 startActivity(intent5);
                 getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 getActivity().finish();
-                FragmentTransaction manager = getFragmentManager().beginTransaction();
-                manager.addToBackStack(null);
-                manager.commit();
+                FragmentTransaction manager0 = getFragmentManager().beginTransaction();
+                manager0.addToBackStack(null);
+                manager0.commit();
                 break;
             // TODO: 2015/11/18 阅读量
             case R.id.read_number:
@@ -431,8 +445,10 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
                     readercount2.setVisibility(View.GONE);
                     readerCount.setVisibility(View.GONE);
+                    mymanager.setVisibility(View.GONE);
                     picture.setImageResource(R.mipmap.biz_tie_user_avater_default_common);
                     flag=false;
+
                     break;
                 case 2:
 
@@ -550,7 +566,13 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //                    Toast.makeText(DataActivity.this, "获取图片失败", 1).show();
                }
            }
-
+           if(openid.equals("3841D13FC6C1BE0BA0D5CBDE23E5FD23") ){
+               manager=true;
+               mymanager.setVisibility(View.VISIBLE);
+           }else{
+               manager=false;
+               mymanager.setVisibility(View.GONE);
+           }
 
        } else {
            jinbiCount.setVisibility(View.VISIBLE);
