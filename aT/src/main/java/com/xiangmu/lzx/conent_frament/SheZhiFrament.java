@@ -53,8 +53,8 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
     //所有监听的控件
     static ImageView picture;
     static TextView userName,jinbiCount,readnumbe2,readercount2,readerCount;
-    static   LinearLayout mymanager;
-    TextView setting, userlevel, read, messageText, goldMallText, myTaskText, myWalletText, mymailboxText,mymanagerText;
+
+    TextView setting, userlevel, read, messageText, goldMallText, myTaskText, myWalletText, mymailboxText;
     ImageView readNumber, collectNumber, gentieNumber;
     static ImageView goldNumber;
     RelativeLayout reader, collect, Thread, gold;
@@ -75,7 +75,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //    private  String result="";
     private static Gson gson = new Gson();
     List<Shezhi> listshezhi=new ArrayList<Shezhi>();
-    private static  Boolean manager=false;
+
 
     @Nullable
          @Override
@@ -166,19 +166,13 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //                    Toast.makeText(DataActivity.this, "获取图片失败", 1).show();
                 }
             }
-           if(openid.equals("3841D13FC6C1BE0BA0D5CBDE23E5FD23") ){
-                manager=true;
-               mymanager.setVisibility(View.VISIBLE);
-            }else{
-               manager=false;
-               mymanager.setVisibility(View.GONE);
-           }
+
 
         } else {
             jinbiCount.setVisibility(View.VISIBLE);
             goldNumber.setVisibility(View.VISIBLE);
             readnumbe2.setVisibility(View.VISIBLE);
-            mymanager.setVisibility(View.GONE);
+
         }
         return view;
     }
@@ -198,13 +192,13 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         Thread = (RelativeLayout) view.findViewById(R.id.Thread);
         gold = (RelativeLayout) view.findViewById(R.id.gold);
         mymailbox = (LinearLayout) view.findViewById(R.id.mymailbox);
-        mymanager = (LinearLayout) view.findViewById(R.id.mymanager);
+
         myWallet = (LinearLayout) view.findViewById(R.id.myWallet);
         myTask = (LinearLayout) view.findViewById(R.id.myTask);
         goldMall = (LinearLayout) view.findViewById(R.id.goldMall);
         myMessage = (LinearLayout) view.findViewById(R.id.myMessage);
         mymailboxText = (TextView) view.findViewById(R.id.mymailboxText);
-        mymanagerText = (TextView) view.findViewById(R.id.mymanagerText);
+
         myWalletText = (TextView) view.findViewById(R.id.myWalletText);
         myTaskText = (TextView) view.findViewById(R.id.myTaskText);
         goldMallText = (TextView) view.findViewById(R.id.goldMallText);
@@ -220,7 +214,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
     private void initOnClick() {
         mymailboxText.setOnClickListener(this);
-        mymanagerText.setOnClickListener(this);
+
         myWalletText.setOnClickListener(this);
         myTaskText.setOnClickListener(this);
         jinbiCount.setOnClickListener(this);
@@ -240,7 +234,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         Thread.setOnClickListener(this);
         gold.setOnClickListener(this);
         mymailbox.setOnClickListener(this);
-        mymanager.setOnClickListener(this);
+
         myWallet.setOnClickListener(this);
         myTask.setOnClickListener(this);
         goldMall.setOnClickListener(this);
@@ -260,11 +254,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             readnumbe2.setText(read0+"");
             readercount2.setText(conllect0+"");
            readerCount.setText(gentie0+"");
-            if(manager) {
-                mymanager.setVisibility(View.VISIBLE);
-            }else{
-                mymanager.setVisibility(View.GONE);
-            }
+
         }else{
 //            goldNumber.setVisibility(View.GONE);
 //            readnumbe2.setVisibility(View.GONE);
@@ -403,7 +393,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {
                     Intent intent9 = new Intent(getActivity(), LoginActivity.class);
-                    startActivity(intent9);
+                    startActivityForResult(intent9, 1000);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
                 break;
@@ -419,11 +409,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 break;
 
             // TODO: 2015/11/18 我的管理
-            case R.id.mymanagerText:
-                Intent intent8 = new Intent(getActivity(), Setting_my_Task.class);
-                startActivity(intent8);
-                getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                break;
+
             case R.id.mymailboxText:
 
                 break;
@@ -445,7 +431,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
                     readercount2.setVisibility(View.GONE);
                     readerCount.setVisibility(View.GONE);
-                    mymanager.setVisibility(View.GONE);
+
                     picture.setImageResource(R.mipmap.biz_tie_user_avater_default_common);
                     flag=false;
 
@@ -566,13 +552,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 //                    Toast.makeText(DataActivity.this, "获取图片失败", 1).show();
                }
            }
-           if(openid.equals("3841D13FC6C1BE0BA0D5CBDE23E5FD23") ){
-               manager=true;
-               mymanager.setVisibility(View.VISIBLE);
-           }else{
-               manager=false;
-               mymanager.setVisibility(View.GONE);
-           }
+
 
        } else {
            jinbiCount.setVisibility(View.VISIBLE);

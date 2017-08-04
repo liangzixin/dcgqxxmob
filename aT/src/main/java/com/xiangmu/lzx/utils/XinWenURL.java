@@ -13,6 +13,16 @@ public class XinWenURL {
 
 
     String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
+
+    public String getGetDateCount() {
+        return getDateCount;
+    }
+
+    public void setGetDateCount(String getDateCount) {
+        this.getDateCount = getDateCount;
+    }
+
+    String getDateCount=HttpUtil.BASE_URL+"count!getDateCount.action";
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
 
     public String getClickdel() {

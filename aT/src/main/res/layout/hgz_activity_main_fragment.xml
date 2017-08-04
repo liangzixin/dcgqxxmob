@@ -554,62 +554,7 @@
             </RelativeLayout>
         </LinearLayout>
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="@color/ho_place" />
-        <LinearLayout
-            android:id="@+id/mymanager"
-            android:layout_width="match_parent"
-            android:layout_height="45dp"
-            android:orientation="horizontal">
 
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center_vertical">
-
-                <ImageView
-                    android:id="@+id/manager_icon"
-                    android:layout_width="18dp"
-                    android:layout_height="18dp"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="20dp"
-                    android:src="@mipmap/main_mail" />
-
-                <TextView
-                    android:id="@+id/text_manager"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="10dp"
-                    android:layout_toRightOf="@+id/manager_icon"
-                    android:text="我的管理" />
-
-                <TextView
-                    android:id="@+id/mymanagerText"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_toLeftOf="@+id/return_btn6"
-                    android:layout_toRightOf="@+id/text_manager"
-                    android:gravity="end"
-                    android:text="我的管理" />
-
-                <ImageView
-                    android:id="@+id/return_btn6"
-                    android:layout_width="10dp"
-                    android:layout_height="10dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:layout_gravity="center_vertical"
-                    android:layout_marginRight="5dp"
-                    android:src="@mipmap/rigth_setting" />
-            </RelativeLayout>
-        </LinearLayout>
         <TextView
             android:layout_width="match_parent"
             android:layout_height="1dp"

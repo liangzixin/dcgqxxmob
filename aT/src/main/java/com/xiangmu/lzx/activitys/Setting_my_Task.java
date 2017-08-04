@@ -9,7 +9,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
-import android.widget.Toast;
 
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.MyDate;
@@ -19,7 +18,7 @@ import com.xiangmu.lzx.Setting_Utils.SearchDB;
 public class Setting_my_Task extends AppCompatActivity implements View.OnClickListener{
     private ImageView backsetting;
     private ImageView duihuan;
-    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client;
+    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx;
     private String openid="";
     private Boolean manager=false;
 
@@ -39,14 +38,14 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         initView();
         String date = MyDate.getDate();
 
-        Toast.makeText(this, openid, Toast.LENGTH_SHORT).show();
         if (!date.equals("24:00:00")) {
             Drawable drawable = getResources().getDrawable(R.color.ve_place);
 //            client_glod.setBackground(drawable);
 //            jinbijifen.setBackground(drawable);
 //            tv_client.setBackground(drawable);
             open_client.setBackground(drawable);
-            Toast.makeText(this, "登录客户端成功金币+5", Toast.LENGTH_SHORT).show();
+            open_fwxx.setBackground(drawable);
+          //  Toast.makeText(this, "登录客户端成功金币+5", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -54,6 +53,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         backsetting = (ImageView) findViewById(R.id.backsetting);
         duihuan = (ImageView) findViewById(R.id.duihuan);
         open_client = (RelativeLayout) findViewById(R.id.open_client);
+        open_fwxx= (RelativeLayout) findViewById(R.id.open_fwxx);
         fabiao = (RelativeLayout) findViewById(R.id.fabiao);
         share = (RelativeLayout) findViewById(R.id.share);
         xinshang = (RelativeLayout) findViewById(R.id.xinshang);
@@ -66,11 +66,13 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         xinshang.setOnClickListener(this);
         read_text.setOnClickListener(this);
         read_news.setOnClickListener(this);
-        open_client.setOnClickListener(this);
+        open_fwxx.setOnClickListener(this);
         if(manager){
             open_client.setVisibility(View.VISIBLE);
+            open_fwxx.setVisibility(View.VISIBLE);
         }else{
             open_client.setVisibility(View.GONE);
+            open_fwxx.setVisibility(View.GONE);
         }
     }
 
@@ -117,6 +119,11 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
             case R.id.read_news:
                 Intent intent7 = new Intent(this, Task_ShuoMing.class);
                 startActivity(intent7);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                break;
+            case R.id.open_fwxx:
+                Intent intent21 = new Intent(this, WebCountViewActivity.class);
+                startActivity(intent21);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
         }
