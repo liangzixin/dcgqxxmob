@@ -64,9 +64,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WebCountViewActivity extends AppCompatActivity {
-    private XinWenXiData xinWenXiData;
+   // private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
-    private XutilsGetData xutilsGetData = new XutilsGetData();
+  //  private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
@@ -96,9 +96,9 @@ public class WebCountViewActivity extends AppCompatActivity {
         edit = (EditText) findViewById(R.id.edit);
         app =(MyApplication)getApplication();
         Intent intent = getIntent();
-        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
-        potolist=xinWenXiData.getUploadFileList();
-        liuyuanlist=xinWenXiData.getProductArticlerList();
+//        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
+//        potolist=xinWenXiData.getUploadFileList();
+//        liuyuanlist=xinWenXiData.getProductArticlerList();
 
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
 
@@ -130,10 +130,10 @@ public class WebCountViewActivity extends AppCompatActivity {
     }
     private void initview() {
 
-     final String url ="http://www.dcgqxx.com/product/product_select.html?id="+xinWenXiData.getId();
-        System.out.println(url);
+   //  final String url ="http://www.dcgqxx.com/product/product_select.html?id="+xinWenXiData.getId();
+     //   System.out.println(url);
      //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-        final String xinwentitle =xinWenXiData.getTitle();
+      //  final String xinwentitle =xinWenXiData.getTitle();
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         TextView duotu_gentie = null;
@@ -142,7 +142,7 @@ public class WebCountViewActivity extends AppCompatActivity {
         caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
 //        webView = null;
 //        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
-        duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
+     //   duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
         fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
@@ -169,38 +169,38 @@ public class WebCountViewActivity extends AppCompatActivity {
             }
         });
         mShareListener = new CustomShareListener(this);
-        fenxiang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-//                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
-//                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
-                new ShareAction(WebCountViewActivity.this)
-                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
-                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
-                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
-                        .setShareboardclickCallback(new ShareBoardlistener() {
-                            @Override
-                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
-//                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
-//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
-//                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
-//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
-//
-//                                } else {
-                                    UMWeb web = new UMWeb(url);
-                                    web.setTitle(xinwentitle);
-                                    web.setDescription(xinwentitle);
-                                    web.setThumb(new UMImage(WebCountViewActivity.this, R.drawable.ic_launcher));
-                                    new ShareAction(WebCountViewActivity.this).withMedia(web)
-                                            .setPlatform(share_media)
-                                            .setCallback(mShareListener)
-                                            .share();
-//                                }
-                            }
-                        })
-                       .open();
-            }
-        });
+//        fenxiang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+////                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+////                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
+//                new ShareAction(WebCountViewActivity.this)
+//                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
+//                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
+//                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
+//                        .setShareboardclickCallback(new ShareBoardlistener() {
+//                            @Override
+//                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
+////                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
+////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
+////                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
+////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
+////
+////                                } else {
+//                                    UMWeb web = new UMWeb(url);
+//                                    web.setTitle(xinwentitle);
+//                                    web.setDescription(xinwentitle);
+//                                    web.setThumb(new UMImage(WebCountViewActivity.this, R.drawable.ic_launcher));
+//                                    new ShareAction(WebCountViewActivity.this).withMedia(web)
+//                                            .setPlatform(share_media)
+//                                            .setCallback(mShareListener)
+//                                            .share();
+////                                }
+//                            }
+//                        })
+//                       .open();
+//            }
+//        });
     }
 
 
@@ -273,7 +273,7 @@ public class WebCountViewActivity extends AppCompatActivity {
             }else{
 
                 ProductArticler productArticler=new ProductArticler();
-                productArticler.setArtreview_rootid(xinWenXiData.getId());
+//                productArticler.setArtreview_rootid(xinWenXiData.getId());
                 productArticler.setArtreview_content(msg);
                 DateTime dateTime =new DateTime();
                 productArticler.setArtreview_time(dateTime.getDateFormatter());
@@ -318,7 +318,7 @@ public class WebCountViewActivity extends AppCompatActivity {
     public void UpArticlerFunction() {
         int customerid0=0;
         int shezhitype0=2;
-        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
+//        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
      //   UpData(url);
     }
     /**
@@ -367,8 +367,8 @@ public class WebCountViewActivity extends AppCompatActivity {
                     if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid= Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
                 //    customerid0=Integer.parseInt(customerid);
 //                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
-                    String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
-                    UpDataCollent(clickcount);
+//                    String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
+//                    UpDataCollent(clickcount);
                 }else{
 
                     Toast.makeText(WebCountViewActivity.this, "还没有登录...", Toast.LENGTH_SHORT).show();
@@ -431,9 +431,9 @@ public class WebCountViewActivity extends AppCompatActivity {
 
 
     public void initDate() {
-        String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
-        String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-        int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
+//        String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
+//        String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
+//        int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
         imageurl = new UMImage(this,"http://www.dcgqxx.com/css/images/dc2.png");
@@ -446,7 +446,7 @@ public class WebCountViewActivity extends AppCompatActivity {
 //        UpData(clickcount0);
         //   UpCount(clickcount0);
      //   System.out.println("clickcount="+clickcount );
-        Log.e("aa", "******xinwentitle*******" + xinwentitle);
+//        Log.e("aa", "******xinwentitle*******" + xinwentitle);
         //拿到当前日期
         String date = DateTime.getDate();
         MySqlOpenHelper mySqlOpenHelper = new MySqlOpenHelper(this);
