@@ -1,6 +1,5 @@
 package com.xiangmu.lzx.activitys;
 
-import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -17,7 +16,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.PopupWindow;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -33,27 +31,18 @@ import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
-import com.umeng.socialize.media.UMWeb;
-import com.umeng.socialize.shareboard.SnsPlatform;
-import com.umeng.socialize.utils.ShareBoardlistener;
-import com.xiangmu.lzx.Bean.DateCount;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
-import com.xiangmu.lzx.Modle.Article;
-import com.xiangmu.lzx.Modle.Customer;
-import com.xiangmu.lzx.Modle.Liuyuan;
-import com.xiangmu.lzx.Modle.Photo;
+import com.xiangmu.lzx.Modle.DateCount;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
-import com.xiangmu.lzx.holder.ProductArticleHolder;
+import com.xiangmu.lzx.holder.DateCountHolder;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
 import com.xiangmu.lzx.utils.XinWenURL;
-import com.xiangmu.lzx.utils.XinWenXiData;
-import com.xiangmu.lzx.utils.XutilsGetData;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -87,6 +76,7 @@ public class WebCountViewActivity extends AppCompatActivity {
       private MyApplication app;
     private UMShareListener mShareListener;
     private ShareAction mShareAction;
+    private  DateCount dateCount0;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,28 +85,32 @@ public class WebCountViewActivity extends AppCompatActivity {
         button = (ImageButton) findViewById(R.id.subbtn);
         edit = (EditText) findViewById(R.id.edit);
         app =(MyApplication)getApplication();
-        Intent intent = getIntent();
-//        xinWenXiData = (XinWenXiData) intent.getSerializableExtra("xinwendata");
-//        potolist=xinWenXiData.getUploadFileList();
-//        liuyuanlist=xinWenXiData.getProductArticlerList();
-
+        dateCount0=new  DateCount ();
+        ImageButton imageback = null;
+        imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-
         initDate();
+//
+//        try {
+//            initDate();
+//            Thread.currentThread().sleep(2000);//阻断2秒
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     //    initview();
         assert recyclerView != null;
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-
         adapter = new MultiTypeAdapter(this);
-
-//        adapter.registerViewType(Photo.class, PhotoHolder.class);
-//        adapter.registerViewType(Article.class, ArticleHolder.class);
-//        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-
+        adapter.registerViewType(DateCount.class, DateCountHolder.class);
         recyclerView.setAdapter(adapter);
+        imageback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
-//        adapter.add(mockArticle(0));
 //
 //        for (int i = 0; i <potolist.size(); i++) {
 //
@@ -134,41 +128,41 @@ public class WebCountViewActivity extends AppCompatActivity {
      //   System.out.println(url);
      //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
       //  final String xinwentitle =xinWenXiData.getTitle();
-        ImageButton imageback = null;
-        imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
-        TextView duotu_gentie = null;
-        duotu_gentie = (TextView) findViewById(R.id.xinwen_duotu_gentie);//跟帖
-        ImageButton caidan = null;
-        caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
-//        webView = null;
-//        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
-     //   duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
-        fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
+//        ImageButton imageback = null;
+//        imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
+//        TextView duotu_gentie = null;
+//        duotu_gentie = (TextView) findViewById(R.id.xinwen_duotu_gentie);//跟帖
+//        ImageButton caidan = null;
+//        caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
+////        webView = null;
+////        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
+//     //   duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
+//        fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
-        imageback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-        //点击进入跟帖 详细页面
-        //// TODO: 2015/11/14 点击进入跟帖 详细页面 完成
-        duotu_gentie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(WebCountViewActivity.this,GenTieActivity.class));
-            }
-        });
-        //点击打开扩展 详细页面
-        //// TODO: 2015/11/14
-        caidan.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                getpopuwindow(view);
-            }
-        });
-        mShareListener = new CustomShareListener(this);
+//        imageback.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                finish();
+//            }
+//        });
+//        //点击进入跟帖 详细页面
+//        //// TODO: 2015/11/14 点击进入跟帖 详细页面 完成
+//        duotu_gentie.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(WebCountViewActivity.this,GenTieActivity.class));
+//            }
+//        });
+//        //点击打开扩展 详细页面
+//        //// TODO: 2015/11/14
+//        caidan.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                getpopuwindow(view);
+//            }
+//        });
+//        mShareListener = new CustomShareListener(this);
 //        fenxiang.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
@@ -263,88 +257,56 @@ public class WebCountViewActivity extends AppCompatActivity {
     /**
      * 提交的监听器
      */
-    View.OnClickListener c = new View.OnClickListener() {
-        @Override
-        public void onClick(View v) {
-            String msg = edit.getText().toString();
-            if (msg.equals("") || msg == null) {
-                new AlertDialog.Builder(WebCountViewActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
-                return;
-            }else{
-
-                ProductArticler productArticler=new ProductArticler();
-//                productArticler.setArtreview_rootid(xinWenXiData.getId());
-                productArticler.setArtreview_content(msg);
-                DateTime dateTime =new DateTime();
-                productArticler.setArtreview_time(dateTime.getDateFormatter());
-                productArticler.setArtreview_authorid(customerid+"");
-                Customer customer=new Customer();
-                customer.setUsername(username);
-                customer.setImageurl(pic_path);
-                customer.setId(customerid);
-                productArticler.setCustomer(customer);
-                if(liuyuanlist.size()>0) {
-                    liuyuanlist.add(0, productArticler);
-                }else{
-                    liuyuanlist.add(productArticler);
-
-                }
-                if(username==null) {
-                  //  Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);getActivity()
-                    Intent intent2 = new Intent(WebCountViewActivity.this, LoginActivity.class);
-                    startActivityForResult(intent2, 1000);
-//                    SheZhiFrament.handle.sendEmptyMessage(1);
-////                    finish();
-                    //  getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                }else{
-                    UpArticlerFunction();
-                    if(liuyuanlist.size()>0) {
-                        adapter.add(mockLiuyuan(0));
-                        edit.setText("");
-                        edit.setFocusable(false);
-                        Toast.makeText(WebCountViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
-                        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-                    }
-//                 NotifyFunction();
-                }
-
-            }
-
-        }
-    };
-    /**
-     * 提交留言
-     */
-    public void UpArticlerFunction() {
-        int customerid0=0;
-        int shezhitype0=2;
-//        String url=xinWenURL.getSavearticler()+xinWenXiData.getId()+"&msg="+edit.getText().toString()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
-     //   UpData(url);
-    }
-    /**
-     * 通知数据发生改变
-     */
-    public void NotifyFunction() {
-//        for (int i = 0; i <liuyuanlist.size(); i++) {
-
-        adapter.add(mockLiuyuan(0));
-        return;
+//    View.OnClickListener c = new View.OnClickListener() {
+//        @Override
+//        public void onClick(View v) {
+//            String msg = edit.getText().toString();
+//            if (msg.equals("") || msg == null) {
+//                new AlertDialog.Builder(WebCountViewActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
+//                return;
+//            }else{
+//
+//                ProductArticler productArticler=new ProductArticler();
+////                productArticler.setArtreview_rootid(xinWenXiData.getId());
+//                productArticler.setArtreview_content(msg);
+//                DateTime dateTime =new DateTime();
+//                productArticler.setArtreview_time(dateTime.getDateFormatter());
+//                productArticler.setArtreview_authorid(customerid+"");
+//                Customer customer=new Customer();
+//                customer.setUsername(username);
+//                customer.setImageurl(pic_path);
+//                customer.setId(customerid);
+//                productArticler.setCustomer(customer);
+//                if(liuyuanlist.size()>0) {
+//                    liuyuanlist.add(0, productArticler);
+//                }else{
+//                    liuyuanlist.add(productArticler);
+//
+//                }
+//                if(username==null) {
+//                  //  Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);getActivity()
+//                    Intent intent2 = new Intent(WebCountViewActivity.this, LoginActivity.class);
+//                    startActivityForResult(intent2, 1000);
+////                    SheZhiFrament.handle.sendEmptyMessage(1);
+//////                    finish();
+//                    //  getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+//                }else{
+//                    UpArticlerFunction();
+//                    if(liuyuanlist.size()>0) {
+//                        adapter.add(mockLiuyuan(0));
+//                        edit.setText("");
+//                        edit.setFocusable(false);
+//                        Toast.makeText(WebCountViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
+//                        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
+//                    }
+////                 NotifyFunction();
+//                }
+//
+//            }
+//
 //        }
-//        recyclerView.deferNotifyDataSetChanged();
-//      /  recyclerView.notifyDataSetChanged();
-//        recyclerView.getChildItemId(item_p)
-//      recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-        //  recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
-        // adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
-        //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-        // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
+//    };
 
-//      adapter.add(mockLiuyuan(0));
-
-        // adapter.add(mockLiuyuan(i));
-        // }
-    }
     //popuwindow设置
     private void getpopuwindow(View v) {
         final PopupWindow popu = new PopupWindow((int) (getWindowManager().getDefaultDisplay().getWidth() / 2.5), getWindowManager().getDefaultDisplay().getHeight() / 2);
@@ -433,6 +395,7 @@ public class WebCountViewActivity extends AppCompatActivity {
     public void initDate() {
 //        String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
+        String xinwentitle ="浏览次数";
 //        int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
@@ -465,73 +428,27 @@ public class WebCountViewActivity extends AppCompatActivity {
             if (!biaoti.contains(xinwentitle)) {
                 ContentValues values = new ContentValues();
                 values.put("date", date + "");
-                values.put("url", url + "");
+                values.put("url", "url" + "");
                 values.put("title", xinwentitle + "");
                 values.put("num", 2);
-                values.put("replaycount", replaycount + "");
+                values.put("replaycount", "replaycount" + "");
 //            values.put("url",url);存储详情页的地址  在 阅读记录里取出来
                 writableDatabase.insert("read_date", null, values);
             }
         } else {
             ContentValues values = new ContentValues();
             values.put("date", date + "");
-            values.put("url", url + "");
+            values.put("url", "url" + "");
             values.put("title", xinwentitle + "");
             values.put("num", 2 + "");
-            values.put("replaycount", replaycount + "");
+            values.put("replaycount"," replaycount" + "");
             writableDatabase.insert("read_date", null, values);
         }
         //关闭
         cursor.close();
         writableDatabase.close();
     }
-    public Article mockArticle(int seed) {
-        Article article = new Article();
-//        article.title = getResources().getStringArray(R.array.mock_title)[seed % 4];
-//        article.content = getResources().getStringArray(R.array.mock_content)[seed % 4];
-        article.title =xinWenXiData.getTitle();
-        article.content =xinWenXiData.getXinwentext();
-        article.dat =xinWenXiData.getCreateDate().substring(0,10);
-        article.gsmz=xinWenXiData.getGsmz();
-        article.gsdz=xinWenXiData.getGsdz();
-        article.lxr=xinWenXiData.getLxr();
-        article.lxdh=xinWenXiData.getLxdh();
 
-        if(xinWenXiData.getZpxx()!=null) article.zpxx=xinWenXiData.getZpxx();
-        if(xinWenXiData.getFwcs()!=null) article.fwcs=xinWenXiData.getFwcs();
-        if(xinWenXiData.getGqxx()!=null) article.gqxx=xinWenXiData.getGqxx();
-        article.productCategory=xinWenXiData.getProductCategory();
-        return article;
-    }
-    public Liuyuan mockLiuyuan(int seed) {
-        Liuyuan liuyuan= new Liuyuan();
-
-        liuyuan.liuyuan_content=((ProductArticler)liuyuanlist.get(seed)).getArtreview_content();
-        liuyuan.liuyuan_id=((ProductArticler)liuyuanlist.get(seed)).getArtreview_authorid();
-        liuyuan.liuyuan_date=((ProductArticler)liuyuanlist.get(seed)).getArtreview_time();
-        liuyuan.liuyuan_name=((ProductArticler)liuyuanlist.get(seed)).getCustomer().getUsername();
-        liuyuan.liuyuan_imag=((ProductArticler)liuyuanlist.get(seed)).getCustomer().getImageurl();
-        return liuyuan;
-    }
-    public Photo mockPhoto(int seed) {
-        Photo photo = new Photo();
-        photo.path=potolist.get(seed).getPath();
-//        photo.photoId = new int[]{
-//                R.drawable.img_sample1,
-//                R.drawable.img_sample2,
-//                R.drawable.img_sample3,
-//                R.drawable.img_sample4
-//        }[seed % 4];
-        //  photo.description = getResources().getStringArray(R.array.mock_img_desc)[seed % 4];
-        photo.photoId = 0;
-
-        //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
-        // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
-//        BitmapUtils bitmapUtils = new BitmapUtils(this);
-//        bitmapUtils.display(photo.imagePicture,"http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg");
-        photo.description =xinWenXiData.getTitle();
-        return photo;
-    }
 
     private void getDate(final String url) {
         if (!url.equals("")) {
@@ -545,9 +462,10 @@ public class WebCountViewActivity extends AppCompatActivity {
 
                         try {
                             JSONObject datecount = new JSONObject(responseInfo.result);
-                            DateCount dateCount0 = gson.fromJson(datecount.toString(),DateCount.class);
 
+                                    dateCount0= gson.fromJson(datecount.toString(),DateCount.class);
 
+                            adapter.add(dateCount0);
                             Toast.makeText(WebCountViewActivity.this, dateCount0.allcount, Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
@@ -567,24 +485,7 @@ public class WebCountViewActivity extends AppCompatActivity {
 
         }
     }
-    private void UpDataCollent(final String url) {
-        if (!url.equals("")) {
-            httpUtils = new HttpUtils();
 
-            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-                @Override
-                public void onSuccess(ResponseInfo<String> responseInfo) {
-                    Toast.makeText(WebCountViewActivity.this, "收藏请求成功!!!", Toast.LENGTH_SHORT).show();
-                }
-
-                @Override
-                public void onFailure(HttpException e, String s) {
-                    Toast.makeText(WebCountViewActivity.this, "收藏请求失败!!!", Toast.LENGTH_SHORT).show();
-                }
-            });
-
-        }
-    }
 
     public Gson getGson() {
         return gson;

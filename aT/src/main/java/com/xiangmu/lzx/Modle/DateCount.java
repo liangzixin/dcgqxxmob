@@ -1,11 +1,13 @@
-package com.xiangmu.lzx.Bean;
+package com.xiangmu.lzx.Modle;
 
-import java.io.Serializable;
+import com.twiceyuan.commonadapter.library.adapter.ViewTypeItem;
 
 /**
- * Created by Administrator on 2015/11/12.
+ * Created by twiceYuan on 3/4/16.
+ * Email: i@twiceyuan.com
+ * Site: http://twiceyuan.com
  */
-public class DateCount implements Serializable{
+public class DateCount implements ViewTypeItem {
 
     public String id;
     public String allcount;
@@ -17,6 +19,5 @@ public class DateCount implements Serializable{
     public String createdate;
     public String onlineCount;
     public String tempCount;
-
 
 }
