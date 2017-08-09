@@ -240,7 +240,7 @@ public class SearchActivity extends AppCompatActivity {
     //初始化新闻搜索数据请求
      CustomProgressDialog progressDialog;
     private void initSearchNews(String url) {
-        progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
+        progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.drawable.donghua_frame);
         if (!CommonUtil.isNetWork(this)) {//无网络读缓存
             if (keywords != null) {
                 LogUtils.e("---", url);

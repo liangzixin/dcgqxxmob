@@ -112,7 +112,7 @@ public class ShangTouTiao_HuiGuDetialActivity extends AppCompatActivity implemen
         mlv = (ListView) findViewById(R.id.mlv);
         back.setOnClickListener(this);
         more.setOnClickListener(this);
-        progressDialog = new CustomProgressDialog(this, "正在加载中......", R.anim.donghua_frame);
+        progressDialog = new CustomProgressDialog(this, "正在加载中......", R.drawable.donghua_frame);
         inintData(DetialUrl);
     }
 

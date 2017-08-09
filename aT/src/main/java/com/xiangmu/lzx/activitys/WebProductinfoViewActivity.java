@@ -238,7 +238,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        settings.setAppCacheEnabled(true);//是否使用缓存
 //        settings.setTextSize(WebSettings.TextSize.NORMAL);
 //        webView.setWebChromeClient(new WebChromeClient());// 支持运行特殊的javascript(例如：alert())
-        final CustomProgressDialog progress=new CustomProgressDialog(this,"正在加载中.....",R.anim.donghua_frame);
+        final CustomProgressDialog progress=new CustomProgressDialog(this,"正在加载中.....",R.drawable.donghua_frame);
         progress.show();
 //        webView.loadUrl(url);
         //设置打开页面的客户端WebViewClient,如果不设置,则调用系统默认浏览器打开地址

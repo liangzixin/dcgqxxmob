@@ -78,7 +78,7 @@ public class YueDuDetialActivity extends AppCompatActivity implements View.OnCli
     View popwindow_more;
 
     private void initView() {
-        progressDialog = new CustomProgressDialog(this, "正在加载中......", R.anim.donghua_frame);
+        progressDialog = new CustomProgressDialog(this, "正在加载中......", R.drawable.donghua_frame);
         back = (ImageButton) findViewById(R.id.back);
         title_gentie = (TextView) findViewById(R.id.title_gentie);
         rightmore_content = (ImageButton) findViewById(R.id.rightmore_content);

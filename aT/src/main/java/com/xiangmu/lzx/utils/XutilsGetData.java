@@ -41,7 +41,7 @@ public class XutilsGetData {
         if (isprogressdialog){
 
             if (dialog==null){
-                dialog=new CustomProgressDialog(context,"正在加载中.......", R.anim.donghua_frame);
+                dialog=new CustomProgressDialog(context,"正在加载中.......", R.drawable.donghua_frame);
             }
             dialog.show();
         }
@@ -117,7 +117,7 @@ public class XutilsGetData {
 
         if (isprogressdialog){
             if (dialog==null){
-                dialog=new CustomProgressDialog(context,"正在加载中.......", R.anim.donghua_frame);
+                dialog=new CustomProgressDialog(context,"正在加载中.......", R.drawable.donghua_frame);
             }
             dialog.show();
         }

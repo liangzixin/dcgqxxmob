@@ -43,8 +43,8 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
 //            client_glod.setBackground(drawable);
 //            jinbijifen.setBackground(drawable);
 //            tv_client.setBackground(drawable);
-            open_client.setBackground(drawable);
-            open_fwxx.setBackground(drawable);
+//            open_client.setBackground(drawable);
+//            open_fwxx.setBackground(drawable);
           //  Toast.makeText(this, "登录客户端成功金币+5", Toast.LENGTH_SHORT).show();
         }
     }
@@ -67,6 +67,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         read_text.setOnClickListener(this);
         read_news.setOnClickListener(this);
         open_fwxx.setOnClickListener(this);
+        open_client.setOnClickListener(this);
         if(manager){
             open_client.setVisibility(View.VISIBLE);
             open_fwxx.setVisibility(View.VISIBLE);

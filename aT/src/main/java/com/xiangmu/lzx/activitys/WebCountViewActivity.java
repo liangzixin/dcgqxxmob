@@ -4,18 +4,14 @@ import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.PopupWindow;
 import android.widget.Toast;
 
 import com.google.gson.Gson;
@@ -29,26 +25,21 @@ import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
 import com.umeng.socialize.ShareAction;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
 import com.umeng.socialize.media.UMImage;
-import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.DateCount;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
 import com.xiangmu.lzx.holder.DateCountHolder;
-import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
-import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
 import com.xiangmu.lzx.utils.XinWenURL;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
-import java.lang.ref.WeakReference;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -77,6 +68,8 @@ public class WebCountViewActivity extends AppCompatActivity {
     private UMShareListener mShareListener;
     private ShareAction mShareAction;
     private  DateCount dateCount0;
+  //  private   CustomProgressDialog progress;
+    private SimpleArcDialog mDialog;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,21 +82,23 @@ public class WebCountViewActivity extends AppCompatActivity {
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        initDate();
-//
+      initDate();
+       mDialog = new SimpleArcDialog(this);
+     //   mDialog.show();
 //        try {
 //            initDate();
 //            Thread.currentThread().sleep(2000);//阻断2秒
 //        } catch (InterruptedException e) {
 //            e.printStackTrace();
 //        }
-    //    initview();
+
         assert recyclerView != null;
 
         recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
         adapter = new MultiTypeAdapter(this);
         adapter.registerViewType(DateCount.class, DateCountHolder.class);
         recyclerView.setAdapter(adapter);
+
         imageback.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -111,288 +106,16 @@ public class WebCountViewActivity extends AppCompatActivity {
             }
         });
 
-//
-//        for (int i = 0; i <potolist.size(); i++) {
-//
-//            adapter.add(mockPhoto(i));
-//        }
-//        for (int i = 0; i <liuyuanlist.size(); i++) {
-//
-//            adapter.add(mockLiuyuan(i));
-//        }
-//        button.setOnClickListener(c);
-    }
-    private void initview() {
 
-   //  final String url ="http://www.dcgqxx.com/product/product_select.html?id="+xinWenXiData.getId();
-     //   System.out.println(url);
-     //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-      //  final String xinwentitle =xinWenXiData.getTitle();
-//        ImageButton imageback = null;
-//        imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
-//        TextView duotu_gentie = null;
-//        duotu_gentie = (TextView) findViewById(R.id.xinwen_duotu_gentie);//跟帖
-//        ImageButton caidan = null;
-//        caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
-////        webView = null;
-////        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
-//     //   duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
-//        fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
-        // getdata(url);//获得数据
-        //点击finish
-//        imageback.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                finish();
-//            }
-//        });
-//        //点击进入跟帖 详细页面
-//        //// TODO: 2015/11/14 点击进入跟帖 详细页面 完成
-//        duotu_gentie.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                startActivity(new Intent(WebCountViewActivity.this,GenTieActivity.class));
-//            }
-//        });
-//        //点击打开扩展 详细页面
-//        //// TODO: 2015/11/14
-//        caidan.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                getpopuwindow(view);
-//            }
-//        });
-//        mShareListener = new CustomShareListener(this);
-//        fenxiang.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
-////                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
-//                new ShareAction(WebCountViewActivity.this)
-//                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
-//                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
-//                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
-//                        .setShareboardclickCallback(new ShareBoardlistener() {
-//                            @Override
-//                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
-////                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
-////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
-////                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
-////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
-////
-////                                } else {
-//                                    UMWeb web = new UMWeb(url);
-//                                    web.setTitle(xinwentitle);
-//                                    web.setDescription(xinwentitle);
-//                                    web.setThumb(new UMImage(WebCountViewActivity.this, R.drawable.ic_launcher));
-//                                    new ShareAction(WebCountViewActivity.this).withMedia(web)
-//                                            .setPlatform(share_media)
-//                                            .setCallback(mShareListener)
-//                                            .share();
-////                                }
-//                            }
-//                        })
-//                       .open();
-//            }
-//        });
     }
 
 
-    public void getdata(String url) {
-        LogUtils.e("putongframenturl", "==" + url);
 
-//        settings = webView.getSettings();
-//        settings.setDomStorageEnabled(true);
-//        settings.setJavaScriptEnabled(true);
-//        settings.setBlockNetworkImage(true);
-//        settings.setSupportZoom(true);  //支持缩放
-//        settings.setJavaScriptCanOpenWindowsAutomatically(true);//支持通过JS打开新窗口
-//        settings.setLoadWithOverviewMode(true); // 缩放至屏幕的大小
-//        settings.setLoadsImagesAutomatically(true); //支持自动加载图片
-//        settings.setNeedInitialFocus(true);//当webview调用requestFocus时为webview设置节点
-//        settings.setBuiltInZoomControls(true);
-//        settings.setUseWideViewPort(true);
-//        settings.setAppCacheEnabled(true);//是否使用缓存
-//        settings.setTextSize(WebSettings.TextSize.NORMAL);
-//        webView.setWebChromeClient(new WebChromeClient());// 支持运行特殊的javascript(例如：alert())
-        final CustomProgressDialog progress=new CustomProgressDialog(this,"正在加载中.....",R.anim.donghua_frame);
-        progress.show();
-//        webView.loadUrl(url);
-        //设置打开页面的客户端WebViewClient,如果不设置,则调用系统默认浏览器打开地址
-        // 当点击超链地址后不会新打开浏览器来访问，而是始终在本app中浏览页面
-//        webView.setWebViewClient(new WebViewClient() {
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-////                LogUtils.e("putongframenturl", "==" + url);
-//                view.loadUrl(url);
-//                return true;
-//            }
-//
-//            @Override
-//            public void onPageFinished(WebView view, String url) {
-//                progress.dismiss();
-//            }
-//        });
-//        webView.setWebChromeClient(new WebChromeClient(){
-//            public void onRequestFocus(WebView view) {
-//                super.onRequestFocus(view);
-//                view.requestFocus();
-//
-//            }
-//        });
-
-
-//        String data = XutilsGetData.getData(getActivity(), url, null);
-//        //判断本地数据是否存在  如果没有网络请求
-//        if (data != null) {
-//            getshowdata(data);
-//        } else {
-//            XutilsGetData.xUtilsHttp(getActivity(), url, url, new XutilsGetData.CallBackHttp() {
-//                @Override
-//                public void handleData(String data) {
-//                    getshowdata(data);
-//                }
-//            });
-//        }
-    }
-    /**
-     * 提交的监听器
-     */
-//    View.OnClickListener c = new View.OnClickListener() {
-//        @Override
-//        public void onClick(View v) {
-//            String msg = edit.getText().toString();
-//            if (msg.equals("") || msg == null) {
-//                new AlertDialog.Builder(WebCountViewActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
-//                return;
-//            }else{
-//
-//                ProductArticler productArticler=new ProductArticler();
-////                productArticler.setArtreview_rootid(xinWenXiData.getId());
-//                productArticler.setArtreview_content(msg);
-//                DateTime dateTime =new DateTime();
-//                productArticler.setArtreview_time(dateTime.getDateFormatter());
-//                productArticler.setArtreview_authorid(customerid+"");
-//                Customer customer=new Customer();
-//                customer.setUsername(username);
-//                customer.setImageurl(pic_path);
-//                customer.setId(customerid);
-//                productArticler.setCustomer(customer);
-//                if(liuyuanlist.size()>0) {
-//                    liuyuanlist.add(0, productArticler);
-//                }else{
-//                    liuyuanlist.add(productArticler);
-//
-//                }
-//                if(username==null) {
-//                  //  Intent intent2 = new Intent(WebProductinfoViewActivity.this, LoginActivity.class);getActivity()
-//                    Intent intent2 = new Intent(WebCountViewActivity.this, LoginActivity.class);
-//                    startActivityForResult(intent2, 1000);
-////                    SheZhiFrament.handle.sendEmptyMessage(1);
-//////                    finish();
-//                    //  getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-//                }else{
-//                    UpArticlerFunction();
-//                    if(liuyuanlist.size()>0) {
-//                        adapter.add(mockLiuyuan(0));
-//                        edit.setText("");
-//                        edit.setFocusable(false);
-//                        Toast.makeText(WebCountViewActivity.this, "留言成功！", Toast.LENGTH_SHORT).show();
-//                        adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-//                    }
-////                 NotifyFunction();
-//                }
-//
-//            }
-//
-//        }
-//    };
-
-    //popuwindow设置
-    private void getpopuwindow(View v) {
-        final PopupWindow popu = new PopupWindow((int) (getWindowManager().getDefaultDisplay().getWidth() / 2.5), getWindowManager().getDefaultDisplay().getHeight() / 2);
-        View view = View.inflate(this, R.layout.popwindow_detial, null);
-        Button shouchang = (Button) view.findViewById(R.id.bt_save);
-        Button jieping = (Button) view.findViewById(R.id.jieping);
-        Button ziti = (Button) view.findViewById(R.id.ziti);
-        Button yejian = (Button) view.findViewById(R.id.bt_yejian);
-        //收藏按钮
-        shouchang.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popu.dismiss();
-                // TODO: 2015/11/17
-                int customerid0=0;
-                int shezhitype0=2;
-
-
-                if(username!=null){
-                    if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid= Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
-                //    customerid0=Integer.parseInt(customerid);
-//                    Toast.makeText(WebProductinfoViewActivity.this, "已登录...", Toast.LENGTH_SHORT).show();
-//                    String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
-//                    UpDataCollent(clickcount);
-                }else{
-
-                    Toast.makeText(WebCountViewActivity.this, "还没有登录...", Toast.LENGTH_SHORT).show();
-//                    SheZhiFrament.handle.sendEmptyMessage(1);
-//                    finish();
-                    Intent intent9 = new Intent(WebCountViewActivity.this, LoginActivity.class);
-                    startActivity(intent9);
-              //    this.overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
-                }
-
-
-
-            }
-        });
-        //截屏按钮
-        jieping.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popu.dismiss();
-                // TODO: 2015/11/17
-
-                Toast.makeText(WebCountViewActivity.this, "截屏...", Toast.LENGTH_SHORT).show();
-                String date_time = DateTime.getDate_Time();
-                File file = new File("sdcard/Photo/Screenshots/");
-                if (!file.exists()) {
-                    file.mkdirs();
-                }
-                Bitmap bitmap = ScreenShot.takeScreenShot(WebCountViewActivity.this);
-                String s = "sdcard/Photo/Screenshots/" + date_time;
-                String path = s + ".png";
-                ScreenShot.savePic(bitmap, path);
-                Intent intent = new Intent(WebCountViewActivity.this, PictureActivity.class);
-                intent.putExtra("path", s);
-                startActivity(intent);
-
-            }
-        });
-        //改变字体按钮
-        ziti.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popu.dismiss();
-                // TODO: 2015/11/17
-                // ZiTiScale.zitiStyle2(WebProductinfoViewActivity.this, view);
-            }
-        });
-        //夜间模式按钮
-        yejian.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                popu.dismiss();
-                // TODO: 2015/11/17
-            }
-        });
-        popu.setContentView(view);
-        popu.setFocusable(true);
-        popu.setBackgroundDrawable(new ColorDrawable(0));
-        popu.showAsDropDown(v, 0, 0);
-    }
 
 
     public void initDate() {
+
+         mDialog.show();
 //        String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         String xinwentitle ="浏览次数";
@@ -459,14 +182,14 @@ public class WebCountViewActivity extends AppCompatActivity {
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (!responseInfo.result.equals("false")) {
                         login0=true;
-
+                      mDialog.dismiss();
                         try {
                             JSONObject datecount = new JSONObject(responseInfo.result);
 
-                                    dateCount0= gson.fromJson(datecount.toString(),DateCount.class);
-
+                            dateCount0= gson.fromJson(datecount.toString(),DateCount.class);
                             adapter.add(dateCount0);
-                            Toast.makeText(WebCountViewActivity.this, dateCount0.allcount, Toast.LENGTH_SHORT).show();
+
+                       //     Toast.makeText(WebCountViewActivity.this, dateCount0.allcount, Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
@@ -479,6 +202,7 @@ public class WebCountViewActivity extends AppCompatActivity {
 
                 @Override
                 public void onFailure(HttpException e, String s) {
+                mDialog.dismiss();
                     Toast.makeText(WebCountViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
                 }
             });
@@ -517,70 +241,6 @@ public class WebCountViewActivity extends AppCompatActivity {
                 break;
         }
     }
-    private static class CustomShareListener implements UMShareListener {
 
-        private WeakReference<WebCountViewActivity> mActivity;
-
-        private CustomShareListener(WebCountViewActivity activity) {
-            mActivity = new WeakReference(activity);
-        }
-
-        @Override
-        public void onStart(SHARE_MEDIA platform) {
-
-        }
-
-        @Override
-        public void onResult(SHARE_MEDIA platform) {
-
-            if (platform.name().equals("WEIXIN_FAVORITE")) {
-                Toast.makeText(mActivity.get(), platform + " 收藏成功啦", Toast.LENGTH_SHORT).show();
-            } else {
-                if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
-                        && platform != SHARE_MEDIA.EMAIL
-                        && platform != SHARE_MEDIA.FLICKR
-                        && platform != SHARE_MEDIA.FOURSQUARE
-                        && platform != SHARE_MEDIA.TUMBLR
-                        && platform != SHARE_MEDIA.POCKET
-                        && platform != SHARE_MEDIA.PINTEREST
-
-                        && platform != SHARE_MEDIA.INSTAGRAM
-                        && platform != SHARE_MEDIA.GOOGLEPLUS
-                        && platform != SHARE_MEDIA.YNOTE
-                        && platform != SHARE_MEDIA.EVERNOTE) {
-                    Toast.makeText(mActivity.get(), platform + " 分享成功啦!!!", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA platform, Throwable t) {
-            if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
-                    && platform != SHARE_MEDIA.EMAIL
-                    && platform != SHARE_MEDIA.FLICKR
-                    && platform != SHARE_MEDIA.FOURSQUARE
-                    && platform != SHARE_MEDIA.TUMBLR
-                    && platform != SHARE_MEDIA.POCKET
-                    && platform != SHARE_MEDIA.PINTEREST
-
-                    && platform != SHARE_MEDIA.INSTAGRAM
-                    && platform != SHARE_MEDIA.GOOGLEPLUS
-                    && platform != SHARE_MEDIA.YNOTE
-                    && platform != SHARE_MEDIA.EVERNOTE) {
-                Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
-                if (t != null) {
-                    com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
-                }
-            }
-
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA platform) {
-
-            Toast.makeText(mActivity.get(), platform + " 分享取消了", Toast.LENGTH_SHORT).show();
-        }
-    }
 
 }

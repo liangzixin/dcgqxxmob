@@ -9,7 +9,7 @@
         android:id="@+id/loadingIv"
         android:layout_width="200dp"
         android:layout_height="220dp"
-        android:background="@anim/donghua_frame"
+        android:background="@drawable/donghua_frame"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />

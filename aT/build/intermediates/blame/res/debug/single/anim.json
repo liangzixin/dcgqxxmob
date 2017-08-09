@@ -140,10 +140,6 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_fade_out.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\donghua_frame.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\donghua_frame.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\anim_exit_from_bottom.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\anim_exit_from_bottom.xml"
     },

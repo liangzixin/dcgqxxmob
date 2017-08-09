@@ -8,7 +8,6 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -17,6 +16,7 @@ import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -26,8 +26,6 @@ import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import android.widget.AdapterView.OnItemSelectedListener;
 
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -40,18 +38,18 @@ import com.litao.android.lib.Utils.GridSpacingItemDecoration;
 import com.litao.android.lib.entity.PhotoEntry;
 import com.xiangmu.lzx.CostomAdapter.ChooseAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.lzx.Modle.Article;
 import com.xiangmu.lzx.Modle.Dxfw;
 import com.xiangmu.lzx.Modle.Edu;
 import com.xiangmu.lzx.Modle.Fzfs;
 import com.xiangmu.lzx.Modle.Liuyuan;
+import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.ProductCategory;
 import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.Modle.Zpnl;
 import com.xiangmu.lzx.R;
-import  com.xiangmu.lzx.Modle.Article;
-import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
@@ -67,8 +65,6 @@ import org.greenrobot.eventbus.Subscribe;
 import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -670,7 +666,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
 //        settings.setAppCacheEnabled(true);//是否使用缓存
 //        settings.setTextSize(WebSettings.TextSize.NORMAL);
 //        webView.setWebChromeClient(new WebChromeClient());// 支持运行特殊的javascript(例如：alert())
-        final CustomProgressDialog progress=new CustomProgressDialog(this,"正在加载中.....",R.anim.donghua_frame);
+        final CustomProgressDialog progress=new CustomProgressDialog(this,"正在加载中.....",R.drawable.donghua_frame);
         progress.show();
 //        webView.loadUrl(url);
         //设置打开页面的客户端WebViewClient,如果不设置,则调用系统默认浏览器打开地址
