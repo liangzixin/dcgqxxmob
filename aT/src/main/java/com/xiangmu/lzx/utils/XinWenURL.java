@@ -10,9 +10,8 @@ import java.util.List;
 public class XinWenURL {
     public int stratPage = 1;
     List<ProductInfo> productInfos=null;
-
-
     String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
+    int page = getStratPage();
 
     public String getGetDateCount() {
         return getDateCount;
@@ -63,6 +62,7 @@ public class XinWenURL {
   String redian = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";
  String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo=0";//最新
 
+    String filter=HttpUtil.BASE_URL+"filter!QueryAllFilter.action?pageNo="+page;//过滤词语
     //  String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + stratPage + "-" + (stratPage + 20) + ".html";//头条
     String zaopin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=1&pageNo=0";//招聘
   //  String yule = "http://c.m.163.com/nc/article/list/T1348648517839/" + stratPage + "-" + (stratPage + 20) + ".html";//娱乐
@@ -124,13 +124,14 @@ public class XinWenURL {
     }
 
     public String getZuixin(int categoryid) {
-        int page = getStratPage();
-//        List<String> zuixin=null;
-  //String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + page + "-" + (page + 20) + ".html";//头条
-//        zuixin.add(HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&pageNo="+page);//最新
+
         String zuixin=HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&pageNo="+page;//最新
         return zuixin;
     }
+    public String getFilter(int page) {
+        return filter;
+    }
+
     public String getZuixin0() {
         int page = getStratPage();
         //String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + page + "-" + (page + 20) + ".html";//头条

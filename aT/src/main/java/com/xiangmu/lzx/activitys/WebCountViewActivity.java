@@ -70,6 +70,7 @@ public class WebCountViewActivity extends AppCompatActivity {
     private  DateCount dateCount0;
   //  private   CustomProgressDialog progress;
     private SimpleArcDialog mDialog;
+    private ImageButton imageback;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,33 +80,11 @@ public class WebCountViewActivity extends AppCompatActivity {
         edit = (EditText) findViewById(R.id.edit);
         app =(MyApplication)getApplication();
         dateCount0=new  DateCount ();
-        ImageButton imageback = null;
+         imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-      initDate();
-       mDialog = new SimpleArcDialog(this);
-     //   mDialog.show();
-//        try {
-//            initDate();
-//            Thread.currentThread().sleep(2000);//阻断2秒
-//        } catch (InterruptedException e) {
-//            e.printStackTrace();
-//        }
 
-        assert recyclerView != null;
-
-        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        adapter = new MultiTypeAdapter(this);
-        adapter.registerViewType(DateCount.class, DateCountHolder.class);
-        recyclerView.setAdapter(adapter);
-
-        imageback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
-        });
-
+       initDate();
 
     }
 
@@ -114,8 +93,8 @@ public class WebCountViewActivity extends AppCompatActivity {
 
 
     public void initDate() {
-
-         mDialog.show();
+        mDialog = new SimpleArcDialog(this);
+        mDialog.show();
 //        String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
         String xinwentitle ="浏览次数";
@@ -127,12 +106,7 @@ public class WebCountViewActivity extends AppCompatActivity {
         String getDateCount=xinWenURL.getGetDateCount();
 
         getDate(getDateCount);
-//        user_name = SearchDB.createDb(this, "userName");
-//        if(!user_name.equals(""))
-//        UpData(clickcount0);
-        //   UpCount(clickcount0);
-     //   System.out.println("clickcount="+clickcount );
-//        Log.e("aa", "******xinwentitle*******" + xinwentitle);
+
         //拿到当前日期
         String date = DateTime.getDate();
         MySqlOpenHelper mySqlOpenHelper = new MySqlOpenHelper(this);
@@ -171,7 +145,20 @@ public class WebCountViewActivity extends AppCompatActivity {
         cursor.close();
         writableDatabase.close();
     }
-
+    public void initDate1() {
+        assert recyclerView != null;
+        recyclerView.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        adapter = new MultiTypeAdapter(this);
+        adapter.registerViewType(DateCount.class, DateCountHolder.class);
+        recyclerView.setAdapter(adapter);
+          adapter.add(dateCount0);
+        imageback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
+    }
 
     private void getDate(final String url) {
         if (!url.equals("")) {
@@ -182,12 +169,14 @@ public class WebCountViewActivity extends AppCompatActivity {
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (!responseInfo.result.equals("false")) {
                         login0=true;
-                      mDialog.dismiss();
+                //  mDialog.dismiss();
                         try {
                             JSONObject datecount = new JSONObject(responseInfo.result);
 
                             dateCount0= gson.fromJson(datecount.toString(),DateCount.class);
-                            adapter.add(dateCount0);
+                            mDialog.dismiss();
+                            initDate1();
+                   //         adapter.add(dateCount0);
 
                        //     Toast.makeText(WebCountViewActivity.this, dateCount0.allcount, Toast.LENGTH_SHORT).show();
                         } catch (JSONException e) {
@@ -213,33 +202,6 @@ public class WebCountViewActivity extends AppCompatActivity {
 
     public Gson getGson() {
         return gson;
-    }
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-
-        super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-        switch(requestCode){
-            case 1000:
-                shezhi= SearchDB.createDb(this, "shezhi");
-           app.setSearchDB0(true);
-                username = SearchDB.createDb(this, "userName");
-                customerid = Integer.parseInt(SearchDB.createDb(this, "customerid"));
-                pic_path=SearchDB.createDb(this, "pic_path");
-                getSharedPreferences("login", MODE_PRIVATE).edit().putBoolean("login", false).commit();
-                username0 = SearchDB.createDb(this, "userName");
-                Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了"+ username0 );
-                Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了"+ username );
-//                if(resultCode == getActivity().RESULT_OK) {
-//                    returnshezhi();
-//                }
-                break;
-            case 1:
-//                if(resultCode == getActivity().RESULT_OK){
-//                    Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
-//                }
-                break;
-        }
     }
 
 
