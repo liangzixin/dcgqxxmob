@@ -524,6 +524,41 @@ public class XinWen_productinfo  implements Serializable{
             }
 
         }
+        public static class FilterEntity {
+            private static final long serialVersionUID = 1L;
+            private Integer id;// 过滤编号
+            private String filters;// 过滤词语
+            private String note;// 过渡备注
+            public Integer getId() {
+                return id;
+            }
+            public void setId(Integer id) {
+                this.id = id;
+            }
+            public String getFilters() {
+                return filters;
+            }
+            public void setFilters(String filters) {
+                this.filters = filters;
+            }
+            public String getNote() {
+                return note;
+            }
+            public void setNote(String note) {
+                this.note = note;
+            }
+
+        }
+
+        public List<FilterEntity> getListfilterEntity() {
+            return listfilterEntity;
+        }
+
+        public void setListfilterEntity(List<FilterEntity> listfilterEntity) {
+            this.listfilterEntity = listfilterEntity;
+        }
+
+        private List<FilterEntity> listfilterEntity;
 
         /**
          * template : manual

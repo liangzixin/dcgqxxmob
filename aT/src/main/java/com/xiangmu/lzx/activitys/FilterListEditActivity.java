@@ -89,7 +89,7 @@ import java.util.List;
     private AlertView mAlertView;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
     private Boolean isPause=false;
     private int id=0;
-        private  int page=0;
+    private  int page=0;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -323,8 +323,8 @@ import java.util.List;
                 break;
             case 2:
                 filter_list = new ArrayList<>();
-                XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
-                filter_list.addAll(toutiao_object.getT18908805728());
+                XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdataFilter(result);//传入类型和数据
+                filter_list.addAll(toutiao_object.getListfilterEntity());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
                 System.out.println("标题:" + filter_list.get(0).getName());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
