@@ -377,5 +377,53 @@
                 android:text="+5"
                 android:textColor="@color/gold_yanse" />
         </RelativeLayout>
+        <RelativeLayout
+            android:id="@+id/open_filter"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:src="@mipmap/goldmall"
+                android:layout_toLeftOf="@+id/image8"
+                />
+
+            <TextView
+                android:id="@+id/tv_filter"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="37dp"
+                android:text="过滤词语"
+                android:textColor="@color/text_content"
+                android:textSize="13sp" />
+
+            <ImageView
+                android:id="@+id/client_filter"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_toLeftOf="@+id/task_jinbi9"
+                android:src="@mipmap/show_gold" />
+
+            <ImageView
+                android:id="@+id/task_jinbi9"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:src="@mipmap/into" />
+
+            <TextView
+                android:id="@+id/filterjifen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="3dp"
+                android:layout_toLeftOf="@+id/client_filter"
+                android:text="+5"
+                android:textColor="@color/gold_yanse" />
+        </RelativeLayout>
     </LinearLayout>
 </RelativeLayout>

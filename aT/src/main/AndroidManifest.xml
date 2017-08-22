@@ -124,6 +124,9 @@
         <activity
             android:name="com.xiangmu.lzx.activitys.WebCountViewActivity"
             android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.FilterListEditActivity"
+            android:label="@string/title_activity_web_view" />
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5890b33607fe652c9f000284" />

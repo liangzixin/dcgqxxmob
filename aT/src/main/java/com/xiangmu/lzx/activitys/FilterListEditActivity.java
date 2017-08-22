@@ -31,10 +31,9 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
-import com.xiangmu.lzx.CostomAdapter.SearchProductinfoAdapter;
+import com.xiangmu.lzx.CostomAdapter.SearchFilterAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
-import com.xiangmu.lzx.Modle.Filter;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
@@ -77,12 +76,12 @@ import java.util.List;
     private HttpHandler<String> handler;
     private String tuijian;//推荐热词
     private String keywords;//搜索关键字
-    private SearchProductinfoAdapter searchProductinfoAdapter;
+    private SearchFilterAdapter searchFilterAdapter;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
     private List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
-    private List<Filter> filter_list = new ArrayList<>();
-  //  private XinWen_productinfo.T18908805728Entity bean;
+    private List<XinWen_productinfo.FilterEntity> filter_list = new ArrayList<>();
+    private XinWen_productinfo.FilterEntity bean;
     private XinWenURL xinWenURL = new XinWenURL();
     private String url = null;
     private SimpleArcDialog mDialog;
@@ -326,7 +325,7 @@ import java.util.List;
                 XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdataFilter(result);//传入类型和数据
                 filter_list.addAll(toutiao_object.getListfilterEntity());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                System.out.println("标题:" + filter_list.get(0).getName());
+                System.out.println("标题:" + filter_list.get(0).getFilters());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
@@ -335,23 +334,23 @@ import java.util.List;
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
 //       searchEditResultAdapter = new SearchEditResultAdapter(filter_list,this);
-                searchProductinfoAdapter= new SearchProductinfoAdapter(filter_list);
+                searchFilterAdapter= new SearchFilterAdapter(filter_list);
                 //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
 
-                lv_searchResult.setAdapter(searchProductinfoAdapter);
+                lv_searchResult.setAdapter(searchFilterAdapter);
                 RecyclerView.ItemDecoration decoration = new MyDecoration(this);
                 this.lv_searchResult.addItemDecoration(decoration);
-                this.searchProductinfoAdapter.setOnItemClickListener(this);
-                this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+                this.searchFilterAdapter.setOnItemClickListener(this);
+                this.searchFilterAdapter.setOnItemLongClickListener(this);
 
                 break;
             case 3:
                 filter_list = new ArrayList<>();
 
-                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdata(result, 0);//传入类型和数据
-                filter_list.addAll(toutiao_object1.getT18908805728());
+                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdataFilter(result);//传入类型和数据
+                filter_list.addAll(toutiao_object1.getListfilterEntity());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                System.out.println("标题:" + filter_list.get(0).getName());
+                System.out.println("标题:" + filter_list.get(0).getFilters());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: " + toutiao_object1.getTotalRecords() + " 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
@@ -359,10 +358,10 @@ import java.util.List;
                 mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
-                searchProductinfoAdapter= new SearchProductinfoAdapter(filter_list);
+                searchFilterAdapter= new SearchFilterAdapter(filter_list);
 
 
-                lv_searchResult.setAdapter(searchProductinfoAdapter);
+                lv_searchResult.setAdapter(searchFilterAdapter);
                 break;
         }
     }
@@ -392,21 +391,21 @@ import java.util.List;
             isPause = false;
           // list = 新数据;
      //     adapter.setList(list); //需要adapter重新设置list的数据
-            searchProductinfoAdapter= new SearchProductinfoAdapter(filter_list);
+            searchFilterAdapter= new SearchFilterAdapter(filter_list);
             //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
 
-            lv_searchResult.setAdapter(searchProductinfoAdapter);
-            searchProductinfoAdapter.notifyDataSetChanged();//刷新
+            lv_searchResult.setAdapter(searchFilterAdapter);
+            searchFilterAdapter.notifyDataSetChanged();//刷新
             RecyclerView.ItemDecoration decoration = new MyDecoration(this);
             this.lv_searchResult.addItemDecoration(decoration);
-            this.searchProductinfoAdapter.setOnItemClickListener(this);
-            this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+            this.searchFilterAdapter.setOnItemClickListener(this);
+            this.searchFilterAdapter.setOnItemLongClickListener(this);
        }
 
     }
     //跳转详细页面方法
     @SuppressLint("NewApi")
-    private void frament2activity(int position, List<XinWen_productinfo.T18908805728Entity> filter_list) {
+    private void frament2activity(int position, List<XinWen_productinfo.FilterEntity> filter_list) {
         int pos;
         if (listads == null) {//判断有没有轮播图如果没有就不添加轮播布局  布局就和原来一样
             pos = position;
@@ -414,9 +413,7 @@ import java.util.List;
             pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
         }
         LogUtils.e("xinwenadapter", "postion==" + pos);
-        //    int bujutype = XinWen_adapter.getType(filter_list.get(pos).getId());
 
-//        LogUtils.e("xinwenadapter", "type==" + bujutype);
 
         //传入详细页面的数据
         ArrayList<UploadFile> potolist = new ArrayList<>();
@@ -425,37 +422,37 @@ import java.util.List;
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(filter_list.get(pos).getId());
         int bujutype = 0;
-        bujutype = filter_list.get(pos).getLanmu();
+      // bujutype = filter_list.get(pos).getLanmu();
         xinWenXi.setBujuType(bujutype);
 //        xinWenXi.setLanMuType(daohangtype);
         xinWenXi.setLanMuType(1);
-        xinWenXi.setReplaycount(filter_list.get(pos).getArticlers().size());//跟帖数量
-        xinWenXi.setTitle(filter_list.get(pos).getName());//标题
-        xinWenXi.setXinwentext(filter_list.get(pos).getDescription());//内容
-        xinWenXi.setCreateDate(filter_list.get(pos).getCreateTime());//日期
-        xinWenXi.setGsmz(filter_list.get(pos).getGsmz());
-        xinWenXi.setGsdz(filter_list.get(pos).getGsdz());
-        xinWenXi.setLxr(filter_list.get(pos).getLxr());
-        xinWenXi.setLxdh(filter_list.get(pos).getLxdh());
-        xinWenXi.setZpxx(filter_list.get(pos).getZpxx());
-        xinWenXi.setFwcs(filter_list.get(pos).getFwcs());
-        xinWenXi.setGqxx(filter_list.get(pos).getGqxx());
-        xinWenXi.setProductCategory(filter_list.get(pos).getProductcategory());
-//xinWenXi.setUploadFiles(filter_list.get(pos).getUploadFile());
-        for (int i = 0; i < filter_list.get(pos).getUploadFile().size(); i++) {
-            UploadFile uploadFile = new UploadFile();
-
-            uploadFile.setPath(filter_list.get(pos).getUploadFile().get(i).getPath());
-            potolist.add(uploadFile);
-        }
-        xinWenXi.setUploadFileList(potolist);
-        for (int i = 0; i < filter_list.get(pos).getProductArticler().size(); i++) {
-            ProductArticler productArticler = new ProductArticler();
-            productArticler.setArtreview_authorid(filter_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
-            productArticler.setArtreview_time(filter_list.get(pos).getProductArticler().get(i).getArtreview_time());
-            productArticler.setArtreview_content(filter_list.get(pos).getProductArticler().get(i).getArtreview_content());
-            liuyuenlist.add(productArticler);
-        }
+//        xinWenXi.setReplaycount(filter_list.get(pos).getArticlers().size());//跟帖数量
+//        xinWenXi.setTitle(filter_list.get(pos).getName());//标题
+//        xinWenXi.setXinwentext(filter_list.get(pos).getDescription());//内容
+//        xinWenXi.setCreateDate(filter_list.get(pos).getCreateTime());//日期
+//        xinWenXi.setGsmz(filter_list.get(pos).getGsmz());
+//        xinWenXi.setGsdz(filter_list.get(pos).getGsdz());
+//        xinWenXi.setLxr(filter_list.get(pos).getLxr());
+//        xinWenXi.setLxdh(filter_list.get(pos).getLxdh());
+//        xinWenXi.setZpxx(filter_list.get(pos).getZpxx());
+//        xinWenXi.setFwcs(filter_list.get(pos).getFwcs());
+//        xinWenXi.setGqxx(filter_list.get(pos).getGqxx());
+//        xinWenXi.setProductCategory(filter_list.get(pos).getProductcategory());
+////xinWenXi.setUploadFiles(filter_list.get(pos).getUploadFile());
+//        for (int i = 0; i < filter_list.get(pos).getUploadFile().size(); i++) {
+//            UploadFile uploadFile = new UploadFile();
+//
+//            uploadFile.setPath(filter_list.get(pos).getUploadFile().get(i).getPath());
+//            potolist.add(uploadFile);
+//        }
+//        xinWenXi.setUploadFileList(potolist);
+//        for (int i = 0; i < filter_list.get(pos).getProductArticler().size(); i++) {
+//            ProductArticler productArticler = new ProductArticler();
+//            productArticler.setArtreview_authorid(filter_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
+//            productArticler.setArtreview_time(filter_list.get(pos).getProductArticler().get(i).getArtreview_time());
+//            productArticler.setArtreview_content(filter_list.get(pos).getProductArticler().get(i).getArtreview_content());
+//            liuyuenlist.add(productArticler);
+//        }
         xinWenXi.setProductArticlerList(liuyuenlist);
 
         //根据类型选择跳转的详细页面
@@ -495,24 +492,21 @@ import java.util.List;
      */
     @Override
     public void onItemClick(View view, int postion) {
-        bean=new  XinWen_productinfo.T18908805728Entity();
+        bean=new  XinWen_productinfo.FilterEntity();
         bean = filter_list.get(postion);
         id=bean.getId();
         switch (view.getId()) {
             case R.id.result_title://详细信息
-             //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
-                //	System.out.println("LongClick1 标题");
-            //    l = 1;
+
                 frament2activity(postion,filter_list);
                 break;
 
             case R.id.result_replace://修改
                 	Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
-                //	System.out.println("LongClick1 修改");
-              //  l = 2;
+
                 break;
             case R.id.result_delete://删除
-                mAlertView = new AlertView("删除",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                mAlertView = new AlertView("删除",bean.getFilters(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView.show();
 
                 break;
@@ -522,10 +516,10 @@ import java.util.List;
 
     @Override
     public void onItemLongClick(View view, int postion) {
-        bean=new  XinWen_productinfo.T18908805728Entity();
+        bean=new  XinWen_productinfo.FilterEntity();
         bean = filter_list.get(postion);
         if(bean != null){
-            Toast.makeText(this, "LongClick "+bean.getName(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "LongClick "+bean.getFilters(), Toast.LENGTH_SHORT).show();
         }
     }
     @Override
@@ -536,7 +530,7 @@ import java.util.List;
            // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
             String clickdel=xinWenURL.getClickdel()+bean.getId();
            DelData(clickdel);
-          //  searchProductinfoAdapter.notifyDataSetChanged();
+          //  searchFilterAdapter.notifyDataSetChanged();
         }else{
           Toast.makeText(this, "此功能未完善", Toast.LENGTH_SHORT).show();
 

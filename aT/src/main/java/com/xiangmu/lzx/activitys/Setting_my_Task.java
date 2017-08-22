@@ -18,7 +18,7 @@ import com.xiangmu.lzx.Setting_Utils.SearchDB;
 public class Setting_my_Task extends AppCompatActivity implements View.OnClickListener{
     private ImageView backsetting;
     private ImageView duihuan;
-    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx;
+    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx,open_filter;
     private String openid="";
     private Boolean manager=false;
 
@@ -54,6 +54,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         duihuan = (ImageView) findViewById(R.id.duihuan);
         open_client = (RelativeLayout) findViewById(R.id.open_client);
         open_fwxx= (RelativeLayout) findViewById(R.id.open_fwxx);
+        open_filter= (RelativeLayout) findViewById(R.id.open_filter);
         fabiao = (RelativeLayout) findViewById(R.id.fabiao);
         share = (RelativeLayout) findViewById(R.id.share);
         xinshang = (RelativeLayout) findViewById(R.id.xinshang);
@@ -68,12 +69,15 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         read_news.setOnClickListener(this);
         open_fwxx.setOnClickListener(this);
         open_client.setOnClickListener(this);
+        open_filter.setOnClickListener(this);
         if(manager){
             open_client.setVisibility(View.VISIBLE);
             open_fwxx.setVisibility(View.VISIBLE);
+            open_filter.setVisibility(View.VISIBLE);
         }else{
             open_client.setVisibility(View.GONE);
             open_fwxx.setVisibility(View.GONE);
+            open_filter.setVisibility(View.GONE);
         }
     }
 
@@ -125,6 +129,11 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
             case R.id.open_fwxx:
                 Intent intent21 = new Intent(this, WebCountViewActivity.class);
                 startActivity(intent21);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                break;
+            case R.id.open_filter:
+                Intent intent211 = new Intent(this, FilterListEditActivity.class);
+                startActivity(intent211);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
         }
