@@ -1027,11 +1027,21 @@ public class XinWen_productinfo  implements Serializable{
         }
 
     }
-    public static class FilterEntity {
+    public static class FilterEntity  implements Serializable {
         private static final long serialVersionUID = 1L;
         private Integer id;// 过滤编号
         private String filters;// 过滤词语
         private String note;// 过渡备注
+        private String createdate;
+        public String getCreatedate() {
+            return createdate;
+        }
+
+        public void setCreatedate(String createdate) {
+            this.createdate = createdate;
+        }
+
+
         public Integer getId() {
             return id;
         }

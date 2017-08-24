@@ -1,6 +1,7 @@
 package com.xiangmu.lzx.activitys;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -63,7 +64,7 @@ import java.util.List;
 
     private ImageButton back;
     private TextView noHotWords;
-    private TextView searchjiekuo;
+    private TextView searchjiekuo,filteradd;
 
     private LinearLayout layoutsearchResult;
 
@@ -112,7 +113,7 @@ import java.util.List;
 
     private void bindViews() {
         back = (ImageButton) findViewById(R.id.back);
-
+        filteradd= (TextView) findViewById(R.id.result_add);
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
 
@@ -167,7 +168,13 @@ import java.util.List;
            //    finish();
             }
         });
-
+        filteradd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(this, "单击了添加按钮", Toast.LENGTH_SHORT).show();
+                new AlertDialog.Builder(FilterListEditActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+            }
+        });
 
         search_view.setOnCloseListener(new SearchView.OnCloseListener() {
             @Override
@@ -386,7 +393,8 @@ import java.util.List;
     @Override
     protected void onResume() {
         super.onResume();
-     //   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+      //  onCreate(null);
+        //   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
         if (isPause){ //判断是否暂停
             isPause = false;
           // list = 新数据;
@@ -426,33 +434,7 @@ import java.util.List;
         xinWenXi.setBujuType(bujutype);
 //        xinWenXi.setLanMuType(daohangtype);
         xinWenXi.setLanMuType(1);
-//        xinWenXi.setReplaycount(filter_list.get(pos).getArticlers().size());//跟帖数量
-//        xinWenXi.setTitle(filter_list.get(pos).getName());//标题
-//        xinWenXi.setXinwentext(filter_list.get(pos).getDescription());//内容
-//        xinWenXi.setCreateDate(filter_list.get(pos).getCreateTime());//日期
-//        xinWenXi.setGsmz(filter_list.get(pos).getGsmz());
-//        xinWenXi.setGsdz(filter_list.get(pos).getGsdz());
-//        xinWenXi.setLxr(filter_list.get(pos).getLxr());
-//        xinWenXi.setLxdh(filter_list.get(pos).getLxdh());
-//        xinWenXi.setZpxx(filter_list.get(pos).getZpxx());
-//        xinWenXi.setFwcs(filter_list.get(pos).getFwcs());
-//        xinWenXi.setGqxx(filter_list.get(pos).getGqxx());
-//        xinWenXi.setProductCategory(filter_list.get(pos).getProductcategory());
-////xinWenXi.setUploadFiles(filter_list.get(pos).getUploadFile());
-//        for (int i = 0; i < filter_list.get(pos).getUploadFile().size(); i++) {
-//            UploadFile uploadFile = new UploadFile();
-//
-//            uploadFile.setPath(filter_list.get(pos).getUploadFile().get(i).getPath());
-//            potolist.add(uploadFile);
-//        }
-//        xinWenXi.setUploadFileList(potolist);
-//        for (int i = 0; i < filter_list.get(pos).getProductArticler().size(); i++) {
-//            ProductArticler productArticler = new ProductArticler();
-//            productArticler.setArtreview_authorid(filter_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
-//            productArticler.setArtreview_time(filter_list.get(pos).getProductArticler().get(i).getArtreview_time());
-//            productArticler.setArtreview_content(filter_list.get(pos).getProductArticler().get(i).getArtreview_content());
-//            liuyuenlist.add(productArticler);
-//        }
+
         xinWenXi.setProductArticlerList(liuyuenlist);
 
         //根据类型选择跳转的详细页面
@@ -461,9 +443,7 @@ import java.util.List;
             case XinWen_adapter.TYPE_zhuanti:
             case XinWen_adapter.TYPE_zhibo:
                 LogUtils.e("xinwenadapter", "TYPE_zhibo==" + bujutype);
-                //  String urlzhibo = filter_list.get(pos).getUrl();
-                // String urlzhibo = filter_list.get(pos).getName();
-//                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
+
                 xinWenXi.setUrl("bbbbb");//详细页面url
                 //跳转到详细页
           //      Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
@@ -493,6 +473,7 @@ import java.util.List;
     @Override
     public void onItemClick(View view, int postion) {
         bean=new  XinWen_productinfo.FilterEntity();
+
         bean = filter_list.get(postion);
         id=bean.getId();
         switch (view.getId()) {
@@ -502,9 +483,15 @@ import java.util.List;
                 break;
 
             case R.id.result_replace://修改
-                	Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
+                Intent intentzhibo = new Intent(this, FilterDetailActivity.class);
+                intentzhibo.putExtra("FilterEntity", bean);
+
+                startActivity(intentzhibo);
+
+                this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
 
                 break;
+
             case R.id.result_delete://删除
                 mAlertView = new AlertView("删除",bean.getFilters(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView.show();

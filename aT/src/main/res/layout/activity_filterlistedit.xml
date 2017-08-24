@@ -23,14 +23,28 @@
             android:src="@mipmap/back" />
 
         <TextView
+            android:id="@+id/glqy"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/back"
             android:layout_toRightOf="@+id/back"
-            android:text="搜索过滤词语"
+            android:text="过滤词语"
             android:textColor="@color/white"
             android:textSize="15sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/result_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="　添  加　"
+            android:textColor="@color/white"
+            android:textSize="18sp" />
     </RelativeLayout>
 
     <android.support.v7.widget.SearchView

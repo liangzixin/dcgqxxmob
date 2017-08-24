@@ -583,23 +583,9 @@ import java.util.List;
           //      Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
                 Intent intentzhibo = new Intent(this, WebProductinfoViewActivity.class);
                 intentzhibo.putExtra("xinwendata", xinWenXi);
-                //   intentzhibo.putExtra("potolist", potolist);
-                //   intentzhibo.putExtra("xinwendata", new Gson().toJson(xinWenXi));
-//                Bundle bundle = new Bundle();
 
-//须定义一个list用于在budnle中传递需要传递的ArrayList<Object>,这个是必须要的
-//                bundle.putStringArray("potolist", potolist);
-//                intent.putExtras(bundle);
-//                ArrayList bundlelist = new ArrayList();
-//                ArrayList bundlelist1 = new ArrayList();
-//                bundlelist.add(potolist);
-//                bundlelist1.add(liuyuenlist);
-//                bundle.putParcelableArrayList("potolist",bundlelist);
-//                bundle.putParcelableArrayList("liuyuanlist",bundlelist1);
-//                intentzhibo.putExtras(bundle);
-//                intentzhibo.putExtra("bundle", bundle);
                 startActivity(intentzhibo);
-             //   ProductinfoListEditActivity.this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
+
                 this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
                 break;
             case XinWen_adapter.type_duotu:

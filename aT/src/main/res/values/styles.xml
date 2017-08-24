@@ -201,7 +201,16 @@
         <item name="android:windowEnterAnimation">@anim/in_lefttoright</item>
         <item name="android:windowExitAnimation">@anim/out_righttoleft</item>
     </style>
-
+    <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
+        <!--<item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>-->
+        <!--<item name="android:actionBarSize">35dip</item>-->
+        <!--&lt;!&ndash;<style name="AppTheme" parent="android:Theme.Holo.Light.DarkActionBar">&ndash;&gt;-->
+        <!--&lt;!&ndash; Customize your theme here. &ndash;&gt;-->
+    <!--</style>-->
+    <!--<style name="MenuTextStyle">-->
+        <!--<item name="android:textColor">@android:color/holo_red_light</item>-->
+        <!--<item name="android:textSize">20sp</item>-->
+    <!--</style>-->
 </resources>
 
 

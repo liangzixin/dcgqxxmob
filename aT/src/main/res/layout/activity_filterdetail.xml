@@ -1,0 +1,150 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:myApplication="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <!-- titleBar-->
+    <RelativeLayout
+        android:id="@+id/titlebarl"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@mipmap/titlebar_background"
+        android:gravity="center_vertical">
+
+      <ImageButton
+            android:id="@+id/backl"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/glql"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/backl"
+            android:layout_toRightOf="@+id/backl"
+            android:text="过滤词语修改"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/result_addl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="　修  改  "
+            android:textColor="@color/white"
+            android:textSize="18sp" />  -->
+
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="序 　　 号"/>
+
+            <EditText
+                android:id="@+id/filter_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:enabled="false"
+                android:text="Input text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/filter_filters0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="过滤词语"/>
+
+            <MaterialEditText
+                android:id="@+id/filter_filters"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="5.05"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/filter_createdate0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="0.30"
+                android:text="日 　　 期"/>
+
+            <MaterialEditText
+                android:id="@+id/filter_createdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.75"
+                android:hint="Single Line Input Label"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:enabled="false"
+                android:text="Input text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/filter_note0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="备  　　注"/>
+
+            <MaterialEditText
+                android:id="@+id/filter_note"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+
+
+    </LinearLayout>
+</LinearLayout>

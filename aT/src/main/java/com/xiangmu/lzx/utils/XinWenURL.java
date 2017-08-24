@@ -34,6 +34,16 @@ public class XinWenURL {
 
     String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
 
+    public String getRepareFilterMob() {
+        return repareFilterMob;
+    }
+
+    public void setRepareFilterMob(String repareFilterMob) {
+        this.repareFilterMob = repareFilterMob;
+    }
+
+    String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
+
     String savearticler=HttpUtil.BASE_URL+"product!savearticlermob.action?productid=";
     String addcustmer=HttpUtil.BASE_URL+"login!addcustmermob.action?openid=";
     public String getAddcustmer() {

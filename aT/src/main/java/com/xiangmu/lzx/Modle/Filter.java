@@ -10,6 +10,16 @@ public class Filter implements Serializable {
     private Integer id;// 类别编号
     private String filters;// 类别名称
     private String note;// 类别名称
+
+    public String getCreatedate() {
+        return createdate;
+    }
+
+    public void setCreatedate(String createdate) {
+        this.createdate = createdate;
+    }
+
+    private String createdate;
     public Integer getId() {
         return id;
     }

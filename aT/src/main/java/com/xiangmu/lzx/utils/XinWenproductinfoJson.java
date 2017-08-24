@@ -402,6 +402,10 @@ public class XinWenproductinfoJson {
                     String replyCount=arrayobj.getString("note");
                     filterEntity.setNote(replyCount);
                 };
+                if (!arrayobj.isNull("createdate")){
+                    String replyCount=arrayobj.getString("createdate");
+                    filterEntity.setCreatedate(replyCount);
+                };
 
 
                 list.add(filterEntity);

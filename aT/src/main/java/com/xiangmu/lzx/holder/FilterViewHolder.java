@@ -17,6 +17,7 @@ public class FilterViewHolder extends ViewHolder implements OnClickListener,OnLo
 	public TextView bt_replace;
 	public TextView bt_del;
 	public TextView bt_date;
+	public TextView bt_id;
 	private MyItemClickListener mListener;
 	private MyItemLongClickListener mLongClickListener;
 
@@ -27,6 +28,7 @@ public class FilterViewHolder extends ViewHolder implements OnClickListener,OnLo
 		bt_replace = (TextView)arg0.findViewById(R.id.result_replace);
 		bt_del = (TextView)arg0.findViewById(R.id.result_delete);
 		bt_date = (TextView)arg0.findViewById(R.id.result_date);
+		bt_id= (TextView)arg0.findViewById(R.id.result_id);
 		this.mListener = listener;
 		this.mLongClickListener = longClickListener;
 //		arg0.setOnClickListener(this);

@@ -43,8 +43,8 @@ public class SearchFilterAdapter extends Adapter<FilterViewHolder> {
 		}else {
 			holder.tv.setText(bean.getFilters().substring(0,12));
 		}
-		//holder.bt_date.setText(dateTime.getmd(bean.getCreateTime()));
-
+		holder.bt_date.setText(dateTime.getmd(bean.getCreatedate()));
+		holder.bt_id.setText(bean.getId()+"");
 	}
 
 	@Override
