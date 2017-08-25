@@ -1,7 +1,6 @@
 package com.xiangmu.lzx.activitys;
 
 import android.annotation.SuppressLint;
-import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
@@ -23,7 +22,6 @@ import android.widget.Toast;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnDismissListener;
 import com.bigkoo.alertview.OnItemClickListener;
-import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -108,7 +106,7 @@ import java.util.List;
 
         initSearchNews(url);
 
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+    //    client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void bindViews() {
@@ -171,8 +169,14 @@ import java.util.List;
         filteradd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Toast.makeText(this, "单击了添加按钮", Toast.LENGTH_SHORT).show();
-                new AlertDialog.Builder(FilterListEditActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+                Intent intentzhibo = new Intent(FilterListEditActivity.this, FilterAddActivity.class);
+            //    intentzhibo.putExtra("FilterEntity", bean);
+
+                startActivity(intentzhibo);
+
+             //   this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
+
+
             }
         });
 
@@ -189,11 +193,11 @@ import java.util.List;
             public boolean onQueryTextSubmit(String query) {
                 keywords = query;
 //                initSearchNews(ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);//执行新闻搜索请求
-                initSearchNews(ServerURL.searchUrl3 + keywords);//执行新闻搜索请求
+                initSearchNews(ServerURL.filterUrl + keywords);//执行新闻搜索请求
                 //添加数据
                 ContentValues contentValues = new ContentValues();
 //                contentValues.put("url",ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);
-                contentValues.put("url", ServerURL.searchUrl3 + keywords);
+                contentValues.put("url", ServerURL.filterUrl + keywords);
                 contentValues.put("searchWord", keywords);
                 writableDatabase.insert("searchHistory", null, contentValues);
                 return false;
@@ -269,7 +273,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-//                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
+                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -337,9 +341,9 @@ import java.util.List;
                 searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 //    progressDialog.dismiss();
-                mDialog.dismiss();
+
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-//                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
+     //    searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
 //       searchEditResultAdapter = new SearchEditResultAdapter(filter_list,this);
                 searchFilterAdapter= new SearchFilterAdapter(filter_list);
                 //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
@@ -349,11 +353,10 @@ import java.util.List;
                 this.lv_searchResult.addItemDecoration(decoration);
                 this.searchFilterAdapter.setOnItemClickListener(this);
                 this.searchFilterAdapter.setOnItemLongClickListener(this);
-
+                mDialog.dismiss();
                 break;
             case 3:
                 filter_list = new ArrayList<>();
-
                 XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdataFilter(result);//传入类型和数据
                 filter_list.addAll(toutiao_object1.getListfilterEntity());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
@@ -362,13 +365,16 @@ import java.util.List;
                 searchjiekuo.setText("搜索结果: " + toutiao_object1.getTotalRecords() + " 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 //     progressDialog.dismiss();
-                mDialog.dismiss();
+         //       mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
                 searchFilterAdapter= new SearchFilterAdapter(filter_list);
-
-
                 lv_searchResult.setAdapter(searchFilterAdapter);
+
+//                getData(2, url);
+//                //   progressDialog.show();
+//                mDialog.show();
+                mDialog.dismiss();
                 break;
         }
     }
@@ -376,6 +382,7 @@ import java.util.List;
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        Toast.makeText(FilterListEditActivity.this, "onDestroy()", Toast.LENGTH_SHORT).show();
         if (httpUtils != null) {
             handler.cancel();
         }
@@ -386,28 +393,18 @@ import java.util.List;
     @Override
     protected void onPause() {
         super.onPause();
-     //   Toast.makeText(ProductinfoListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
+       Toast.makeText(FilterListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
         isPause = true; //记录页面已经被暂停
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-      //  onCreate(null);
-        //   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+
+         Toast.makeText(FilterListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
         if (isPause){ //判断是否暂停
             isPause = false;
-          // list = 新数据;
-     //     adapter.setList(list); //需要adapter重新设置list的数据
-            searchFilterAdapter= new SearchFilterAdapter(filter_list);
-            //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
-
-            lv_searchResult.setAdapter(searchFilterAdapter);
-            searchFilterAdapter.notifyDataSetChanged();//刷新
-            RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-            this.lv_searchResult.addItemDecoration(decoration);
-            this.searchFilterAdapter.setOnItemClickListener(this);
-            this.searchFilterAdapter.setOnItemLongClickListener(this);
+            initSearchNews(url);
        }
 
     }
@@ -515,7 +512,7 @@ import java.util.List;
 
         if(position==0) {
            // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
-            String clickdel=xinWenURL.getClickdel()+bean.getId();
+            String clickdel=xinWenURL.getFilterdel()+bean.getId();
            DelData(clickdel);
           //  searchFilterAdapter.notifyDataSetChanged();
         }else{
@@ -538,16 +535,6 @@ import java.util.List;
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result.equals("true")) {
                         Toast.makeText(FilterListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
-                        for (int i = 0; i < filter_list.size(); i++) {
-
-                            if (filter_list.get(i).getId() ==id) {
-
-                                filter_list.remove(i);
-
-                                i--;
-
-                            }
-                        }
 
                         isPause = true;
                         onResume();

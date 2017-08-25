@@ -23,6 +23,28 @@ public class XinWenURL {
 
     String getDateCount=HttpUtil.BASE_URL+"count!getDateCount.action";
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
+    String filterdel=HttpUtil.BASE_URL+"filter!delMob.action?id=";
+    String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
+    String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
+    String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
+    public String getSaveMob() {
+        return saveMob;
+    }
+
+    public void setSaveMob(String saveMob) {
+        this.saveMob = saveMob;
+    }
+
+
+    public String getFilterdel() {
+        return filterdel;
+    }
+
+    public void setFilterdel(String filterdel) {
+        this.filterdel = filterdel;
+    }
+
+
 
     public String getClickdel() {
         return clickdel;
@@ -32,7 +54,7 @@ public class XinWenURL {
         this.clickdel = clickdel;
     }
 
-    String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
+
 
     public String getRepareFilterMob() {
         return repareFilterMob;
@@ -42,7 +64,7 @@ public class XinWenURL {
         this.repareFilterMob = repareFilterMob;
     }
 
-    String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
+
 
     String savearticler=HttpUtil.BASE_URL+"product!savearticlermob.action?productid=";
     String addcustmer=HttpUtil.BASE_URL+"login!addcustmermob.action?openid=";
