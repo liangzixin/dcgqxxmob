@@ -72,42 +72,43 @@ public class TouTiaoFrament extends Fragment {
     }
     private String geturl(){
         String url=null;
-             url=xinWenURL.getZuixin(daohangtype);//最新url
+       //      url=xinWenURL.getZuixin(daohangtype);//最新url
 
-//        switch (daohangtype) {
-//            case XinWen_adapter.zuixin:
+        switch (daohangtype) {
+            case XinWen_adapter.zuixin:
 //                url.add( xinWenURL.getZuixin());//最新url
 //                url.add(xinWenURL.getZuixin0());
-//                break;
-//            case XinWen_adapter.zaopin:
-//                url = xinWenURL.getZaopin();//招聘
-//                LogUtils.e("bundle", "XinWen_yule==" + url);
-//                break;
-//            case XinWen_adapter.qiuzhi://求职
-//                url = xinWenURL.getQiuzhi();
-//                break;
-//            case XinWen_adapter.chushou://出售
-//                url = xinWenURL.getChushou();
-//                break;
-//            case XinWen_adapter.chuzu://出租
-//                url = xinWenURL.getChuzu();
-//                break;
-//            case XinWen_adapter.gongqiu://供求
-//                url = xinWenURL.getGongqiu();
-//                break;
-//            case XinWen_adapter.ershou://二手
-//                url = xinWenURL.getErshou();
-//                break;
-//            case XinWen_adapter.qita://其它
-//                url = xinWenURL.getQita();
-//                break;
-//            case XinWen_adapter.pumian://铺面
-//                url = xinWenURL.getPumian();
-//                break;
-//            case XinWen_adapter.jiaju://家具
-//                url = xinWenURL.getYouxi();
-//                break;
-//        }
+                url=xinWenURL.getZuixin(daohangtype);//最新url
+                break;
+            case XinWen_adapter.zaopin:
+                url = xinWenURL.getZaopin();//招聘
+                LogUtils.e("bundle", "XinWen_yule==" + url);
+                break;
+            case XinWen_adapter.qiuzhi://求职
+                url = xinWenURL.getQiuzhi();
+                break;
+            case XinWen_adapter.chushou://出售
+                url = xinWenURL.getChushou();
+                break;
+            case XinWen_adapter.chuzu://出租
+                url = xinWenURL.getChuzu();
+                break;
+            case XinWen_adapter.gongqiu://供求
+                url = xinWenURL.getGongqiu();
+                break;
+            case XinWen_adapter.ershou://二手
+                url = xinWenURL.getErshou();
+                break;
+            case XinWen_adapter.qita://其它
+                url = xinWenURL.getQita();
+                break;
+            case XinWen_adapter.pumian://铺面
+                url = xinWenURL.getPumian();
+                break;
+            case XinWen_adapter.jiaju://家具
+                url = xinWenURL.getYouxi();
+                break;
+        }
         return url;
     }
     @Nullable
