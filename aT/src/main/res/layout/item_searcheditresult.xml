@@ -36,7 +36,16 @@
             android:textSize="11dp"
             android:textStyle="italic"
             android:text=""/>
+        <TextView
+            android:id="@+id/result_agree"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:textSize="14dp"
+            android:textStyle="bold"
+            android:text="审核"/>
         />
+
         <TextView
             android:id="@+id/result_replace"
             android:layout_width="wrap_content"
@@ -45,7 +54,7 @@
             android:textSize="14dp"
             android:textStyle="bold"
             android:text="修改"/>
-            />
+
 
         <TextView
             android:id="@+id/result_delete"

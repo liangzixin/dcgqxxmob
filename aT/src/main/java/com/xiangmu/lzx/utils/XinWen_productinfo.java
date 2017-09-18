@@ -75,7 +75,7 @@ public class XinWen_productinfo  implements Serializable{
         private String lxr;
         private String lxdh;
         private String jbPhone;
-        private String agree ="1";// 是否显示
+        private String agree ="0";// 是否显示
         private String ip;
         private  ProductCategory productcategory;
 

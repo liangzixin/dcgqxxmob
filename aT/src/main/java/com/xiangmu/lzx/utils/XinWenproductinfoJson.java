@@ -156,6 +156,10 @@ public class XinWenproductinfoJson {
                     int lanmu=arrayobj.getInt("lanmu");
                     t18908805728Entity.setLanmu(lanmu);
                 };
+                if (!arrayobj.isNull("agree")){
+                   String agree=arrayobj.getString("agree");
+                    t18908805728Entity.setAgree(agree);
+                };
 //                int totalRecords0=arrayobj.getInt("totalRecords");
 
                        if (!arrayobj.isNull("articlers")){

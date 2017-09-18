@@ -17,6 +17,7 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 	public TextView bt_replace;
 	public TextView bt_del;
 	public TextView bt_date;
+	public TextView bt_agree;
 	private MyItemClickListener mListener;
 	private MyItemLongClickListener mLongClickListener;
 	
@@ -27,6 +28,7 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 		bt_replace = (TextView)arg0.findViewById(R.id.result_replace);
 		bt_del = (TextView)arg0.findViewById(R.id.result_delete);
 		bt_date = (TextView)arg0.findViewById(R.id.result_date);
+		bt_agree= (TextView)arg0.findViewById(R.id.result_agree);
 		this.mListener = listener;
 		this.mLongClickListener = longClickListener;
 //		arg0.setOnClickListener(this);
@@ -34,6 +36,7 @@ public class SearchViewHolder extends ViewHolder implements OnClickListener,OnLo
 		tv.setOnClickListener(this);
 		bt_replace.setOnClickListener(this);
 		bt_del.setOnClickListener(this);
+		bt_agree.setOnClickListener(this);
 	}
 
 	/**

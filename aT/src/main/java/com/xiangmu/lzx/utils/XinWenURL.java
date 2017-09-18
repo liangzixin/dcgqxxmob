@@ -8,7 +8,7 @@ import java.util.List;
  * Created by Administrator on 2015/11/13.
  */
 public class XinWenURL {
-    public int stratPage =0;
+    public int stratPage =1;
     List<ProductInfo> productInfos=null;
     String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
   //  int page = getStratPage();
@@ -25,8 +25,18 @@ public class XinWenURL {
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
     String filterdel=HttpUtil.BASE_URL+"filter!delMob.action?id=";
     String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
+    String clickagree=HttpUtil.BASE_URL+"product!Clickagree.action?id=";
     String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
     String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
+
+    public String getClickagree() {
+        return clickagree;
+    }
+
+    public void setClickagree(String clickagree) {
+        this.clickagree = clickagree;
+    }
+
     public String getSaveMob() {
         return saveMob;
     }

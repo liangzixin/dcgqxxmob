@@ -88,7 +88,7 @@ import java.util.List;
     private XinWenURL xinWenURL = new XinWenURL();
     private String url = null;
     private SimpleArcDialog mDialog;
-    private AlertView mAlertView;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
+    private AlertView mAlertView1, mAlertView2;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
     private Boolean isPause=false;
     private int id=0;
     /**
@@ -629,9 +629,12 @@ import java.util.List;
               //  l = 2;
                 break;
             case R.id.result_delete://删除
-                mAlertView = new AlertView("删除",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
-                mAlertView.show();
-
+                mAlertView1 = new AlertView("删除",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                mAlertView1.show();
+                break;
+            case R.id.result_agree://审核
+                mAlertView2 = new AlertView("审核",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                mAlertView2.show();
                 break;
         }
 
@@ -646,18 +649,25 @@ import java.util.List;
         }
     }
     @Override
-    public void onItemClick(Object o,int position) {
+    public void onItemClick(Object o, int position) {
       //  closeKeyboard();
-
-        if(position==0) {
-           // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
-            String clickdel=xinWenURL.getClickdel()+bean.getId();
-           DelData(clickdel);
-          //  searchProductinfoAdapter.notifyDataSetChanged();
-        }else{
-          Toast.makeText(this, "此功能未完善", Toast.LENGTH_SHORT).show();
-
-        }
+     AlertView mAlertView0=(AlertView)o;
+  if( mAlertView1== mAlertView0) {
+      String clickdel=xinWenURL.getClickdel()+bean.getId();
+      DelData(clickdel);
+  }else if (mAlertView2== mAlertView0)
+  {
+      String agree=xinWenURL.getClickagree()+bean.getId();
+      AgreeData(agree);
+  }
+//        if(position==0) {
+//           // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
+//
+//          //  searchProductinfoAdapter.notifyDataSetChanged();
+//        }else{
+//          Toast.makeText(this, "此功能未完善", Toast.LENGTH_SHORT).show();
+//
+//        }
     }
     @Override
     public void onDismiss(Object o) {
@@ -700,4 +710,40 @@ import java.util.List;
 
         }
     }
+    private void AgreeData(final String url) {
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (responseInfo.result.equals("true")) {
+                        Toast.makeText(ProductinfoListEditActivity.this, "审核成功", Toast.LENGTH_SHORT).show();
+//                        for (int i = 0; i < toutiao_list.size(); i++) {
+//
+//                            if (toutiao_list.get(i).getId() ==id) {
+//
+//                                toutiao_list.remove(i);
+//
+//                                i--;
+//
+//                            }
+//                        }
+
+                        isPause = true;
+                        onResume();
+                    }
+
+                }
+
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(ProductinfoListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
+
 }

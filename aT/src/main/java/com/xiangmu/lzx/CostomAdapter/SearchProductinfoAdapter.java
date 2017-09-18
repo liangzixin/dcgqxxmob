@@ -38,13 +38,17 @@ public class SearchProductinfoAdapter extends Adapter<SearchViewHolder> {
 		String title =bean.getName();//专家：<em>中国</em>需要股权分散的B类企业
 		String str = title.replace("<em>", "");
 		String replace = str.replace("</em>", "");
-		if(replace.length()<=12) {
+		if(replace.length()<=10) {
 			holder.tv.setText(bean.getName());
 		}else {
-			holder.tv.setText(bean.getName().substring(0,12));
+			holder.tv.setText(bean.getName().substring(0,10));
 		}
 		holder.bt_date.setText(dateTime.getmd(bean.getCreateTime()));
-
+		if(bean.getAgree().equals("1")) {
+			holder.bt_agree.setText("已审");
+		}else {
+			holder.bt_agree.setText("未审");
+		}
 	}
 
 	@Override
