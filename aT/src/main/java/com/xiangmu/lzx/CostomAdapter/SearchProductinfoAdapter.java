@@ -1,5 +1,6 @@
 package com.xiangmu.lzx.CostomAdapter;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView.Adapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,9 +21,10 @@ public class SearchProductinfoAdapter extends Adapter<SearchViewHolder> {
 	private MyItemClickListener mItemClickListener;
 	private MyItemLongClickListener mItemLongClickListener;
 	private DateTime dateTime;
-	
-	public SearchProductinfoAdapter(List<XinWen_productinfo.T18908805728Entity> data){
+	private Context context;
+	public SearchProductinfoAdapter(List<XinWen_productinfo.T18908805728Entity> data , Context context){
 		this.mData = data;
+		this.context = context;
 	}
 	
 	@Override

@@ -273,7 +273,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
+                   httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -336,7 +336,7 @@ import java.util.List;
                 XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdataFilter(result);//传入类型和数据
                 filter_list.addAll(toutiao_object.getListfilterEntity());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                System.out.println("标题:" + filter_list.get(0).getFilters());
+           //     System.out.println("标题:" + filter_list.get(0).getFilters());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
@@ -378,7 +378,7 @@ import java.util.List;
                 break;
         }
     }
-
+//
     @Override
     protected void onDestroy() {
         super.onDestroy();

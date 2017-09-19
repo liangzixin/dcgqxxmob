@@ -22,7 +22,6 @@ import android.widget.Toast;
 import com.bigkoo.alertview.AlertView;
 import com.bigkoo.alertview.OnDismissListener;
 import com.bigkoo.alertview.OnItemClickListener;
-import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
@@ -83,7 +82,7 @@ import java.util.List;
     private MySqlitehelper mySqlitehelper;
     private SQLiteDatabase writableDatabase;
     private List<XinWen_productinfo.T18908805728Entity.AdsEntity> listads;//字段listads
-    private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
+    private List<XinWen_productinfo.T18908805728Entity> toutiao_list;
     private XinWen_productinfo.T18908805728Entity bean;
     private XinWenURL xinWenURL = new XinWenURL();
     private String url = null;
@@ -113,7 +112,7 @@ import java.util.List;
         // getData(3,url);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
-        client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+     //  client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void bindViews() {
@@ -140,7 +139,9 @@ import java.util.List;
         //     inintHotWordsData();//加载热词推荐数据
      inintClick();
     }
+    private void inintAdapter() {
 
+    }
     MyGridViewAadapter adapterHistory = null;
 
     //查询数据库
@@ -163,17 +164,7 @@ import java.util.List;
         float density = dm.density;
         int gridviewWidth = (int) (size * (length + 4) * density);
         int itemWidth = (int) (length * density);
-//        LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(gridviewWidth, LinearLayout.LayoutParams.FILL_PARENT);
-//        gv_searchHistory.setLayoutParams(params); // 设置GirdView布局参数,横向布局的关键
-//        gv_searchHistory.setColumnWidth(itemWidth); // 设置列表项宽
-//        gv_searchHistory.setHorizontalSpacing(5); // 设置列表项水平间距
-//        gv_searchHistory.setStretchMode(GridView.NO_STRETCH);
-//        gv_searchHistory.setNumColumns(size); // 设置列数量=列表集合数
-//        if (historyList.size()>0){
-//            adapterHistory = new MyGridViewAadapter(historyList,this);
-//            gv_searchHistory.setAdapter(adapterHistory);
-//    //        layout_sousuoHis.setVisibility(View.VISIBLE);
-//        }
+
     }
 
 
@@ -292,23 +283,6 @@ import java.util.List;
 
     private void initSearchNews(String url) {
 
-        //  mDialog.show();
-        //   progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
-//        mPointProgressBar=(PointProgressBar)findViewById(R.id.pointProgressBar);
-//        new Thread(){
-//            public void run() {
-//                for(int i=0;i<=100;i++){
-//                    mPointProgressBar.setCurrentPro(i);
-//                    try {
-//                        sleep(100);
-//                    } catch (InterruptedException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
-//            }
-//
-//            ;
-//        }.start();
         if (!CommonUtil.isNetWork(this)) {//无网络读缓存
             if (keywords != null) {
                 LogUtils.e("---", url);
@@ -362,7 +336,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-//                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
+                 httpUtils.configCurrentHttpCacheExpiry(1000 *10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -425,16 +399,15 @@ import java.util.List;
                 XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
                 toutiao_list.addAll(toutiao_object.getT18908805728());
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-                System.out.println("标题:" + toutiao_list.get(0).getName());
+        //        System.out.println("标题:" + toutiao_list.get(0).getName());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
                 searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
-                //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-                //    progressDialog.dismiss();
-                mDialog.dismiss();
+
+
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 //                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-//       searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
-                searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
+        //    searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
+              searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
                 //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
 
                 lv_searchResult.setAdapter(searchProductinfoAdapter);
@@ -442,7 +415,7 @@ import java.util.List;
                 this.lv_searchResult.addItemDecoration(decoration);
                 this.searchProductinfoAdapter.setOnItemClickListener(this);
                 this.searchProductinfoAdapter.setOnItemLongClickListener(this);
-
+                mDialog.dismiss();
                 break;
             case 3:
                 toutiao_list = new ArrayList<>();
@@ -458,7 +431,7 @@ import java.util.List;
                 mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
-                searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
+                searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
 
 
                 lv_searchResult.setAdapter(searchProductinfoAdapter);
@@ -486,21 +459,12 @@ import java.util.List;
     @Override
     protected void onResume() {
         super.onResume();
-     //   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+
         if (isPause){ //判断是否暂停
             isPause = false;
-          // list = 新数据;
-     //     adapter.setList(list); //需要adapter重新设置list的数据
-            searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list);
-            //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
-
-            lv_searchResult.setAdapter(searchProductinfoAdapter);
-            searchProductinfoAdapter.notifyDataSetChanged();//刷新
-            RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-            this.lv_searchResult.addItemDecoration(decoration);
-            this.searchProductinfoAdapter.setOnItemClickListener(this);
-            this.searchProductinfoAdapter.setOnItemLongClickListener(this);
-       }
+            initSearchNews(url);
+        }
 
     }
     //跳转详细页面方法
@@ -718,17 +682,6 @@ import java.util.List;
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result.equals("true")) {
-                        Toast.makeText(ProductinfoListEditActivity.this, "审核成功", Toast.LENGTH_SHORT).show();
-//                        for (int i = 0; i < toutiao_list.size(); i++) {
-//
-//                            if (toutiao_list.get(i).getId() ==id) {
-//
-//                                toutiao_list.remove(i);
-//
-//                                i--;
-//
-//                            }
-//                        }
 
                         isPause = true;
                         onResume();
@@ -739,7 +692,7 @@ import java.util.List;
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    Toast.makeText(ProductinfoListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductinfoListEditActivity.this, "审核成功", Toast.LENGTH_SHORT).show();
                 }
             });
 
