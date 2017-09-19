@@ -109,6 +109,7 @@ import java.util.List;
         //     queryDB();//查询数据
         //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
         initSearchNews(url);
+        inintAdapter();
         // getData(3,url);
         // ATTENTION: This was auto-generated to implement the App Indexing API.
         // See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -141,6 +142,18 @@ import java.util.List;
     }
     private void inintAdapter() {
 
+
+
+        layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
+
+        searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
+
+
+        lv_searchResult.setAdapter(searchProductinfoAdapter);
+        RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+        this.lv_searchResult.addItemDecoration(decoration);
+        this.searchProductinfoAdapter.setOnItemClickListener(this);
+        this.searchProductinfoAdapter.setOnItemLongClickListener(this);
     }
     MyGridViewAadapter adapterHistory = null;
 
@@ -336,7 +349,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-                 httpUtils.configCurrentHttpCacheExpiry(1000 *10); //设置超时时间   10s
+            //     httpUtils.configCurrentHttpCacheExpiry(1000 *10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -398,23 +411,20 @@ import java.util.List;
                 toutiao_list = new ArrayList<>();
                 XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
                 toutiao_list.addAll(toutiao_object.getT18908805728());
-//                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-        //        System.out.println("标题:" + toutiao_list.get(0).getName());
-//                LogUtils.e("---", searchBean.doc.result.get(0).name);
+
                 searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
-
-
-                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-//                searchResultAdapter = new SearchResultAdapter(searchBean.doc.result, this);
-        //    searchEditResultAdapter = new SearchEditResultAdapter(toutiao_list,this);
-              searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
-                //   lv_searchResult.getRefreshableView().setAdapter(searchEditResultAdapter);
-
-                lv_searchResult.setAdapter(searchProductinfoAdapter);
-                RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-                this.lv_searchResult.addItemDecoration(decoration);
-                this.searchProductinfoAdapter.setOnItemClickListener(this);
-                this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+//
+//
+//                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
+//
+//              searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
+//
+//
+//                lv_searchResult.setAdapter(searchProductinfoAdapter);
+//                RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+//                this.lv_searchResult.addItemDecoration(decoration);
+//                this.searchProductinfoAdapter.setOnItemClickListener(this);
+//                this.searchProductinfoAdapter.setOnItemLongClickListener(this);
                 mDialog.dismiss();
                 break;
             case 3:
@@ -464,6 +474,7 @@ import java.util.List;
         if (isPause){ //判断是否暂停
             isPause = false;
             initSearchNews(url);
+            inintAdapter();
         }
 
     }
