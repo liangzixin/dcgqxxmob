@@ -106,38 +106,31 @@ import java.util.List;
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
         mDialog = new SimpleArcDialog(this);
-        //     queryDB();//查询数据
-        //  progressDialog = new CustomProgressDialog(this,"数据正在请求中比...", R.anim.donghua_frame);
+
         initSearchNews(url);
         inintAdapter();
-        // getData(3,url);
-        // ATTENTION: This was auto-generated to implement the App Indexing API.
-        // See https://g.co/AppIndexing/AndroidStudio for more information.
-     //  client = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
+
     }
 
     private void bindViews() {
         back = (ImageButton) findViewById(R.id.back);
-        //clear_history = (ImageView) findViewById(R.id.clear_history);
+
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
-        //   layout_sousuoHis = (RelativeLayout) findViewById(R.id.layout_sousuoHis);//搜索历史布局
+
         lv_searchResult = (RecyclerView) findViewById(R.id.lv_searchResult);//搜索结果
         LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 
         lv_searchResult.setLayoutManager(manager);
         lv_searchResult.setItemAnimator(new DefaultItemAnimator());
         searchjiekuo = (TextView) findViewById(R.id.lv_searchjiekuo);
-//        houtWord_gridview = (GridView) findViewById(R.id.houtWord_gridview);//热词推荐
-//        gv_searchHistory = (GridView) findViewById(R.id.gv_searchHistory);//搜索历史
+
         search_view = (SearchView) findViewById(R.id.search_view);
         search_view.setSubmitButtonEnabled(true);//是否显示确认搜索按钮
         search_view.setIconified(false);//设置搜索框默认展开
-//        android:imeOptions="actionSearch" 设置点击输入法自动匹配是确认,下一条...
-//        app:defaultQueryHint="请输入关键字..."  设置输入框展开默认显示文字
+
         search_view.onActionViewExpanded();//表示在内容为空时不显示取消的x按钮，内容不为空时显示.
 
-        //     inintHotWordsData();//加载热词推荐数据
      inintClick();
     }
     private void inintAdapter() {
@@ -191,40 +184,6 @@ import java.util.List;
             }
         });
 
-//        //搜索历史记录item监听
-//        gv_searchHistory.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                String word = adapterHistory.getList().get(i);
-//                Toast.makeText(ProductinfoListEditActivity.this, word, Toast.LENGTH_SHORT).show();
-//                search_view.setQuery(word, false);
-//                initSearchNews(ServerURL.searchUrl3 + word);//执行新闻搜索请求
-//            }
-//        });
-//
-//        //清空搜索历史
-//        clear_history.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Toast.makeText(ProductinfoListEditActivity.this,"正在清空搜索历史...",Toast.LENGTH_SHORT).show();
-//                layout_sousuoHis.setVisibility(View.GONE);
-//
-//                int delete = writableDatabase.delete("searchHistory", null, null);
-//                if (delete >= 1){
-//                    Toast.makeText(ProductinfoListEditActivity.this,"搜索历史清空完成...",Toast.LENGTH_SHORT).show();
-//                }
-//            }
-//        });
-//
-//        //热词推荐
-//        houtWord_gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                tuijian = gridViewAadapter.getList().get(i);
-//                keywords = tuijian;
-//                search_view.setQuery(tuijian, true);
-//            }
-//        });
 
 
         search_view.setOnCloseListener(new SearchView.OnCloseListener() {
@@ -239,11 +198,11 @@ import java.util.List;
             @Override
             public boolean onQueryTextSubmit(String query) {
                 keywords = query;
-//                initSearchNews(ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);//执行新闻搜索请求
+
                 initSearchNews(ServerURL.searchUrl3 + keywords);//执行新闻搜索请求
                 //添加数据
                 ContentValues contentValues = new ContentValues();
-//                contentValues.put("url",ServerURL.searchUrl1 + keywords + ServerURL.searchUrl2);
+
                 contentValues.put("url", ServerURL.searchUrl3 + keywords);
                 contentValues.put("searchWord", keywords);
                 writableDatabase.insert("searchHistory", null, contentValues);
@@ -260,35 +219,6 @@ import java.util.List;
             }
         });
 
-//        lv_searchResult.setPullLoadEnabled(false);
-//        lv_searchResult.setPullRefreshEnabled(false);
-//        lv_searchResult.setScrollLoadEnabled(false);
-//        lv_searchResult.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-//            @Override
-//            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-//                switch (view.getId()) {
-//                    case R.id.result_title://暂不登陆,返回
-//                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求标题", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.result_replace://暂不登陆,返回
-//                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求修改", Toast.LENGTH_SHORT).show();
-//                        break;
-//                    case R.id.result_delete://暂不登陆,返回
-//                        Toast.makeText(ProductinfoListEditActivity.this, "数据请求删除", Toast.LENGTH_SHORT).show();
-//                        break;
-//                }
-//                String docid = searchResultAdapter.getList().get(i).docid;
-
-//                String docid = searchResultAdapter.getList().get(i).getId().toString();
-//                Intent intent = new Intent(SearchActivity.this, YueDuDetialActivity.class);
-//                intent.putExtra("yueduDetial", docid);
-//                startActivity(intent);
-//                overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
-//                layoutsearchResult.setVisibility(View.GONE);//隐藏搜索结果布局
-//                queryDB();
-        //   frament2activity(i,toutiao_list);
-//            }
-//        });
     }
 
     //初始化新闻搜索数据请求
@@ -305,11 +235,11 @@ import java.util.List;
                 }
             }
         } else {
-            //    if (keywords != null) {
+
             getData(2, url);
-            //   progressDialog.show();
+
             mDialog.show();
-            //   }
+
         }
     }
 
@@ -349,7 +279,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-            //     httpUtils.configCurrentHttpCacheExpiry(1000 *10); //设置超时时间   10s
+               httpUtils.configCurrentHttpCacheExpiry(1000 *0); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -693,7 +623,7 @@ import java.util.List;
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result.equals("true")) {
-
+                        Toast.makeText(ProductinfoListEditActivity.this, "审核成功", Toast.LENGTH_SHORT).show();
                         isPause = true;
                         onResume();
                     }
@@ -703,7 +633,7 @@ import java.util.List;
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    Toast.makeText(ProductinfoListEditActivity.this, "审核成功", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ProductinfoListEditActivity.this, "审核失败", Toast.LENGTH_SHORT).show();
                 }
             });
 
