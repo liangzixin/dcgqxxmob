@@ -7,15 +7,13 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -36,9 +34,10 @@ import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.decoration.MyDecoration;
 import com.xiangmu.lzx.listener.MyItemClickListener;
 import com.xiangmu.lzx.listener.MyItemLongClickListener;
+import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
+import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.lzx.utils.CommonUtil;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlitehelper;
@@ -68,7 +67,7 @@ import java.util.List;
     //  private ImageView clear_history;
     private LinearLayout layoutsearchResult;
     //  private RelativeLayout layout_sousuoHis;
-    private RecyclerView lv_searchResult;
+    private PullToRefreshListView lv_searchResult;
     private SearchView search_view;
     //    private GridView houtWord_gridview;
 //    private GridView gv_searchHistory;
@@ -108,7 +107,7 @@ import java.util.List;
         mDialog = new SimpleArcDialog(this);
 
         initSearchNews(url);
-        inintAdapter();
+       // inintAdapter();
 
     }
 
@@ -118,36 +117,62 @@ import java.util.List;
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
 
-        lv_searchResult = (RecyclerView) findViewById(R.id.lv_searchResult);//搜索结果
-        LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+    //    lv_searchResult = (RecyclerView) findViewById(R.id.lv_searchResult);//搜索结果
+        lv_searchResult = (PullToRefreshListView) findViewById(R.id.lv_searchResult);//搜索结果
+//        LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
+//
+//        lv_searchResult.setLayoutManager(manager);
+//        lv_searchResult.setItemAnimator(new DefaultItemAnimator());
 
-        lv_searchResult.setLayoutManager(manager);
-        lv_searchResult.setItemAnimator(new DefaultItemAnimator());
         searchjiekuo = (TextView) findViewById(R.id.lv_searchjiekuo);
-
         search_view = (SearchView) findViewById(R.id.search_view);
         search_view.setSubmitButtonEnabled(true);//是否显示确认搜索按钮
         search_view.setIconified(false);//设置搜索框默认展开
-
         search_view.onActionViewExpanded();//表示在内容为空时不显示取消的x按钮，内容不为空时显示.
+
+        lv_searchResult.setPullLoadEnabled(false);  //上拉加载，屏蔽
+        lv_searchResult.setScrollLoadEnabled(true); //设置滚动加载可用
+        //设置上拉下拉的监听事件
+        lv_searchResult.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {
+            @Override
+            public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
+                //下拉刷新，重新获取数据，填充listview
+              //  getdata(url,true);//刷新数据
+                Toast.makeText(ProductinfoListEditActivity.this, "下拉刷新", Toast.LENGTH_SHORT).show();
+                String stringDate = CommonUtil.getStringDate();// 下拉刷新时获取当前的刷新时间
+                lv_searchResult.setLastUpdatedLabel(stringDate);//将时间添加到刷新的表头
+            }
+
+            @Override
+            public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
+                xinWenURL.setStratPage(xinWenURL.getStratPage() +1);
+                //默认选择头条栏目
+            //    String urlfen =geturl();//分页url;
+             //   LogUtils.e("toutiao", "url:" + urlfen);
+                // 上拉加载
+             //   getdata(urlfen, false);//加载数据
+
+                Toast.makeText(ProductinfoListEditActivity.this, "上拉刷新", Toast.LENGTH_SHORT).show();
+            }
+        });
 
      inintClick();
     }
-    private void inintAdapter() {
-
-
-
-        layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-
-        searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
-
-
-        lv_searchResult.setAdapter(searchProductinfoAdapter);
-        RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-        this.lv_searchResult.addItemDecoration(decoration);
-        this.searchProductinfoAdapter.setOnItemClickListener(this);
-        this.searchProductinfoAdapter.setOnItemLongClickListener(this);
-    }
+//    private void inintAdapter() {
+//
+//
+//
+//        layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
+//
+//        searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
+//
+//
+//        lv_searchResult.setAdapter(searchProductinfoAdapter);
+//        RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+//        this.lv_searchResult.addItemDecoration(decoration);
+//        this.searchProductinfoAdapter.setOnItemClickListener(this);
+//        this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+//    }
     MyGridViewAadapter adapterHistory = null;
 
     //查询数据库
@@ -279,7 +304,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-               httpUtils.configCurrentHttpCacheExpiry(1000 *0); //设置超时时间   10s
+              httpUtils.configCurrentHttpCacheExpiry(1000 *10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -343,18 +368,22 @@ import java.util.List;
                 toutiao_list.addAll(toutiao_object.getT18908805728());
 
                 searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
-//
-//
-//                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-//
-//              searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
-//
-//
-//                lv_searchResult.setAdapter(searchProductinfoAdapter);
-//                RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-//                this.lv_searchResult.addItemDecoration(decoration);
-//                this.searchProductinfoAdapter.setOnItemClickListener(this);
-//                this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+
+
+                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
+
+              searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
+
+
+           //  lv_searchResult.setAdapter(searchProductinfoAdapter);
+               lv_searchResult.getRefreshableView().setAdapter(searchProductinfoAdapter);
+           //     RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+          //      this.lv_searchResult.addItemDecoration(decoration);
+          //      this.searchProductinfoAdapter.setOnItemClickListener(this);
+            //    this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+    //     searchProductinfoAdapter.setmData(toutiao_list);//填充并刷新数据
+                lv_searchResult.onPullDownRefreshComplete();//隐藏下拉头
+                lv_searchResult.onPullUpRefreshComplete();//隐藏上拉头
                 mDialog.dismiss();
                 break;
             case 3:
@@ -374,7 +403,7 @@ import java.util.List;
                 searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
 
 
-                lv_searchResult.setAdapter(searchProductinfoAdapter);
+             //   lv_searchResult.setAdapter(searchProductinfoAdapter);
                 break;
         }
     }
@@ -399,12 +428,12 @@ import java.util.List;
     @Override
     protected void onResume() {
         super.onResume();
-   Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+ //  Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
 
         if (isPause){ //判断是否暂停
             isPause = false;
             initSearchNews(url);
-            inintAdapter();
+//            inintAdapter();
         }
 
     }

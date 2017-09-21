@@ -144,7 +144,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_margin="3dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>-->
-        <android.support.v7.widget.RecyclerView
+        <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
             android:id="@+id/lv_searchResult"
             android:layout_width="match_parent"
             android:layout_height="match_parent"/>
