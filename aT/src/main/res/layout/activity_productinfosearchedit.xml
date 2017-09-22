@@ -147,7 +147,9 @@
         <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
             android:id="@+id/lv_searchResult"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
+            android:clickable="true"
+            />
     </LinearLayout>
     <!-- 热词推荐
     <LinearLayout

@@ -34,8 +34,6 @@ import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.listener.MyItemClickListener;
-import com.xiangmu.lzx.listener.MyItemLongClickListener;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.lzx.utils.CommonUtil;
@@ -58,8 +56,8 @@ import java.util.List;
 
 //import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
 
-//public class ProductinfoListEditActivity extends AppCompatActivity {
-    public class ProductinfoListEditActivity extends AppCompatActivity implements MyItemClickListener,MyItemLongClickListener,OnDismissListener,OnItemClickListener {
+public class ProductinfoListEditActivity extends AppCompatActivity implements OnDismissListener, OnItemClickListener {
+//public class ProductinfoListEditActivity extends AppCompatActivity implements MyItemClickListener, MyItemLongClickListener, OnDismissListener, OnItemClickListener {
     // Content View Elements
     private ImageButton back;
     private TextView noHotWords;
@@ -87,13 +85,18 @@ import java.util.List;
     private String url = null;
     private SimpleArcDialog mDialog;
     private AlertView mAlertView1, mAlertView2;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
-    private Boolean isPause=false;
-    private int id=0;
+    private Boolean isPause = false;
+    private int id = 0;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
      */
-    private GoogleApiClient client;
+ //   private GoogleApiClient client;
+    /**
+     * ATTENTION: This was auto-generated to implement the App Indexing API.
+     * See https://g.co/AppIndexing/AndroidStudio for more information.
+    // */
+    private GoogleApiClient client2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +110,11 @@ import java.util.List;
         mDialog = new SimpleArcDialog(this);
 
         initSearchNews(url);
-       // inintAdapter();
+        // inintAdapter();
 
+        // ATTENTION: This was auto-generated to implement the App Indexing API.
+        // See https://g.co/AppIndexing/AndroidStudio for more information.
+    //    client2 = new GoogleApiClient.Builder(this).addApi(AppIndex.API).build();
     }
 
     private void bindViews() {
@@ -117,7 +123,7 @@ import java.util.List;
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
 
-    //    lv_searchResult = (RecyclerView) findViewById(R.id.lv_searchResult);//搜索结果
+        //    lv_searchResult = (RecyclerView) findViewById(R.id.lv_searchResult);//搜索结果
         lv_searchResult = (PullToRefreshListView) findViewById(R.id.lv_searchResult);//搜索结果
 //        LinearLayoutManager manager = new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false);
 //
@@ -137,7 +143,7 @@ import java.util.List;
             @Override
             public void onPullDownToRefresh(PullToRefreshBase<ListView> refreshView) {
                 //下拉刷新，重新获取数据，填充listview
-              //  getdata(url,true);//刷新数据
+                //  getdata(url,true);//刷新数据
                 Toast.makeText(ProductinfoListEditActivity.this, "下拉刷新", Toast.LENGTH_SHORT).show();
                 String stringDate = CommonUtil.getStringDate();// 下拉刷新时获取当前的刷新时间
                 lv_searchResult.setLastUpdatedLabel(stringDate);//将时间添加到刷新的表头
@@ -145,20 +151,21 @@ import java.util.List;
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ListView> refreshView) {
-                xinWenURL.setStratPage(xinWenURL.getStratPage() +1);
+                xinWenURL.setStratPage(xinWenURL.getStratPage() + 1);
                 //默认选择头条栏目
-            //    String urlfen =geturl();//分页url;
-             //   LogUtils.e("toutiao", "url:" + urlfen);
+                //    String urlfen =geturl();//分页url;
+                //   LogUtils.e("toutiao", "url:" + urlfen);
                 // 上拉加载
-             //   getdata(urlfen, false);//加载数据
+                //   getdata(urlfen, false);//加载数据
 
                 Toast.makeText(ProductinfoListEditActivity.this, "上拉刷新", Toast.LENGTH_SHORT).show();
             }
         });
 
-     inintClick();
+        inintClick();
     }
-//    private void inintAdapter() {
+
+    //    private void inintAdapter() {
 //
 //
 //
@@ -204,11 +211,10 @@ import java.util.List;
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-           ProductinfoListEditActivity.this.finish();
-           //    finish();
+                ProductinfoListEditActivity.this.finish();
+                //    finish();
             }
         });
-
 
 
         search_view.setOnCloseListener(new SearchView.OnCloseListener() {
@@ -304,7 +310,7 @@ import java.util.List;
                     });
                     break;
                 case 2:
-              httpUtils.configCurrentHttpCacheExpiry(1000 *10); //设置超时时间   10s
+              httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
                     handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
                         @Override
                         public void onSuccess(ResponseInfo<String> responseInfo) {
@@ -372,16 +378,56 @@ import java.util.List;
 
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
-              searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
+                searchProductinfoAdapter = new SearchProductinfoAdapter(toutiao_list, this);
 
 
-           //  lv_searchResult.setAdapter(searchProductinfoAdapter);
-               lv_searchResult.getRefreshableView().setAdapter(searchProductinfoAdapter);
-           //     RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-          //      this.lv_searchResult.addItemDecoration(decoration);
-          //      this.searchProductinfoAdapter.setOnItemClickListener(this);
-            //    this.searchProductinfoAdapter.setOnItemLongClickListener(this);
-    //     searchProductinfoAdapter.setmData(toutiao_list);//填充并刷新数据
+                //  lv_searchResult.setAdapter(searchProductinfoAdapter);
+                lv_searchResult.getRefreshableView().setAdapter(searchProductinfoAdapter);
+                //     RecyclerView.ItemDecoration decoration = new MyDecoration(this);
+                //      this.lv_searchResult.addItemDecoration(decoration);
+                //    this.searchProductinfoAdapter.setOnItemClickListener(this);
+//                lv_searchResult.setOnClickListener(new AdapterView.OnClickListener() {
+//                    @Override
+//                    public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+//                //        Toast.makeText(ProductinfoListEditActivity.this, "Click item" + i, Toast.LENGTH_SHORT).show();
+//
+//                    }
+//                });
+                //ListView item 中的删除按钮的点击事件
+                searchProductinfoAdapter.setOnItemClickListener(new SearchProductinfoAdapter.MyItemClickListener() {
+                    @Override
+                    public void onItemClick(View view, int postion) {
+                        onItemClick1( view, postion);
+//                        switch (view.getId()) {
+//                            case R.id.result_title://详细信息
+//                                //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
+//                                //	System.out.println("LongClick1 标题");
+//                                //    l = 1;
+//                                frament2activity(postion, toutiao_list);
+//                                break;
+//
+//                            case R.id.result_replace://修改
+//                                Toast.makeText(ProductinfoListEditActivity.this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
+//                                //	System.out.println("LongClick1 修改");
+//                                //  l = 2;
+//                                break;
+//                            case R.id.result_delete://删除
+//                                mAlertView1 = new AlertView("删除", bean.getName(), "取消", new String[]{"确定"}, null,this, AlertView.Style.Alert,this).setCancelable(true).setOnDismissListener(this);
+//                                mAlertView1.show();
+//                                break;
+//                            case R.id.result_agree://审核
+//                                mAlertView2 = new AlertView("审核", bean.getName(), "取消", new String[]{"确定"}, null, ProductinfoListEditActivity.this, AlertView.Style.Alert, ProductinfoListEditActivity.this).setCancelable(true).setOnDismissListener(ProductinfoListEditActivity.this);
+//                                mAlertView2.show();
+//                                break;
+//                        }
+
+
+                    }
+//
+//
+                });
+                //    this.searchProductinfoAdapter.setOnItemLongClickListener(this);
+                //     searchProductinfoAdapter.setmData(toutiao_list);//填充并刷新数据
                 lv_searchResult.onPullDownRefreshComplete();//隐藏下拉头
                 lv_searchResult.onPullUpRefreshComplete();//隐藏上拉头
                 mDialog.dismiss();
@@ -400,10 +446,10 @@ import java.util.List;
                 mDialog.dismiss();
                 layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
 
-                searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
+                searchProductinfoAdapter = new SearchProductinfoAdapter(toutiao_list, this);
 
 
-             //   lv_searchResult.setAdapter(searchProductinfoAdapter);
+                //   lv_searchResult.setAdapter(searchProductinfoAdapter);
                 break;
         }
     }
@@ -418,25 +464,27 @@ import java.util.List;
             writableDatabase.close();
         }
     }
+
     @Override
     protected void onPause() {
         super.onPause();
-     //   Toast.makeText(ProductinfoListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
+        //   Toast.makeText(ProductinfoListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
         isPause = true; //记录页面已经被暂停
     }
 
     @Override
     protected void onResume() {
         super.onResume();
- //  Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+        //  Toast.makeText(ProductinfoListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
 
-        if (isPause){ //判断是否暂停
+        if (isPause) { //判断是否暂停
             isPause = false;
             initSearchNews(url);
 //            inintAdapter();
         }
 
     }
+
     //跳转详细页面方法
     @SuppressLint("NewApi")
     private void frament2activity(int position, List<XinWen_productinfo.T18908805728Entity> toutiao_list) {
@@ -514,7 +562,7 @@ import java.util.List;
 //                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
                 xinWenXi.setUrl("bbbbb");//详细页面url
                 //跳转到详细页
-          //      Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
+                //      Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
                 Intent intentzhibo = new Intent(this, WebProductinfoViewActivity.class);
                 intentzhibo.putExtra("xinwendata", xinWenXi);
 
@@ -532,7 +580,7 @@ import java.util.List;
                 //0096|81994    http://c.3g.163.com/photo/api/set/0096/82126.json
                 xinWenXi.setUrl("aaaa");//详细页面url
                 //跳转到详细页
-            //    Intent intentduotu = new Intent(ProductinfoListEditActivity.this, XinWenXiActivity.class);
+                //    Intent intentduotu = new Intent(ProductinfoListEditActivity.this, XinWenXiActivity.class);
                 Intent intentduotu = new Intent(this, XinWenXiActivity.class);
                 intentduotu.putExtra("xinwendata", xinWenXi);
 
@@ -541,59 +589,60 @@ import java.util.List;
         }
 
     }
+
     /**
      * Item click
      */
-    @Override
-    public void onItemClick(View view, int postion) {
-        bean=new  XinWen_productinfo.T18908805728Entity();
+  //  @Override
+    public void onItemClick1(View view, int postion) {
+        bean = new XinWen_productinfo.T18908805728Entity();
         bean = toutiao_list.get(postion);
-        id=bean.getId();
+        id = bean.getId();
         switch (view.getId()) {
             case R.id.result_title://详细信息
-             //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
+                //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
                 //	System.out.println("LongClick1 标题");
-            //    l = 1;
-                frament2activity(postion,toutiao_list);
+                //    l = 1;
+                frament2activity(postion, toutiao_list);
                 break;
 
             case R.id.result_replace://修改
-                	Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
                 //	System.out.println("LongClick1 修改");
-              //  l = 2;
+                //  l = 2;
                 break;
             case R.id.result_delete://删除
-                mAlertView1 = new AlertView("删除",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                mAlertView1 = new AlertView("删除", bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView1.show();
                 break;
             case R.id.result_agree://审核
-                mAlertView2 = new AlertView("审核",bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                mAlertView2 = new AlertView("审核", bean.getName(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView2.show();
                 break;
         }
 
     }
 
-    @Override
-    public void onItemLongClick(View view, int postion) {
-        bean=new  XinWen_productinfo.T18908805728Entity();
-        bean = toutiao_list.get(postion);
-        if(bean != null){
-            Toast.makeText(this, "LongClick "+bean.getName(), Toast.LENGTH_SHORT).show();
-        }
-    }
+//    @Override
+//    public void onItemLongClick(View view, int postion) {
+//        bean = new XinWen_productinfo.T18908805728Entity();
+//        bean = toutiao_list.get(postion);
+//        if (bean != null) {
+//            Toast.makeText(this, "LongClick " + bean.getName(), Toast.LENGTH_SHORT).show();
+//        }
+//    }
+
     @Override
     public void onItemClick(Object o, int position) {
-      //  closeKeyboard();
-     AlertView mAlertView0=(AlertView)o;
-  if( mAlertView1== mAlertView0) {
-      String clickdel=xinWenURL.getClickdel()+bean.getId();
-      DelData(clickdel);
-  }else if (mAlertView2== mAlertView0)
-  {
-      String agree=xinWenURL.getClickagree()+bean.getId();
-      AgreeData(agree);
-  }
+        //  closeKeyboard();
+        AlertView mAlertView0 = (AlertView) o;
+        if (mAlertView1 == mAlertView0) {
+            String clickdel = xinWenURL.getClickdel() + bean.getId();
+            DelData(clickdel);
+        } else if (mAlertView2 == mAlertView0) {
+            String agree = xinWenURL.getClickagree() + bean.getId();
+            AgreeData(agree);
+        }
 //        if(position==0) {
 //           // Toast.makeText(this, "点击了第确定按键", Toast.LENGTH_SHORT).show();
 //
@@ -603,12 +652,14 @@ import java.util.List;
 //
 //        }
     }
+
     @Override
     public void onDismiss(Object o) {
-      //
-    //    closeKeyboard();
+        //
+        //    closeKeyboard();
 //        Toast.makeText(this, "消失了", Toast.LENGTH_SHORT).show();
     }
+
     private void DelData(final String url) {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
@@ -620,7 +671,7 @@ import java.util.List;
                         Toast.makeText(ProductinfoListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
                         for (int i = 0; i < toutiao_list.size(); i++) {
 
-                            if (toutiao_list.get(i).getId() ==id) {
+                            if (toutiao_list.get(i).getId() == id) {
 
                                 toutiao_list.remove(i);
 
@@ -644,6 +695,7 @@ import java.util.List;
 
         }
     }
+
     private void AgreeData(final String url) {
         if (!url.equals("")) {
             httpUtils = new HttpUtils();

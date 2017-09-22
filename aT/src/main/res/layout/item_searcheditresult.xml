@@ -33,7 +33,9 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             android:id="@+id/result_title"
-            android:text="漫评中国方案为"/>
+            android:text="漫评中国方案为"
+            android:clickable="true"
+            />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -53,7 +55,9 @@
             android:layout_marginRight="15dp"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:text="审核"/>
+            android:text="审核"
+            android:clickable="true"
+            />
         />
 
         <TextView

@@ -8,7 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.listener.MyItemClickListener;
+//import com.xiangmu.lzx.listener.MyItemClickListener;
 import com.xiangmu.lzx.listener.MyItemLongClickListener;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
@@ -20,7 +20,7 @@ public class SearchProductinfoAdapter extends BaseAdapter {
 
 
 	private List<XinWen_productinfo.T18908805728Entity> toutiao_list;
-	private MyItemClickListener mItemClickListener;
+//	private MyItemClickListener mItemClickListener;
 	private MyItemLongClickListener mItemLongClickListener;
 	private DateTime dateTime=new DateTime();
 	private Context context;
@@ -70,14 +70,21 @@ public class SearchProductinfoAdapter extends BaseAdapter {
 //		return vh;
 //	}
 
+//	/**
+//	 * 设置Item点击监听
+//	 * @param listener
+//	 */
 	/**
 	 * 设置Item点击监听
-	 * @param listener
 	 */
+	public interface MyItemClickListener {
+		public void onItemClick(View view, int postion);
+	}
+	private MyItemClickListener mItemClickListener;
 	public void setOnItemClickListener(MyItemClickListener listener){
 		this.mItemClickListener = listener;
 	}
-	
+
 	public void setOnItemLongClickListener(MyItemLongClickListener listener){
 		this.mItemLongClickListener = listener;
 	}
@@ -98,7 +105,7 @@ public class SearchProductinfoAdapter extends BaseAdapter {
 	}
 
 	@Override
-	public View getView(int position, View view, ViewGroup parent) {
+	public View getView(final int position, View view, ViewGroup parent) {
 		//		View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_searcheditresult, parent,false);
 	//	SearchViewHolder vh = new SearchViewHolder(itemView,mItemClickListener,mItemLongClickListener);
 		ViewHoudle2 viewHoudle2 = null;
@@ -118,7 +125,7 @@ public class SearchProductinfoAdapter extends BaseAdapter {
 //			tv.setOnClickListener(this);
 //			bt_replace.setOnClickListener(this);
 //			bt_del.setOnClickListener(this);
-//			bt_agree.setOnClickListener(this);
+		//	viewHoudle2.tv.setOnClickListener(this);
 //			viewHoudle2.result_title = (TextView) view.findViewById(R.id.result_title);
 //			viewHoudle2.result_digest= (TextView) view.findViewById(R.id.result_digest);
 //			viewHoudle2.result_ptime = (TextView) view.findViewById(R.id.result_ptime);
@@ -145,10 +152,36 @@ public class SearchProductinfoAdapter extends BaseAdapter {
 		}else {
 			viewHoudle2.bt_agree.setText("未审");
 		}
-//		viewHoudle2.result_digest.setText(list.get(i).getDescription());
-//		viewHoudle2.result_ptime.setText(list.get(i).getCreateTime().substring(0,11));
-//		viewHoudle2.result_count.setText("人气:"+list.get(i).getClickcount());
-//		viewHoudle2.result_articler.setText("留言:"+list.get(i).getArticlers().size());
+
+		viewHoudle2.tv.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				mItemClickListener.onItemClick(arg0,position);
+			}
+
+		});
+
+		viewHoudle2.bt_replace.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				mItemClickListener.onItemClick(arg0,position);
+			}
+
+		});
+		viewHoudle2.bt_del.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				mItemClickListener.onItemClick(arg0,position);
+			}
+
+		});
+		viewHoudle2.bt_agree.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				mItemClickListener.onItemClick(arg0,position);
+			}
+
+		});
 		return view;
 	}
 	class ViewHoudle2 {
