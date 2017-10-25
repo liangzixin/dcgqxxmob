@@ -427,4 +427,111 @@ public class XinWenproductinfoJson {
         LogUtils.e("xinwenjson", "=======================================================");
         return null;
     }
+    public static XinWen_productinfo getdataCustomer(String data){
+        try {
+            XinWen_productinfo customer=new XinWen_productinfo();
+            JSONObject object=new JSONObject(data);
+            LogUtils.e("xinwenjsonobject", object + "");
+            JSONArray array = null;
+            array=object.getJSONArray("TCustomer");//注册用户
+
+            LogUtils.e("TCustomer----", "" + array);
+            JSONObject arrayobj00=array.getJSONObject(0);
+            if (! arrayobj00.isNull("totalRecords")){
+                int totalRecords= arrayobj00.getInt("totalRecords");
+                customer.setTotalRecords(totalRecords);
+            };
+            JSONArray array00 = null;
+            array00=arrayobj00.getJSONArray("list");
+            List<XinWen_productinfo.CustomerEntity> list=new ArrayList<>();
+            for (int i=0;i<array00.length();i++){
+
+                XinWen_productinfo.CustomerEntity customerEntity=new XinWen_productinfo.CustomerEntity();
+                JSONObject arrayobj=array00.getJSONObject(i);
+                if (!arrayobj.isNull("id")){
+                    int skipId=arrayobj.getInt("id");
+                    customerEntity.setId(skipId);
+                };
+                if (!arrayobj.isNull("username")){
+                    String username=arrayobj.getString("username");
+                    customerEntity.setUsername(username);
+                };
+
+                if (!arrayobj.isNull("password")){
+                    String password=arrayobj.getString("password");
+                    customerEntity.setPassword(password);
+                };
+                if (!arrayobj.isNull("realname")){
+                    String realname=arrayobj.getString("realname");
+                    customerEntity.setRealname(realname);
+                };
+                if (!arrayobj.isNull("email")){
+                    String email=arrayobj.getString("email");
+                    customerEntity.setEmail(email);
+                };
+                if (!arrayobj.isNull("address")){
+                    String address=arrayobj.getString("address");
+                    customerEntity.setAddress(address);
+                };
+                if (!arrayobj.isNull("mobile")){
+                    String mobile=arrayobj.getString("mobile");
+                    customerEntity.setMobile(mobile);
+                };
+                if (!arrayobj.isNull("openid")){
+                    String openid=arrayobj.getString("openid");
+                    customerEntity.setOpenid(openid);
+                };
+                if (!arrayobj.isNull("screenname")){
+                    String screenname=arrayobj.getString("screenname");
+                    customerEntity.setScreenname(screenname);
+                };
+                if (!arrayobj.isNull("imageurl")){
+                    String imageurl=arrayobj.getString("imageurl");
+                    customerEntity.setImageurl(imageurl);
+                };
+                if (!arrayobj.isNull("jinbi")){
+                    int jinbi=arrayobj.getInt("jinbi");
+                    customerEntity.setJinbi(jinbi);
+                };
+                if (!arrayobj.isNull("registerdate")){
+                    String registerdate=arrayobj.getString("registerdate");
+                    customerEntity.setRegisterdate(registerdate);
+                };
+                if (!arrayobj.isNull("logindate")){
+                    String logindate=arrayobj.getString("logindate");
+                    customerEntity.setLogindate(logindate);
+                };
+                if (!arrayobj.isNull("sfzh")){
+                    String sfzh=arrayobj.getString("sfzh");
+                    customerEntity.setSfzh(sfzh);
+                };
+                if (!arrayobj.isNull("headimg")){
+                    String headimg=arrayobj.getString("headimg");
+                    customerEntity.setHeadimg(headimg);
+                };
+                if (!arrayobj.isNull("endtime")){
+                    String endtime=arrayobj.getString("endtime");
+                    customerEntity.setEndtime(endtime);
+                };
+                if (!arrayobj.isNull("starttime")){
+                    String starttime=arrayobj.getString("starttime");
+                    customerEntity.setStarttime(starttime);
+                };
+
+
+                list.add(customerEntity);
+            }
+            customer.setListCustomerEntity(list);
+          //  LogUtils.e("xinwenjson", "========" + list.get(0).getC());
+            for (int i=0;i<customer.getListCustomerEntity().size();i++){
+                LogUtils.e("customer", i + "========" + customer.getListCustomerEntity().get(i).getUsername());
+            }
+            LogUtils.e("customer", "========" + customer.getListfilterEntity());
+            return customer;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        LogUtils.e("customer", "=======================================================");
+        return null;
+    }
 }

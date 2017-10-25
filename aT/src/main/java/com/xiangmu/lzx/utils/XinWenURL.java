@@ -9,9 +9,24 @@ import java.util.List;
  */
 public class XinWenURL {
     public int stratPage =1;
+    public int categoryid =0;
+    public int getStratPage() {
+        return stratPage;
+    }
+    public void setStratPage(int stratPage) {
+        this.stratPage = stratPage;
+    }
+    public int getCategoryid() {
+        return categoryid;
+    }
+
+    public void setCategoryid(int categoryid) {
+        this.categoryid = categoryid;
+    }
+
     List<ProductInfo> productInfos=null;
     String Count=HttpUtil.BASE_URL+"count!updateCount1.action";
-  //  int page = getStratPage();
+
 
     public String getGetDateCount() {
         return getDateCount;
@@ -102,7 +117,9 @@ public class XinWenURL {
    // String redian="http://c.3g.163.com/nc/article/list/T1429173762551/0-20.html";
 
   String redian = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+stratPage;
- String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+stratPage;//最新
+
+    String customer= HttpUtil.BASE_URL+"customerAction!QueryAllCustomer.action?pageNo="+stratPage;
+ //String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&pageNo="+stratPage;//最新
 
     String filter=HttpUtil.BASE_URL+"filter!QueryAllFilter.action?pageNo="+stratPage;//过滤词语
     //  String toutiao = "http://c.m.163.com/nc/article/headline/T1348647853363/" + stratPage + "-" + (stratPage + 20) + ".html";//头条
@@ -154,19 +171,16 @@ public class XinWenURL {
     public void setClickcount(String clickcount) {
         this.clickcount = clickcount;
     }
-    public int getStratPage() {
-        return stratPage;
-    }
-    public void setStratPage(int stratPage) {
-        this.stratPage = stratPage;
-    }
+
 
     public String getRedian() {
         return redian;
     }
 
     public String getZuixin(int categoryid) {
-
+   //     int page = getStratPage();
+  //  System.out.println("1:"+stratPage);
+       // System.out.println("1:"+page);
         String zuixin=HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&pageNo="+stratPage;//最新
         return zuixin;
     }
@@ -276,4 +290,13 @@ public class XinWenURL {
         String  luntan= HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=12&pageNo="+stratPage;
         return luntan;
     }
+
+    public String getCustomer() {
+        return customer;
+    }
+
+    public void setCustomer(String customer) {
+        this.customer = customer;
+    }
+
 }

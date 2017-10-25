@@ -18,7 +18,7 @@ import com.xiangmu.lzx.Setting_Utils.SearchDB;
 public class Setting_my_Task extends AppCompatActivity implements View.OnClickListener{
     private ImageView backsetting;
     private ImageView duihuan;
-    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx,open_filter;
+    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx,open_filter,open_customer;
     private String openid="";
     private Boolean manager=false;
 
@@ -55,6 +55,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         open_client = (RelativeLayout) findViewById(R.id.open_client);
         open_fwxx= (RelativeLayout) findViewById(R.id.open_fwxx);
         open_filter= (RelativeLayout) findViewById(R.id.open_filter);
+        open_customer= (RelativeLayout) findViewById(R.id.open_customer);
         fabiao = (RelativeLayout) findViewById(R.id.fabiao);
         share = (RelativeLayout) findViewById(R.id.share);
         xinshang = (RelativeLayout) findViewById(R.id.xinshang);
@@ -70,14 +71,17 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         open_fwxx.setOnClickListener(this);
         open_client.setOnClickListener(this);
         open_filter.setOnClickListener(this);
+        open_customer.setOnClickListener(this);
         if(manager){
             open_client.setVisibility(View.VISIBLE);
             open_fwxx.setVisibility(View.VISIBLE);
             open_filter.setVisibility(View.VISIBLE);
+            open_customer.setVisibility(View.VISIBLE);
         }else{
             open_client.setVisibility(View.GONE);
             open_fwxx.setVisibility(View.GONE);
             open_filter.setVisibility(View.GONE);
+            open_customer.setVisibility(View.GONE);
         }
     }
 
@@ -134,6 +138,11 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
             case R.id.open_filter:
                 Intent intent211 = new Intent(this, FilterListEditActivity.class);
                 startActivity(intent211);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                break;
+            case R.id.open_customer:
+                Intent intent212 = new Intent(this, CustomerListEditActivity.class);
+                startActivity(intent212);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
         }
