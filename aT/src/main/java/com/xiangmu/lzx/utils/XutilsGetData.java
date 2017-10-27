@@ -16,9 +16,7 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
-import com.xiangmu.lzx.R;
 
 /**
  * Created by Administrator on 2015/11/10.
@@ -126,9 +124,11 @@ public class XutilsGetData {
                 dialog = new SimpleArcDialog(context);
             }
             dialog.show();
+        }else{
+            dialog.dismiss();
         }
         //第一个为放入图片的控件  第二个为图片地址  config为显示方式   CallBack为回调的方法可以自定义显示
-//        utils.display(iv, url, config);
+//        utils.disply(iv, url, config);
         utils.display(iv, imageurl, new BitmapLoadCallBack<ImageView>() {
             //请求成功调用的方法
             public void onLoadCompleted(ImageView imageView, String s, Bitmap bitmap, BitmapDisplayConfig bitmapDisplayConfig, BitmapLoadFrom bitmapLoadFrom) {
