@@ -96,8 +96,8 @@ public class SearchCustomerAdapter extends BaseAdapter {
 			//		System.out.println(customer_list.get(position).getUsername().substring(0,8));
 					viewHoudle2.bt_name.setText(customer_list.get(position).getUsername().substring(0,8));
 		}
-		viewHoudle2.bt_registerdate.setText(dateTime.getmd(customer_list.get(position).getRegisterdate()));
-		viewHoudle2.bt_enddate.setText(dateTime.getmd(customer_list.get(position).getEndtime()));
+if(customer_list.get(position).getRegisterdate()!=null)		viewHoudle2.bt_registerdate.setText(dateTime.getmd(customer_list.get(position).getRegisterdate()));
+		if(customer_list.get(position).getEndtime()!=null)		viewHoudle2.bt_enddate.setText(dateTime.getmd(customer_list.get(position).getEndtime()));
 
 
 //		viewHoudle2.bt_name.setOnClickListener(new View.OnClickListener(){

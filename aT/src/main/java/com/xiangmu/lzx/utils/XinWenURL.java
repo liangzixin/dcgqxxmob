@@ -118,7 +118,7 @@ public class XinWenURL {
 
   String redian = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid=0&pageNo="+stratPage;
 
-    String customer= HttpUtil.BASE_URL+"customerAction!QueryAllCustomer.action?pageNo="+stratPage;
+
  //String zuixin = HttpUtil.BASE_URL+"product!QueryAllProductInfo.action?categoryid="+categoryid+"&pageNo="+stratPage;//最新
 
     String filter=HttpUtil.BASE_URL+"filter!QueryAllFilter.action?pageNo="+stratPage;//过滤词语
@@ -292,11 +292,12 @@ public class XinWenURL {
     }
 
     public String getCustomer() {
+        String customer= HttpUtil.BASE_URL+"customerAction!QueryAllCustomer.action?pageNo="+stratPage;
         return customer;
     }
 
-    public void setCustomer(String customer) {
-        this.customer = customer;
-    }
+   // public void setCustomer(String customer) {
+//        this.customer = customer;
+//    }
 
 }
