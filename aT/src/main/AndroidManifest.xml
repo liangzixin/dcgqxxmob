@@ -133,6 +133,9 @@
         <activity
             android:name="com.xiangmu.lzx.activitys.FilterAddActivity"
             android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.CustomerListEditActivity"
+            android:label="@string/title_activity_web_view" />
         <meta-data
             android:name="UMENG_APPKEY"
             android:value="5890b33607fe652c9f000284" />

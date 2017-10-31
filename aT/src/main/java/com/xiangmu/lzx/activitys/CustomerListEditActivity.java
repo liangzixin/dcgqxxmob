@@ -29,7 +29,6 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchCustomerAdapter;
-import com.xiangmu.lzx.CostomAdapter.SearchCustomerAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
@@ -152,7 +151,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements OnDis
                 // 上拉加载
                 url =xinWenURL.getCustomer();//最新url
                 Toast.makeText(CustomerListEditActivity.this, "上拉加载"+xinWenURL.getStratPage(), Toast.LENGTH_SHORT).show();
-                  getData(url, false);//加载数据
+                  getData(url,false);//加载数据
 
 
             }
