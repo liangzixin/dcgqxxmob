@@ -80,7 +80,9 @@ public class SearchCustomerAdapter extends BaseAdapter {
 			viewHoudle2.bt_id = (TextView)view.findViewById(R.id.result_customerid);
 		//	viewHoudle2.tv = (TextView)view.findViewById(R.id.result_title);
 			viewHoudle2.bt_name= (TextView)view.findViewById(R.id.result_customername);
+			viewHoudle2.bt_replace= (TextView)view.findViewById(R.id.result_replace);
 			viewHoudle2.bt_del = (TextView)view.findViewById(R.id.result_delete);
+
 			viewHoudle2.bt_registerdate= (TextView)view.findViewById(R.id.result_registerdate);
 			viewHoudle2.bt_enddate= (TextView)view.findViewById(R.id.result_endtime);
 
@@ -96,8 +98,8 @@ public class SearchCustomerAdapter extends BaseAdapter {
 			//		System.out.println(customer_list.get(position).getUsername().substring(0,8));
 					viewHoudle2.bt_name.setText(customer_list.get(position).getUsername().substring(0,8));
 		}
-if(customer_list.get(position).getRegisterdate()!=null)		viewHoudle2.bt_registerdate.setText(dateTime.getmd(customer_list.get(position).getRegisterdate()));
-		if(customer_list.get(position).getEndtime()!=null)		viewHoudle2.bt_enddate.setText(dateTime.getmd(customer_list.get(position).getEndtime()));
+if(!customer_list.get(position).getRegisterdate().equals(""))		viewHoudle2.bt_registerdate.setText(dateTime.getmd(customer_list.get(position).getRegisterdate()));
+		if(!customer_list.get(position).getLogindate().equals(""))		viewHoudle2.bt_enddate.setText(dateTime.getmd(customer_list.get(position).getLogindate()));
 
 
 //		viewHoudle2.bt_name.setOnClickListener(new View.OnClickListener(){
@@ -108,20 +110,20 @@ if(customer_list.get(position).getRegisterdate()!=null)		viewHoudle2.bt_register
 //
 //		});
 //
-//		viewHoudle2.bt_replace.setOnClickListener(new View.OnClickListener(){
-//			@Override
-//			public void onClick(View arg0) {
-//				mItemClickListener.onItemClick(arg0,position);
-//			}
-//
-//		});
-//		viewHoudle2.bt_del.setOnClickListener(new View.OnClickListener(){
-//			@Override
-//			public void onClick(View arg0) {
-//				mItemClickListener.onItemClick(arg0,position);
-//			}
-//
-//		});
+		viewHoudle2.bt_replace.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				mItemClickListener.onItemClick(arg0,position);
+			}
+
+		});
+		viewHoudle2.bt_del.setOnClickListener(new View.OnClickListener(){
+			@Override
+			public void onClick(View arg0) {
+				mItemClickListener.onItemClick(arg0,position);
+			}
+
+		});
 
 		return view;
 	}

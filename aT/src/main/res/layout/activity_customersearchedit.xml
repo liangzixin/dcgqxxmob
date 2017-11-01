@@ -25,7 +25,7 @@
     <RelativeLayout
         android:id="@+id/titlebar"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:background="@mipmap/titlebar_background"
         android:gravity="center_vertical">
 

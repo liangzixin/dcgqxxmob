@@ -34,6 +34,8 @@ import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.listener.MyItemClickListener;
+import com.xiangmu.lzx.listener.MyItemLongClickListener;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.lzx.utils.CommonUtil;
@@ -55,8 +57,8 @@ import java.util.List;
 
 //import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
 
-public class CustomerListEditActivity extends AppCompatActivity implements OnDismissListener, OnItemClickListener {
-//public class ProductinfoListEditActivity extends AppCompatActivity implements MyItemClickListener, MyItemLongClickListener, OnDismissListener, OnItemClickListener {
+//public class CustomerListEditActivity extends AppCompatActivity implements OnDismissListener, OnItemClickListener {
+public class CustomerListEditActivity extends AppCompatActivity implements MyItemClickListener, MyItemLongClickListener, OnDismissListener, OnItemClickListener {
     // Content View Elements
     private ImageButton back;
     private TextView noHotWords;
@@ -137,7 +139,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements OnDis
                 xinWenURL.setStratPage(xinWenURL.getStratPage() - 1);
                 url = xinWenURL.getCustomer();//最新url
                 getData(url,true);//刷新数据
-                Toast.makeText(CustomerListEditActivity.this, "下拉刷新", Toast.LENGTH_SHORT).show();
+             //   Toast.makeText(CustomerListEditActivity.this, "下拉刷新", Toast.LENGTH_SHORT).show();
                 String stringDate = CommonUtil.getStringDate();// 下拉刷新时获取当前的刷新时间
                 lv_searchResult.setLastUpdatedLabel(stringDate);//将时间添加到刷新的表头
             }
@@ -150,7 +152,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements OnDis
                 //   LogUtils.e("toutiao", "url:" + urlfen);
                 // 上拉加载
                 url =xinWenURL.getCustomer();//最新url
-                Toast.makeText(CustomerListEditActivity.this, "上拉加载"+xinWenURL.getStratPage(), Toast.LENGTH_SHORT).show();
+            //    Toast.makeText(CustomerListEditActivity.this, "上拉加载"+xinWenURL.getStratPage(), Toast.LENGTH_SHORT).show();
                   getData(url,false);//加载数据
 
 
@@ -628,10 +630,15 @@ public class CustomerListEditActivity extends AppCompatActivity implements OnDis
                 break;
 
             case R.id.result_replace://修改
-                Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
-                //	System.out.println("LongClick1 修改");
-                //  l = 2;
+                Intent intentzhibo = new Intent(this, CustomerDetailActivity.class);
+                intentzhibo.putExtra("CustomerEntity", bean);
+
+                startActivity(intentzhibo);
+
+                this.overridePendingTransition(R.anim.xinwen_inactivity, R.anim.xinwen_inactivity);
+
                 break;
+
             case R.id.result_delete://删除
                 mAlertView1 = new AlertView("删除", bean.getUsername(), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView1.show();
@@ -735,4 +742,13 @@ public class CustomerListEditActivity extends AppCompatActivity implements OnDis
         }
     }
 
+    @Override
+    public void onItemClick(View view, int postion) {
+
+    }
+
+    @Override
+    public void onItemLongClick(View view, int postion) {
+
+    }
 }

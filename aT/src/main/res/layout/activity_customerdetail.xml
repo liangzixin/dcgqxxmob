@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:myApplication="http://schemas.android.com/apk/res-auto"
+    tools:context="com.xiangmu.lzx.activitys.CustomerDetailActivity">
+    <!-- titleBar-->
+    <LinearLayout
+        android:id="@+id/titlebarl"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@mipmap/titlebar_background"
+        android:gravity="center_vertical">
+
+      <ImageButton
+            android:id="@+id/backl"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:adjustViewBounds="true"
+            android:background="@android:color/transparent"
+            android:scaleType="centerInside"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:id="@+id/glql"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@+id/backl"
+            android:layout_toRightOf="@+id/backl"
+            android:text="注册用户信息修改"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+        <TextView
+            android:id="@+id/result_addl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:text="　修  改  "
+            android:textColor="@color/white"
+            android:textSize="18sp" />
+
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="序 　　 号"/>
+
+            <EditText
+                android:id="@+id/customer_id"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:enabled="false"
+                android:text="Input text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/customer_customers0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="用 户 名"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.75"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                             />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/customer_password0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:layout_weight="0.30"
+                android:text="密      码"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_password"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3.75"
+                android:hint="Single Line Input Label"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+
+                android:text="Input text"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/customer_sfzh0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="身份证号"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_sfzh"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_realname0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="真实姓名"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_realname"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_address0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="住      址"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_address"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions|textMultiLine"
+
+                android:text="Input text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_email0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="邮箱住址"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_email"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_mobile0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="手机号"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_mobile"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_registerdate0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="注册时间"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_registerdate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+      <LinearLayout
+        android:id="@+id/customer_starttime0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="最近一次登录时间"/>
+
+        <MaterialEditText
+            android:id="@+id/customer_starttime"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:hint="Hint text"
+            android:inputType="textNoSuggestions"
+            android:singleLine="true"
+            android:text="Input text"/>
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_logintime0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="最近一次登录时间"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_logintime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text="Input text"/>
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_endtime0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="最近一次离开时间"/>
+
+            <MaterialEditText
+                android:id="@+id/customer_enddate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:hint="Hint text"
+                android:inputType="textNoSuggestions"
+                android:singleLine="true"
+                android:text=""/>
+        </LinearLayout>
+    </LinearLayout>
+    </ScrollView>
+</RelativeLayout>
