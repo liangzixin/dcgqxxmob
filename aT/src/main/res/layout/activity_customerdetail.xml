@@ -328,7 +328,19 @@
                 android:inputType="textNoSuggestions"
                 android:singleLine="true"
                 android:text=""/>
+
         </LinearLayout>
+        <LinearLayout
+            android:id="@+id/customer_headimg0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recyclerViewlzx"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:clipToPadding="false"/>
+            </LinearLayout>
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>

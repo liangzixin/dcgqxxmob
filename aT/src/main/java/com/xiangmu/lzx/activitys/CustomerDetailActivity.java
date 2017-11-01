@@ -8,6 +8,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -24,7 +25,10 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.litao.android.lib.entity.PhotoEntry;
+import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
+import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.holder.PhotoHolder;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXiData;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
@@ -60,7 +64,7 @@ private HttpHandler<String> handler;
     private GridLayoutManager gridLayoutManager;
     private android.support.v7.widget.StaggeredGridLayoutManager StaggeredGridLayoutManager;
     private XinWenURL xinWenURL = new XinWenURL();
-
+    MultiTypeAdapter adapterlzx;
     @InjectView(R.id.customer_id) TextView customer_id;
     @InjectView(R.id.customer_name)   MaterialEditText customer_name;
     @InjectView(R.id.customer_password) TextView password;
@@ -73,6 +77,8 @@ private HttpHandler<String> handler;
     @InjectView(R.id.customer_registerdate) TextView registerdate;
     @InjectView(R.id.customer_starttime) TextView starttime;
     @InjectView(R.id.customer_logintime) TextView logintime;
+    @InjectView(R.id.recyclerViewlzx)
+    RecyclerView recyclerViewlzx;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -85,7 +91,11 @@ private HttpHandler<String> handler;
         //获得绑定参数
         Intent intent = getIntent();
         customerEntity= (XinWen_productinfo.CustomerEntity) intent.getSerializableExtra("CustomerEntity");
-
+        assert recyclerViewlzx != null;
+        recyclerViewlzx.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        adapterlzx = new MultiTypeAdapter(this);
+        adapterlzx.registerViewType(Photo.class, PhotoHolder.class);
+        recyclerViewlzx.setAdapter(adapterlzx);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("数据加载中  请稍后...");
@@ -265,8 +275,13 @@ private void SaveData(final String url){
         registerdate.setText(customerEntity.getRegisterdate());
         starttime.setText(customerEntity.getStarttime());
          logintime.setText(customerEntity.getLogindate());
-
-
+        if(!customerEntity.getHeadimg().equals("")) {
+            Photo photo = new Photo();
+            photo.path=customerEntity.getHeadimg();
+            photo.photoId =1;
+            photo.description ="头像";
+            adapterlzx.add(photo);
+        }
     }
 
 //    /**
