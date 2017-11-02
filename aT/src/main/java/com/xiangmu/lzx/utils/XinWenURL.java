@@ -42,7 +42,27 @@ public class XinWenURL {
     String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
     String clickagree=HttpUtil.BASE_URL+"product!Clickagree.action?id=";
     String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
+    String repareCustomerMob=HttpUtil.BASE_URL+"customerAction!repareCustomerMob.action";
     String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
+    String clickCustomerdel=HttpUtil.BASE_URL+"customerAction!delMob.action?id=";
+    public String getClickCustomerdel() {
+        return clickCustomerdel;
+    }
+
+    public void setClickCustomerdel(String clickCustomerdel) {
+        this.clickCustomerdel = clickCustomerdel;
+    }
+
+
+    public String getRepareCustomerMob() {
+        return repareCustomerMob;
+    }
+
+    public void setRepareCustomerMob(String repareCustomerMob) {
+        this.repareCustomerMob = repareCustomerMob;
+    }
+
+
 
     public String getClickagree() {
         return clickagree;
@@ -59,7 +79,6 @@ public class XinWenURL {
     public void setSaveMob(String saveMob) {
         this.saveMob = saveMob;
     }
-
 
     public String getFilterdel() {
         return filterdel;

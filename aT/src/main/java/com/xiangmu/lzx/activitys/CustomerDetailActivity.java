@@ -70,6 +70,7 @@ private HttpHandler<String> handler;
     @InjectView(R.id.customer_password) TextView password;
     @InjectView(R.id.customer_sfzh) MaterialEditText sfzh;
     @InjectView(R.id.backl)    ImageButton backl;
+    @InjectView(R.id.result_addl) TextView addl;
     @InjectView(R.id.customer_realname) TextView realname;
     @InjectView(R.id.customer_address) TextView address;
     @InjectView(R.id.customer_email) TextView email;
@@ -115,15 +116,15 @@ private HttpHandler<String> handler;
                 //    finish();
             }
         });
-//        addl.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-////                Toast.makeText(this, "单击了添加按钮", Toast.LENGTH_SHORT).show();
-//          //      new AlertDialog.Builder(FilterListEditActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
-//               url=xinWenURL.getRepareFilterMob()+customerEntity.getId();
-//                SaveData(url);
-//            }
-//        });
+        addl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(this, "单击了添加按钮", Toast.LENGTH_SHORT).show();
+          //      new AlertDialog.Builder(FilterListEditActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+               url=xinWenURL.getRepareCustomerMob();
+                SaveData(url);
+            }
+        });
     }
 //    private void mThreadmy() {
 //
@@ -152,9 +153,18 @@ private void SaveData(final String url){
     if (!url.equals("")) {
         httpUtils = new HttpUtils();
         RequestParams params = new RequestParams();
-        params.addQueryStringParameter("customer.id",customerEntity.getId().toString());
-        params.addQueryStringParameter("customer.username",customer_name.toString());
+      params.addQueryStringParameter("customer.id",customer_id.getText().toString());
+        params.addQueryStringParameter("customer.username",customer_name.getText().toString());
         params.addQueryStringParameter("customer.password",password.getText().toString());
+        params.addQueryStringParameter("customer.sfzh",sfzh.getText().toString());
+        params.addQueryStringParameter("customer.realname",realname.getText().toString());
+
+        params.addQueryStringParameter("customer.address",address.getText().toString());
+        params.addQueryStringParameter("customer.email",email.getText().toString());
+        params.addQueryStringParameter("customer.mobile",mobile.getText().toString());
+        params.addQueryStringParameter("customer.registerdate",registerdate.getText().toString());
+        params.addQueryStringParameter("customer.logintime",logintime.getText().toString());
+
 
         handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
             @Override

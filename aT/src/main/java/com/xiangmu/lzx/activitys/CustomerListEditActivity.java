@@ -321,10 +321,12 @@ public class CustomerListEditActivity extends AppCompatActivity implements MyIte
             }
         });
         layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-        if ( searchcustomerAdapter  == null) {//在数据之后adapter之前增加轮播才会不anr
+        if ( searchcustomerAdapter  == null||!isPause) {//在数据之后adapter之前增加轮播才会不anr
             searchcustomerAdapter = new SearchCustomerAdapter(customer_list, this);
 
             lv_searchResult.getRefreshableView().setAdapter(searchcustomerAdapter);
+        }else {
+            searchcustomerAdapter.setToutiao_list(customer_list);//填充并刷新数据
         }
         searchcustomerAdapter.setOnItemClickListener(new SearchCustomerAdapter.MyItemClickListener() {
             @Override
@@ -334,7 +336,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements MyIte
 //
 //
         });
-        searchcustomerAdapter.setToutiao_list(customer_list);//填充并刷新数据
+
         lv_searchResult.onPullDownRefreshComplete();//隐藏下拉头
         lv_searchResult.onPullUpRefreshComplete();//隐藏上拉头
         mDialog.dismiss();
@@ -665,7 +667,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements MyIte
         //  closeKeyboard();
         AlertView mAlertView0 = (AlertView) o;
         if (mAlertView1 == mAlertView0) {
-            String clickdel = xinWenURL.getClickdel() + bean.getId();
+            String clickdel = xinWenURL.getClickCustomerdel() + bean.getId();
             DelData(clickdel);
         } else if (mAlertView2 == mAlertView0) {
             String agree = xinWenURL.getClickagree() + bean.getId();
@@ -690,16 +692,6 @@ public class CustomerListEditActivity extends AppCompatActivity implements MyIte
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result.equals("true")) {
                         Toast.makeText(CustomerListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
-                        for (int i = 0; i < customer_list.size(); i++) {
-
-                            if (customer_list.get(i).getId() == id) {
-
-                                customer_list.remove(i);
-
-                                i--;
-
-                            }
-                        }
 
                         isPause = true;
                         onResume();

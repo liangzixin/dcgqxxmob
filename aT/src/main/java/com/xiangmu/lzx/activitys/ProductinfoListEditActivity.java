@@ -712,16 +712,6 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
                 public void onSuccess(ResponseInfo<String> responseInfo) {
                     if (responseInfo.result.equals("true")) {
                         Toast.makeText(ProductinfoListEditActivity.this, "删除成功", Toast.LENGTH_SHORT).show();
-                        for (int i = 0; i < toutiao_list.size(); i++) {
-
-                            if (toutiao_list.get(i).getId() == id) {
-
-                                toutiao_list.remove(i);
-
-                                i--;
-
-                            }
-                        }
 
                         isPause = true;
                         onResume();
