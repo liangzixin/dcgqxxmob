@@ -315,8 +315,8 @@ public class XinWenURL {
         return customer;
     }
 
-   // public void setCustomer(String customer) {
-//        this.customer = customer;
-//    }
-
+    public String getLiuyuan() {
+        String liuyuan= HttpUtil.BASE_URL+"product!QueryAllProductarticler.action?pageNo="+stratPage;
+        return liuyuan;
+    }
 }

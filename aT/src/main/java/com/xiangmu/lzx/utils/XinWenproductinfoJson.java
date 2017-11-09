@@ -534,4 +534,56 @@ public class XinWenproductinfoJson {
         LogUtils.e("customer", "=======================================================");
         return null;
     }
+    public static XinWen_productinfo getdataProductArticler(String data){
+        try {
+            XinWen_productinfo productArticler=new XinWen_productinfo();
+            JSONObject object=new JSONObject(data);
+            LogUtils.e("xinwenjsonobject", object + "");
+            JSONArray array = null;
+            array=object.getJSONArray("TProductarticler");//注册用户
+
+            LogUtils.e("TProductarticler----", "" + array);
+            JSONObject arrayobj00=array.getJSONObject(0);
+            if (! arrayobj00.isNull("totalRecords")){
+                int totalRecords= arrayobj00.getInt("totalRecords");
+                productArticler.setTotalRecords(totalRecords);
+            };
+            JSONArray array00 = null;
+            array00=arrayobj00.getJSONArray("list");
+            List<XinWen_productinfo.ProductArticlerEntity> listArticlers=new ArrayList<>();
+            for (int j=0;j<array00.length();j++){
+                XinWen_productinfo.ProductArticlerEntity articlerEntity=new XinWen_productinfo.ProductArticlerEntity();
+                JSONObject articler=array00.getJSONObject(j);
+                String artreview_authorid=articler.getString("artreview_authorid");
+                String artreview_time=articler.getString("artreview_time");
+                String artreview_content=articler.getString("artreview_content");
+                //   int id=imagestra.getInt("id");
+                articlerEntity.setArtreview_authorid(artreview_authorid);
+                articlerEntity.setArtreview_time(artreview_time);
+                articlerEntity.setArtreview_content(artreview_content);
+                if (!articler.isNull("customer")) {
+                    JSONObject customer = articler.getJSONObject("customer");
+                    Customer customer1=new Customer();
+                    customer1.setUsername(customer.getString("username"));
+                    customer1.setImageurl(customer.getString("imageurl"));
+
+                    articlerEntity.setCustomer(customer1);
+                }
+                //     imgextraEntity.setId(id);
+                listArticlers.add(articlerEntity);
+            }
+
+            productArticler.setListProductArticlerEntity( listArticlers);
+            //  LogUtils.e("xinwenjson", "========" + list.get(0).getC());
+//            for (int i=0;i<customer.getListCustomerEntity().size();i++){
+//                LogUtils.e("customer", i + "========" + customer.getListCustomerEntity().get(i).getUsername());
+//            }
+//            LogUtils.e("customer", "========" + customer.getListfilterEntity());
+            return productArticler;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        LogUtils.e("productArticler", "=======================================================");
+        return null;
+    }
 }

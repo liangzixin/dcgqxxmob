@@ -18,7 +18,7 @@ import com.xiangmu.lzx.Setting_Utils.SearchDB;
 public class Setting_my_Task extends AppCompatActivity implements View.OnClickListener{
     private ImageView backsetting;
     private ImageView duihuan;
-    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx,open_filter,open_customer;
+    private RelativeLayout fabiao, share, xinshang, read_text, read_news, open_client,open_fwxx,open_filter,open_customer,open_liuyuan;
     private String openid="";
     private Boolean manager=false;
 
@@ -56,6 +56,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         open_fwxx= (RelativeLayout) findViewById(R.id.open_fwxx);
         open_filter= (RelativeLayout) findViewById(R.id.open_filter);
         open_customer= (RelativeLayout) findViewById(R.id.open_customer);
+        open_liuyuan= (RelativeLayout) findViewById(R.id.open_liuyuan);
         fabiao = (RelativeLayout) findViewById(R.id.fabiao);
         share = (RelativeLayout) findViewById(R.id.share);
         xinshang = (RelativeLayout) findViewById(R.id.xinshang);
@@ -72,16 +73,19 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
         open_client.setOnClickListener(this);
         open_filter.setOnClickListener(this);
         open_customer.setOnClickListener(this);
+        open_liuyuan.setOnClickListener(this);
         if(manager){
             open_client.setVisibility(View.VISIBLE);
             open_fwxx.setVisibility(View.VISIBLE);
             open_filter.setVisibility(View.VISIBLE);
             open_customer.setVisibility(View.VISIBLE);
+            open_liuyuan.setVisibility(View.VISIBLE);
         }else{
             open_client.setVisibility(View.GONE);
             open_fwxx.setVisibility(View.GONE);
             open_filter.setVisibility(View.GONE);
             open_customer.setVisibility(View.GONE);
+            open_liuyuan.setVisibility(View.GONE);
         }
     }
 
@@ -143,6 +147,11 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
             case R.id.open_customer:
                 Intent intent212 = new Intent(this, CustomerListEditActivity.class);
                 startActivity(intent212);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                break;
+            case R.id.open_liuyuan:
+                Intent intent213 = new Intent(this, CustomerListEditActivity.class);
+                startActivity(intent213);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
         }
