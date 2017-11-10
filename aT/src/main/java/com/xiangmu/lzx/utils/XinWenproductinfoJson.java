@@ -557,10 +557,11 @@ public class XinWenproductinfoJson {
                 String artreview_authorid=articler.getString("artreview_authorid");
                 String artreview_time=articler.getString("artreview_time");
                 String artreview_content=articler.getString("artreview_content");
-                //   int id=imagestra.getInt("id");
+                int id=articler.getInt("id");
                 articlerEntity.setArtreview_authorid(artreview_authorid);
                 articlerEntity.setArtreview_time(artreview_time);
                 articlerEntity.setArtreview_content(artreview_content);
+                articlerEntity.setId(id);
                 if (!articler.isNull("customer")) {
                     JSONObject customer = articler.getJSONObject("customer");
                     Customer customer1=new Customer();

@@ -150,7 +150,7 @@ public class Setting_my_Task extends AppCompatActivity implements View.OnClickLi
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;
             case R.id.open_liuyuan:
-                Intent intent213 = new Intent(this, CustomerListEditActivity.class);
+                Intent intent213 = new Intent(this, LiuyuanListEditActivity.class);
                 startActivity(intent213);
                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 break;

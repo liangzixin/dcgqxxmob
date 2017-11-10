@@ -323,6 +323,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
 
         XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, 2);//传入类型和数据
         toutiao_list.addAll(toutiao_object.getT18908805728());
+        searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
         Collections.sort(toutiao_list, new Comparator<XinWen_productinfo.T18908805728Entity>() {
             public int compare(XinWen_productinfo.T18908805728Entity arg0, XinWen_productinfo.T18908805728Entity arg1) {
                 return arg1.getId().compareTo(arg0.getId());

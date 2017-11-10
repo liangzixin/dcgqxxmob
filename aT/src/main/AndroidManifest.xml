@@ -137,6 +137,9 @@
             android:name="com.xiangmu.lzx.activitys.CustomerListEditActivity"
             android:label="@string/title_activity_web_view" />
         <activity
+            android:name="com.xiangmu.lzx.activitys.LiuyuanListEditActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
             android:name="com.xiangmu.lzx.activitys.CustomerDetailActivity"
             android:label="@string/title_activity_web_view" />
         <meta-data

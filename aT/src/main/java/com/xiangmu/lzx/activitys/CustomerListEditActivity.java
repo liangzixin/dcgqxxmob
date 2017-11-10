@@ -315,6 +315,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements MyIte
 
         XinWen_productinfo customer_object = XinWenproductinfoJson.getdataCustomer(data);//传入类型和数据
         customer_list.addAll(customer_object.getListCustomerEntity());
+        searchjiekuo.setText("搜索结果: " + customer_object.getTotalRecords() + " 条记录");
         Collections.sort(customer_list, new Comparator<XinWen_productinfo.CustomerEntity>() {
             public int compare(XinWen_productinfo.CustomerEntity arg0, XinWen_productinfo.CustomerEntity arg1) {
                 return arg1.getId().compareTo(arg0.getId());

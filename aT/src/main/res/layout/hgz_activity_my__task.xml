@@ -8,7 +8,7 @@
     <ImageView
         android:id="@+id/duihuan"
         android:layout_width="wrap_content"
-        android:layout_height="180dp"
+        android:layout_height="100dp"
         android:src="@mipmap/taskbackground" />
 
     <LinearLayout
@@ -35,25 +35,21 @@
             android:textColor="@color/setting_write"
             android:textSize="20sp" />
     </LinearLayout>
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginTop="150dp"
-        android:text="每日任务" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="65dp"
-        android:layout_marginTop="150dp"
-        android:text="任务进度" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="1dp"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="170dp"
+        android:layout_marginTop="90dp"
         android:orientation="vertical">
 
         <RelativeLayout
@@ -425,6 +421,8 @@
             android:text="+5"
             android:textColor="@color/gold_yanse" />
     </RelativeLayout>
+
+
         <RelativeLayout
             android:id="@+id/open_filter"
             android:layout_width="match_parent"
@@ -522,4 +520,6 @@
                 android:textColor="@color/gold_yanse" />
         </RelativeLayout>
     </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

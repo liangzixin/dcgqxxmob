@@ -92,11 +92,11 @@ public class SearchProductArticlerAdapter extends BaseAdapter {
 		}
 
 		viewHoudle2.bt_id .setText(productArticler_list.get(position).getId().toString());
-				if(productArticler_list.get(position).getArtreview_content().length()<=8) {
+				if(productArticler_list.get(position).getArtreview_content().length()<=15) {
 					viewHoudle2.bt_name.setText(productArticler_list.get(position).getArtreview_content());
 		}else {
 			//		System.out.println(productArticler_list.get(position).getUsername().substring(0,8));
-					viewHoudle2.bt_name.setText(productArticler_list.get(position).getArtreview_content().substring(0,8));
+					viewHoudle2.bt_name.setText(productArticler_list.get(position).getArtreview_content().substring(0,15));
 		}
 if(!productArticler_list.get(position).getArtreview_time().equals(""))		viewHoudle2.bt_registerdate.setText(dateTime.getmd(productArticler_list.get(position).getArtreview_time()));
 //		if(!productArticler_list.get(position).getLogindate().equals(""))		viewHoudle2.bt_enddate.setText(dateTime.getmd(productArticler_list.get(position).getLogindate()));
