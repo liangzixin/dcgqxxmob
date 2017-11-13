@@ -632,8 +632,8 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
                 break;
 
             case R.id.result_replace://修改
-                Intent intentzhibo = new Intent(this, CustomerDetailActivity.class);
-                intentzhibo.putExtra("CustomerEntity", bean);
+                Intent intentzhibo = new Intent(this, LiuyuanDetailActivity.class);
+                intentzhibo.putExtra("LiuyuanEntity", bean);
 
                 startActivity(intentzhibo);
 

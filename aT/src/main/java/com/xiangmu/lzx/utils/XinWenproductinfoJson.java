@@ -8,6 +8,7 @@ import com.xiangmu.lzx.Modle.Fwcs;
 import com.xiangmu.lzx.Modle.Fzfs;
 import com.xiangmu.lzx.Modle.Gqxx;
 import com.xiangmu.lzx.Modle.ProductCategory;
+import com.xiangmu.lzx.Modle.ProductInfo;
 import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.Zpnl;
 import com.xiangmu.lzx.Modle.Zpxx;
@@ -15,10 +16,11 @@ import com.xiangmu.lzx.Modle.Zpxx;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-//import net.sf.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
+
+//import net.sf.json.JSONObject;
 
 /**
  * Created by Administrator on 2015/11/14.
@@ -567,8 +569,14 @@ public class XinWenproductinfoJson {
                     Customer customer1=new Customer();
                     customer1.setUsername(customer.getString("username"));
                     customer1.setImageurl(customer.getString("imageurl"));
-
                     articlerEntity.setCustomer(customer1);
+                }
+                if (!articler.isNull("productInfo")) {
+                    JSONObject productinfo = articler.getJSONObject("productInfo");
+                    ProductInfo productinfo1=new ProductInfo();
+                    productinfo1.setName(productinfo.getString("name"));
+
+                    articlerEntity.setProduct(productinfo1);
                 }
                 //     imgextraEntity.setId(id);
                 listArticlers.add(articlerEntity);

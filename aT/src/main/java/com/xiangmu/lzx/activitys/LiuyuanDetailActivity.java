@@ -8,7 +8,6 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
@@ -26,9 +25,7 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.litao.android.lib.entity.PhotoEntry;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
-import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.holder.PhotoHolder;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXiData;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
@@ -44,7 +41,7 @@ import butterknife.InjectView;
 public class LiuyuanDetailActivity extends AppCompatActivity implements OnItemSelectedListener{
     Context context =LiuyuanDetailActivity.this;
     private ProgressDialog progressDialog;
-    private XinWen_productinfo.CustomerEntity customerEntity;
+    private XinWen_productinfo.ProductArticlerEntity liuyuanEntity;
 
     private Handler testHandler;
 
@@ -65,25 +62,19 @@ private HttpHandler<String> handler;
     private android.support.v7.widget.StaggeredGridLayoutManager StaggeredGridLayoutManager;
     private XinWenURL xinWenURL = new XinWenURL();
     MultiTypeAdapter adapterlzx;
-    @InjectView(R.id.customer_id) TextView customer_id;
-    @InjectView(R.id.customer_name)   MaterialEditText customer_name;
-    @InjectView(R.id.customer_password) TextView password;
-    @InjectView(R.id.customer_sfzh) MaterialEditText sfzh;
+    @InjectView(R.id.liuyuan_id) TextView liuyuan_id;
+    @InjectView(R.id.liuyuan_content)   MaterialEditText liuyuan_content;
+    @InjectView(R.id.liuyuan_time) TextView liuyuan_time;
+    @InjectView(R.id.liuyuan_customer) MaterialEditText liuyuan_customer;
     @InjectView(R.id.backl)    ImageButton backl;
     @InjectView(R.id.result_addl) TextView addl;
-    @InjectView(R.id.customer_realname) TextView realname;
-    @InjectView(R.id.customer_address) TextView address;
-    @InjectView(R.id.customer_email) TextView email;
-    @InjectView(R.id.customer_mobile) TextView mobile;
-    @InjectView(R.id.customer_registerdate) TextView registerdate;
-    @InjectView(R.id.customer_starttime) TextView starttime;
-    @InjectView(R.id.customer_logintime) TextView logintime;
-    @InjectView(R.id.recyclerViewlzx)
-    RecyclerView recyclerViewlzx;
+    @InjectView(R.id.liuyuan_productinfo) TextView liuyuan_productinfo;
+
+//    RecyclerView recyclerViewlzx;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_customerdetail);
+        setContentView(R.layout.activity_liuyuandetail);
 
     //  EventBus.getDefault().register(this);
 
@@ -91,21 +82,21 @@ private HttpHandler<String> handler;
 
         //获得绑定参数
         Intent intent = getIntent();
-        customerEntity= (XinWen_productinfo.CustomerEntity) intent.getSerializableExtra("CustomerEntity");
-        assert recyclerViewlzx != null;
-        recyclerViewlzx.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
-        adapterlzx = new MultiTypeAdapter(this);
-        adapterlzx.registerViewType(Photo.class, PhotoHolder.class);
-        recyclerViewlzx.setAdapter(adapterlzx);
+        liuyuanEntity= (XinWen_productinfo.ProductArticlerEntity) intent.getSerializableExtra("LiuyuanEntity");
+//        assert recyclerViewlzx != null;
+//        recyclerViewlzx.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+//        adapterlzx = new MultiTypeAdapter(this);
+//        adapterlzx.registerViewType(Photo.class, PhotoHolder.class);
+//        recyclerViewlzx.setAdapter(adapterlzx);
 
         progressDialog = new ProgressDialog(this);
         progressDialog.setMessage("数据加载中  请稍后...");
         progressDialog.show();
 
-        showView(customerEntity);
+        showView(liuyuanEntity);
 
         progressDialog.dismiss();
-        inintClick();
+       inintClick();
     }
     //初始化各监听事件
     private void inintClick() {
@@ -121,7 +112,7 @@ private HttpHandler<String> handler;
             public void onClick(View view) {
 //                Toast.makeText(this, "单击了添加按钮", Toast.LENGTH_SHORT).show();
           //      new AlertDialog.Builder(FilterListEditActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
-               url=xinWenURL.getRepareCustomerMob();
+             url=xinWenURL.getRepareProductArticlerMob();
                 SaveData(url);
             }
         });
@@ -153,17 +144,9 @@ private void SaveData(final String url){
     if (!url.equals("")) {
         httpUtils = new HttpUtils();
         RequestParams params = new RequestParams();
-      params.addQueryStringParameter("customer.id",customer_id.getText().toString());
-        params.addQueryStringParameter("customer.username",customer_name.getText().toString());
-        params.addQueryStringParameter("customer.password",password.getText().toString());
-        params.addQueryStringParameter("customer.sfzh",sfzh.getText().toString());
-        params.addQueryStringParameter("customer.realname",realname.getText().toString());
-
-        params.addQueryStringParameter("customer.address",address.getText().toString());
-        params.addQueryStringParameter("customer.email",email.getText().toString());
-        params.addQueryStringParameter("customer.mobile",mobile.getText().toString());
-        params.addQueryStringParameter("customer.registerdate",registerdate.getText().toString());
-        params.addQueryStringParameter("customer.logintime",logintime.getText().toString());
+      params.addQueryStringParameter("productArticler.id",liuyuan_id.getText().toString());
+        params.addQueryStringParameter("productArticler.artreview_content",liuyuan_content.getText().toString());
+        params.addQueryStringParameter("productArticler.artreview_time",liuyuan_time.getText().toString());
 
 
         handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
@@ -171,7 +154,7 @@ private void SaveData(final String url){
             public void onSuccess(ResponseInfo<String> responseInfo) {
 
                 if (responseInfo.result != null) {
-                    Toast.makeText(LiuyuanDetailActivity.this, "注册用户信息修改成功！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LiuyuanDetailActivity.this, "留言信息修改成功！", Toast.LENGTH_SHORT).show();
                   //  PictureUtil.deleteImgTmp(imgstmppath);
 //                    Intent intent = new Intent();
 //                    intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
@@ -186,7 +169,7 @@ private void SaveData(final String url){
 
             @Override
             public void onFailure(HttpException e, String s) {
-                Toast.makeText(LiuyuanDetailActivity.this, "注册用户信息修改失败！", Toast.LENGTH_SHORT).show();
+                Toast.makeText(LiuyuanDetailActivity.this, "留言信息修改失败！", Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -243,7 +226,7 @@ private void SaveData(final String url){
 ////                img2.setImageResource(R.drawable.ic_phone_white_24dp);
 ////                img3.setImageResource(R.drawable.ic_phone_white_24dp);
 ////            }
-////         showView(customer);
+////         showView(liuyuan);
 //
 //        progressDialog.dismiss();
 //        //send message here
@@ -261,37 +244,19 @@ private void SaveData(final String url){
 //        };
     /**
      * 显示视图
-     * @param customerEntity 职工的图片
-     * @param customerEntity 职工的对象
+     * @param liuyuanEntity 职工的图片
+     * @param liuyuanEntity 职工的对象
      * */
-    public void showView(XinWen_productinfo.CustomerEntity customerEntity)
+    public void showView(XinWen_productinfo.ProductArticlerEntity liuyuanEntity)
     {
 
 
-        customer_id.setText(customerEntity.getId()+"");
-        customer_name.setText(customerEntity.getUsername());
-         password.setText(customerEntity.getPassword());
-        sfzh.setText(customerEntity.getSfzh());
+        liuyuan_id.setText(liuyuanEntity.getId()+"");
+        liuyuan_content.setText(liuyuanEntity.getArtreview_content());
+        liuyuan_time.setText(liuyuanEntity.getArtreview_time());
+       liuyuan_customer.setText(liuyuanEntity.getCustomer().getUsername());
+       liuyuan_productinfo.setText(liuyuanEntity.getProduct().getName());
 
-       realname.setText(customerEntity.getRealname());
-//        address.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
-//        address.setGravity(Gravity.TOP);
-        address.setText(customerEntity.getAddress());
-//        address.setSingleLine(false);
-//
-//        address.setHorizontallyScrolling(false);
-        email.setText(customerEntity.getEmail());
-        mobile.setText(customerEntity.getMobile());
-        registerdate.setText(customerEntity.getRegisterdate());
-        starttime.setText(customerEntity.getStarttime());
-         logintime.setText(customerEntity.getLogindate());
-        if(!customerEntity.getHeadimg().equals("")) {
-            Photo photo = new Photo();
-            photo.path=customerEntity.getHeadimg();
-            photo.photoId =1;
-            photo.description ="头像";
-            adapterlzx.add(photo);
-        }
     }
 
 //    /**
@@ -301,7 +266,7 @@ private void SaveData(final String url){
 //        @Override
 //        public void handleMessage(Message msg) {
 //            progressDialog.dismiss(); //消除Loding对话框
-//            showView(customerEntity);
+//            showView(liuyuanEntity);
 ////            rz.se;
 //            super.handleMessage(msg);
 //        }
@@ -323,7 +288,7 @@ private void SaveData(final String url){
 //    private void doSearching(int id) {
 //
 //
-//      //  url=HttpUtil.BASE_URL+"customer!queryTxxxId.action";
+//      //  url=HttpUtil.BASE_URL+"liuyuan!queryTxxxId.action";
 //        params = new RequestParams();
 //        params.addQueryStringParameter("id",id+"");
 //
