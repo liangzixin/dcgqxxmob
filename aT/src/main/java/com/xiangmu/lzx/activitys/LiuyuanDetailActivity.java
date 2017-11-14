@@ -149,6 +149,7 @@ private void SaveData(final String url){
         params.addQueryStringParameter("productArticler.artreview_time",liuyuan_time.getText().toString());
 
 
+
         handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {

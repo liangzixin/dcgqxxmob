@@ -101,7 +101,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
         mDialog = new SimpleArcDialog(this);
-
+       // mDialog.show();
         initSearchNews(url,true);
         // inintAdapter();
 
@@ -266,7 +266,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
 
             getData(url,refresh);
 
-            mDialog.show();
+       mDialog.show();
 
         }
     }
@@ -322,7 +322,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
             }
         });
         layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-        if ( searchProductArticlerAdapter  == null||!isPause) {//在数据之后adapter之前增加轮播才会不anr
+        if ( searchProductArticlerAdapter  == null||refresh) {//在数据之后adapter之前增加轮播才会不anr
             searchProductArticlerAdapter = new SearchProductArticlerAdapter(liuyuan_list, this);
             lv_searchResult.getRefreshableView().setAdapter(searchProductArticlerAdapter);
         }else {
@@ -516,6 +516,10 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
 
         if (isPause) { //判断是否暂停
             isPause = false;
+        //    url =xinWenURL.getLiuyuan();//最新url
+    //        mDialog = new SimpleArcDialog(this);
+            mDialog = new SimpleArcDialog(this);
+            mDialog.show();
             initSearchNews(url,true);
 //            inintAdapter();
         }
@@ -642,7 +646,11 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
                 break;
 
             case R.id.result_delete://删除
-                mAlertView1 = new AlertView("删除", bean.getArtreview_content().substring(0,6), "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
+                String len="";
+                if(bean.getArtreview_content().length()>6)
+                {len=bean.getArtreview_content().substring(0,6);}
+                else{len=bean.getArtreview_content();}
+                mAlertView1 = new AlertView("删除",len, "取消", new String[]{"确定"}, null, this, AlertView.Style.Alert, this).setCancelable(true).setOnDismissListener(this);
                 mAlertView1.show();
                 break;
             case R.id.result_agree://审核
@@ -667,7 +675,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
         //  closeKeyboard();
         AlertView mAlertView0 = (AlertView) o;
         if (mAlertView1 == mAlertView0) {
-            String clickdel = xinWenURL.getClickCustomerdel() + bean.getId();
+            String clickdel = xinWenURL.getProductArticlerDelMob() + bean.getId();
             DelData(clickdel);
         } else if (mAlertView2 == mAlertView0) {
             String agree = xinWenURL.getClickagree() + bean.getId();

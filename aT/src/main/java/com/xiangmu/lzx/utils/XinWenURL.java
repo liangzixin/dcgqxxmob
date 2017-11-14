@@ -40,9 +40,15 @@ public class XinWenURL {
     String clickcount=HttpUtil.BASE_URL+"product!UpdateClickcount.action?ID=";
     String filterdel=HttpUtil.BASE_URL+"filter!delMob.action?id=";
     String clickdel=HttpUtil.BASE_URL+"product!Clickdel.action?id=";
+
+    String ProductArticlerDelMob=HttpUtil.BASE_URL+"product!ProductArticlerDelMob.action?id=";
     String clickagree=HttpUtil.BASE_URL+"product!Clickagree.action?id=";
     String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
     String repareCustomerMob=HttpUtil.BASE_URL+"customerAction!repareCustomerMob.action";
+
+    String repareProductArticlerMob=HttpUtil.BASE_URL+"product!repareProductArticlerMob.action";
+    String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
+    String clickCustomerdel=HttpUtil.BASE_URL+"customerAction!delMob.action?id=";
 
     public String getRepareProductArticlerMob() {
         return repareProductArticlerMob;
@@ -52,9 +58,14 @@ public class XinWenURL {
         this.repareProductArticlerMob = repareProductArticlerMob;
     }
 
-    String repareProductArticlerMob=HttpUtil.BASE_URL+"product!repareProductArticlerMob.action";
-    String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
-    String clickCustomerdel=HttpUtil.BASE_URL+"customerAction!delMob.action?id=";
+    public String getProductArticlerDelMob() {
+        return ProductArticlerDelMob;
+    }
+
+    public void setProductArticlerDelMob(String productArticlerDelMob) {
+        ProductArticlerDelMob = productArticlerDelMob;
+    }
+
     public String getClickCustomerdel() {
         return clickCustomerdel;
     }

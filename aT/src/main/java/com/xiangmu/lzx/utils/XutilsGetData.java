@@ -29,8 +29,8 @@ public class XutilsGetData {
     private HttpUtils http;
     private  String data = null;
     private  CallBackHttp callbackhttp;
-    private static SimpleArcDialog dialog= null;
-//    static CustomProgressDialog dialog1 = null;
+      private static SimpleArcDialog dialog= null;
+    //  static CustomProgressDialog dialog = null;
     //网络请求string数据
     public  void xUtilsHttp(final Context context, final String url, CallBackHttp callback, final boolean isprogressdialog) {
         //设置精度条
@@ -42,14 +42,15 @@ public class XutilsGetData {
         if (isprogressdialog){
 
             if (dialog==null){
-           //     dialog=new CustomProgressDialog(context,"正在加载中.......", R.drawable.donghua_frame);
-                dialog = new SimpleArcDialog(context);
+                //     dialog=new CustomProgressDialog(context,"正在加载中.......", R.drawable.donghua_frame);
+                    dialog = new SimpleArcDialog(context);
             }
             dialog.show();
         }
 
         //打开子线程请求网络
-     //   final SimpleArcDialog finalDialog = dialog;
+     //final SimpleArcDialog finalDialog = dialog;
+        final SimpleArcDialog finalDialog = dialog;
       //  http.configCurrentHttpCacheExpiry(1000 * 10);
         hand = http.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
             //开始请求调用的方法
@@ -74,8 +75,8 @@ public class XutilsGetData {
                 LogUtils.e("onSuccess", data + "");
                callbackhttp.handleData(data);//接口回调的方法
                saveData(context, url, data);//保存数据
-                if (dialog!=null){
-                    dialog.dismiss();
+                if (finalDialog!=null){
+                    finalDialog.dismiss();
 
                 }
             }
@@ -120,8 +121,8 @@ public class XutilsGetData {
 
         if (isprogressdialog){
             if (dialog==null){
-              //  dialog=new CustomProgressDialog(context,"正在加载中.......", R.drawable.donghua_frame);
-                dialog = new SimpleArcDialog(context);
+                //      dialog=new CustomProgressDialog(context,"正在加载中.......", R.drawable.donghua_frame);
+                     dialog = new SimpleArcDialog(context);
             }
             dialog.show();
         }else{
