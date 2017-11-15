@@ -30,7 +30,6 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchProductArticlerAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
-import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
@@ -84,7 +83,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
     private XinWen_productinfo.ProductArticlerEntity bean;
     private XinWenURL xinWenURL = new XinWenURL();
     private String url = null;
-    private SimpleArcDialog mDialog;
+   // private SimpleArcDialog mDialog;
     private AlertView mAlertView1, mAlertView2;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
     private Boolean isPause = false;
     private int id = 0;
@@ -100,7 +99,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
         url = xinWenURL.getLiuyuan();//最新url
         mySqlitehelper = new MySqlitehelper(this);
         writableDatabase = mySqlitehelper.getWritableDatabase();
-        mDialog = new SimpleArcDialog(this);
+    //    mDialog = new SimpleArcDialog(this);
        // mDialog.show();
         initSearchNews(url,true);
         // inintAdapter();
@@ -266,7 +265,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
 
             getData(url,refresh);
 
-       mDialog.show();
+      // mDialog.show();
 
         }
     }
@@ -294,7 +293,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
                 public void handleData(String data) {
                     LogUtils.e("xinwenactivity==data==", data + "");
                     getshowdata(data, refresh);
-
+                 //   mDialog.dismiss();
                 }
             },true);
         }else {
@@ -339,7 +338,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
 
         lv_searchResult.onPullDownRefreshComplete();//隐藏下拉头
         lv_searchResult.onPullUpRefreshComplete();//隐藏上拉头
-        mDialog.dismiss();
+     //   mDialog.dismiss();
 
 
 
@@ -518,8 +517,8 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
             isPause = false;
         //    url =xinWenURL.getLiuyuan();//最新url
     //        mDialog = new SimpleArcDialog(this);
-            mDialog = new SimpleArcDialog(this);
-            mDialog.show();
+        //    mDialog = new SimpleArcDialog(this);
+         //   mDialog.show();
             initSearchNews(url,true);
 //            inintAdapter();
         }

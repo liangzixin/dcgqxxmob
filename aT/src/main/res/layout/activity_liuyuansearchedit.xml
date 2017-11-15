@@ -44,7 +44,7 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/back"
             android:layout_toRightOf="@+id/back"
-            android:text="搜索信息"
+            android:text="留言信息"
             android:textColor="@color/white"
             android:textSize="15sp" />
     </RelativeLayout>

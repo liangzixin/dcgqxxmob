@@ -29,7 +29,7 @@ public class XutilsGetData {
     private HttpUtils http;
     private  String data = null;
     private  CallBackHttp callbackhttp;
-      private static SimpleArcDialog dialog= null;
+    //     private static SimpleArcDialog dialog= null;
     //  static CustomProgressDialog dialog = null;
     //网络请求string数据
     public  void xUtilsHttp(final Context context, final String url, CallBackHttp callback, final boolean isprogressdialog) {
@@ -51,7 +51,12 @@ public class XutilsGetData {
         //打开子线程请求网络
      //final SimpleArcDialog finalDialog = dialog;
         final SimpleArcDialog finalDialog = dialog;
-      //  http.configCurrentHttpCacheExpiry(1000 * 10);
+        //设置当前请求的缓存时间
+        http.configCurrentHttpCacheExpiry(0*1000);
+        //设置默认请求的缓存时间
+        http.configDefaultHttpCacheExpiry(0);
+        //设置线程数
+     //   http.configRequestThreadPoolSize(5);
         hand = http.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
             //开始请求调用的方法
             public void onStart() {
@@ -110,6 +115,7 @@ public class XutilsGetData {
     private static CallBackImage callbackimage;
     //网络请求图片
   //  static CustomProgressDialog dialog = null;
+    static SimpleArcDialog dialog= null;
     public static void xUtilsImageiv(ImageView iv, String imageurl, Context context,boolean isprogressdialog) {
 //        BitmapDisplayConfig config=new BitmapDisplayConfig();
 //        final Animation alpha= AnimationUtils.loadAnimation(MainActivity.this,R.anim.alpha);
