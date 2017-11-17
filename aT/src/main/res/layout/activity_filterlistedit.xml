@@ -33,6 +33,17 @@
             android:textColor="@color/white"
             android:textSize="15sp" />
         <TextView
+            android:id="@+id/lv_searchjiekuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toEndOf="@+id/glqy"
+            android:layout_toRightOf="@+id/glqy"
+            android:layout_marginLeft="5dp"
+            android:text="搜索结果"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:textColor="@color/white" />
+        <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
@@ -64,13 +75,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <TextView
-            android:id="@+id/lv_searchjiekuo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="搜索结果"
-            android:textColor="@color/red" />
+
 
 
         <android.support.v7.widget.RecyclerView

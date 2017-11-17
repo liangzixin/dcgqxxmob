@@ -36,7 +36,7 @@ import com.xiangmu.lzx.activitys.Setting_Collection;
 import com.xiangmu.lzx.activitys.Setting_GlodPage;
 import com.xiangmu.lzx.activitys.Setting_glodmall;
 import com.xiangmu.lzx.activitys.Setting_headpage;
-import com.xiangmu.lzx.activitys.Setting_my_Task;
+import com.xiangmu.lzx.activitys.Setting_my_Taskl;
 import com.xiangmu.lzx.activitys.Setting_set_page;
 
 import java.lang.reflect.Type;
@@ -388,7 +388,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
             case R.id.myTask:
                 //获取数据库对应的数据
                 if (flag) {
-                    Intent intent8 = new Intent(getActivity(), Setting_my_Task.class);
+                    Intent intent8 = new Intent(getActivity(), Setting_my_Taskl.class);
                     startActivity(intent8);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 } else {

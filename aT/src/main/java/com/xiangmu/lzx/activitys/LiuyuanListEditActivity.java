@@ -226,7 +226,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
             public boolean onQueryTextSubmit(String query) {
                 keywords = query;
 
-                initSearchNews(ServerURL.searchUrl3 + keywords,true);//执行新闻搜索请求
+                initSearchNews(ServerURL.searchUrl4 + keywords,true);//执行新闻搜索请求
                 //添加数据
                 ContentValues contentValues = new ContentValues();
 
@@ -314,7 +314,7 @@ public class LiuyuanListEditActivity extends AppCompatActivity implements MyItem
 
         XinWen_productinfo productArticler_object = XinWenproductinfoJson.getdataProductArticler(data);//传入类型和数据
         liuyuan_list.addAll(productArticler_object.getListProductArticlerEntity());
-        searchjiekuo.setText("搜索结果: " + productArticler_object.getTotalRecords() + " 条记录");
+        searchjiekuo.setText("共: " + productArticler_object.getTotalRecords() + " 条");
         Collections.sort(liuyuan_list, new Comparator<XinWen_productinfo.ProductArticlerEntity>() {
             public int compare(XinWen_productinfo.ProductArticlerEntity arg0, XinWen_productinfo.ProductArticlerEntity arg1) {
                 return arg1.getId().compareTo(arg0.getId());

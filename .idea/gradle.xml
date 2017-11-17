@@ -8,6 +8,7 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FJMtSortButtonLib" />
             <option value="$PROJECT_DIR$/aT" />
             <option value="$PROJECT_DIR$/barCodeTest" />
             <option value="$PROJECT_DIR$/photolib" />
@@ -16,6 +17,7 @@
         <option name="myModules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/FJMtSortButtonLib" />
             <option value="$PROJECT_DIR$/aT" />
             <option value="$PROJECT_DIR$/barCodeTest" />
             <option value="$PROJECT_DIR$/photolib" />

@@ -338,7 +338,7 @@ import java.util.List;
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
            //     System.out.println("标题:" + filter_list.get(0).getFilters());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
-                searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
+                searchjiekuo.setText("共: " + toutiao_object.getTotalRecords() + " 条");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 //    progressDialog.dismiss();
 
@@ -362,7 +362,7 @@ import java.util.List;
 //                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
                 System.out.println("标题:" + filter_list.get(0).getFilters());
 //                LogUtils.e("---", searchBean.doc.result.get(0).name);
-                searchjiekuo.setText("搜索结果: " + toutiao_object1.getTotalRecords() + " 条记录");
+                searchjiekuo.setText("共: " + toutiao_object1.getTotalRecords() + " 条");
                 //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
                 //     progressDialog.dismiss();
          //       mDialog.dismiss();
@@ -382,7 +382,7 @@ import java.util.List;
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        Toast.makeText(FilterListEditActivity.this, "onDestroy()", Toast.LENGTH_SHORT).show();
+     //   Toast.makeText(FilterListEditActivity.this, "onDestroy()", Toast.LENGTH_SHORT).show();
         if (httpUtils != null) {
             handler.cancel();
         }
@@ -393,7 +393,7 @@ import java.util.List;
     @Override
     protected void onPause() {
         super.onPause();
-       Toast.makeText(FilterListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
+    //   Toast.makeText(FilterListEditActivity.this, " onPause()", Toast.LENGTH_SHORT).show();
         isPause = true; //记录页面已经被暂停
     }
 
@@ -401,7 +401,7 @@ import java.util.List;
     protected void onResume() {
         super.onResume();
 
-         Toast.makeText(FilterListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
+     ///    Toast.makeText(FilterListEditActivity.this, " onResume()", Toast.LENGTH_SHORT).show();
         if (isPause){ //判断是否暂停
             isPause = false;
             initSearchNews(url);

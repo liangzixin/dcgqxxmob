@@ -44,9 +44,19 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/back"
             android:layout_toRightOf="@+id/back"
-            android:text="搜索信息"
+            android:text="发布信息"
             android:textColor="@color/white"
             android:textSize="15sp" />
+        <TextView
+            android:id="@+id/lv_searchjiekuo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="5dp"
+            android:text="搜索结果"
+            android:layout_centerVertical="true"
+            android:scaleType="centerInside"
+            android:textColor="@color/white" />
     </RelativeLayout>
     <!--android:iconifiedByDefault表示搜索图标是否在输入框内。true效果更加-->
     <!--android:imeOptions设置IME options，即输入法的回车键的功能，可以是搜索、下一个、发送、完成等等。这里actionSearch表示搜索-->
@@ -125,13 +135,7 @@
         android:orientation="vertical"
         android:visibility="gone">
 
-        <TextView
-            android:id="@+id/lv_searchjiekuo"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="搜索结果"
-            android:textColor="@color/red" />
+
 
         <!--TextView
             android:layout_width="match_parent"
