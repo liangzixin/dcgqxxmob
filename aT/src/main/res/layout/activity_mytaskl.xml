@@ -4,11 +4,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+     <LinearLayout
+        android:id="@+id/task"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/setting_background"
+        android:orientation="horizontal">
 
+         <ImageButton
+             android:id="@+id/back"
+             android:layout_width="55dp"
+             android:layout_height="match_parent"
+             android:adjustViewBounds="true"
+             android:background="@android:color/transparent"
+             android:scaleType="centerInside"
+             android:src="@mipmap/back" />
+
+    </LinearLayout>
     <fj.mtsortbutton.lib.SoreButton
         android:id="@+id/soreButton"
         android:background="#ffffff"
-
+        android:layout_marginTop="40dp"
         app:SoreRadioSelect="@drawable/radio1"
         app:SoreRadioUnselected="@drawable/radio2"
         app:SoreDistance="20"

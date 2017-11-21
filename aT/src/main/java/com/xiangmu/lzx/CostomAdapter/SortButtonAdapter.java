@@ -17,10 +17,13 @@ public class SortButtonAdapter extends BaseAdapter {
     private Context mContext;
     private LayoutInflater inflater;
     private List<ButtonModel> data;
+
+
     public SortButtonAdapter(Context context, List<ButtonModel> data) {
         this.mContext = context;
         this.inflater = LayoutInflater.from(context);
         this.data = data;
+
     }
 
     @Override

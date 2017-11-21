@@ -1,17 +1,20 @@
 package com.xiangmu.lzx.activitys;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.xiangmu.lzx.CostomAdapter.SortButtonAdapter;
 import com.xiangmu.lzx.Modle.ButtonModel;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.Setting_Utils.SearchDB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,25 +23,28 @@ import fj.mtsortbutton.lib.Interface.ViewControl;
 import fj.mtsortbutton.lib.SoreButton;
 
 public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
-
+    private ImageButton back;
     private Context context;
     private SoreButton soreButton;
     private List<Integer> list;
-
+    private String openid="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mytaskl);
         context = this;
         soreButton = (SoreButton) findViewById(R.id.soreButton);
-
+        back = (ImageButton) findViewById(R.id.back);
         //设置界面监听
         soreButton.setViewControl(this);
         //添加界面到list
         list = new ArrayList<>();
         list.add(R.layout.viewpager_page);
-        list.add(R.layout.viewpager_page);
-        list.add(R.layout.viewpager_page_text);
+        openid= SearchDB.createDb(getApplication(), "openid");
+        if(openid.equals("3841D13FC6C1BE0BA0D5CBDE23E5FD23") ) {
+            list.add(R.layout.viewpager_page);
+        }
+//        list.add(R.layout.viewpager_page_text);
 
         //控件相关设置
 //        soreButton
@@ -50,6 +56,7 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
 //                .setView(list)
 //                .init();
         soreButton.setView(list).init();
+        inintClick();
     }
 
     @Override
@@ -73,7 +80,19 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
                 gridView2.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                     @Override
                     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                        Toast.makeText(context,"第"+type+"页"+position, Toast.LENGTH_LONG).show();
+                        switch (position) {
+                            case 0:
+                                Toast.makeText(context, "第" + type + "页1" + position, Toast.LENGTH_LONG).show();
+                                break;
+                            case 1:
+                                Toast.makeText(context, "第" + type + "页2" + position, Toast.LENGTH_LONG).show();
+                                break;
+                            case 4:
+                                Intent intent2 = new Intent(Setting_my_Taskl.this,ProductinfoListEditActivity.class);
+                                startActivity(intent2);
+                                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                                break;
+                        }
                     }
                 });
                 break;
@@ -140,44 +159,53 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
         List<ButtonModel> data = new ArrayList<>();
         ButtonModel buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_11);
-        buttonModel.setName("品质酒店");
+        buttonModel.setName("发表跟帖");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_12);
-        buttonModel.setName("生活服务");
+        buttonModel.setName("分享新闻");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_13);
-        buttonModel.setName("足疗按摩");
+        buttonModel.setName("欣赏广告");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_14);
-        buttonModel.setName("母婴亲子");
+        buttonModel.setName("本地新闻");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_15);
-        buttonModel.setName("结婚");
+        buttonModel.setName("信息管理");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_16);
-        buttonModel.setName("景点");
+        buttonModel.setName("访问信息");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_17);
-        buttonModel.setName("温泉");
+        buttonModel.setName("注册管理");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_18);
-        buttonModel.setName("学习培训");
+        buttonModel.setName("过滤词语");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_19);
-        buttonModel.setName("洗浴/汗蒸");
+        buttonModel.setName("留言管理");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_20);
         buttonModel.setName("全部分类");
         data.add(buttonModel);
         return data;
+    }
+    //初始化各监听事件
+    private void inintClick() {
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+          finish();
+            }
+        });
     }
 }
