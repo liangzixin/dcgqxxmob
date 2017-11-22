@@ -92,6 +92,26 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
                                 startActivity(intent2);
                                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                                 break;
+                            case 5:
+                                Intent intent21 = new Intent(Setting_my_Taskl.this, WebCountViewActivity.class);
+                                startActivity(intent21);
+                                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                                break;
+                            case 6:
+                                Intent intent211 = new Intent(Setting_my_Taskl.this, FilterListEditActivity.class);
+                                startActivity(intent211);
+                                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                                break;
+                            case 7:
+                                Intent intent212 = new Intent(Setting_my_Taskl.this, CustomerListEditActivity.class);
+                                startActivity(intent212);
+                                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                                break;
+                            case 8:
+                                Intent intent213 = new Intent(Setting_my_Taskl.this, LiuyuanListEditActivity.class);
+                                startActivity(intent213);
+                                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                               break;
                         }
                     }
                 });
