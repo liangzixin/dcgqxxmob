@@ -1,8 +1,8 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 23
-    buildToolsVersion "23.0.1"
+    compileSdkVersion 25
+    buildToolsVersion "25.0.2"
 
     aaptOptions.cruncherEnabled = false
 
@@ -10,8 +10,8 @@ android {
 
     defaultConfig {
         applicationId "com.xiangmu.lzx"
-        minSdkVersion 21
-        targetSdkVersion 23
+        minSdkVersion 19
+        targetSdkVersion 25
         compileOptions {
             sourceCompatibility JavaVersion.VERSION_1_7
             targetCompatibility JavaVersion.VERSION_1_7
@@ -20,7 +20,9 @@ android {
         vectorDrawables.useSupportLibrary = true
         versionCode 2
         versionName "11.8.01"
-
+       multiDexEnabled true
+     //  preDexLibraries = false
+      //  javaMaxHeapSize "4g"   //这个改大
     }
 
     buildTypes {
@@ -39,17 +41,23 @@ repositories {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile project(':barCodeTest')
+    compile project(':FJMtSortButtonLib')
     //compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.google.code.gson:gson:2.2.1'
+     compile 'com.google.code.gson:gson:2.2.1'
+    compile 'com.google.android.gms:play-services:7.0.0'
     compile 'junit:junit:4.12'
     compile 'com.github.twiceyuan:CommonAdapter:0.5.3'
-    compile 'com.android.support:cardview-v7:23.0.1'
+   // compile 'com.android.support:cardview-v7:25.0.2'
     compile 'fr.erictruong:materialedittext:0.2.0'
     compile 'com.github.ganfra:material-spinner:1.1.1'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.sd6352051:android-image-picker:v1.0.1'
-    compile 'com.github.nisrulz:recyclerviewhelper:25.4.0'
+    // compile 'com.github.nisrulz:recyclerviewhelper:25.4.0'
     //compile 'com.android.support:support-v4:23.0.1'
-
+    //compile 'com.google.android.gms:play-services:11.0.4'
+    //   compile 'com.android.support:cardview-v7:25.3.1'
+    //      //  compile 'com.google.android.gms:play-services:11.0.4'
+   compile 'com.android.support:cardview-v7:25.3.1'
+    compile 'com.bigkoo:alertview:1.0.3'
 }

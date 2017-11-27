@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\values-fa\\values-fa.xml",
+        "outputFile": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\values-fa\\values-fa.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 210
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 320
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 446
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 549
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 660
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 4,
@@ -106,7 +106,7 @@
                     "endOffset": 744
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 4,
@@ -125,7 +125,7 @@
                     "endOffset": 847
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
@@ -144,7 +144,7 @@
                     "endOffset": 962
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 4,
@@ -163,7 +163,7 @@
                     "endOffset": 1041
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
@@ -182,7 +182,7 @@
                     "endOffset": 1119
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
@@ -201,7 +201,7 @@
                     "endOffset": 1200
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 12,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 1312
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 1415
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 1513
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 15,
                         "startColumn": 4,
@@ -277,7 +277,7 @@
                     "endOffset": 1623
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 16,
                         "startColumn": 4,
@@ -296,7 +296,7 @@
                     "endOffset": 1726
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 17,
                         "startColumn": 4,
@@ -315,7 +315,7 @@
                     "endOffset": 1835
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 18,
                         "startColumn": 4,
@@ -334,7 +334,7 @@
                     "endOffset": 1960
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 19,
                         "startColumn": 4,
@@ -353,7 +353,7 @@
                     "endOffset": 2061
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 20,
                         "startColumn": 4,
@@ -368,17 +368,17 @@
                     "startLine": 21,
                     "startColumn": 4,
                     "startOffset": 2066,
-                    "endColumn": 190,
-                    "endOffset": 2252
+                    "endColumn": 160,
+                    "endOffset": 2222
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 484,
-                        "endColumn": 194,
-                        "endOffset": 674
+                        "startOffset": 655,
+                        "endColumn": 160,
+                        "endOffset": 811
                     }
                 }
             },
@@ -386,18 +386,18 @@
                 "to": {
                     "startLine": 22,
                     "startColumn": 4,
-                    "startOffset": 2257,
-                    "endColumn": 188,
-                    "endOffset": 2441
+                    "startOffset": 2227,
+                    "endColumn": 165,
+                    "endOffset": 2388
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 18,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 2604,
-                        "endColumn": 192,
-                        "endOffset": 2792
+                        "startOffset": 2622,
+                        "endColumn": 165,
+                        "endOffset": 2783
                     }
                 }
             },
@@ -405,18 +405,18 @@
                 "to": {
                     "startLine": 23,
                     "startColumn": 4,
-                    "startOffset": 2446,
+                    "startOffset": 2393,
                     "endColumn": 116,
-                    "endOffset": 2558
+                    "endOffset": 2505
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 16,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 2280,
+                        "startOffset": 2337,
                         "endColumn": 116,
-                        "endOffset": 2392
+                        "endOffset": 2449
                     }
                 }
             },
@@ -424,18 +424,18 @@
                 "to": {
                     "startLine": 24,
                     "startColumn": 4,
-                    "startOffset": 2563,
-                    "endColumn": 264,
-                    "endOffset": 2823
+                    "startOffset": 2510,
+                    "endColumn": 128,
+                    "endOffset": 2634
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 30,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 4465,
-                        "endColumn": 268,
-                        "endOffset": 4729
+                        "startOffset": 2078,
+                        "endColumn": 128,
+                        "endOffset": 2202
                     }
                 }
             },
@@ -443,18 +443,18 @@
                 "to": {
                     "startLine": 25,
                     "startColumn": 4,
-                    "startOffset": 2828,
-                    "endColumn": 128,
-                    "endOffset": 2952
+                    "startOffset": 2639,
+                    "endColumn": 166,
+                    "endOffset": 2801
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
                         "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 2021,
-                        "endColumn": 128,
-                        "endOffset": 2145
+                        "startOffset": 1911,
+                        "endColumn": 166,
+                        "endOffset": 2073
                     }
                 }
             },
@@ -462,18 +462,18 @@
                 "to": {
                     "startLine": 26,
                     "startColumn": 4,
-                    "startOffset": 2957,
-                    "endColumn": 194,
-                    "endOffset": 3147
+                    "startOffset": 2806,
+                    "endColumn": 126,
+                    "endOffset": 2928
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
                         "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 1822,
-                        "endColumn": 198,
-                        "endOffset": 2016
+                        "startOffset": 1784,
+                        "endColumn": 126,
+                        "endOffset": 1906
                     }
                 }
             },
@@ -481,18 +481,18 @@
                 "to": {
                     "startLine": 27,
                     "startColumn": 4,
-                    "startOffset": 3152,
-                    "endColumn": 126,
-                    "endOffset": 3274
+                    "startOffset": 2933,
+                    "endColumn": 168,
+                    "endOffset": 3097
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 1695,
-                        "endColumn": 126,
-                        "endOffset": 1817
+                        "startOffset": 975,
+                        "endColumn": 172,
+                        "endOffset": 1143
                     }
                 }
             },
@@ -500,18 +500,18 @@
                 "to": {
                     "startLine": 28,
                     "startColumn": 4,
-                    "startOffset": 3279,
-                    "endColumn": 168,
-                    "endOffset": 3443
+                    "startOffset": 3102,
+                    "endColumn": 126,
+                    "endOffset": 3224
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 838,
-                        "endColumn": 172,
-                        "endOffset": 1006
+                        "startOffset": 1657,
+                        "endColumn": 126,
+                        "endOffset": 1779
                     }
                 }
             },
@@ -519,18 +519,18 @@
                 "to": {
                     "startLine": 29,
                     "startColumn": 4,
-                    "startOffset": 3448,
-                    "endColumn": 126,
-                    "endOffset": 3570
+                    "startOffset": 3229,
+                    "endColumn": 187,
+                    "endOffset": 3412
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 11,
+                        "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 1568,
-                        "endColumn": 126,
-                        "endOffset": 1690
+                        "startOffset": 1272,
+                        "endColumn": 187,
+                        "endOffset": 1455
                     }
                 }
             },
@@ -538,18 +538,18 @@
                 "to": {
                     "startLine": 30,
                     "startColumn": 4,
-                    "startOffset": 3575,
-                    "endColumn": 208,
-                    "endOffset": 3779
+                    "startOffset": 3417,
+                    "endColumn": 196,
+                    "endOffset": 3609
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1135,
-                        "endColumn": 212,
-                        "endOffset": 1343
+                        "startOffset": 1460,
+                        "endColumn": 196,
+                        "endOffset": 1652
                     }
                 }
             },
@@ -557,18 +557,18 @@
                 "to": {
                     "startLine": 31,
                     "startColumn": 4,
-                    "startOffset": 3784,
-                    "endColumn": 215,
-                    "endOffset": 3995
+                    "startOffset": 3614,
+                    "endColumn": 123,
+                    "endOffset": 3733
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 10,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 1348,
-                        "endColumn": 219,
-                        "endOffset": 1563
+                        "startOffset": 1148,
+                        "endColumn": 123,
+                        "endOffset": 1267
                     }
                 }
             },
@@ -576,18 +576,18 @@
                 "to": {
                     "startLine": 32,
                     "startColumn": 4,
-                    "startOffset": 4000,
-                    "endColumn": 123,
-                    "endOffset": 4119
+                    "startOffset": 3738,
+                    "endColumn": 186,
+                    "endOffset": 3920
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 8,
+                        "startLine": 23,
                         "startColumn": 4,
-                        "startOffset": 1011,
-                        "endColumn": 123,
-                        "endOffset": 1130
+                        "startOffset": 3184,
+                        "endColumn": 186,
+                        "endOffset": 3366
                     }
                 }
             },
@@ -595,18 +595,18 @@
                 "to": {
                     "startLine": 33,
                     "startColumn": 4,
-                    "startOffset": 4124,
-                    "endColumn": 186,
-                    "endOffset": 4306
+                    "startOffset": 3925,
+                    "endColumn": 120,
+                    "endOffset": 4041
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 24,
+                        "startLine": 22,
                         "startColumn": 4,
-                        "startOffset": 3562,
-                        "endColumn": 186,
-                        "endOffset": 3744
+                        "startOffset": 3063,
+                        "endColumn": 120,
+                        "endOffset": 3179
                     }
                 }
             },
@@ -614,18 +614,18 @@
                 "to": {
                     "startLine": 34,
                     "startColumn": 4,
-                    "startOffset": 4311,
-                    "endColumn": 120,
-                    "endOffset": 4427
+                    "startOffset": 4046,
+                    "endColumn": 158,
+                    "endOffset": 4200
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 3441,
-                        "endColumn": 120,
-                        "endOffset": 3557
+                        "startOffset": 816,
+                        "endColumn": 158,
+                        "endOffset": 970
                     }
                 }
             },
@@ -633,18 +633,18 @@
                 "to": {
                     "startLine": 35,
                     "startColumn": 4,
-                    "startOffset": 4432,
+                    "startOffset": 4205,
                     "endColumn": 158,
-                    "endOffset": 4586
+                    "endOffset": 4359
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 679,
+                        "startOffset": 2904,
                         "endColumn": 158,
-                        "endOffset": 833
+                        "endOffset": 3058
                     }
                 }
             },
@@ -652,18 +652,18 @@
                 "to": {
                     "startLine": 36,
                     "startColumn": 4,
-                    "startOffset": 4591,
-                    "endColumn": 158,
-                    "endOffset": 4745
+                    "startOffset": 4364,
+                    "endColumn": 115,
+                    "endOffset": 4475
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 22,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 3282,
-                        "endColumn": 158,
-                        "endOffset": 3436
+                        "startOffset": 2788,
+                        "endColumn": 115,
+                        "endOffset": 2899
                     }
                 }
             },
@@ -671,18 +671,18 @@
                 "to": {
                     "startLine": 37,
                     "startColumn": 4,
-                    "startOffset": 4750,
-                    "endColumn": 115,
-                    "endOffset": 4861
+                    "startOffset": 4480,
+                    "endColumn": 170,
+                    "endOffset": 4646
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 3166,
-                        "endColumn": 115,
-                        "endOffset": 3277
+                        "startOffset": 302,
+                        "endColumn": 170,
+                        "endOffset": 468
                     }
                 }
             },
@@ -690,18 +690,18 @@
                 "to": {
                     "startLine": 38,
                     "startColumn": 4,
-                    "startOffset": 4866,
+                    "startOffset": 4651,
                     "endColumn": 181,
-                    "endOffset": 5043
+                    "endOffset": 4828
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 302,
+                        "startOffset": 473,
                         "endColumn": 181,
-                        "endOffset": 479
+                        "endOffset": 650
                     }
                 }
             },
@@ -709,12 +709,12 @@
                 "to": {
                     "startLine": 39,
                     "startColumn": 4,
-                    "startOffset": 5048,
+                    "startOffset": 4833,
                     "endColumn": 131,
-                    "endOffset": 5175
+                    "endOffset": 4960
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -728,18 +728,18 @@
                 "to": {
                     "startLine": 40,
                     "startColumn": 4,
-                    "startOffset": 5180,
+                    "startOffset": 4965,
                     "endColumn": 190,
-                    "endOffset": 5366
+                    "endOffset": 5151
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 32,
+                        "startLine": 33,
                         "startColumn": 4,
-                        "startOffset": 4856,
+                        "startOffset": 4663,
                         "endColumn": 190,
-                        "endOffset": 5042
+                        "endOffset": 4849
                     }
                 }
             },
@@ -747,18 +747,18 @@
                 "to": {
                     "startLine": 41,
                     "startColumn": 4,
-                    "startOffset": 5371,
+                    "startOffset": 5156,
                     "endColumn": 121,
-                    "endOffset": 5488
+                    "endOffset": 5273
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 31,
+                        "startLine": 32,
                         "startColumn": 4,
-                        "startOffset": 4734,
+                        "startOffset": 4541,
                         "endColumn": 121,
-                        "endOffset": 4851
+                        "endOffset": 4658
                     }
                 }
             },
@@ -766,18 +766,18 @@
                 "to": {
                     "startLine": 42,
                     "startColumn": 4,
-                    "startOffset": 5493,
+                    "startOffset": 5278,
                     "endColumn": 134,
-                    "endOffset": 5623
+                    "endOffset": 5408
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 25,
+                        "startLine": 24,
                         "startColumn": 4,
-                        "startOffset": 3749,
+                        "startOffset": 3371,
                         "endColumn": 134,
-                        "endOffset": 3879
+                        "endOffset": 3501
                     }
                 }
             },
@@ -785,18 +785,18 @@
                 "to": {
                     "startLine": 43,
                     "startColumn": 4,
-                    "startOffset": 5628,
-                    "endColumn": 246,
-                    "endOffset": 5870
+                    "startOffset": 5413,
+                    "endColumn": 245,
+                    "endOffset": 5654
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 27,
+                        "startLine": 26,
                         "startColumn": 4,
-                        "startOffset": 4007,
-                        "endColumn": 250,
-                        "endOffset": 4253
+                        "startOffset": 3629,
+                        "endColumn": 245,
+                        "endOffset": 3870
                     }
                 }
             },
@@ -804,18 +804,18 @@
                 "to": {
                     "startLine": 44,
                     "startColumn": 4,
-                    "startOffset": 5875,
+                    "startOffset": 5659,
                     "endColumn": 122,
-                    "endOffset": 5993
+                    "endOffset": 5777
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 26,
+                        "startLine": 25,
                         "startColumn": 4,
-                        "startOffset": 3884,
+                        "startOffset": 3506,
                         "endColumn": 122,
-                        "endOffset": 4002
+                        "endOffset": 3624
                     }
                 }
             },
@@ -823,18 +823,18 @@
                 "to": {
                     "startLine": 45,
                     "startColumn": 4,
-                    "startOffset": 5998,
+                    "startOffset": 5782,
                     "endColumn": 111,
-                    "endOffset": 6105
+                    "endOffset": 5889
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 28,
+                        "startLine": 27,
                         "startColumn": 4,
-                        "startOffset": 4258,
+                        "startOffset": 3875,
                         "endColumn": 111,
-                        "endOffset": 4365
+                        "endOffset": 3982
                     }
                 }
             },
@@ -842,18 +842,18 @@
                 "to": {
                     "startLine": 46,
                     "startColumn": 4,
-                    "startOffset": 6110,
-                    "endColumn": 202,
-                    "endOffset": 6308
+                    "startOffset": 5894,
+                    "endColumn": 167,
+                    "endOffset": 6057
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 2397,
-                        "endColumn": 206,
-                        "endOffset": 2599
+                        "startOffset": 2454,
+                        "endColumn": 167,
+                        "endOffset": 2617
                     }
                 }
             },
@@ -861,18 +861,18 @@
                 "to": {
                     "startLine": 47,
                     "startColumn": 4,
-                    "startOffset": 6313,
+                    "startOffset": 6062,
                     "endColumn": 129,
-                    "endOffset": 6438
+                    "endOffset": 6187
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 2150,
+                        "startOffset": 2207,
                         "endColumn": 129,
-                        "endOffset": 2275
+                        "endOffset": 2332
                     }
                 }
             },
@@ -880,18 +880,18 @@
                 "to": {
                     "startLine": 48,
                     "startColumn": 4,
-                    "startOffset": 6443,
-                    "endColumn": 215,
-                    "endOffset": 6654
+                    "startOffset": 6192,
+                    "endColumn": 94,
+                    "endOffset": 6282
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 30,
                         "startColumn": 4,
-                        "startOffset": 2946,
-                        "endColumn": 219,
-                        "endOffset": 3161
+                        "startOffset": 4200,
+                        "endColumn": 94,
+                        "endOffset": 4290
                     }
                 }
             },
@@ -899,18 +899,18 @@
                 "to": {
                     "startLine": 49,
                     "startColumn": 4,
-                    "startOffset": 6659,
-                    "endColumn": 148,
-                    "endOffset": 6803
+                    "startOffset": 6287,
+                    "endColumn": 97,
+                    "endOffset": 6380
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 28,
                         "startColumn": 4,
-                        "startOffset": 2797,
-                        "endColumn": 148,
-                        "endOffset": 2941
+                        "startOffset": 3987,
+                        "endColumn": 97,
+                        "endOffset": 4080
                     }
                 }
             },
@@ -918,18 +918,18 @@
                 "to": {
                     "startLine": 50,
                     "startColumn": 4,
-                    "startOffset": 6808,
-                    "endColumn": 94,
-                    "endOffset": 6898
+                    "startOffset": 6385,
+                    "endColumn": 114,
+                    "endOffset": 6495
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-basement\\8.1.0\\res\\values-fa\\common_strings.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
                     "position": {
                         "startLine": 29,
                         "startColumn": 4,
-                        "startOffset": 4370,
-                        "endColumn": 94,
-                        "endOffset": 4460
+                        "startOffset": 4085,
+                        "endColumn": 114,
+                        "endOffset": 4195
                     }
                 }
             },
@@ -937,12 +937,31 @@
                 "to": {
                     "startLine": 51,
                     "startColumn": 4,
-                    "startOffset": 6903,
-                    "endColumn": 80,
-                    "endOffset": 6979
+                    "startOffset": 6500,
+                    "endColumn": 245,
+                    "endOffset": 6741
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-base\\7.0.0\\res\\values-fa\\common_strings.xml",
+                    "position": {
+                        "startLine": 31,
+                        "startColumn": 4,
+                        "startOffset": 4295,
+                        "endColumn": 245,
+                        "endOffset": 4536
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 52,
+                    "startColumn": 4,
+                    "startOffset": 6746,
+                    "endColumn": 80,
+                    "endOffset": 6822
+                },
+                "from": {
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 21,
                         "startColumn": 4,
@@ -954,14 +973,14 @@
             },
             {
                 "to": {
-                    "startLine": 52,
+                    "startLine": 53,
                     "startColumn": 4,
-                    "startOffset": 6984,
+                    "startOffset": 6827,
                     "endColumn": 100,
-                    "endOffset": 7080
+                    "endOffset": 6923
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\values-fa\\values-fa.xml",
                     "position": {
                         "startLine": 22,
                         "startColumn": 4,

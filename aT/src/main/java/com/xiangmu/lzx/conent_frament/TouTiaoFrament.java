@@ -137,7 +137,8 @@ public class TouTiaoFrament extends Fragment {
 
         getdata(url,true);
 
-        toutiao_lv.setPullLoadEnabled(false);  //上拉加载，屏蔽
+     //   toutiao_lv.setPullLoadEnabled(false);  //上拉加载，屏蔽
+        toutiao_lv.setPullLoadEnabled(true);  //上拉加载，屏蔽
         toutiao_lv.setScrollLoadEnabled(true); //设置滚动加载可用
         //设置上拉下拉的监听事件
         toutiao_lv.setOnRefreshListener(new PullToRefreshBase.OnRefreshListener<ListView>() {

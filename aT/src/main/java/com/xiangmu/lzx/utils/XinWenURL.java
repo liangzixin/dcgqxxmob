@@ -50,6 +50,15 @@ public class XinWenURL {
     String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
     String clickCustomerdel=HttpUtil.BASE_URL+"customerAction!delMob.action?id=";
 
+    public String getClickShortmessagedel() {
+        return clickShortmessagedel;
+    }
+
+    public void setClickShortmessagedel(String clickShortmessagedel) {
+        this.clickShortmessagedel = clickShortmessagedel;
+    }
+
+    String clickShortmessagedel=HttpUtil.BASE_URL+"customerAction!delShorstmessageMob.action?id=";
     public String getRepareProductArticlerMob() {
         return repareProductArticlerMob;
     }
@@ -338,6 +347,10 @@ public class XinWenURL {
 
     public String getLiuyuan() {
         String liuyuan= HttpUtil.BASE_URL+"product!QueryAllProductarticler.action?pageNo="+stratPage;
+        return liuyuan;
+    }
+    public String getShortmessage() {
+        String liuyuan= HttpUtil.BASE_URL+"customerAction!QueryAllShortmessage.action?pageNo="+stratPage;
         return liuyuan;
     }
 }

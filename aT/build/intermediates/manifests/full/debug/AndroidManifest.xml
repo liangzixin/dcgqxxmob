@@ -5,8 +5,8 @@
     android:versionName="11.8.01" >
 
     <uses-sdk
-        android:minSdkVersion="21"
-        android:targetSdkVersion="23" />
+        android:minSdkVersion="19"
+        android:targetSdkVersion="25" />
 
     <!--
         uses-sdk
@@ -36,6 +36,10 @@
 
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="25.3.1" />
 
     <application
         android:name="com.xiangmu.lzx.activitys.MyApplication"
@@ -114,7 +118,7 @@
             android:name="com.xiangmu.lzx.activitys.Setting_headpage"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.lzx.activitys.Setting_my_Task"
+            android:name="com.xiangmu.lzx.activitys.Setting_my_Taskl"
             android:label="@string/title_activity_search" />
         <activity
             android:name="com.xiangmu.lzx.activitys.Setting_glodmall"
@@ -129,7 +133,28 @@
             android:name="com.xiangmu.lzx.activitys.WebCountViewActivity"
             android:label="@string/title_activity_web_view" />
         <activity
+            android:name="com.xiangmu.lzx.activitys.FilterDetailActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
             android:name="com.xiangmu.lzx.activitys.FilterListEditActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.FilterAddActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.CustomerListEditActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.LiuyuanListEditActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.SmsListEditActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.CustomerDetailActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.LiuyuanDetailActivity"
             android:label="@string/title_activity_web_view" />
 
         <meta-data

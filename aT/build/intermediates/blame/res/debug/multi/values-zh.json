@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\values-zh\\values-zh.xml",
+        "outputFile": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\values-zh\\values-zh.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 87
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\values-zh\\values-zh.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\values-zh\\values-zh.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 140
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\values-zh\\values-zh.xml",
+                    "file": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.github.sd6352051\\android-image-picker\\v1.0.1\\res\\values-zh\\values-zh.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
