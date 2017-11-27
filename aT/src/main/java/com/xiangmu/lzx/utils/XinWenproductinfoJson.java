@@ -595,4 +595,47 @@ public class XinWenproductinfoJson {
         LogUtils.e("productArticler", "=======================================================");
         return null;
     }
+    public static XinWen_productinfo getdataShortmessage(String data){
+        try {
+            XinWen_productinfo shortmessage=new XinWen_productinfo();
+            JSONObject object=new JSONObject(data);
+            LogUtils.e("xinwenjsonobject", object + "");
+            JSONArray array = null;
+            array=object.getJSONArray("TShortmessage");//短信
+
+            LogUtils.e("TShortmessage----", "" + array);
+            JSONObject arrayobj00=array.getJSONObject(0);
+            if (! arrayobj00.isNull("totalRecords")){
+                int totalRecords= arrayobj00.getInt("totalRecords");
+                shortmessage.setTotalRecords(totalRecords);
+            };
+            JSONArray array00 = null;
+            array00=arrayobj00.getJSONArray("list");
+            List<XinWen_productinfo.ShortmessageEntity> listShortmessages=new ArrayList<>();
+            for (int j=0;j<array00.length();j++){
+                XinWen_productinfo.ShortmessageEntity shortmessageEntity=new XinWen_productinfo.ShortmessageEntity();
+                JSONObject shortmessage0=array00.getJSONObject(j);
+                int id=shortmessage0.getInt("id");
+                String mobile=shortmessage0.getString("mobile");
+                String captcha=shortmessage0.getString("captcha");
+                String sendtime=shortmessage0.getString("sendtime");
+                String smstype=shortmessage0.getString("smstype");
+                shortmessageEntity.setId(id);
+                shortmessageEntity.setMobile(mobile);
+                shortmessageEntity.setCaptcha(captcha);
+                shortmessageEntity.setSendtime(sendtime);
+                shortmessageEntity.setSmstype(smstype);
+
+                listShortmessages.add(shortmessageEntity);
+            }
+
+            shortmessage.setListShortmessageEntity( listShortmessages);
+
+            return shortmessage;
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        LogUtils.e("shortmessage", "=======================================================");
+        return null;
+    }
 }

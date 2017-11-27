@@ -142,6 +142,9 @@
             android:name="com.xiangmu.lzx.activitys.LiuyuanListEditActivity"
             android:label="@string/title_activity_web_view" />
         <activity
+            android:name="com.xiangmu.lzx.activitys.SmsListEditActivity"
+            android:label="@string/title_activity_web_view" />
+        <activity
             android:name="com.xiangmu.lzx.activitys.CustomerDetailActivity"
             android:label="@string/title_activity_web_view" />
         <activity

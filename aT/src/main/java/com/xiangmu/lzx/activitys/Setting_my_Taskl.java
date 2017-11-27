@@ -98,12 +98,12 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
                                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                                 break;
                             case 6:
-                                Intent intent211 = new Intent(Setting_my_Taskl.this, FilterListEditActivity.class);
+                                Intent intent211 = new Intent(Setting_my_Taskl.this,CustomerListEditActivity .class);
                                 startActivity(intent211);
                                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                                 break;
                             case 7:
-                                Intent intent212 = new Intent(Setting_my_Taskl.this, CustomerListEditActivity.class);
+                                Intent intent212 = new Intent(Setting_my_Taskl.this, FilterListEditActivity.class);
                                 startActivity(intent212);
                                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                                 break;
@@ -112,6 +112,11 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
                                 startActivity(intent213);
                                 overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                                break;
+                            case 9:
+                                Intent intent214 = new Intent(Setting_my_Taskl.this,SmsListEditActivity.class);
+                                startActivity(intent214);
+                                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                                break;
                         }
                     }
                 });
@@ -212,6 +217,10 @@ public class Setting_my_Taskl extends AppCompatActivity implements ViewControl {
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_19);
         buttonModel.setName("留言管理");
+        data.add(buttonModel);
+        buttonModel = new ButtonModel();
+        buttonModel.setDrawableIcon(R.drawable.icon_9);
+        buttonModel.setName("短信管理");
         data.add(buttonModel);
         buttonModel = new ButtonModel();
         buttonModel.setDrawableIcon(R.drawable.icon_20);
