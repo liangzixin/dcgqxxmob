@@ -49,7 +49,7 @@ public class XinWenURL {
     String repareProductArticlerMob=HttpUtil.BASE_URL+"product!repareProductArticlerMob.action";
     String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
     String clickCustomerdel=HttpUtil.BASE_URL+"customerAction!delMob.action?id=";
-
+    String clickShortmessagedel=HttpUtil.BASE_URL+"customerAction!delShorstmessageMob.action?id=";
     public String getClickShortmessagedel() {
         return clickShortmessagedel;
     }
@@ -58,7 +58,7 @@ public class XinWenURL {
         this.clickShortmessagedel = clickShortmessagedel;
     }
 
-    String clickShortmessagedel=HttpUtil.BASE_URL+"customerAction!delShorstmessageMob.action?id=";
+
     public String getRepareProductArticlerMob() {
         return repareProductArticlerMob;
     }
