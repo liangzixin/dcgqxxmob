@@ -1,250 +1,250 @@
 [
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_no.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_no.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_shareboard_animation_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_left_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\alpha_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\alpha_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_left_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_popup_enter.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_rotate.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_rotate.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_c.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_c.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\out_righttoleft.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\out_righttoleft.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\out_righttoleft.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\out_righttoleft.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_fab_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_set_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_set_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_fab_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\right_to_left_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\right_to_left_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_scrshot_dlg.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_scrshot_dlg.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_shareboard_animation_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_slide_out_from_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_slide_out_from_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_slide_in_from_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_slide_in_from_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\right_to_left_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\right_to_left_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\fade_out_center.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\fade_out_center.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_cycle_5.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_cycle_5.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\left_to_right_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\left_to_right_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_rotate2.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_rotate2.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\fade_in_center.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\fade_in_center.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\alpha_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\alpha_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\update_loading_progressbar_anim.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\update_loading_progressbar_anim.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\show.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\show.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\slide_out_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\left_to_right_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\left_to_right_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_cycle_5.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_cycle_5.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_dlg_alpha.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_dlg_alpha.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\show.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\show.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_fade_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\close.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\close.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_alpha_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_alpha_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_alpha_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_alpha_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\biz_news_detailpage_loading_large_anim.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\biz_news_detailpage_loading_large_anim.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\anim_exit_from_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\anim_exit_from_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\in_lefttoright.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\in_lefttoright.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_fab_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_b.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_b.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_no.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_no.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_snackbar_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\fade_out_center.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\fade_out_center.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_out_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_dlg_scale.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_dlg_scale.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_edit_anim.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_edit_anim.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\left_to_right_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\left_to_right_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_scrshot_dlg.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_scrshot_dlg.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_alpha_setting.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_alpha_setting.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_exit.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_fab_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_left_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_slide_out_top.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_dlg_alpha.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_dlg_alpha.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\slide_in_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_shareboard_animation_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_fade_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_fade_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\left_to_right_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\left_to_right_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_left_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_left_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_fade_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_fade_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\nn.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\nn.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\anim_exit_from_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\anim_exit_from_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_fade_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_fade_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\xinwen_inactivity.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\xinwen_inactivity.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_c.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_c.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\nn.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\nn.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_grow_fade_in_from_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_grow_fade_in_from_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_slide_in_from_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_slide_in_from_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_alpha_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_alpha_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_rotate.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_rotate.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_rotate2.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_rotate2.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\update_loading_progressbar_anim.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\update_loading_progressbar_anim.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_slide_out_from_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_slide_out_from_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\right_to_left_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\right_to_left_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_snackbar_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_popup_exit.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_fade_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_fade_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_imageview_rotate.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_imageview_rotate.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_fade_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\close.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\close.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_b.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_b.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\biz_news_detailpage_loading_large_anim.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\biz_news_detailpage_loading_large_anim.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_alpha_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_alpha_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\slide_out_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\slide_out_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_popup_enter.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_snackbar_out.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\xinwen_inactivity.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\xinwen_inactivity.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\slide_in_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\slide_in_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\in_lefttoright.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\in_lefttoright.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_right_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_right_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_imageview_rotate.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_imageview_rotate.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_a.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_a.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_set_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_set_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_set_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_set_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_shrink_fade_out_from_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_shrink_fade_out_from_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\anim_enter_from_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\anim_enter_from_bottom.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\anim\\abc_slide_in_top.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_edit_anim.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_edit_anim.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\zcdh_set_out.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\zcdh_set_out.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\anim\\design_snackbar_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\anim_enter_from_bottom.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\anim_enter_from_bottom.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_slide_in_top.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\push_alpha_setting.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\push_alpha_setting.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\fade_in_center.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.bigkoo\\alertview\\1.0.3\\res\\anim\\fade_in_center.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\translate_a.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\translate_a.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\umeng_socialize_shareboard_animation_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\anim\\umeng_socialize_shareboard_animation_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\right_to_left_in.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\right_to_left_in.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_fade_in.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_fade_in.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\shake_umeng_socialize_dlg_scale.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\anim\\shake_umeng_socialize_dlg_scale.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\anim\\abc_slide_out_bottom.xml"
     }
 ]
