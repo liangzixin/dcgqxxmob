@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context="com.xiangmu.lzx.conent_frament.AddFrament">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:id="@+id/content00"
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:background="@mipmap/titlebar_background"
+        android:id="@+id/content0"
+        android:paddingBottom="10dp"
+        >
+        <ImageButton
+            android:id="@+id/xinwen_xi_back"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/back" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/bt_fpxx"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:clickable="true"
+            android:textSize="20sp"
+            android:textColor="#ffffff"
+            android:gravity="center"
+            android:text="点击发布信息" />
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:id="@+id/xinwen_xi_kuanzhan_caidan"
+            android:layout_width="50dp"
+            android:clickable="true"
+            android:layout_height="match_parent"
+            android:layout_marginRight="10dp"
+            android:background="@android:color/transparent"
+            android:src="@mipmap/kuozhan_caidan" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/content1"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+      >
+    >
+        <Spinner
+            android:id="@+id/spin_articler"
+            android:layout_width="150dp"
+            android:layout_height="50dp"
+
+            android:gravity="center"
+            android:layout_gravity="center_horizontal" />
+</LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/content2"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+    >
+    >
+    <com.xiangmu.lzx.pullrefreshview.PullToRefreshListView
+        android:layout_width="match_parent"
+        android:id="@+id/refresh"
+        android:divider="@null"
+        android:layout_height="160dp"></com.xiangmu.lzx.pullrefreshview.PullToRefreshListView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/content3"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+
+        >
+        <TextView
+            style="@style/text_source"
+            android:id="@+id/productinfo_lxr0"
+
+            android:text="联系人"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp" />
+
+        <EditText
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:ems="10"
+            android:id="@+id/productinfo_lxr"
+
+            android:layout_toRightOf="@+id/productinfo_lxr0"
+            android:layout_toEndOf="@+id/productinfo_lxr0"
+            android:background="@drawable/select_edittext"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp"
+            />
+        <TextView
+            style="@style/text_source"
+            android:id="@+id/productinfo_lxdh0"
+
+            android:text="联系电话"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp" />
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:ems="10"
+            android:id="@+id/productinfo_lxdh"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/productinfo_lxr0"
+            android:layout_toEndOf="@+id/productinfo_lxr0"
+            android:background="@drawable/select_edittext"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/content4"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:layout_marginTop="10dp"
+        android:minHeight="100dp">
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:inputType="textPersonName"
+            android:text="详情"
+            android:ems="10"
+            android:id="@+id/productinfo_content"
+            android:background="@drawable/select_edittext"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="6dp"
+
+            android:singleLine="true"
+            android:minLines="3"
+            android:gravity="top|center_vertical"
+
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/content5"
+        >
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recycler_view1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grid_background_color"
+            android:clipToPadding="false"/>
+    </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

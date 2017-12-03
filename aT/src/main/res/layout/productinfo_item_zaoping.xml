@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="160dp"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/layoutnor00"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/layoutnor0"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_marginTop="10dp">
+>
+
+            <TextView
+                style="@style/text_source"
+                android:id="@+id/name0"
+                android:layout_below="@+id/layoutnor"
+                android:text="招聘标题"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text=""
+                android:ems="10"
+                android:id="@+id/name"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/name0"
+                android:layout_toEndOf="@+id/name0"
+                android:background="@drawable/select_edittext"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="6dp" />
+
+
+        </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:id="@+id/layoutnor1"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp">
+        >
+
+        <TextView
+            style="@style/text_source"
+            android:id="@+id/productinfo_gsmz0"
+            android:layout_below="@+id/layoutnor1"
+            android:text="公司名称"
+            android:layout_gravity="center"
+            android:layout_marginLeft="5dp" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPersonName"
+            android:text=""
+            android:ems="10"
+            android:id="@+id/productinfo_gsmz"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/productinfo_gsmz0"
+            android:layout_toEndOf="@+id/productinfo_gsmz0"
+            android:background="@drawable/select_edittext"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="6dp" />
+
+    </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/layoutnor2"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+           >
+                <TextView
+                style="@style/text_source"
+                android:id="@+id/productinfo_gsdz0"
+                android:layout_below="@+id/layoutnor1"
+                android:text="公司地址"
+                android:layout_gravity="center"
+                android:layout_marginLeft="5dp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:text=""
+                android:ems="10"
+                android:id="@+id/productinfo_gsdz"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/productinfo_gsdz0"
+                android:layout_toEndOf="@+id/productinfo_gsdz0"
+                android:background="@drawable/select_edittext"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="6dp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:id="@+id/layoutnor3"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            >
+            <Spinner
+                android:id="@+id/spin_nl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="5dp"
+ />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <Spinner
+                android:id="@+id/spin_sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/spin_nl"
+                android:layout_toEndOf="@+id/spin_nl"
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <Spinner
+                android:id="@+id/spin_dxfw"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <Spinner
+                android:id="@+id/spin_xl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                />
+
+        </LinearLayout>
+
+</LinearLayout>
+
+
+</RelativeLayout>

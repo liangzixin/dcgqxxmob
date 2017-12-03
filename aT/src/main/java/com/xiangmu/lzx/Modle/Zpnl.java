@@ -17,19 +17,19 @@ public enum Zpnl {
 	ZPNL1{
 		@Override
 		public String getName() {
-			return "18-27岁";
+			return "18-27";
 		}
 	},
 	ZPNL2{
 		@Override
 		public String getName() {
-			return "28-37岁";
+			return "28-37";
 		}
 	},
 	ZPNL3{
 		@Override
 		public String getName() {
-			return "38-48岁";
+			return "38-48";
 		}
 	},
 	ZPNL4{

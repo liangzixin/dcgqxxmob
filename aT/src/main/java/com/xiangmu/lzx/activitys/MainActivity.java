@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.xiangmu.lzx.BroadCastReceiver.MyReceiver;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.conent_frament.AddFrament;
 import com.xiangmu.lzx.conent_frament.ReDianFrament;
 import com.xiangmu.lzx.conent_frament.SheZhiFrament;
 import com.xiangmu.lzx.conent_frament.ShiTingFrament;
@@ -88,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         content_list.add(new XinWenFrament());
         content_list.add(new ReDianFrament());
         content_list.add(new ShiTingFrament());
-        content_list.add(new YueDuFrament());
+        content_list.add(new AddFrament());
         content_list.add(new SheZhiFrament());
     }
 
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.rb_yuedu:
                         contentViewPager.setCurrentItem(3);
+
                         break;
                     case R.id.rb_shezhi:
                         contentViewPager.setCurrentItem(4);

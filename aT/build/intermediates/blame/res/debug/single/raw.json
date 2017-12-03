@@ -1,18 +1,18 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\realm_properties",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\dcgqxxmob\\barCodeTest\\unspecified\\res\\raw\\realm_properties"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\gtm_analytics",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-analytics\\7.0.0\\res\\raw\\gtm_analytics"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\gtm_analytics",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.google.android.gms\\play-services-analytics\\7.0.0\\res\\raw\\gtm_analytics"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\dcgqxxmob\\barCodeTest\\unspecified\\res\\raw\\beep.ogg"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\shake_sound.mp3",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\raw\\shake_sound.mp3"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\realm_properties",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\dcgqxxmob\\barCodeTest\\unspecified\\res\\raw\\realm_properties"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\dcgqxxmob\\barCodeTest\\unspecified\\res\\raw\\beep.ogg"
+        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\shake_sound.mp3",
+        "source": "D:\\ls\\dcgqxxmob\\aT\\src\\main\\res\\raw\\shake_sound.mp3"
     }
 ]
