@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
+
     >
     <LinearLayout
         android:layout_width="match_parent"
@@ -12,25 +13,30 @@
             android:layout_width="match_parent"
             android:id="@+id/layoutnor0"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp">
 >
 
             <TextView
                 style="@style/text_source"
                 android:id="@+id/name0"
                 android:layout_below="@+id/layoutnor"
-                android:text="求职标题" />
+                android:text="求职标题"
+                android:layout_marginLeft="5dp" />
 
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
-                android:text="Name"
+                android:text=""
                 android:ems="10"
                 android:id="@+id/name"
                 android:layout_alignParentTop="true"
                 android:layout_toRightOf="@+id/name0"
-                android:layout_toEndOf="@+id/name0" />
+                android:layout_toEndOf="@+id/name0"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/select_edittext"
+                android:layout_marginRight="6dp" />
 
 
         </LinearLayout>
@@ -39,54 +45,33 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/layoutnor1"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
         >
 
         <TextView
             style="@style/text_source"
             android:id="@+id/productinfo_gsmz0"
             android:layout_below="@+id/layoutnor1"
-            android:text="所学专业" />
+            android:text="所学专业"
+            android:layout_marginLeft="5dp" />
 
         <EditText
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
-            android:text="Name"
+            android:text=""
             android:ems="10"
             android:id="@+id/productinfo_gsmz"
             android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/productinfo_gsmz0"
-            android:layout_toEndOf="@+id/productinfo_gsmz0" />
+            android:layout_toEndOf="@+id/productinfo_gsmz0"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/select_edittext"
+            android:layout_marginRight="6dp" />
 
     </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:id="@+id/layoutnor2"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            >
-
-            <TextView
-                style="@style/text_source"
-                android:id="@+id/productinfo_gsdz0"
-                android:layout_below="@+id/layoutnor1"
-                android:text="公司地址" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Name"
-                android:ems="10"
-                android:id="@+id/productinfo_gsz"
-                android:layout_alignParentTop="true"
-                android:layout_toRightOf="@+id/productinfo_gsdz0"
-                android:layout_toEndOf="@+id/productinfo_gsdz0" />
-
-
-        </LinearLayout>
 
 
 </LinearLayout>

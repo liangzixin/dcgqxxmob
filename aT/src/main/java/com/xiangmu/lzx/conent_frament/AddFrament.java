@@ -65,6 +65,7 @@ import com.xiangmu.lzx.activitys.PhotosActivity;
 import com.xiangmu.lzx.activitys.PictureActivity;
 import com.xiangmu.lzx.activitys.YueDuDetialActivity;
 import com.xiangmu.lzx.jieping.ScreenShot;
+import com.xiangmu.lzx.pullrefreshview.LinearLayoutForListView;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
 import com.xiangmu.lzx.utils.CommonUtil;
@@ -103,7 +104,8 @@ public class AddFrament extends Fragment {
     private List<ProductArticler> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
-    private PullToRefreshListView mRecyclerView;
+   // private PullToRefreshListView mRecyclerView;
+    private ListView mRecyclerView;
     private List<PhotoEntry> mSelectedPhotos=new ArrayList<PhotoEntry>();
     private List<String> listfile = new ArrayList<String>();
     private List<File> list=new ArrayList<>();
@@ -166,7 +168,7 @@ public class AddFrament extends Fragment {
         productinfo_content.setSingleLine(false);
         //水平滚动设置为False
         productinfo_content.setHorizontallyScrolling(false);
-        mRecyclerView =   (PullToRefreshListView)view.findViewById(R.id.refresh);
+        mRecyclerView =   (ListView)view.findViewById(R.id.refresh);
 //        mAdapter = new ProductinfoAddAdapter(getActivity(),1);
 //        mRecyclerView.getRefreshableView().setAdapter(mAdapter);
 
@@ -252,7 +254,8 @@ public class AddFrament extends Fragment {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mAdapter = new ProductinfoAddAdapter(getActivity(),position);
-                mRecyclerView.getRefreshableView().setAdapter(mAdapter);
+             // mRecyclerView.getRefreshableView().setAdapter(mAdapter);
+               mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
