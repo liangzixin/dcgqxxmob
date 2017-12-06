@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -18,7 +19,7 @@ import java.util.List;
 /**
  * Created by 李涛 on 16/4/30.
  */
-public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ViewHolder> {
+public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdapter.ViewHolder> {
 
     private List<PhotoEntry> list = new ArrayList<PhotoEntry>();
 
@@ -26,17 +27,21 @@ public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ViewHolder
 
     private LayoutInflater mInflater;
 
-    private OnItmeClickListener mlistener;
+  //  private OnItmeClickListener mlistener;
+    private OnItemClickListener onItemClickListener;
 
-    public  interface OnItmeClickListener{
+    public  interface OnItemClickListener{
         void onItemClicked(int position);
 
     }
+    public void setOnItemClickListener(OnItemClickListener onItemClickListener) {
+        this.onItemClickListener = onItemClickListener;
+    }
 
-  public ChooseAdapter(Context mContext) {
-    // public ChooseAdapter() {
-        this.mContext = mContext;
-         mlistener = (OnItmeClickListener) mContext;
+    public ChooseFramentAdapter(Context mContext) {
+      //  public ChooseFramentAdapter() {
+      this.mContext = mContext;
+    //    mlistener = (OnItmeClickListener) mContext;
        mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         list.add(createAddEntry());
     }
@@ -127,7 +132,7 @@ public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ViewHolder
 
         @Override
         public void onClick(View view) {
-            mlistener.onItemClicked(position);
+            onItemClickListener.onItemClicked(position);
         }
     }
 

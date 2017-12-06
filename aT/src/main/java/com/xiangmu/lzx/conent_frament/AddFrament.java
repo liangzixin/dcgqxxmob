@@ -44,6 +44,7 @@ import com.litao.android.lib.Utils.GridSpacingItemDecoration;
 import com.litao.android.lib.entity.PhotoEntry;
 import com.xiangmu.lzx.Bean.YueDuBean;
 import com.xiangmu.lzx.CostomAdapter.ChooseAdapter;
+import com.xiangmu.lzx.CostomAdapter.ChooseFramentAdapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoAddAdapter;
 import com.xiangmu.lzx.CostomAdapter.YueDuAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
@@ -111,7 +112,7 @@ public class AddFrament extends Fragment {
     private List<File> list=new ArrayList<>();
     private List<String> imgstmppath=new ArrayList<String>();
     private ProductinfoAddAdapter mAdapter;
-    private ChooseAdapter lAdapter;
+    private ChooseFramentAdapter lAdapter;
 
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
@@ -169,6 +170,27 @@ public class AddFrament extends Fragment {
         //水平滚动设置为False
         productinfo_content.setHorizontallyScrolling(false);
         mRecyclerView =   (ListView)view.findViewById(R.id.refresh);
+        articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+            //当选中某一个数据项时触发该方法
+            /*
+             * parent接收的是被选择的数据项所属的 Spinner对象，
+             * view参数接收的是显示被选择的数据项的TextView对象
+             * position接收的是被选择的数据项在适配器中的位置
+             * id被选择的数据项的行号
+             */
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                mAdapter = new ProductinfoAddAdapter(getActivity(),position);
+                // mRecyclerView.getRefreshableView().setAdapter(mAdapter);
+                mRecyclerView.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+                // TODO Auto-generated method stub
+            }
+        });
 //        mAdapter = new ProductinfoAddAdapter(getActivity(),1);
 //        mRecyclerView.getRefreshableView().setAdapter(mAdapter);
 
@@ -176,11 +198,31 @@ public class AddFrament extends Fragment {
 //        EventBus.getDefault().register(getActivity());
 //
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
-
-
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
+        lAdapter = new ChooseFramentAdapter(getContext());
+
         recyclerView.setAdapter(lAdapter);
-        recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
+      recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
+        lAdapter.setOnItemClickListener(new ChooseFramentAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClicked(int position) {
+                        if (position ==lAdapter.getItemCount()-1) {
+            startActivity(new Intent(getActivity(), PhotosActivity.class));
+            EventBus.getDefault().postSticky(new EventEntry(lAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
+        }
+//                CheckBox off_cb=view.findViewById(R.id.off_cb);
+//                TopBean top=list.get(pos);
+//
+//                if (off_cb.isChecked()) {
+//                    off_cb.setChecked(false);
+//                    top.state = false;
+//                } else {
+//                    off_cb.setChecked(true);
+//                    top.state = true;
+//                }
+//                list.set(pos,top);
+            }
+        });
 //
 //        name= (MaterialEditText) view.findViewById(R.id.productinfo_name);
 //        productinfo_gsdz= (MaterialEditText) view.findViewById(R.id.productinfo_gsdz);
@@ -242,27 +284,7 @@ public class AddFrament extends Fragment {
 //
 //
 //        //给Spinner添加事件监听
-        articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-            //当选中某一个数据项时触发该方法
-            /*
-             * parent接收的是被选择的数据项所属的 Spinner对象，
-             * view参数接收的是显示被选择的数据项的TextView对象
-             * position接收的是被选择的数据项在适配器中的位置
-             * id被选择的数据项的行号
-             */
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mAdapter = new ProductinfoAddAdapter(getActivity(),position);
-             // mRecyclerView.getRefreshableView().setAdapter(mAdapter);
-               mRecyclerView.setAdapter(mAdapter);
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-                // TODO Auto-generated method stub
-            }
-        });
 //        fwzs_jzmj.addTextChangedListener(new TextWatcher() {
 //
 //            @Override
@@ -880,6 +902,14 @@ public class AddFrament extends Fragment {
         }
         return flag;
     }
+
+//    @Override
+//    public void onItemClicked(int position) {
+//        if (position ==lAdapter.getItemCount()-1) {
+//            startActivity(new Intent(getActivity(), PhotosActivity.class));
+//            EventBus.getDefault().postSticky(new EventEntry(lAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
+//        }
+//    }
 //
 //    @Override
 //    public void onDetach() {
