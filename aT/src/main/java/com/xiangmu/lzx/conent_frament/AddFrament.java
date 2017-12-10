@@ -6,15 +6,10 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Editable;
-import android.text.TextUtils;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,7 +27,6 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.gson.Gson;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
@@ -42,48 +36,27 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.litao.android.lib.Utils.GridSpacingItemDecoration;
 import com.litao.android.lib.entity.PhotoEntry;
-import com.xiangmu.lzx.Bean.YueDuBean;
-import com.xiangmu.lzx.CostomAdapter.ChooseAdapter;
 import com.xiangmu.lzx.CostomAdapter.ChooseFramentAdapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoAddAdapter;
-import com.xiangmu.lzx.CostomAdapter.YueDuAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.Modle.Article;
-import com.xiangmu.lzx.Modle.Dxfw;
-import com.xiangmu.lzx.Modle.Edu;
-import com.xiangmu.lzx.Modle.Fzfs;
 import com.xiangmu.lzx.Modle.Liuyuan;
 import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.ProductCategory;
-import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.UploadFile;
-import com.xiangmu.lzx.Modle.Zpnl;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.activitys.EventEntry;
 import com.xiangmu.lzx.activitys.MainActivity;
-import com.xiangmu.lzx.activitys.PhotosActivity;
 import com.xiangmu.lzx.activitys.PictureActivity;
-import com.xiangmu.lzx.activitys.YueDuDetialActivity;
 import com.xiangmu.lzx.jieping.ScreenShot;
-import com.xiangmu.lzx.pullrefreshview.LinearLayoutForListView;
-import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
-import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
-import com.xiangmu.lzx.utils.CommonUtil;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
 import com.xiangmu.lzx.utils.PictureUtil;
-import com.xiangmu.lzx.utils.ServerURL;
-import com.xiangmu.lzx.utils.SharedPreferencesUtil;
 import com.xiangmu.lzx.utils.Upload;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXiData;
 import com.xiangmu.lzx.utils.XutilsGetData;
-
-import org.greenrobot.eventbus.EventBus;
-import org.greenrobot.eventbus.Subscribe;
-import org.greenrobot.eventbus.ThreadMode;
 
 import java.io.File;
 import java.io.IOException;
@@ -92,12 +65,11 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import fr.ganfra.materialspinner.MaterialSpinner;
-
+//import cn.finalteam.galleryfinal.GalleryFinal;
 /**
  * Created by Administrator on 2015/11/9.
  */
-public class AddFrament extends Fragment {
+public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClickPhotoListener{
     private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
@@ -199,30 +171,12 @@ public class AddFrament extends Fragment {
 //
         recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
         recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
-        lAdapter = new ChooseFramentAdapter(getContext());
-
+        lAdapter = new ChooseFramentAdapter(getActivity(),mSelectedPhotos);
+        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
+        recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
         recyclerView.setAdapter(lAdapter);
       recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
-        lAdapter.setOnItemClickListener(new ChooseFramentAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClicked(int position) {
-                        if (position ==lAdapter.getItemCount()-1) {
-            startActivity(new Intent(getActivity(), PhotosActivity.class));
-            EventBus.getDefault().postSticky(new EventEntry(lAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
-        }
-//                CheckBox off_cb=view.findViewById(R.id.off_cb);
-//                TopBean top=list.get(pos);
-//
-//                if (off_cb.isChecked()) {
-//                    off_cb.setChecked(false);
-//                    top.state = false;
-//                } else {
-//                    off_cb.setChecked(true);
-//                    top.state = true;
-//                }
-//                list.set(pos,top);
-            }
-        });
+
 //
 //        name= (MaterialEditText) view.findViewById(R.id.productinfo_name);
 //        productinfo_gsdz= (MaterialEditText) view.findViewById(R.id.productinfo_gsdz);
@@ -901,6 +855,32 @@ public class AddFrament extends Fragment {
             flag = false;
         }
         return flag;
+    }
+
+    @Override
+    public void onClickPhotoListener() {
+        ActionSheet.createBuilder(getActivity(), getSupportFragmentManager())
+                .setCancelButtonTitle("取消")
+                .setOtherButtonTitles("打开相册", "拍照")
+                .setCancelableOnTouchOutside(true)
+                .setListener(new ActionSheet.ActionSheetListener() {
+                    @Override
+                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {}
+
+                    @Override
+                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
+                        switch (index) {
+                            case 0:
+                                GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, 9, mOnHanlderResultCallback); // 多选
+//                                    GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, mOnHanlderResultCallback); // 单选
+                                break;
+                            case 1:
+                                GalleryFinal.openCamera(REQUEST_CODE_CAMERA, mOnHanlderResultCallback); // 打开相机
+                                break;
+                        }
+                    }
+                })
+                .show();
     }
 
 //    @Override
