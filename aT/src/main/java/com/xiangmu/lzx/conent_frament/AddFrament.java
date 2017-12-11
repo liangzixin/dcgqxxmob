@@ -180,7 +180,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //
         recyclerView = (RecyclerView)  view.findViewById(R.id.recycler_view1);
         mSelectedPhotos.add(new PhotoInfo());
-        lAdapter = new ChooseFramentAdapter( getActivity().getSupportFragmentManager(),mSelectedPhotos,this);
+        lAdapter = new ChooseFramentAdapter( getActivity(),mSelectedPhotos,this);
         recyclerView.setLayoutManager(new GridLayoutManager( getActivity(), 5));
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
         recyclerView.setAdapter(lAdapter);

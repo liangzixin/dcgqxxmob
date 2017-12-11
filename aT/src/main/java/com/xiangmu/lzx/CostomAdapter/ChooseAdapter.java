@@ -121,7 +121,7 @@ public class ChooseAdapter extends RecyclerView.Adapter<ChooseAdapter.ViewHolder
         public ViewHolder(View itemView, int position) {
             super(itemView);
             this.position = position;
-            mImageView = (ImageView) itemView.findViewById(R.id.image);
+            mImageView = (ImageView) itemView.findViewById(R.id.iv_photo);
             mImageView.setOnClickListener(this);
         }
 

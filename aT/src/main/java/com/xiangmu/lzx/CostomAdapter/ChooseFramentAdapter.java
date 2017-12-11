@@ -95,13 +95,14 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
     }
 
     @Override
-  //  public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-    public ViewHolder onCreateViewHolder(int position, ViewHolder convertView, ViewGroup parent) {
-  //  ViewHolder vh = new ViewHolder(mInflater.inflate(R.layout.item_selected_photo, viewGroup, false), i);
+  public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+        //   public ViewHolder onCreateViewHolder(int position, ViewHolder convertView, ViewGroup parent) {
+  ViewHolder vh = new ViewHolder(mInflater.inflate(R.layout.item_selected_photo, viewGroup, false), i);
+       // ViewHolder vh =(ViewHolder) LayoutInflater.from(mContext).inflate(R.layout.productinfo_item_zaoping,viewGroup, false),i);
   //   ViewHolder   convertView0 = new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_selected_photo, parent,false));
         //    ViewHolder vh = new ViewHolder(mInflater.inflate(R.layout.adapter_photo_list_item, viewGroup, false), i);
       //  convertView = LayoutInflater.from(activity).inflate(R.layout.adapter_photo_list_item, parent,false);
-        return convertView0;
+        return vh;
     }
 
 
@@ -170,8 +171,8 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
         //  return list.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
-        //        public class ViewHolder extends RecyclerView.ViewHolder  {
+   public class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
+       //         public class ViewHolder extends RecyclerView.ViewHolder  {
         private ImageView mImageView;
         private ImageView delete;
         private int position;
