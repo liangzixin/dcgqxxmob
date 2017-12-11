@@ -27,6 +27,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.baoyz.actionsheet.ActionSheet;
 import com.lidroid.xutils.HttpUtils;
 import com.lidroid.xutils.exception.HttpException;
 import com.lidroid.xutils.http.HttpHandler;
@@ -35,7 +36,6 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.litao.android.lib.Utils.GridSpacingItemDecoration;
-import com.litao.android.lib.entity.PhotoEntry;
 import com.xiangmu.lzx.CostomAdapter.ChooseFramentAdapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoAddAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
@@ -61,11 +61,16 @@ import com.xiangmu.lzx.utils.XutilsGetData;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-//import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.model.PhotoInfo;
+
+//import com.litao.android.lib.entity.PhotoEntry;
+
 /**
  * Created by Administrator on 2015/11/9.
  */
@@ -79,12 +84,14 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private HttpHandler<String> handler;
    // private PullToRefreshListView mRecyclerView;
     private ListView mRecyclerView;
-    private List<PhotoEntry> mSelectedPhotos=new ArrayList<PhotoEntry>();
+    private List<PhotoInfo> mSelectedPhotos=new ArrayList<PhotoInfo>();
     private List<String> listfile = new ArrayList<String>();
     private List<File> list=new ArrayList<>();
     private List<String> imgstmppath=new ArrayList<String>();
     private ProductinfoAddAdapter mAdapter;
     private ChooseFramentAdapter lAdapter;
+    private final int REQUEST_CODE_CAMERA = 1000;
+    private final int REQUEST_CODE_GALLERY = 1001;
 
     private static final String[] m={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
     // private static final List msex=new List() { };
@@ -126,22 +133,24 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     View view;
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+  public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+     //   protected void onCreate(Bundle savedInstanceState) {
 //        initdata();
-        super.onCreate(savedInstanceState);
+     //  super.onCreate(savedInstanceState);
 
-       View view = inflater.inflate(R.layout.productinfoadd_content, null);
-             articlerSpinner = (Spinner) view.findViewById(R.id.spin_articler);
-                ArrayAdapter adapter= new ArrayAdapter<String>(getActivity(),
+    View view = inflater.inflate(R.layout.productinfoadd_content, null);
+      // setContentView(R.layout.activity_productinfo_add);
+             articlerSpinner = (Spinner)  view.findViewById(R.id.spin_articler);
+                ArrayAdapter adapter= new ArrayAdapter<String>( getActivity(),
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
         articlerSpinner.setSelection(1);
-        productinfo_content=(EditText) view.findViewById(R.id.productinfo_content);
+        productinfo_content=(EditText)  view.findViewById(R.id.productinfo_content);
         //改变默认的单行模式
         productinfo_content.setSingleLine(false);
         //水平滚动设置为False
         productinfo_content.setHorizontallyScrolling(false);
-        mRecyclerView =   (ListView)view.findViewById(R.id.refresh);
+        mRecyclerView =   (ListView) view.findViewById(R.id.refresh);
         articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             //当选中某一个数据项时触发该方法
@@ -153,7 +162,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
              */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mAdapter = new ProductinfoAddAdapter(getActivity(),position);
+                mAdapter = new ProductinfoAddAdapter( getActivity(),position);
                 // mRecyclerView.getRefreshableView().setAdapter(mAdapter);
                 mRecyclerView.setAdapter(mAdapter);
             }
@@ -163,26 +172,26 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 // TODO Auto-generated method stub
             }
         });
-//        mAdapter = new ProductinfoAddAdapter(getActivity(),1);
+//        mAdapter = new ProductinfoAddAdapter(this,1);
 //        mRecyclerView.getRefreshableView().setAdapter(mAdapter);
 
     // setContentView(R.layout.activity_productinfo_add);
-//        EventBus.getDefault().register(getActivity());
+//        EventBus.getDefault().register(this);
 //
-        recyclerView = (RecyclerView) view.findViewById(R.id.recycler_view1);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
-        lAdapter = new ChooseFramentAdapter(getActivity(),mSelectedPhotos);
-        recyclerView.setLayoutManager(new GridLayoutManager(getActivity(), 5));
+        recyclerView = (RecyclerView)  view.findViewById(R.id.recycler_view1);
+        mSelectedPhotos.add(new PhotoInfo());
+        lAdapter = new ChooseFramentAdapter( getActivity().getSupportFragmentManager(),mSelectedPhotos,this);
+        recyclerView.setLayoutManager(new GridLayoutManager( getActivity(), 5));
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
         recyclerView.setAdapter(lAdapter);
-      recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
+
 
 //
-//        name= (MaterialEditText) view.findViewById(R.id.productinfo_name);
-//        productinfo_gsdz= (MaterialEditText) view.findViewById(R.id.productinfo_gsdz);
-//        productinfo_gsmz= (MaterialEditText) view.findViewById(R.id.productinfo_gsmz);
-        productinfo_lxr= (EditText) view.findViewById(R.id.productinfo_lxr);
-        productinfo_lxdh= (EditText) view.findViewById(R.id.productinfo_lxdh);
+//        name= (MaterialEditText)  findViewById(R.id.productinfo_name);
+//        productinfo_gsdz= (MaterialEditText)  findViewById(R.id.productinfo_gsdz);
+//        productinfo_gsmz= (MaterialEditText)  findViewById(R.id.productinfo_gsmz);
+        productinfo_lxr= (EditText)  view.findViewById(R.id.productinfo_lxr);
+        productinfo_lxdh= (EditText)  view.findViewById(R.id.productinfo_lxdh);
 //
 
 //        productinfo_content= (MaterialEditText) view.findViewById(R.id.productinfo_content);
@@ -233,7 +242,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //
 //        spinner_xl.setAdapter(adapter);
 //
-//        fwzs_zjfs.setAdapter(new ArrayAdapter<Sex>(getActivity(), android.R.layout.simple_spinner_item,listcjfs));
+//        fwzs_zjfs.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item,listcjfs));
 //        articlerSpinner.setSelection(0, true);
 //
 //
@@ -299,7 +308,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     }
 //    @Override
 //    protected void onDestroy() {
-//        EventBus.getDefault().unregister(getActivity());
+//        EventBus.getDefault().unregister(this);
 //        super.onDestroy();
 //    }
     Runnable runnable = new Runnable() {
@@ -341,7 +350,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        duotu_gentie.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//                startActivity(new Intent(getActivity(),GenTieActivity.class));
+//                startActivity(new Intent(this,GenTieActivity.class));
 //            }
 //        });
         //点击打开扩展 详细页面
@@ -357,36 +366,36 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         fpxx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //  ShareUtils.shareContent(getActivity(), xinwentitle, url);
+                //  ShareUtils.shareContent(this, xinwentitle, url);
 //               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
 //                System.out.println("name="+name.getText()+"");
                 if(articlerSpinner.getSelectedItemPosition()==0)  {
 
-                    //   Toast.makeText(getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                    new AlertDialog.Builder(getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+                    //   Toast.makeText(this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
                     return;
                 }
 
                 if(name.getText().toString().trim().equals(""))  {
-                    //   Toast.makeText(getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                    new AlertDialog.Builder(getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
+                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
                 }
                 if(productinfo_content.getText().toString().trim().equals(""))  {
-                    //   Toast.makeText(getActivity(), "请选择发布类型！！", Toast.　).show();
-                    new AlertDialog.Builder(getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
+                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
                     return;
                 }
                 if(!isMobileNO(productinfo_lxdh.getText().toString()))  {
 
 
-                    new AlertDialog.Builder(getActivity()).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
                     return;
                 }
 
 
                 String saveproduct=xinWenURL.getSaveproductinfo();
-                Toast.makeText(getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
+                Toast.makeText( getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
                 SaveData(saveproduct);
 //                int size =mSelectedPhotos.size();
 //                for (int i = 0; i < size; i++) {
@@ -416,7 +425,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        settings.setAppCacheEnabled(true);//是否使用缓存
 //        settings.setTextSize(WebSettings.TextSize.NORMAL);
 //        webView.setWebChromeClient(new WebChromeClient());// 支持运行特殊的javascript(例如：alert())
-        final CustomProgressDialog progress=new CustomProgressDialog(getActivity(),"正在加载中.....",R.drawable.donghua_frame);
+        final CustomProgressDialog progress=new CustomProgressDialog( getActivity(),"正在加载中.....",R.drawable.donghua_frame);
         progress.show();
 //        webView.loadUrl(url);
         //设置打开页面的客户端WebViewClient,如果不设置,则调用系统默认浏览器打开地址
@@ -442,12 +451,12 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        });
 
 
-//        String data = XutilsGetData.getData(getActivity(), url, null);
+//        String data = XutilsGetData.getData(this, url, null);
 //        //判断本地数据是否存在  如果没有网络请求
 //        if (data != null) {
 //            getshowdata(data);
 //        } else {
-//            XutilsGetData.xUtilsHttp(getActivity(), url, url, new XutilsGetData.CallBackHttp() {
+//            XutilsGetData.xUtilsHttp(this, url, url, new XutilsGetData.CallBackHttp() {
 //                @Override
 //                public void handleData(String data) {
 //                    getshowdata(data);
@@ -463,7 +472,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        public void onClick(View v) {
 //            String msg = edit.getText().toString();
 //            if (msg.equals("") || msg == null) {
-//                new AlertDialog.Builder(ProductinfoAddActivity.getActivity()).setMessage("不能为空").setPositiveButton("确定", null).show();
+//                new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("不能为空").setPositiveButton("确定", null).show();
 //                return;
 //            }else{
 //
@@ -478,9 +487,9 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //                ((List<ProductArticler>)liuyuanlist.get(0)).add(0,productArticler);
 //                NotifyFunction();
 //            }
-//            //  MultiTypeAdapter adapter = new MultiTypeAdapter(ProductinfoAddActivity.getActivity());
+//            //  MultiTypeAdapter adapter = new MultiTypeAdapter(ProductinfoAddActivity.this);
 //            // adapter.add(mockLiuyuan( liuyuanlist.size()));
-//            new AlertDialog.Builder(ProductinfoAddActivity.getActivity()).setMessage("留言成功！").setPositiveButton("确定", null).show();
+//            new AlertDialog.Builder(ProductinfoAddActivity.this).setMessage("留言成功！").setPositiveButton("确定", null).show();
 //            edit.setText("");
 //        }
 //    };
@@ -491,10 +500,10 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         //recyclerView.deferNotifyDataSetChanged();
         ///  recyclerView.notifyDataSetChanged();
         //  recyclerView.getChildItemId(item_p)
-        // recyclerView.setAdapter(new SaveAdapter(getActivity(),liuyuanlist));
-        //  recyclerView.setAdapter(new SaveAdapter(getActivity(),liuyuanlist));
-        //  MultiTypeAdapter adapter = new MultiTypeAdapter(getActivity());
-        // adapter = new MultiTypeAdapter(ProductinfoAddActivity.getActivity());
+        // recyclerView.setAdapter(new SaveAdapter(this,liuyuanlist));
+        //  recyclerView.setAdapter(new SaveAdapter(this,liuyuanlist));
+        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
+        // adapter = new MultiTypeAdapter(ProductinfoAddActivity.this);
         //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
         // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
 //        adapter.add(mockLiuyuan(0));
@@ -528,17 +537,17 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
             //    popu.dismiss();
                 // TODO: 2015/11/17
 
-                Toast.makeText(getActivity(), "截屏...", Toast.LENGTH_SHORT).show();
+                Toast.makeText( getActivity(), "截屏...", Toast.LENGTH_SHORT).show();
                 String date_time = DateTime.getDate_Time();
                 File file = new File("sdcard/Photo/Screenshots/");
                 if (!file.exists()) {
                     file.mkdirs();
                 }
-                Bitmap bitmap = ScreenShot.takeScreenShot(getActivity());
+                Bitmap bitmap = ScreenShot.takeScreenShot( getActivity());
                 String s = "sdcard/Photo/Screenshots/" + date_time;
                 String path = s + ".png";
                 ScreenShot.savePic(bitmap, path);
-                Intent intent = new Intent(getActivity(), PictureActivity.class);
+                Intent intent = new Intent( getActivity(), PictureActivity.class);
                 intent.putExtra("path", s);
                 startActivity(intent);
 
@@ -550,7 +559,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
             public void onClick(View view) {
               //  popu.dismiss();
                 // TODO: 2015/11/17
-                // ZiTiScale.zitiStyle2(getActivity(), view);
+                // ZiTiScale.zitiStyle2(this, view);
             }
         });
         //夜间模式按钮
@@ -574,8 +583,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId();
         String clickcount0=xinWenURL.getCount();
-        //String data = xutilsGetData.getData(getActivity(), clickcount, null);
-        // String data = SharedPreferencesUtil.getData(getActivity(), clickcount, "");
+        //String data = xutilsGetData.getData(this, clickcount, null);
+        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
         //    UpData(clickcount);
         // UpData(clickcount0);
         //   UpCount(clickcount0);
@@ -666,8 +675,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         photo.photoId = 0;
 
         //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
-        // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",getActivity(),true);
-//        BitmapUtils bitmapUtils = new BitmapUtils(getActivity());
+        // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
+//        BitmapUtils bitmapUtils = new BitmapUtils(this);
 //        bitmapUtils.display(photo.imagePicture,"http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg");
         photo.description =xinWenXiData.getTitle();
         return photo;
@@ -730,7 +739,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                     String tmepName = null;
                     try {
-                        tmepName = PictureUtil.bitmapToPath(mSelectedPhotos.get(i).getPath());
+                        tmepName = PictureUtil.bitmapToPath(mSelectedPhotos.get(i).getPhotoPath());
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
@@ -758,11 +767,11 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 public void onSuccess(ResponseInfo<String> responseInfo) {
 
                     if (responseInfo.result != null) {
-                        Toast.makeText(getActivity(), "发布信息成功！", Toast.LENGTH_SHORT).show();
-                        //    SharedPreferencesUtil.saveData(getActivity(), url, responseInfo.result);
+                        Toast.makeText( getActivity(), "发布信息成功！", Toast.LENGTH_SHORT).show();
+                        //    SharedPreferencesUtil.saveData(this, url, responseInfo.result);
                         PictureUtil.deleteImgTmp(imgstmppath);
                         Intent intent = new Intent();
-                        intent.setClass(getActivity(), MainActivity.class);
+                        intent.setClass( getActivity(), MainActivity.class);
 
                         startActivity(intent);
 //                        setResult(RESULT_CODE, intent);
@@ -773,7 +782,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    Toast.makeText(getActivity(), "发布信息失败！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( getActivity(), "发布信息失败！", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -783,7 +792,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
    // @Override
 //    public void onItemClicked(int position) {
 //        if (position == mAdapter.getItemCount()-1) {
-//            startActivity(new Intent(getActivity(), PhotosActivity.class));
+//            startActivity(new Intent(this, PhotosActivity.class));
 //            EventBus.getDefault().postSticky(new EventEntry(mAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
 //        }
 //    }
@@ -796,7 +805,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        }
 //    }
 //    @Subscribe(threadMode = ThreadMode.MAIN)
-//    public void photoMessageEvent(PhotoEntry entry){
+//    public void photoMessageEvent(PhotoInfo entry){
 //        mAdapter.appendPhoto(entry);
 //    }
 //    private void UpCount(final String url) {
@@ -807,7 +816,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //                @Override
 //                public void onSuccess(ResponseInfo<String> responseInfo) {
 //                    if (responseInfo.result != null) {
-//                        SharedPreferencesUtil.saveData(getActivity(), url, responseInfo.result);
+//                        SharedPreferencesUtil.saveData(this, url, responseInfo.result);
 //
 //
 //                    }
@@ -815,7 +824,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //
 //                @Override
 //                public void onFailure(HttpException e, String s) {
-//                    Toast.makeText(getActivity(), "数据请求失败", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(this, "数据请求失败", Toast.LENGTH_SHORT).show();
 //                }
 //            });
 //
@@ -856,10 +865,44 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         }
         return flag;
     }
+    boolean first = true; // 是否是第一次点击选择图片
+    private GalleryFinal.OnHanlderResultCallback mOnHanlderResultCallback = new GalleryFinal.OnHanlderResultCallback() {
+        @Override
+        public void onHanlderSuccess(int reqeustCode, List<PhotoInfo> resultList) {
+            if (resultList != null) {
+                if (resultList.size() > 0) {  // 这里是清除刚开始默认的图片
+                    if (first) {
+                        first = false;
+                        mSelectedPhotos.clear();
+                    }
+                }
 
+                Iterator<PhotoInfo> sListIterator =mSelectedPhotos.iterator();  // 删除集合中特定的元素
+                while(sListIterator.hasNext()){
+                    PhotoInfo e =sListIterator.next();
+                    if(e.getPhotoPath().equals("fly")){
+                        sListIterator.remove();
+                    }
+                }
+
+                mSelectedPhotos.addAll(resultList);
+
+                PhotoInfo photoInfo = new PhotoInfo();
+                photoInfo.setPhotoPath("fly");
+                mSelectedPhotos.add(photoInfo);
+
+                lAdapter.notifyDataSetChanged();
+            }
+        }
+
+        @Override
+        public void onHanlderFailure(int requestCode, String errorMsg) {
+            Toast.makeText( getActivity(), errorMsg, Toast.LENGTH_SHORT).show();
+        }
+    };
     @Override
     public void onClickPhotoListener() {
-        ActionSheet.createBuilder(getActivity(), getSupportFragmentManager())
+        ActionSheet.createBuilder(getActivity(),getActivity().getSupportFragmentManager())
                 .setCancelButtonTitle("取消")
                 .setOtherButtonTitles("打开相册", "拍照")
                 .setCancelableOnTouchOutside(true)
@@ -886,7 +929,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //    @Override
 //    public void onItemClicked(int position) {
 //        if (position ==lAdapter.getItemCount()-1) {
-//            startActivity(new Intent(getActivity(), PhotosActivity.class));
+//            startActivity(new Intent(this, PhotosActivity.class));
 //            EventBus.getDefault().postSticky(new EventEntry(lAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
 //        }
 //    }

@@ -34,7 +34,6 @@ import com.lidroid.xutils.http.RequestParams;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.litao.android.lib.Utils.GridSpacingItemDecoration;
 import com.litao.android.lib.entity.PhotoEntry;
 import com.xiangmu.lzx.CostomAdapter.ChooseAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
@@ -147,13 +146,13 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_productinfo_add);
-        EventBus.getDefault().register(this);
-
+       EventBus.getDefault().register(this);
+        //  EventBus.getDefault().postSticky(this);
         mRecyclerView = (RecyclerView) findViewById(R.id.recycler_view1);
         mAdapter = new ChooseAdapter(this);
         mRecyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         mRecyclerView.setAdapter(mAdapter);
-        mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
+      //  mRecyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
 
 //        @ViewId(R.id.category1) public LinearLayout category1;
 //        @ViewId(R.id.category2) public LinearLayout category2;

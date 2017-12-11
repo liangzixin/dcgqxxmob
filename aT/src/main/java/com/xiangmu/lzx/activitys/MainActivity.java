@@ -21,14 +21,13 @@ import com.xiangmu.lzx.conent_frament.ReDianFrament;
 import com.xiangmu.lzx.conent_frament.SheZhiFrament;
 import com.xiangmu.lzx.conent_frament.ShiTingFrament;
 import com.xiangmu.lzx.conent_frament.XinWenFrament;
-import com.xiangmu.lzx.conent_frament.YueDuFrament;
 import com.xiangmu.lzx.utils.CommonUtil;
 import com.xiangmu.lzx.viewpager.ContentViewPager;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity{
     private ContentViewPager contentViewPager;
     private RadioGroup contentradiogroup;
     private MyReceiver myReceiver;
@@ -128,7 +127,7 @@ public class MainActivity extends AppCompatActivity {
                         break;
                     case R.id.rb_yuedu:
                         contentViewPager.setCurrentItem(3);
-
+               //      EventBus.getDefault().register(new AddFrament());
                         break;
                     case R.id.rb_shezhi:
                         contentViewPager.setCurrentItem(4);
@@ -194,10 +193,18 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onKeyDown(keyCode, event);
     }
-
 //    @Override
 //    protected void onResume() {
-//    supper.on
+//        super.onResume();
+////        EventBus.getDefault().register(this);
+//    }
+//    /*个人建议在onPause注册EventBus(将当前Activity注册为事件订阅者)
+//     *不影响功能的情况下提早解除注册，尽可能少的占用内存
+//     */
+//    @Override
+//    protected void onPause() {
+//        super.onPause();
+////        EventBus.getDefault().unregister(this);
 //    }
 
 }

@@ -1,8 +1,8 @@
 package com.xiangmu.lzx.activitys;
 
-import android.app.Application;
 import android.content.Context;
 import android.media.MediaPlayer;
+import android.support.multidex.MultiDexApplication;
 
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
@@ -13,7 +13,7 @@ import com.umeng.socialize.UMShareAPI;
 /**
  * Created by Administrator on 2015/11/15.
  */
-public class MyApplication extends Application {
+public class MyApplication extends MultiDexApplication {
     private static final String NAME = "MyApplication";
     public static MediaPlayer mPlayer;
     private  boolean searchDB0=false;

@@ -9,17 +9,18 @@ import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.xiangmu.lzx.R;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-//import cn.finalteam.galleryfinal.model.PhotoEntry;
-import com.litao.android.lib.entity.PhotoEntry;
+import cn.finalteam.galleryfinal.model.PhotoInfo;
+//import com.litao.android.lib.entity.PhotoInfo;
 
 public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdapter.ViewHolder> {
 
-    private List<PhotoEntry> list = new ArrayList<PhotoEntry>();
+    private List<PhotoInfo> list = new ArrayList<PhotoInfo>();
 
     private Context mContext;
 
@@ -36,17 +37,18 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
 //        this.onItemClickListener = onItemClickListener;
 //    }
 
-    public ChooseFramentAdapter(Context mContext , List<PhotoEntry> list) {
+    public ChooseFramentAdapter(Context mContext , List<PhotoInfo> list,OnClickPhotoListener mOnClickPhotoListener) {
         //  public ChooseFramentAdapter() {
         this.list=list;
         this.mContext = mContext;
-        mOnClickPhotoListener= (OnClickPhotoListener) mContext;
+   // mOnClickPhotoListener= (OnClickPhotoListener) mContext;
+        this.mOnClickPhotoListener=mOnClickPhotoListener;
         //   this.mOnClickPhotoListener = mOnClickPhotoListener;
         mInflater = (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         // list.add(createAddEntry());
     }
 
-    public void reloadList(List<PhotoEntry> data) {
+    public void reloadList(List<PhotoInfo> data) {
         if (data != null) {
             list.clear();
             list.addAll(data);
@@ -58,7 +60,7 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
 
     }
 
-    public void appendList(List<PhotoEntry> data) {
+    public void appendList(List<PhotoInfo> data) {
         if (data != null) {
             list.addAll(list.size()-1,data);
         } else {
@@ -69,22 +71,22 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
     }
 
 
-    public void appendPhoto(PhotoEntry entry) {
+    public void appendPhoto(PhotoInfo entry) {
         if (entry != null) {
             list.add(list.size()-1,entry);
         }
         notifyDataSetChanged();
     }
 
-    public List<PhotoEntry> getData(){
+    public List<PhotoInfo> getData(){
         return list.subList(0,list.size()-1);
     }
-    public PhotoEntry getEntry(int position) {
+    public PhotoInfo getEntry(int position) {
         return list.get(position);
     }
 
-    private PhotoEntry createAddEntry(){
-        return new PhotoEntry();
+    private PhotoInfo createAddEntry(){
+        return new PhotoInfo();
     }
 
     @Override
@@ -93,11 +95,13 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
     }
 
     @Override
-    public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-        ViewHolder vh = new ViewHolder(mInflater.inflate(R.layout.item_selected_photo, viewGroup, false), i);
+  //  public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
+    public ViewHolder onCreateViewHolder(int position, ViewHolder convertView, ViewGroup parent) {
+  //  ViewHolder vh = new ViewHolder(mInflater.inflate(R.layout.item_selected_photo, viewGroup, false), i);
+  //   ViewHolder   convertView0 = new ViewHolder(LayoutInflater.from(mContext).inflate(R.layout.item_selected_photo, parent,false));
         //    ViewHolder vh = new ViewHolder(mInflater.inflate(R.layout.adapter_photo_list_item, viewGroup, false), i);
-
-        return vh;
+      //  convertView = LayoutInflater.from(activity).inflate(R.layout.adapter_photo_list_item, parent,false);
+        return convertView0;
     }
 
 
@@ -120,12 +124,12 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
                 });
             }else{
                 viewHolder.delete.setVisibility(View.VISIBLE);
-                PhotoEntry photoEntry = list.get(position);
+                PhotoInfo photoEntry = list.get(position);
                 viewHolder.delete.setOnClickListener(new DeleteClick(position));
 
                 Glide.with(mContext)
-                        .load(new File(photoEntry.getPath()))
-                        .placeholder(com.litao.android.lib.R.mipmap.default_imageo)
+                        .load(new File(photoEntry.getPhotoPath()))
+                        .placeholder(R.drawable.ic_gf_default_photo)
                         .centerCrop()
                         .error(R.drawable.ic_gf_default_photo)
                         .diskCacheStrategy(DiskCacheStrategy.RESULT)
@@ -136,7 +140,7 @@ public class ChooseFramentAdapter extends RecyclerView.Adapter<ChooseFramentAdap
 //            if (position == list.size() - 1) {   // 集合的最后一张显示默认图片，可点击添加图片
 //                viewHolder.mImageView.setImageResource(R.drawable.ic_gf_default_photo);
 //            } else {
-//                PhotoEntry entry = list.get(position);
+//                PhotoInfo entry = list.get(position);
 //                Glide.with(mContext)
 //                        .load(new File(entry.getPhotoPath()))
 //                        .centerCrop()

@@ -149,10 +149,10 @@
         android:orientation="horizontal"
         android:paddingBottom="10dp"
         android:layout_marginTop="10dp"
-        android:minHeight="100dp">
+        android:minHeight="80dp">
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="140dp"
             android:inputType="textPersonName"
             android:text="详情"
             android:ems="10"
@@ -173,12 +173,13 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/content5"
+        android:paddingBottom="10dp"
         >
         <android.support.v7.widget.RecyclerView
             android:id="@+id/recycler_view1"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/grid_background_color"
+            android:layout_height="80dp"
+            android:background="@drawable/select_edittext"
             android:clipToPadding="false"/>
     </LinearLayout>
 
