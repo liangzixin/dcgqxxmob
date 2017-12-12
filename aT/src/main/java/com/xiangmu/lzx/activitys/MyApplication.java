@@ -7,6 +7,13 @@ import android.support.multidex.MultiDexApplication;
 import com.umeng.socialize.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
+import com.xiangmu.lzx.listener.GlideImageLoader;
+import com.xiangmu.lzx.listener.GlidePauseOnScrollListener;
+
+import cn.finalteam.galleryfinal.CoreConfig;
+import cn.finalteam.galleryfinal.FunctionConfig;
+import cn.finalteam.galleryfinal.GalleryFinal;
+import cn.finalteam.galleryfinal.ThemeConfig;
 
 //import com.umeng.socialize.PlatformConfig;
 
@@ -25,6 +32,22 @@ public class MyApplication extends MultiDexApplication {
         ctx = getApplicationContext();
         Config.DEBUG = true;
         UMShareAPI.get(this);
+        ThemeConfig theme = new ThemeConfig.Builder().build();
+        //配置功能
+        FunctionConfig functionConfig = new FunctionConfig.Builder()
+                .setEnableCamera(true)  // 设置相机
+                .setEnableEdit(false)  // 设置是否可编辑
+                .setEnableCrop(true)  // 设置是否可裁剪
+                .setEnableRotate(true) // 设置是否可旋转
+                .setCropSquare(true)
+                .setEnablePreview(true)  // 设置是否可预览
+                .build();
+        CoreConfig coreConfig = new CoreConfig.Builder(this, new GlideImageLoader(), theme)
+                .setFunctionConfig(functionConfig)
+                .setPauseOnScrollListener(new GlidePauseOnScrollListener(false, true))
+                .setNoAnimcation(true)  // 设置是否显示动画
+                .build();
+        GalleryFinal.init(coreConfig);
     }
 
     public static MediaPlayer getMediaPlayer() {

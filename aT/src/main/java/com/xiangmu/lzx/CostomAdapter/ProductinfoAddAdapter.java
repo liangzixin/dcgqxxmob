@@ -4,17 +4,13 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.MaterialEditText;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-import com.lidroid.xutils.BitmapUtils;
-import com.xiangmu.lzx.Bean.YueDuBean;
 import com.xiangmu.lzx.Modle.Dxfw;
 import com.xiangmu.lzx.Modle.Edu;
 import com.xiangmu.lzx.Modle.Fzfs;
@@ -124,7 +120,7 @@ public class ProductinfoAddAdapter extends BaseAdapter {
                     case TYPE_1:
                         viewHoudle_zaoping = new ViewHoudle_zaoping();
                         view = LayoutInflater.from(context).inflate(R.layout.productinfo_item_zaoping, null);
-//                        viewHoudle_zaoping.name = (EditText) view.findViewById(R.id.name);
+                   //     viewHoudle_zaoping.name = (EditText) view.findViewById(R.id.name);
 //                        viewHoudle_zaoping.productinfo_gsmz= (EditText) view.findViewById(R.id.productinfo_gsmz);
 //                        viewHoudle_zaoping.productinfo_gsdz= (EditText) view.findViewById(R.id.productinfo_gsdz);
                         viewHoudle_zaoping.spinner_sex= (Spinner) view.findViewById(R.id.spin_sex);
@@ -148,14 +144,16 @@ public class ProductinfoAddAdapter extends BaseAdapter {
                                 android.R.layout.simple_spinner_item,xl));
 
                         view.setTag(viewHoudle_zaoping);
+                    //    viewHoudle_zaoping.name.setFocusable(true);
                         break;
                     case TYPE_2:
                         viewHoudle_qiuzhi = new ViewHoudle_qiuzhi();
                         view = LayoutInflater.from(context).inflate(R.layout.productinfo_item_qiuzhi, null);
-//                        viewHoudle_qiuzhi.name = (EditText) view.findViewById(R.id.name);
+                     //   viewHoudle_qiuzhi.name = (EditText) view.findViewById(R.id.name);
 //                        viewHoudle_qiuzhi.productinfo_gsmz= (EditText) view.findViewById(R.id.productinfo_gsmz);
 //                        viewHoudle_qiuzhi.productinfo_gsdz= (EditText) view.findViewById(R.id.productinfo_gsdz);
                         view.setTag(viewHoudle_zaoping);
+                       // viewHoudle_qiuzhi.name.setFocusable(true);
                         break;
                     case TYPE_3:
 
@@ -214,6 +212,7 @@ public class ProductinfoAddAdapter extends BaseAdapter {
 //                    viewHoudle_pic32.pic32_source.setText(entity.source);
 //                    break;
 //            }
+
         return view;
     }
 

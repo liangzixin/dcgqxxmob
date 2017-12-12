@@ -16,7 +16,7 @@
             android:orientation="horizontal"
             android:paddingBottom="10dp"
             android:layout_marginTop="10dp">
->
+
 
             <TextView
                 style="@style/text_source"
@@ -24,7 +24,9 @@
                 android:layout_below="@+id/layoutnor"
                 android:text="招聘标题"
                 android:layout_gravity="center"
-                android:layout_marginLeft="5dp" />
+                android:layout_marginLeft="5dp"
+
+                />
 
             <EditText
                 android:layout_width="match_parent"
@@ -38,7 +40,10 @@
                 android:layout_toEndOf="@+id/name0"
                 android:background="@drawable/select_edittext"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="6dp" />
+                android:layout_marginRight="6dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                />
 
 
         </LinearLayout>

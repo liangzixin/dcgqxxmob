@@ -8,6 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -192,6 +193,9 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        productinfo_gsmz= (MaterialEditText)  findViewById(R.id.productinfo_gsmz);
         productinfo_lxr= (EditText)  view.findViewById(R.id.productinfo_lxr);
         productinfo_lxdh= (EditText)  view.findViewById(R.id.productinfo_lxdh);
+        productinfo_lxdh.setFocusable(true);
+        productinfo_lxdh.setFocusableInTouchMode(true);
+
 //
 
 //        productinfo_content= (MaterialEditText) view.findViewById(R.id.productinfo_content);
@@ -902,7 +906,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     };
     @Override
     public void onClickPhotoListener() {
-        ActionSheet.createBuilder(getActivity(),getActivity().getSupportFragmentManager())
+          FragmentManager frament=getActivity().getSupportFragmentManager();
+        ActionSheet.createBuilder(getActivity(),frament)
                 .setCancelButtonTitle("取消")
                 .setOtherButtonTitles("打开相册", "拍照")
                 .setCancelableOnTouchOutside(true)
