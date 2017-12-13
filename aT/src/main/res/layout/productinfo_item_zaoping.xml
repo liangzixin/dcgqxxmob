@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="160dp"
+    android:layout_height="wrap_content"
     >
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/layoutnor00"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="10dp">
+        >
         <LinearLayout
             android:layout_width="match_parent"
             android:id="@+id/layoutnor0"
@@ -19,13 +19,13 @@
 
 
             <TextView
-                style="@style/text_source"
+
                 android:id="@+id/name0"
                 android:layout_below="@+id/layoutnor"
                 android:text="招聘标题"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp"
-
+                android:layout_gravity="center_horizontal"
+               style="@style/xinwen_item_title"
+                android:textColor="@color/black"
                 />
 
             <EditText
@@ -58,12 +58,13 @@
         >
 
         <TextView
-            style="@style/text_source"
             android:id="@+id/productinfo_gsmz0"
             android:layout_below="@+id/layoutnor1"
             android:text="公司名称"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp" />
+            android:layout_gravity="center_horizontal"
+            style="@style/xinwen_item_title"
+            android:textColor="@color/black"
+            />
 
         <EditText
             android:layout_width="match_parent"
@@ -88,12 +89,14 @@
             android:paddingBottom="10dp"
            >
                 <TextView
-                style="@style/text_source"
+
                 android:id="@+id/productinfo_gsdz0"
                 android:layout_below="@+id/layoutnor1"
                 android:text="公司地址"
-                android:layout_gravity="center"
-                android:layout_marginLeft="5dp" />
+                    android:layout_gravity="center_horizontal"
+                    style="@style/xinwen_item_title"
+                    android:textColor="@color/black"
+                    />
 
             <EditText
                 android:layout_width="match_parent"
@@ -114,7 +117,7 @@
             android:id="@+id/layoutnor3"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:paddingBottom="10dp"
+
             >
             <Spinner
                 android:id="@+id/spin_nl"

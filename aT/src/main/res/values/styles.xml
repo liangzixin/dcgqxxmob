@@ -135,9 +135,9 @@
     <style name="button_stylelzx">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:background">#000000</item>
+        <item name="android:background">#cccccc</item>
         <item name="android:textSize">20dp</item>
-        <item name="android:textColor">#ffffff</item>
+
     </style>
 
 

@@ -1,19 +1,21 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:material="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:id="@+id/content00"
-        >
+    android:layout_height="match_parent"
+
+    xmlns:myApplication="http://schemas.android.com/apk/res-auto"
+  >
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:orientation="horizontal"
         android:background="@mipmap/titlebar_background"
         android:id="@+id/content0"
-        android:paddingBottom="10dp"
+
         >
         <ImageButton
             android:id="@+id/xinwen_xi_back"
@@ -51,17 +53,23 @@
             android:background="@android:color/transparent"
             android:src="@mipmap/kuozhan_caidan" />
     </LinearLayout>
-        <!--ScrollView
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="49dp"
-            android:scrollbars="none" >-->
+            android:layout_marginTop="40dp"
+            android:scrollbars="none" >
+            <LinearLayout
+             android:layout_width="match_parent"
+             android:layout_height="match_parent"
+             android:orientation="vertical"
+             android:id="@+id/content00"
+             >
     <LinearLayout
         android:layout_width="match_parent"
         android:id="@+id/content1"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:paddingBottom="10dp"
+
       >
 
         <Spinner
@@ -85,7 +93,7 @@
         android:layout_width="match_parent"
         android:id="@+id/refresh"
         android:divider="@null"
-        android:layout_height="160dp"></ListView>
+        android:layout_height="wrap_content"></ListView>
     </LinearLayout>
 
     <LinearLayout
@@ -93,19 +101,18 @@
         android:id="@+id/content3"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:paddingBottom="10dp"
 
-        >
+        android:paddingTop="10dp">
         <TextView
-            style="@style/text_source"
             android:id="@+id/productinfo_lxr0"
-
             android:text="联系人"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp" />
+            android:layout_gravity="center_horizontal"
+            style="@style/xinwen_item_title"
+            android:textColor="@color/black"
+            />
 
         <EditText
-            android:layout_width="100dp"
+            android:layout_width="80dp"
             android:layout_height="wrap_content"
             android:inputType="textPersonName"
             android:text=""
@@ -115,16 +122,17 @@
             android:layout_toRightOf="@+id/productinfo_lxr0"
             android:layout_toEndOf="@+id/productinfo_lxr0"
             android:background="@drawable/select_edittext"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="6dp"
-            />
-        <TextView
-            style="@style/text_source"
-            android:id="@+id/productinfo_lxdh0"
 
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:paddingLeft="5dp" />
+        <TextView
+             android:id="@+id/productinfo_lxdh0"
             android:text="联系电话"
-            android:layout_gravity="center"
-            android:layout_marginLeft="5dp" />
+            android:layout_gravity="center_horizontal"
+            style="@style/xinwen_item_title"
+            android:textColor="@color/black"
+            />
 
         <EditText
             android:layout_width="wrap_content"
@@ -137,9 +145,10 @@
             android:layout_toRightOf="@+id/productinfo_lxr0"
             android:layout_toEndOf="@+id/productinfo_lxr0"
             android:background="@drawable/select_edittext"
+
             android:layout_marginLeft="5dp"
-            android:layout_marginRight="6dp"
-            />
+            android:layout_marginRight="5dp"
+            android:paddingLeft="5dp" />
     </LinearLayout>
 
     <LinearLayout
@@ -152,7 +161,7 @@
         android:minHeight="80dp">
         <EditText
             android:layout_width="match_parent"
-            android:layout_height="140dp"
+            android:layout_height="160dp"
             android:inputType="textPersonName"
             android:text="详情"
             android:ems="10"
@@ -160,7 +169,8 @@
             android:background="@drawable/select_edittext"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="6dp"
-
+            android:paddingRight="5dp"
+            android:paddingLeft="5dp"
             android:singleLine="true"
             android:minLines="3"
             android:gravity="top|center_vertical"
@@ -186,5 +196,20 @@
     </LinearLayout>
 
 
-</LinearLayout>
-    </FrameLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发    布"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="40dp"
+        style="@style/button_stylelzx"
+        />
+            </LinearLayout>
+
+        </ScrollView>
+</RelativeLayout>

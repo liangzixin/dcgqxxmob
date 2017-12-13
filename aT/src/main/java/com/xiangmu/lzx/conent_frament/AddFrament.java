@@ -85,6 +85,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private HttpHandler<String> handler;
    // private PullToRefreshListView mRecyclerView;
     private ListView mRecyclerView;
+
     private List<PhotoInfo> mSelectedPhotos=new ArrayList<PhotoInfo>();
     private List<String> listfile = new ArrayList<String>();
     private List<File> list=new ArrayList<>();
@@ -164,8 +165,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 mAdapter = new ProductinfoAddAdapter( getActivity(),position);
-                // mRecyclerView.getRefreshableView().setAdapter(mAdapter);
-                mRecyclerView.setAdapter(mAdapter);
+                //   mRecyclerView.getRefreshableView().setAdapter(mAdapter);
+                   mRecyclerView.setAdapter(mAdapter);
             }
 
             @Override
