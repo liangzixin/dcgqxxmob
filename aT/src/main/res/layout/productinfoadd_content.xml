@@ -38,20 +38,9 @@
             android:textSize="20sp"
             android:textColor="#ffffff"
             android:gravity="center"
-            android:text="点击发布信息" />
-        <TextView
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1" />
+            android:layout_marginRight="15dp"
+            android:text="发  布" />
 
-        <ImageButton
-            android:id="@+id/xinwen_xi_kuanzhan_caidan"
-            android:layout_width="50dp"
-            android:clickable="true"
-            android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
-            android:background="@android:color/transparent"
-            android:src="@mipmap/kuozhan_caidan" />
     </LinearLayout>
         <ScrollView
             android:layout_width="match_parent"
@@ -195,20 +184,6 @@
             android:clipToPadding="false"/>
     </LinearLayout>
 
-
-    <Button
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="发    布"
-        android:id="@+id/button2"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="5dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="5dp"
-        android:layout_marginBottom="40dp"
-        style="@style/button_stylelzx"
-        />
             </LinearLayout>
 
         </ScrollView>
