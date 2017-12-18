@@ -103,8 +103,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
     private RecyclerView recyclerView;
     private String name,gsmz,gsdz,sex,dxfw,nl,xl;
-    private MaterialEditText productinfo_gsdz;
-    private MaterialEditText productinfo_gsmz;
+//    private MaterialEditText productinfo_gsdz;
+//    private MaterialEditText productinfo_gsmz;
     private EditText productinfo_lxr;
     private EditText productinfo_lxdh;
     private MaterialEditText productinfo_sxcy;
@@ -216,12 +216,12 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 nl=mAdapter.getSpringnl();
                 xl=mAdapter.getSpring_xl();
         sex=mAdapter.getSex();
-                if(name.trim().equals(""))  {
+                if(name.trim().equals("")||name==null)  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
                 }
-                if(productinfo_content.getText().toString().trim().equals(""))  {
+                if(productinfo_content.getText().toString().trim().equals("")||productinfo_content.getText().toString().trim()==null)  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
                     return;
@@ -753,13 +753,17 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //          mSelectedPhotos=Entries.photos;
             RequestParams params = new RequestParams();
             params.addQueryStringParameter("name",name);
-            params.addQueryStringParameter("gsdz",productinfo_gsdz.getText().toString());
-            params.addQueryStringParameter("gsmz",productinfo_gsmz.getText().toString());
+            params.addQueryStringParameter("gsdz",gsdz);
+            params.addQueryStringParameter("gsmz",gsmz);
             params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
             params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
             params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
             params.addQueryStringParameter("description",productinfo_content.getText().toString());
-
+            params.addQueryStringParameter("zpxx.sexrequest",sex);
+            params.addQueryStringParameter("zpxx.zpnlrequest",nl);
+            params.addQueryStringParameter("zpxx.gzdx",dxfw);
+            params.addQueryStringParameter("zpxx.edurequest",xl);
+/*
             params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
 
 //
@@ -786,11 +790,11 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
             params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
 
+*/
 
 
-
-            if(mSelectedPhotos.size()>0) {
-                for (int i = 0; i < mSelectedPhotos.size(); i++) {
+            if(mSelectedPhotos.size()>1) {
+                for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
                     Log.i("F", filepath + "a0" + i + "jpg");
 
                     String tmepName = null;
@@ -809,7 +813,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 }
 //            list.add(new File(filepath1));
 
-                for (int j = 0;j< mSelectedPhotos.size(); j++) {
+                for (int j = 0;j< mSelectedPhotos.size()-1; j++) {
                     params.addBodyParameter("upload[" + j + "]", list.get(j));
                 }
 
