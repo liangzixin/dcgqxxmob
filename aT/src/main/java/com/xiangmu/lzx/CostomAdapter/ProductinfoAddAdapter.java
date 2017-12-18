@@ -1,9 +1,12 @@
 package com.xiangmu.lzx.CostomAdapter;
 
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.BaseAdapter;
 import android.widget.EditText;
@@ -26,16 +29,60 @@ import java.util.List;
  */
 public class ProductinfoAddAdapter extends BaseAdapter {
 //    private List<YueDuBean.推荐Entity> list;
-//   private Spinner spinner_sex = null;
-//    private Spinner spinner_dxfw= null;
-//    private Spinner spinner_nl= null;
-//    private Spinner spinner_xl= null;
+   private Spinner spinner_sex0;
+    private Spinner spinner_dxfw0;
+    private Spinner spinner_nl0;
+    private Spinner spinner_xl0;
+    private EditText name0;
+    private EditText gsmz0;
+    private EditText gsdz0;
+
+    public String getGsmz() {
+        return gsmz;
+    }
+    public String getName() {
+
+        return name;
+    }
+
+    private String name;
+    private String gsmz;
+    private String gsdz;
+    private String sex;
+
+    public String getSpring_dxfw() {
+        return spring_dxfw;
+    }
+
+    private String spring_dxfw;
+
+    public String getSpringnl() {
+        return springnl;
+    }
+
+    private String springnl;
+
+    public String getSpring_xl() {
+        return spring_xl;
+    }
+
+    private String spring_xl;
+    public String getSex() {
+        return sex;
+    }
+
+
+    public String getGsdz() {
+        return gsdz;
+    }
+
+
 //private static final String[] msex={"请选择类别","招聘信息","求职信息","房屋出售","房屋出租","供求信息","二手市场","其它信息","铺面信息","家居装饰"};
 
    List  msex= Sex.getValues();
     List  dxfw= Dxfw.getValues();
-    List  nl= Zpnl.getValues();
-    List  xl= Edu.getValues();
+    List  mnl= Zpnl.getValues();
+    List  mxl= Edu.getValues();
     List  listcjfs= Fzfs.getValues();
     private int mytype;
     private Context context;
@@ -107,8 +154,8 @@ public class ProductinfoAddAdapter extends BaseAdapter {
 //    }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-            ViewHoudle_zaoping viewHoudle_zaoping= null;
-            ViewHoudle_qiuzhi viewHoudle_qiuzhi= null;
+//            ViewHoudle_zaoping viewHoudle_zaoping= null;
+//            ViewHoudle_qiuzhi viewHoudle_qiuzhi= null;
 //            ViewHoudle_pic31 viewHoudle_pic31 = null;
 //            ViewHoudle_pic32 viewHoudle_pic32 = null;
 //            int type = getItemViewType(i);
@@ -118,41 +165,158 @@ public class ProductinfoAddAdapter extends BaseAdapter {
                 //按当前所需的样式，确定new的布局
                 switch (mytype) {
                     case TYPE_1:
-                        viewHoudle_zaoping = new ViewHoudle_zaoping();
+//                        viewHoudle_zaoping = new ViewHoudle_zaoping();
                         view = LayoutInflater.from(context).inflate(R.layout.productinfo_item_zaoping, null);
-                   //     viewHoudle_zaoping.name = (EditText) view.findViewById(R.id.name);
+                        name0 = (EditText) view.findViewById(R.id.name);
+                        gsmz0=(EditText) view.findViewById(R.id.productinfo_gsmz);
+                        gsdz0= (EditText) view.findViewById(R.id.productinfo_gsdz);
+                        spinner_sex0= (Spinner) view.findViewById(R.id.spin_sex);
+                     spinner_dxfw0 = (Spinner) view.findViewById(R.id.spin_dxfw);
+                     spinner_nl0= (Spinner) view.findViewById(R.id.spin_nl);
+                   spinner_xl0= (Spinner) view.findViewById(R.id.spin_xl);
+                 spinner_sex0.setAdapter(new ArrayAdapter<Sex>(context, android.R.layout.simple_spinner_item,msex));
+                spinner_dxfw0.setAdapter(new ArrayAdapter<String>(context,
+                                android.R.layout.simple_spinner_item,dxfw));
+               spinner_nl0.setAdapter(new ArrayAdapter<String>(context,
+                                android.R.layout.simple_spinner_item,mnl));
+               spinner_xl0.setAdapter(new ArrayAdapter<String>(context,
+                                android.R.layout.simple_spinner_item,mxl));
+                        name0.addTextChangedListener(new TextWatcher() {
+                            @Override
+                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                            }
+
+                            @Override
+                            public void afterTextChanged(Editable s) {
+                                name=s.toString();
+                            }
+
+                            @Override
+                            public void beforeTextChanged(CharSequence s, int start,
+                                                          int count,int after) {
+
+                            }
+
+                        });
+                        gsmz0.addTextChangedListener(new TextWatcher() {
+                            @Override
+                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                            }
+
+                            @Override
+                            public void afterTextChanged(Editable s) {
+                                gsmz=s.toString();
+                            }
+
+                            @Override
+                            public void beforeTextChanged(CharSequence s, int start,
+                                                          int count,int after) {
+
+                            }
+
+                        });
+                        gsdz0.addTextChangedListener(new TextWatcher() {
+                            @Override
+                            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                            }
+
+                            @Override
+                            public void afterTextChanged(Editable s) {
+                                gsdz=s.toString();
+                            }
+
+                            @Override
+                            public void beforeTextChanged(CharSequence s, int start,
+                                                          int count,int after) {
+
+                            }
+
+                        });
+                        spinner_sex0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                             sex=msex.get(position).toString();
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+                                // TODO Auto-generated method stub
+                            }
+                        });
+                        spinner_dxfw0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                spring_dxfw=dxfw.get(position).toString();
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+                                // TODO Auto-generated method stub
+                            }
+                        });
+                        spinner_nl0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                springnl=mnl.get(position).toString();
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+                                // TODO Auto-generated method stub
+                            }
+                        });
+                        spinner_xl0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+
+                            @Override
+                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                                spring_xl=mxl.get(position).toString();
+                            }
+
+                            @Override
+                            public void onNothingSelected(AdapterView<?> parent) {
+                                // TODO Auto-generated method stub
+                            }
+                        });
+                        //  name=name0.getText().toString();
+//                        viewHoudle_zaoping.name = (EditText) view.findViewById(R.id.name);
 //                        viewHoudle_zaoping.productinfo_gsmz= (EditText) view.findViewById(R.id.productinfo_gsmz);
 //                        viewHoudle_zaoping.productinfo_gsdz= (EditText) view.findViewById(R.id.productinfo_gsdz);
-                        viewHoudle_zaoping.spinner_sex= (Spinner) view.findViewById(R.id.spin_sex);
-
-                        viewHoudle_zaoping.spinner_sex.setAdapter(new ArrayAdapter<Sex>(context, android.R.layout.simple_spinner_item,msex));
-
-
-                        viewHoudle_zaoping.spinner_dxfw = (Spinner) view.findViewById(R.id.spin_dxfw);
-                        viewHoudle_zaoping.spinner_nl= (Spinner) view.findViewById(R.id.spin_nl);
-                        viewHoudle_zaoping.spinner_xl= (Spinner) view.findViewById(R.id.spin_xl);
-                        viewHoudle_zaoping.spinner_dxfw.setAdapter(new ArrayAdapter<String>(context,
-                                android.R.layout.simple_spinner_item,dxfw));
-
-                        viewHoudle_zaoping.spinner_nl.setAdapter(new ArrayAdapter<String>(context,
-                                android.R.layout.simple_spinner_item,nl));
-
-
+//                        viewHoudle_zaoping.spinner_sex= (Spinner) view.findViewById(R.id.spin_sex);
+//
+//                        viewHoudle_zaoping.spinner_sex.setAdapter(new ArrayAdapter<Sex>(context, android.R.layout.simple_spinner_item,msex));
+//
+//
+//                        viewHoudle_zaoping.spinner_dxfw = (Spinner) view.findViewById(R.id.spin_dxfw);
+//                        viewHoudle_zaoping.spinner_nl= (Spinner) view.findViewById(R.id.spin_nl);
+//                        viewHoudle_zaoping.spinner_xl= (Spinner) view.findViewById(R.id.spin_xl);
+//                        viewHoudle_zaoping.spinner_dxfw.setAdapter(new ArrayAdapter<String>(context,
+//                                android.R.layout.simple_spinner_item,dxfw));
+//
 //                        viewHoudle_zaoping.spinner_nl.setAdapter(new ArrayAdapter<String>(context,
 //                                android.R.layout.simple_spinner_item,nl));
-                        viewHoudle_zaoping.spinner_xl.setAdapter(new ArrayAdapter<String>(context,
-                                android.R.layout.simple_spinner_item,xl));
-
-                        view.setTag(viewHoudle_zaoping);
+//
+//
+////                        viewHoudle_zaoping.spinner_nl.setAdapter(new ArrayAdapter<String>(context,
+////                                android.R.layout.simple_spinner_item,nl));
+//                        viewHoudle_zaoping.spinner_xl.setAdapter(new ArrayAdapter<String>(context,
+//                                android.R.layout.simple_spinner_item,xl));
+//
+//                        view.setTag(viewHoudle_zaoping);
                     //    viewHoudle_zaoping.name.setFocusable(true);
                         break;
                     case TYPE_2:
-                        viewHoudle_qiuzhi = new ViewHoudle_qiuzhi();
+//                        viewHoudle_qiuzhi = new ViewHoudle_qiuzhi();
                         view = LayoutInflater.from(context).inflate(R.layout.productinfo_item_qiuzhi, null);
                      //   viewHoudle_qiuzhi.name = (EditText) view.findViewById(R.id.name);
 //                        viewHoudle_qiuzhi.productinfo_gsmz= (EditText) view.findViewById(R.id.productinfo_gsmz);
 //                        viewHoudle_qiuzhi.productinfo_gsdz= (EditText) view.findViewById(R.id.productinfo_gsdz);
-                        view.setTag(viewHoudle_zaoping);
+//                        view.setTag(viewHoudle_zaoping);
                        // viewHoudle_qiuzhi.name.setFocusable(true);
                         break;
                     case TYPE_3:
@@ -166,10 +330,10 @@ public class ProductinfoAddAdapter extends BaseAdapter {
 //                //有convertView，按样式，取得不用的布局
                 switch (mytype) {
                     case TYPE_1:
-                        viewHoudle_zaoping= (ViewHoudle_zaoping) view.getTag();
+//                        viewHoudle_zaoping= (ViewHoudle_zaoping) view.getTag();
                         break;
                     case TYPE_2:
-                        viewHoudle_qiuzhi = (ViewHoudle_qiuzhi) view.getTag();
+//                        viewHoudle_qiuzhi = (ViewHoudle_qiuzhi) view.getTag();
                         break;
 //                    case TYPE_3:
 //                        viewHoudle_pic31 = (ViewHoudle_pic31) view.getTag();

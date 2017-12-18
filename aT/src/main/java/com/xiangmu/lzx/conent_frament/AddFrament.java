@@ -102,7 +102,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private Spinner articlerSpinner = null;
 
     private RecyclerView recyclerView;
-    private MaterialEditText name;
+    private String name,gsmz,gsdz,sex,dxfw,nl,xl;
     private MaterialEditText productinfo_gsdz;
     private MaterialEditText productinfo_gsmz;
     private EditText productinfo_lxr;
@@ -141,6 +141,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
      //  super.onCreate(savedInstanceState);
 
     View view = inflater.inflate(R.layout.productinfoadd_content, null);
+        fpxx=(TextView)view.findViewById(R.id.bt_fpxx);
       // setContentView(R.layout.activity_productinfo_add);
              articlerSpinner = (Spinner)  view.findViewById(R.id.spin_articler);
                 ArrayAdapter adapter= new ArrayAdapter<String>( getActivity(),
@@ -196,6 +197,55 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         productinfo_lxdh= (EditText)  view.findViewById(R.id.productinfo_lxdh);
         productinfo_lxdh.setFocusable(true);
         productinfo_lxdh.setFocusableInTouchMode(true);
+        fpxx.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //  ShareUtils.shareContent(this, xinwentitle, url);
+//               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
+//                System.out.println("name="+name.getText()+"");
+                if(articlerSpinner.getSelectedItemPosition()==0)  {
+
+                    //   Toast.makeText(this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+       name=mAdapter.getName();
+                gsmz=mAdapter.getGsmz();
+                gsdz=mAdapter.getGsdz();
+        dxfw=mAdapter.getSpring_dxfw();
+                nl=mAdapter.getSpringnl();
+                xl=mAdapter.getSpring_xl();
+        sex=mAdapter.getSex();
+                if(name.trim().equals(""))  {
+                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+                if(productinfo_content.getText().toString().trim().equals(""))  {
+                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
+                    new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+                if(!isMobileNO(productinfo_lxdh.getText().toString()))  {
+
+
+                    new AlertDialog.Builder( getActivity()).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
+                    return;
+                }
+
+
+                String saveproduct=xinWenURL.getSaveproductinfo();
+                Toast.makeText( getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
+                SaveData(saveproduct);
+//                int size =mSelectedPhotos.size();
+//                for (int i = 0; i < size; i++) {
+//                 listfile.add(mSelectedPhotos.get(i).getPath().toString());
+//
+//                }
+//
+//                new Thread(runnable).start();
+            }
+        });
 
 //
 
@@ -333,7 +383,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         ImageButton imageback = null;
         imageback = (ImageButton) view.findViewById(R.id.xinwen_xi_back);//返回
 
-        fpxx=(TextView)view.findViewById(R.id.bt_fpxx);
+
 //        TextView duotu_gentie = null;
 //        duotu_gentie = (TextView) view.findViewById(R.id.xinwen_duotu_gentie);//跟帖
         ImageButton caidan = null;
@@ -380,8 +430,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                     new AlertDialog.Builder( getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
                     return;
                 }
-
-                if(name.getText().toString().trim().equals(""))  {
+       //  mAdapter.getClass().
+                if(name.trim().equals(""))  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
@@ -702,6 +752,13 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 //          mSelectedPhotos=Entries.photos;
             RequestParams params = new RequestParams();
+            params.addQueryStringParameter("name",name);
+            params.addQueryStringParameter("gsdz",productinfo_gsdz.getText().toString());
+            params.addQueryStringParameter("gsmz",productinfo_gsmz.getText().toString());
+            params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
+            params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
+            params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
+            params.addQueryStringParameter("description",productinfo_content.getText().toString());
 
             params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
 
@@ -713,13 +770,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //            params.addQueryStringParameter("zpxx.edurequest",spinner_xl.getSelectedItem().toString());
             params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
 
-            params.addQueryStringParameter("name",name.getText().toString());
-            params.addQueryStringParameter("gsdz",productinfo_gsdz.getText().toString());
-            params.addQueryStringParameter("gsmz",productinfo_gsmz.getText().toString());
-            params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
-            params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
-            params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
-            params.addQueryStringParameter("description",productinfo_content.getText().toString());
+
 
 
             params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
