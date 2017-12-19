@@ -174,7 +174,7 @@ public class ProductinfoAddAdapter extends BaseAdapter {
                         gsdz0= (EditText) view.findViewById(R.id.productinfo_gsdz);
                         spinner_sex0= (Spinner) view.findViewById(R.id.spin_sex);
                      spinner_dxfw0 = (Spinner) view.findViewById(R.id.spin_dxfw);
-
+                        spinner_nl0 = (Spinner) view.findViewById(R.id.spin_nl);
                    spinner_xl0= (Spinner) view.findViewById(R.id.spin_xl);
                  spinner_sex0.setAdapter(new ArrayAdapter<Sex>(context, android.R.layout.simple_spinner_item,msex));
                 spinner_dxfw0.setAdapter(new ArrayAdapter<String>(context,
@@ -300,8 +300,7 @@ public class ProductinfoAddAdapter extends BaseAdapter {
                         spinner_sex0.setAdapter(new ArrayAdapter<Sex>(context, android.R.layout.simple_spinner_item,msex));
                         spinner_dxfw0.setAdapter(new ArrayAdapter<String>(context,
                                 android.R.layout.simple_spinner_item,dxfw));
-                        spinner_nl0.setAdapter(new ArrayAdapter<String>(context,
-                                android.R.layout.simple_spinner_item,mnl));
+
                         spinner_xl0.setAdapter(new ArrayAdapter<String>(context,
                                 android.R.layout.simple_spinner_item,mxl));
                         name0.addTextChangedListener(new TextWatcher() {
@@ -382,18 +381,7 @@ public class ProductinfoAddAdapter extends BaseAdapter {
                                 // TODO Auto-generated method stub
                             }
                         });
-                        spinner_nl0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
-                            @Override
-                            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                                springnl=mnl.get(position).toString();
-                            }
-
-                            @Override
-                            public void onNothingSelected(AdapterView<?> parent) {
-                                // TODO Auto-generated method stub
-                            }
-                        });
                         spinner_xl0.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
                             @Override

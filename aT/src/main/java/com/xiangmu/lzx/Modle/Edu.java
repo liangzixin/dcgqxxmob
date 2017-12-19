@@ -17,19 +17,19 @@ public enum Edu {
 	EDU1{
 		@Override
 		public String getName() {
-			return "硕士生";
+			return "硕士";
 		}
 	},
 	EDU2{
 		@Override
 		public String getName() {
-			return "本科生";
+			return "本科";
 		}
 	},
 	EDU3{
 		@Override
 		public String getName() {
-			return "专科生";
+			return "专科";
 		}
 
 	},

@@ -17,25 +17,25 @@ public enum Dxfw {
 	GZDX1{
 		@Override
 		public String getName() {
-			return "4-5千元";
+			return "4-5千";
 		}
 	},
 	GZDX2{
 		@Override
 		public String getName() {
-			return "3-4千元";
+			return "3-4千";
 		}
 	},
 	GZDX3{
 		@Override
 		public String getName() {
-			return "3-2千元";
+			return "3-2千";
 		}
 	},
 	GZDX4{
 		@Override
 		public String getName() {
-			return "2-1千元";
+			return "2-1千";
 		}
 	},
 	GZDX5{

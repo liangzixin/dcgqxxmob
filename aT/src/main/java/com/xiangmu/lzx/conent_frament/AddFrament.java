@@ -41,11 +41,16 @@ import com.xiangmu.lzx.CostomAdapter.ChooseFramentAdapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoAddAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.Modle.Article;
+import com.xiangmu.lzx.Modle.Dxfw;
+import com.xiangmu.lzx.Modle.Edu;
+import com.xiangmu.lzx.Modle.Fzfs;
 import com.xiangmu.lzx.Modle.Liuyuan;
 import com.xiangmu.lzx.Modle.Photo;
 import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.Modle.ProductCategory;
+import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.UploadFile;
+import com.xiangmu.lzx.Modle.Zpnl;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.activitys.MainActivity;
 import com.xiangmu.lzx.activitys.PictureActivity;
@@ -102,30 +107,33 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private Spinner articlerSpinner = null;
 
     private RecyclerView recyclerView;
-    private   String name="",gsmz="",gsdz="",sex="",dxfwl="",nll="",xll="";
-    private MaterialEditText productinfo_gsdz;
-    private MaterialEditText productinfo_gsmz;
+    private EditText name,gsmz,gsdz,sex,dxfwl,nll,xll;
+    private TextView name0,gsmz0,gsdz0,hxzj0,hxzh0;
+    private Spinner spinner_sex,spinner_dxfw,spinner_nl,spinner_xl,cjfs;
+    private LinearLayout qznlLayout,sxcyLayout,gsmzLayout,gsdzLayout,fwhx0Layout,fwhx1Layout,fwhx2Layout,fwhx3Layout;
+//    private MaterialEditText productinfo_gsdz;
+//    private MaterialEditText productinfo_gsmz;
     private EditText productinfo_lxr;
     private EditText productinfo_lxdh;
-    private MaterialEditText productinfo_sxcy;
+    private EditText productinfo_sxcy;
     private EditText productinfo_content;
     private MaterialEditText productinfo_qjnl;
 
 
-    private MaterialEditText fwzs_jzmj;
-    private MaterialEditText fwzs_fwzj;
-    //    private MaterialEditText fwzs_fwcj;
-    private MaterialEditText fwzs_hxs;
-    private MaterialEditText fwzs_hxt;
-    private MaterialEditText fwzs_hxw;
-    private MaterialEditText fwzs_hxc;
-    private MaterialEditText fwzs_fwlz;
-    private MaterialEditText fwzs_fwzc;
-    private Spinner fwzs_zjfs;
+    private EditText jzmj;
+    private EditText fwzj;
+    //    private EditText fwzs_fwcj;
+    private EditText hxs;
+    private EditText hxt;
+    private EditText hxw;
+    private EditText hxc;
+    private EditText fwlz;
+    private EditText fwzc;
+    private Spinner zjfs;
 
 
-    private MaterialEditText gqxx_gqsl;
-    private MaterialEditText gqxx_spsj;
+    private EditText gqxx_gqsl;
+    private EditText gqxx_spsj;
     LinearLayout category2;
     LinearLayout category3;
     private String filepath;
@@ -133,6 +141,11 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private TextView fpxx;
     public static  final int RESULT_CODE=101;
     View view;
+    List  msex=Sex.getValues();
+    List  dxfw= Dxfw.getValues();
+    List  nl= Zpnl.getValues();
+    List  xl= Edu.getValues();
+    List  listcjfs= Fzfs.getValues();
 
     @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -148,12 +161,56 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 android.R.layout.simple_spinner_item,m);
         articlerSpinner.setAdapter(adapter);
         articlerSpinner.setSelection(1);
+        name = (EditText) view.findViewById(R.id.name);
+        name0 = (TextView) view.findViewById(R.id.name0);
+        gsdz0 = (TextView) view.findViewById(R.id.gsdz0);
+        hxzj0 = (TextView) view.findViewById(R.id.hxzj0);
+        hxzh0 = (TextView) view.findViewById(R.id.hxzh0);
+        gsmz=(EditText) view.findViewById(R.id.productinfo_gsmz);
+        gsdz= (EditText) view.findViewById(R.id.productinfo_gsdz);
+        qznlLayout= (LinearLayout) view.findViewById(R.id.qznlLayout);
+        sxcyLayout= (LinearLayout) view.findViewById(R.id.sxcyLayout);
+       gsmzLayout= (LinearLayout) view.findViewById(R.id.gsmzLayout);
+        gsdzLayout= (LinearLayout) view.findViewById(R.id.gsdzLayout);
+        fwhx0Layout= (LinearLayout) view.findViewById(R.id.fwhx0);
+        fwhx1Layout= (LinearLayout) view.findViewById(R.id.fwhx1);
+        fwhx2Layout= (LinearLayout) view.findViewById(R.id.fwhx2);
+        fwhx3Layout= (LinearLayout) view.findViewById(R.id.fwhx3);
+        spinner_sex= (Spinner) view.findViewById(R.id.spin_sex);
+        spinner_dxfw = (Spinner) view.findViewById(R.id.spin_dxfw);
+        spinner_nl = (Spinner) view.findViewById(R.id.spin_nl);
+        spinner_xl= (Spinner) view.findViewById(R.id.spin_xl);
+        cjfs= (Spinner) view.findViewById(R.id.cjfs);
+
+       jzmj= (EditText) view.findViewById(R.id.jzmj);
+       fwzj= (EditText) view.findViewById(R.id.fwzj);
+
+       hxs= (EditText) view.findViewById(R.id.hxs);
+       hxt= (EditText) view.findViewById(R.id.hxt);
+       hxs= (EditText) view.findViewById(R.id.hxs);
+       hxw= (EditText) view.findViewById(R.id.hxw);
+       hxc= (EditText) view.findViewById(R.id.hxc);
+       fwlz= (EditText) view.findViewById(R.id.fwlz);
+       fwzc= (EditText) view.findViewById(R.id.fwzc);
+
+
+     //  fwzs_zjfs= (MaterialSpinner) view.findViewById(R.id.spin_cjfs);
+
+        spinner_sex.setAdapter(new ArrayAdapter<Sex>(getActivity(), android.R.layout.simple_spinner_item,msex));
+        spinner_dxfw.setAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item,dxfw));
+        spinner_nl.setAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item,nl));
+        spinner_xl.setAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item,xl));
+       cjfs.setAdapter(new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_spinner_item,listcjfs));
         productinfo_content=(EditText)  view.findViewById(R.id.productinfo_content);
         //改变默认的单行模式
         productinfo_content.setSingleLine(false);
         //水平滚动设置为False
         productinfo_content.setHorizontallyScrolling(false);
-        mRecyclerView =   (ListView) view.findViewById(R.id.refresh);
+//        mRecyclerView =   (ListView) view.findViewById(R.id.refresh);
         articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             //当选中某一个数据项时触发该方法
@@ -165,9 +222,87 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
              */
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                mAdapter = new ProductinfoAddAdapter( getActivity(),position);
-                //   mRecyclerView.getRefreshableView().setAdapter(mAdapter);
-                   mRecyclerView.setAdapter(mAdapter);
+
+                switch (position) {
+                    case 0:
+                    case 1:
+                        name0.setText("招聘标题");
+                        gsdz0.setText("公司地址");
+                       gsdz.setVisibility(View.VISIBLE);
+                       gsmz.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.VISIBLE);
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        spinner_nl.setVisibility(View.VISIBLE);
+                        spinner_sex.setVisibility(View.VISIBLE);
+                        spinner_dxfw.setVisibility(View.VISIBLE);
+                        spinner_xl.setVisibility(View.VISIBLE);
+
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        gsmzLayout.setVisibility(View.VISIBLE);
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.GONE);
+                        break;
+                    case 2:
+                        name0.setText("求职标题");
+                        spinner_sex.setVisibility(View.VISIBLE);
+                        spinner_dxfw.setVisibility(View.VISIBLE);
+                        spinner_xl.setVisibility(View.VISIBLE);
+                       qznlLayout.setVisibility(View.VISIBLE);
+                        sxcyLayout.setVisibility(View.VISIBLE);
+                        productinfo_sxcy.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.GONE);
+                        gsdzLayout.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.GONE);
+                        break;
+                    case 3:
+                        name0.setText("房屋出售标题");
+                        hxzj0.setText("㎡，总价");
+                        hxzh0.setText("万元 ");
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                       fwhx0Layout.setVisibility(View.VISIBLE);
+                        fwhx1Layout.setVisibility(View.VISIBLE);
+                        fwhx2Layout.setVisibility(View.VISIBLE);
+
+                        gsmzLayout.setVisibility(View.GONE);
+                        gsdz0.setText("小区名称");
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.GONE);
+                        break;
+                    case 4:
+                        name0.setText("房屋出租标题");
+                        hxzj0.setText("㎡，租金");
+                        hxzh0.setText("元");
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        fwhx0Layout.setVisibility(View.VISIBLE);
+                        fwhx1Layout.setVisibility(View.VISIBLE);
+                        fwhx2Layout.setVisibility(View.VISIBLE);
+
+                        gsmzLayout.setVisibility(View.GONE);
+                        gsdz0.setText("小区名称");
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.VISIBLE);
+                        break;
+                }
             }
 
             @Override
@@ -193,10 +328,11 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        name= (MaterialEditText)  findViewById(R.id.productinfo_name);
 //        productinfo_gsdz= (MaterialEditText)  findViewById(R.id.productinfo_gsdz);
 //        productinfo_gsmz= (MaterialEditText)  findViewById(R.id.productinfo_gsmz);
+        productinfo_sxcy= (EditText)  view.findViewById(R.id.productinfo_sxcy);
         productinfo_lxr= (EditText)  view.findViewById(R.id.productinfo_lxr);
         productinfo_lxdh= (EditText)  view.findViewById(R.id.productinfo_lxdh);
-        productinfo_lxdh.setFocusable(true);
-        productinfo_lxdh.setFocusableInTouchMode(true);
+
+
         fpxx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -242,6 +378,9 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
             }
         });
 
+//        mAdapter..setFocusable(true);
+//        editText.setFocusableInTouchMode(true);
+//        editText.requestFocus();
 //
 
 //        productinfo_content= (MaterialEditText) view.findViewById(R.id.productinfo_content);
@@ -263,19 +402,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        productinfo_qjnl= (MaterialEditText) view.findViewById(R.id. productinfo_qjnl);
 //
 //
-//        fwzs_jzmj= (MaterialEditText) view.findViewById(R.id. productinfo_jzmj);
-//        fwzs_fwzj= (MaterialEditText) view.findViewById(R.id. productinfo_fwzj);
-//
-//        fwzs_hxs= (MaterialEditText) view.findViewById(R.id. productinfo_hxs);
-//        fwzs_hxt= (MaterialEditText) view.findViewById(R.id. productinfo_hxt);
-//        fwzs_hxs= (MaterialEditText) view.findViewById(R.id. productinfo_hxs);
-//        fwzs_hxw= (MaterialEditText) view.findViewById(R.id. productinfo_hxw);
-//        fwzs_hxc= (MaterialEditText) view.findViewById(R.id. productinfo_hxc);
-//        fwzs_fwlz= (MaterialEditText) view.findViewById(R.id. productinfo_fwlz);
-//        fwzs_fwzc= (MaterialEditText) view.findViewById(R.id. productinfo_fwzc);
-//
-//
-//        fwzs_zjfs= (MaterialSpinner) view.findViewById(R.id.spin_cjfs);
+
 //
 //        gqxx_gqsl= (MaterialEditText) view.findViewById(R.id.gqxx_gqsl);
 //        gqxx_spsj= (MaterialEditText) view.findViewById(R.id.gqxx_spsj);

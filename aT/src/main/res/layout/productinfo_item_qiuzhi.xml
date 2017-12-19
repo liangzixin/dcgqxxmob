@@ -99,7 +99,7 @@
                 />
 
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="50dp"
                 android:layout_height="wrap_content"
                 android:inputType="textPersonName"
                 android:text=""
@@ -110,7 +110,7 @@
                 android:layout_toEndOf="@+id/productinfo_gsdz0"
                 android:background="@drawable/select_edittext"
                 android:layout_marginLeft="8dp"
-                android:layout_marginRight="6dp" />
+                />
             <TextView
 
                 android:id="@+id/productinfo_gsdz01"
@@ -122,45 +122,36 @@
                 />
         </LinearLayout>
         <LinearLayout
-            android:layout_width="match_parent"
+            android:layout_width="fill_parent"
             android:id="@+id/layoutnor3"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
 
             >
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
             <Spinner
                 android:id="@+id/spin_sex"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_toRightOf="@+id/spin_nl"
-                android:layout_toEndOf="@+id/spin_nl"
+                android:layout_weight="1"
 
-                />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+                android:layout_marginLeft="20dp" />
+
             <Spinner
                 android:id="@+id/spin_dxfw"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
+                android:layout_weight="1"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
                 />
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1" />
+
             <Spinner
                 android:id="@+id/spin_xl"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-
-                />
+                android:layout_weight="1"
+                android:layout_marginRight="20dp" />
 
         </LinearLayout>
 
