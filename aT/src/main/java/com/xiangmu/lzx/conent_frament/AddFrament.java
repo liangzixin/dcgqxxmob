@@ -164,6 +164,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         name = (EditText) view.findViewById(R.id.name);
         name0 = (TextView) view.findViewById(R.id.name0);
         gsdz0 = (TextView) view.findViewById(R.id.gsdz0);
+        gsmz0 = (TextView) view.findViewById(R.id.gsmz0);
         hxzj0 = (TextView) view.findViewById(R.id.hxzj0);
         hxzh0 = (TextView) view.findViewById(R.id.hxzh0);
         gsmz=(EditText) view.findViewById(R.id.productinfo_gsmz);
@@ -270,7 +271,27 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                        fwhx0Layout.setVisibility(View.VISIBLE);
                         fwhx1Layout.setVisibility(View.VISIBLE);
                         fwhx2Layout.setVisibility(View.VISIBLE);
-
+                        cjfs.setVisibility(View.GONE);
+                        gsmzLayout.setVisibility(View.GONE);
+                        gsdz0.setText("小区名称");
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                     ; fwhx3Layout.setVisibility(View.GONE);
+                        break;
+                    case 4:
+                        name0.setText("房屋出租标题");
+                        hxzj0.setText("㎡，租金");
+                        hxzh0.setText("元");
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        fwhx0Layout.setVisibility(View.VISIBLE);
+                        fwhx1Layout.setVisibility(View.VISIBLE);
+                        fwhx2Layout.setVisibility(View.VISIBLE);
+                        cjfs.setVisibility(View.VISIBLE);
                         gsmzLayout.setVisibility(View.GONE);
                         gsdz0.setText("小区名称");
                         spinner_sex.setVisibility(View.GONE);
@@ -282,17 +303,16 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         spinner_nl.setVisibility(View.GONE);
                         fwhx3Layout.setVisibility(View.GONE);
                         break;
-                    case 4:
-                        name0.setText("房屋出租标题");
-                        hxzj0.setText("㎡，租金");
-                        hxzh0.setText("元");
+                    case 5:
+                        name0.setText("供求信息标题");
+                        gsdz0.setText("公司地址");
                         gsdzLayout.setVisibility(View.VISIBLE);
-                        fwhx0Layout.setVisibility(View.VISIBLE);
-                        fwhx1Layout.setVisibility(View.VISIBLE);
-                        fwhx2Layout.setVisibility(View.VISIBLE);
-
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        cjfs.setVisibility(View.GONE);
                         gsmzLayout.setVisibility(View.GONE);
-                        gsdz0.setText("小区名称");
+
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
                         spinner_xl.setVisibility(View.GONE);
@@ -301,6 +321,94 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         productinfo_sxcy.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
                         fwhx3Layout.setVisibility(View.VISIBLE);
+                        break;
+                    case 6:
+                        name0.setText("二手信息标题");
+                        gsdz0.setText("具体地址");
+                        gsmz0.setText("成    色");
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.VISIBLE);
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        cjfs.setVisibility(View.GONE);
+                        gsmzLayout.setVisibility(View.GONE);
+
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.VISIBLE);
+
+                        break;
+                    case 7:
+                        name0.setText("其它信息标题");
+                        gsdz0.setText("公司地址");
+                        gsmz0.setText("公司名称");
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.VISIBLE);
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        cjfs.setVisibility(View.GONE);
+                        gsmzLayout.setVisibility(View.GONE);
+
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.GONE);
+
+                        break;
+                    case 8:
+                        name0.setText("铺面信息标题");
+                        gsdz0.setText("铺面地址");
+
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.GONE);
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        cjfs.setVisibility(View.GONE);
+                        gsmzLayout.setVisibility(View.GONE);
+
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.GONE);
+
+                        break;
+                    case 9:
+                        name0.setText("家具建材信息标题");
+                        gsdz0.setText("铺面地址");
+                        gsmz0.setText("家具建材商店名称");
+                        gsdzLayout.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.VISIBLE);
+                        fwhx0Layout.setVisibility(View.GONE);
+                        fwhx1Layout.setVisibility(View.GONE);
+                        fwhx2Layout.setVisibility(View.GONE);
+                        cjfs.setVisibility(View.GONE);
+                        gsmzLayout.setVisibility(View.GONE);
+
+                        spinner_sex.setVisibility(View.GONE);
+                        spinner_dxfw.setVisibility(View.GONE);
+                        spinner_xl.setVisibility(View.GONE);
+                        qznlLayout.setVisibility(View.GONE);
+                        sxcyLayout.setVisibility(View.GONE);
+                        productinfo_sxcy.setVisibility(View.GONE);
+                        spinner_nl.setVisibility(View.GONE);
+                        fwhx3Layout.setVisibility(View.VISIBLE);
+
                         break;
                 }
             }

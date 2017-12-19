@@ -419,7 +419,12 @@
                         style="@style/xinwen_item_title"
                         android:textColor="@color/black"
                         />
-
+                    <Spinner
+                        android:id="@+id/cjfs"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+ />
 
                 </LinearLayout>
                 <LinearLayout
@@ -484,24 +489,7 @@
 
 
                 </LinearLayout>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:id="@+id/fwhx3"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal"
-                    android:paddingTop="15dp"
-                    android:gravity="center|center_vertical|center_horizontal"
 
-                    >
-                    <Spinner
-                        android:id="@+id/cjfs"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-
-                        android:layout_marginLeft="10dp" />
-
-
-                </LinearLayout>
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:id="@+id/layoutnor3"
@@ -541,7 +529,38 @@
                         />
 
                 </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:id="@+id/fwhx3"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="15dp"
+                android:visibility="gone"
+                >
+                <TextView
+                    android:id="@+id/gqsl0"
+                    android:text="供求数量"
+                    android:layout_gravity="center_horizontal"
+                    style="@style/xinwen_item_title"
+                    android:textColor="@color/black"
+                    />
 
+                <EditText
+                    android:layout_width="80dp"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:text=""
+                    android:ems="10"
+                    android:id="@+id/gqsl"
+
+                    android:layout_toRightOf="@+id/gqsl0"
+                    android:layout_toEndOf="@+id/gqsl0"
+                    android:background="@drawable/select_edittext"
+
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:paddingLeft="5dp" />
+              </LinearLayout>
 
 
     <LinearLayout
