@@ -102,9 +102,9 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private Spinner articlerSpinner = null;
 
     private RecyclerView recyclerView;
-    private String name,gsmz,gsdz,sex,dxfw,nl,xl;
-//    private MaterialEditText productinfo_gsdz;
-//    private MaterialEditText productinfo_gsmz;
+    private   String name="",gsmz="",gsdz="",sex="",dxfwl="",nll="",xll="";
+    private MaterialEditText productinfo_gsdz;
+    private MaterialEditText productinfo_gsmz;
     private EditText productinfo_lxr;
     private EditText productinfo_lxdh;
     private MaterialEditText productinfo_sxcy;
@@ -209,19 +209,14 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                     new AlertDialog.Builder( getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
                     return;
                 }
-       name=mAdapter.getName();
-                gsmz=mAdapter.getGsmz();
-                gsdz=mAdapter.getGsdz();
-        dxfw=mAdapter.getSpring_dxfw();
-                nl=mAdapter.getSpringnl();
-                xl=mAdapter.getSpring_xl();
-        sex=mAdapter.getSex();
-                if(name.trim().equals("")||name==null)  {
+
+
+                if(mAdapter.getName().equals(""))  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
                 }
-                if(productinfo_content.getText().toString().trim().equals("")||productinfo_content.getText().toString().trim()==null)  {
+                if(productinfo_content.getText().toString().trim().equals(""))  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
                     return;
@@ -431,7 +426,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                     return;
                 }
        //  mAdapter.getClass().
-                if(name.trim().equals(""))  {
+                if(mAdapter.getName().trim().equals(""))  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
@@ -749,51 +744,48 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
-
+//       name=;
+//                gsmz=;
+//                gsdz=;
+//                sex=;
+//        dxfwl=;
+//                nll=;
+//                xll=;
 //          mSelectedPhotos=Entries.photos;
             RequestParams params = new RequestParams();
-            params.addQueryStringParameter("name",name);
-            params.addQueryStringParameter("gsdz",gsdz);
-            params.addQueryStringParameter("gsmz",gsmz);
+            params.addQueryStringParameter("name",mAdapter.getName());
+            params.addQueryStringParameter("gsdz",mAdapter.getGsdz());
+            params.addQueryStringParameter("gsmz",mAdapter.getGsmz());
             params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
             params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
             params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
             params.addQueryStringParameter("description",productinfo_content.getText().toString());
-            params.addQueryStringParameter("zpxx.sexrequest",sex);
-            params.addQueryStringParameter("zpxx.zpnlrequest",nl);
-            params.addQueryStringParameter("zpxx.gzdx",dxfw);
-            params.addQueryStringParameter("zpxx.edurequest",xl);
-/*
-            params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
+            params.addQueryStringParameter("zpxx.sexrequest",mAdapter.getSex());
 
+            params.addQueryStringParameter("zpxx.zpnlrequest",mAdapter.getSpringnl());
+            params.addQueryStringParameter("zpxx.gzdx",mAdapter.getSpring_dxfw());
+            params.addQueryStringParameter("zpxx.edurequest",mAdapter.getSpring_xl());
+
+
+//            params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
+//            params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
+//            params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
+//            params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
+//            params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
+//            params.addQueryStringParameter("fwcs.fwt",fwzs_hxt.getText().toString());
+//            params.addQueryStringParameter("fwcs.fww",fwzs_hxw.getText().toString());
+//            params.addQueryStringParameter("fwcs.fwzf",fwzs_hxc.getText().toString());
+//            params.addQueryStringParameter("fwcs.fwlj",fwzs_fwlz.getText().toString());
+//            params.addQueryStringParameter("fwcs.fwcj",fwzs_fwzc.getText().toString());
 //
-//            params.addQueryStringParameter("zpxx.sexrequest",spinner_sex.getSelectedItem().toString());
+//            params.addQueryStringParameter("fwcs.fzfsrequest", fwzs_zjfs.getSelectedItem().toString());
 //
-//            params.addQueryStringParameter("zpxx.zpnlrequest",spinner_nl.getSelectedItem().toString());
-//            params.addQueryStringParameter("zpxx.gzdx",spinner_dxfw.getSelectedItem().toString());
-//            params.addQueryStringParameter("zpxx.edurequest",spinner_xl.getSelectedItem().toString());
-            params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
+//            params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
 
 
 
 
-            params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
-            params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
-            params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
-            params.addQueryStringParameter("fwcs.fwt",fwzs_hxt.getText().toString());
-            params.addQueryStringParameter("fwcs.fww",fwzs_hxw.getText().toString());
-            params.addQueryStringParameter("fwcs.fwzf",fwzs_hxc.getText().toString());
-            params.addQueryStringParameter("fwcs.fwlj",fwzs_fwlz.getText().toString());
-            params.addQueryStringParameter("fwcs.fwcj",fwzs_fwzc.getText().toString());
-
-            params.addQueryStringParameter("fwcs.fzfsrequest", fwzs_zjfs.getSelectedItem().toString());
-
-            params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
-
-*/
-
-
-            if(mSelectedPhotos.size()>1) {
+            if(mSelectedPhotos.size()>0) {
                 for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
                     Log.i("F", filepath + "a0" + i + "jpg");
 
