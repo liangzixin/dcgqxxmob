@@ -1009,15 +1009,15 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
             params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
             params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
-//            params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
-//            params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
-//            params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
-//            params.addQueryStringParameter("fwcs.fwt",fwzs_hxt.getText().toString());
-//            params.addQueryStringParameter("fwcs.fww",fwzs_hxw.getText().toString());
-//            params.addQueryStringParameter("fwcs.fwzf",fwzs_hxc.getText().toString());
-//            params.addQueryStringParameter("fwcs.fwlj",fwzs_fwlz.getText().toString());
-//            params.addQueryStringParameter("fwcs.fwcj",fwzs_fwzc.getText().toString());
-//
+            params.addQueryStringParameter("fwcs.jzmj",jzmj.getText().toString());
+            params.addQueryStringParameter("fwcs.fwzj",fwzj.getText().toString());
+            params.addQueryStringParameter("fwcs.fws",hxs.getText().toString());
+            params.addQueryStringParameter("fwcs.fwt",hxt.getText().toString());
+            params.addQueryStringParameter("fwcs.fww",hxw.getText().toString());
+            params.addQueryStringParameter("fwcs.fwzf",hxc.getText().toString());
+            params.addQueryStringParameter("fwcs.fwlj",fwlz.getText().toString());
+            params.addQueryStringParameter("fwcs.fwcj",fwzc.getText().toString());
+
 //            params.addQueryStringParameter("fwcs.fzfsrequest", fwzs_zjfs.getSelectedItem().toString());
 //
 //            params.addQueryStringParameter("gqxx.gqsl",gqxx_gqsl.getText().toString());
