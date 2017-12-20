@@ -1007,8 +1007,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
             params.addQueryStringParameter("zpxx.edurequest",spinner_xl.getSelectedItem()+"");
 
 
-//            params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
-//            params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
+            params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());
+            params.addQueryStringParameter("zpxx.qjnl",productinfo_qjnl.getText().toString());
 //            params.addQueryStringParameter("fwcs.jzmj",fwzs_jzmj.getText().toString());
 //            params.addQueryStringParameter("fwcs.fwzj",fwzs_fwzj.getText().toString());
 //            params.addQueryStringParameter("fwcs.fws",fwzs_hxs.getText().toString());
