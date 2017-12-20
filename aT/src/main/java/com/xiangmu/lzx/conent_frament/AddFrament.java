@@ -95,7 +95,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private List<String> listfile = new ArrayList<String>();
     private List<File> list=new ArrayList<>();
     private List<String> imgstmppath=new ArrayList<String>();
-    private ProductinfoAddAdapter mAdapter;
+  //  private ProductinfoAddAdapter mAdapter;
     private ChooseFramentAdapter lAdapter;
     private final int REQUEST_CODE_CAMERA = 1000;
     private final int REQUEST_CODE_GALLERY = 1001;
@@ -110,7 +110,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private EditText name,gsmz,gsdz,sex,dxfwl,nll,xll;
     private TextView name0,gsmz0,gsdz0,hxzj0,hxzh0;
     private Spinner spinner_sex,spinner_dxfw,spinner_nl,spinner_xl,cjfs;
-    private LinearLayout qznlLayout,sxcyLayout,gsmzLayout,gsdzLayout,fwhx0Layout,fwhx1Layout,fwhx2Layout,fwhx3Layout;
+    private LinearLayout qznlLayout,sxcyLayout,gsmzLayout,gsdzLayout,fwhx0Layout,fwhx1Layout,fwhx2Layout,fwhx3Layout,layoutnor3;
 //    private MaterialEditText productinfo_gsdz;
 //    private MaterialEditText productinfo_gsmz;
     private EditText productinfo_lxr;
@@ -177,6 +177,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         fwhx1Layout= (LinearLayout) view.findViewById(R.id.fwhx1);
         fwhx2Layout= (LinearLayout) view.findViewById(R.id.fwhx2);
         fwhx3Layout= (LinearLayout) view.findViewById(R.id.fwhx3);
+        layoutnor3= (LinearLayout) view.findViewById(R.id.layoutnor3);
         spinner_sex= (Spinner) view.findViewById(R.id.spin_sex);
         spinner_dxfw = (Spinner) view.findViewById(R.id.spin_dxfw);
         spinner_nl = (Spinner) view.findViewById(R.id.spin_nl);
@@ -233,6 +234,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                        gsmz.setVisibility(View.VISIBLE);
                         gsmzLayout.setVisibility(View.VISIBLE);
                         gsdzLayout.setVisibility(View.VISIBLE);
+                        layoutnor3.setVisibility(View.VISIBLE);
                         spinner_nl.setVisibility(View.VISIBLE);
                         spinner_sex.setVisibility(View.VISIBLE);
                         spinner_dxfw.setVisibility(View.VISIBLE);
@@ -257,6 +259,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         productinfo_sxcy.setVisibility(View.VISIBLE);
                         gsmzLayout.setVisibility(View.GONE);
                         gsdzLayout.setVisibility(View.GONE);
+                        layoutnor3.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
                         fwhx0Layout.setVisibility(View.GONE);
                         fwhx1Layout.setVisibility(View.GONE);
@@ -273,6 +276,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         fwhx2Layout.setVisibility(View.VISIBLE);
                         cjfs.setVisibility(View.GONE);
                         gsmzLayout.setVisibility(View.GONE);
+                        layoutnor3.setVisibility(View.GONE);
                         gsdz0.setText("小区名称");
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
@@ -288,6 +292,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         hxzj0.setText("㎡，租金");
                         hxzh0.setText("元");
                         gsdzLayout.setVisibility(View.VISIBLE);
+                        layoutnor3.setVisibility(View.GONE);
                         fwhx0Layout.setVisibility(View.VISIBLE);
                         fwhx1Layout.setVisibility(View.VISIBLE);
                         fwhx2Layout.setVisibility(View.VISIBLE);
@@ -312,7 +317,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         fwhx2Layout.setVisibility(View.GONE);
                         cjfs.setVisibility(View.GONE);
                         gsmzLayout.setVisibility(View.GONE);
-
+                        layoutnor3.setVisibility(View.GONE);
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
                         spinner_xl.setVisibility(View.GONE);
@@ -333,7 +338,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         fwhx2Layout.setVisibility(View.GONE);
                         cjfs.setVisibility(View.GONE);
                         gsmzLayout.setVisibility(View.GONE);
-
+                        layoutnor3.setVisibility(View.GONE);
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
                         spinner_xl.setVisibility(View.GONE);
@@ -355,7 +360,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         fwhx2Layout.setVisibility(View.GONE);
                         cjfs.setVisibility(View.GONE);
                         gsmzLayout.setVisibility(View.GONE);
-
+                        layoutnor3.setVisibility(View.GONE);
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
                         spinner_xl.setVisibility(View.GONE);
@@ -369,7 +374,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                     case 8:
                         name0.setText("铺面信息标题");
                         gsdz0.setText("铺面地址");
-
+                        layoutnor3.setVisibility(View.GONE);
                         gsdzLayout.setVisibility(View.VISIBLE);
                         gsmzLayout.setVisibility(View.GONE);
                         fwhx0Layout.setVisibility(View.GONE);
@@ -399,7 +404,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                         fwhx2Layout.setVisibility(View.GONE);
                         cjfs.setVisibility(View.GONE);
                         gsmzLayout.setVisibility(View.GONE);
-
+                        layoutnor3.setVisibility(View.GONE);
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
                         spinner_xl.setVisibility(View.GONE);
@@ -455,12 +460,12 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 }
 
 
-                if(mAdapter.getName().equals(""))  {
+                if(name.getText().toString().trim().equals("")||name==null)  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
                 }
-                if(productinfo_content.getText().toString().trim().equals(""))  {
+                if(productinfo_content.getText().toString().trim().equals("")||productinfo_content==null)  {
                     //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
                     new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
                     return;
@@ -648,49 +653,49 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         });
 
 
-        fpxx.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //  ShareUtils.shareContent(this, xinwentitle, url);
-//               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
-//                System.out.println("name="+name.getText()+"");
-                if(articlerSpinner.getSelectedItemPosition()==0)  {
-
-                    //   Toast.makeText(this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                    new AlertDialog.Builder( getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
-                    return;
-                }
-       //  mAdapter.getClass().
-                if(mAdapter.getName().trim().equals(""))  {
-                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                    new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
-                    return;
-                }
-                if(productinfo_content.getText().toString().trim().equals(""))  {
-                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
-                    new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
-                    return;
-                }
-                if(!isMobileNO(productinfo_lxdh.getText().toString()))  {
-
-
-                    new AlertDialog.Builder( getActivity()).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
-                    return;
-                }
-
-
-                String saveproduct=xinWenURL.getSaveproductinfo();
-                Toast.makeText( getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
-                SaveData(saveproduct);
-//                int size =mSelectedPhotos.size();
-//                for (int i = 0; i < size; i++) {
-//                 listfile.add(mSelectedPhotos.get(i).getPath().toString());
+//        fpxx.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                //  ShareUtils.shareContent(this, xinwentitle, url);
+////               System.out.println("articlerSpinnerarti="+articlerSpinner.getSelectedItemPosition()+"");
+////                System.out.println("name="+name.getText()+"");
+//                if(articlerSpinner.getSelectedItemPosition()==0)  {
 //
+//                    //   Toast.makeText(this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+//                    new AlertDialog.Builder( getActivity()).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+//                    return;
+//                }
+//       //  mAdapter.getClass().
+//                if(mAdapter.getName().trim().equals(""))  {
+//                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.LENGTH_SHORT).show();
+//                    new AlertDialog.Builder( getActivity()).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
+//                    return;
+//                }
+//                if(productinfo_content.getText().toString().trim().equals(""))  {
+//                    //   Toast.makeText( getActivity(), "请选择发布类型！！", Toast.　).show();
+//                    new AlertDialog.Builder( getActivity()).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
+//                    return;
+//                }
+//                if(!isMobileNO(productinfo_lxdh.getText().toString()))  {
+//
+//
+//                    new AlertDialog.Builder( getActivity()).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
+//                    return;
 //                }
 //
-//                new Thread(runnable).start();
-            }
-        });
+//
+//                String saveproduct=xinWenURL.getSaveproductinfo();
+//                Toast.makeText( getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
+//                SaveData(saveproduct);
+////                int size =mSelectedPhotos.size();
+////                for (int i = 0; i < size; i++) {
+////                 listfile.add(mSelectedPhotos.get(i).getPath().toString());
+////
+////                }
+////
+////                new Thread(runnable).start();
+//            }
+//        });
     }
 
     public void getdata(String url) {
@@ -988,18 +993,18 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //                xll=;
 //          mSelectedPhotos=Entries.photos;
             RequestParams params = new RequestParams();
-            params.addQueryStringParameter("name",mAdapter.getName());
-            params.addQueryStringParameter("gsdz",mAdapter.getGsdz());
-            params.addQueryStringParameter("gsmz",mAdapter.getGsmz());
+            params.addQueryStringParameter("name",name.getText().toString());
+            params.addQueryStringParameter("gsdz",gsdz.getText().toString());
+            params.addQueryStringParameter("gsmz",gsmz.getText().toString());
             params.addQueryStringParameter("lxr",productinfo_lxr.getText().toString());
             params.addQueryStringParameter("lxdh",productinfo_lxdh.getText().toString());
             params.addQueryStringParameter("categoryId",articlerSpinner.getSelectedItemPosition()+"");
             params.addQueryStringParameter("description",productinfo_content.getText().toString());
-            params.addQueryStringParameter("zpxx.sexrequest",mAdapter.getSex());
+            params.addQueryStringParameter("zpxx.sexrequest",spinner_sex.getSelectedItem()+"");
 
-            params.addQueryStringParameter("zpxx.zpnlrequest",mAdapter.getSpringnl());
-            params.addQueryStringParameter("zpxx.gzdx",mAdapter.getSpring_dxfw());
-            params.addQueryStringParameter("zpxx.edurequest",mAdapter.getSpring_xl());
+            params.addQueryStringParameter("zpxx.zpnlrequest",spinner_nl.getSelectedItem()+"");
+            params.addQueryStringParameter("zpxx.gzdx",spinner_dxfw.getSelectedItem()+"");
+            params.addQueryStringParameter("zpxx.edurequest",spinner_xl.getSelectedItem()+"");
 
 
 //            params.addQueryStringParameter("zpxx.sxcy",productinfo_sxcy.getText().toString());

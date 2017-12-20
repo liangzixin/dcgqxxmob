@@ -230,12 +230,12 @@
                         android:layout_gravity="center_horizontal"
                         style="@style/xinwen_item_title"
                         android:textColor="@color/black"
-                        />
+
+                />
 
                     <EditText
                         android:layout_width="50dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
                         android:text=""
                         android:ems="10"
                         android:id="@+id/qznl"
@@ -244,6 +244,9 @@
                         android:layout_toEndOf="@+id/qznl0"
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="8dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
                         />
                     <TextView
 
@@ -274,7 +277,7 @@
                     <EditText
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/hxs"
@@ -283,7 +286,11 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
+                        />
                     <TextView
                         android:id="@+id/hxs0"
                         android:text="室"
@@ -295,7 +302,7 @@
                     <EditText
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/hxt"
@@ -305,7 +312,11 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
+                        />
                     <TextView
                         android:id="@+id/hxt0"
                         android:text="厅"
@@ -316,7 +327,7 @@
                     <EditText
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/hxc"
@@ -326,7 +337,11 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
+                        />
                     <TextView
                         android:id="@+id/hxc0"
                         android:text="厨"
@@ -337,7 +352,7 @@
                     <EditText
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/hxw"
@@ -347,7 +362,11 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
+                        />
                     <TextView
                         android:id="@+id/hxw0"
                         android:text="卫"
@@ -378,7 +397,7 @@
                     <EditText
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/fwzc"
@@ -388,7 +407,11 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
+                        />
                     <TextView
                         android:id="@+id/lc0"
                         android:text="层，位于"
@@ -400,7 +423,7 @@
                     <EditText
                         android:layout_width="40dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/fwlz"
@@ -410,7 +433,11 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:digits="1234567890"
+                        android:inputType="phone|number"
+                        android:maxLength="2"
+                        />
 
                     <TextView
                         android:id="@+id/mj00"
@@ -447,7 +474,7 @@
                     <EditText
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/jzmj"
@@ -456,7 +483,10 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:inputType="number|numberDecimal"
+                        android:maxLength="7"
+                        />
 
                     <TextView
                         android:id="@+id/hxzj0"
@@ -468,7 +498,7 @@
                     <EditText
                         android:layout_width="80dp"
                         android:layout_height="wrap_content"
-                        android:inputType="textPersonName"
+
                         android:text=""
                         android:ems="10"
                         android:id="@+id/fwzj"
@@ -478,7 +508,10 @@
                         android:background="@drawable/select_edittext"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:paddingLeft="5dp" />
+                        android:paddingLeft="5dp"
+                        android:inputType="number|numberDecimal"
+                        android:maxLength="7"
+                        />
                     <TextView
                         android:id="@+id/hxzh0"
                         android:text="万元"
@@ -548,7 +581,7 @@
                 <EditText
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+
                     android:text=""
                     android:ems="10"
                     android:id="@+id/gqsl"
@@ -559,7 +592,11 @@
 
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:paddingLeft="5dp" />
+                    android:paddingLeft="5dp"
+                    android:digits="1234567890"
+                    android:inputType="phone|number"
+                    android:maxLength="7"
+                    />
               </LinearLayout>
 
 
@@ -605,7 +642,6 @@
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textPersonName"
             android:text=""
             android:ems="10"
             android:id="@+id/productinfo_lxdh"
@@ -613,10 +649,13 @@
             android:layout_toRightOf="@+id/productinfo_lxr0"
             android:layout_toEndOf="@+id/productinfo_lxr0"
             android:background="@drawable/select_edittext"
-
             android:layout_marginLeft="5dp"
             android:layout_marginRight="5dp"
-            android:paddingLeft="5dp" />
+            android:paddingLeft="5dp"
+            android:digits="1234567890"
+            android:inputType="phone|number"
+            android:maxLength="11"
+            />
     </LinearLayout>
 
     <LinearLayout
