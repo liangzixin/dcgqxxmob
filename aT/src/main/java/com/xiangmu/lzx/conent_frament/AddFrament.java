@@ -7,6 +7,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.GridLayoutManager;
@@ -106,6 +107,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     //判断登录的标记
     static boolean flag;
     private static String user_name;
+    private static  LayoutInflater inflater0;
     private Spinner articlerSpinner = null;
 
     private RecyclerView recyclerView;
@@ -148,35 +150,56 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     List  nl= Zpnl.getValues();
     List  xl= Edu.getValues();
     List  listcjfs= Fzfs.getValues();
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+    }
 
+    @Nullable
     @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
         user_name = SearchDB.createDb(getActivity(), "userName");
-
+        inflater0=inflater;
+        try {
             if (user_name!= null&&!user_name.equals("")) {
-               flag=true;
-                view = inFlater(inflater);
-                 initView(view);
+                view = inFlater(inflater0);
+            //    initView(view);
 
+                flag=true;
                 return view;
-
-            }else {
-                            Intent intent2 = new Intent(getActivity(), LoginActivity.class);
-
+            }else{
+                Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+//
             startActivityForResult(intent2, 1000);
             getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
             }
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
 
-
-
-        return view;
+//            if (user_name!= null&&!user_name.equals("")) {
+//               flag=true;
+//                view = inFlater(inflater);
+//                 initView(view);
+//
+//                return view;
+//
+//            }else {
+//
+//            }
+//
+//
+//
+//
+//        return view;
 
     }
     public View inFlater(LayoutInflater inflater) {
         view = inflater.inflate(R.layout.productinfoadd_content, null, false);
-      //  initView(view);
+         initView(view);
         return view;
     }
 
@@ -1167,11 +1190,11 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 public void onResume() {
     //...更新View
     super.onResume();
-    if(!flag){
-
-        initView(view);
-        flag=true;
-    }
+//    if(!flag){
+//     //   view = inFlater(inflater);
+//        initView(view);
+//        flag=true;
+//    }
 
 }
     @Override
@@ -1195,7 +1218,8 @@ public void onResume() {
         switch(requestCode){
             case 1000:
                 if(resultCode == getActivity().RESULT_OK) {
-                   initView(view);
+                    view = inFlater(inflater0);
+             //       flag=false;
                 }
                 break;
             case 1:
