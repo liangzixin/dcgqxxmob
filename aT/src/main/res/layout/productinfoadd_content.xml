@@ -206,7 +206,7 @@
                         android:inputType="textPersonName"
                         android:text=""
                         android:ems="10"
-                        android:id="@+id/productinfo_sxcy"
+                        android:id="@+id/sxcy"
                         android:layout_alignParentTop="true"
                         android:layout_toRightOf="@+id/sxcy0"
                         android:layout_toEndOf="@+id/sxcy0"
