@@ -16,6 +16,7 @@ import android.widget.Toast;
 
 import com.xiangmu.lzx.BroadCastReceiver.MyReceiver;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.Setting_Utils.SearchDB;
 import com.xiangmu.lzx.conent_frament.AddFrament;
 import com.xiangmu.lzx.conent_frament.ReDianFrament;
 import com.xiangmu.lzx.conent_frament.SheZhiFrament;
@@ -31,7 +32,7 @@ public class MainActivity extends AppCompatActivity{
     private ContentViewPager contentViewPager;
     private RadioGroup contentradiogroup;
     private MyReceiver myReceiver;
-
+    private static String user_name;
     final int RESULT_CODE=101;
     final int REQUEST_CODE=1;
     private String id ="";
@@ -126,8 +127,16 @@ public class MainActivity extends AppCompatActivity{
                         contentViewPager.setCurrentItem(2);
                         break;
                     case R.id.rb_yuedu:
-                        contentViewPager.setCurrentItem(3);
-               //      EventBus.getDefault().register(new AddFrament());
+                        user_name = SearchDB.createDb(MainActivity.this, "userName");
+            if (user_name!= null&&!user_name.equals("")) {
+                contentViewPager.setCurrentItem(3);
+            }else{
+                Intent intent2 = new Intent(MainActivity.this, LoginActivity.class);
+                startActivityForResult(intent2, 1);
+          overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+            }
+
+
                         break;
                     case R.id.rb_shezhi:
                         contentViewPager.setCurrentItem(4);
@@ -206,5 +215,29 @@ public class MainActivity extends AppCompatActivity{
 //        super.onPause();
 ////        EventBus.getDefault().unregister(this);
 //    }
-
+//@Override
+//protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//// 当otherActivity中返回数据的时候，会响应此方法
+//// requestCode和resultCode必须与请求startActivityForResult()和返回setResult()的时候传入的值一致。
+//    //    if (requestCode == 1 && resultCode ==LoginActivity.RESULT_CODE) {
+//    super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
+//    user_name = SearchDB.createDb(MainActivity.this, "userName");
+////    switch (resultCode) { //resultCode为回传的标记，我在B中回传的是RESULT_OK
+////        case RESULT_OK:
+////            Bundle b=data.getExtras(); //data为B中回传的Intent
+////            String str=b.getString("str1");//str即为回传的值
+////            break;
+////        default:
+////            break;
+////    }
+//        if (requestCode == 1) {
+//           if (user_name!= null&&!user_name.equals("")) {
+//                contentViewPager.setCurrentItem(3);
+//            }else{
+//                contentViewPager.setCurrentItem(0);
+//            }
+//        }else if(requestCode == 2) {
+//            contentViewPager.setCurrentItem(4);
+//        }
+//}
 }

@@ -159,42 +159,38 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        user_name = SearchDB.createDb(getActivity(), "userName");
-        inflater0=inflater;
         try {
-            if (user_name!= null&&!user_name.equals("")) {
-                view = inFlater(inflater0);
-            //    initView(view);
-
-                flag=true;
-                return view;
-            }else{
-                Intent intent2 = new Intent(getActivity(), LoginActivity.class);
-//
-            startActivityForResult(intent2, 1000);
-            getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+            if (view == null) {
+                view =inFlater(inflater);
             }
-
+            return view;
         } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
 
+
+//        user_name = SearchDB.createDb(getActivity(), "userName");
+//        inflater0=inflater;
+//        try {
 //            if (user_name!= null&&!user_name.equals("")) {
-//               flag=true;
-//                view = inFlater(inflater);
-//                 initView(view);
+//                view = inFlater(inflater0);
+//            //    initView(view);
 //
+//                flag=true;
 //                return view;
-//
-//            }else {
-//
+//            }else{
+//                Intent intent2 = new Intent(getActivity(), LoginActivity.class);
+////
+//            startActivityForResult(intent2, 1000);
+//            getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
 //            }
 //
-//
-//
-//
-//        return view;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
+
 
     }
     public View inFlater(LayoutInflater inflater) {
@@ -1176,57 +1172,57 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        }
 //    }
 //
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-
-    }
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-
-    }
+//    @Override
+//    public void onDestroy() {
+//        super.onDestroy();
+//
+//    }
+//    @Override
+//    public void onDestroyView() {
+//        super.onDestroyView();
+//
+//    }
 @Override
 public void onResume() {
     //...更新View
     super.onResume();
 //    if(!flag){
-//     //   view = inFlater(inflater);
-//        initView(view);
+//        view = inFlater(inflater0);
+//     //   initView(view);
 //        flag=true;
+    }
+//
+//}
+//    @Override
+//    public  void onPause() {
+//        //...更新View
+//        super.onPause();
+//
 //    }
-
-}
-    @Override
-    public  void onPause() {
-        //...更新View
-        super.onPause();
-
-    }
-    @Override
-    public  void onDetach() {
-        //...更新View
-        super.onDetach();
-
-    }
-
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data){
-
-        super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
-
-        switch(requestCode){
-            case 1000:
-                if(resultCode == getActivity().RESULT_OK) {
-                    view = inFlater(inflater0);
-             //       flag=false;
-                }
-                break;
-            case 1:
-                if(resultCode ==getActivity().RESULT_OK){
-                    Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
-                }
-                break;
-        }
-    }
+//    @Override
+//    public  void onDetach() {
+//        //...更新View
+//        super.onDetach();
+//
+//    }
+//
+//    @Override
+//    public void onActivityResult(int requestCode, int resultCode, Intent data){
+//
+//        super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
+//
+//        switch(requestCode){
+//            case 1000:
+//                if(resultCode == getActivity().RESULT_OK) {
+//              //      view = inFlater(inflater0);
+//                 flag=false;
+//                }
+//                break;
+//            case 1:
+//                if(resultCode ==getActivity().RESULT_OK){
+//                    Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
+//                }
+//                break;
+//        }
+//    }
 }

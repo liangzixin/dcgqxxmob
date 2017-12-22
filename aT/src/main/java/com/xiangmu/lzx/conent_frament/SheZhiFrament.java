@@ -280,7 +280,11 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                     Log.e("------------->", "点击登陆失败后" + flag);
                     Intent intent2 = new Intent(getActivity(), LoginActivity.class);
 //                    startActivity(intent2);
-                    startActivityForResult(intent2, 1000);
+                    Bundle bundle=new Bundle();
+                    String str1="login";
+                    bundle.putString("str1", str1);
+                    intent2.putExtras(bundle);
+                    startActivityForResult(intent2, 2);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
                 break;
@@ -458,7 +462,7 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
         super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
 
         switch(requestCode){
-            case 1000:
+            case 2:
                 if(resultCode == getActivity().RESULT_OK) {
                     returnshezhi();
                 }

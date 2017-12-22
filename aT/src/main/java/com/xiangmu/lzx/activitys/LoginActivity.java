@@ -325,10 +325,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                    editor.putString("pic_path",profile_image_url);
 //                    editor.commit();//提交修改
 //                    app.setSearchDB0(true);
-                    Intent intent = new Intent();
-                    setResult(RESULT_OK, intent);
+//                    Intent intent = new Intent();
+//                    setResult(RESULT_OK, intent);
 
-                    finish();
+                 //   finish();
 //            msg.obj=profile_image_url;
 //            SheZhiFrament.handle.handleMessage(msg);
 //                                   Intent intent= new Intent();
@@ -396,7 +396,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                             }
 
                                     addcustmer(opid,userName,profile_image_url);
-       //     finish();
+            Intent intent = new Intent();
+            setResult(RESULT_OK, intent);
+
+            finish();
+//         finish();
 
         }
 
