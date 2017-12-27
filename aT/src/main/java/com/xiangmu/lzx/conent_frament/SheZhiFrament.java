@@ -281,9 +281,9 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                     Intent intent2 = new Intent(getActivity(), LoginActivity.class);
 //                    startActivity(intent2);
                     Bundle bundle=new Bundle();
-                    String str1="login";
-                    bundle.putString("str1", str1);
-                    intent2.putExtras(bundle);
+//                    String str1="login";
+//                    bundle.putString("str1", str1);
+//                    intent2.putExtras(bundle);
                     startActivityForResult(intent2, 2);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }
@@ -463,9 +463,9 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
         switch(requestCode){
             case 2:
-                if(resultCode == getActivity().RESULT_OK) {
+
                     returnshezhi();
-                }
+
                 break;
             case 1:
                 if(resultCode ==getActivity().RESULT_OK){
