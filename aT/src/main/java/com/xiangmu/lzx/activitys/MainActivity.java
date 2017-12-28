@@ -13,7 +13,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 import android.widget.RadioGroup;
 import android.widget.Toast;
-
+import android.os.Message;
 import com.xiangmu.lzx.BroadCastReceiver.MyReceiver;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
@@ -225,6 +225,9 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         if (requestCode == 1) {
            if (user_name!= null&&!user_name.equals("")) {
+               Message msg=new Message();
+               msg.what=2;
+               SheZhiFrament.handle.handleMessage(msg);
                 contentViewPager.setCurrentItem(3);
             }else{
                 contentViewPager.setCurrentItem(0);

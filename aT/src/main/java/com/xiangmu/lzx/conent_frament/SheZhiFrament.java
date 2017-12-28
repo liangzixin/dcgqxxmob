@@ -441,8 +441,11 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
                     break;
                 case 2:
-
-              //      returnshezhi();
+                    flag=false;
+                    denglujinbi();
+                    flag = true;
+//                    initView(view);
+//                    returnshezhi();
 //                    Bitmap bp= (Bitmap) msg.obj;
 //                    if (bp!=null){
 //                        picture.setImageBitmap(bp);
