@@ -8,9 +8,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -56,7 +58,7 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
 
     @Nullable
     private View contentview;
-
+    private SearchView search_viewl;
 
 
 
@@ -140,8 +142,48 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
     //初始化控件
     private View initview(LayoutInflater inflater) {
         View view = inflater.inflate(R.layout.xinwen_frament, null, false);
+
         //加载悬浮窗布局
         xuanfu_view = View.inflate(getActivity(), R.layout.popwindow_view, null);
+        search_viewl = (SearchView) view.findViewById(R.id.search_viewl);
+        //   search_viewl.setSubmitButtonEnabled(true);//是否显示确认搜索按钮
+          search_viewl.setIconified(true);//设置搜索框默认展开
+//        android:imeOptions="actionSearch" 设置点击输入法自动匹配是确认,下一条...
+//        app:defaultQueryHint="请输入关键字..."  设置输入框展开默认显示文字
+          search_viewl.onActionViewExpanded();//表示在内容为空时不显示取消的x按钮，内容不为空时显示.
+        search_viewl.clearFocus();
+        SearchView.SearchAutoComplete textView = ( SearchView.SearchAutoComplete) search_viewl.findViewById(R.id.search_src_text);
+        textView .setTextSize(16);
+        // 设置搜索文本监听
+        textView .setOnFocusChangeListener(new android.view.View.
+                OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if (hasFocus) {
+
+                    Intent intent6 = new Intent(getActivity(), SearchActivity.class);
+                    getActivity().startActivityForResult(intent6, 6);
+                     getActivity().overridePendingTransition(R.anim.zcdh_alpha_in, R.anim.zcdh_set_out);
+                    search_viewl.clearFocus();
+                } else {
+                    // 此处为失去焦点时的处理内容
+                }
+            }
+        });
+     //   textView.setClickable(true);
+//        textView.setOnClickListener(new View.OnClickListener() {
+//
+//            @Override
+//
+//            public void onClick(View arg0) {
+//                                                   Intent      intent = new Intent(getActivity(), SearchActivity.class);
+//                                                   startActivity(intent);
+//                                                   getActivity().overridePendingTransition(R.anim.zcdh_alpha_in, R.anim.zcdh_set_out);
+//
+//                                               }
+//
+//        });
+                                               // inintHotWordsData();//加载热词推荐数据
         btn_right = (ImageButton) view.findViewById(R.id.btn_right);//点击该图标弹出悬浮窗
         btn_right.setOnClickListener(new View.OnClickListener() {//点击该图标弹出悬浮窗
             @Override

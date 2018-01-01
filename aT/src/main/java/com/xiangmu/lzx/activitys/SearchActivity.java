@@ -298,7 +298,12 @@ public class SearchActivity extends AppCompatActivity {
                         public void onSuccess(ResponseInfo<String> responseInfo) {
                             if (responseInfo.result != null) {
                                 SharedPreferencesUtil.saveData(SearchActivity.this, url, responseInfo.result);
-                                paserData(2, responseInfo.result);
+                                Intent intent = new Intent();
+                                intent.putExtra("result", responseInfo.result);
+                                setResult(6, intent);//设置resultCode
+
+                                finish();
+                              //  paserData(2, responseInfo.result);
                             }
                         }
                         @Override

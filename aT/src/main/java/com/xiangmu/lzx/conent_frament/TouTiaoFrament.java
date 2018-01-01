@@ -222,11 +222,11 @@ public class TouTiaoFrament extends Fragment {
             }
         }
         View viewlunbo = null;
-        if (isrefresh&&showLunbo()!=null) {
+            if (isrefresh&&showLunbo()!=null) {
 
-            viewlunbo = showLunbo();//刷新轮播
+                viewlunbo = showLunbo();//刷新轮播
 //            toutiao_lv.getRefreshableView().addHeaderView(showLunbo());//增加轮播
-            isrefresh=false;
+                isrefresh=false;
         }
 
 

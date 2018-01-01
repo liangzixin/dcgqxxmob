@@ -279,11 +279,6 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
                 } else {
                     Log.e("------------->", "点击登陆失败后" + flag);
                     Intent intent2 = new Intent(getActivity(), LoginActivity.class);
-//                    startActivity(intent2);
-                    Bundle bundle=new Bundle();
-//                    String str1="login";
-//                    bundle.putString("str1", str1);
-//                    intent2.putExtras(bundle);
                     startActivityForResult(intent2, 2);
                     getActivity().overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
                 }

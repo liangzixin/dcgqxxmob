@@ -86,7 +86,7 @@
             android:layout_marginRight="15dp"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:text="修改"/>
+            android:text="详情"/>
 
 
         <TextView

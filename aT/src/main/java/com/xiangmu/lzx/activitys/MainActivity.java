@@ -23,6 +23,8 @@ import com.xiangmu.lzx.conent_frament.SheZhiFrament;
 import com.xiangmu.lzx.conent_frament.ShiTingFrament;
 import com.xiangmu.lzx.conent_frament.XinWenFrament;
 import com.xiangmu.lzx.utils.CommonUtil;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
+import com.xiangmu.lzx.utils.XinWenproductinfoJson;
 import com.xiangmu.lzx.viewpager.ContentViewPager;
 
 import java.util.ArrayList;
@@ -36,11 +38,14 @@ public class MainActivity extends AppCompatActivity{
     final int RESULT_CODE=101;
     final int REQUEST_CODE=1;
     private String id ="";
+    private boolean search=false;
+   private ReDianFrament reDianFrament;
+    private List<XinWen_productinfo.T18908805728Entity> toutiao_list = new ArrayList<>();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+    reDianFrament=  new ReDianFrament();
         if (android.os.Build.VERSION.SDK_INT > 9) {
             StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
             StrictMode.setThreadPolicy(policy);}
@@ -87,7 +92,7 @@ public class MainActivity extends AppCompatActivity{
     private void initdata() {
         content_list = new ArrayList<>();
         content_list.add(new XinWenFrament());
-        content_list.add(new ReDianFrament());
+        content_list.add(reDianFrament);
         content_list.add(new ShiTingFrament());
         content_list.add(new AddFrament());
         content_list.add(new SheZhiFrament());
@@ -118,15 +123,31 @@ public class MainActivity extends AppCompatActivity{
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
                 switch (i) {
                     case R.id.rb_xinwen:
+
                         contentViewPager.setCurrentItem(0);
+
                         break;
                     case R.id.rb_redian:
-                        contentViewPager.setCurrentItem(1);
+                        if(!search) {
+                            contentViewPager.setCurrentItem(1);
+                        }else{
+                            reDianFrament.getdata(reDianFrament.url,true,false);
+//                            content_list.remove(1);
+//                            content_list.set(1,new ReDianFrament());
+////                             reDianFrament=new .();
+////                            Message msg=new Message();
+////                            msg.what=1;
+////                           reDianFrament.handle.handleMessage(msg);
+//                            contentViewPager.setA
+                             contentViewPager.setCurrentItem(1);
+                        }
                         break;
                     case R.id.rb_shiting:
+
                         contentViewPager.setCurrentItem(2);
                         break;
                     case R.id.rb_yuedu:
+
                         user_name = SearchDB.createDb(MainActivity.this, "userName");
             if (user_name!= null&&!user_name.equals("")) {
                 contentViewPager.setCurrentItem(3);
@@ -139,6 +160,7 @@ public class MainActivity extends AppCompatActivity{
 
                         break;
                     case R.id.rb_shezhi:
+
                         contentViewPager.setCurrentItem(4);
                         break;
                 }
@@ -222,8 +244,9 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     //    if (requestCode == 1 && resultCode ==LoginActivity.RESULT_CODE) {
     super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
     user_name = SearchDB.createDb(MainActivity.this, "userName");
+    switch (requestCode) {
+        case 1:
 
-        if (requestCode == 1) {
            if (user_name!= null&&!user_name.equals("")) {
                Message msg=new Message();
                msg.what=2;
@@ -232,6 +255,24 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
             }else{
                 contentViewPager.setCurrentItem(0);
             }
-        }
+            break;
+        case 6:
+            String result = data.getExtras().getString("result");
+
+//            toutiao_list = new ArrayList<>();
+//            XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
+//            toutiao_list.addAll(toutiao_object.getT18908805728());
+            search=true;
+      //      reDianFrament=  new ReDianFrament();
+            contentradiogroup.clearCheck();
+
+            reDianFrament.getshowdata(result,true,true);
+
+            contentViewPager.setCurrentItem(1);
+            break;
+        default:
+            break;
+    }
+
 }
 }

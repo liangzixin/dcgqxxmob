@@ -635,8 +635,8 @@ public class SmsListEditActivity extends AppCompatActivity implements MyItemClic
                 break;
 
             case R.id.bt_replace://修改
-                Intent intentzhibo = new Intent(this, LiuyuanDetailActivity.class);
-                intentzhibo.putExtra("LiuyuanEntity", bean);
+                Intent intentzhibo = new Intent(this, SmsMessageDetailActivity.class);
+                intentzhibo.putExtra("SmsEntity", bean);
 
                 startActivity(intentzhibo);
 

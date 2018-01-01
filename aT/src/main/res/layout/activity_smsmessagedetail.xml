@@ -31,22 +31,13 @@
             android:layout_centerVertical="true"
             android:layout_toEndOf="@+id/backl"
             android:layout_toRightOf="@+id/backl"
-            android:text="短信信息修改"
+            android:text="短信信息"
             android:textColor="@color/white"
             android:textSize="15sp" />
         <TextView
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1" />
-        <TextView
-            android:id="@+id/result_addl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:text="　修  改  "
-            android:textColor="@color/white"
-            android:textSize="18sp" />
 
     </LinearLayout>
     <ScrollView
@@ -62,127 +53,129 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="序 　　 号"/>
+                android:text="序   　　 号"
+                android:textColor="@color/black"
+                />
 
             <EditText
                 android:id="@+id/sms_id"
-                android:layout_width="0dp"
+                android:layout_width="77dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:hint="Hint text"
-                android:inputType="textNoSuggestions"
                 android:singleLine="true"
+                android:background="@drawable/select_edittext"
                 android:enabled="false"
-                android:text="Input text"/>
+                />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/sms_liuyuans0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="留言内容"
+                android:text="电话号码"
                 style="@style/xinwen_item_title"
                 android:textColor="@color/black"
                 />
 
             <EditText
-                android:id="@+id/sms_content"
-                android:layout_width="0dp"
+                android:id="@+id/sms_mobile"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3.75"
-                android:hint="Hint text"
-                android:inputType="textNoSuggestions|textMultiLine"
                 android:singleLine="true"
                 android:background="@drawable/select_edittext"
-                             />
+                android:layout_marginRight="50dp" />
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/sms_password0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:layout_weight="0.30"
-                android:text="留言时间"
+
+                android:text="验证时间"
                 style="@style/xinwen_item_title"
                 android:textColor="@color/black"
                 />
 
             <EditText
-                android:id="@+id/liuyuan_time"
+                android:id="@+id/sms_sendtime"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="3.75"
-                android:hint="Single Line Input Label"
-                android:inputType="textNoSuggestions"
                 android:singleLine="true"
                 android:background="@drawable/select_edittext"
-                android:text="Input text"/>
+                android:layout_marginRight="50dp" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/sms_sfzh0"
+            android:id="@+id/sms_sfzh01"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="留　言　人"/>
+                android:text="验  证  码"
+                style="@style/xinwen_item_title"
+                android:textColor="@color/black"
+                android:id="@+id/sms_sfzh0"
+                />
 
-            <MaterialEditText
-                android:id="@+id/sms_customer"
-                android:layout_width="0dp"
+            <EditText
+                android:id="@+id/sms_captcha"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:hint="Hint text"
-                android:inputType="textNoSuggestions"
                 android:singleLine="true"
-                android:text="Input text"
-                android:enabled="false"
+                android:background="@drawable/select_edittext"
                 />
         </LinearLayout>
         <LinearLayout
             android:id="@+id/sms_realname0"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="16dp"
                 android:layout_marginEnd="16dp"
-                android:text="留言信息"/>
-            <MaterialEditText
-                android:id="@+id/sms_productinfo"
-                android:layout_width="0dp"
+                android:textColor="@color/black"
+                style="@style/xinwen_item_title"
+                android:text="验证类型"/>
+            <EditText
+                android:id="@+id/sms_smstype"
+                android:layout_width="150dp"
                 android:layout_height="wrap_content"
-                android:layout_weight="3"
-                android:hint="Hint text"
-                android:inputType="textNoSuggestions|textMultiLine"
+
                 android:singleLine="true"
-                android:text="Input text"
-                android:enabled="false"
+                android:background="@drawable/select_edittext"
+
                 />
         </LinearLayout>
            </LinearLayout>
