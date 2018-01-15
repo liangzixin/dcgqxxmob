@@ -340,16 +340,16 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_share_to_button.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_item.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_item.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\drawable\\abc_list_selector_holo_dark.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_spinner_textfield_background_material.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\drawable\\abc_spinner_textfield_background_material.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_list_selector_holo_dark.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\drawable\\abc_list_selector_holo_dark.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_item.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_item.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\radio_textcolor.xml",
@@ -588,6 +588,10 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_button_red.9.png"
     },
     {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\select_edittextl.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\select_edittextl.xml"
+    },
+    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\biankuang_stt_guide.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\biankuang_stt_guide.xml"
     },
@@ -770,6 +774,10 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_tab_right_normal.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_title_tab_right_normal.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\bluerl.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\bluerl.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_title_back_bt_normal.png",

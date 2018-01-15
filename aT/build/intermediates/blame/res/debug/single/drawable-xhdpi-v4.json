@@ -72,12 +72,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xhdpi\\icon_14.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icon_5.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xhdpi\\icon_5.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\common_signin_btn_text_disabled_focus_dark.9.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\drawable-xhdpi\\common_signin_btn_text_disabled_focus_dark.9.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icon_5.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xhdpi\\icon_5.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_spinner_mtrl_am_alpha.9.png",
@@ -100,24 +100,24 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xhdpi\\radio1.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\common_signin_btn_text_focus_dark.9.png",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\drawable-xhdpi\\common_signin_btn_text_focus_dark.9.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\icon_44.png",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable-xhdpi\\icon_44.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\common_signin_btn_text_focus_dark.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\drawable-xhdpi\\common_signin_btn_text_focus_dark.9.png"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\radio_select.png",
-        "source": "D:\\xin\\dcgqxxmob\\FJMtSortButtonLib\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\radio_select.png"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\drawable-xhdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\drawable-xhdpi-v4\\notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\radio_select.png",
+        "source": "D:\\xin\\dcgqxxmob\\FJMtSortButtonLib\\build\\intermediates\\bundles\\debug\\res\\drawable-xhdpi-v4\\radio_select.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4\\abc_list_selector_disabled_holo_dark.9.png",
