@@ -158,6 +158,7 @@
     <orderEntry type="library" exported="" name="materialedittext-0.2.0" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-11.0.4" level="project" />
     <orderEntry type="library" exported="" name="play-services-auth-api-phone-11.0.4" level="project" />
+    <orderEntry type="library" exported="" name="gson-2.8.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="support-media-compat-26.0.0-alpha1" level="project" />
     <orderEntry type="library" exported="" name="android-image-picker-v1.0.1" level="project" />
