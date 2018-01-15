@@ -5,14 +5,8 @@
     android:versionName="11.8.01" >
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="23" />
-
-    <!--
-        uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="22" />
-    -->
+        android:minSdkVersion="23"
+        android:targetSdkVersion="27" />
 
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -35,14 +29,23 @@
     <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
 
     <uses-feature android:name="android.hardware.camera" />
-    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.autofocus" /> <!-- 在SDCard中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <meta-data
+        android:name="android.support.VERSION"
+        android:value="26.0.0-alpha1" /> <!-- 拨打电话 -->
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:name="com.xiangmu.lzx.activitys.MyApplication"
         android:allowBackup="true"
+        android:debuggable="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
+        android:largeHeap="true"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.xiangmu.lzx.welcome.WelcomeActivity"
@@ -292,6 +295,18 @@
             android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
             android:windowSoftInputMode="stateAlwaysHidden" >
         </activity>
+        <activity
+            android:name="cn.finalteam.galleryfinal.PhotoSelectActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.finalteam.galleryfinal.PhotoEditActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="cn.finalteam.galleryfinal.PhotoPreviewActivity"
+            android:configChanges="orientation|keyboard|keyboardHidden|screenSize"
+            android:screenOrientation="portrait" />
     </application>
 
 </manifest>

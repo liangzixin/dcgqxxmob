@@ -1,10 +1,10 @@
 [
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
     },
     {
-        "merged": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_dark.xml",
-        "source": "D:\\ls\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.1.1\\res\\color-v11\\abc_background_cache_hint_selector_material_dark.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\color-v11\\abc_background_cache_hint_selector_material_light.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\color-v11\\abc_background_cache_hint_selector_material_light.xml"
     }
 ]

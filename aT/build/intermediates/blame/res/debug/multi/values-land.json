@@ -7,17 +7,17 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 61,
-                    "endOffset": 112
+                    "endColumn": 69,
+                    "endOffset": 120
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 55,
-                        "endColumn": 61,
-                        "endOffset": 112
+                        "endColumn": 69,
+                        "endOffset": 120
                     }
                 }
             },
@@ -25,17 +25,17 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 117,
-                    "endColumn": 71,
+                    "startOffset": 125,
+                    "endColumn": 63,
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 117,
-                        "endColumn": 71,
+                        "startOffset": 125,
+                        "endColumn": 63,
                         "endOffset": 184
                     }
                 }
@@ -45,17 +45,17 @@
                     "startLine": 4,
                     "startColumn": 4,
                     "startOffset": 189,
-                    "endColumn": 69,
-                    "endOffset": 254
+                    "endColumn": 70,
+                    "endOffset": 255
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
                         "startOffset": 189,
-                        "endColumn": 69,
-                        "endOffset": 254
+                        "endColumn": 70,
+                        "endOffset": 255
                     }
                 }
             },
@@ -63,18 +63,18 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 259,
-                    "endColumn": 63,
-                    "endOffset": 318
+                    "startOffset": 260,
+                    "endColumn": 67,
+                    "endOffset": 323
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 259,
-                        "endColumn": 63,
-                        "endOffset": 318
+                        "startOffset": 260,
+                        "endColumn": 67,
+                        "endOffset": 323
                     }
                 }
             },
@@ -82,18 +82,18 @@
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 323,
-                    "endColumn": 70,
-                    "endOffset": 389
+                    "startOffset": 328,
+                    "endColumn": 50,
+                    "endOffset": 374
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-land\\values-land.xml",
+                    "file": "D:\\xin\\dcgqxxmob\\galleryfinal\\build\\intermediates\\bundles\\debug\\res\\values-land\\values-land.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 323,
-                        "endColumn": 70,
-                        "endOffset": 389
+                        "startOffset": 55,
+                        "endColumn": 50,
+                        "endOffset": 101
                     }
                 }
             },
@@ -101,32 +101,13 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 394,
-                    "endColumn": 67,
-                    "endOffset": 457
-                },
-                "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\23.3.0\\res\\values-land\\values-land.xml",
-                    "position": {
-                        "startLine": 7,
-                        "startColumn": 4,
-                        "startOffset": 394,
-                        "endColumn": 67,
-                        "endOffset": 457
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 8,
-                    "startColumn": 4,
-                    "startOffset": 462,
-                    "endLine": 11,
+                    "startOffset": 379,
+                    "endLine": 10,
                     "endColumn": 12,
-                    "endOffset": 639
+                    "endOffset": 556
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\exploded-aar\\com.android.support\\design\\23.3.0\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.3.0.aar\\90930a63d67c2fbc211a6405d9e3156d\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
