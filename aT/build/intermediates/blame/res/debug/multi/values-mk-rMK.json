@@ -6,18 +6,18 @@
                 "to": {
                     "startLine": 2,
                     "startColumn": 4,
-                    "startOffset": 105,
-                    "endColumn": 168,
-                    "endOffset": 269
+                    "startOffset": 55,
+                    "endColumn": 103,
+                    "endOffset": 154
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 6,
+                        "startLine": 2,
                         "startColumn": 4,
-                        "startOffset": 672,
-                        "endColumn": 168,
-                        "endOffset": 836
+                        "startOffset": 55,
+                        "endColumn": 103,
+                        "endOffset": 154
                     }
                 }
             },
@@ -25,18 +25,18 @@
                 "to": {
                     "startLine": 3,
                     "startColumn": 4,
-                    "startOffset": 274,
-                    "endColumn": 164,
-                    "endOffset": 434
+                    "startOffset": 159,
+                    "endColumn": 106,
+                    "endOffset": 261
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 19,
+                        "startLine": 3,
                         "startColumn": 4,
-                        "startOffset": 2702,
-                        "endColumn": 164,
-                        "endOffset": 2862
+                        "startOffset": 159,
+                        "endColumn": 106,
+                        "endOffset": 261
                     }
                 }
             },
@@ -44,18 +44,18 @@
                 "to": {
                     "startLine": 4,
                     "startColumn": 4,
-                    "startOffset": 439,
-                    "endColumn": 112,
-                    "endOffset": 547
+                    "startOffset": 266,
+                    "endColumn": 110,
+                    "endOffset": 372
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 17,
+                        "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 2419,
-                        "endColumn": 112,
-                        "endOffset": 2527
+                        "startOffset": 266,
+                        "endColumn": 110,
+                        "endOffset": 372
                     }
                 }
             },
@@ -63,18 +63,18 @@
                 "to": {
                     "startLine": 5,
                     "startColumn": 4,
-                    "startOffset": 552,
-                    "endColumn": 135,
-                    "endOffset": 683
+                    "startOffset": 377,
+                    "endColumn": 109,
+                    "endOffset": 482
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 15,
+                        "startLine": 5,
                         "startColumn": 4,
-                        "startOffset": 2148,
-                        "endColumn": 135,
-                        "endOffset": 2279
+                        "startOffset": 377,
+                        "endColumn": 109,
+                        "endOffset": 482
                     }
                 }
             },
@@ -82,18 +82,18 @@
                 "to": {
                     "startLine": 6,
                     "startColumn": 4,
-                    "startOffset": 688,
-                    "endColumn": 171,
-                    "endOffset": 855
+                    "startOffset": 487,
+                    "endColumn": 92,
+                    "endOffset": 575
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 14,
+                        "startLine": 6,
                         "startColumn": 4,
-                        "startOffset": 1976,
-                        "endColumn": 171,
-                        "endOffset": 2143
+                        "startOffset": 487,
+                        "endColumn": 92,
+                        "endOffset": 575
                     }
                 }
             },
@@ -101,18 +101,18 @@
                 "to": {
                     "startLine": 7,
                     "startColumn": 4,
-                    "startOffset": 860,
-                    "endColumn": 133,
-                    "endOffset": 989
+                    "startOffset": 580,
+                    "endColumn": 85,
+                    "endOffset": 661
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 13,
+                        "startLine": 7,
                         "startColumn": 4,
-                        "startOffset": 1842,
-                        "endColumn": 133,
-                        "endOffset": 1971
+                        "startOffset": 580,
+                        "endColumn": 85,
+                        "endOffset": 661
                     }
                 }
             },
@@ -120,18 +120,18 @@
                 "to": {
                     "startLine": 8,
                     "startColumn": 4,
-                    "startOffset": 994,
-                    "endColumn": 163,
-                    "endOffset": 1153
+                    "startOffset": 666,
+                    "endColumn": 97,
+                    "endOffset": 759
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 4,
-                        "startOffset": 1007,
-                        "endColumn": 167,
-                        "endOffset": 1170
+                        "startOffset": 666,
+                        "endColumn": 97,
+                        "endOffset": 759
                     }
                 }
             },
@@ -139,18 +139,18 @@
                 "to": {
                     "startLine": 9,
                     "startColumn": 4,
-                    "startOffset": 1158,
-                    "endColumn": 135,
-                    "endOffset": 1289
+                    "startOffset": 764,
+                    "endColumn": 105,
+                    "endOffset": 865
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 12,
+                        "startLine": 9,
                         "startColumn": 4,
-                        "startOffset": 1706,
-                        "endColumn": 135,
-                        "endOffset": 1837
+                        "startOffset": 764,
+                        "endColumn": 105,
+                        "endOffset": 865
                     }
                 }
             },
@@ -158,18 +158,18 @@
                 "to": {
                     "startLine": 10,
                     "startColumn": 4,
-                    "startOffset": 1294,
-                    "endColumn": 198,
-                    "endOffset": 1488
+                    "startOffset": 870,
+                    "endColumn": 97,
+                    "endOffset": 963
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
                         "startLine": 10,
                         "startColumn": 4,
-                        "startOffset": 1308,
-                        "endColumn": 198,
-                        "endOffset": 1502
+                        "startOffset": 870,
+                        "endColumn": 97,
+                        "endOffset": 963
                     }
                 }
             },
@@ -177,18 +177,18 @@
                 "to": {
                     "startLine": 11,
                     "startColumn": 4,
-                    "startOffset": 1493,
-                    "endColumn": 198,
-                    "endOffset": 1687
+                    "startOffset": 968,
+                    "endColumn": 93,
+                    "endOffset": 1057
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
                         "startLine": 11,
                         "startColumn": 4,
-                        "startOffset": 1507,
-                        "endColumn": 198,
-                        "endOffset": 1701
+                        "startOffset": 968,
+                        "endColumn": 93,
+                        "endOffset": 1057
                     }
                 }
             },
@@ -196,18 +196,18 @@
                 "to": {
                     "startLine": 12,
                     "startColumn": 4,
-                    "startOffset": 1692,
-                    "endColumn": 132,
-                    "endOffset": 1820
+                    "startOffset": 1062,
+                    "endColumn": 90,
+                    "endOffset": 1148
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 9,
+                        "startLine": 12,
                         "startColumn": 4,
-                        "startOffset": 1175,
-                        "endColumn": 132,
-                        "endOffset": 1303
+                        "startOffset": 1062,
+                        "endColumn": 90,
+                        "endOffset": 1148
                     }
                 }
             },
@@ -215,18 +215,18 @@
                 "to": {
                     "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 1825,
-                    "endColumn": 171,
-                    "endOffset": 1992
+                    "startOffset": 1153,
+                    "endColumn": 92,
+                    "endOffset": 1241
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 23,
+                        "startLine": 13,
                         "startColumn": 4,
-                        "startOffset": 3294,
-                        "endColumn": 171,
-                        "endOffset": 3461
+                        "startOffset": 1153,
+                        "endColumn": 92,
+                        "endOffset": 1241
                     }
                 }
             },
@@ -234,18 +234,18 @@
                 "to": {
                     "startLine": 14,
                     "startColumn": 4,
-                    "startOffset": 1997,
-                    "endColumn": 124,
-                    "endOffset": 2117
+                    "startOffset": 1246,
+                    "endColumn": 114,
+                    "endOffset": 1356
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 22,
+                        "startLine": 14,
                         "startColumn": 4,
-                        "startOffset": 3169,
-                        "endColumn": 124,
-                        "endOffset": 3289
+                        "startOffset": 1246,
+                        "endColumn": 114,
+                        "endOffset": 1356
                     }
                 }
             },
@@ -253,18 +253,18 @@
                 "to": {
                     "startLine": 15,
                     "startColumn": 4,
-                    "startOffset": 2122,
-                    "endColumn": 165,
-                    "endOffset": 2283
+                    "startOffset": 1361,
+                    "endColumn": 111,
+                    "endOffset": 1468
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 7,
+                        "startLine": 15,
                         "startColumn": 4,
-                        "startOffset": 841,
-                        "endColumn": 165,
-                        "endOffset": 1002
+                        "startOffset": 1361,
+                        "endColumn": 111,
+                        "endOffset": 1468
                     }
                 }
             },
@@ -272,18 +272,18 @@
                 "to": {
                     "startLine": 16,
                     "startColumn": 4,
-                    "startOffset": 2288,
-                    "endColumn": 181,
-                    "endOffset": 2465
+                    "startOffset": 1473,
+                    "endColumn": 86,
+                    "endOffset": 1555
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 21,
+                        "startLine": 16,
                         "startColumn": 4,
-                        "startOffset": 2987,
-                        "endColumn": 181,
-                        "endOffset": 3164
+                        "startOffset": 1473,
+                        "endColumn": 86,
+                        "endOffset": 1555
                     }
                 }
             },
@@ -291,18 +291,18 @@
                 "to": {
                     "startLine": 17,
                     "startColumn": 4,
-                    "startOffset": 2470,
-                    "endColumn": 119,
-                    "endOffset": 2585
+                    "startOffset": 1560,
+                    "endColumn": 88,
+                    "endOffset": 1644
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 20,
+                        "startLine": 17,
                         "startColumn": 4,
-                        "startOffset": 2867,
-                        "endColumn": 119,
-                        "endOffset": 2982
+                        "startOffset": 1560,
+                        "endColumn": 88,
+                        "endOffset": 1644
                     }
                 }
             },
@@ -310,18 +310,18 @@
                 "to": {
                     "startLine": 18,
                     "startColumn": 4,
-                    "startOffset": 2590,
-                    "endColumn": 184,
-                    "endOffset": 2770
+                    "startOffset": 1649,
+                    "endColumn": 97,
+                    "endOffset": 1742
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 4,
+                        "startLine": 18,
                         "startColumn": 4,
-                        "startOffset": 310,
-                        "endColumn": 184,
-                        "endOffset": 490
+                        "startOffset": 1649,
+                        "endColumn": 97,
+                        "endOffset": 1742
                     }
                 }
             },
@@ -329,18 +329,18 @@
                 "to": {
                     "startLine": 19,
                     "startColumn": 4,
-                    "startOffset": 2775,
-                    "endColumn": 176,
-                    "endOffset": 2947
+                    "startOffset": 1747,
+                    "endColumn": 110,
+                    "endOffset": 1853
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 5,
+                        "startLine": 19,
                         "startColumn": 4,
-                        "startOffset": 495,
-                        "endColumn": 176,
-                        "endOffset": 667
+                        "startOffset": 1747,
+                        "endColumn": 110,
+                        "endOffset": 1853
                     }
                 }
             },
@@ -348,18 +348,18 @@
                 "to": {
                     "startLine": 20,
                     "startColumn": 4,
-                    "startOffset": 2952,
-                    "endColumn": 139,
-                    "endOffset": 3087
+                    "startOffset": 1858,
+                    "endColumn": 85,
+                    "endOffset": 1939
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 3,
+                        "startLine": 20,
                         "startColumn": 4,
-                        "startOffset": 170,
-                        "endColumn": 139,
-                        "endOffset": 305
+                        "startOffset": 1858,
+                        "endColumn": 85,
+                        "endOffset": 1939
                     }
                 }
             },
@@ -367,227 +367,18 @@
                 "to": {
                     "startLine": 21,
                     "startColumn": 4,
-                    "startOffset": 3092,
-                    "endColumn": 173,
-                    "endOffset": 3261
+                    "startOffset": 1944,
+                    "endColumn": 91,
+                    "endOffset": 2031
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-mk-rMK\\values-mk-rMK.xml",
                     "position": {
-                        "startLine": 33,
+                        "startLine": 21,
                         "startColumn": 4,
-                        "startOffset": 4754,
-                        "endColumn": 173,
-                        "endOffset": 4923
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 22,
-                    "startColumn": 4,
-                    "startOffset": 3266,
-                    "endColumn": 129,
-                    "endOffset": 3391
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 32,
-                        "startColumn": 4,
-                        "startOffset": 4624,
-                        "endColumn": 129,
-                        "endOffset": 4749
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 23,
-                    "startColumn": 4,
-                    "startOffset": 3396,
-                    "endColumn": 144,
-                    "endOffset": 3536
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 24,
-                        "startColumn": 4,
-                        "startOffset": 3466,
-                        "endColumn": 144,
-                        "endOffset": 3606
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 24,
-                    "startColumn": 4,
-                    "startOffset": 3541,
-                    "endColumn": 238,
-                    "endOffset": 3775
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 26,
-                        "startColumn": 4,
-                        "startOffset": 3737,
-                        "endColumn": 238,
-                        "endOffset": 3971
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 25,
-                    "startColumn": 4,
-                    "startOffset": 3780,
-                    "endColumn": 125,
-                    "endOffset": 3901
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 25,
-                        "startColumn": 4,
-                        "startOffset": 3611,
-                        "endColumn": 125,
-                        "endOffset": 3732
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 26,
-                    "startColumn": 4,
-                    "startOffset": 3906,
-                    "endColumn": 108,
-                    "endOffset": 4010
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 27,
-                        "startColumn": 4,
-                        "startOffset": 3976,
-                        "endColumn": 108,
-                        "endOffset": 4080
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 27,
-                    "startColumn": 4,
-                    "startOffset": 4015,
-                    "endColumn": 169,
-                    "endOffset": 4180
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 18,
-                        "startColumn": 4,
-                        "startOffset": 2532,
-                        "endColumn": 169,
-                        "endOffset": 2697
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 28,
-                    "startColumn": 4,
-                    "startOffset": 4185,
-                    "endColumn": 134,
-                    "endOffset": 4315
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 16,
-                        "startColumn": 4,
-                        "startOffset": 2284,
-                        "endColumn": 134,
-                        "endOffset": 2414
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 29,
-                    "startColumn": 4,
-                    "startOffset": 4320,
-                    "endColumn": 97,
-                    "endOffset": 4413
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 30,
-                        "startColumn": 4,
-                        "startOffset": 4288,
-                        "endColumn": 97,
-                        "endOffset": 4381
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 30,
-                    "startColumn": 4,
-                    "startOffset": 4418,
-                    "endColumn": 93,
-                    "endOffset": 4507
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 28,
-                        "startColumn": 4,
-                        "startOffset": 4085,
-                        "endColumn": 93,
-                        "endOffset": 4174
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 31,
-                    "startColumn": 4,
-                    "startOffset": 4512,
-                    "endColumn": 108,
-                    "endOffset": 4616
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 29,
-                        "startColumn": 4,
-                        "startOffset": 4179,
-                        "endColumn": 108,
-                        "endOffset": 4283
-                    }
-                }
-            },
-            {
-                "to": {
-                    "startLine": 32,
-                    "startColumn": 4,
-                    "startOffset": 4621,
-                    "endColumn": 237,
-                    "endOffset": 4854
-                },
-                "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-7.0.0.aar\\327d35c284adfbaac245d89d650b40ba\\res\\values-mk-rMK\\common_strings.xml",
-                    "position": {
-                        "startLine": 31,
-                        "startColumn": 4,
-                        "startOffset": 4386,
-                        "endColumn": 237,
-                        "endOffset": 4619
+                        "startOffset": 1944,
+                        "endColumn": 91,
+                        "endOffset": 2031
                     }
                 }
             }

@@ -83,8 +83,122 @@
                     "startLine": 6,
                     "startColumn": 4,
                     "startOffset": 328,
+                    "endColumn": 84,
+                    "endOffset": 408
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\values-land\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 183,
+                        "endColumn": 80,
+                        "endOffset": 263
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 7,
+                    "startColumn": 4,
+                    "startOffset": 413,
+                    "endColumn": 83,
+                    "endOffset": 492
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\values-land\\values.xml",
+                    "position": {
+                        "startLine": 5,
+                        "startColumn": 0,
+                        "startOffset": 264,
+                        "endColumn": 79,
+                        "endOffset": 343
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 8,
+                    "startColumn": 4,
+                    "startOffset": 497,
+                    "endColumn": 73,
+                    "endOffset": 566
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\values-land\\values.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 0,
+                        "startOffset": 344,
+                        "endColumn": 69,
+                        "endOffset": 413
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 9,
+                    "startColumn": 4,
+                    "startOffset": 571,
+                    "endColumn": 72,
+                    "endOffset": 639
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\values-land\\values.xml",
+                    "position": {
+                        "startLine": 7,
+                        "startColumn": 0,
+                        "startOffset": 414,
+                        "endColumn": 68,
+                        "endOffset": 482
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 10,
+                    "startColumn": 4,
+                    "startOffset": 644,
+                    "endColumn": 98,
+                    "endOffset": 738
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\values-land\\values.xml",
+                    "position": {
+                        "startLine": 8,
+                        "startColumn": 0,
+                        "startOffset": 483,
+                        "endColumn": 94,
+                        "endOffset": 577
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 11,
+                    "startColumn": 4,
+                    "startOffset": 743,
+                    "endColumn": 94,
+                    "endOffset": 833
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\values-land\\values.xml",
+                    "position": {
+                        "startLine": 9,
+                        "startColumn": 0,
+                        "startOffset": 578,
+                        "endColumn": 90,
+                        "endOffset": 668
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 12,
+                    "startColumn": 4,
+                    "startOffset": 838,
                     "endColumn": 50,
-                    "endOffset": 374
+                    "endOffset": 884
                 },
                 "from": {
                     "file": "D:\\xin\\dcgqxxmob\\galleryfinal\\build\\intermediates\\bundles\\debug\\res\\values-land\\values-land.xml",
@@ -99,12 +213,69 @@
             },
             {
                 "to": {
-                    "startLine": 7,
+                    "startLine": 13,
                     "startColumn": 4,
-                    "startOffset": 379,
-                    "endLine": 10,
+                    "startOffset": 889,
+                    "endColumn": 74,
+                    "endOffset": 959
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endColumn": 74,
+                        "endOffset": 125
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 14,
+                    "startColumn": 4,
+                    "startOffset": 964,
+                    "endColumn": 77,
+                    "endOffset": 1037
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 3,
+                        "startColumn": 4,
+                        "startOffset": 130,
+                        "endColumn": 77,
+                        "endOffset": 203
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 15,
+                    "startColumn": 4,
+                    "startOffset": 1042,
+                    "endColumn": 74,
+                    "endOffset": 1112
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\values-land\\values-land.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 4,
+                        "startOffset": 208,
+                        "endColumn": 74,
+                        "endOffset": 278
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 16,
+                    "startColumn": 4,
+                    "startOffset": 1117,
+                    "endLine": 19,
                     "endColumn": 12,
-                    "endOffset": 556
+                    "endOffset": 1294
                 },
                 "from": {
                     "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.3.0.aar\\90930a63d67c2fbc211a6405d9e3156d\\res\\values-land\\values-land.xml",

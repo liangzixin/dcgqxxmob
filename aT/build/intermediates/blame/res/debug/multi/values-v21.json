@@ -2018,9 +2018,30 @@
                     "startLine": 279,
                     "startColumn": 4,
                     "startOffset": 20451,
-                    "endLine": 281,
+                    "endLine": 280,
+                    "endColumn": 8,
+                    "endOffset": 20576
+                },
+                "from": {
+                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-appinvite-11.0.4.aar\\7a09715a281df7b875353d617d6e5199\\res\\values-v21\\values.xml",
+                    "position": {
+                        "startLine": 4,
+                        "startColumn": 0,
+                        "startOffset": 172,
+                        "endLine": 5,
+                        "endColumn": 8,
+                        "endOffset": 297
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 281,
+                    "startColumn": 4,
+                    "startOffset": 20581,
+                    "endLine": 283,
                     "endColumn": 12,
-                    "endOffset": 20621
+                    "endOffset": 20751
                 },
                 "from": {
                     "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\values-v21\\values-v21.xml",
@@ -2036,12 +2057,12 @@
             },
             {
                 "to": {
-                    "startLine": 282,
+                    "startLine": 284,
                     "startColumn": 4,
-                    "startOffset": 20626,
-                    "endLine": 286,
+                    "startOffset": 20756,
+                    "endLine": 288,
                     "endColumn": 12,
-                    "endOffset": 20962
+                    "endOffset": 21092
                 },
                 "from": {
                     "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\values-v21\\values-v21.xml",

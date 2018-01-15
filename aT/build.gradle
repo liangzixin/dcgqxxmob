@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 27
-    buildToolsVersion "27.0.2"
+    buildToolsVersion "27.0.3"
 
     aaptOptions.cruncherEnabled = false
 
@@ -47,8 +47,8 @@ dependencies {
     compile project(':FJMtSortButtonLib')
     compile project(':galleryfinal')
     //compile 'com.android.support:appcompat-v7:23.0.1'
-    compile 'com.google.code.gson:gson:2.2.1'
-    compile 'com.google.android.gms:play-services:7.0.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.google.android.gms:play-services:11.0.4'
     compile 'junit:junit:4.12'
     compile 'com.github.twiceyuan:CommonAdapter:0.5.3'
     // compile 'com.android.support:cardview-v7:25.0.2'
@@ -59,7 +59,6 @@ dependencies {
     compile 'org.greenrobot:eventbus:3.0.0'
     compile 'com.github.sd6352051:android-image-picker:v1.0.1'
     // compile 'com.github.nisrulz:recyclerviewhelper:25.4.0'
-
     //   compile 'com.android.support:cardview-v7:25.3.1'
     //      //  compile 'com.google.android.gms:play-services:11.0.4'
     //compile 'com.android.support:cardview-v7:25.3.1'
