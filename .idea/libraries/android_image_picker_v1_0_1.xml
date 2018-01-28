@@ -1,8 +1,8 @@
 <component name="libraryTable">
   <library name="android-image-picker-v1.0.1">
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-image-picker-v1.0.1.aar/2c62ee454aad78b3c5cb65c6ce249cc0/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-image-picker-v1.0.1.aar/2c62ee454aad78b3c5cb65c6ce249cc0/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-image-picker-v1.0.1.aar/856329d9b879f0198ec0ca3bc5d9688b/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/android-image-picker-v1.0.1.aar/856329d9b879f0198ec0ca3bc5d9688b/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

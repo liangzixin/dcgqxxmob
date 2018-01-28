@@ -1,15 +1,10 @@
 <component name="libraryTable">
   <library name="design-23.3.0">
-    <ANNOTATIONS>
-      <root url="jar://$PROJECT_DIR$/aT/build/intermediates/exploded-aar/com.android.support/design/23.3.0/annotations.zip!/" />
-    </ANNOTATIONS>
     <CLASSES>
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-23.3.0.aar/90930a63d67c2fbc211a6405d9e3156d/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-23.3.0.aar/90930a63d67c2fbc211a6405d9e3156d/jars/classes.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-23.3.0.aar/9ccb62dde212ffce1ac06c2e2699b863/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/design-23.3.0.aar/9ccb62dde212ffce1ac06c2e2699b863/res" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/AppData/Local/Android/Sdk/extras/android/m2repository/com/android/support/design/23.3.0/design-23.3.0-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>

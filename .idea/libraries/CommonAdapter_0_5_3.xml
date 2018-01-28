@@ -1,12 +1,10 @@
 <component name="libraryTable">
   <library name="CommonAdapter-0.5.3">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CommonAdapter-0.5.3.aar/b7a2f49ce7d6b82f7faeb9824ca3969c/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CommonAdapter-0.5.3.aar/b7a2f49ce7d6b82f7faeb9824ca3969c/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CommonAdapter-0.5.3.aar/4fdf12c2b859ee73d60a532f133185b0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/CommonAdapter-0.5.3.aar/4fdf12c2b859ee73d60a532f133185b0/jars/classes.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES>
-      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.twiceyuan/CommonAdapter/0.5.3/b35dbdb51164ad38a8bb0ac24b91e46ce382cc0/CommonAdapter-0.5.3-sources.jar!/" />
-    </SOURCES>
+    <SOURCES />
   </library>
 </component>
