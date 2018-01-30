@@ -52,8 +52,7 @@
             android:text="注册"
 
             android:textColor="@color/white"
-            android:textSize="15sp" />
-
+            android:textSize="16sp" />
     </RelativeLayout>
 
     <TextView
@@ -63,6 +62,7 @@
         android:layout_marginTop="60dp"
         android:gravity="center"
         android:text="欢迎注册东川供求信息帐户"
+        android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -149,7 +149,6 @@
             android:inputType="phone"
             android:text="" />
     </LinearLayout>
-
 
     <LinearLayout
         android:id="@+id/linearLayout2"
@@ -304,8 +303,8 @@
 
     <LinearLayout
         android:id="@+id/line2"
-        android:layout_width="260sp"
-        android:layout_height="100sp"
+        android:layout_width="291dp"
+        android:layout_height="97dp"
         android:layout_alignLeft="@+id/line1"
         android:layout_below="@+id/layoutnor4"
         android:gravity="center_vertical"
@@ -318,7 +317,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/title"
-            android:text="如果您已经注册了网易账号,或有其他可登陆第三方请您直接登录账号."
+            android:text="如果您已经注册了东川供求信息账号,或有其他可登陆第三方请您直接登录账号."
             android:textSize="12sp" />
 
         <TextView

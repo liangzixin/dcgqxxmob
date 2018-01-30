@@ -461,12 +461,15 @@ public class SheZhiFrament extends Fragment implements View.OnClickListener {
 
         switch(requestCode){
             case 2:
-
-                    returnshezhi();
-
+                Log.d("TAG", "收到返回值了收到bbbbbbbbbbbbbbbbbbbbbb");
+                   returnshezhi();
+//                flag=false;
+//                denglujinbi();
+//                flag = true;
                 break;
             case 1:
                 if(resultCode ==getActivity().RESULT_OK){
+
                     Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
                 }
                 break;

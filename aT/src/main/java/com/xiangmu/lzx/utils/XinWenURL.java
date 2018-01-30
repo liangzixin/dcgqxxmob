@@ -141,7 +141,7 @@ public class XinWenURL {
 
 
     String savearticler=HttpUtil.BASE_URL+"product!savearticlermob.action?productid=";
-    String addcustmer=HttpUtil.BASE_URL+"login!addcustmermob.action?openid=";
+    String addcustmer=HttpUtil.BASE_URL+"customerAction!addcustmermob.action?openid=";
     public String getAddcustmer() {
         return addcustmer;
     }

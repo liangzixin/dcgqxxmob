@@ -16,16 +16,23 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.xutils.common.Callback;
 import org.xutils.http.RequestParams;
 import org.xutils.x;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 //import org.xutils.x;
@@ -36,6 +43,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     private int countSeconds = 60;//倒计时秒数
     private EditText mobile_login, yanzhengma,username,pwd1,pwd2;
     private Button getyanzhengma1, login_btn,reset_btn;
+    ImageView loginimage_back;
+    LinearLayout line;
     private Context mContext;
     private String usersuccess;
     private ProgressDialog loginProgress;
@@ -53,7 +62,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
                 case 0:
                     if (countSeconds > 0) {
                         --countSeconds;
-                        loginProgress.dismiss();
+                //   loginProgress.dismiss();
                         getyanzhengma1.setText("(" + countSeconds + ")后获取验证码");
                         mCountHandler.sendEmptyMessageDelayed(0, 1000);
                     } else {
@@ -63,7 +72,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
                     }
                     break;
                 case 1:
-                    loginProgress.dismiss();
+                    //   loginProgress.dismiss();
                     JSONObject json = (JSONObject) msg.obj;
                     hanleCreateAccountResult(json);
                     break;
@@ -90,11 +99,15 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
         pwd2= (EditText) findViewById(R.id.pwd2);
         login_btn = (Button) findViewById(R.id.login_btn);
         reset_btn = (Button) findViewById(R.id.reset_btn);
+        loginimage_back = (ImageView) findViewById(R.id.loginimage_back);
+        line= (LinearLayout) findViewById(R.id.line2);
     }
     private void initEvent() {
         getyanzhengma1.setOnClickListener(this);
         login_btn.setOnClickListener(this);
         reset_btn.setOnClickListener(this);
+        loginimage_back.setOnClickListener(this);
+        line.setOnClickListener(this);
 //            mobile_login.addTextChangedListener(new TextWatcher() {
 //
 //                @Override
@@ -136,6 +149,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             case R.id.login_btn:
                 handleCreateAccount();
                 break;
+            case R.id.loginimage_back:
+                finish();
+                overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
             default:
                 break;
         }
@@ -220,7 +236,55 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
         }
         if(result == 3) {
             Toast.makeText(this, "注册成功！", Toast.LENGTH_LONG).show();
-            return;
+            String result = responseInfo.result;
+            msg.obj=result;
+            String userName="";
+            String profile_image_url ="";
+            String jinbi ="";
+            String customerid="";
+            String shezhi="";
+            String openid="";
+            List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+            try {
+                JSONObject myobject = new JSONObject(result);
+                userName= myobject.getString("username");
+                profile_image_url = myobject.getString("imageurl");
+                jinbi = myobject.getString("jinbi");
+                customerid= myobject.getString("id");
+                shezhi=myobject.getString("shezhi");
+                openid=myobject.getString("openid");
+
+                if (!myobject.isNull("shezhi")){
+                    JSONArray shezhiArray=myobject.getJSONArray("shezhi");
+                    for (int j=0;j<shezhiArray.length();j++){
+                        JSONObject shezhi0=shezhiArray.getJSONObject(j);
+                        JSONObject jsonObject = null;
+                        try {
+                            jsonObject =shezhiArray.getJSONObject(j);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                        if(jsonObject != null){
+                            Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
+                            listshezhi.add(tempAccount);
+                        }
+                    }
+
+
+                }
+
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+            String shezhi0= gson.toJson(listshezhi);
+
+            getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).putString("openid",openid).commit();
+
+            finish();
+
+
+
+            overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
         }
         if(result == 4) {
             Toast.makeText(this, "注册失败！", Toast.LENGTH_LONG).show();
@@ -230,17 +294,29 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             Toast.makeText(this, "验证码获取失败！", Toast.LENGTH_LONG).show();
             return;
         }
-        if(result ==6) {
-            Toast.makeText(this, "验证码获取成功！", Toast.LENGTH_LONG).show();
+//        if(result ==6) {
+//
+//            try {
+//                JSONObject shortmessage = json.getJSONObject("shortmessage");
+//                yanzhengma0=shortmessage.getString("captcha");
+//                // shortmessageEntity =(XinWen_productinfo.ShortmessageEntity)json.getJSONObject("shortmessage")
+//            } catch (JSONException e) {
+//                e.printStackTrace();
+//            }
+//            Toast.makeText(this, "验证码获取成功！", Toast.LENGTH_LONG).show();
+//            return;
+//        }
+        if(result ==7) {
+            Toast.makeText(this, "该手机号码今天发送验证码过多！", Toast.LENGTH_LONG).show();
             return;
         }
         if(result == 0) {
-            Toast.makeText(this, "电话号码校验正确！", Toast.LENGTH_LONG).show();
+//            Toast.makeText(this, "电话号码校验正确！", Toast.LENGTH_LONG).show();
 //            Intent intent = new Intent(this, LoginActivity.class);
 //            startActivity(intent);
 //            finish();
             requestVerifyCode();
-            return;
+//            return;
         }
 
     };
@@ -313,28 +389,21 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             }
             @Override
             public void onSuccess(String result) {
-//                    try {
-//                        JSONObject jsonObject2 = new JSONObject(result);
-//                        Log.e("tag", "jsonObject2" + jsonObject2);
-//                      //  JSONObject shortmessage =jsonObject2.getJSONObject("shortmessage");
-//                        String captcha = jsonObject2.getString("captcha");
-//                        String verifyCode = jsonObject2.getString("smstype");
-//                        Log.e("tag", "获取验证码==" + verifyCode);
-//                        if ("1".equals(verifyCode)) {
-//                            yanzhengma0=captcha;
-//
-//                         //   Toast.makeText(RegisterActivity.this, verifyCode, Toast.LENGTH_SHORT).show();
-//                            startCountBack();//这里是用来进行请求参数的
-//                        } else {
-//                            yanzhengma0="";
-//                         //   Toast.makeText(RegisterActivity.this, verifyCode, Toast.LENGTH_SHORT).show();
-//                        }
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
+
                 try {
                     JSONObject json = new JSONObject(result);
-                    sendMessage(MSG_REGISTER_RESULT, json);
+                    int result_code;
+                    result_code= json.getInt("result_code");
+
+
+                    if(result_code==6) {
+                        sendMessage(MSG_REGISTER_RESULT, json);
+                        JSONObject shortmessage = json.getJSONObject("shortmessage");
+                        yanzhengma0=shortmessage.getString("captcha");
+                        Toast.makeText(RegisterActivity.this, "验证码获取成功！", Toast.LENGTH_LONG).show();
+                    }else{
+                            sendMessage(MSG_RECHECK_RESULT, json);
+                    }
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -409,9 +478,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     }
     //使用后台校验电话号码是否注册过
     private void  isMobileUsed(final String mobile) {
-        loginProgress = new ProgressDialog(this);
-        loginProgress.setMessage("正在校验手机号...");
-        loginProgress.show();
+//        loginProgress = new ProgressDialog(this);
+//        loginProgress.setMessage("正在校验手机号...");
+//        loginProgress.show();
         RequestParams requestParams = new RequestParams("http://192.168.16.101:8086/dcgqxx/customerAction!checkuserMobile.action");
         requestParams.addBodyParameter("mobile",mobile);
         x.http().post(requestParams, new Callback.ProgressCallback<String>() {
@@ -488,29 +557,19 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             }
             @Override
             public void onSuccess(String result) {
-
+                loginProgress.dismiss();
                 try {
                     JSONObject json = new JSONObject(result);
-                    sendMessage(MSG_REGISTER_RESULT, json);
+                    sendMessage(MSG_RECHECK_RESULT, json);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
-//                if (result.equals("true")) {
-//                    used=true;
-//                    loginProgress.dismiss();
-//
-//                    Toast.makeText(RegisterActivity.this,"注册成功", Toast.LENGTH_SHORT).show();
-//
-//                } else {
-//                    Toast.makeText(RegisterActivity.this,"注册失败", Toast.LENGTH_SHORT).show();
-//
-//                  //  requestVerifyCode(mobile);
-//                }
+
 
             }
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-
+                loginProgress.dismiss();
                 Toast.makeText(RegisterActivity.this,"数据库操作异常", Toast.LENGTH_SHORT).show();
 
                 ex.printStackTrace();

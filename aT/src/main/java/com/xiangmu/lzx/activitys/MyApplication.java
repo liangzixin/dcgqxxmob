@@ -10,6 +10,8 @@ import com.umeng.socialize.UMShareAPI;
 import com.xiangmu.lzx.listener.GlideImageLoader;
 import com.xiangmu.lzx.listener.GlidePauseOnScrollListener;
 
+import org.xutils.x;
+
 import cn.finalteam.galleryfinal.CoreConfig;
 import cn.finalteam.galleryfinal.FunctionConfig;
 import cn.finalteam.galleryfinal.GalleryFinal;
@@ -48,6 +50,9 @@ public class MyApplication extends MultiDexApplication {
                 .setNoAnimcation(true)  // 设置是否显示动画
                 .build();
         GalleryFinal.init(coreConfig);
+        x.Ext.init(this);
+        //设置是否输出Debug
+        x.Ext.setDebug(true);
     }
 
     public static MediaPlayer getMediaPlayer() {

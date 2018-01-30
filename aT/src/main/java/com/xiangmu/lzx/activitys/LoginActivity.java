@@ -195,8 +195,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             case R.id.login_button://登陆按钮
                 String zhanghao = login_zhanghao.getText().toString().trim();
                 String password = login_password.getText().toString().trim();
-                if (Utils.isnumber(zhanghao)) {
-                    login1(zhanghao, password);
+//                if (Utils.isnumber(zhanghao)) {
+                 //   login1(zhanghao, password);
+                if (!zhanghao.trim().equals("")) {
+                    login(zhanghao, password);
                 } else {
                     Toast.makeText(this, "亲 ~,别闹,你账号输错了", Toast.LENGTH_SHORT).show();
                 }
@@ -209,16 +211,61 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void login(String zhanghao,String password) {
 //        ThreadPoolUtils.execute(new HttpPostThread(this, zhanghao, password, hand));
         httpUtils = new HttpUtils();
-      url= HttpUtil.BASE_URL+"login!logonmob.action?username="+zhanghao+"&password="+password;//最新
+      url= HttpUtil.BASE_URL+"customerAction!logonmob.action?username="+zhanghao+"&password="+password;//最新
         handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
-                if (responseInfo.result != null) {
-//                    SharedPreferencesUtil.saveData(LoginActivity.this, url, responseInfo.result);
-//                    paserData(1, responseInfo.result);
+                if (!responseInfo.result.equals("null")) {
+
                     Toast.makeText(LoginActivity.this, "登陆成功,恭喜你回家!!!", Toast.LENGTH_SHORT).show();
+                    String result = responseInfo.result;
+                    msg.obj=result;
+                    String userName="";
+                    String profile_image_url ="";
+                    String jinbi ="";
+                    String customerid="";
+                    String shezhi="";
+                    String openid="";
+                    List<Shezhi> listshezhi=new ArrayList<Shezhi>();
+                    try {
+                        JSONObject myobject = new JSONObject(result);
+                        userName= myobject.getString("username");
+                        profile_image_url = myobject.getString("imageurl");
+                        jinbi = myobject.getString("jinbi");
+                        customerid= myobject.getString("id");
+                        shezhi=myobject.getString("shezhi");
+                        openid=myobject.getString("openid");
+
+                        if (!myobject.isNull("shezhi")){
+                            JSONArray shezhiArray=myobject.getJSONArray("shezhi");
+                            for (int j=0;j<shezhiArray.length();j++){
+                                JSONObject shezhi0=shezhiArray.getJSONObject(j);
+                                JSONObject jsonObject = null;
+                                try {
+                                    jsonObject =shezhiArray.getJSONObject(j);
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                if(jsonObject != null){
+                                    Shezhi tempAccount = gson.fromJson(jsonObject.toString(),Shezhi.class);
+                                    listshezhi.add(tempAccount);
+                                }
+                            }
+
+
+                        }
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                    String shezhi0= gson.toJson(listshezhi);
+
+                    getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).putString("openid",openid).commit();
+
                     finish();
                     overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
+                }else{
+                    Toast.makeText(LoginActivity.this, "账号或密码不正确!请重新输入!!!", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -309,34 +356,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         e.printStackTrace();
                     }
                     String shezhi0= gson.toJson(listshezhi);
-//                    SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-                //    app = (MyApplication) getApplication(); //获得我们的应用程序MyApplication
-                 //   app.setSearchDB0(true);
 
-
-         //        PreferenceManager.getDefaultSharedPreferences(app.getCtx());
-                 //   app.getCtx().getSharedPreferences("useInfo", Context.MODE_MULTI_PROCESS);
-             //   app.getCtx().getSharedPreferences("useInfo", app.getCtx().MODE_MULTI_PROCESS).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid).putString("shezhi",shezhi0).commit();
                     getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).putString("openid",openid).commit();
-//                    finish();
-//                    SharedPreferences sharedPreferences = getSharedPreferences("useInfo", Context.MODE_PRIVATE);
-//                    SharedPreferences.Editor editor = sharedPreferences.edit();//获取编辑器
-//                    editor.putString("userName",userName);
-//                    editor.putString("pic_path",profile_image_url);
-//                    editor.commit();//提交修改
-//                    app.setSearchDB0(true);
-//                    Intent intent = new Intent();
-//                    setResult(RESULT_OK, intent);
 
                     finish();
-//            msg.obj=profile_image_url;
-//            SheZhiFrament.handle.handleMessage(msg);
-//                                   Intent intent= new Intent();
-//                                    intent.setClass(LoginActivity.this,MainActivity.class);
-//                                    intent.putExtra("fragid","lzx");
-//                                    startActivity(intent);
-//                    finish();
-//                    startActivityForResult(intent,4);
+
 
                 }
 
