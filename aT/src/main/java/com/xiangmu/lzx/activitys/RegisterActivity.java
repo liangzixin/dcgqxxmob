@@ -20,6 +20,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.google.gson.Gson;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
@@ -35,6 +36,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
 //import org.xutils.x;
 
 
@@ -52,6 +54,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     public  String  yanzhengma0="";
     public static final int MSG_REGISTER_RESULT = 0;
     public static final int MSG_RECHECK_RESULT = 1;
+    private static Gson gson = new Gson();
 
     private Handler mCountHandler = new Handler() {
         @Override
@@ -236,8 +239,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
         }
         if(result == 3) {
             Toast.makeText(this, "注册成功！", Toast.LENGTH_LONG).show();
-            String result = responseInfo.result;
-            msg.obj=result;
+//            String result = responseInfo.result;
+//            msg.obj=result;
             String userName="";
             String profile_image_url ="";
             String jinbi ="";
@@ -246,7 +249,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             String openid="";
             List<Shezhi> listshezhi=new ArrayList<Shezhi>();
             try {
-                JSONObject myobject = new JSONObject(result);
+           ///     JSONObject myobject = new JSONObject(result);
+                JSONObject myobject= json.getJSONObject("customer");
                 userName= myobject.getString("username");
                 profile_image_url = myobject.getString("imageurl");
                 jinbi = myobject.getString("jinbi");
