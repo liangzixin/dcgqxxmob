@@ -281,13 +281,8 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
                 e.printStackTrace();
             }
             String shezhi0= gson.toJson(listshezhi);
-
             getSharedPreferences("useInfo",Context.MODE_PRIVATE).edit().putString("userName", userName).putString("pic_path",profile_image_url).putString("jinbi",jinbi).putString("customerid",customerid+"").putString("shezhi",shezhi0).putString("openid",openid).commit();
-
             finish();
-
-
-
             overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
         }
         if(result == 4) {
@@ -379,6 +374,9 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
     }
     //获取验证码信息，进行验证码请求
     private void requestVerifyCode() {
+                loginProgress = new ProgressDialog(this);
+        loginProgress.setMessage("正在获取验证码...");
+        loginProgress.show();
         RequestParams requestParams = new RequestParams("http://192.168.16.101:8086/dcgqxx/customerAction!smsMob.action");
         requestParams.addBodyParameter("mobile",mobile_login.getText().toString());
         x.http().post(requestParams, new Callback.ProgressCallback<String>() {
@@ -393,7 +391,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             }
             @Override
             public void onSuccess(String result) {
-
+                loginProgress.dismiss();
                 try {
                     JSONObject json = new JSONObject(result);
                     int result_code;
@@ -416,6 +414,7 @@ public class RegisterActivity extends Activity implements View.OnClickListener{
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
                 //  Toast.makeText(RegisterActivity.this, "错误", Toast.LENGTH_SHORT).show();
+                loginProgress.dismiss();
                 yanzhengma0="";
                 ex.printStackTrace();
             }
