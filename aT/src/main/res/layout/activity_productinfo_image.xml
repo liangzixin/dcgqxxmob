@@ -75,28 +75,50 @@
             android:textSize="15sp"
             />
 
-
-        <!--MaterialEditText
-            android:id="@+id/edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="36"
-
-            android:inputType="textNoSuggestions"
-            android:singleLine="true"
-            android:text="写留言:"
-            material:floatingLabel="true"
-            />-->
-
         <ImageButton
             android:id="@+id/subbtn"
-            android:layout_width="50dp"
-            android:clickable="true"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
+            android:layout_margin="5dp"
             android:background="@android:color/transparent"
+            android:clickable="true"
             android:src="@mipmap/reply_write"
-            android:text="发送"
-            />
+            android:text="发送" />
+
+        <LinearLayout
+            android:id="@+id/mess"
+            android:layout_width="55dp"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:background="@android:color/transparent"
+            android:orientation="vertical">
+            <ImageView
+                android:layout_margin="35dp"
+                android:layout_width="35dp"
+                android:src="@mipmap/reply_num_icon"
+                android:background="@android:color/transparent"
+                android:layout_height="35dp" />
+            <!--LinearLayout
+            android:layout_width="35dp"
+            android:layout_weight="1"
+            android:layout_height="35dp">
+            <ImageView
+                android:layout_margin="35dp"
+                android:layout_width="35dp"
+                android:layout_weight="1"
+                android:background="@mipmap/reply_num_icon"
+                android:layout_height="35dp" />
+            <EditText
+                android:layout_margin="35dp"
+                android:id="@+id/messagecount"
+                android:hint=""
+                android:background="#0000"
+                android:layout_gravity="center_vertical"
+                android:textSize="13sp"
+                android:layout_width="35dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                />-->
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
