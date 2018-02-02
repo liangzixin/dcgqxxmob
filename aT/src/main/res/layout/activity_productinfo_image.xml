@@ -92,12 +92,14 @@
             android:layout_margin="5dp"
             android:background="@android:color/transparent"
             android:orientation="vertical">
+
             <ImageView
-                android:layout_margin="35dp"
-                android:layout_width="35dp"
-                android:src="@mipmap/reply_num_icon"
-                android:background="@android:color/transparent"
-                android:layout_height="35dp" />
+                android:id="@+id/messimage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginBottom="5dp"
+                android:layout_marginTop="5dp"
+                android:src="@mipmap/reply_num_icon" />
             <!--LinearLayout
             android:layout_width="35dp"
             android:layout_weight="1"
