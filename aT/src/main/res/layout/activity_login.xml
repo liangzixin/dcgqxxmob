@@ -123,70 +123,80 @@
         android:paddingTop="3sp"
         android:paddingLeft="10sp"
         android:paddingRight="10sp">
+
         <LinearLayout
-            android:background="@drawable/biankuang"
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="145sp">
+            android:layout_height="145sp"
+            android:background="@drawable/biankuang"
+            android:orientation="horizontal">
+
             <LinearLayout
                 android:id="@+id/weixin_login"
-                android:layout_margin="20sp"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20sp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:orientation="vertical"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
+
                 <ImageView
-                    android:background="@drawable/umeng_socialize_wechat"
                     android:layout_width="45sp"
-                    android:layout_height="45sp" />
+                    android:layout_height="45sp"
+                    android:background="@drawable/umeng_socialize_wechat" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/biankuang"
                     android:gravity="center"
-                    android:textSize="8sp"
                     android:text="微信账号登陆"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="8sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/xinlang_login"
-                android:layout_margin="20sp"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20sp"
                 android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="center"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
+
                 <ImageView
-                    android:background="@drawable/night_sns_sina_icon"
                     android:layout_width="45sp"
-                    android:layout_height="45sp" />
+                    android:layout_height="45sp"
+                    android:background="@drawable/night_sns_sina_icon" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/biankuang"
                     android:gravity="center"
-                    android:textSize="8sp"
                     android:text="新浪账号登陆"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="8sp" />
             </LinearLayout>
+
             <LinearLayout
                 android:id="@+id/qq_login"
-                android:layout_margin="20sp"
                 android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_margin="20sp"
                 android:layout_weight="1"
-                android:orientation="vertical"
                 android:gravity="center"
-                android:layout_height="match_parent">
+                android:orientation="vertical">
+
                 <ImageView
-                    android:background="@drawable/night_sns_qqfriends_icon"
                     android:layout_width="45sp"
-                    android:layout_height="45sp" />
+                    android:layout_height="45sp"
+                    android:background="@drawable/night_sns_qqfriends_icon" />
+
                 <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:background="@drawable/biankuang"
                     android:gravity="center"
-                    android:textSize="8sp"
                     android:text="QQ账号登陆"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                    android:textSize="8sp" />
             </LinearLayout>
         </LinearLayout>
     </RelativeLayout>

@@ -159,7 +159,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         caidan = (ImageButton) findViewById(R.id.xinwen_xi_kuanzhan_caidan);//菜单
 //        webView = null;
 //        webView = (WebView) findViewById(R.id.xinwen_xi_text_webview);
-        duotu_gentie.setText(xinWenXiData.getReplaycount() + "跟帖");
+       if(xinWenXiData.getProductArticlerList()!=null) duotu_gentie.setText(xinWenXiData.getProductArticlerList().size() + "");
         fenxiang = (ImageButton) findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
