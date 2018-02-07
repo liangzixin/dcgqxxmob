@@ -33,13 +33,12 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:clickable="true"
-            android:textSize="20sp"
-            android:textColor="#ffffff"
-            android:gravity="center"
-            android:text="点击发布"
             android:layout_marginRight="10dp"
-            />
+            android:clickable="true"
+            android:gravity="center"
+            android:text="修改"
+            android:textColor="#ffffff"
+            android:textSize="20sp" />
 
     </LinearLayout>
     <ScrollView
