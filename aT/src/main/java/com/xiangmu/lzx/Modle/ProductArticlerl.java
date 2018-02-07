@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Created by admin on 2016-08-17.
  */
-public class ProductArticler implements Serializable {
+public class ProductArticlerl implements Serializable {
     private static final long serialVersionUID = 1L;
     private Integer id;// 类别编号
     private Integer artreview_rootid;// 类别名称

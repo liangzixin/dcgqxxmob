@@ -461,12 +461,15 @@ public class XinWen_productinfo  implements Serializable{
             this.ip = ip;
         }
 
-        public static class ProductArticlerEntity{
+        public static class ProductArticlerEntity implements Serializable{
             private static final long serialVersionUID = 1L;
             private Integer id;// 类别编号
             private Integer artreview_rootid;// 类别名称
             private String artreview_content;
-          // private Customer customer;
+         // private Customer customer;
+
+            public ProductArticlerEntity() {
+            }
 
             public String getArtreview_authorid() {
                 return artreview_authorid;

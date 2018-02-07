@@ -1,5 +1,7 @@
 package com.xiangmu.lzx.Modle;
 
+import com.xiangmu.lzx.utils.XinWen_productinfo;
+
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -33,7 +35,7 @@ public class ProductInfo implements Serializable {
 //	private Integer categoryId;
 
     //private ProductArticler articlers;// 子产品类别
-    private Set<ProductArticler> articlers = new TreeSet<ProductArticler>();// 包含商品
+    private Set<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> articlers = new TreeSet<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity>();// 包含商品
     //	private Set uploadFile=new HashSet();;
     private Set<UploadFile> uploadFile = new HashSet<UploadFile>();
     private Set<Hotel> hotel= new HashSet<Hotel>();
@@ -156,10 +158,10 @@ public class ProductInfo implements Serializable {
     public Integer getRootId() {
         return rootId;
     }
-    public Set<ProductArticler> getArticlers() {
+    public Set<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> getArticlers() {
         return articlers;
     }
-    public void setArticlers(Set<ProductArticler> articlers) {
+    public void setArticlers(Set<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> articlers) {
         this.articlers = articlers;
     }
     public void setAuthorid(Integer authorid) {

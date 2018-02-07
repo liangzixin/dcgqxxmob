@@ -23,11 +23,11 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.xiangmu.lzx.Modle.ProductArticler;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.jieping.ScreenShot;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.XinWenXiData;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 
 import java.io.File;
 import java.util.List;
@@ -44,13 +44,13 @@ public class LiuyuanActivity extends AppCompatActivity {
     private TextView content;
     private TextView liuyuandate;
     private ImageButton imagebacklzx ;
-    private List<ProductArticler> liuyuanlist;
+    private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
     private DateTime dateTime=new DateTime();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
-        liuyuanlist = (List<ProductArticler>) intent.getSerializableExtra("liuyuanlist");
+        liuyuanlist = (List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity>) intent.getSerializableExtra("liuyuanlist");
 //
         if (mNightView == null) {
             mNightView = new TextView(this);

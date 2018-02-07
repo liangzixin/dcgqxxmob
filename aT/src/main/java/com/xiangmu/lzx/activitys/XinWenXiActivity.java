@@ -36,7 +36,7 @@ import com.umeng.socialize.media.UMImage;
 import com.umeng.socialize.media.UMWeb;
 import com.umeng.socialize.shareboard.SnsPlatform;
 import com.umeng.socialize.utils.ShareBoardlistener;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.jieping.ScreenShot;
@@ -46,6 +46,7 @@ import com.xiangmu.lzx.utils.SharedPreferencesUtil;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXi;
 import com.xiangmu.lzx.utils.XinWenXiData;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 import com.xiangmu.lzx.utils.XutilsGetData;
 
 import java.io.File;
@@ -78,7 +79,7 @@ public class XinWenXiActivity extends AppCompatActivity {
     private TextView duotu_count;
     private  ImageButton button;
     private EditText edit;
-    private List<ProductArticler> liuyuanlist;
+    private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
     private XinWenURL xinWenURL=new XinWenURL();
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
@@ -98,7 +99,7 @@ public class XinWenXiActivity extends AppCompatActivity {
                 return;
             }else{
 
-                ProductArticler productArticler=new ProductArticler();
+                XinWen_productinfo.T18908805728Entity.ProductArticlerEntity productArticler=new XinWen_productinfo.T18908805728Entity.ProductArticlerEntity();
 
 
                 productArticler.setArtreview_rootid(xinWenXiData.getId());

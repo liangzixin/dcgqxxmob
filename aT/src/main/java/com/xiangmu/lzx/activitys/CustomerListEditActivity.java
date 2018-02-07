@@ -31,7 +31,7 @@ import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchCustomerAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.listener.MyItemClickListener;
@@ -539,7 +539,7 @@ public class CustomerListEditActivity extends AppCompatActivity implements MyIte
 
         //传入详细页面的数据
         ArrayList<UploadFile> potolist = new ArrayList<>();
-        List<ProductArticler> liuyuenlist = new ArrayList<>();
+        List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuenlist = new ArrayList<>();
         //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(customer_list.get(pos).getId());

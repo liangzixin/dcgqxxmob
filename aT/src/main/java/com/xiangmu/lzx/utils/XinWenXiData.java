@@ -4,7 +4,7 @@ package com.xiangmu.lzx.utils;
 
 import com.xiangmu.lzx.Modle.Fwcs;
 import com.xiangmu.lzx.Modle.Gqxx;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.ProductCategory;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.Modle.Zpxx;
@@ -37,15 +37,15 @@ public class XinWenXiData implements Serializable{
     private Gqxx gqxx;
     private ArrayList<UploadFile> uploadFileList;
 
-    public List<ProductArticler> getProductArticlerList() {
+    public List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> getProductArticlerList() {
         return productArticlerList;
     }
 
-    public void setProductArticlerList(List<ProductArticler> productArticlerList) {
+    public void setProductArticlerList(List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> productArticlerList) {
         this.productArticlerList = productArticlerList;
     }
 
-    private List<ProductArticler> productArticlerList;
+    private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> productArticlerList;
     private ProductCategory ProductCategory;
 
     public ArrayList<UploadFile> getUploadFileList() {

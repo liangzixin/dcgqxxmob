@@ -23,7 +23,7 @@ import android.widget.TextView;
 
 //import com.xiangmu.wyxw.CostomAdapter.XinWenBaseAdapter;
 import com.xiangmu.lzx.CostomAdapter.XinWenproductinfoBaseAdapter;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.activitys.WebProductinfoViewActivity;
@@ -54,7 +54,7 @@ public class ReDianFrament extends Fragment {
     private int daohangtype;
     private XinWenXiData xinWenXi;
     private   ArrayList<UploadFile> potolist;
-    private  List<ProductArticler> liuyuenlist;
+    private  List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuenlist;
     private boolean search=false;
     List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> listads;//字段listads
     @Override
@@ -276,12 +276,12 @@ public class ReDianFrament extends Fragment {
         }
         xinWenXi.setUploadFileList(potolist);
         for(int i=0;i<toutiao_listview.getProductArticler().size();i++){
-            ProductArticler productArticler=new ProductArticler();
-            productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
-            productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
-            productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
-            productArticler.setCustomer(toutiao_listview.getProductArticler().get(i).getCustomer());
-            liuyuenlist.add(productArticler);
+//            ProductArticler productArticler=new ProductArticler();
+//            productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
+//            productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
+//            productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
+//            productArticler.setCustomer(toutiao_listview.getProductArticler().get(i).getCustomer());
+            liuyuenlist.add(toutiao_listview.getProductArticler().get(i));
         }
         xinWenXi.setProductArticlerList(liuyuenlist);
 //        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
@@ -590,11 +590,11 @@ public class ReDianFrament extends Fragment {
         }
         xinWenXi.setUploadFileList(potolist);
         for(int i=0;i<toutiao_listview.getProductArticler().size();i++){
-            ProductArticler productArticler=new ProductArticler();
-            productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
-            productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
-            productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
-            liuyuenlist.add(productArticler);
+//            ProductArticler productArticler=new ProductArticler();
+//            productArticler.setArtreview_authorid(toutiao_listview.getProductArticler().get(i).getArtreview_authorid());
+//            productArticler.setArtreview_time(toutiao_listview.getProductArticler().get(i).getArtreview_time());
+//            productArticler.setArtreview_content(toutiao_listview.getProductArticler().get(i).getArtreview_content());
+            liuyuenlist.add(toutiao_listview.getProductArticler().get(i));
         }
         xinWenXi.setProductArticlerList(liuyuenlist);
         int lanmutype=1;

@@ -43,7 +43,7 @@ import com.xiangmu.lzx.Modle.Article;
 import com.xiangmu.lzx.Modle.Customer;
 import com.xiangmu.lzx.Modle.Liuyuan;
 import com.xiangmu.lzx.Modle.Photo;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
@@ -58,6 +58,7 @@ import com.xiangmu.lzx.utils.MySqlOpenHelper;
 import com.xiangmu.lzx.utils.SharedPreferencesUtil;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXiData;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 import com.xiangmu.lzx.utils.XutilsGetData;
 
 import org.json.JSONArray;
@@ -74,7 +75,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
-    private List<ProductArticler> liuyuanlist;
+    private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     ImageButton fenxiang;
@@ -138,9 +139,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 
             adapter.add(mockPhoto(i));
         }
-        for (int i = 0; i <liuyuanlist.size(); i++) {
+        for (int j = 0; j <liuyuanlist.size(); j++) {
 
-            adapter.add(mockLiuyuan(i));
+            adapter.add(mockLiuyuan(j));
         }
         button.setOnClickListener(c);
     }
@@ -291,7 +292,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 return;
             }else{
 
-                ProductArticler productArticler=new ProductArticler();
+                XinWen_productinfo.T18908805728Entity.ProductArticlerEntity productArticler=new XinWen_productinfo.T18908805728Entity.ProductArticlerEntity();
                 productArticler.setArtreview_rootid(xinWenXiData.getId());
                 productArticler.setArtreview_content(msg);
                 DateTime dateTime =new DateTime();
@@ -530,11 +531,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     public Liuyuan mockLiuyuan(int seed) {
         Liuyuan liuyuan= new Liuyuan();
 
-        liuyuan.liuyuan_content=((ProductArticler)liuyuanlist.get(seed)).getArtreview_content();
-        liuyuan.liuyuan_id=((ProductArticler)liuyuanlist.get(seed)).getArtreview_authorid();
-        liuyuan.liuyuan_date=((ProductArticler)liuyuanlist.get(seed)).getArtreview_time();
-        liuyuan.liuyuan_name=((ProductArticler)liuyuanlist.get(seed)).getCustomer().getUsername();
-        liuyuan.liuyuan_imag=((ProductArticler)liuyuanlist.get(seed)).getCustomer().getImageurl();
+        liuyuan.liuyuan_content=((XinWen_productinfo.T18908805728Entity.ProductArticlerEntity)liuyuanlist.get(seed)).getArtreview_content();
+        liuyuan.liuyuan_id=((XinWen_productinfo.T18908805728Entity.ProductArticlerEntity)liuyuanlist.get(seed)).getArtreview_authorid();
+        liuyuan.liuyuan_date=((XinWen_productinfo.T18908805728Entity.ProductArticlerEntity)liuyuanlist.get(seed)).getArtreview_time();
+        liuyuan.liuyuan_name=((XinWen_productinfo.T18908805728Entity.ProductArticlerEntity)liuyuanlist.get(seed)).getCustomer().getUsername();
+        liuyuan.liuyuan_imag=((XinWen_productinfo.T18908805728Entity.ProductArticlerEntity)liuyuanlist.get(seed)).getCustomer().getImageurl();
         return liuyuan;
     }
     public Photo mockPhoto(int seed) {

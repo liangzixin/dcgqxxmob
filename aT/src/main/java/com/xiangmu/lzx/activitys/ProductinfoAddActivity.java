@@ -43,7 +43,7 @@ import com.xiangmu.lzx.Modle.Edu;
 import com.xiangmu.lzx.Modle.Fzfs;
 import com.xiangmu.lzx.Modle.Liuyuan;
 import com.xiangmu.lzx.Modle.Photo;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.ProductCategory;
 import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.UploadFile;
@@ -57,6 +57,7 @@ import com.xiangmu.lzx.utils.PictureUtil;
 import com.xiangmu.lzx.utils.Upload;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXiData;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 import com.xiangmu.lzx.utils.XutilsGetData;
 
 import org.greenrobot.eventbus.EventBus;
@@ -78,7 +79,7 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
-    private List<ProductArticler> liuyuanlist;
+    private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     private RecyclerView mRecyclerView;
@@ -895,9 +896,9 @@ public class ProductinfoAddActivity extends AppCompatActivity implements ChooseA
     public Liuyuan mockLiuyuan(int seed) {
         Liuyuan liuyuan= new Liuyuan();
 
-        liuyuan.liuyuan_content=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_content();
-        liuyuan.liuyuan_id=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_authorid();
-        liuyuan.liuyuan_date=((List<ProductArticler>)liuyuanlist.get(0)).get(seed).getArtreview_time();
+        liuyuan.liuyuan_content=((List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity>)liuyuanlist.get(0)).get(seed).getArtreview_content();
+        liuyuan.liuyuan_id=((List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity>)liuyuanlist.get(0)).get(seed).getArtreview_authorid();
+        liuyuan.liuyuan_date=((List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity>)liuyuanlist.get(0)).get(seed).getArtreview_time();
 
         return liuyuan;
     }

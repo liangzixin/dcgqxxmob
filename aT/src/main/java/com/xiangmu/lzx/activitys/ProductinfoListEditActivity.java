@@ -31,7 +31,7 @@ import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchProductinfoAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshBase;
@@ -545,7 +545,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
 
         //传入详细页面的数据
         ArrayList<UploadFile> potolist = new ArrayList<>();
-        List<ProductArticler> liuyuenlist = new ArrayList<>();
+        List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuenlist = new ArrayList<>();
         //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(toutiao_list.get(pos).getId());
@@ -575,11 +575,12 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
         }
         xinWenXi.setUploadFileList(potolist);
         for (int i = 0; i < toutiao_list.get(pos).getProductArticler().size(); i++) {
-            ProductArticler productArticler = new ProductArticler();
-            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
-            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
-            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
-            liuyuenlist.add(productArticler);
+           XinWen_productinfo.T18908805728Entity.ProductArticlerEntity productArticler = new XinWen_productinfo.T18908805728Entity.ProductArticlerEntity();
+           productArticler=toutiao_list.get(pos).getProductArticler().get(i);
+//            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
+//            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
+//            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
+            liuyuenlist.add(toutiao_list.get(pos).getProductArticler().get(i));
         }
         xinWenXi.setProductArticlerList(liuyuenlist);
 //        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();
@@ -604,7 +605,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
                 //  String urlzhibo = toutiao_list.get(pos).getUrl();
                 // String urlzhibo = toutiao_list.get(pos).getName();
 //                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
-                xinWenXi.setUrl("bbbbb");//详细页面url
+                xinWenXi.setUrl("bbbbbgfg");//详细页面url
                 //跳转到详细页
                 //      Intent intentzhibo = new Intent(ProductinfoListEditActivity.this, WebProductinfoViewActivity.class);
                 Intent intentzhibo = new Intent(this, WebProductinfoViewActivity.class);

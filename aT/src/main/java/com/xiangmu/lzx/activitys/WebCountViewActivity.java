@@ -28,7 +28,7 @@ import com.umeng.socialize.UMShareListener;
 import com.umeng.socialize.media.UMImage;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.DateCount;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
@@ -36,6 +36,7 @@ import com.xiangmu.lzx.holder.DateCountHolder;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
 import com.xiangmu.lzx.utils.XinWenURL;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -48,7 +49,7 @@ public class WebCountViewActivity extends AppCompatActivity {
     private XinWenURL xinWenURL=new XinWenURL();
   //  private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
-    private List<ProductArticler> liuyuanlist;
+    private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     ImageButton fenxiang;

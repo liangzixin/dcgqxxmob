@@ -29,7 +29,7 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.CostomAdapter.MyGridViewAadapter;
 import com.xiangmu.lzx.CostomAdapter.SearchResultAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
-import com.xiangmu.lzx.Modle.ProductArticler;
+
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.pullrefreshview.PullToRefreshListView;
@@ -379,7 +379,7 @@ public class SearchActivity extends AppCompatActivity {
 
         //传入详细页面的数据
         ArrayList<UploadFile> potolist = new ArrayList<>();
-        List<ProductArticler> liuyuenlist = new ArrayList<>();
+        List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuenlist = new ArrayList<>();
         //List<PhotoImage> potolist2 = new ArrayList<>();
         XinWenXiData xinWenXi = new XinWenXiData();
         xinWenXi.setId(toutiao_list.get(pos).getId());
@@ -409,11 +409,11 @@ public class SearchActivity extends AppCompatActivity {
         }
         xinWenXi.setUploadFileList(potolist);
         for(int i=0;i<toutiao_list.get(pos).getProductArticler().size();i++){
-            ProductArticler productArticler=new ProductArticler();
-            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
-            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
-            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
-            liuyuenlist.add(productArticler);
+//            ProductArticler productArticler=new ProductArticler();
+//            productArticler.setArtreview_authorid(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_authorid());
+//            productArticler.setArtreview_time(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_time());
+//            productArticler.setArtreview_content(toutiao_list.get(pos).getProductArticler().get(i).getArtreview_content());
+            liuyuenlist.add(toutiao_list.get(pos).getProductArticler().get(i));
         }
         xinWenXi.setProductArticlerList(liuyuenlist);
 //        List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> potolist0 =new ArrayList<>();

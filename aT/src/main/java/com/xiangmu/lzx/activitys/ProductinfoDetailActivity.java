@@ -1,132 +1,223 @@
 package com.xiangmu.lzx.activitys;
+import android.app.ProgressDialog;
+import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Handler;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemSelectedListener;
+import android.widget.ImageButton;
+import android.widget.MaterialEditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
-//import android.app.AlertDialog;
-//import android.app.ProgressDialog;
-//import android.app.SearchManager;
-//import android.content.Context;
-//import android.content.DialogInterface;
-//import android.content.Intent;
-//import android.os.Bundle;
-//import android.os.Handler;
-//import android.os.Looper;
-//import android.os.Message;
-//import android.support.v4.internal.view.SupportMenuItem;
-//import android.support.v4.view.MenuItemCompat;
-//import android.support.v7.widget.SearchView;
-//import android.util.Log;
-//import android.view.Menu;
-//import android.view.MenuItem;
-//import android.view.View;
-//import android.widget.AdapterView;
-//import android.widget.AdapterView.OnItemSelectedListener;
-//import android.widget.ArrayAdapter;
-//import android.widget.ImageView;
-//import android.widget.MaterialEditText;
-//import android.widget.Spinner;
-//import android.widget.TextView;
-//import android.widget.Toast;
-//
-//import com.scme.order.model.Tusers;
-//import com.scme.order.model.Txxx;
-//import com.scme.order.service.TxxxService;
-//import com.scme.order.util.MyAppVariable;
-//
-//import java.util.HashMap;
-//import java.util.List;
-//import java.util.Map;
-//
-//import butterknife.ButterKnife;
-//import butterknife.InjectView;
+import com.lidroid.xutils.HttpUtils;
+import com.lidroid.xutils.exception.HttpException;
+import com.lidroid.xutils.http.HttpHandler;
+import com.lidroid.xutils.http.RequestParams;
+import com.lidroid.xutils.http.ResponseInfo;
+import com.lidroid.xutils.http.callback.RequestCallBack;
+import com.lidroid.xutils.http.client.HttpRequest;
+import com.litao.android.lib.entity.PhotoEntry;
+import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
+import com.xiangmu.lzx.Modle.Photo;
+import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.holder.PhotoHolder;
+import com.xiangmu.lzx.utils.XinWenURL;
+import com.xiangmu.lzx.utils.XinWenXiData;
+import com.xiangmu.lzx.utils.XinWen_productinfo;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+
+
+public class ProductinfoDetailActivity extends AppCompatActivity implements OnItemSelectedListener{
+    Context context =ProductinfoDetailActivity.this;
+    private ProgressDialog progressDialog;
+    private XinWen_productinfo.CustomerEntity customerEntity;
+
+    private Handler testHandler;
+
+    private List<PhotoEntry> mSelectedPhotos=new ArrayList<PhotoEntry>();
+    private String filepath;
+    private List<String> imgstmppath=new ArrayList<String>();
+    private List<File> list=new ArrayList<>();
+
+    private  Boolean otherquery=false;
+    private XinWenXiData xinWenXiData;
+    private HttpHandler<String> handler;
+    private HttpUtils httpUtils= new HttpUtils();
+    private    String url=null;
+    private RequestParams params;
+
+    private LinearLayoutManager layoutManager;
+    private GridLayoutManager gridLayoutManager;
+    private android.support.v7.widget.StaggeredGridLayoutManager StaggeredGridLayoutManager;
+    private XinWenURL xinWenURL = new XinWenURL();
+    MultiTypeAdapter adapterlzx;
+    @InjectView(R.id.customer_id) TextView customer_id;
+    @InjectView(R.id.customer_name)   MaterialEditText customer_name;
+    @InjectView(R.id.customer_password) TextView password;
+    @InjectView(R.id.customer_sfzh) MaterialEditText sfzh;
+    @InjectView(R.id.backl)    ImageButton backl;
+    @InjectView(R.id.result_addl) TextView addl;
+    @InjectView(R.id.customer_realname) TextView realname;
+    @InjectView(R.id.customer_address) TextView address;
+    @InjectView(R.id.customer_email) TextView email;
+    @InjectView(R.id.customer_mobile) TextView mobile;
+    @InjectView(R.id.customer_registerdate) TextView registerdate;
+    @InjectView(R.id.customer_starttime) TextView starttime;
+    @InjectView(R.id.customer_logintime) TextView logintime;
+    @InjectView(R.id.recyclerViewlzx)
+    RecyclerView recyclerViewlzx;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_customerdetail);
+
+        //  EventBus.getDefault().register(this);
+
+        ButterKnife.inject(this);
+
+        //获得绑定参数
+        Intent intent = getIntent();
+        customerEntity= (XinWen_productinfo.CustomerEntity) intent.getSerializableExtra("CustomerEntity");
+        assert recyclerViewlzx != null;
+        recyclerViewlzx.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));
+        adapterlzx = new MultiTypeAdapter(this);
+        adapterlzx.registerViewType(Photo.class, PhotoHolder.class);
+        recyclerViewlzx.setAdapter(adapterlzx);
+
+        progressDialog = new ProgressDialog(this);
+        progressDialog.setMessage("数据加载中  请稍后...");
+        progressDialog.show();
+
+        showView(customerEntity);
+
+        progressDialog.dismiss();
+        inintClick();
+    }
+    //初始化各监听事件
+    private void inintClick() {
+        backl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ProductinfoDetailActivity.this.finish();
+                //    finish();
+            }
+        });
+        addl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+//                Toast.makeText(this, "单击了添加按钮", Toast.LENGTH_SHORT).show();
+                //      new AlertDialog.Builder(FilterListEditActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+                url=xinWenURL.getRepareCustomerMob();
+                SaveData(url);
+            }
+        });
+    }
+    //    private void mThreadmy() {
 //
-//import  android.support.v4.view.MenuItemCompat.OnActionExpandListener;
-public class ProductinfoDetailActivity {
-//public class ProductinfoDetailActivity extends BaseActivity implements OnItemSelectedListener{
-    /*
-//    private ProgressDialog progressDialog;
-//    private Txxx txxx;
-//    private List<Txxx> txxxs;
-//    private int txxxid;
-//    private Spinner spinner;
-//    private Spinner spinner1;
-//    private Tusers tusers;
-//    private Handler testHandler;
-//    private ArrayAdapter<String> adapter;
-//    private ArrayAdapter<String> adapter1;
-//    private MyAppVariable myAppVariable;
+//        handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
+//            @Override
+//            public void onSuccess(ResponseInfo<String> responseInfo) {
 //
-//    private static final String[] m={"请选择认证方式","填表认证","本人认证","代认证"};
-//    private static final String[] m1={"请选择认证时间","201602","201603","201604","201605"};
+//                if (responseInfo.result != null) {
+//                    progressDialog.dismiss();
+//                    JSONObject myobject =null;
+//                    String listArray=null;
 //
-//    @InjectView(R.id.img_1) ImageView img1;
-//    @InjectView(R.id.img_2) ImageView img2;
-//    @InjectView(R.id.img_3) ImageView img3;
-//    @InjectView(R.id.bmmc) TextView bmmc;
-//    @InjectView(R.id.grbh) MaterialEditText grbh;
-//    @InjectView(R.id.name) MaterialEditText name;
-//    @InjectView(R.id.sfzh) MaterialEditText sfzh;
-//    @InjectView(R.id.hkdz) MaterialEditText hkdz;
-//    @InjectView(R.id.czdz) MaterialEditText czdz;
-//    @InjectView(R.id.lxdh1) MaterialEditText lxdh1;
-//    @InjectView(R.id.lxdh2) MaterialEditText lxdh2;
-//    @InjectView(R.id.lxdh3) MaterialEditText lxdh3;
-////    @InjectView(R.id.rzjk) MaterialEditText rz13jk;
-//    @InjectView(R.id.rzsj) MaterialEditText rz13sj;
-//    @InjectView(R.id.rzzb) MaterialEditText rz13zb;
-//    @InjectView(R.id.rzdd) MaterialEditText rz13dd;
-////    @InjectView(R.id.action_txxxdetail_mainrz) TextView  rz;
-//
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_txxxdetail);
-//
-//        ButterKnife.inject(this);
-//
-//        //获得绑定参数
-//
-//        myAppVariable=(MyAppVariable)getApplication(); //获得自定义的应用程序MyAppVariable
-//        tusers=myAppVariable.getTusers();
-//        txxxid=myAppVariable.getTxxxid();
-//        spinner = (Spinner) findViewById(R.id.rzjk);
-//
-//        adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,m);
-//
-//        adapter.setDropDownViewResource(android.R.layout.simple_list_item_multiple_choice);
-//
-//        spinner.setAdapter(adapter);
-//
-//        spinner.setOnItemSelectedListener(this);
-//
-//        progressDialog = new ProgressDialog(this);
-//        progressDialog.setMessage("数据加载中  请稍后...");
-//        progressDialog.show();
-//        if(Thread.State.NEW == mThread.getState()) {
-//
-//           Intent intent = getIntent();
-//             if (Intent.ACTION_SEARCH.equals(intent.getAction())) {
-//            String query = intent.getStringExtra(SearchManager.QUERY);
-//            doSearching(query);
-//
-//               }else {
-//                 try{
-//                 //获取餐桌列表数据
-//                 TxxxService txxxService = new TxxxService();
-//
-//                 txxx = txxxService.queryTxxxId(txxxid);
-//
-//                    } catch (Exception e) {
-//                        // TODO Auto-generated catch block
-//                        e.printStackTrace();
-//                    }
-//             }
-//                mThread.start();
-//
+//                }
 //            }
 //
+//            @Override
+//            public void onFailure(HttpException e, String s) {
+//                progressDialog.dismiss();
+//              //  Toast.makeText(TxxxDetailActivity.this, "数据加载失败！！！", Toast.LENGTH_SHORT).show();
+//            }
+//        });
 //
 //    }
+    private void SaveData(final String url){
+
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+            RequestParams params = new RequestParams();
+            params.addQueryStringParameter("customer.id",customer_id.getText().toString());
+            params.addQueryStringParameter("customer.username",customer_name.getText().toString());
+            params.addQueryStringParameter("customer.password",password.getText().toString());
+            params.addQueryStringParameter("customer.sfzh",sfzh.getText().toString());
+            params.addQueryStringParameter("customer.realname",realname.getText().toString());
+
+            params.addQueryStringParameter("customer.address",address.getText().toString());
+            params.addQueryStringParameter("customer.email",email.getText().toString());
+            params.addQueryStringParameter("customer.mobile",mobile.getText().toString());
+            params.addQueryStringParameter("customer.registerdate",registerdate.getText().toString());
+            params.addQueryStringParameter("customer.logintime",logintime.getText().toString());
+
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+
+                    if (responseInfo.result != null) {
+                        Toast.makeText(ProductinfoDetailActivity.this, "注册用户信息修改成功！", Toast.LENGTH_SHORT).show();
+                        //  PictureUtil.deleteImgTmp(imgstmppath);
+//                    Intent intent = new Intent();
+//                    intent.setClass(ProductinfoAddActivity.this, MainActivity.class);
 //
+//                    startActivity(intent);
+//                        setResult(RESULT_CODE, intent);
+                        //  onCreate(null);
+                        finish();
+
+                    }
+                }
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(ProductinfoDetailActivity.this, "注册用户信息修改失败！", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        //     EventBus.getDefault().unregister(this);
+        super.onDestroy();
+    }
+
+
+    private void updateState(int scrollState) {
+        String stateName = "Undefined";
+//        switch (scrollState) {
+//            case SCROLL_STATE_IDLE:
+//                stateName = "Idle";
+//                break;
+//
+//            case SCROLL_STATE_DRAGGING:
+//                stateName = "Dragging";
+//                break;
+//
+//            case SCROLL_STATE_SETTLING:
+//                stateName = "Flinging";
+//                break;
+//        }
+
+//        tv_state.setText("滑动状态：" + stateName);
+    }
+
 //   private Thread mThread = new Thread() {
 //      public void run() {
 //        Log.d("TAG", "mThread run");
@@ -141,17 +232,17 @@ public class ProductinfoDetailActivity {
 //        //handle message here
 //        case 1:
 //
-//            if (isThemeLight()) {
-//                img1.setImageResource(R.drawable.ic_phone_grey600_24dp);
-//                img2.setImageResource(R.drawable.ic_phone_grey600_24dp);
-//                img3.setImageResource(R.drawable.ic_phone_grey600_24dp);
-//
-//            } else {
-//                img1.setImageResource(R.drawable.ic_phone_white_24dp);
-//                img2.setImageResource(R.drawable.ic_phone_white_24dp);
-//                img3.setImageResource(R.drawable.ic_phone_white_24dp);
-//            }
-//         showView(txxx);
+////            if (isThemeLight()) {
+////                img1.setImageResource(R.drawable.ic_phone_grey600_24dp);
+////                img2.setImageResource(R.drawable.ic_phone_grey600_24dp);
+////                img3.setImageResource(R.drawable.ic_phone_grey600_24dp);
+////
+////            } else {
+////                img1.setImageResource(R.drawable.ic_phone_white_24dp);
+////                img2.setImageResource(R.drawable.ic_phone_white_24dp);
+////                img3.setImageResource(R.drawable.ic_phone_white_24dp);
+////            }
+////         showView(customer);
 //
 //        progressDialog.dismiss();
 //        //send message here
@@ -167,233 +258,80 @@ public class ProductinfoDetailActivity {
 //        }
 //
 //        };
-//    /**
-//     * 显示视图
-//     * @param txxx 职工的图片
-//     * @param txxx 职工的对象
-//     * */
-//    public void showView(Txxx txxx)
-//    {
-////       bmmc.setText(txxx.getId()+"号");
+    /**
+     * 显示视图
+     * @param customerEntity 职工的图片
+     * @param customerEntity 职工的对象
+     * */
+    public void showView(XinWen_productinfo.CustomerEntity customerEntity)
+    {
+
+
+        customer_id.setText(customerEntity.getId()+"");
+        customer_name.setText(customerEntity.getUsername());
+        password.setText(customerEntity.getPassword());
+        sfzh.setText(customerEntity.getSfzh());
+
+        realname.setText(customerEntity.getRealname());
+//        address.setInputType(InputType.TYPE_TEXT_FLAG_MULTI_LINE);
+//        address.setGravity(Gravity.TOP);
+        address.setText(customerEntity.getAddress());
+//        address.setSingleLine(false);
 //
-//        bmmc.setText(txxx.getBranch().getName());
-//        grbh.setText(txxx.getGrbh());
-//        name.setText(txxx.getName());
-//        sfzh.setText(txxx.getSfzh());
-//        hkdz.setText(txxx.getHkdz());
-//        czdz.setText(txxx.getCzdz());
-//        lxdh1.setText(txxx.getLxdh1());
-//        lxdh2.setText(txxx.getLxdh2());
-//        lxdh3.setText(txxx.getLxdh3());
-////        rz13jk.setText(txxx.getRz13jk());
-//       rz13sj.setText(txxx.getRz13sj());
-//        rz13zb.setText(txxx.getRz13zb());
-//       rz13dd.setText(txxx.getRz13dd());
-//        if(txxx.getRz13jk().equals("")){
-//            spinner.setSelection(0);
-//        }else if(txxx.getRz13jk().equals("填表认证")){
-//            spinner.setSelection(1);
-//        }else if(txxx.getRz13jk().equals("本人认证")){
-//            spinner.setSelection(2);
-//        }else if(txxx.getRz13jk().equals("代认证")){
-//            spinner.setSelection(3);
-//        }
-//
-//    }
-//
-//    /**
+//        address.setHorizontallyScrolling(false);
+        email.setText(customerEntity.getEmail());
+        mobile.setText(customerEntity.getMobile());
+        registerdate.setText(customerEntity.getRegisterdate());
+        starttime.setText(customerEntity.getStarttime());
+        logintime.setText(customerEntity.getLogindate());
+        if(!customerEntity.getHeadimg().equals("")) {
+            Photo photo = new Photo();
+            photo.path=customerEntity.getHeadimg();
+            photo.photoId =1;
+            photo.description ="头像";
+            adapterlzx.add(photo);
+        }
+    }
+
+    //    /**
 //     * 数据加载完之后消除Loding对话框
 //     * */
 //    private Handler myHandler = new Handler(){
 //        @Override
 //        public void handleMessage(Message msg) {
 //            progressDialog.dismiss(); //消除Loding对话框
-//            showView(txxx);
+//            showView(customerEntity);
 ////            rz.se;
 //            super.handleMessage(msg);
 //        }
 //    };
 //
-//    @Override
-//    public boolean onCreateOptionsMenu(Menu menu) {
-//        super.onCreateOptionsMenu(menu);
-//        getMenuInflater().inflate(R.menu.menu_txxxdetailmain, menu);
-//        menu.getItem(2).setVisible(false);
-////        Toast.makeText(TxxxDetailActivity.this, tusers.getPurview()+"与"+txxx.getRz13jk(), Toast.LENGTH_SHORT).show();
 //
-//        if(tusers.getPurview().equals("社保")||tusers.getPurview().equals("系统")){
-//            if(txxx.getRz13jk().equals("")) {
-//                menu.getItem(1).setEnabled(true);
-//            }else{  menu.getItem(1).setVisible(true);}
-////            Toast.makeText(this,"0", Toast.LENGTH_SHORT).show();
-//        }else{
-//            menu.getItem(1).setEnabled(false);
-//            menu.getItem(1).setVisible(false);
-//        }
-//        SupportMenuItem searchItem = (SupportMenuItem) menu
-//                .findItem(R.id.action_search);
 //
-//        SearchView searchView = (SearchView) MenuItemCompat
-//                .getActionView(searchItem);
 //
-//        SearchManager searchManager = (SearchManager)TxxxDetailActivity.this
-//                .getSystemService(Context.SEARCH_SERVICE);
-//        searchView.setSearchableInfo(searchManager
-//                .getSearchableInfo(TxxxDetailActivity.this.getComponentName()));
+    @Override
+    public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
+                               long arg3) {
+//        bmmc.setText("你的血型是："+m[arg2]);
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+//    private void doSearching(int id) {
 //
-//        searchItem
-//                .setSupportOnActionExpandListener(new MenuItemCompat.OnActionExpandListener() {
 //
-//                    @Override
-//                    public boolean onMenuItemActionExpand(MenuItem item) {
-////                        Toast.makeText(TxxxDetailActivity.this, "扩张了", Toast.LENGTH_SHORT).show();
-////                        System.out.println("扩张了");
-//                        return true;
-//                    }
+//      //  url=HttpUtil.BASE_URL+"customer!queryTxxxId.action";
+//        params = new RequestParams();
+//        params.addQueryStringParameter("id",id+"");
 //
-//                    @Override
-//                    public boolean onMenuItemActionCollapse(MenuItem item) {
-////                        Toast.makeText(TxxxDetailActivity.this, "收缩了", Toast.LENGTH_SHORT).show();
-////                        System.out.println("收缩了");
-//                        return true;
-//                    }
-//                });
-//
-//        return super.onCreateOptionsMenu(menu);
-////        return  true;
+//        otherquery=true;
+//     //   mThreadmy();
 //    }
 //
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//        int id = item.getItemId();
 //
-//        if (id == R.id.action_txxxdetail_mainrz) {
-//
-//            if (spinner.getSelectedItemPosition() == 0) {
-//                Toast.makeText(this, "请选择认证方式！！！", Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//            if (sfzh.length() != 18) {
-//                Toast.makeText(this, "身份证号码错误！！！", Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//            if (lxdh1.length() != 11 && !lxdh1.getText().equals("")) {
-//                Toast.makeText(this, "电话号码1错误！！！", Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//            if (lxdh2.length() != 11 && lxdh2.length() != 0) {
-//                Toast.makeText(this, "电话号码2错误！！！" + lxdh2.length(), Toast.LENGTH_SHORT).show();
-//                return false;
-//            }
-//            progressDialog = new ProgressDialog(this);
-//            progressDialog.setMessage("认证提交中  请稍后...");
-//            progressDialog.show();
-//            Thread t = new Thread(new Runnable() {
-//                @Override
-//                public void run() {
-//                    try {
-////                            String name="";
-//                        String rzjk = "";
-//                        String rzzb = "";
-//                        String rzdd = "";
-////
-//                        rzjk = spinner.getSelectedItem().toString();
-////                            rzsj=spinner1.getSelectedItem().toString();
-//                        rzzb = tusers.getUserName();
-//                        rzdd = tusers.getBranch().getName();
-//                        Map<String, String> map = new HashMap<String, String>();
-//                        map.put("name", name.getText().toString());
-//                        map.put("sfzh", sfzh.getText().toString());
-//                        map.put("hkdz", hkdz.getText().toString());
-//                        map.put("czdz", czdz.getText().toString());
-//                        map.put("lxdh1", lxdh1.getText().toString());
-//                        map.put("lxdh2", lxdh2.getText().toString());
-//                        map.put("lxdh3", lxdh3.getText().toString());
-//                        map.put("rzjk", rzjk);
-////
-//                        map.put("rzzb", rzzb);
-//                        map.put("rzdd", rzdd);
-//
-//                       TxxxService txxxService = new TxxxService();
-//
-//                        txxxService.updateTxxxId(map);
-////
-//                    } catch (Exception e) {
-//                        // TODO Auto-generated catch block
-//                        e.printStackTrace();
-//                    }
-//                    myHandler.sendMessage(myHandler.obtainMessage());
-//                }
-//            });
-//            t.start();
-////                Toast.makeText(this,"认证成功", Toast.LENGTH_SHORT).show();
-////                return true;
-//            new AlertDialog.Builder(this).setTitle("认证提交成功！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-//
-//                @Override
-//                public void onClick(DialogInterface dialog, int which) {
-//                    // TODO Auto-generated method stub
-//                    Intent intent = new Intent();
-//                    //	intent.setClass(SelectEatsFoodsListActivity.this, MainActivity.class);
-//                    //	intent.setClass(EatListActivity.this, MainActivity.class);
-//                    intent.setClass(TxxxDetailActivity.this, TxxxDetailActivity.class);
-//                    startActivity(intent);
-//                }
-//            }).show();
-//
-//        }
-//
-//
-//
-//        return super.onOptionsItemSelected(item);
-//    }
-//
-//    @Override
-//    public void onItemSelected(AdapterView<?> arg0, View arg1, int arg2,
-//                               long arg3) {
-////        bmmc.setText("你的血型是："+m[arg2]);
-//    }
-//
-//    @Override
-//    public void onNothingSelected(AdapterView<?> parent) {
-//
-//    }
-//    private void doSearching(String query) {
-//
-//        Map<String, String> map = new HashMap<String, String>();
-//        map.put("name", query);
-//        try {
-//            //获取餐桌列表数据
-//            TxxxService txxxService = new TxxxService();
-//
-////                        Toast.makeText(this,"aa", Toast.LENGTH_SHORT).show();
-//            txxxs = txxxService.queryTxxxName(map);
-//
-//        } catch (Exception e) {
-//            // TODO Auto-generated catch block
-//            e.printStackTrace();
-//        }
-//
-//      if(txxxs!=null) {
-////          myAppVariable.setTxxxs(txxxs);
-//          txxx=txxxs.get(0);
-//
-//          showView(txxx);
-//
-////        Toast.makeText(this, query, Toast.LENGTH_SHORT).show();
-//      } else{
-//          new AlertDialog.Builder(this).setTitle("查无此人！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-//
-//              @Override
-//              public void onClick(DialogInterface dialog, int which) {
-//                  // TODO Auto-generated method stub
-//                  Intent intent = new Intent();
-//
-//                  intent.setClass(TxxxDetailActivity.this, TxxxDetailActivity.class);
-//                  startActivity(intent);
-//              }
-//          }).show();
-//      }
-//    }
+
+
 
 }
