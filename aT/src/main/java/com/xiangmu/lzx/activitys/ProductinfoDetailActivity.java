@@ -3,6 +3,7 @@ import android.app.AlertDialog;
 import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -79,17 +80,19 @@ import java.util.regex.Pattern;
 
 import butterknife.ButterKnife;
 import butterknife.InjectView;
+import butterknife.OnClick;
 import cn.finalteam.galleryfinal.GalleryFinal;
 import cn.finalteam.galleryfinal.model.PhotoInfo;
 
 
-public class ProductinfoDetailActivity extends AppCompatActivity implements OnItemSelectedListener{
+public class ProductinfoDetailActivity extends AppCompatActivity implements OnItemSelectedListener,View.OnClickListener {
     //public class ProductinfoDetailActivity extends AppCompatActivity{
     private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
     private List<UploadFile> potolist;
     private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
+    private XinWen_productinfo.T18908805728Entity productinfo;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
     // private PullToRefreshListView mRecyclerView;
@@ -151,24 +154,34 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
     List  nl= Zpnl.getValues();
     List  xl= Edu.getValues();
     List  listcjfs= Fzfs.getValues();
+    ImageButton imageback;
+
     @Override
-    public void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Intent intent = getIntent();
+        productinfo= (XinWen_productinfo.T18908805728Entity) intent.getSerializableExtra("productinfo");
+      setContentView(R.layout.activity_productinfo_detailed);
+       view= (LinearLayout) findViewById(R.id.content00);
+    //    LayoutInflater inflater = LayoutInflater.from(this);
+       // view=   inflater.inflate(R.id.content0, null,true);
+      // view = (LayoutInflater)inflate(R.layout.activity_productinfo_detailed, null, false);
+     initView(view);
     }
 
     @Nullable
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
-        try {
-            if (view == null) {
-                view =inFlater(inflater);
-            }
-            return view;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
+  //  @Override
+//    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//
+//        try {
+//            if (view == null) {
+//                view =inFlater(inflater);
+//            }
+//            return view;
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return null;
 
 
 //        user_name = SearchDB.createDb(this, "userName");
@@ -193,16 +206,16 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 //        return null;
 
 
-    }
-    public View inFlater(LayoutInflater inflater) {
-        view = inflater.inflate(R.layout.productinfoadd_content, null, false);
-        initView(view);
-        return view;
-    }
+//    }
+//    public View inFlater(LayoutInflater inflater) {
+//        view = inflater.inflate(R.layout.activity_productinfo_detailed, null, false);
+//        initView(view);
+//        return view;
+//    }
 
 
-    private void initView(View view) {
-
+  private void initView(View view) {
+        //    private void initView() {
         fpxx = (TextView) view.findViewById(R.id.bt_fpxx);
         // setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (Spinner) view.findViewById(R.id.spin_articler);
@@ -249,13 +262,40 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
         productinfo_lxr = (EditText) view.findViewById(R.id.productinfo_lxr);
         productinfo_lxdh = (EditText) view.findViewById(R.id.productinfo_lxdh);
         zjfs = (Spinner) view.findViewById(R.id.cjfs);
+        productinfo_content = (EditText) view.findViewById(R.id.productinfo_content);
+
+        imageback = (ImageButton) view.findViewById(R.id.xinwen_xi_back);//返回
+        showView(productinfo);
         initinpinner();
     }
+    public void showView(XinWen_productinfo.T18908805728Entity productinfo)
+    {
+
+
+        name.setText(productinfo.getName());
+        gsmz.setText(productinfo.getGsmz());
+        gsdz.setText(productinfo.getGsdz());
+
+        productinfo_lxr.setText(productinfo.getLxr());
+        productinfo_lxdh.setText(productinfo.getLxdh());
+        productinfo_content.setText(productinfo.getDescription());
+
+      /*
+        if(!customerEntity.getHeadimg().equals("")) {
+            Photo photo = new Photo();
+            photo.path=customerEntity.getHeadimg();
+            photo.photoId =1;
+            photo.description ="头像";
+            adapterlzx.add(photo);
+        }
+        */
+    }
     private void initinpinner(){
+
         ArrayAdapter adapter = new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, m);
         articlerSpinner.setAdapter(adapter);
-        articlerSpinner.setSelection(1);
+        articlerSpinner.setSelection(productinfo.getProductcategory().getId());
         spinner_sex.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item, msex));
         spinner_dxfw.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, dxfw));
@@ -265,12 +305,19 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                 android.R.layout.simple_spinner_item, xl));
         cjfs.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, listcjfs));
-        productinfo_content = (EditText) view.findViewById(R.id.productinfo_content);
+
         //改变默认的单行模式
         productinfo_content.setSingleLine(false);
         //水平滚动设置为False
         productinfo_content.setHorizontallyScrolling(false);
 //        mRecyclerView =   (ListView) view.findViewById(R.id.refresh);
+//        imageback.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//              // ProductinfoDetailActivity.this.finish();
+//                Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
+//            }
+//        });
         articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             //当选中某一个数据项时触发该方法
@@ -300,8 +347,6 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 
                         qznlLayout.setVisibility(View.GONE);
                         sxcyLayout.setVisibility(View.GONE);
-                        gsmzLayout.setVisibility(View.VISIBLE);
-                        gsdzLayout.setVisibility(View.VISIBLE);
                         fwhx0Layout.setVisibility(View.GONE);
                         fwhx1Layout.setVisibility(View.GONE);
                         fwhx2Layout.setVisibility(View.GONE);
@@ -343,7 +388,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                         sxcyLayout.setVisibility(View.GONE);
                         sxcy.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
-                        ;
+
                         fwhx3Layout.setVisibility(View.GONE);
                         break;
                     case 4:
@@ -372,11 +417,15 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                         gsdz0.setText("公司地址");
                         gsmz0.setText("公司名称");
                         gsdzLayout.setVisibility(View.VISIBLE);
+                        gsmzLayout.setVisibility(View.VISIBLE);
+                        fwhx3Layout.setVisibility(View.VISIBLE);
+                        gqsl.setText(productinfo.getGqxx().getGqsl()+"");
+
+
                         fwhx0Layout.setVisibility(View.GONE);
                         fwhx1Layout.setVisibility(View.GONE);
                         fwhx2Layout.setVisibility(View.GONE);
                         cjfs.setVisibility(View.GONE);
-                        gsmzLayout.setVisibility(View.VISIBLE);
                         layoutnor3.setVisibility(View.GONE);
                         spinner_sex.setVisibility(View.GONE);
                         spinner_dxfw.setVisibility(View.GONE);
@@ -385,7 +434,6 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                         sxcyLayout.setVisibility(View.GONE);
                         sxcy.setVisibility(View.GONE);
                         spinner_nl.setVisibility(View.GONE);
-                        fwhx3Layout.setVisibility(View.VISIBLE);
                         break;
                     case 6:
                         name0.setText("二手信息标题");
@@ -484,16 +532,16 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
             }
         });
 
-
+/*
         mSelectedPhotos.add(new PhotoInfo());
         lAdapter = new ChooseFramentAdapter(this, mSelectedPhotos, this);
         recyclerView.setLayoutManager(new GridLayoutManager(this, 5));
         recyclerView.addItemDecoration(new GridSpacingItemDecoration(5, 2, true));
         recyclerView.setAdapter(lAdapter);
+*/
 
 
-
-
+/*
         fpxx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -501,36 +549,36 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                 if (articlerSpinner.getSelectedItemPosition() == 0) {
 
                     //   Toast.makeText(this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                    new AlertDialog.Builder(this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
+                    new AlertDialog.Builder(ProductinfoDetailActivity.this).setMessage("请选择类型！！").setPositiveButton("确定", null).show();
                     return;
                 }
 
 
                 if (name.getText().toString().trim().equals("") || name == null) {
                     //   Toast.makeText( this, "请选择发布类型！！", Toast.LENGTH_SHORT).show();
-                    new AlertDialog.Builder(this).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
+                    new AlertDialog.Builder(ProductinfoDetailActivity.this).setMessage("请输入标题！！").setPositiveButton("确定", null).show();
                     return;
                 }
                 if (productinfo_content.getText().toString().trim().equals("") || productinfo_content == null) {
                     //   Toast.makeText( this, "请选择发布类型！！", Toast.　).show();
-                    new AlertDialog.Builder(this).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
+                    new AlertDialog.Builder(ProductinfoDetailActivity.this).setMessage("请输入详情！！").setPositiveButton("确定", null).show();
                     return;
                 }
                 if (!isMobileNO(productinfo_lxdh.getText().toString())) {
 
 
-                    new AlertDialog.Builder(this).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
+                    new AlertDialog.Builder(ProductinfoDetailActivity.this).setMessage("手机号输入错误！！").setPositiveButton("确定", null).show();
                     return;
                 }
 
 
                 String saveproduct = xinWenURL.getSaveproductinfo();
-                Toast.makeText(this, "发布中.....", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProductinfoDetailActivity.this, "发布中.....", Toast.LENGTH_LONG).show();
                 SaveData(saveproduct);
 
             }
         });
-
+*/
         //    return view;
     }
 
@@ -553,8 +601,8 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 //        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
 
-        ImageButton imageback = null;
-        imageback = (ImageButton) view.findViewById(R.id.xinwen_xi_back);//返回
+     //   ImageButton imageback = null;
+     //   imageback = (ImageButton) view.findViewById(R.id.xinwen_xi_back);//返回
 
 
 //        TextView duotu_gentie = null;
@@ -567,12 +615,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 //        fenxiang = (ImageButton) view.findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
-        imageback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                //     finish();
-            }
-        });
+
         //点击进入跟帖 详细页面
         //// TODO: 2015/11/14 点击进入跟帖 详细页面 完成
 //        duotu_gentie.setOnClickListener(new View.OnClickListener() {
@@ -765,17 +808,17 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                 //    popu.dismiss();
                 // TODO: 2015/11/17
 
-                Toast.makeText( this, "截屏...", Toast.LENGTH_SHORT).show();
+                Toast.makeText( ProductinfoDetailActivity.this, "截屏...", Toast.LENGTH_SHORT).show();
                 String date_time = DateTime.getDate_Time();
                 File file = new File("sdcard/Photo/Screenshots/");
                 if (!file.exists()) {
                     file.mkdirs();
                 }
-                Bitmap bitmap = ScreenShot.takeScreenShot( this);
+                Bitmap bitmap = ScreenShot.takeScreenShot( ProductinfoDetailActivity.this);
                 String s = "sdcard/Photo/Screenshots/" + date_time;
                 String path = s + ".png";
                 ScreenShot.savePic(bitmap, path);
-                Intent intent = new Intent( this, PictureActivity.class);
+                Intent intent = new Intent( ProductinfoDetailActivity.this, PictureActivity.class);
                 intent.putExtra("path", s);
                 startActivity(intent);
 
@@ -997,11 +1040,11 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                 public void onSuccess(ResponseInfo<String> responseInfo) {
 
                     if (responseInfo.result != null) {
-                        Toast.makeText( this, "发布信息成功！", Toast.LENGTH_SHORT).show();
+                        Toast.makeText( ProductinfoDetailActivity.this, "发布信息成功！", Toast.LENGTH_SHORT).show();
                         //    SharedPreferencesUtil.saveData(this, url, responseInfo.result);
                         PictureUtil.deleteImgTmp(imgstmppath);
                         Intent intent = new Intent();
-                        intent.setClass( this, MainActivity.class);
+                        intent.setClass( ProductinfoDetailActivity.this, MainActivity.class);
 
                         startActivity(intent);
 //                        setResult(RESULT_CODE, intent);
@@ -1012,7 +1055,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 
                 @Override
                 public void onFailure(HttpException e, String s) {
-                    Toast.makeText( this, "发布信息失败！", Toast.LENGTH_SHORT).show();
+                    Toast.makeText( ProductinfoDetailActivity.this, "发布信息失败！", Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -1127,35 +1170,35 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 
         @Override
         public void onHanlderFailure(int requestCode, String errorMsg) {
-            Toast.makeText( this, errorMsg, Toast.LENGTH_SHORT).show();
+            Toast.makeText( ProductinfoDetailActivity.this, errorMsg, Toast.LENGTH_SHORT).show();
         }
     };
-    @Override
-    public void onClickPhotoListener() {
-        FragmentManager frament=this.getSupportFragmentManager();
-        ActionSheet.createBuilder(this,frament)
-                .setCancelButtonTitle("取消")
-                .setOtherButtonTitles("打开相册", "拍照")
-                .setCancelableOnTouchOutside(true)
-                .setListener(new ActionSheet.ActionSheetListener() {
-                    @Override
-                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {}
-
-                    @Override
-                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
-                        switch (index) {
-                            case 0:
-                                GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, 9, mOnHanlderResultCallback); // 多选
-//                                    GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, mOnHanlderResultCallback); // 单选
-                                break;
-                            case 1:
-                                GalleryFinal.openCamera(REQUEST_CODE_CAMERA, mOnHanlderResultCallback); // 打开相机
-                                break;
-                        }
-                    }
-                })
-                .show();
-    }
+//    @Override
+//    public void onClickPhotoListener() {
+//        FragmentManager frament=this.getSupportFragmentManager();
+//        ActionSheet.createBuilder(this,frament)
+//                .setCancelButtonTitle("取消")
+//                .setOtherButtonTitles("打开相册", "拍照")
+//                .setCancelableOnTouchOutside(true)
+//                .setListener(new ActionSheet.ActionSheetListener() {
+//                    @Override
+//                    public void onDismiss(ActionSheet actionSheet, boolean isCancel) {}
+//
+//                    @Override
+//                    public void onOtherButtonClick(ActionSheet actionSheet, int index) {
+//                        switch (index) {
+//                            case 0:
+//                                GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, 9, mOnHanlderResultCallback); // 多选
+////                                    GalleryFinal.openGallerySingle(REQUEST_CODE_GALLERY, mOnHanlderResultCallback); // 单选
+//                                break;
+//                            case 1:
+//                                GalleryFinal.openCamera(REQUEST_CODE_CAMERA, mOnHanlderResultCallback); // 打开相机
+//                                break;
+//                        }
+//                    }
+//                })
+//                .show();
+//    }
 
     //    @Override
 //    public void onItemClicked(int position) {
@@ -1192,6 +1235,30 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 //     //   initView(view);
 //        flag=true;
     }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> parent) {
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.xinwen_xi_back://详细信息
+                //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
+                //	System.out.println("LongClick1 标题");
+                //    l = 1;
+                Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
+                break;
+        }
+    }
+
+
 //
 //}
 //    @Override

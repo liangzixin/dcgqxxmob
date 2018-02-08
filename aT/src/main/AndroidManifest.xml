@@ -57,10 +57,11 @@
         <activity
             android:name="com.xiangmu.lzx.activitys.ProductinfoAddActivity"
             android:label="发布"
-            >
-
-
-        </activity>
+            />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.ProductinfoDetailActivity"
+            android:label="@string/title_activity_web_view"
+            />
         <activity
             android:name="com.xiangmu.lzx.activitys.PhotosActivity"
             android:theme="@style/AppThemeLzx"

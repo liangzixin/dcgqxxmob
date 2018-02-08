@@ -628,7 +628,6 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
                 //    Intent intentduotu = new Intent(ProductinfoListEditActivity.this, XinWenXiActivity.class);
                 Intent intentduotu = new Intent(this, XinWenXiActivity.class);
                 intentduotu.putExtra("xinwendata", xinWenXi);
-
                 startActivity(intentduotu);
                 break;
         }
@@ -652,7 +651,10 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
                 break;
 
             case R.id.result_replace://修改
-                Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
+                Intent intentzhibo = new Intent(this,ProductinfoDetailActivity.class);
+                   intentzhibo.putExtra("productinfo",bean);
+                startActivity(intentzhibo);
+            //    Toast.makeText(this, "LongClick1 标题2", Toast.LENGTH_SHORT).show();
                 //	System.out.println("LongClick1 修改");
                 //  l = 2;
                 break;

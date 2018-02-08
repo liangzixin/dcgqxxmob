@@ -50,7 +50,7 @@ public class XinWen_productinfo  implements Serializable{
 
 
 
-    public static class T18908805728Entity {
+    public static class T18908805728Entity  implements Serializable {
         private static final long serialVersionUID = 1L;
         private Integer id;// 商品编号
         private String name;// 商品名称
@@ -853,7 +853,7 @@ public class XinWen_productinfo  implements Serializable{
             }
         }
 */
-        public static class UploadFileEntity {
+        public static class UploadFileEntity implements Serializable{
 
             //  * imgsrc : http://img4.cache.netease.com/3g/2015/11/11/2015111108492975082.jpg
        //   private int id;

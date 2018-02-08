@@ -33,9 +33,10 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_margin="5dp"
-            android:layout_marginRight="10dp"
+            android:layout_marginRight="5dp"
             android:clickable="true"
             android:gravity="center"
+            android:paddingRight="10dp"
             android:text="修改"
             android:textColor="#ffffff"
             android:textSize="20sp" />
@@ -103,7 +104,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
                     android:text=""
                     android:ems="10"
                     android:id="@+id/name"
@@ -137,7 +139,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
                     android:text=""
                     android:ems="10"
                     android:id="@+id/productinfo_gsmz"
@@ -169,7 +172,8 @@
                 <EditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPersonName"
+                    android:inputType="textMultiLine"
+                    android:minLines="1"
                     android:text=""
                     android:ems="10"
                     android:id="@+id/productinfo_gsdz"
@@ -666,9 +670,10 @@
                 android:minHeight="80dp">
                 <EditText
                     android:layout_width="match_parent"
-                    android:layout_height="160dp"
-                    android:inputType="textPersonName"
-                    android:text="详情"
+                    android:layout_height="wrap_content"
+                    android:inputType="textMultiLine"
+                    android:minLines="3"
+                    android:text=""
                     android:ems="10"
                     android:id="@+id/productinfo_content"
                     android:background="@drawable/select_edittext"
@@ -678,7 +683,7 @@
                     android:paddingRight="5dp"
                     android:paddingLeft="5dp"
                     android:singleLine="true"
-                    android:minLines="3"
+
                     android:gravity="top|center_vertical"
 
                     />
