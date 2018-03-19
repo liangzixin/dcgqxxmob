@@ -1,11 +1,11 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\alertview-1.0.3.aar\\0823494dccf6bf5a4e0d59447ce9178a\\res\\layout\\layout_alertview_alert.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shake_umeng_socialize_share_dlg.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shake_umeng_socialize_share_dlg.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\alertview-1.0.3.aar\\0823494dccf6bf5a4e0d59447ce9178a\\res\\layout\\layout_alertview_alert.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_main_fragment.xml",
@@ -40,12 +40,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_sms.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_detail.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_detail.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\abc_action_bar_title_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_comment_detail.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_comment_detail.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\anfq_sore_button.xml",
@@ -96,12 +96,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\select_dialog_singlechoice_material.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_view.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_view.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_failed_load_page.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_failed_load_page.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_at_view.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_at_view.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_head_dialog.xml",
@@ -124,12 +124,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_set_page_layout.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\abc_dialog_title_material.xml"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\gf_adapter_folder_list_item.xml",
         "source": "D:\\xin\\dcgqxxmob\\galleryfinal\\build\\intermediates\\bundles\\debug\\res\\layout\\gf_adapter_folder_list_item.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\abc_dialog_title_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\abc_dialog_title_material.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
@@ -160,16 +160,16 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.3.0.aar\\90930a63d67c2fbc211a6405d9e3156d\\res\\layout\\design_navigation_menu_item.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_zhibo.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_zhibo.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_comment_platform.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_comment_platform.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_searchresult.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_searchresult.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_post_comment_platform.xml",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_post_comment_platform.xml"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\xinwen_toutiao_item_zhibo.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiao_item_zhibo.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_pull_to_refresh_header.xml",
@@ -738,6 +738,10 @@
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\top_remen.xml",
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\top_remen.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_versionset.xml",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_versionset.xml"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_gentie_fragment.xml",

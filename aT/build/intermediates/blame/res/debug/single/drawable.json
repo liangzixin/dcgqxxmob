@@ -132,12 +132,12 @@
         "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\shake_umeng_socialize_shake_layout_corner.xml"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq_off.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq_off.png"
-    },
-    {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\mr_media_pause_dark.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\141e7c67c41f28dcc3e96e138942d816\\res\\drawable\\mr_media_pause_dark.xml"
+    },
+    {
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq_off.png",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\drawable\\umeng_socialize_qq_off.png"
     },
     {
         "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\drawable\\umeng_socialize_qq_on.png",
