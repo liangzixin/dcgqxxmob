@@ -1,18 +1,14 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\realm_properties",
-        "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\realm_properties"
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
+        "source": "D:\\xin1\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\gtm_analytics",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-analytics-7.0.0.aar\\3100d6c77505dae911aba1d14bea0761\\res\\raw\\gtm_analytics"
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\shake_sound.mp3",
+        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\raw\\shake_sound.mp3"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\shake_sound.mp3",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\raw\\shake_sound.mp3"
-    },
-    {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
-        "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\realm_properties",
+        "source": "D:\\xin1\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\realm_properties"
     }
 ]

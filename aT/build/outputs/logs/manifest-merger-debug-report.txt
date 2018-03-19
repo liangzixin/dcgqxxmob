@@ -1,12 +1,12 @@
 -- Merging decision tree log ---
 manifest
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:2:1-38:12
-MERGED from [:FJMtSortButtonLib] D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:2:1-17:12
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:2:1-36:12
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:2:1-38:12
+MERGED from [:FJMtSortButtonLib] D:\xin1\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:2:1-17:12
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:2:1-36:12
 MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\99e4b199aacced268244c9c5a1d6b025\AndroidManifest.xml:2:1-6:12
 MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\CommonAdapter-0.5.3.aar\b7a2f49ce7d6b82f7faeb9824ca3969c\AndroidManifest.xml:2:1-17:12
 MERGED from [fr.erictruong:materialedittext:0.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\materialedittext-0.2.0.aar\c66a0742493bfb5a04a19a2a02f32cbd\AndroidManifest.xml:2:1-11:12
@@ -16,8 +16,8 @@ MERGED from [com.bigkoo:alertview:1.0.3] C:\Users\Administrator\.gradle\caches\t
 MERGED from [com.android.support:multidex:1.0.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\multidex-1.0.1.aar\b8e300f8995feae4cee36e294bd16c36\AndroidManifest.xml:16:1-19:12
 MERGED from [com.baoyz.actionsheet:library:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\library-1.1.4.aar\d545234ebaf2b0148a429bf389f6187d\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\f26873f7c038a09d4c93c673ca1ed3c8\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\184cf16dff474ae4ec6b6af475f9586d\AndroidManifest.xml:2:1-11:12
 MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-23.3.0.aar\90930a63d67c2fbc211a6405d9e3156d\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\59c9095051056b1d36f1c728480cc580\AndroidManifest.xml:17:1-26:12
 MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\55b562e237b1b0d19903e695e25b2f9f\AndroidManifest.xml:2:1-9:12
 MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\3183baa38ac55c557c95c60b918e1adc\AndroidManifest.xml:16:1-19:12
 MERGED from [com.android.support:mediarouter-v7:25.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\141e7c67c41f28dcc3e96e138942d816\AndroidManifest.xml:17:1-24:12
@@ -72,40 +72,41 @@ MERGED from [com.google.firebase:firebase-common:11.0.4] C:\Users\Administrator\
 MERGED from [com.google.android.gms:play-services-gass:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\75114aeb9a128cbb52d17720f9391d7a\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\e289a5dc25bf88511635c4308ccb7f8f\AndroidManifest.xml:2:1-5:12
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\84974f93c388261ade85f843ab4676f8\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:recyclerview-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.3.0.aar\badce9386ab0b2685849939a2e349915\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:17:1-28:12
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\8cb3408db1eaa4d331013b9a57ae9fa3\AndroidManifest.xml:17:1-25:12
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\4da3696639ff4337a890f2b8a0afb39e\AndroidManifest.xml:17:1-31:12
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\10e8ba92db732b80681121e32b059bd7\AndroidManifest.xml:17:1-31:12
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-276:12
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:1-277:12
 	package
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:3:5-30
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:11-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:2:11-69
 uses-sdk
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:FJMtSortButtonLib] D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:FJMtSortButtonLib] D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:FJMtSortButtonLib] D:\xin1\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:FJMtSortButtonLib] D:\xin1\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:7:5-9:41
 MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\99e4b199aacced268244c9c5a1d6b025\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\99e4b199aacced268244c9c5a1d6b025\AndroidManifest.xml:4:5-43
 MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\CommonAdapter-0.5.3.aar\b7a2f49ce7d6b82f7faeb9824ca3969c\AndroidManifest.xml:8:5-10:41
@@ -124,10 +125,10 @@ MERGED from [com.baoyz.actionsheet:library:1.1.4] C:\Users\Administrator\.gradle
 MERGED from [com.baoyz.actionsheet:library:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\library-1.1.4.aar\d545234ebaf2b0148a429bf389f6187d\AndroidManifest.xml:7:5-9:41
 MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\f26873f7c038a09d4c93c673ca1ed3c8\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\f26873f7c038a09d4c93c673ca1ed3c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\184cf16dff474ae4ec6b6af475f9586d\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\184cf16dff474ae4ec6b6af475f9586d\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-23.3.0.aar\90930a63d67c2fbc211a6405d9e3156d\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-23.3.0.aar\90930a63d67c2fbc211a6405d9e3156d\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\59c9095051056b1d36f1c728480cc580\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\59c9095051056b1d36f1c728480cc580\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\55b562e237b1b0d19903e695e25b2f9f\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\55b562e237b1b0d19903e695e25b2f9f\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-cast:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\3183baa38ac55c557c95c60b918e1adc\AndroidManifest.xml:17:5-43
@@ -236,44 +237,46 @@ MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Adminis
 MERGED from [com.google.android.gms:play-services-tasks:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\e289a5dc25bf88511635c4308ccb7f8f\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\84974f93c388261ade85f843ab4676f8\AndroidManifest.xml:17:5-43
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\84974f93c388261ade85f843ab4676f8\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:recyclerview-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.3.0.aar\badce9386ab0b2685849939a2e349915\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.3.0.aar\badce9386ab0b2685849939a2e349915\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\8cb3408db1eaa4d331013b9a57ae9fa3\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\8cb3408db1eaa4d331013b9a57ae9fa3\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\4da3696639ff4337a890f2b8a0afb39e\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\4da3696639ff4337a890f2b8a0afb39e\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\10e8ba92db732b80681121e32b059bd7\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\10e8ba92db732b80681121e32b059bd7\AndroidManifest.xml:21:5-23:58
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
-INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
+INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:5:5-7:41
 	tools:overrideLibrary
 		ADDED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\5f09d5fbe387eb121aa5996b14333805\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:7:9-38
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:7:9-38
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:6:9-35
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
-		INJECTED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:6:9-35
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
+		INJECTED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml
 uses-permission#android.permission.GET_TASKS
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:9:5-68
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:9:5-68
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:22:5-68
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:22:5-68
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:9:22-65
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:9:22-65
 uses-permission#android.permission.INTERNET
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:10:5-67
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:10:5-67
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\7304743aaba9643f847d7e1eb0572e6d\AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\7304743aaba9643f847d7e1eb0572e6d\AndroidManifest.xml:19:5-66
 MERGED from [com.google.android.gms:play-services-analytics:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\99646d6a027792fc6f4d6b1a9aa16e11\AndroidManifest.xml:20:5-66
@@ -299,25 +302,25 @@ MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Admini
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\7106be146217f89b485570a0ecd62b48\AndroidManifest.xml:20:5-66
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\7106be146217f89b485570a0ecd62b48\AndroidManifest.xml:20:5-66
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:10:22-64
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:10:22-64
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:11:5-80
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:16:5-80
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:16:5-80
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:11:5-80
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:16:5-80
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:16:5-80
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:16:5-80
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:16:5-80
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:11:22-77
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:11:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:12:5-81
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:14:5-81
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:14:5-81
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:12:5-81
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:14:5-81
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:14:5-81
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:14:5-81
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:14:5-81
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:12:22-78
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:12:22-78
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:13:5-79
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:13:5-79
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:24:5-79
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:24:5-79
 MERGED from [com.google.android.gms:play-services-ads-lite:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\7304743aaba9643f847d7e1eb0572e6d\AndroidManifest.xml:20:5-78
@@ -339,75 +342,75 @@ MERGED from [com.google.firebase:firebase-analytics-impl:11.0.4] C:\Users\Admini
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\7106be146217f89b485570a0ecd62b48\AndroidManifest.xml:19:5-78
 MERGED from [com.google.firebase:firebase-iid:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\7106be146217f89b485570a0ecd62b48\AndroidManifest.xml:19:5-78
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:13:22-76
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:13:22-76
 uses-permission#android.permission.CAMERA
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:14:5-65
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:12:5-65
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:12:5-65
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:14:5-65
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:12:5-65
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:12:5-65
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:14:22-62
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:14:22-62
 uses-permission#android.permission.VIBRATE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:15:5-66
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-66
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-66
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:15:5-66
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-66
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-66
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:15:22-63
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:15:22-63
 uses-permission#android.permission.SET_DEBUG_APP
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:17:5-72
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:17:5-72
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:17:22-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:17:22-69
 uses-permission#android.permission.SYSTEM_ALERT_WINDOW
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:18:5-78
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:18:5-78
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:18:22-75
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:18:22-75
 uses-permission#android.permission.GET_ACCOUNTS
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:19:5-71
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:19:5-71
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:19:22-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:19:22-68
 uses-permission#android.permission.USE_CREDENTIALS
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:20:5-74
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:20:5-74
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:20:22-71
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:20:22-71
 uses-permission#android.permission.MANAGE_ACCOUNTS
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:21:5-74
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:21:5-74
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:21:22-71
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:21:22-71
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:22:5-76
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:22:5-76
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:20:5-76
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:20:5-76
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:22:22-73
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:22:22-73
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:23:5-75
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:23:5-75
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:18:5-75
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:18:5-75
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:23:22-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:23:22-72
 uses-permission#android.permission.ACCESS_FINE_LOCATION
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:24:5-79
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:24:5-79
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:24:22-76
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:24:22-76
 uses-permission#android.permission.ACCESS_COARSE_LOCATION
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:25:5-81
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:25:5-81
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:25:22-78
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:25:22-78
 uses-permission#android.permission.INTERACT_ACROSS_USERS
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:26:5-79
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:26:5-79
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:26:22-77
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:26:22-77
 uses-permission#android.permission.ACCESS_LOCATION_EXTRA_COMMANDS
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:5-89
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:5-89
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:22-86
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:27:22-86
 application
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:5-274:19
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:17:5-36:19
-MERGED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:17:5-36:19
-MERGED from [:FJMtSortButtonLib] D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-15:19
-MERGED from [:FJMtSortButtonLib] D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-15:19
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:18:5-34:19
-MERGED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:18:5-34:19
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:29:5-275:19
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:17:5-36:19
+MERGED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:17:5-36:19
+MERGED from [:FJMtSortButtonLib] D:\xin1\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-15:19
+MERGED from [:FJMtSortButtonLib] D:\xin1\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:11:5-15:19
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:18:5-34:19
+MERGED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:18:5-34:19
 MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\99e4b199aacced268244c9c5a1d6b025\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-11.0.4.aar\99e4b199aacced268244c9c5a1d6b025\AndroidManifest.xml:5:5-20
 MERGED from [com.github.twiceyuan:CommonAdapter:0.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\CommonAdapter-0.5.3.aar\b7a2f49ce7d6b82f7faeb9824ca3969c\AndroidManifest.xml:12:5-15:51
@@ -418,6 +421,8 @@ MERGED from [com.github.sd6352051:android-image-picker:v1.0.1] C:\Users\Administ
 MERGED from [com.github.sd6352051:android-image-picker:v1.0.1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\android-image-picker-v1.0.1.aar\2c62ee454aad78b3c5cb65c6ce249cc0\AndroidManifest.xml:11:5-14:19
 MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\f26873f7c038a09d4c93c673ca1ed3c8\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\f26873f7c038a09d4c93c673ca1ed3c8\AndroidManifest.xml:26:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\184cf16dff474ae4ec6b6af475f9586d\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\184cf16dff474ae4ec6b6af475f9586d\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-23.3.0.aar\90930a63d67c2fbc211a6405d9e3156d\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:23.3.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-23.3.0.aar\90930a63d67c2fbc211a6405d9e3156d\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-cast-framework:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\55b562e237b1b0d19903e695e25b2f9f\AndroidManifest.xml:4:5-8:19
@@ -508,16 +513,16 @@ MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Admi
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\84974f93c388261ade85f843ab4676f8\AndroidManifest.xml:19:5-21:19
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:29:5-20
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:26:5-20
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:29:5-20
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\8cb3408db1eaa4d331013b9a57ae9fa3\AndroidManifest.xml:22:5-23:19
 MERGED from [com.android.support:palette-v7:25.2.0] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\8cb3408db1eaa4d331013b9a57ae9fa3\AndroidManifest.xml:22:5-23:19
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\4da3696639ff4337a890f2b8a0afb39e\AndroidManifest.xml:29:5-20
@@ -525,525 +530,529 @@ MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Admi
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\10e8ba92db732b80681121e32b059bd7\AndroidManifest.xml:29:5-20
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\10e8ba92db732b80681121e32b059bd7\AndroidManifest.xml:29:5-20
 	android:supportsRtl
-		ADDED from [:FJMtSortButtonLib] D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:14:9-35
+		ADDED from [:FJMtSortButtonLib] D:\xin1\dcgqxxmob\FJMtSortButtonLib\build\intermediates\bundles\debug\AndroidManifest.xml:14:9-35
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:33:9-41
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:33:9-41
 	tools:ignore
 		ADDED from [com.github.twiceyuan:CommonAdapter:0.5.3] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\CommonAdapter-0.5.3.aar\b7a2f49ce7d6b82f7faeb9824ca3969c\AndroidManifest.xml:15:9-48
 	android:largeHeap
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:20:9-33
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:20:9-33
 	android:icon
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:32:9-45
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:32:9-45
 	android:allowBackup
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:31:9-35
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:31:9-35
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:34:9-40
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:34:9-40
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:30:9-48
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:30:9-48
 activity#com.xiangmu.lzx.welcome.WelcomeActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:38:9-46:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:38:9-46:20
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:40:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:40:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:39:13-67
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:39:13-67
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:41:13-45:29
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:41:13-45:29
 action#android.intent.action.MAIN
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:42:17-69
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:42:17-69
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:42:25-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:42:25-66
 category#android.intent.category.LAUNCHER
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:44:17-77
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:44:17-77
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:44:27-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:44:27-74
 activity#com.xiangmu.lzx.activitys.MainActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:47:9-51:52
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:47:9-51:52
 	android:screenOrientation
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:51:13-49
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:51:13-49
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:50:13-45
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:50:13-45
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:49:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:49:13-74
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:48:13-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:48:13-66
 activity#com.xiangmu.lzx.activitys.MainPotoActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:52:9-56:10
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:52:9-56:10
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:55:13-45
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:55:13-45
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:53:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:53:13-70
 activity#com.xiangmu.lzx.activitys.ProductinfoAddActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:57:9-63:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:57:9-60:15
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:59:13-31
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:59:13-31
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:58:13-76
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:58:13-76
+activity#com.xiangmu.lzx.activitys.ProductinfoDetailActivity
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:61:9-64:15
+	android:label
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:63:13-60
+	android:name
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:62:13-79
 activity#com.xiangmu.lzx.activitys.PhotosActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:64:9-69:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:65:9-70:20
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:66:13-47
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:67:13-47
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:65:13-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:66:13-68
 activity#com.xiangmu.lzx.activitys.XinWenXiActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:70:9-72:62
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:71:9-73:62
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:72:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:73:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:71:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:72:13-70
 activity#com.xiangmu.lzx.activitys.SearchActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:73:9-75:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:74:9-76:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:75:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:76:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:74:13-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:75:13-68
 activity#com.xiangmu.lzx.activitys.SecondCodeActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:76:9-78:66
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:77:9-79:66
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:78:13-63
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:79:13-63
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:77:13-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:78:13-72
 activity#com.xiangmu.lzx.activitys.ShangTouTiao_HuiGuDetialActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:79:9-81:84
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:80:9-82:84
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:81:13-81
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:82:13-81
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:80:13-86
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:81:13-86
 activity#com.xiangmu.lzx.activitys.ShangTouTiaoActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:82:9-84:69
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:83:9-85:69
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:84:13-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:85:13-66
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:83:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:84:13-74
 activity#com.xiangmu.lzx.activitys.WeatherActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:85:9-87:62
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:86:9-88:62
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:87:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:88:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:86:13-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:87:13-69
 activity#com.xiangmu.lzx.activitys.YueDuDetialActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:88:9-90:68
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:89:9-91:68
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:90:13-65
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:91:13-65
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:89:13-73
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:90:13-73
 activity#com.xiangmu.lzx.activitys.FullActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:91:9-95:52
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:92:9-96:52
 	android:screenOrientation
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:95:13-49
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:96:13-49
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:94:13-45
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:95:13-45
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:93:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:94:13-74
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:92:13-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:93:13-66
 activity#com.xiangmu.lzx.activitys.Setting_set_page
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:96:9-98:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:97:9-99:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:98:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:99:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:97:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:98:13-70
 activity#com.xiangmu.lzx.activitys.Setting_DiSanFangLoginActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:99:9-101:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:100:9-102:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:101:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:102:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:100:13-84
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:101:13-84
 activity#com.xiangmu.lzx.activitys.Setting_biaoqianPage
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:102:9-104:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:103:9-105:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:104:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:105:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:103:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:104:13-74
 activity#com.xiangmu.lzx.activitys.ReadChievement
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:105:9-107:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:106:9-108:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:107:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:108:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:106:13-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:107:13-68
 activity#com.xiangmu.lzx.activitys.Setting_set_person
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:108:9-110:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:109:9-111:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:110:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:111:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:109:13-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:110:13-72
 activity#com.xiangmu.lzx.activitys.Setting_headpage
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:111:9-113:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:112:9-114:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:113:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:114:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:112:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:113:13-70
 activity#com.xiangmu.lzx.activitys.Setting_my_Taskl
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:114:9-116:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:115:9-117:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:116:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:117:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:115:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:116:13-70
 activity#com.xiangmu.lzx.activitys.Setting_glodmall
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:117:9-119:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:118:9-120:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:119:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:120:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:118:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:119:13-70
 activity#com.xiangmu.lzx.activitys.Setting_Collection
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:120:9-122:61
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:121:9-123:61
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:122:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:123:13-58
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:121:13-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:122:13-72
 activity#com.xiangmu.lzx.activitys.WebProductinfoViewActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:123:9-125:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:124:9-126:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:125:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:126:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:124:13-80
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:125:13-80
 activity#com.xiangmu.lzx.activitys.WebCountViewActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:126:9-128:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:127:9-129:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:128:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:129:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:127:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:128:13-74
 activity#com.xiangmu.lzx.activitys.FilterDetailActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:129:9-131:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:130:9-132:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:131:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:132:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:130:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:131:13-74
 activity#com.xiangmu.lzx.activitys.FilterListEditActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:132:9-134:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:133:9-135:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:134:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:135:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:133:13-76
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:134:13-76
 activity#com.xiangmu.lzx.activitys.FilterAddActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:135:9-137:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:136:9-138:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:137:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:138:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:136:13-71
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:137:13-71
 activity#com.xiangmu.lzx.activitys.CustomerListEditActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:138:9-140:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:139:9-141:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:140:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:141:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:139:13-78
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:140:13-78
 activity#com.xiangmu.lzx.activitys.LiuyuanListEditActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:141:9-143:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:142:9-144:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:143:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:144:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:142:13-77
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:143:13-77
 activity#com.xiangmu.lzx.activitys.SmsListEditActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:144:9-146:59
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:145:9-147:59
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:146:9-56
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:147:9-56
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:145:9-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:146:9-69
 activity#com.xiangmu.lzx.activitys.SmsMessageDetailActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:147:9-149:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:148:9-150:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:149:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:150:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:148:13-78
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:149:13-78
 activity#com.xiangmu.lzx.activitys.CustomerDetailActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:150:9-152:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:151:9-153:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:152:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:153:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:151:13-76
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:152:13-76
 activity#com.xiangmu.lzx.activitys.LiuyuanDetailActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:153:9-155:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:154:9-156:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:155:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:156:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:154:13-75
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:155:13-75
 meta-data#UMENG_APPKEY
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:156:9-158:56
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:157:9-159:56
 	android:value
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:158:13-53
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:159:13-53
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:157:13-40
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:158:13-40
 activity#com.umeng.socialize.editorpage.ShareActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:160:9-164:15
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:161:9-165:15
 	android:excludeFromRecents
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:162:13-46
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:163:13-46
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:163:13-51
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:164:13-51
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:161:13-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:162:13-72
 activity#com.umeng.socialize.view.ShareActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:165:9-171:71
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:166:9-172:71
 	android:launchMode
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:168:13-44
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:169:13-44
 	android:windowSoftInputMode
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:171:13-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:172:13-68
 	android:noHistory
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:169:13-37
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:170:13-37
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:167:13-57
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:168:13-57
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:170:13-50
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:171:13-50
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:166:13-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:167:13-66
 activity#com.umeng.socialize.view.CommentActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:173:9-176:54
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:174:9-177:54
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:175:13-57
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:176:13-57
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:176:13-51
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:177:13-51
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:174:13-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:175:13-68
 activity#com.umeng.socialize.view.CommentDetail
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:177:9-181:54
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:178:9-182:54
 	android:noHistory
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:180:13-37
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:181:13-37
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:179:13-57
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:180:13-57
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:181:13-51
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:182:13-51
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:178:13-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:179:13-66
 activity#com.umeng.socialize.view.CommentDetailNoMap
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:182:9-186:54
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:183:9-187:54
 	android:noHistory
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:185:13-37
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:186:13-37
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:184:13-57
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:185:13-57
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:186:13-51
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:187:13-51
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:183:13-71
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:184:13-71
 activity#com.tencent.tauth.AuthActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:188:9-199:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:189:9-200:20
 	android:launchMode
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:190:13-44
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:191:13-44
 	android:noHistory
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:191:13-37
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:192:13-37
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:189:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:190:13-58
 intent-filter#android.intent.action.VIEW+android.intent.category.BROWSABLE+android.intent.category.DEFAULT
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:192:13-198:29
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:193:13-199:29
 action#android.intent.action.VIEW
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:193:17-69
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:194:17-69
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:193:25-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:194:25-66
 category#android.intent.category.DEFAULT
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:194:17-76
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:195:17-76
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:194:27-73
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:195:27-73
 category#android.intent.category.BROWSABLE
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:195:17-78
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:196:17-78
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:195:27-75
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:196:27-75
 data
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:197:17-60
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:198:17-60
 	android:scheme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:197:23-57
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:198:23-57
 activity#com.tencent.connect.common.AssistActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:200:9-203:75
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:201:9-204:75
 	android:screenOrientation
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:202:13-49
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:203:13-49
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:203:13-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:204:13-72
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:201:13-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:202:13-69
 activity#com.xiangmu.lzx.wxapi.WXEntryActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:205:9-210:75
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:206:9-211:75
 	android:screenOrientation
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:209:13-49
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:210:13-49
 	android:exported
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:208:13-36
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:209:13-36
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:207:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:208:13-74
 	android:theme
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:210:13-72
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:211:13-72
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:206:13-50
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:207:13-50
 activity#com.sina.weibo.sdk.component.WeiboSdkBrowser
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:212:9-217:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:213:9-218:20
 	android:windowSoftInputMode
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:215:9-51
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:216:9-51
 	android:exported
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:216:9-33
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:217:9-33
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:214:9-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:215:9-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:213:9-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:214:9-68
 activity#com.xiangmu.lzx.WBShareActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:218:9-226:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:219:9-227:20
 	android:screenOrientation
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:221:13-49
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:222:13-49
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:220:13-63
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:221:13-63
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:219:13-44
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:220:13-44
 intent-filter#android.intent.category.DEFAULT+com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:222:13-225:29
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:223:13-226:29
 action#com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:223:17-92
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:224:17-92
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:223:25-89
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:224:25-89
 activity#com.renn.rennsdk.oauth.OAuthActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:228:9-230:77
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:229:9-231:77
 	android:configChanges
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:230:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:231:13-74
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:229:13-64
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:230:13-64
 activity#com.xiangmu.lzx.activitys.PictureActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:231:9-233:62
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:232:9-234:62
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:233:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:234:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:232:13-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:233:13-69
 activity#com.xiangmu.lzx.activitys.LoginActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:234:9-236:60
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:235:9-237:60
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:236:13-57
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:237:13-57
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:235:13-67
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:236:13-67
 activity#com.xiangmu.lzx.activitys.BackpasswordActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:237:9-239:67
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:238:9-240:67
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:239:13-64
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:240:13-64
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:238:13-74
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:239:13-74
 activity#com.xiangmu.lzx.activitys.UpdaterActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:240:9-242:62
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:241:9-243:62
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:242:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:243:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:241:13-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:242:13-69
 activity#com.xiangmu.lzx.activitys.RegisterActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:243:9-245:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:244:9-246:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:245:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:246:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:244:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:245:13-70
 activity#com.xiangmu.lzx.activitys.Setting_GlodPage
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:246:9-248:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:247:9-249:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:248:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:249:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:247:13-70
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:248:13-70
 activity#com.xiangmu.lzx.activitys.ReadHistoryActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:249:9-251:63
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:250:9-252:63
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:251:13-60
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:252:13-60
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:250:13-73
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:251:13-73
 activity#com.xiangmu.lzx.activitys.Task_ShuoMing
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:252:9-253:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:253:9-254:20
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:252:19-73
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:253:19-73
 activity#com.xiangmu.lzx.activitys.ProductinfoListEditActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:254:9-255:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:255:9-256:20
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:254:19-87
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:255:19-87
 activity#com.xiangmu.lzx.activitys.GenTieActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:256:9-259:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:257:9-260:20
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:258:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:259:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:257:13-68
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:258:13-68
 activity#com.xiangmu.lzx.activitys.LiuyuanActivity
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:260:9-263:20
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:261:9-264:20
 	android:label
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:262:13-59
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:263:13-59
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:261:13-69
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:262:13-69
 meta-data#WEIBO_APPKEY
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:264:9-266:42
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:265:9-267:42
 	android:value
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:266:13-39
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:267:13-39
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:265:13-40
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:266:13-40
 meta-data#WEIBO_CHANNEL
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:267:9-269:37
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:268:9-270:37
 	android:value
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:269:13-34
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:270:13-34
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:268:13-41
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:269:13-41
 meta-data#com.google.android.gms.version
-ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:271:9-273:69
+ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:272:9-274:69
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\84974f93c388261ade85f843ab4676f8\AndroidManifest.xml:20:9-121
 MERGED from [com.google.android.gms:play-services-basement:11.0.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\84974f93c388261ade85f843ab4676f8\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:273:13-66
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:274:13-66
 	android:name
-		ADDED from D:\xin\dcgqxxmob\aT\src\main\AndroidManifest.xml:272:13-58
+		ADDED from D:\xin1\dcgqxxmob\aT\src\main\AndroidManifest.xml:273:13-58
 uses-feature#android.hardware.camera
-ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:14:5-60
+ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:14:5-60
 	android:name
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:14:19-57
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:14:19-57
 uses-feature#android.hardware.camera.autofocus
-ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:15:5-70
+ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:15:5-70
 	android:name
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:15:19-67
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:15:19-67
 activity#com.ericssonlabs.BarCodeTestActivity
-ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:20:9-28:20
+ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:20:9-28:20
 	android:label
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:22:13-45
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:22:13-45
 	android:name
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:21:13-64
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:21:13-64
 activity#com.zxing.activity.CaptureActivity
-ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:29:9-35:20
+ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:29:9-35:20
 	android:screenOrientation
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:32:13-49
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:32:13-49
 	android:windowSoftInputMode
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:34:13-60
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:34:13-60
 	android:configChanges
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:31:13-63
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:31:13-63
 	android:theme
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:33:13-71
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:33:13-71
 	android:name
-		ADDED from [:barCodeTest] D:\xin\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:30:13-62
+		ADDED from [:barCodeTest] D:\xin1\dcgqxxmob\barCodeTest\build\intermediates\bundles\debug\AndroidManifest.xml:30:13-62
 uses-permission#android.permission.MOUNT_UNMOUNT_FILESYSTEMS
-ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:12:5-84
+ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:12:5-84
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:12:5-84
 MERGED from [cn.finalteam:toolsfinal:1.1.4] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\23ebd4353a8cf242630b98d8f39e9b96\AndroidManifest.xml:12:5-84
 	android:name
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:12:22-81
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:12:22-81
 activity#cn.finalteam.galleryfinal.PhotoSelectActivity
-ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:22:9-25:52
+ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:22:9-25:52
 	android:screenOrientation
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:25:13-49
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:25:13-49
 	android:configChanges
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:24:13-83
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:24:13-83
 	android:name
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:23:13-73
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:23:13-73
 activity#cn.finalteam.galleryfinal.PhotoEditActivity
-ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:26:9-29:52
+ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:26:9-29:52
 	android:screenOrientation
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:29:13-49
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:29:13-49
 	android:configChanges
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:28:13-83
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:28:13-83
 	android:name
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:27:13-71
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:27:13-71
 activity#cn.finalteam.galleryfinal.PhotoPreviewActivity
-ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:30:9-33:52
+ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:30:9-33:52
 	android:screenOrientation
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:33:13-49
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:33:13-49
 	android:configChanges
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:32:13-83
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:32:13-83
 	android:name
-		ADDED from [:galleryfinal] D:\xin\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:31:13-74
+		ADDED from [:galleryfinal] D:\xin1\dcgqxxmob\galleryfinal\build\intermediates\bundles\debug\AndroidManifest.xml:31:13-74
 meta-data#android.support.VERSION
 ADDED from [com.android.support:cardview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\f26873f7c038a09d4c93c673ca1ed3c8\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\59c9095051056b1d36f1c728480cc580\AndroidManifest.xml:22:5-24:41
-MERGED from [com.android.support:recyclerview-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-26.0.0-alpha1.aar\59c9095051056b1d36f1c728480cc580\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\5f09d5fbe387eb121aa5996b14333805\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:appcompat-v7:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\5f09d5fbe387eb121aa5996b14333805\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-v4:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\8a7092be86639199f9bfa8249293e1e8\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:25:5-27:41
-MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:animated-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\7465b92fda9571ca730c3b506be80779\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-vector-drawable:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\ccba1ab67c3b70054c6537f58da5510a\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-media-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\bcbb19546e529799e931bd815b3efdda\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-fragment:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\32382d6be2bcb18743811b90f585da33\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:25:5-27:41
+MERGED from [com.android.support:support-core-ui:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\f1e5f99c02db490ff2a51bd4c92a21e9\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\4da3696639ff4337a890f2b8a0afb39e\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-core-utils:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\4da3696639ff4337a890f2b8a0afb39e\AndroidManifest.xml:25:5-27:41
 MERGED from [com.android.support:support-compat:26.0.0-alpha1] C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\10e8ba92db732b80681121e32b059bd7\AndroidManifest.xml:25:5-27:41

@@ -25,7 +25,7 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <TextView
+        <!--TextView
             android:id="@+id/xinwen_duotu_gentie"
             android:layout_width="100dp"
             android:layout_height="match_parent"
@@ -33,7 +33,7 @@
             android:clickable="true"
             android:background="@mipmap/titlebar_background"
             android:gravity="center"
-            android:text="0跟帖" />
+            android:text="0跟帖" />-->
         <ImageButton
             android:id="@+id/xinwen_xi_fenxiang"
             android:layout_width="50dp"
@@ -75,28 +75,60 @@
             android:textSize="15sp"
             />
 
-
-        <!--MaterialEditText
-            android:id="@+id/edit"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="36"
-
-            android:inputType="textNoSuggestions"
-            android:singleLine="true"
-            android:text="写留言:"
-            material:floatingLabel="true"
-            />-->
-
         <ImageButton
             android:id="@+id/subbtn"
-            android:layout_width="50dp"
-            android:clickable="true"
+            android:layout_width="40dp"
             android:layout_height="match_parent"
-            android:layout_marginRight="10dp"
             android:background="@android:color/transparent"
+            android:clickable="true"
             android:src="@mipmap/reply_write"
-            android:text="发送"
-            />
+            android:layout_gravity="center"
+            android:text="发送" />
+
+        <LinearLayout
+            android:id="@+id/mess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/messimage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@mipmap/reply_num_icon" />
+
+            <TextView
+                android:id="@+id/xinwen_duotu_gentie"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:clickable="true"
+                android:gravity="center_vertical"
+                android:text="0" />
+            <!--LinearLayout
+            android:layout_width="35dp"
+            android:layout_weight="1"
+            android:layout_height="35dp">
+            <ImageView
+                android:layout_margin="35dp"
+                android:layout_width="35dp"
+                android:layout_weight="1"
+                android:background="@mipmap/reply_num_icon"
+                android:layout_height="35dp" />
+            <EditText
+                android:layout_margin="35dp"
+                android:id="@+id/messagecount"
+                android:hint=""
+                android:background="#0000"
+                android:layout_gravity="center_vertical"
+                android:textSize="13sp"
+                android:layout_width="35dp"
+                android:layout_weight="1"
+                android:layout_height="35dp"
+                />-->
+        </LinearLayout>
     </LinearLayout>
 </RelativeLayout>
