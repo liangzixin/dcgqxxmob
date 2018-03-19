@@ -1,78 +1,78 @@
 [
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_single_pressed.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_single_pressed.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\check.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\856329d9b879f0198ec0ca3bc5d9688b\\res\\mipmap-xhdpi-v4\\check.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_bottom_normal.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_bottom_normal.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\add.png",
+        "source": "E:\\liang\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\add.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_middle_normal.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_middle_normal.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\856329d9b879f0198ec0ca3bc5d9688b\\res\\mipmap-xhdpi-v4\\icon.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\default_image.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\2c62ee454aad78b3c5cb65c6ce249cc0\\res\\mipmap-xhdpi-v4\\default_image.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher1.png",
+        "source": "E:\\liang\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher1.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\to.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\2c62ee454aad78b3c5cb65c6ce249cc0\\res\\mipmap-xhdpi-v4\\to.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_single_normal.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_single_normal.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_cancel_bt_bg.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_cancel_bt_bg.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_bottom_normal.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_bottom_normal.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\check.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\2c62ee454aad78b3c5cb65c6ce249cc0\\res\\mipmap-xhdpi-v4\\check.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\default_image.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\856329d9b879f0198ec0ca3bc5d9688b\\res\\mipmap-xhdpi-v4\\default_image.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_top_pressed.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_top_pressed.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_top_pressed.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_top_pressed.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_middle_pressed.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_middle_pressed.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
+        "source": "E:\\liang\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_other_bt_bg.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_other_bt_bg.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_middle_normal.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_middle_normal.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher1.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher1.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_cancel_bt_bg.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_cancel_bt_bg.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_top_normal.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_top_normal.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\camera.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\856329d9b879f0198ec0ca3bc5d9688b\\res\\mipmap-xhdpi-v4\\camera.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_bg_ios6.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_bg_ios6.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_bottom_pressed.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_bottom_pressed.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_bottom_pressed.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_bottom_pressed.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_single_pressed.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_single_pressed.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\ic_launcher.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_other_bt_bg.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_other_bt_bg.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\camera.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\2c62ee454aad78b3c5cb65c6ce249cc0\\res\\mipmap-xhdpi-v4\\camera.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_middle_pressed.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_middle_pressed.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\add.png",
-        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\mipmap-xhdpi\\add.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\to.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\856329d9b879f0198ec0ca3bc5d9688b\\res\\mipmap-xhdpi-v4\\to.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_single_normal.9.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\d545234ebaf2b0148a429bf389f6187d\\res\\mipmap-xhdpi\\actionsheet_single_normal.9.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_top_normal.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_top_normal.9.png"
     },
     {
-        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\icon.png",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\2c62ee454aad78b3c5cb65c6ce249cc0\\res\\mipmap-xhdpi-v4\\icon.png"
+        "merged": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi-v4\\actionsheet_bg_ios6.9.png",
+        "source": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\library-1.1.4.aar\\1e0f19998841eb6c7a130cf5bca78801\\res\\mipmap-xhdpi\\actionsheet_bg_ios6.9.png"
     }
 ]

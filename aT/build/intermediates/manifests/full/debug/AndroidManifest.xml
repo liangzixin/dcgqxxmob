@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xiangmu.lzx"
-    android:versionCode="2"
-    android:versionName="11.8.01" >
+    android:versionName="V1.1.01" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -57,6 +56,7 @@
         android:label="@string/app_name"
         android:largeHeap="true"
         android:supportsRtl="true"
+        android:testOnly="true"
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.xiangmu.lzx.welcome.WelcomeActivity"
@@ -125,6 +125,9 @@
             android:label="@string/title_activity_search" />
         <activity
             android:name="com.xiangmu.lzx.activitys.Setting_set_person"
+            android:label="@string/title_activity_search" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.Setting_set_version"
             android:label="@string/title_activity_search" />
         <activity
             android:name="com.xiangmu.lzx.activitys.Setting_headpage"

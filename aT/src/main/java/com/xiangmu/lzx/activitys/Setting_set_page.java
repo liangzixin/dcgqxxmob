@@ -153,7 +153,10 @@ public class Setting_set_page extends AppCompatActivity implements View.OnClickL
 
                 break;
             case R.id.about:
-
+                Intent intent3 = new Intent(this, Setting_set_version.class);
+                startActivity(intent3);
+                overridePendingTransition(R.anim.push_left_in, R.anim.push_left_out);
+                finish();
                 break;
         }
     }

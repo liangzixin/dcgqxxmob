@@ -2,8 +2,11 @@ package com.xiangmu.lzx.activitys;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageInfo;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -12,13 +15,15 @@ import android.widget.TextView;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
 import com.xiangmu.lzx.conent_frament.SheZhiFrament;
+import com.xiangmu.lzx.utils.XutilsGetData;
 
 /**
  * Created by Administrator on 2015/11/12.
  */
 public class Setting_set_version extends AppCompatActivity implements View.OnClickListener{
-    private ImageView backsetting;
-    private TextView email;
+    private static final String TAG = Setting_set_version.class.getSimpleName();
+    private ImageView backsetting,imageView,imageView2,imageView3;
+    private TextView tv1;
     private Button quit;
     private View view;
     @Override
@@ -29,14 +34,30 @@ public class Setting_set_version extends AppCompatActivity implements View.OnCli
     }
     private void initView() {
         backsetting = (ImageView) findViewById(R.id.backsetting);
-        email= (TextView) findViewById(R.id.email);
+        imageView = (ImageView) findViewById(R.id.imageView);
+        imageView2 = (ImageView) findViewById(R.id.imageView2);
+        imageView3 = (ImageView) findViewById(R.id.imageView3);
+       tv1= (TextView) findViewById(R.id.tv1);
         quit= (Button) findViewById(R.id.quit);
         listener();
+        initVersion();
+    }
+
+    private void initVersion() {
+        try {
+            PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
+            tv1.setText(pInfo.versionName);
+            XutilsGetData.xUtilsImageiv(imageView2, "http://www.dcgqxx.com/upload/201004201340260340.JPG",this,false);
+            XutilsGetData.xUtilsImageiv(imageView3, "http://www.dcgqxx.com/upload/201004201340260340.JPG",this,false);
+            return;
+        } catch (PackageManager.NameNotFoundException e) {
+            Log.e(TAG, "Cannot get package info", e);
+        }
     }
 
     private void listener() {
         backsetting.setOnClickListener(this);
-        email.setOnClickListener(this);
+        tv1.setOnClickListener(this);
         quit.setOnClickListener(this);
     }
     @Override
@@ -51,7 +72,7 @@ public class Setting_set_version extends AppCompatActivity implements View.OnCli
             case R.id.email:
                 String userName = SearchDB.createDb(this, "userName");
                 if (userName!=null){
-                    email.setText(userName);
+                    tv1.setText(userName);
                 }
                 break;
             case R.id.quit:
