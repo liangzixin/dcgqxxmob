@@ -28,12 +28,12 @@
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\xinwen_toutiaoframent.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_content.xml",
-        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_content.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_activity_read_chievement.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_read_chievement.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\yuedu_content.xml",
+        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\yuedu_content.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shake_umeng_socialize_share_dlg.xml",
@@ -44,12 +44,12 @@
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\abc_action_bar_up_container.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\alertview-1.0.3.aar\\0823494dccf6bf5a4e0d59447ce9178a\\res\\layout\\layout_alertview_alert.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_titile_bar_comment.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_titile_bar_comment.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\layout_alertview_alert.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\alertview-1.0.3.aar\\0823494dccf6bf5a4e0d59447ce9178a\\res\\layout\\layout_alertview_alert.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\widget_calendar.xml",
@@ -108,12 +108,12 @@
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\hgz_activity_biaoqian_page.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\select_dialog_multichoice_material.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\shangtoutiao_item_huigu.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shangtoutiao_item_huigu.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\select_dialog_multichoice_material.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\select_dialog_multichoice_material.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_productinfo_add.xml",
@@ -180,12 +180,12 @@
         "source": "D:\\xin1\\dcgqxxmob\\galleryfinal\\build\\intermediates\\bundles\\debug\\res\\layout\\gf_adapter_photo_list_item.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_article.xml",
-        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_article.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\progress_dialog.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\progress_dialog.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\item_article.xml",
+        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\item_article.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_lines_media.xml",
@@ -228,24 +228,24 @@
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_customersearchedit.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\cast_help_text.xml",
-        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\layout\\cast_help_text.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_oauth_dialog.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_oauth_dialog.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\cast_help_text.xml",
+        "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\55b562e237b1b0d19903e695e25b2f9f\\res\\layout\\cast_help_text.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_composer_header.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\umeng_socialize_composer_header.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\full_activity.xml",
-        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\full_activity.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\popwindow_sttjianjie.xml",
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\popwindow_sttjianjie.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\full_activity.xml",
+        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\full_activity.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\umeng_socialize_bind_select_dialog.xml",
@@ -256,12 +256,12 @@
         "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\shiting_list_item.xml"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
-        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_login.xml"
-    },
-    {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\support_simple_spinner_dropdown_item.xml",
         "source": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\5f09d5fbe387eb121aa5996b14333805\\res\\layout\\support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\activity_login.xml",
+        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\layout\\activity_login.xml"
     },
     {
         "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\layout\\hgz_collection_news_fragment.xml",
