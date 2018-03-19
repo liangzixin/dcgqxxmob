@@ -1,14 +1,14 @@
 [
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
-        "source": "D:\\xin1\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\realm_properties",
+        "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\realm_properties"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\shake_sound.mp3",
-        "source": "D:\\xin1\\dcgqxxmob\\aT\\src\\main\\res\\raw\\shake_sound.mp3"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\shake_sound.mp3",
+        "source": "D:\\xin\\dcgqxxmob\\aT\\src\\main\\res\\raw\\shake_sound.mp3"
     },
     {
-        "merged": "D:\\xin1\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\realm_properties",
-        "source": "D:\\xin1\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\realm_properties"
+        "merged": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\res\\merged\\debug\\raw\\beep.ogg",
+        "source": "D:\\xin\\dcgqxxmob\\barCodeTest\\build\\intermediates\\bundles\\debug\\res\\raw\\beep.ogg"
     }
 ]
