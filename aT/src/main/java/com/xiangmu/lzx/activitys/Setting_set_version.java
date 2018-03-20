@@ -47,8 +47,8 @@ public class Setting_set_version extends AppCompatActivity implements View.OnCli
         try {
             PackageInfo pInfo = getPackageManager().getPackageInfo(getPackageName(), 0);
             tv1.setText(pInfo.versionName);
-            XutilsGetData.xUtilsImageiv(imageView2, "http://www.dcgqxx.com/upload/201004201340260340.JPG",this,false);
-            XutilsGetData.xUtilsImageiv(imageView3, "http://www.dcgqxx.com/upload/201004201340260340.JPG",this,false);
+            XutilsGetData.xUtilsImageiv(imageView2, "http://www.dcgqxx.com/upload/mffp.gif",this,false);
+            XutilsGetData.xUtilsImageiv(imageView3, "http://www.dcgqxx.com/upload/copyRight.gif",this,false);
             return;
         } catch (PackageManager.NameNotFoundException e) {
             Log.e(TAG, "Cannot get package info", e);

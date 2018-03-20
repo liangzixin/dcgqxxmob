@@ -413,7 +413,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:layout_marginLeft="22dp"
-                    android:text="为网易新闻评分"
+                    android:text="为新闻评分"
                     android:textColor="@color/text_content"
                     android:textSize="18sp" />
             </RelativeLayout>
