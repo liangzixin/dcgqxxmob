@@ -45,7 +45,7 @@
             android:layout_marginRight="15dp"
             android:layout_marginTop="20dp"
             android:scrollbars="vertical"
-            android:lineSpacingExtra="5dp"
+            android:lineSpacingExtra="7dp"
             android:text="default"
             android:textSize="16dp" />
     </ScrollView>

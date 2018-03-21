@@ -29,7 +29,9 @@ public class Setting_set_ysbh extends AppCompatActivity implements View.OnClickL
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.hgz_ysbhset);
+
         initView();
+        listener();
     }
     private void initView() {
         backsetting = (ImageView) findViewById(R.id.backsetting);
