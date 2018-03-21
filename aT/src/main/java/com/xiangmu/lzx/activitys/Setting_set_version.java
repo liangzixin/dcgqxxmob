@@ -76,11 +76,10 @@ public class Setting_set_version extends AppCompatActivity implements View.OnCli
                 }
                 break;
             case R.id.quit:
-             //   SearchDB.removeDb(getSharedPreferences("hgz", Context.MODE_PRIVATE));
-                SearchDB.removeDb(getSharedPreferences("useInfo", Context.MODE_PRIVATE));
-                SheZhiFrament.handle.sendEmptyMessage(1);
+                Intent intent1 = new Intent(this, Setting_set_ysbh.class);
+                startActivity(intent1);
+                overridePendingTransition(R.anim.push_right_in, R.anim.push_right_out);
                 finish();
-                break;
         }
     }
 }

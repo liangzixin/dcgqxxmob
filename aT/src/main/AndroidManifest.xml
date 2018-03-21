@@ -110,7 +110,10 @@
             android:name="com.xiangmu.lzx.activitys.Setting_set_person"
             android:label="@string/title_activity_search" />
         <activity
-            android:name="com.xiangmu.lzx.activitys.Setting_set_version"
+        android:name="com.xiangmu.lzx.activitys.Setting_set_version"
+        android:label="@string/title_activity_search" />
+        <activity
+            android:name="com.xiangmu.lzx.activitys.Setting_set_ysbh"
             android:label="@string/title_activity_search" />
         <activity
             android:name="com.xiangmu.lzx.activitys.Setting_headpage"
