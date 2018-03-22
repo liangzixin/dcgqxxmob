@@ -154,7 +154,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
     List  nl= Zpnl.getValues();
     List  xl= Edu.getValues();
     List  listcjfs= Fzfs.getValues();
-    ImageButton imageback;
+    private ImageButton imageback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -162,6 +162,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
         Intent intent = getIntent();
         productinfo= (XinWen_productinfo.T18908805728Entity) intent.getSerializableExtra("productinfo");
       setContentView(R.layout.activity_productinfo_detailed);
+        imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
        view= (LinearLayout) findViewById(R.id.content00);
     //    LayoutInflater inflater = LayoutInflater.from(this);
        // view=   inflater.inflate(R.id.content0, null,true);
@@ -264,7 +265,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
         zjfs = (Spinner) view.findViewById(R.id.cjfs);
         productinfo_content = (EditText) view.findViewById(R.id.productinfo_content);
 
-        imageback = (ImageButton) view.findViewById(R.id.xinwen_xi_back);//返回
+
         showView(productinfo);
         initinpinner();
     }
@@ -314,8 +315,9 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 //        imageback.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
-//              // ProductinfoDetailActivity.this.finish();
-//                Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
+//              ProductinfoDetailActivity.this.finish();
+//                //   //      finish();
+//            Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
 //            }
 //        });
         articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
@@ -1248,14 +1250,14 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 
     @Override
     public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.xinwen_xi_back://详细信息
-                //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
-                //	System.out.println("LongClick1 标题");
-                //    l = 1;
-                Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
-                break;
-        }
+//        switch (v.getId()) {
+//            case R.id.xinwen_xi_back://详细信息
+//                //  	Toast.makeText(this, "LongClick1 标题1", Toast.LENGTH_SHORT).show();
+//                //	System.out.println("LongClick1 标题");
+//                //    l = 1;
+//                Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
+//                break;
+//        }
     }
 
 
