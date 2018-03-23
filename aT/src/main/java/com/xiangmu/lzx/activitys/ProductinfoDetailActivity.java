@@ -163,6 +163,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
         productinfo= (XinWen_productinfo.T18908805728Entity) intent.getSerializableExtra("productinfo");
       setContentView(R.layout.activity_productinfo_detailed);
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
+        fpxx = (TextView)findViewById(R.id.bt_fpxx);
        view= (LinearLayout) findViewById(R.id.content00);
     //    LayoutInflater inflater = LayoutInflater.from(this);
        // view=   inflater.inflate(R.id.content0, null,true);
@@ -217,7 +218,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 
   private void initView(View view) {
         //    private void initView() {
-        fpxx = (TextView) view.findViewById(R.id.bt_fpxx);
+
         // setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (Spinner) view.findViewById(R.id.spin_articler);
 
@@ -300,26 +301,35 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
         spinner_sex.setAdapter(new ArrayAdapter<Sex>(this, android.R.layout.simple_spinner_item, msex));
         spinner_dxfw.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, dxfw));
-        spinner_nl.setAdapter(new ArrayAdapter<String>(this,
+             spinner_nl.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, nl));
         spinner_xl.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, xl));
+        if(productinfo.getZpxx()!=null) {
+            spinner_sex.setSelection(msex.indexOf(productinfo.getZpxx().getSexrequest().getName()));
+            spinner_xl.setSelection(xl.indexOf(productinfo.getZpxx().getEdurequest().getName()));
+            spinner_nl.setSelection(nl.indexOf(productinfo.getZpxx().getZpnlrequest().getName()));
+            spinner_dxfw.setSelection(dxfw.indexOf(productinfo.getZpxx().getGzdx().getName()));
+        }
+
         cjfs.setAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_spinner_item, listcjfs));
-
+        if(productinfo.getFwcs()!=null) {
+            cjfs.setSelection(listcjfs.indexOf(productinfo.getFwcs().getFzfsrequest().getName()));
+        }
         //改变默认的单行模式
         productinfo_content.setSingleLine(false);
         //水平滚动设置为False
         productinfo_content.setHorizontallyScrolling(false);
 //        mRecyclerView =   (ListView) view.findViewById(R.id.refresh);
-//        imageback.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//              ProductinfoDetailActivity.this.finish();
-//                //   //      finish();
-//            Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
-//            }
-//        });
+        imageback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //   ProductinfoDetailActivity.this.finish();
+                   finish();
+                //    Toast.makeText(ProductinfoDetailActivity.this, "单击了返回.....", Toast.LENGTH_LONG).show();
+            }
+        });
         articlerSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
 
             //当选中某一个数据项时触发该方法
@@ -421,8 +431,9 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
                         gsdzLayout.setVisibility(View.VISIBLE);
                         gsmzLayout.setVisibility(View.VISIBLE);
                         fwhx3Layout.setVisibility(View.VISIBLE);
-                        gqsl.setText(productinfo.getGqxx().getGqsl()+"");
-
+                        if(productinfo.getGqxx()!=null) {
+                            gqsl.setText(productinfo.getGqxx().getGqsl() + "");
+                        }
 
                         fwhx0Layout.setVisibility(View.GONE);
                         fwhx1Layout.setVisibility(View.GONE);
@@ -543,7 +554,7 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 */
 
 
-/*
+
         fpxx.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -575,12 +586,12 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
 
 
                 String saveproduct = xinWenURL.getSaveproductinfo();
-                Toast.makeText(ProductinfoDetailActivity.this, "发布中.....", Toast.LENGTH_LONG).show();
+                Toast.makeText(ProductinfoDetailActivity.this, "修改中.....", Toast.LENGTH_LONG).show();
                 SaveData(saveproduct);
 
             }
         });
-*/
+
         //    return view;
     }
 
@@ -956,26 +967,12 @@ public class ProductinfoDetailActivity extends AppCompatActivity implements OnIt
     }
 
     private void SaveData(final String url){
-//        filepath= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator;
-//        filepath1= Environment.getExternalStorageDirectory().getAbsolutePath()+File.separator+"abc.txt";
-//        FileInputStream fis = null;//文件输入流
-//        try {
-//            fis = new FileInputStream(new File(filepath));
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        }
 
         if (!url.equals("")) {
             httpUtils = new HttpUtils();
-//       name=;
-//                gsmz=;
-//                gsdz=;
-//                sex=;
-//        dxfwl=;
-//                nll=;
-//                xll=;
-//          mSelectedPhotos=Entries.photos;
+
             RequestParams params = new RequestParams();
+            params.addQueryStringParameter("id",productinfo.getId().toString());
             params.addQueryStringParameter("name",name.getText().toString());
             params.addQueryStringParameter("gsdz",gsdz.getText().toString());
             params.addQueryStringParameter("gsmz",gsmz.getText().toString());
