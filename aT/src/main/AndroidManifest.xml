@@ -55,10 +55,6 @@
             android:label="@string/app_name"
        />
         <activity
-            android:name="com.xiangmu.lzx.activitys.ProductinfoAddActivity"
-            android:label="发布"
-            />
-        <activity
             android:name="com.xiangmu.lzx.activitys.ProductinfoDetailActivity"
             android:label="@string/title_activity_web_view"
             />

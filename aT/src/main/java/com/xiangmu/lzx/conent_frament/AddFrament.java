@@ -553,8 +553,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
 
-        ImageButton imageback = null;
-        imageback = (ImageButton) view.findViewById(R.id.xinwen_xi_back);//返回
+
 
 
 //        TextView duotu_gentie = null;
@@ -567,12 +566,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        fenxiang = (ImageButton) view.findViewById(R.id.xinwen_xi_fenxiang);
         // getdata(url);//获得数据
         //点击finish
-        imageback.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-           //     finish();
-            }
-        });
+
         //点击进入跟帖 详细页面
         //// TODO: 2015/11/14 点击进入跟帖 详细页面 完成
 //        duotu_gentie.setOnClickListener(new View.OnClickListener() {
@@ -1005,7 +999,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                         startActivity(intent);
 //                        setResult(RESULT_CODE, intent);
-                       // finish();
+                        getActivity().finish();
 
                     }
                 }

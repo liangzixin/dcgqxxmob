@@ -17,12 +17,6 @@
         android:id="@+id/content0"
 
         >
-        <ImageButton
-            android:id="@+id/xinwen_xi_back"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:background="@android:color/transparent"
-            android:src="@mipmap/back" />
 
         <TextView
             android:layout_width="0dp"

@@ -12,7 +12,6 @@ import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.LayoutInflater;
-import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
@@ -36,7 +35,6 @@ import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.xiangmu.lzx.Bean.WeatherBean;
 import com.xiangmu.lzx.R;
-import com.xiangmu.lzx.activitys.ProductinfoAddActivity;
 import com.xiangmu.lzx.activitys.SearchActivity;
 import com.xiangmu.lzx.activitys.SecondCodeActivity;
 import com.xiangmu.lzx.activitys.WeatherActivity;
@@ -390,8 +388,8 @@ public class XinWenFrament extends Fragment implements View.OnClickListener {
                 break;
             case R.id.shangtoutiao:
                 popupWindow.dismiss();
-                intent = new Intent(getActivity(), ProductinfoAddActivity.class);
-                startActivityForResult(intent,1);
+          //      intent = new Intent(getActivity(), ProductinfoAddActivity.class);
+            //    startActivityForResult(intent,1);
 //                startActivity(intent);
                 getActivity().overridePendingTransition(R.anim.zcdh_alpha_in, R.anim.zcdh_set_out);
                 break;
