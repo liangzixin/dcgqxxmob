@@ -19,7 +19,7 @@ android {
         }
         vectorDrawables.useSupportLibrary = true
         versionCode
-        versionName "V1.1.05-20180327"
+        versionName "V1.1.05-20180514"
         multiDexEnabled true
 
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
@@ -73,4 +73,13 @@ dependencies {
     compile files('libs/xutils-3.5.0.jar')
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
     compile files('libs/xUtils.jar')
+    compile files('libs/umeng-common-1.5.1.jar')
+    compile files('libs/umeng-shareboard-widget-6.9.1.jar')
+    compile files('libs/umeng-share-QQ-full-6.9.1.jar')
+    compile files('libs/umeng-share-core-6.9.1.jar')
+    compile files('libs/umeng-sharetool-6.9.1.jar')
+    compile files('libs/open_sdk_r5990_lite.jar')
+    //   compile files('libs/wechat-sdk-android-without-mta-5.1.4.jar')
+    compile files('libs/alicloud-android-utils-1.0.3.jar')
+    compile files('libs/umeng-push-4.1.0.jar')
 }

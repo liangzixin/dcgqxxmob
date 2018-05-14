@@ -5,6 +5,7 @@ import android.media.MediaPlayer;
 import android.support.multidex.MultiDexApplication;
 
 import com.umeng.socialize.Config;
+//import com.umeng.socialize.view.Config;
 import com.umeng.socialize.PlatformConfig;
 import com.umeng.socialize.UMShareAPI;
 import com.xiangmu.lzx.listener.GlideImageLoader;
@@ -32,7 +33,7 @@ public class MyApplication extends MultiDexApplication {
         super.onCreate();
        // setSearchDB0(false);
         ctx = getApplicationContext();
-        Config.DEBUG = true;
+      //  Config.DEBUG = true;
         UMShareAPI.get(this);
         ThemeConfig theme = new ThemeConfig.Builder().build();
         //配置功能

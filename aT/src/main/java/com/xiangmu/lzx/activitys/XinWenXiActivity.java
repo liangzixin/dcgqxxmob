@@ -507,7 +507,7 @@ public class XinWenXiActivity extends AppCompatActivity {
                     && platform != SHARE_MEDIA.EVERNOTE) {
                 Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
                 if (t != null) {
-                    com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
+                //    com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
                 }
             }
 

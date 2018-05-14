@@ -8,6 +8,7 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
+
     <!-- Base application theme. -->
     <style name="AppThemeLzx" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
@@ -201,6 +202,17 @@
         <!-- PopupWindow左右弹出的效果 -->
         <item name="android:windowEnterAnimation">@anim/in_lefttoright</item>
         <item name="android:windowExitAnimation">@anim/out_righttoleft</item>
+    </style>
+    <style name="Theme.UMDialog" parent="android:style/Theme.Dialog">
+    <item name="android:windowNoTitle">true</item>
+    <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+    <style name="umeng_socialize_list_item">
+    <item name="android:layout_width">fill_parent</item>
+    <item name="android:layout_height">55dp</item>
+    <item name="android:background">@color/umeng_socialize_list_item_bgcolor</item>
+    <item name="android:paddingBottom">5dp</item>
+    <item name="android:paddingTop">5dp</item>
     </style>
     <!--<style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">-->
         <!--<item name="android:actionMenuTextAppearance">@style/MenuTextStyle</item>-->

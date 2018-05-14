@@ -84,23 +84,18 @@ public class ReDianFrament extends Fragment {
     private PullToRefreshListView toutiao_lv;
     LinearLayout titlebar;
     TextView bartextView;
-    ImageButton back;
+
     //初始化控件
     private View initview(LayoutInflater inflater) {
         final View view = inflater.inflate(R.layout.redian_view, null, false);
         titlebar= (LinearLayout) view.findViewById(R.id.redian_title_bar);
         toutiao_lv = (PullToRefreshListView) view.findViewById(R.id.xinwen_toutiao_lv);
         bartextView=(TextView)view.findViewById(R.id.txt_title);
-        back=(ImageButton) view.findViewById(R.id.back);
+
 //        toutiao_adapter = new XinWenBaseAdapter(getActivity(), toutiao_list);
 //        toutiao_lv.getRefreshableView().setAdapter(toutiao_adapter);
         getdata(url, true,search);
-        back.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            getActivity().finish();
-            }
-        });
+
         toutiao_lv.setPullLoadEnabled(false);  //上拉加载，屏蔽
 //        toutiao_lv.setPullLoadEnabled(true);
         toutiao_lv.setScrollLoadEnabled(false); //设置滚动加载可用
@@ -239,10 +234,10 @@ public class ReDianFrament extends Fragment {
             pos = position;
             toutiao_listview=toutiao_list.get(pos);
         } else {
-            pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
-            toutiao_listview=toutiao_list.get(pos);
+          //  pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
+            toutiao_listview=toutiao_list.get(position);
         }
-        LogUtils.e("xinwenadapter", "postion==" + pos);
+        LogUtils.e("xinwenadapter", "postion==" + position);
         //    int bujutype = XinWen_adapter.getType(toutiao_list.get(pos).getId());
         int bujutype =0;
         LogUtils.e("xinwenadapter", "type==" + bujutype);

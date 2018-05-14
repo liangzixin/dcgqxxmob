@@ -30,7 +30,8 @@ import com.lidroid.xutils.http.client.HttpRequest;
 import com.umeng.socialize.UMAuthListener;
 import com.umeng.socialize.UMShareAPI;
 import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.utils.Log;
+//import com.umeng.socialize.utils.Log;
+import com.tencent.mm.opensdk.utils.Log;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.HttpPostThread;
@@ -396,7 +397,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                                 // 设置头像
                                 if (string.equals("profile_image_url")) {
                                     profile_image_url = data.get(string);
-                                    Log.i("-------image",profile_image_url);
+                              Log.i("-------image",profile_image_url);
                                 }
                                 // 设置昵称
                          if (platform== SHARE_MEDIA.QQ) {
