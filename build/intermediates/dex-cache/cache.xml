@@ -2,312 +2,1074 @@
 <items version="2" >
 
     <item
-        jar="D:\xin\dcgqxxmob\aT\libs\umeng_social_shareboard.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\26.0.0-alpha1\support-annotations-26.0.0-alpha1.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="c698121d485cc1cd502ff8fad5e4e71f72ad1e9b">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\umeng_social_shareboard_dd1828243849313ec1ecec2a7f24acce4f83487f.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="023ee503b631f69511e335a061ea008f8da60f40">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\104\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\libs\umeng_shareboard_widget.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="4b1a59e4c996ee354c2db160f4b1ad3b0e94aab5">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\umeng_shareboard_widget_bdb5c842faeb9f36b773561ff538694344d6fb80.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\open_sdk_r5756_lite.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="06379788d59fda28f99848b542d55c94f48322a9">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\open_sdk_r5756_lite_d39b87f16ad416675e6f91f734b74a338d67fdd4.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.bigkoo\alertview\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="e4564bea4993a25fa66ba098f02be8cdc4dac7c3">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.bigkoo-alertview-1.0.0_b5620f5af239b2f37c26ff8a33441c7ab29a41b7.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="0d191c1a09e4892d059e5ce749e4ad4e08129e35">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-animated-vector-drawable-25.1.1_90ab9f4043c9b16d59b5ba8cd207caa2bb802f83.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_QQ_Full.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="608bb9e650c21e333045f323dabfe857c1897fad">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_QQ_Full_192bad981a44fcce2f683ae95c176463502c80b1.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.2.1\d8e711ae108185c59c17b36b3c3f11b20cf9b4d5\gson-2.2.1.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d8e711ae108185c59c17b36b3c3f11b20cf9b4d5">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\gson-2.2.1_e39ce6c995b7718603f8e21d51a0eb5ef08c5d86.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\AppData\Local\Android\Sdk\extras\android\m2repository\com\android\support\support-annotations\25.3.1\support-annotations-25.3.1.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="bf8841d29fa39e077730e7a91222c2ce269fa7c9">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\support-annotations-25.3.1_5fd46e935aa456e728d776dfe9110da65b24f653.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-core-ui\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="3e04ac8ca644ea7baddf6fdcf72e15c79e9df94a">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-core-ui-25.1.1_a2a3fb7f5985b454e3d79a09c2631615627a3b9a.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.sd6352051\android-image-picker\v1.0.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d16051e00bfbb30c062bdf79d09fb0735bf7e028">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.sd6352051-android-image-picker-v1.0.1_27062423bcf6b868ae9eff6ee3a515851b7001c7.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\umeng_social_net.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="7dc09846075b535576671188dda46b968a466dd4">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\umeng_social_net_bb9a73b102897553892ae04879c201569157d72a.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\library-2.4.0_16c20551d1515298e4f820dbb2437cde217a49b7.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\appcompat-v7\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="ecb496cc08dd52551fc5ec6db3bc0632e95a89bb">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-appcompat-v7-25.1.1_e1a14881a87008d4fa04bd2e49ca52de4ec9772f.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\fr.erictruong\materialedittext\0.2.0\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d3a6198b1220b5a41c3340f21fa0abc1a1a7e985">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\fr.erictruong-materialedittext-0.2.0_e477cb5ed8dee6f860c974a9a2295ff702b00bde.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\FJMtSortButtonLib\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="3543502905a8d793cca38e85527717888d154a5e">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\dcgqxxmob-FJMtSortButtonLib-unspecified_1ed2aa82f9a1975276d8ab79025e4b68f7a30800.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-fragment\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="e2719c102dca3a7a5b02ce07f769362da6ddb4ab">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-fragment-25.1.1_3acde8451f2a108a61199fdd92bc0a1781247206.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\eventbus-3.0.0_b046f2d7b725a0049f6620165e711996d601a8ed.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\umeng_social_api.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="b746609643403fd41d57014af6606db06a39fdb0">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\umeng_social_api_b39d3dbab86e8f11020f3ed141e539315a618c8b.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="0fb891e8f0cfba0513043a7bb357513d229ca2cd">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-core-utils-25.1.1_695bdf9cd9445f5de511904b9ae25753c9d3c943.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\junit-4.12_efd323ea978241d982ef9959d6dec479ccd9eeb5.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-v4\25.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-v4-25.1.1_dac676e2bef0c088c4c023ad777429cef53d8732.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="ef56228011e84ec7d9b1728953d7150c78426b7e">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\dcgqxxmob-barCodeTest-unspecified_50e23eea63ab73578032447801bf8004aae6d660.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\xUtils.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\xUtils_a88500c9d1d9a681f1204d3bb4d48f9f9e298c30.jar" />
-    </item>
-    <item
+        is-multidex="true"
         jar="D:\xin\dcgqxxmob\aT\libs\org.apache.http.legacy.jar"
         jumboMode="false"
-        revision="25.0.2"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
         sha1="fa331331b626ee78c52bea16ce1e34b39e666ce5">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\org.apache.http.legacy_dcea264cc03e304fa0768052775d2c93da0bba91.jar" />
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\5\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-media-compat\25.1.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-places-11.0.4.aar\f96d9bb0e6f448e4c6b87b9eadb51e03\jars\classes.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="7bde4c34162092e0a77e7f12dc85ed77c484cf5c">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-media-compat-25.1.1_6273eda40a2a0cf641c640f1ad3042c2d4a6eacf.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="5594a368622908d89c47d9a391aa2724fe046c35">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\68\classes.dex" />
     </item>
     <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-analytics-11.0.4.aar\de5688725284be6884207324bc2edfa8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e5b429c146094a612134910688d169ec08deeefb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\83\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\xUtils.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f10c51f3e0732fdeefe6e104279a58e275879b6c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\20\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-common-1.5.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e563fdc9fa4f7afc07e1249101cbb373f8f1cc04">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\6\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-analytics-11.0.4.aar\5927133af7c30b17c4964a71bd7c7d62\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a25b0b5aec89681b95d32780ad7904c1e1e4c679">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\45\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-v4-26.0.0-alpha1.aar\e3c02ccad7eeed70273595ff9d4b0882\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\93\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\barCodeTest\build\intermediates\intermediate-jars\release\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="df288c5f552a6204a2abca2502c6ed1252e271b9">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\106\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\AppData\Local\Android\Sdk\extras\m2repository\com\android\support\constraint\constraint-layout-solver\1.0.2\constraint-layout-solver-1.0.2.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b9cd8fc6bd15cb915735d34535db30ece0c44603">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\105\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-ads-11.0.4.aar\2dfd716d175f7f5be8edf23b30b1b2ea\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2c73e2a93e00abd240e495c1e62217e53904a3f3">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\43\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-fragment-26.0.0-alpha1.aar\ff82295b322c508aa0a0a061c1a84157\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="18d31838aa4fcc768a8a0516e22cc13b94655d89">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\99\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-panorama-11.0.4.aar\a425c799787e1c8241e3839c1750b565\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c6706cc7c8c3093560edd55d322218afe7798aa9">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\71\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.0.0-alpha1.aar\6f339882d5be662aad338b3b91d58942\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9935891f23923f39d002087085d9696568a9f657">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\98\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\junit\junit\4.12\2973d150c0dc1fefe998f834810d68f278ea58ec\junit-4.12.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\24\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\alicloud-android-sdk-httpdns-1.1.3.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2f5d8c9ade5cb5081d53a2bd08dbac5a2e73438d">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\mediarouter-v7-25.2.0.aar\564e2e38e1aabf27a64a43cc4632dfb3\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="af13a350b71b437ebf4be335d02a8f785c39b111">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\40\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\wechat-sdk-android-without-mta-5.1.4.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4a65d54e456cd2a0ef32dde023ce206753bfb518">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-dynamic-links-11.0.4.aar\7c09f567e5fec020fead9babb9ad1c4a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="dae0d68af4c87df40eca67069861e53b7cefaaa0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\59\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-api-11.0.4.aar\c7fbd572f7040d57ee01e9587cdcf5c3\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f15e20dd7bcde7c688cfda44d0c8320a5c1c24b8">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\82\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-auth-base-11.0.4.aar\8396f3d5c6285521df88e1e503aa84e9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="0bffdc0bd4f7ca0e27c5bfeef39569f8da00aa26">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\52\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-11.0.4.aar\b2068938463f992fc7154ed6238545e1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c175c3009577fad8b433703f5d7ac2dc21d3871f">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\46\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-compat-26.0.0-alpha1.aar\19422320097a19625ef7705426702fbb\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8df0e365e40beb151bc42dee20817721a6cab7b0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\103\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-gass-11.0.4.aar\7e9a835927466fc91588e28216064a95\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="34c23b5894b4f24d566bfc33e0e25462c6436b78">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\89\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\palette-v7-25.2.0.aar\82727d848cdf7d2823eaec89b557e690\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9be5e957849eb82ad9addf9bdb2896de8bf5654b">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\101\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.0.0-alpha1.aar\a6d7f33899e43b2ec10af22b0f2ad253\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="88246166d5afb106f532f6e6deae683c66b42c89">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\96\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.1\b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8\butterknife-5.1.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\28\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-gcm-11.0.4.aar\2a3bc79018066cc9930b08fa08f15e22\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d8942ee348aaa9341f08f7e2437063893fe27542">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\61\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\alicloud-android-utils-1.0.3.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="000626735e82687be89e3ba1ac481540fcab031c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\94\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tagmanager-v4-impl-11.0.4.aar\31fe5a5e122140726df8a8d8cc1280b0\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c1b91bc7e480ab100d0397b16c93732e26fd10eb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\47\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-analytics-impl-11.0.4.aar\a81935493ec177e894a898137c9c3dfa\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2c2f1b3f82c027e98f56bb0154de0acbcce42e6d">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\48\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-11.0.4.aar\aa5fa527f7a5220b1eaea5a1a0915732\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e1625e48a836779b5fa141d22e5d05563aaccc9a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\84\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-base-11.0.4.aar\5003e8bfc74cadbb172e4295b30e09b0\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="70ffe00aaf049893f59d1dad57bd82992faa38ef">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\77\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-iid-11.0.4.aar\6a61db9da10944615c5706bcc3d45e12\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ed87ccdcb70c17d71ba4e6e4ac16afa62d3c49fb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\85\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-appinvite-11.0.4.aar\2bcf5d5f984680184b6120ac257de5c4\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="576570f46ff6ccc69a984af9e55ddd58d9549270">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\49\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-drive-11.0.4.aar\2055cfd5cb21feafaaf5b23cae52017d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="02b91f8efa91dcdf5c555ee24b7f006f02cd0f8b">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\57\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-tasks-11.0.4.aar\078a63ef1ed5c8243f4eae0fad4efb3d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2430e711762a749feb00b3d64858ca4768251b9d">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\90\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\FJMtSortButtonLib\build\intermediates\intermediate-jars\release\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ece4a76509f2e176c0730f90a6de5a23ea8c6887">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\107\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\org.greenrobot\eventbus\3.0.0\ddd99896e9569eaababbe81b35d80e1b91c4ad85\eventbus-3.0.0.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ddd99896e9569eaababbe81b35d80e1b91c4ad85">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\29\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-plus-11.0.4.aar\81e8168b8dd60b90701fa9bbe0632151\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="057fb316bed8467398333f30926c2d5506e275b2">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\72\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-push-4.1.0.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6bf7be7cf59976d443d17cd21ee01c79bfb62a9e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\8\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-crash-11.0.4.aar\44eb11f4064675f07a12421a2c4c1116\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fc3036436defd3070337b7191c50a136ebca7f8f">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\78\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-framework-11.0.4.aar\bd13d216e485a8727a6a46127647df9d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="56d68d1174b9c1e368017a850b62b12429f39757">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\38\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\open_sdk_r5990_lite.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="da51ad582d31d2151724c7df50ee869584697b38">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\4\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-instantapps-11.0.4.aar\a5d1529446d477fa13eef6b745b86031\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2b12b18c5518021cc71577c83d1290f8ddaa3c98">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\66\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-sharetool-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="9033e1376131272ca1e792f2834f7936bf67ebe0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\15\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-fitness-11.0.4.aar\99262a36d81382a4ebfa9f8688fe8ebf\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8544f739799dd15db63927073a21312864ab0bfd">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\60\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-basement-11.0.4.aar\73bd95435489b0f11cb0b975a9c42704\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="364364bf77b4a71afc5930fc3ae57b3f0eea637c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\91\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-identity-11.0.4.aar\0e82a8780d00263f73930b0de0729d53\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c8bf878c09bf0df6ae76eb6c2df38c6a186b38b7">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\64\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\materialedittext-0.2.0.aar\2d57362cc34a6a0faaae087897e87ac5\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d3a6198b1220b5a41c3340f21fa0abc1a1a7e985">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\26\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-common-11.0.4.aar\502cb10ecbf17c4f921f78a9d5173776\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="43e9789bd3240271265ab30ce1be9f224843f5a8">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\88\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.0.0-alpha1.aar\dd63bfece04b52d96abbd88211c0166c\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="952944218ecedea1554a513dec0c14d570642843">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\97\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\xutils-3.5.0.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c70d3d4cb2d0b16c435c716fa169cb506929269b">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\19\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.0.0-alpha1.aar\3c73bd9641f1b77a99c8602bec1704d8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fcd01fd11233459f546c437ec927e9b61bf7caf1">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\100\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-auth-11.0.4.aar\9f0b4ba74c9d125ce73ef482155f1825\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b5b6af36bacf1d812cd3dc45f9dcab9ea471ed91">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\58\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.google.code.gson\gson\2.8.0\c4ba5371a29ac9b2ad6129b1d39ea38750043eff\gson-2.8.0.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c4ba5371a29ac9b2ad6129b1d39ea38750043eff">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\22\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-games-11.0.4.aar\72edc7375087e443f2a139914eee43f8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="377c5f26ebf67f3fa6ef2f663a58cac7ce647dde">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\56\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-database-11.0.4.aar\8276ede185e2cfadedf2a5bb7d1f5eea\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7c24e2e9773fb498e390ce973db382c3ddcf748e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\79\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-vision-11.0.4.aar\4fe9ba72018fd4bc038ab8e9f9c0d589\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="63b03eaa1aa9b9431c7638841175f9842dcbf274">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\74\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-share-QQ-simplify-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f0efc2a31b5e785c23f087ca87653673e1aa36e0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\11\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-safetynet-11.0.4.aar\e2409650e4818b841da32f6c38dc6abb\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f2cb88e7e28736d44e7e643deb80c9af1c3662c8">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\73\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\weiboSDKCore.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f73475f005e07e897831e11a53ba48df522ac759">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\18\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-share-QQ-full-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="be38e842015ca27e2ee385b17af5118c1c4731d4">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\10\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-share-sina-full-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="8ab0b575efe1df9bd782b9a5053d549a5c938fe7">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\12\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\CommonAdapter-0.5.3.aar\707bce885665343b150be19fb88d21f9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="67316178b2265f24d676b8fe10635d4ec908e0ff">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\25\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-shareboard-widget-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="52e68bf2e24da7ebe26603684e9e1381943adccb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\14\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-storage-11.0.4.aar\637fdef770bb993d3f9b950ec1d6d5dc\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="3ac08c35419ab7cf9146969de471768dbe502f0f">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\86\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-wearable-11.0.4.aar\27bf4ae146d882620b8e26d93adfd99d\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c6aa915c08cfd82780c10d4b957018bf819a48e2">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\76\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-23.3.0.aar\95e66b57110766314d1ac6ac0f9269fe\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="debf30ce0a7560396b6235edef77e447006454c2">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\92\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\material-spinner-1.1.1.aar\0eeafd401ac7291c4b83f5f88ec5a566\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d0df3bf618b078d102a4234ceff33c44026e64b9">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\27\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\multidex-1.0.1.aar\2383225e99d08c0b85b0395d6458318c\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="78ea232052df889856dcb7b7b542707c89bb3bfb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\32\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-share-wechat-full-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="13150b1a712f39059b3aed24cd5bc24865152225">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\13\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-cast-11.0.4.aar\86527bbd7bb0f3e182e0d99c35e4b00a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="ffd0ddf5e57b4d60c4a3fbcd38fa20349a0cebd1">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\39\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-awareness-11.0.4.aar\c83acd60848fce24de3d389c8639f8c0\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="c72b1515efbd8ad652e2d63582c8234a979b1e53">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\55\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-debug-1.0.0.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="74bb620edb89ca2387449eb94fa6490a4b1d3ff9">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\7\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\alertview-1.0.3.aar\6c8d45d61b0a81b40a3c2c53285413a1\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="885c6a6ae87a2894197e141c74683cb132f2ac60">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\31\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-auth-11.0.4.aar\6eea54c68420443dc788f0d9188822a9\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f5ff5e3811e8c9485fd27f9052ae4d4d23a22d9d">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\51\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\umeng-share-core-6.9.1.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b0d3abbf69863c22d230c0e87db560a6c8723ae3">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\9\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-11.0.4.aar\1e81c1c0dfe2f1246b87fffc5356ebb2\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="416fb9ee2fd6e7af0bba04b01d90cb475b1e2074">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\44\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-messaging-11.0.4.aar\4c3a8334081288867ba5d2b04e06e084\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f47f4d5bdfd7d7bf330945b8a7ccce4ab437a710">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\81\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\cardview-v7-26.0.0-alpha1.aar\e9113adff187a41f4ab1414c17041b74\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e176fd06c2ad5b50a2f5cb4de6000a83a7cb48f5">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\35\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-database-connection-11.0.4.aar\7fbadab90db69e339934f9e8aac102c3\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="1b12397bc9f342b29d9e9108978828f99a6da579">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\80\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\aT\libs\utdid4all-1.1.5.3_proguard.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="989c3bb13060da1e3154bfe00236f76453a2725f">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\16\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\toolsfinal-1.1.4.aar\01b8786863fe19283b462f15a2ec9d6b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2712682a7f8131b6f8089afad27b0c25118cd64a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\42\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-location-11.0.4.aar\9a6a18bf569ba23bcfa458efae063b6e\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="41f47bbcd281fdb1e42e220220ab3bfa1da591e0">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\67\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.0.0-alpha1.aar\3a979909a339ecd424f09ed934ee8efd\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2e92aa0163544a804a0b34f169ca61801770839a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\102\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.0.0-alpha1.aar\1d7333b127f190d3fb7c156940929dac\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="47471eb19df288158b00b8d9cfa41bce7373f5cc">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\41\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-11.0.4.aar\291cb0852cf21285489e571deb09a2cc\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e7f890dd2539b7f2582f450f0721e2dea6ae510c">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\53\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-config-11.0.4.aar\951f71f93ecf653653dfbae0890934c8\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="eea424e61a0c85b93a0e477565314a58136abaea">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\54\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-nearby-11.0.4.aar\3f2d68bd47653afd931d044b4ea46ce6\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="2c379c235d7983201bb83edfc3c60bb0dafb5805">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\70\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-auth-api-phone-11.0.4.aar\1f4dfa5e16fcc942663d028a3597cb92\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="76ea35b41786082af23db898ca9e0fc07cc71fb9">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\50\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\library-1.1.4.aar\16ec8d2e6ca47d340cf3ca7d8310bf3b\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="7db0250bd2734501c74fc4756e9052498aa61472">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\33\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-wallet-11.0.4.aar\113df57a70cede7288a3d84fdd84624a\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="a5d52089bf4d31537232bb6bcb70cee817d8a374">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\63\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-vision-common-11.0.4.aar\91ad2fc70225b9f5ed0e6bdceffe4c16\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="6b3430725095bd46b785e97bd34240826c27b4db">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\75\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\galleryfinal\build\intermediates\intermediate-jars\release\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="b1c13495de344a77984acd3733aed33049787fce">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\108\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\android-image-picker-v1.0.1.aar\a473f5078ca2f9521cca1e065a7de5e2\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="d16051e00bfbb30c062bdf79d09fb0735bf7e028">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\30\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.nineoldandroids\library\2.4.0\e9b63380f3a242dbdbf103a2355ad7e43bad17cb\library-2.4.0.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e9b63380f3a242dbdbf103a2355ad7e43bad17cb">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\95\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\design-23.3.0.aar\12eaac4f011465201980bca831e4db2f\jars\classes.jar"
+        jumboMode="false"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\37\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
         jar="D:\xin\dcgqxxmob\aT\libs\httpmime-4.2.5.jar"
         jumboMode="false"
-        revision="25.0.2"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
         sha1="6efc2f9df23c2ac4d3b701a11cab9f9fa6a641d4">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\httpmime-4.2.5_081793959d92dc2bc383bedb2680d89766d0807c.jar" />
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\3\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.nisrulz\recyclerviewhelper\25.4.0\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-maps-11.0.4.aar\3c5721606fe964b3a9835204dc92bb98\jars\classes.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="c61d9951240886a7f7d905c8557319d87096e606">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.nisrulz-recyclerviewhelper-25.4.0_307a1cdeab56ab7549b60791f02612a3337fb9c6.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="fcae52a60bc07924d370b4d376116cd8f8581f54">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\69\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\design\23.3.0\jars\classes.jar"
+        is-multidex="true"
+        jar="D:\xin\dcgqxxmob\barCodeTest\libs\zxing.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="f0001e71cea6ae432a00021c6f727f5ef0f3d27e">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-design-23.3.0_30623590bcd77742992d7d8c7d43bc296034a075.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="e88c14e6e7daa0fa65172a62b54ee6a16ff4162d">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\21\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\25.1.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-appindexing-11.0.4.aar\de345a11623ad96903494d4eee5bc2db\jars\classes.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="c03bf57f358aa10d253f21989e93bcf6014b3b17">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-vector-drawable-25.1.1_2e88947a2d261ffd2f39aead51a59d709990c805.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="bfba7cf662f7e3e2cfeb92226c6b84c08e590225">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\62\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\support-compat\25.1.1\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\play-services-iid-11.0.4.aar\0feac32b7ff7f0eb36ddadade330ac06\jars\classes.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="02741d05d4b697fba5e279e9881aaa1da0ca7c7f">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-support-compat-25.1.1_a5c37fedfab88c830669a71457a0ed6d91a39ef8.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="dd282bdeaa904c59d77e57dedd7e0a241c9b679d">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\65\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_Sina_Full.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\firebase-storage-common-11.0.4.aar\4de9053d1cd60924e29d1587259d5703\jars\classes.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="f77eadfc438ed29079270836804368c84879c225">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_Sina_Full_956af40ce946cdc9d74ee65e8cfd81ab94a966c3.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="4b685077cdb08cf7ae8b61afd1fe910e47d91b9a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\87\classes.dex" />
     </item>
     <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-appindexing\8.1.0\jars\classes.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\f4215825b826dec2af7e03d79b2d555a\jars\classes.jar"
         jumboMode="false"
-        revision="25.0.2"
-        sha1="4477ea44f5ec5ad064022a22691732d7638ff197">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-appindexing-8.1.0_ad59a41ab6ab3d0f92a6221ca4e25370187ef1ac.jar" />
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
+        sha1="44ee06abb66da30f5855e6bf54574e64cdcd982a">
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\36\classes.dex" />
     </item>
     <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
+        is-multidex="true"
+        jar="C:\Users\Administrator\.gradle\caches\modules-2\files-2.1\com.github.bumptech.glide\glide\3.7.0\9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4\glide-3.7.0.jar"
         jumboMode="false"
-        revision="25.0.2"
+        min-sdk-version="23"
+        optimize="true"
+        revision="27.0.3"
         sha1="9e9eeaf9948ee4d6c3ab354e8dc14368f16994a4">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\glide-3.7.0_dc2cedaf25df8c5e199ffaaa969663929f0fc4fc.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\org.hamcrest\hamcrest-core\1.3\42a25dc3219429f0e5d060061f71acb49bf010a0\hamcrest-core-1.3.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="42a25dc3219429f0e5d060061f71acb49bf010a0">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\hamcrest-core-1.3_397f49277845afc7c1397167c952ad092b755624.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\dcgqxxmob\barCodeTest\unspecified\jars\libs\zxing.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d43811e6f3d4b1bedbcc58ee366fa7bcd3785d78">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\zxing_5e9ec28172cfed6d2064e597914fac45e88ea2d4.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.twiceyuan\CommonAdapter\0.5.3\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="67316178b2265f24d676b8fe10635d4ec908e0ff">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.twiceyuan-CommonAdapter-0.5.3_34f2ae589a8f7ae85b0d0564f5ccd50dd02c3d47.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.google.android.gms\play-services-basement\8.1.0\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d0dda274b703dd9c5bb056867649d22b4171ae7d">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.google.android.gms-play-services-basement-8.1.0_776d37cfa7fcc635c2175b307ad096f25dba357c.jar" />
-    </item>
-    <item
-        jar="C:\Users\admin\.gradle\caches\modules-2\files-2.1\com.jakewharton\butterknife\5.1.1\b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8\butterknife-5.1.1.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="b3652dfd65ca0bcf18790ff1a1f7624af4cb2bb8">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\butterknife-5.1.1_ec66ff5dd3b419e172056616fbad2cc4ac2c2ca8.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\recyclerview-v7\23.3.0\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="debf30ce0a7560396b6235edef77e447006454c2">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-recyclerview-v7-23.3.0_4809c55fb4cbe563f658b6bd0772097eb6783862.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\wechat-sdk-android-with-mta-1.1.6.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="379056fcb09a02bd0db722be359695ad88beb04d">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\wechat-sdk-android-with-mta-1.1.6_9e0e49f61fb73ea37e162d508b351e80a8ed1640.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.android.support\cardview-v7\25.3.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="914f5d3e3ace66080e59613708f06d129a222e25">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.android.support-cardview-v7-25.3.1_b2cdc4cbd10292cda08119d139d3239c2e98fbb5.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\SocialSDK_WeiXin_Full.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="fd92595772c2803f11b686d146b59fd104771c58">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\SocialSDK_WeiXin_Full_b7c09fb6f0a9bca3e5e5718110d5bd13135fd4b2.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\libs\weiboSDKCore_3.1.4.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="f3617ce51258bf3ec0fe2503e3c0a920040b1b53">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\weiboSDKCore_3.1.4_9a5c662e0bf7164ca7982ea7a0f29fac8ea8075f.jar" />
-    </item>
-    <item
-        jar="D:\xin\dcgqxxmob\aT\build\intermediates\exploded-aar\com.github.ganfra\material-spinner\1.1.1\jars\classes.jar"
-        jumboMode="false"
-        revision="25.0.2"
-        sha1="d0df3bf618b078d102a4234ceff33c44026e64b9">
-        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\pre-dexed\debug\com.github.ganfra-material-spinner-1.1.1_96405dc0ed55d80e8b2c3567ebf010fcf5de88b6.jar" />
+        <dex dex="D:\xin\dcgqxxmob\aT\build\intermediates\transforms\preDex\release\34\classes.dex" />
     </item>
 
 </items>

@@ -32,7 +32,6 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
-
         >
 
         <activity
@@ -40,7 +39,6 @@
             android:label="@string/title_activity_welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -50,9 +48,8 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait" />
         <activity
-            android:name="com.xiangmu.lzx.activitys.MainPotoActivity"
-
-            android:label="@string/app_name"
+        android:name="com.xiangmu.lzx.activitys.MainPotoActivity"
+        android:label="@string/app_name"
        />
         <activity
             android:name="com.xiangmu.lzx.activitys.ProductinfoDetailActivity"

@@ -22,10 +22,10 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.media.UMImage;
+//import com.umeng.socialize.ShareAction;
+//import com.umeng.socialize.UMShareAPI;
+//import com.umeng.socialize.UMShareListener;
+//import com.umeng.socialize.media.UMImage;
 import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.DateCount;
 
@@ -63,11 +63,11 @@ public class WebCountViewActivity extends AppCompatActivity {
     private String username;
     private String username0;
     private String pic_path;
-    private UMImage imageurl;
+//    private UMImage imageurl;
     private String  shezhi;
       private MyApplication app;
-    private UMShareListener mShareListener;
-    private ShareAction mShareAction;
+//    private UMShareListener mShareListener;
+//    private ShareAction mShareAction;
     private  DateCount dateCount0;
   //  private   CustomProgressDialog progress;
     private SimpleArcDialog mDialog;
@@ -102,7 +102,7 @@ public class WebCountViewActivity extends AppCompatActivity {
 //        int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-        imageurl = new UMImage(this,"http://www.dcgqxx.com/css/images/dc2.png");
+//        imageurl = new UMImage(this,"http://www.dcgqxx.com/css/images/dc2.png");
 
         String getDateCount=xinWenURL.getGetDateCount();
 

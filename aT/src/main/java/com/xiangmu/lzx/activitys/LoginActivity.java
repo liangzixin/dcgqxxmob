@@ -27,9 +27,9 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-import com.umeng.socialize.UMAuthListener;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.bean.SHARE_MEDIA;
+//import com.umeng.socialize.UMAuthListener;
+//import com.umeng.socialize.UMShareAPI;
+//import com.umeng.socialize.bean.SHARE_MEDIA;
 //import com.umeng.socialize.utils.Log;
 import com.tencent.mm.opensdk.utils.Log;
 import com.xiangmu.lzx.Modle.Shezhi;
@@ -72,7 +72,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static Gson gson = new Gson();
     private static   Message msg = new Message();
     private SharedPreferences sp;
-    private  UMShareAPI mShareAPI;
+ //   private  UMShareAPI mShareAPI;
      private MyApplication app;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,7 +81,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         app =new MyApplication();
         // Config.REDIRECT_URL = "http://sns.whalecloud.com";
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
-        mShareAPI = UMShareAPI.get(this);
+      //  mShareAPI = UMShareAPI.get(this);
         initView();
     }
     private void initView() {
@@ -183,14 +183,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 overridePendingTransition(R.anim.right_to_left_in, R.anim.right_to_left_out);
                 break;
             case R.id.weixin_login://微信登录
-                mShareAPI.getPlatformInfo(this, SHARE_MEDIA.WEIXIN, umAuthListener);
+       //         mShareAPI.getPlatformInfo(this, SHARE_MEDIA.WEIXIN, umAuthListener);
                 break;
             case R.id.qq_login://QQ登录
 
-                mShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
+          //      mShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
                 break;
             case R.id.xinlang_login://新浪登陆
-                mShareAPI.getPlatformInfo(this, SHARE_MEDIA.SINA, umAuthListener);
+         //       mShareAPI.getPlatformInfo(this, SHARE_MEDIA.SINA, umAuthListener);
                 break;
 
             case R.id.login_button://登陆按钮
@@ -377,75 +377,75 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return gson;
     }
 
-    private UMAuthListener umAuthListener = new UMAuthListener() {
-
-        @Override
-        public void onStart(SHARE_MEDIA platform) {
-            //授权开始的回调
-        }
-        @Override
-        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
-            // Toast.makeText(MainActivity.this, "Authorize succeed", Toast.LENGTH_SHORT).show();
-            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-            Set<String> set = data.keySet();
-            SharedPreferences.Editor edit = sp.edit();
-            String userName ="";
-            String profile_image_url ="";
-            String opid="";
-            for (String string : set) {
-
-                                // 设置头像
-                                if (string.equals("profile_image_url")) {
-                                    profile_image_url = data.get(string);
-                              Log.i("-------image",profile_image_url);
-                                }
-                                // 设置昵称
-                         if (platform== SHARE_MEDIA.QQ) {
-
-                             if (string.equals("openid")) {
-                                 opid = data.get(string);
-                             }
-                         }else if  (platform== SHARE_MEDIA.SINA) {
-                             if (string.equals("id")) {
-                                 opid = data.get(string);
-                             }
-                         }else if  (platform== SHARE_MEDIA.WEIXIN) {
-                             if (string.equals("unionid")) {
-                                 opid = data.get(string);
-                             }
-                         }
-                               // 设置昵称
-                              if (string.equals("screen_name")) {
-                                userName= data.get(string);
-                              }
-                            }
-
-                                    addcustmer(opid,userName,profile_image_url);
-//            Intent intent = new Intent();
-//            setResult(RESULT_OK, intent);
-
-//            finish();
-//         finish();
-
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-           Toast.makeText(LoginActivity.this, "Authorize fail", Toast.LENGTH_SHORT).show();
-           // Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA platform, int action) {
-            Toast.makeText(LoginActivity.this, "登录取消", Toast.LENGTH_SHORT).show();
-        }
-    };
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-    //    Toast.makeText(getApplicationContext(), "Authorize succeed1111", Toast.LENGTH_SHORT).show();
-    }
+//    private UMAuthListener umAuthListener = new UMAuthListener() {
+//
+//        @Override
+//        public void onStart(SHARE_MEDIA platform) {
+//            //授权开始的回调
+//        }
+//        @Override
+//        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
+//            // Toast.makeText(MainActivity.this, "Authorize succeed", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+//            Set<String> set = data.keySet();
+//            SharedPreferences.Editor edit = sp.edit();
+//            String userName ="";
+//            String profile_image_url ="";
+//            String opid="";
+//            for (String string : set) {
+//
+//                                // 设置头像
+//                                if (string.equals("profile_image_url")) {
+//                                    profile_image_url = data.get(string);
+//                              Log.i("-------image",profile_image_url);
+//                                }
+//                                // 设置昵称
+//                         if (platform== SHARE_MEDIA.QQ) {
+//
+//                             if (string.equals("openid")) {
+//                                 opid = data.get(string);
+//                             }
+//                         }else if  (platform== SHARE_MEDIA.SINA) {
+//                             if (string.equals("id")) {
+//                                 opid = data.get(string);
+//                             }
+//                         }else if  (platform== SHARE_MEDIA.WEIXIN) {
+//                             if (string.equals("unionid")) {
+//                                 opid = data.get(string);
+//                             }
+//                         }
+//                               // 设置昵称
+//                              if (string.equals("screen_name")) {
+//                                userName= data.get(string);
+//                              }
+//                            }
+//
+//                                    addcustmer(opid,userName,profile_image_url);
+////            Intent intent = new Intent();
+////            setResult(RESULT_OK, intent);
+//
+////            finish();
+////         finish();
+//
+//        }
+//
+//        @Override
+//        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
+//           Toast.makeText(LoginActivity.this, "Authorize fail", Toast.LENGTH_SHORT).show();
+//           // Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
+//        }
+//
+//        @Override
+//        public void onCancel(SHARE_MEDIA platform, int action) {
+//            Toast.makeText(LoginActivity.this, "登录取消", Toast.LENGTH_SHORT).show();
+//        }
+//    };
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+//    //    Toast.makeText(getApplicationContext(), "Authorize succeed1111", Toast.LENGTH_SHORT).show();
+//    }
 //    @Override
 //    protected void onDestroy() {
 //        super.onDestroy();

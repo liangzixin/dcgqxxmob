@@ -30,14 +30,14 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
-import com.umeng.socialize.ShareAction;
-import com.umeng.socialize.UMShareAPI;
-import com.umeng.socialize.UMShareListener;
-import com.umeng.socialize.bean.SHARE_MEDIA;
-import com.umeng.socialize.media.UMImage;
-import com.umeng.socialize.media.UMWeb;
-import com.umeng.socialize.shareboard.SnsPlatform;
-import com.umeng.socialize.utils.ShareBoardlistener;
+//import com.umeng.socialize.ShareAction;
+//import com.umeng.socialize.UMShareAPI;
+//import com.umeng.socialize.UMShareListener;
+//import com.umeng.socialize.bean.SHARE_MEDIA;
+//import com.umeng.socialize.media.UMImage;
+//import com.umeng.socialize.media.UMWeb;
+//import com.umeng.socialize.shareboard.SnsPlatform;
+//import com.umeng.socialize.utils.ShareBoardlistener;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.Modle.Article;
 import com.xiangmu.lzx.Modle.Customer;
@@ -89,11 +89,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private String username;
     private String username0;
     private String pic_path;
-    private UMImage imageurl;
+//    private UMImage imageurl;
     private String  shezhi;
       private MyApplication app;
-    private UMShareListener mShareListener;
-    private ShareAction mShareAction;
+//    private UMShareListener mShareListener;
+//    private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,37 +188,37 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 getpopuwindow(view);
             }
         });
-        mShareListener = new CustomShareListener(this);
+//        mShareListener = new CustomShareListener(this);
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 //                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
 //                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
-                new ShareAction(WebProductinfoViewActivity.this)
-                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
-                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
-                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
-                        .setShareboardclickCallback(new ShareBoardlistener() {
-                            @Override
-                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
-//                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
-//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
-//                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
-//                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
-//
-//                                } else {
-                                    UMWeb web = new UMWeb(url);
-                                    web.setTitle(xinwentitle);
-                                    web.setDescription(xinwentitle);
-                                    web.setThumb(new UMImage(WebProductinfoViewActivity.this, R.drawable.ic_launcher));
-                                    new ShareAction(WebProductinfoViewActivity.this).withMedia(web)
-                                            .setPlatform(share_media)
-                                            .setCallback(mShareListener)
-                                            .share();
-//                                }
-                            }
-                        })
-                       .open();
+//                new ShareAction(WebProductinfoViewActivity.this)
+//                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
+//                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
+//                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
+//                        .setShareboardclickCallback(new ShareBoardlistener() {
+//                            @Override
+//                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
+////                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
+////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
+////                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
+////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
+////
+////                                } else {
+//                                    UMWeb web = new UMWeb(url);
+//                                    web.setTitle(xinwentitle);
+//                                    web.setDescription(xinwentitle);
+//                                    web.setThumb(new UMImage(WebProductinfoViewActivity.this, R.drawable.ic_launcher));
+//                                    new ShareAction(WebProductinfoViewActivity.this).withMedia(web)
+//                                            .setPlatform(share_media)
+//                                            .setCallback(mShareListener)
+//                                            .share();
+////                                }
+//                            }
+//                        })
+//                       .open();
             }
         });
     }
@@ -456,7 +456,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-        imageurl = new UMImage(this,"http://www.dcgqxx.com/css/images/dc2.png");
+     //   imageurl = new UMImage(this,"http://www.dcgqxx.com/css/images/dc2.png");
      //   imageurl.setThumb(new UMImage(this, R.drawable.thumb));
       //  if(username!=null);
       //  if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
@@ -654,7 +654,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data){
 
         super.onActivityResult(requestCode, resultCode, data);  //这个super可不能落下，否则可能回调不了
-        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
+//        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
         switch(requestCode){
             case 1000:
                 shezhi= SearchDB.createDb(this, "shezhi");
@@ -677,70 +677,70 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 break;
         }
     }
-    private static class CustomShareListener implements UMShareListener {
-
-        private WeakReference<WebProductinfoViewActivity> mActivity;
-
-        private CustomShareListener(WebProductinfoViewActivity activity) {
-            mActivity = new WeakReference(activity);
-        }
-
-        @Override
-        public void onStart(SHARE_MEDIA platform) {
-
-        }
-
-        @Override
-        public void onResult(SHARE_MEDIA platform) {
-
-            if (platform.name().equals("WEIXIN_FAVORITE")) {
-                Toast.makeText(mActivity.get(), platform + " 收藏成功啦", Toast.LENGTH_SHORT).show();
-            } else {
-                if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
-                        && platform != SHARE_MEDIA.EMAIL
-                        && platform != SHARE_MEDIA.FLICKR
-                        && platform != SHARE_MEDIA.FOURSQUARE
-                        && platform != SHARE_MEDIA.TUMBLR
-                        && platform != SHARE_MEDIA.POCKET
-                        && platform != SHARE_MEDIA.PINTEREST
-
-                        && platform != SHARE_MEDIA.INSTAGRAM
-                        && platform != SHARE_MEDIA.GOOGLEPLUS
-                        && platform != SHARE_MEDIA.YNOTE
-                        && platform != SHARE_MEDIA.EVERNOTE) {
-                    Toast.makeText(mActivity.get(), platform + " 分享成功啦!!!", Toast.LENGTH_SHORT).show();
-                }
-
-            }
-        }
-
-        @Override
-        public void onError(SHARE_MEDIA platform, Throwable t) {
-            if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
-                    && platform != SHARE_MEDIA.EMAIL
-                    && platform != SHARE_MEDIA.FLICKR
-                    && platform != SHARE_MEDIA.FOURSQUARE
-                    && platform != SHARE_MEDIA.TUMBLR
-                    && platform != SHARE_MEDIA.POCKET
-                    && platform != SHARE_MEDIA.PINTEREST
-
-                    && platform != SHARE_MEDIA.INSTAGRAM
-                    && platform != SHARE_MEDIA.GOOGLEPLUS
-                    && platform != SHARE_MEDIA.YNOTE
-                    && platform != SHARE_MEDIA.EVERNOTE) {
-                Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
-                if (t != null) {
-               //     com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
-                }
-            }
-
-        }
-
-        @Override
-        public void onCancel(SHARE_MEDIA platform) {
-
-            Toast.makeText(mActivity.get(), platform + " 分享取消了", Toast.LENGTH_SHORT).show();
-        }
-    }
+//    private static class CustomShareListener implements UMShareListener {
+//
+//        private WeakReference<WebProductinfoViewActivity> mActivity;
+//
+//        private CustomShareListener(WebProductinfoViewActivity activity) {
+//            mActivity = new WeakReference(activity);
+//        }
+//
+//        @Override
+//        public void onStart(SHARE_MEDIA platform) {
+//
+//        }
+//
+//        @Override
+//        public void onResult(SHARE_MEDIA platform) {
+//
+//            if (platform.name().equals("WEIXIN_FAVORITE")) {
+//                Toast.makeText(mActivity.get(), platform + " 收藏成功啦", Toast.LENGTH_SHORT).show();
+//            } else {
+//                if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
+//                        && platform != SHARE_MEDIA.EMAIL
+//                        && platform != SHARE_MEDIA.FLICKR
+//                        && platform != SHARE_MEDIA.FOURSQUARE
+//                        && platform != SHARE_MEDIA.TUMBLR
+//                        && platform != SHARE_MEDIA.POCKET
+//                        && platform != SHARE_MEDIA.PINTEREST
+//
+//                        && platform != SHARE_MEDIA.INSTAGRAM
+//                        && platform != SHARE_MEDIA.GOOGLEPLUS
+//                        && platform != SHARE_MEDIA.YNOTE
+//                        && platform != SHARE_MEDIA.EVERNOTE) {
+//                    Toast.makeText(mActivity.get(), platform + " 分享成功啦!!!", Toast.LENGTH_SHORT).show();
+//                }
+//
+//            }
+//        }
+//
+//        @Override
+//        public void onError(SHARE_MEDIA platform, Throwable t) {
+//            if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
+//                    && platform != SHARE_MEDIA.EMAIL
+//                    && platform != SHARE_MEDIA.FLICKR
+//                    && platform != SHARE_MEDIA.FOURSQUARE
+//                    && platform != SHARE_MEDIA.TUMBLR
+//                    && platform != SHARE_MEDIA.POCKET
+//                    && platform != SHARE_MEDIA.PINTEREST
+//
+//                    && platform != SHARE_MEDIA.INSTAGRAM
+//                    && platform != SHARE_MEDIA.GOOGLEPLUS
+//                    && platform != SHARE_MEDIA.YNOTE
+//                    && platform != SHARE_MEDIA.EVERNOTE) {
+//                Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
+//                if (t != null) {
+//               //     com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
+//                }
+//            }
+//
+//        }
+//
+//        @Override
+//        public void onCancel(SHARE_MEDIA platform) {
+//
+//            Toast.makeText(mActivity.get(), platform + " 分享取消了", Toast.LENGTH_SHORT).show();
+//        }
+//    }
 
 }
