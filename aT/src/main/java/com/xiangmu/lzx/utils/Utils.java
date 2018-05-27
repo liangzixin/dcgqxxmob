@@ -1,5 +1,9 @@
 package com.xiangmu.lzx.utils;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.util.Log;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,4 +33,12 @@ public class Utils {
         }
         return inttoc;
     };
+    public static final void showResultDialog(Context context, String msg,
+                                              String title) {
+        if(msg == null) return;
+        String rmsg = msg.replace(",", "\n");
+        Log.d("Util", rmsg);
+        new AlertDialog.Builder(context).setTitle(title).setMessage(rmsg)
+                .setNegativeButton("知道了", null).create().show();
+    }
 }

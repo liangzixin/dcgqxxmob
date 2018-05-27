@@ -9,6 +9,7 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -32,6 +33,9 @@ import com.lidroid.xutils.http.client.HttpRequest;
 //import com.umeng.socialize.bean.SHARE_MEDIA;
 //import com.umeng.socialize.utils.Log;
 import com.tencent.mm.opensdk.utils.Log;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.HttpPostThread;
@@ -74,11 +78,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private SharedPreferences sp;
  //   private  UMShareAPI mShareAPI;
      private MyApplication app;
+    public static Tencent mTencent;
+    private static boolean isServerSideLogin = false;
+    public static String mAppid;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         app =new MyApplication();
+        mAppid =app.APP_ID;
         // Config.REDIRECT_URL = "http://sns.whalecloud.com";
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
       //  mShareAPI = UMShareAPI.get(this);
@@ -186,7 +194,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
        //         mShareAPI.getPlatformInfo(this, SHARE_MEDIA.WEIXIN, umAuthListener);
                 break;
             case R.id.qq_login://QQ登录
-
+                onClickLogin();
           //      mShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
                 break;
             case R.id.xinlang_login://新浪登陆
@@ -204,6 +212,71 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     Toast.makeText(this, "亲 ~,别闹,你账号输错了", Toast.LENGTH_SHORT).show();
                 }
                 break;
+        }
+    }
+    private void onClickLogin() {
+        if (!mTencent.isSessionValid()) {
+            mTencent.login(this, "all", loginListener);
+            isServerSideLogin = false;
+            android.util.Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+        } else {
+            if (isServerSideLogin) { // Server-Side 模式的登陆, 先退出，再进行SSO登陆
+                mTencent.logout(this);
+                mTencent.login(this, "all", loginListener);
+                isServerSideLogin = false;
+                android.util.Log.d("SDKQQAgentPref", "FirstLaunch_SDK:" + SystemClock.elapsedRealtime());
+                return;
+            }
+            mTencent.logout(this);
+            updateUserInfo();
+            updateLoginButton();
+        }
+    }
+    IUiListener loginListener = new BaseUiListener() {
+        @Override
+        protected void doComplete(JSONObject values) {
+            android.util.Log.d("SDKQQAgentPref", "AuthorSwitch_SDK:" + SystemClock.elapsedRealtime());
+            initOpenidAndToken(values);
+            updateUserInfo();
+            updateLoginButton();
+        }
+    };
+    private class BaseUiListener implements IUiListener {
+
+        @Override
+        public void onComplete(Object response) {
+            if (null == response) {
+                Utils.showResultDialog(LoginActivity.this, "返回为空", "登录失败");
+                return;
+            }
+            JSONObject jsonResponse = (JSONObject) response;
+            if (null != jsonResponse && jsonResponse.length() == 0) {
+                Utils.showResultDialog(LoginActivity.this, "返回为空", "登录失败");
+                return;
+            }
+            Utils.showResultDialog(LoginActivity.this, response.toString(), "登录成功");
+            // 有奖分享处理
+            //handlePrizeShare()
+            doComplete((JSONObject)response);
+        }
+
+        protected void doComplete(JSONObject values) {
+
+        }
+
+        @Override
+        public void onError(UiError e) {
+            Utils.toastMessage(LoginActivity.this, "onError: " + e.errorDetail);
+            Utils.dismissDialog();
+        }
+
+        @Override
+        public void onCancel() {
+            Utils.toastMessage(LoginActivity.this, "onCancel: ");
+            Utils.dismissDialog();
+            if (isServerSideLogin) {
+                isServerSideLogin = false;
+            }
         }
     }
     private void login1(String zhanghao,String password) {

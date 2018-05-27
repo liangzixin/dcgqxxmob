@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
+        "outputFile": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-zh\\values-zh.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 87
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\a473f5078ca2f9521cca1e065a7de5e2\\res\\values-zh\\values-zh.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\88fff829c83e56db38362ce0b82c2b6c\\res\\values-zh\\values-zh.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 140
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\a473f5078ca2f9521cca1e065a7de5e2\\res\\values-zh\\values-zh.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\android-image-picker-v1.0.1.aar\\88fff829c83e56db38362ce0b82c2b6c\\res\\values-zh\\values-zh.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,

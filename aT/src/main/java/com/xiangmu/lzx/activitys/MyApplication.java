@@ -48,6 +48,8 @@ import cn.finalteam.galleryfinal.ThemeConfig;
     private  boolean searchDB0=false;
     private static Context ctx;
     private Handler handler;
+    // QQ申请到的合法appId
+    public  final String APP_ID="222222";
     @Override
     public void onCreate() {
         super.onCreate();

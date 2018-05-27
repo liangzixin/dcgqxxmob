@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "D:\\xin\\dcgqxxmob\\aT\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
+        "outputFile": "E:\\liang\\dcgqxxmob\\aT\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-land\\values-land.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 120
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\1d7333b127f190d3fb7c156940929dac\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\c367efc87013bf8c185d897bcd5ec0ad\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -30,7 +30,7 @@
                     "endOffset": 184
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\1d7333b127f190d3fb7c156940929dac\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\c367efc87013bf8c185d897bcd5ec0ad\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -49,7 +49,7 @@
                     "endOffset": 255
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\1d7333b127f190d3fb7c156940929dac\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\c367efc87013bf8c185d897bcd5ec0ad\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -68,7 +68,7 @@
                     "endOffset": 323
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\1d7333b127f190d3fb7c156940929dac\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.0.0-alpha1.aar\\c367efc87013bf8c185d897bcd5ec0ad\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 4,
@@ -87,7 +87,7 @@
                     "endOffset": 408
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\bd13d216e485a8727a6a46127647df9d\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\5dc4993277fc5f40eb46ce43c1cc71ff\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 0,
@@ -106,7 +106,7 @@
                     "endOffset": 492
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\bd13d216e485a8727a6a46127647df9d\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\5dc4993277fc5f40eb46ce43c1cc71ff\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 5,
                         "startColumn": 0,
@@ -125,7 +125,7 @@
                     "endOffset": 566
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\bd13d216e485a8727a6a46127647df9d\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\5dc4993277fc5f40eb46ce43c1cc71ff\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 6,
                         "startColumn": 0,
@@ -144,7 +144,7 @@
                     "endOffset": 639
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\bd13d216e485a8727a6a46127647df9d\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\5dc4993277fc5f40eb46ce43c1cc71ff\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 7,
                         "startColumn": 0,
@@ -163,7 +163,7 @@
                     "endOffset": 738
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\bd13d216e485a8727a6a46127647df9d\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\5dc4993277fc5f40eb46ce43c1cc71ff\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 8,
                         "startColumn": 0,
@@ -182,7 +182,7 @@
                     "endOffset": 833
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\bd13d216e485a8727a6a46127647df9d\\res\\values-land\\values.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-cast-framework-11.0.4.aar\\5dc4993277fc5f40eb46ce43c1cc71ff\\res\\values-land\\values.xml",
                     "position": {
                         "startLine": 9,
                         "startColumn": 0,
@@ -201,7 +201,7 @@
                     "endOffset": 884
                 },
                 "from": {
-                    "file": "D:\\xin\\dcgqxxmob\\galleryfinal\\build\\intermediates\\bundles\\debug\\res\\values-land\\values-land.xml",
+                    "file": "E:\\liang\\dcgqxxmob\\galleryfinal\\build\\intermediates\\bundles\\debug\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -220,7 +220,7 @@
                     "endOffset": 959
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\564e2e38e1aabf27a64a43cc4632dfb3\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\456efd3f4ebdab152eba68007801df10\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
@@ -239,7 +239,7 @@
                     "endOffset": 1037
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\564e2e38e1aabf27a64a43cc4632dfb3\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\456efd3f4ebdab152eba68007801df10\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 3,
                         "startColumn": 4,
@@ -258,7 +258,7 @@
                     "endOffset": 1112
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\564e2e38e1aabf27a64a43cc4632dfb3\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\mediarouter-v7-25.2.0.aar\\456efd3f4ebdab152eba68007801df10\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
@@ -278,7 +278,7 @@
                     "endOffset": 1294
                 },
                 "from": {
-                    "file": "C:\\Users\\Administrator\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.3.0.aar\\12eaac4f011465201980bca831e4db2f\\res\\values-land\\values-land.xml",
+                    "file": "C:\\Users\\lzx\\.gradle\\caches\\transforms-1\\files-1.1\\design-23.3.0.aar\\9d2eed9cc3e93b1809f01556fc29e100\\res\\values-land\\values-land.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,

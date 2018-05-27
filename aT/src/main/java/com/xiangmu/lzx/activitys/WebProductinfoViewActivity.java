@@ -191,7 +191,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //        mShareListener = new CustomShareListener(this);
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+                public void onClick(View view) {
 //                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
 //                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
 //                new ShareAction(WebProductinfoViewActivity.this)
