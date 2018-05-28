@@ -49,7 +49,7 @@ import cn.finalteam.galleryfinal.ThemeConfig;
     private static Context ctx;
     private Handler handler;
     // QQ申请到的合法appId
-    public  final String APP_ID="222222";
+    public  final String APP_ID="1105789263";
     @Override
     public void onCreate() {
         super.onCreate();

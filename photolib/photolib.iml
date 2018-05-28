@@ -82,6 +82,7 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/check-manifest" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/classes" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/incremental" />
+      <excludeFolder url="file://$MODULE_DIR$/build/intermediates/intermediate-jars" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/javaPrecompile" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/manifests" />
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/res" />
@@ -91,12 +92,15 @@
       <excludeFolder url="file://$MODULE_DIR$/build/intermediates/tmp" />
       <excludeFolder url="file://$MODULE_DIR$/build/tmp" />
     </content>
-    <orderEntry type="jdk" jdkName="Android API 25 Platform" jdkType="Android SDK" />
+    <orderEntry type="jdk" jdkName="Android API 27 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="support-core-ui-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="recyclerview-v7-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="support-compat-26.0.0-alpha1" level="project" />
-    <orderEntry type="library" exported="" name="support-annotations-26.0.0-alpha1" level="project" />
+    <orderEntry type="library" exported="" name="support-core-ui-27.0.1" level="project" />
+    <orderEntry type="library" exported="" name="common-1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="1_common-1.0.0" level="project" />
+    <orderEntry type="library" exported="" name="support-compat-27.0.1" level="project" />
+    <orderEntry type="library" exported="" name="recyclerview-v7-27.0.1" level="project" />
+    <orderEntry type="library" exported="" name="support-annotations-27.0.1" level="project" />
     <orderEntry type="library" exported="" name="glide-3.7.0" level="project" />
+    <orderEntry type="library" exported="" name="runtime-1.0.0" level="project" />
   </component>
 </module>

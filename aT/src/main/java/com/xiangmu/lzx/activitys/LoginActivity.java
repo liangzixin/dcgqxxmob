@@ -102,6 +102,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         // Config.REDIRECT_URL = "http://sns.whalecloud.com";
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
       //  mShareAPI = UMShareAPI.get(this);
+        mTencent = Tencent.createInstance(mAppid, this);
         initView();
     }
     private void initView() {
@@ -375,14 +376,14 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             if (msg.what == 0) {
                 JSONObject response = (JSONObject) msg.obj;
                 if (response.has("nickname")) {
-                    try {
-                //        Toast.makeText(LoginActivity.this, "返回!!!", Toast.LENGTH_SHORT).show();
-//                        mUserInfo.setVisibility(android.view.View.VISIBLE);
-                       mUserInfo.setText(response.getString("nickname"));
-
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
+//                    try {
+//                //        Toast.makeText(LoginActivity.this, "返回!!!", Toast.LENGTH_SHORT).show();
+////                        mUserInfo.setVisibility(android.view.View.VISIBLE);
+//                       mUserInfo.setText(response.getString("nickname"));
+//
+//                    } catch (JSONException e) {
+//                        e.printStackTrace();
+//                    }
                 }
             }else if(msg.what == 1){
                 Bitmap bitmap = (Bitmap)msg.obj;
