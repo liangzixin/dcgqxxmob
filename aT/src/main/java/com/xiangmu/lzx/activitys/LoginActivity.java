@@ -4,6 +4,8 @@ import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +14,7 @@ import android.os.Message;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
 import android.text.Editable;
+import android.text.TextUtils;
 import android.text.TextWatcher;
 import android.view.View;
 import android.widget.Button;
@@ -32,6 +35,8 @@ import com.lidroid.xutils.http.client.HttpRequest;
 //import com.umeng.socialize.UMShareAPI;
 //import com.umeng.socialize.bean.SHARE_MEDIA;
 //import com.umeng.socialize.utils.Log;
+import com.tencent.connect.UserInfo;
+import com.tencent.connect.common.Constants;
 import com.tencent.mm.opensdk.utils.Log;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
@@ -48,6 +53,11 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -62,6 +72,7 @@ import java.util.Set;
 //import com.umeng.socialize.sso.UMSsoHandler;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
+    private static final String TAG = LoginActivity.class.getName();
     private ImageView loginback;
     private TextView login_password_back,register;
     private Button login_button;
@@ -81,6 +92,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public static Tencent mTencent;
     private static boolean isServerSideLogin = false;
     public static String mAppid;
+    private UserInfo mInfo;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -229,7 +241,31 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
             mTencent.logout(this);
             updateUserInfo();
-            updateLoginButton();
+        //    updateLoginButton();
+        }
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        android.util.Log.d(TAG, "-->onActivityResult " + requestCode  + " resultCode=" + resultCode);
+        if (requestCode == Constants.REQUEST_LOGIN ||
+                requestCode == Constants.REQUEST_APPBAR) {
+            Tencent.onActivityResultData(requestCode,resultCode,data,loginListener);
+        }
+
+        super.onActivityResult(requestCode, resultCode, data);
+    }
+
+    public static void initOpenidAndToken(JSONObject jsonObject) {
+        try {
+            String token = jsonObject.getString(Constants.PARAM_ACCESS_TOKEN);
+            String expires = jsonObject.getString(Constants.PARAM_EXPIRES_IN);
+            String openId = jsonObject.getString(Constants.PARAM_OPEN_ID);
+            if (!TextUtils.isEmpty(token) && !TextUtils.isEmpty(expires)
+                    && !TextUtils.isEmpty(openId)) {
+                mTencent.setAccessToken(token, expires);
+                mTencent.setOpenId(openId);
+            }
+        } catch(Exception e) {
         }
     }
     IUiListener loginListener = new BaseUiListener() {
@@ -238,7 +274,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             android.util.Log.d("SDKQQAgentPref", "AuthorSwitch_SDK:" + SystemClock.elapsedRealtime());
             initOpenidAndToken(values);
             updateUserInfo();
-            updateLoginButton();
+       //     updateLoginButton();
         }
     };
     private class BaseUiListener implements IUiListener {
@@ -279,6 +315,83 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         }
     }
+
+    private void updateUserInfo() {
+        if (mTencent != null && mTencent.isSessionValid()) {
+            IUiListener listener = new IUiListener() {
+
+                @Override
+                public void onError(UiError e) {
+
+                }
+
+                @Override
+                public void onComplete(final Object response) {
+                    Message msg = new Message();
+                    msg.obj = response;
+                    msg.what = 0;
+                    mHandler.sendMessage(msg);
+                    new Thread(){
+
+                        @Override
+                        public void run() {
+                            JSONObject json = (JSONObject)response;
+                            if(json.has("figureurl")){
+                                Bitmap bitmap = null;
+                                try {
+                                    bitmap = Utils.getbitmap(json.getString("figureurl_qq_2"));
+                                } catch (JSONException e) {
+
+                                }
+                                Message msg = new Message();
+                                msg.obj = bitmap;
+                                msg.what = 1;
+                                mHandler.sendMessage(msg);
+                            }
+                        }
+
+                    }.start();
+                }
+
+                @Override
+                public void onCancel() {
+
+                }
+            };
+            mInfo = new UserInfo(this, mTencent.getQQToken());
+            mInfo.getUserInfo(listener);
+
+        } else {
+//            mUserInfo.setText("");
+//            mUserInfo.setVisibility(android.view.View.GONE);
+//            mUserLogo.setVisibility(android.view.View.GONE);
+        }
+    }
+
+    Handler mHandler = new Handler() {
+
+        @Override
+        public void handleMessage(Message msg) {
+            if (msg.what == 0) {
+                JSONObject response = (JSONObject) msg.obj;
+                if (response.has("nickname")) {
+                    try {
+                //        Toast.makeText(LoginActivity.this, "返回!!!", Toast.LENGTH_SHORT).show();
+//                        mUserInfo.setVisibility(android.view.View.VISIBLE);
+                       mUserInfo.setText(response.getString("nickname"));
+
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                    }
+                }
+            }else if(msg.what == 1){
+                Bitmap bitmap = (Bitmap)msg.obj;
+//                mUserLogo.setImageBitmap(bitmap);
+//                mUserLogo.setVisibility(android.view.View.VISIBLE);
+            }
+        }
+
+    };
     private void login1(String zhanghao,String password) {
         ThreadPoolUtils.execute(new HttpPostThread(this, zhanghao, password, hand));
     }
@@ -449,6 +562,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     public  Gson getGson() {
         return gson;
     }
+
 
 //    private UMAuthListener umAuthListener = new UMAuthListener() {
 //
