@@ -93,6 +93,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private static boolean isServerSideLogin = false;
     public static String mAppid;
     private UserInfo mInfo;
+    private  String userName="";
+    private  String profile_image_url ="";
+    private  String openid="";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -291,7 +294,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 Utils.showResultDialog(LoginActivity.this, "返回为空", "登录失败");
                 return;
             }
-            Utils.showResultDialog(LoginActivity.this, response.toString(), "登录成功");
+       //     Utils.showResultDialog(LoginActivity.this, response.toString(), "登录成功");
             // 有奖分享处理
             //handlePrizeShare()
             doComplete((JSONObject)response);
@@ -318,6 +321,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     }
 
     private void updateUserInfo() {
+
         if (mTencent != null && mTencent.isSessionValid()) {
             IUiListener listener = new IUiListener() {
 
@@ -328,30 +332,32 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                 @Override
                 public void onComplete(final Object response) {
+
                     Message msg = new Message();
                     msg.obj = response;
                     msg.what = 0;
+
                     mHandler.sendMessage(msg);
-                    new Thread(){
-
-                        @Override
-                        public void run() {
-                            JSONObject json = (JSONObject)response;
-                            if(json.has("figureurl")){
-                                Bitmap bitmap = null;
-                                try {
-                                    bitmap = Utils.getbitmap(json.getString("figureurl_qq_2"));
-                                } catch (JSONException e) {
-
-                                }
-                                Message msg = new Message();
-                                msg.obj = bitmap;
-                                msg.what = 1;
-                                mHandler.sendMessage(msg);
-                            }
-                        }
-
-                    }.start();
+//                    new Thread(){
+//
+//                        @Override
+//                        public void run() {
+//                            JSONObject json = (JSONObject)response;
+//                            if(json.has("figureurl")){
+//                                Bitmap bitmap = null;
+//                                try {
+//                                    bitmap = Utils.getbitmap(json.getString("figureurl_qq_2"));
+//                                } catch (JSONException e) {
+//
+//                                }
+//                                Message msg = new Message();
+//                                msg.obj = bitmap;
+//                                msg.what = 1;
+//                                mHandler.sendMessage(msg);
+//                            }
+//                        }
+//
+//                    }.start();
                 }
 
                 @Override
@@ -361,6 +367,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             };
             mInfo = new UserInfo(this, mTencent.getQQToken());
             mInfo.getUserInfo(listener);
+
 
         } else {
 //            mUserInfo.setText("");
@@ -375,7 +382,17 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         public void handleMessage(Message msg) {
             if (msg.what == 0) {
                 JSONObject response = (JSONObject) msg.obj;
-                if (response.has("nickname")) {
+                 //                   JSONObject json = (JSONObject)response;
+                    try {
+                    userName=response.getString("nickname");
+//                     openid=response.getString("openid");
+                        openid=mTencent.getOpenId();
+                        profile_image_url=response.getString("figureurl");
+                    } catch (JSONException e) {
+                        e.printStackTrace();
+                   }
+                addcustmer(openid,userName, profile_image_url);
+//                if (response.has("nickname")) {
 //                    try {
 //                //        Toast.makeText(LoginActivity.this, "返回!!!", Toast.LENGTH_SHORT).show();
 ////                        mUserInfo.setVisibility(android.view.View.VISIBLE);
@@ -384,7 +401,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 //                    } catch (JSONException e) {
 //                        e.printStackTrace();
 //                    }
-                }
+//                }
             }else if(msg.what == 1){
                 Bitmap bitmap = (Bitmap)msg.obj;
 //                mUserLogo.setImageBitmap(bitmap);
@@ -505,12 +522,12 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
 
                     String result = responseInfo.result;
                     msg.obj=result;
-                    String userName="";
-                    String profile_image_url ="";
+               //     String userName="";
+                //    String profile_image_url ="";
                     String jinbi ="";
                     String customerid="";
                     String shezhi="";
-                    String openid="";
+                //    String openid="";
                     List<Shezhi> listshezhi=new ArrayList<Shezhi>();
                     try {
                         JSONObject myobject = new JSONObject(result);
