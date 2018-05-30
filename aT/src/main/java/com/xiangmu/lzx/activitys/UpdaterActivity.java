@@ -3,6 +3,8 @@ package com.xiangmu.lzx.activitys;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -15,11 +17,16 @@ import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.Md5Utils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
 
+import org.json.JSONObject;
+
 public class UpdaterActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView loginimage_back;
     EditText password1,password2;
     LinearLayout updater;
     String number;
+    private int countSeconds = 60;//倒计时秒数
+    public static final int MSG_REGISTER_RESULT = 0;
+    public static final int MSG_RECHECK_RESULT = 1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +35,7 @@ public class UpdaterActivity extends AppCompatActivity implements View.OnClickLi
         number=intent.getStringExtra("number");
         initView();
     }
+
     private void initView() {
         loginimage_back = (ImageView) findViewById(R.id.loginimage_back);//返回按钮
         password1 = (EditText) findViewById(R.id.password1);//第一次输入

@@ -133,4 +133,9 @@ public class Utils {
             mProgressDialog = null;
         }
     }
+    public static boolean isPhone(String inputText) {
+        Pattern p = Pattern.compile("^((13[0-9])|(14[0-9])|(15[0-9])|(18[0-9])|(17[0-9]))\\d{8}$");
+        Matcher m = p.matcher(inputText);
+        return m.matches();
+    }
 }

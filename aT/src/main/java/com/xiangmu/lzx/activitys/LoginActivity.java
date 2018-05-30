@@ -416,7 +416,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void login(String zhanghao,String password) {
 //        ThreadPoolUtils.execute(new HttpPostThread(this, zhanghao, password, hand));
         httpUtils = new HttpUtils();
-      url= HttpUtil.BASE_URL+"customerAction!logonmob.action?username="+zhanghao+"&password="+password;//最新
+      url= HttpUtil.BASE_URL+"customerAction!logonmob.action?zhanghao="+zhanghao+"&password="+password;//最新
         handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
             @Override
             public void onSuccess(ResponseInfo<String> responseInfo) {
