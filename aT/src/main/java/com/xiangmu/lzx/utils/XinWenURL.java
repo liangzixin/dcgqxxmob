@@ -44,12 +44,31 @@ public class XinWenURL {
     String ProductArticlerDelMob=HttpUtil.BASE_URL+"product!ProductArticlerDelMob.action?id=";
     String clickagree=HttpUtil.BASE_URL+"product!Clickagree.action?id=";
     String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
-    String repareCustomerMob=HttpUtil.BASE_URL+"customerAction!repareCustomerMob.action";
 
+    public String getCheckuserMobile() {
+        return checkuserMobile;
+    }
+
+    public void setCheckuserMobile(String checkuserMobile) {
+        this.checkuserMobile = checkuserMobile;
+    }
+
+    String checkuserMobile=HttpUtil.BASE_URL+"customerAction!checkuserMobile.action";
+    String repareCustomerMob=HttpUtil.BASE_URL+"customerAction!repareCustomerMob.action";
     String repareProductArticlerMob=HttpUtil.BASE_URL+"product!repareProductArticlerMob.action";
     String saveMob=HttpUtil.BASE_URL+"filter!saveMob.action";
     String clickCustomerdel=HttpUtil.BASE_URL+"customerAction!delMob.action?id=";
     String clickShortmessagedel=HttpUtil.BASE_URL+"customerAction!delShorstmessageMob.action?id=";
+
+    public String getSmsMob() {
+        return smsMob;
+    }
+
+    public void setSmsMob(String smsMob) {
+        this.smsMob = smsMob;
+    }
+
+    String smsMob=HttpUtil.BASE_URL+"customerAction!smsMob.action";
     public String getClickShortmessagedel() {
         return clickShortmessagedel;
     }
