@@ -1,15 +1,20 @@
 package com.xiangmu.lzx.activitys;
 
+import android.annotation.TargetApi;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.os.Handler;
 import android.os.Message;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -33,10 +38,10 @@ import org.xutils.x;
 public class BackpasswordActivity extends AppCompatActivity implements View.OnClickListener {
     ImageView loginimage_back;
     EditText number;
-    LinearLayout next;
+
     private Context mContext;
     private EditText yanzhengma;
-    private Button getyanzhengma1;
+    private Button getyanzhengma1,login_button;
     public  String  yanzhengma0="";
     private int countSeconds = 60;//倒计时秒数
     public static final int MSG_REGISTER_RESULT = 0;
@@ -80,13 +85,37 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
     private void initView() {
         loginimage_back = (ImageView) findViewById(R.id.loginimage_back);//返回按钮
         number = (EditText) findViewById(R.id.number);//要更改的手机号
-        next = (LinearLayout) findViewById(R.id.next);//提交按钮
+
         getyanzhengma1 = (Button) findViewById(R.id.getyanzhengma1);
         yanzhengma = (EditText) findViewById(R.id.yanzhengma);
         loginimage_back.setOnClickListener(this);
-        next.setOnClickListener(this);
-        getyanzhengma1.setOnClickListener(this);
 
+        getyanzhengma1.setOnClickListener(this);
+        login_button = (Button) findViewById(R.id.login_button);//获取密码按钮
+        login_button.setOnClickListener(this);
+        yanzhengma.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+            @TargetApi(Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void afterTextChanged(Editable s) {
+                String s2 = s.toString().trim();
+                if (!"".equals(s2)) {
+                    login_button.setEnabled(true);
+                    Drawable drawable = getResources().getDrawable(R.drawable.login_button_a);
+                    login_button.setBackground(drawable);
+                } else {
+                    login_button.setEnabled(false);
+                    login_button.setBackground(getResources().getDrawable(R.drawable.biankuang));
+                }
+            }
+        });
     }
 
     @Override
@@ -96,8 +125,14 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
                 finish();
                 overridePendingTransition(R.anim.left_to_right_in, R.anim.left_to_right_out);
                 break;
-            case R.id.next:
+            case R.id.login_button:
+                String yanzhengma1 =yanzhengma.getText().toString().trim();
+                if (!yanzhengma1.equals(yanzhengma0)) {
 
+                    Toast.makeText(this, "验证码不正确,请重新输入...", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                Toast.makeText(this, "验证码正确", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.getyanzhengma1:
                 String numbers = number.getText().toString().trim();
@@ -210,15 +245,15 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
                     String captcha = shortmessage.getString("captcha");
                     String verifyCode = shortmessage.getString("smstype");
                     Log.e("tag", "获取验证码==" + verifyCode);
-                    if ("1".equals(verifyCode)) {
+                    if ("6".equals(verifyCode)) {
                         yanzhengma0=captcha;
 
                         Toast.makeText(BackpasswordActivity.this, "获取验证码成功!", Toast.LENGTH_SHORT).show();
                         startCountBack();//这里是用来进行请求参数的
-                    } else if("0".equals(verifyCode)){
+                    } else if("5".equals(verifyCode)){
 
                         Toast.makeText(BackpasswordActivity.this, "获取验证码失败!", Toast.LENGTH_SHORT).show();
-                    }else if("2".equals(verifyCode)){
+                    }else if("7".equals(verifyCode)){
 
                         Toast.makeText(BackpasswordActivity.this, "该手机号码今天发送验证码过多!", Toast.LENGTH_SHORT).show();
                     }
@@ -255,18 +290,21 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
             @Override
             public void run() {
                 getyanzhengma1.setText(countSeconds + "");
+                yanzhengma.setFocusableInTouchMode(true);
+                yanzhengma.requestFocus();
+
                 mCountHandler.sendEmptyMessage(0);
             }
         });
     }
     //使用后台校验电话号码是否注册过
     private void  isMobileUsed(final String mobile) {
-//        String url=xinWenURL.getCheckuserMobile();
+        String url=xinWenURL.getCheckuserMobile();
 //        loginProgress = new ProgressDialog(this);
 //        loginProgress.setMessage("正在校验手机号...");
 //        loginProgress.show();
-//        RequestParams requestParams = new RequestParams(url);
-        RequestParams requestParams = new RequestParams("http://192.168.16.101:8086/dcgqxx/customerAction!checkuserMobile.action");
+        RequestParams requestParams = new RequestParams(url);
+//        RequestParams requestParams = new RequestParams("http://192.168.16.101:8086/dcgqxx/customerAction!checkuserMobile.action");
         requestParams.addBodyParameter("mobile",mobile);
         x.http().post(requestParams, new Callback.ProgressCallback<String>() {
             @Override
