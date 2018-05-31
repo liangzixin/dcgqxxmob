@@ -79,9 +79,9 @@ import cn.finalteam.galleryfinal.ThemeConfig;
 //                .setNoAnimcation(true)  // 设置是否显示动画
 //                .build();
 //        GalleryFinal.init(coreConfig);
-//        x.Ext.init(this);
-//        //设置是否输出Debug
-//        x.Ext.setDebug(true);
+        x.Ext.init(this);
+        //设置是否输出Debug
+        x.Ext.setDebug(true);
     }
 
     public static MediaPlayer getMediaPlayer() {

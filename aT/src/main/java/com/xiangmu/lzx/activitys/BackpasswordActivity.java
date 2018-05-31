@@ -151,7 +151,8 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
         }
 
         if(result == 1) {
-            Toast.makeText(this, "电话号码校验失败，已经注册过！", Toast.LENGTH_LONG).show();
+           // Toast.makeText(this, "电话号码校验失败，已经注册过！", Toast.LENGTH_LONG).show();
+            requestVerifyCoe();
             return;
         }
 
@@ -205,9 +206,9 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
                 try {
                     JSONObject jsonObject2 = new JSONObject(result);
                     Log.e("tag", "jsonObject2" + jsonObject2);
-                    //  JSONObject shortmessage =jsonObject2.getJSONObject("shortmessage");
-                    String captcha = jsonObject2.getString("captcha");
-                    String verifyCode = jsonObject2.getString("smstype");
+                     JSONObject shortmessage =jsonObject2.getJSONObject("shortmessage");
+                    String captcha = shortmessage.getString("captcha");
+                    String verifyCode = shortmessage.getString("smstype");
                     Log.e("tag", "获取验证码==" + verifyCode);
                     if ("1".equals(verifyCode)) {
                         yanzhengma0=captcha;
@@ -234,7 +235,7 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
             }
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                //  Toast.makeText(MainActivity.this, "错误", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BackpasswordActivity.this, "错误", Toast.LENGTH_SHORT).show();
                 yanzhengma0="";
                 ex.printStackTrace();
             }
@@ -260,11 +261,12 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
     }
     //使用后台校验电话号码是否注册过
     private void  isMobileUsed(final String mobile) {
-        String url=xinWenURL.getCheckuserMobile();
-        loginProgress = new ProgressDialog(this);
-        loginProgress.setMessage("正在校验手机号...");
-        loginProgress.show();
-        RequestParams requestParams = new RequestParams(url);
+//        String url=xinWenURL.getCheckuserMobile();
+//        loginProgress = new ProgressDialog(this);
+//        loginProgress.setMessage("正在校验手机号...");
+//        loginProgress.show();
+//        RequestParams requestParams = new RequestParams(url);
+        RequestParams requestParams = new RequestParams("http://192.168.16.101:8086/dcgqxx/customerAction!checkuserMobile.action");
         requestParams.addBodyParameter("mobile",mobile);
         x.http().post(requestParams, new Callback.ProgressCallback<String>() {
             @Override
