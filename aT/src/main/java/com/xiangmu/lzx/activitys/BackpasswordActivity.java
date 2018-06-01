@@ -77,7 +77,7 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
 //                        loginProgress.dismiss();
                     JSONObject json = (JSONObject) msg.obj;
                     hanleCreateAccountResult(json);
-                    break;
+
             }
 
         }
@@ -132,7 +132,7 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
                     Toast.makeText(this, "验证码不正确,请重新输入...", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                Toast.makeText(this, "验证码正确", Toast.LENGTH_SHORT).show();
+                getBackPassword();
                 break;
             case R.id.getyanzhengma1:
                 String numbers = number.getText().toString().trim();
@@ -270,8 +270,68 @@ public class BackpasswordActivity extends AppCompatActivity implements View.OnCl
             }
             @Override
             public void onError(Throwable ex, boolean isOnCallback) {
-                Toast.makeText(BackpasswordActivity.this, "错误", Toast.LENGTH_SHORT).show();
+                Toast.makeText(BackpasswordActivity.this, "获取验证码错误", Toast.LENGTH_SHORT).show();
                 yanzhengma0="";
+                ex.printStackTrace();
+            }
+            @Override
+            public void onCancelled(CancelledException cex) {
+                //  Toast.makeText(MainActivity.this, "错误1", Toast.LENGTH_SHORT).show();
+            }
+            @Override
+            public void onFinished() {
+                //  Toast.makeText(MainActivity.this, "错误2", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+    //获取验证码信息，进行验证码请求
+    private void getBackPassword(){
+        String url=xinWenURL.getGetbackpasswordMob();
+        RequestParams requestParams = new RequestParams(url);
+        requestParams.addBodyParameter("mobile",number.getText().toString());
+        x.http().post(requestParams, new Callback.ProgressCallback<String>() {
+            @Override
+            public void onWaiting() {
+            }
+            @Override
+            public void onStarted() {
+            }
+            @Override
+            public void onLoading(long total, long current, boolean isDownloading) {
+            }
+            @Override
+            public void onSuccess(String result) {
+                try {
+                    JSONObject jsonObject2 = new JSONObject(result);
+                    Log.e("tag", "jsonObject2" + jsonObject2);
+                    JSONObject shortmessage =jsonObject2.getJSONObject("shortmessage");
+                    String captcha = shortmessage.getString("captcha");
+                    String verifyCode = shortmessage.getString("smstype");
+                    Log.e("tag", "取回密码==" + verifyCode);
+                    if ("6".equals(verifyCode)) {
+                        yanzhengma0=captcha;
+
+                        Toast.makeText(BackpasswordActivity.this, "取回密码成功!", Toast.LENGTH_SHORT).show();
+                        login_button.setText("取回密码成功");
+                        login_button.setEnabled(false);
+                        login_button.setBackground(getResources().getDrawable(R.drawable.biankuang));
+                    } else if("5".equals(verifyCode)){
+
+                        Toast.makeText(BackpasswordActivity.this, "取回密码失败!", Toast.LENGTH_SHORT).show();
+                    }else if("7".equals(verifyCode)){
+
+                        Toast.makeText(BackpasswordActivity.this, "该手机号码今天取回密码次数过多!", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+
+            }
+            @Override
+            public void onError(Throwable ex, boolean isOnCallback) {
+                Toast.makeText(BackpasswordActivity.this, "取回密码错误", Toast.LENGTH_SHORT).show();
+           //     yanzhengma0="";
                 ex.printStackTrace();
             }
             @Override

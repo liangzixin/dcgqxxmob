@@ -69,6 +69,16 @@ public class XinWenURL {
     }
 
     String smsMob=HttpUtil.BASE_URL+"customerAction!smsMob.action";
+
+    public String getGetbackpasswordMob() {
+        return getbackpasswordMob;
+    }
+
+    public void setGetbackpasswordMob(String getbackpasswordMob) {
+        this.getbackpasswordMob = getbackpasswordMob;
+    }
+
+    String getbackpasswordMob=HttpUtil.BASE_URL+"customerAction!getbackpasswordMob.action";
     public String getClickShortmessagedel() {
         return clickShortmessagedel;
     }
