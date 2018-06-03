@@ -1,6 +1,7 @@
 package com.xiangmu.lzx.activitys;
 
 import android.app.AlertDialog;
+import android.content.ComponentName;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -48,6 +49,7 @@ import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
+import com.xiangmu.lzx.Setting_Utils.ShareUtils;
 import com.xiangmu.lzx.holder.ArticleHolder;
 import com.xiangmu.lzx.holder.PhotoHolder;
 import com.xiangmu.lzx.holder.ProductArticleHolder;
@@ -93,7 +95,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private String  shezhi;
       private MyApplication app;
 //    private UMShareListener mShareListener;
-//    private ShareAction mShareAction;
+  //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -188,12 +190,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 getpopuwindow(view);
             }
         });
-//        mShareListener = new CustomShareListener(this);
-        fenxiang.setOnClickListener(new View.OnClickListener() {
-            @Override
-                public void onClick(View view) {
-//                ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
-//                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
+    //    mShareListener = new CustomShareListener(this);
+//        fenxiang.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//                public void onClick(View view) {
+//     //           ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
+////                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
 //                new ShareAction(WebProductinfoViewActivity.this)
 //                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
 //                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
@@ -219,8 +221,25 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                            }
 //                        })
 //                       .open();
+//            }
+//        });
+        fenxiang.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+            //    ShareDialogFragment.this.dismiss();
+                Intent intent = new Intent(Intent.ACTION_SEND); // 地址
+                ComponentName component = new ComponentName(
+                        "com.tencent.mobileqq",
+                        "com.tencent.mobileqq.activity.JumpActivity");
+                intent.setComponent(component);
+                intent.putExtra(Intent.EXTRA_TEXT,
+                        getString(R.string.share_content));
+                intent.setType("text/plain");
+                startActivity(Intent.createChooser(intent, "分享"));
             }
         });
+
+
     }
 
 
