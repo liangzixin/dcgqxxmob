@@ -94,6 +94,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //    private UMImage imageurl;
     private String  shezhi;
       private MyApplication app;
+
 //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
@@ -148,12 +149,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         button.setOnClickListener(c);
     }
     private void initview() {
-       // final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
+        // final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         //  final String url ="http://www.dcgqxx.com/product/product_select.html?id=29547";
-     final String url ="http://www.dcgqxx.com/product/product_select.html?id="+xinWenXiData.getId();
+        final String url = "http://www.dcgqxx.com/product/product_select.html?id=" + xinWenXiData.getId();
         System.out.println(url);
-     //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-        final String xinwentitle =xinWenXiData.getTitle();
+        //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
+        final String xinwentitle = xinWenXiData.getTitle();
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         TextView duotu_gentie = null;
@@ -179,7 +180,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         duotu_gentie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(WebProductinfoViewActivity.this,GenTieActivity.class));
+                startActivity(new Intent(WebProductinfoViewActivity.this, GenTieActivity.class));
             }
         });
         //点击打开扩展 详细页面
@@ -190,7 +191,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 getpopuwindow(view);
             }
         });
-    //    mShareListener = new CustomShareListener(this);
+        //    mShareListener = new CustomShareListener(this);
 //        fenxiang.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //                public void onClick(View view) {
@@ -226,23 +227,34 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-            //    ShareDialogFragment.this.dismiss();
-                Intent intent = new Intent(Intent.ACTION_SEND); // 地址
-                ComponentName component = new ComponentName(
-                        "com.tencent.mobileqq",
-                        "com.tencent.mobileqq.activity.JumpActivity");
-                intent.setComponent(component);
-                intent.putExtra(Intent.EXTRA_TEXT,
-                        getString(R.string.share_content));
-                intent.setType("text/plain");
-                startActivity(Intent.createChooser(intent, "分享"));
+//            //    ShareDialogFragment.this.dismiss();
+//                Intent intent = new Intent(Intent.ACTION_SEND); // 地址
+//                ComponentName component = new ComponentName(
+//                        "com.tencent.mobileqq",
+//                        "com.tencent.mobileqq.activity.JumpActivity");
+//                intent.setComponent(component);
+//                intent.putExtra(Intent.EXTRA_TEXT,
+//                        getString(R.string.share_content));
+//                intent.setType("text/plain");
+//                startActivity(Intent.createChooser(intent, "分享"));
+//            }
+//        });
+             String   shareUrl="http://inews.gtimg.com/newsapp_bt/0/876781763/1000";
+                Intent sendIntent = new Intent();
+                sendIntent.setAction(Intent.ACTION_SEND);
+                sendIntent.putExtra(Intent.EXTRA_TEXT, xinwentitle + "\n" + xinWenXiData.getXinwentext() + "\n" +shareUrl);
+                sendIntent.setType("text/plain");
+//          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareImgUI");//微信朋友
+//          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qqfav.widget.QfavJumpActivity");//保存到QQ收藏
+//          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qlink.QlinkShareJumpActivity");//QQ面对面快传
+//          sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.qfileJumpActivity");//传给我的电脑
+                sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity");//QQ好友或QQ群
+//          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI");//微信朋友圈，仅支持分享图片
+                //   startActivityForResult(sendIntent, QUN_QUEST);
+                startActivityForResult(sendIntent, 1000);
             }
         });
-
-
     }
-
-
     public void getdata(String url) {
         LogUtils.e("putongframenturl", "==" + url);
 
