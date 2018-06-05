@@ -23,6 +23,7 @@ import android.widget.Toast;
 ////import com.umeng.socialize.view.Config;
 //import com.umeng.socialize.PlatformConfig;
 //import com.umeng.socialize.UMShareAPI;
+import com.tencent.tauth.Tencent;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.listener.GlideImageLoader;
 import com.xiangmu.lzx.listener.GlidePauseOnScrollListener;
@@ -50,11 +51,15 @@ import cn.finalteam.galleryfinal.ThemeConfig;
     private Handler handler;
     // QQ申请到的合法appId
     public  final String APP_ID="1105789263";
+    public static Tencent mTencent;
     @Override
     public void onCreate() {
         super.onCreate();
        // setSearchDB0(false);
         ctx = getApplicationContext();
+        if (mTencent == null) {
+            mTencent = Tencent.createInstance(APP_ID, this);
+        }
       //  Config.DEBUG = true;
 //        UMConfigure.setLogEnabled(true);
 //        //初始化组件化基础库, 统计SDK/推送SDK/分享SDK都必须调用此初始化接口

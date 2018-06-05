@@ -1,6 +1,7 @@
 package com.xiangmu.lzx.activitys;
 
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.ComponentName;
 import android.content.ContentValues;
 import android.content.Context;
@@ -15,7 +16,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -30,15 +36,12 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.tencent.connect.share.QQShare;
+import com.tencent.tauth.IUiListener;
+import com.tencent.tauth.Tencent;
+import com.tencent.tauth.UiError;
 import com.twiceyuan.commonadapter.library.adapter.MultiTypeAdapter;
-//import com.umeng.socialize.ShareAction;
-//import com.umeng.socialize.UMShareAPI;
-//import com.umeng.socialize.UMShareListener;
-//import com.umeng.socialize.bean.SHARE_MEDIA;
-//import com.umeng.socialize.media.UMImage;
-//import com.umeng.socialize.media.UMWeb;
-//import com.umeng.socialize.shareboard.SnsPlatform;
-//import com.umeng.socialize.utils.ShareBoardlistener;
+
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
 import com.xiangmu.lzx.Modle.Article;
 import com.xiangmu.lzx.Modle.Customer;
@@ -58,6 +61,8 @@ import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
 import com.xiangmu.lzx.utils.SharedPreferencesUtil;
+import com.xiangmu.lzx.utils.ThreadManager;
+import com.xiangmu.lzx.utils.Utils;
 import com.xiangmu.lzx.utils.XinWenURL;
 import com.xiangmu.lzx.utils.XinWenXiData;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
@@ -94,8 +99,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //    private UMImage imageurl;
     private String  shezhi;
       private MyApplication app;
-
-//    private UMShareListener mShareListener;
+    private  String xinwentitle="";
+    private String url ="";
+    //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
     @Override
@@ -151,10 +157,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private void initview() {
         // final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         //  final String url ="http://www.dcgqxx.com/product/product_select.html?id=29547";
-        final String url = "http://www.dcgqxx.com/product/product_select.html?id=" + xinWenXiData.getId();
+       url = "http://www.dcgqxx.com/product/product_select.html?id=" + xinWenXiData.getId();
         System.out.println(url);
         //   final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
-        final String xinwentitle = xinWenXiData.getTitle();
+        xinwentitle = xinWenXiData.getTitle();
         ImageButton imageback = null;
         imageback = (ImageButton) findViewById(R.id.xinwen_xi_back);//返回
         TextView duotu_gentie = null;
@@ -227,31 +233,21 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//            //    ShareDialogFragment.this.dismiss();
-//                Intent intent = new Intent(Intent.ACTION_SEND); // 地址
-//                ComponentName component = new ComponentName(
-//                        "com.tencent.mobileqq",
-//                        "com.tencent.mobileqq.activity.JumpActivity");
-//                intent.setComponent(component);
-//                intent.putExtra(Intent.EXTRA_TEXT,
-//                        getString(R.string.share_content));
-//                intent.setType("text/plain");
-//                startActivity(Intent.createChooser(intent, "分享"));
-//            }
-//        });
-             String   shareUrl="http://inews.gtimg.com/newsapp_bt/0/876781763/1000";
-                Intent sendIntent = new Intent();
-                sendIntent.setAction(Intent.ACTION_SEND);
-                sendIntent.putExtra(Intent.EXTRA_TEXT, xinwentitle + "\n" + xinWenXiData.getXinwentext() + "\n" +shareUrl);
-                sendIntent.setType("text/plain");
-//          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareImgUI");//微信朋友
-//          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qqfav.widget.QfavJumpActivity");//保存到QQ收藏
-//          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qlink.QlinkShareJumpActivity");//QQ面对面快传
-//          sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.qfileJumpActivity");//传给我的电脑
-                sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity");//QQ好友或QQ群
-//          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI");//微信朋友圈，仅支持分享图片
-                //   startActivityForResult(sendIntent, QUN_QUEST);
-                startActivityForResult(sendIntent, 1000);
+                showShareDialog();
+//                String   shareUrl="http://inews.gtimg.com/newsapp_bt/0/876781763/1000";
+//                Intent sendIntent = new Intent();
+//                sendIntent.setAction(Intent.ACTION_SEND);
+//                sendIntent.putExtra(Intent.EXTRA_TEXT, xinwentitle + "\n" + xinWenXiData.getXinwentext() + "\n" +shareUrl);
+//                sendIntent.setType("text/plain");
+////          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareImgUI");//微信朋友
+////          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qqfav.widget.QfavJumpActivity");//保存到QQ收藏
+////          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qlink.QlinkShareJumpActivity");//QQ面对面快传
+////          sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.qfileJumpActivity");//传给我的电脑
+//                sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity");//QQ好友或QQ群
+////          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI");//微信朋友圈，仅支持分享图片
+//                //   startActivityForResult(sendIntent, QUN_QUEST);
+//                startActivityForResult(sendIntent, 1000);
+
             }
         });
     }
@@ -708,70 +704,113 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                 break;
         }
     }
-//    private static class CustomShareListener implements UMShareListener {
-//
-//        private WeakReference<WebProductinfoViewActivity> mActivity;
-//
-//        private CustomShareListener(WebProductinfoViewActivity activity) {
-//            mActivity = new WeakReference(activity);
-//        }
-//
-//        @Override
-//        public void onStart(SHARE_MEDIA platform) {
-//
-//        }
-//
-//        @Override
-//        public void onResult(SHARE_MEDIA platform) {
-//
-//            if (platform.name().equals("WEIXIN_FAVORITE")) {
-//                Toast.makeText(mActivity.get(), platform + " 收藏成功啦", Toast.LENGTH_SHORT).show();
-//            } else {
-//                if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
-//                        && platform != SHARE_MEDIA.EMAIL
-//                        && platform != SHARE_MEDIA.FLICKR
-//                        && platform != SHARE_MEDIA.FOURSQUARE
-//                        && platform != SHARE_MEDIA.TUMBLR
-//                        && platform != SHARE_MEDIA.POCKET
-//                        && platform != SHARE_MEDIA.PINTEREST
-//
-//                        && platform != SHARE_MEDIA.INSTAGRAM
-//                        && platform != SHARE_MEDIA.GOOGLEPLUS
-//                        && platform != SHARE_MEDIA.YNOTE
-//                        && platform != SHARE_MEDIA.EVERNOTE) {
-//                    Toast.makeText(mActivity.get(), platform + " 分享成功啦!!!", Toast.LENGTH_SHORT).show();
-//                }
-//
-//            }
-//        }
-//
-//        @Override
-//        public void onError(SHARE_MEDIA platform, Throwable t) {
-//            if (platform != SHARE_MEDIA.MORE && platform != SHARE_MEDIA.SMS
-//                    && platform != SHARE_MEDIA.EMAIL
-//                    && platform != SHARE_MEDIA.FLICKR
-//                    && platform != SHARE_MEDIA.FOURSQUARE
-//                    && platform != SHARE_MEDIA.TUMBLR
-//                    && platform != SHARE_MEDIA.POCKET
-//                    && platform != SHARE_MEDIA.PINTEREST
-//
-//                    && platform != SHARE_MEDIA.INSTAGRAM
-//                    && platform != SHARE_MEDIA.GOOGLEPLUS
-//                    && platform != SHARE_MEDIA.YNOTE
-//                    && platform != SHARE_MEDIA.EVERNOTE) {
-//                Toast.makeText(mActivity.get(), platform + " 分享失败啦", Toast.LENGTH_SHORT).show();
-//                if (t != null) {
-//               //     com.umeng.socialize.utils.Log.d("throw", "throw:" + t.getMessage());
-//                }
-//            }
-//
-//        }
-//
-//        @Override
-//        public void onCancel(SHARE_MEDIA platform) {
-//
-//            Toast.makeText(mActivity.get(), platform + " 分享取消了", Toast.LENGTH_SHORT).show();
-//        }
-//    }
+    private void showShareDialog() {
+  //      Log.d(TAG, "showShareDialog");
+
+        View view = LayoutInflater.from(this).inflate(R.layout.viewliang, null);
+        // 设置style 控制默认dialog带来的边距问题
+        final Dialog dialog = new Dialog(this, R.style.common_dialog);
+        dialog.setContentView(view);
+        dialog.show();
+
+        // 监听
+        View.OnClickListener listener = new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+
+                switch (v.getId()) {
+
+                    case R.id.view_share_weixin:
+                        // 分享到微信
+                    //    onShare2Weixin();
+                        break;
+
+                    case R.id.view_share_qq:
+                        final Bundle params = new Bundle();
+
+                       params.putString(QQShare.SHARE_TO_QQ_TITLE,  xinwentitle);
+                       params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,url);
+                       params.putString(QQShare.SHARE_TO_QQ_SUMMARY, xinWenXiData.getDigest());
+                        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,R.string.qqshare_imageUrl_content+"");
+                        params.putString(QQShare.SHARE_TO_QQ_APP_NAME,R.string.app_name+"");
+
+                        doShareToQQ(params);
+
+                     //   onShare2Weixin();
+                        break;
+                    case R.id.view_share_qzone:
+                        // 分享到微信
+                        //    onShare2Weixin();
+                        break;
+
+                    case R.id.view_share_pengyou:
+                        // 分享到朋友圈
+                        //   onShare2Weixin();
+                        break;
+                    case R.id.share_cancel_btn:
+                        // 取消
+                        break;
+
+                }
+
+                dialog.dismiss();
+            }
+
+        };
+        ViewGroup mViewWeixin = (ViewGroup) view.findViewById(R.id.view_share_weixin);
+        ViewGroup mViewPengyou = (ViewGroup) view.findViewById(R.id.view_share_pengyou);
+        ViewGroup mViewQq = (ViewGroup) view.findViewById(R.id.view_share_qq);
+        ViewGroup mViewWbsina= (ViewGroup) view.findViewById(R.id.view_share_wbsina);
+        ViewGroup mViewQzone = (ViewGroup) view.findViewById(R.id.view_share_qzone);
+
+        Button mBtnCancel = (Button) view.findViewById(R.id.share_cancel_btn);
+        mBtnCancel.setTextColor(getResources().getColor(R.color.black));
+        mViewWeixin.setOnClickListener(listener);
+        mViewPengyou.setOnClickListener(listener);
+        mViewQq.setOnClickListener(listener);
+        mViewWbsina.setOnClickListener(listener);
+        mViewQzone.setOnClickListener(listener);
+        mBtnCancel.setOnClickListener(listener);
+
+        // 设置相关位置，一定要在 show()之后
+        Window window = dialog.getWindow();
+        window.getDecorView().setPadding(0, 0, 0, 0);
+        WindowManager.LayoutParams params = window.getAttributes();
+        params.width = ViewGroup.LayoutParams.MATCH_PARENT;
+        params.gravity = Gravity.BOTTOM;
+        window.setAttributes(params);
+
+    }
+    private void doShareToQQ(final Bundle params) {
+        // QQ分享要在主线程做
+        ThreadManager.getMainHandler().post(new Runnable() {
+
+            @Override
+            public void run() {
+                if (null !=app.getCtx()) {
+                    app.mTencent.shareToQQ(WebProductinfoViewActivity.this, params, qqShareListener);
+                }
+            }
+        });
+    }
+    IUiListener qqShareListener = new IUiListener() {
+        @Override
+        public void onCancel() {
+         //   if (shareType != QQShare.SHARE_TO_QQ_TYPE_IMAGE) {
+                Utils.toastMessage(WebProductinfoViewActivity.this, "onCancel: ");
+          //  }
+        }
+        @Override
+        public void onComplete(Object response) {
+            // TODO Auto-generated method stub
+            Utils.toastMessage(WebProductinfoViewActivity.this, "onComplete: " + response.toString());
+        }
+        @Override
+        public void onError(UiError e) {
+            // TODO Auto-generated method stub
+            Utils.toastMessage(WebProductinfoViewActivity.this, "onError: " + e.errorMessage, "e");
+        }
+    };
 
 }

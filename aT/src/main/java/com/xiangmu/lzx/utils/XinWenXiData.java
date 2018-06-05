@@ -35,6 +35,16 @@ public class XinWenXiData implements Serializable{
     private Zpxx zpxx;
     private Fwcs fwcs;
     private Gqxx gqxx;
+
+    public String getDigest() {
+        return digest;
+    }
+
+    public void setDigest(String digest) {
+        this.digest = digest;
+    }
+
+    private String digest;
     private ArrayList<UploadFile> uploadFileList;
 
     public List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> getProductArticlerList() {

@@ -22,6 +22,7 @@
     <string name="title_activity_register">RegisterActivity</string>
     <string name="title_activity_read_history">ReadHistoryActivity</string>
     <string name="title_activity_gen_tie">GenTieActivity</string>
+    <string name="qqshare_imageUrl_content">http://www.dcgqxx.com/css/images/dc.gif</string>
     <string-array name="mock_title">
         <item>为什么Android要采用Binder作为IPC机制？</item>
         <item>为什么九城公司在失去魔兽世界后，这几年江河日下、日暮西山？</item>
