@@ -19,7 +19,7 @@ android {
         }
         vectorDrawables.useSupportLibrary = true
         versionCode
-        versionName "V1.1.05-20180605"
+        versionName "V1.1.05-20180606"
         multiDexEnabled true
 
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }

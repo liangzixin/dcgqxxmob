@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.xiangmu.lzx"
-    android:versionName="V1.1.05-20180527" >
+    android:versionName="V1.1.05-20180605" >
 
     <uses-sdk
         android:minSdkVersion="23"
@@ -143,7 +143,16 @@
             android:label="@string/title_activity_search" />
         <activity
             android:name="com.xiangmu.lzx.activitys.WebProductinfoViewActivity"
-            android:label="@string/title_activity_web_view" />
+            android:label="@string/title_activity_web_view" >
+            <intent-filter android:label="@string/albums_sendbyWBlog" >
+                <action android:name="android.intent.action.SEND" />
+
+                <data android:mimeType="image/*" />
+                　　　　　　　　　
+            
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
             android:name="com.xiangmu.lzx.activitys.WebCountViewActivity"
             android:label="@string/title_activity_web_view" />

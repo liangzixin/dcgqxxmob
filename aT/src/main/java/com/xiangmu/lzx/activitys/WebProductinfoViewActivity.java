@@ -1,5 +1,6 @@
 package com.xiangmu.lzx.activitys;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ComponentName;
@@ -10,6 +11,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
@@ -36,6 +38,7 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.tencent.connect.common.Constants;
 import com.tencent.connect.share.QQShare;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
@@ -101,6 +104,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
       private MyApplication app;
     private  String xinwentitle="";
     private String url ="";
+    private Bundle params;
+    private int shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
+    private int mExtarFlag = 0x00;
     //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
@@ -702,6 +708,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
 //                    Log.d("TAG", "收到返回值了收到了了子了了了了了了子了了了了了了了");
 //                }
                 break;
+            case  Constants.REQUEST_QQ_SHARE:
+                Tencent.onActivityResultData(requestCode,resultCode,data,qqShareListener);
+                break;
         }
     }
     private void showShareDialog() {
@@ -727,12 +736,16 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                         break;
 
                     case R.id.view_share_qq:
-                        final Bundle params = new Bundle();
+                        params = new Bundle();
 
                        params.putString(QQShare.SHARE_TO_QQ_TITLE,  xinwentitle);
                        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL,url);
                        params.putString(QQShare.SHARE_TO_QQ_SUMMARY, xinWenXiData.getDigest());
-                        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,R.string.qqshare_imageUrl_content+"");
+                       if(potolist.size()>0){
+                           params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,"http://www.dcgqxx.com/upload/"+potolist.get(0).getPath());
+                       }else {
+                           params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL, "http://www.dcgqxx.com/css/images/dc.gif");
+                       }
                         params.putString(QQShare.SHARE_TO_QQ_APP_NAME,R.string.app_name+"");
 
                         doShareToQQ(params);
@@ -740,8 +753,25 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                      //   onShare2Weixin();
                         break;
                     case R.id.view_share_qzone:
-                        // 分享到微信
-                        //    onShare2Weixin();
+                        params = new Bundle();
+                        params.putString(QQShare.SHARE_TO_QQ_TITLE,xinwentitle);
+                        params.putString(QQShare.SHARE_TO_QQ_TARGET_URL, url);
+                        params.putString(QQShare.SHARE_TO_QQ_SUMMARY, xinWenXiData.getDigest());
+                        String imageUrl="";
+                        if(potolist.size()>0){
+                       imageUrl="http://www.dcgqxx.com/upload/"+potolist.get(0).getPath();
+                        }else {
+                            imageUrl= "http://www.dcgqxx.com/css/images/dc.gif";
+                        }
+                        params.putString(QQShare.SHARE_TO_QQ_IMAGE_URL,imageUrl);
+                        params.putString(shareType == QQShare.SHARE_TO_QQ_TYPE_IMAGE ? QQShare.SHARE_TO_QQ_IMAGE_LOCAL_URL
+                                : QQShare.SHARE_TO_QQ_IMAGE_URL, imageUrl);
+                        params.putString(QQShare.SHARE_TO_QQ_APP_NAME,R.string.app_name+"");
+                        params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, shareType);
+                        // 最后一个二进制位置为1, 其他位不变
+                        mExtarFlag |= QQShare.SHARE_TO_QQ_FLAG_QZONE_AUTO_OPEN;
+                        params.putInt(QQShare.SHARE_TO_QQ_EXT_INT, mExtarFlag);
+                        doShareToQQ(params);
                         break;
 
                     case R.id.view_share_pengyou:
@@ -804,7 +834,20 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
         @Override
         public void onComplete(Object response) {
             // TODO Auto-generated method stub
-            Utils.toastMessage(WebProductinfoViewActivity.this, "onComplete: " + response.toString());
+            String result =response.toString();
+            JSONObject myobject;
+            int ret=-1;
+            try {
+            myobject = new JSONObject(result);
+            ret=myobject.getInt("ret");
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+           if(ret==0){
+               Utils.toastMessage(WebProductinfoViewActivity.this, "分享成功！");
+           }
+
         }
         @Override
         public void onError(UiError e) {
