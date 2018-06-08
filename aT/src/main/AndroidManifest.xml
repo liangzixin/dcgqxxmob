@@ -1,10 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.xiangmu.lzx" >
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.xiangmu.lzx"
+
+    >
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="25" />
+        android:minSdkVersion="23"
+        android:targetSdkVersion="27"
+
+        />
+
 
     <uses-permission android:name="android.permission.GET_TASKS" />
     <uses-permission android:name="android.permission.INTERNET" />
@@ -32,6 +38,7 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme"
+        tools:replace="icon,theme"
         >
 
         <activity
@@ -159,11 +166,8 @@
         <activity
             android:name="com.xiangmu.lzx.activitys.LiuyuanDetailActivity"
             android:label="@string/title_activity_web_view" />
-        <meta-data
-            android:name="UMENG_APPKEY"
-            android:value="5890b33607fe652c9f000284" />
-         <!--   android:value="56458e8c67e58e7842000364" />-->
-        <activity
+
+        <!--activity
             android:name="com.umeng.socialize.editorpage.ShareActivity"
             android:excludeFromRecents="true"
             android:theme="@style/Theme.UMDefault"
@@ -189,7 +193,7 @@
             android:name="com.umeng.socialize.view.CommentDetailNoMap"
             android:configChanges="orientation|keyboard"
             android:noHistory="true"
-            android:theme="@style/Theme.UMDefault" />
+            android:theme="@style/Theme.UMDefault" />-->
         <!-- 腾讯SSO授权的Activity注册-->
         <activity
             android:name="com.tencent.tauth.AuthActivity"
@@ -224,45 +228,43 @@
         <activity
             android:name="com.tencent.connect.common.AssistActivity"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
-        <!--微信分享-->
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <微信分享>
         <activity
             android:name=".wxapi.WXEntryActivity"
             android:configChanges="keyboardHidden|orientation|screenSize"
             android:exported="true"
             android:screenOrientation="portrait"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
-        <!--新浪微博分享-->
-        <!--activity
-        android:name="com.sina.weibo.sdk.component.WeiboSdkBrowser"
-        android:configChanges="keyboardHidden|orientation"
-        android:windowSoftInputMode="adjustResize"
-        android:exported="false" >
-        </activity>-->
-        <activity
-            android:name="com.umeng.socialize.media.WBShareCallBackActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:theme="@android:style/Theme.Translucent.NoTitleBar"
-            android:exported="false"
-            android:screenOrientation="portrait" >
-        </activity>
-        <activity android:name="com.sina.weibo.sdk.web.WeiboSdkWebActivity"
-            android:configChanges="keyboardHidden|orientation"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize"
-            >
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />-->
 
-        </activity>
-        <activity
-            android:theme="@android:style/Theme.Translucent.NoTitleBar.Fullscreen"
-            android:launchMode="singleTask"
-            android:name="com.sina.weibo.sdk.share.WbShareTransActivity">
-            <intent-filter>
-                <action android:name="com.sina.weibo.sdk.action.ACTION_SDK_REQ_ACTIVITY" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
+        <!--sina新浪微博-->
+        <!-- 授权认证 -->
+        <activity android:name="com.sina.weibo.sdk.demo.WBAuthActivity"
+            />
+        <activity android:name="com.sina.weibo.sdk.demo.WBShareMainActivity" />
+        <activity android:name="com.sina.weibo.sdk.demo.WeiboPageActivity" />
+        <activity android:name="com.sina.weibo.sdk.demo.ShareStoryActivity" />
 
+        <!-- 分享 -->
+        <activity
+            android:name="com.sina.weibo.sdk.demo.WBShareActivity"
+            android:configChanges="keyboardHidden|orientation">
         </activity>
+        <!-- 统计 -->
+        <activity android:name="com.sina.weibo.sdk.demo.WBStatisticActivity" />
+        <meta-data
+            android:name="WEIBO_APPKEY"
+            android:value="3002552310" />
+        <meta-data
+            android:name="WEIBO_CHANNEL"
+            android:value="weibo" />
+
+        <service
+            android:name="com.sina.weibo.sdk.net.DownloadService"
+            android:exported="false" >
+        </service>
+
+
         <!-- 人人SSO授权所需的OAuthActivity -->
         <activity
             android:name="com.renn.rennsdk.oauth.OAuthActivity"
@@ -300,13 +302,7 @@
             android:name="com.xiangmu.lzx.activitys.LiuyuanActivity"
             android:label="@string/title_activity_gen_tie" >
         </activity>
-        <meta-data
-            android:name="WEIBO_APPKEY"
-            android:value="3002552310" />
-        <meta-data
-            android:name="WEIBO_CHANNEL"
-            android:value="weibo" /><!-- ATTENTION: This was auto-generated to add Google Play services to your project for
-     App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />

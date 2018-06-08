@@ -31,11 +31,15 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
-//import com.umeng.socialize.UMAuthListener;
-//import com.umeng.socialize.UMShareAPI;
-//import com.umeng.socialize.bean.SHARE_MEDIA;
-//import com.umeng.socialize.utils.Log;
+
+import com.sina.weibo.sdk.WbSdk;
+import com.sina.weibo.sdk.auth.AccessTokenKeeper;
+import com.sina.weibo.sdk.auth.AuthInfo;
+import com.sina.weibo.sdk.auth.Oauth2AccessToken;
+import com.sina.weibo.sdk.auth.WbConnectErrorMessage;
+import com.sina.weibo.sdk.auth.sso.SsoHandler;
 import com.tencent.connect.UserInfo;
+//import com.xiangmu.lzx.utils.Constants;
 import com.tencent.connect.common.Constants;
 import com.tencent.mm.opensdk.utils.Log;
 import com.tencent.tauth.IUiListener;
@@ -43,6 +47,7 @@ import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
 import com.xiangmu.lzx.Modle.Shezhi;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.utils.ConstantsLzx;
 import com.xiangmu.lzx.utils.HttpPostThread;
 import com.xiangmu.lzx.utils.HttpUtil;
 import com.xiangmu.lzx.utils.ThreadPoolUtils;
@@ -53,23 +58,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-//import com.umeng.socialize.controller.UMServiceFactory;
-//import com.umeng.socialize.controller.UMSocialService;
-//import com.umeng.socialize.controller.listener.SocializeListeners;
-//import com.umeng.socialize.exception.SocializeException;
-//import com.umeng.socialize.sso.SinaSsoHandler;
-//import com.umeng.socialize.sso.UMQQSsoHandler;
-//import com.umeng.socialize.sso.UMSsoHandler;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = LoginActivity.class.getName();
@@ -96,6 +86,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private  String userName="";
     private  String profile_image_url ="";
     private  String openid="";
+    /** 注意：SsoHandler 仅当 SDK 支持 SSO 时有效 */
+    private SsoHandler mSsoHandler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -106,6 +98,9 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
       //  mShareAPI = UMShareAPI.get(this);
         mTencent = Tencent.createInstance(mAppid, this);
+        WbSdk.install(this,new AuthInfo(this, ConstantsLzx.APP_KEY, ConstantsLzx.REDIRECT_URL, ConstantsLzx.SCOPE));
+        // 微博授权功能
+        mSsoHandler = new SsoHandler(LoginActivity.this);
         initView();
     }
     private void initView() {
@@ -214,7 +209,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
           //      mShareAPI.getPlatformInfo(this, SHARE_MEDIA.QQ, umAuthListener);
                 break;
             case R.id.xinlang_login://新浪登陆
-         //       mShareAPI.getPlatformInfo(this, SHARE_MEDIA.SINA, umAuthListener);
+                mSsoHandler.authorize(new SelfWbAuthListener());
                 break;
 
             case R.id.login_button://登陆按钮
@@ -581,86 +576,35 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         return gson;
     }
 
+    private class SelfWbAuthListener implements com.sina.weibo.sdk.auth.WbAuthListener{
+        @Override
+        public void onSuccess(final Oauth2AccessToken token) {
+           LoginActivity.this.runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+//                    mAccessToken = token;
+//                    if (mAccessToken.isSessionValid()) {
+//                        // 显示 Token
+//                        updateTokenView(false);
+                        // 保存 Token 到 SharedPreferences
+//                        AccessTokenKeeper.writeAccessToken(LoginActivity.this, mAccessToken);
+                        Toast.makeText(LoginActivity.this,
+                                R.string.weibosdk_demo_toast_auth_success, Toast.LENGTH_SHORT).show();
+//                    }
+                }
+            });
+        }
 
-//    private UMAuthListener umAuthListener = new UMAuthListener() {
-//
-//        @Override
-//        public void onStart(SHARE_MEDIA platform) {
-//            //授权开始的回调
-//        }
-//        @Override
-//        public void onComplete(SHARE_MEDIA platform, int action, Map<String, String> data) {
-//            // Toast.makeText(MainActivity.this, "Authorize succeed", Toast.LENGTH_SHORT).show();
-//            Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-//            Set<String> set = data.keySet();
-//            SharedPreferences.Editor edit = sp.edit();
-//            String userName ="";
-//            String profile_image_url ="";
-//            String opid="";
-//            for (String string : set) {
-//
-//                                // 设置头像
-//                                if (string.equals("profile_image_url")) {
-//                                    profile_image_url = data.get(string);
-//                              Log.i("-------image",profile_image_url);
-//                                }
-//                                // 设置昵称
-//                         if (platform== SHARE_MEDIA.QQ) {
-//
-//                             if (string.equals("openid")) {
-//                                 opid = data.get(string);
-//                             }
-//                         }else if  (platform== SHARE_MEDIA.SINA) {
-//                             if (string.equals("id")) {
-//                                 opid = data.get(string);
-//                             }
-//                         }else if  (platform== SHARE_MEDIA.WEIXIN) {
-//                             if (string.equals("unionid")) {
-//                                 opid = data.get(string);
-//                             }
-//                         }
-//                               // 设置昵称
-//                              if (string.equals("screen_name")) {
-//                                userName= data.get(string);
-//                              }
-//                            }
-//
-//                                    addcustmer(opid,userName,profile_image_url);
-////            Intent intent = new Intent();
-////            setResult(RESULT_OK, intent);
-//
-////            finish();
-////         finish();
-//
-//        }
-//
-//        @Override
-//        public void onError(SHARE_MEDIA platform, int action, Throwable t) {
-//           Toast.makeText(LoginActivity.this, "Authorize fail", Toast.LENGTH_SHORT).show();
-//           // Toast.makeText(LoginActivity.this, "登录成功", Toast.LENGTH_SHORT).show();
-//        }
-//
-//        @Override
-//        public void onCancel(SHARE_MEDIA platform, int action) {
-//            Toast.makeText(LoginActivity.this, "登录取消", Toast.LENGTH_SHORT).show();
-//        }
-//    };
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-//        super.onActivityResult(requestCode, resultCode, data);
-//        UMShareAPI.get(this).onActivityResult(requestCode, resultCode, data);
-//    //    Toast.makeText(getApplicationContext(), "Authorize succeed1111", Toast.LENGTH_SHORT).show();
-//    }
-//    @Override
-//    protected void onDestroy() {
-//        super.onDestroy();
-//        UMShareAPI.get(this).release();
-//    }
-//    @Override
-//    protected void onSaveInstanceState(Bundle outState) {
-//        super.onSaveInstanceState(outState);
-//        UMShareAPI.get(this).onSaveInstanceState(outState);
-//    }
+        @Override
+        public void cancel() {
+            Toast.makeText(LoginActivity.this,
+                    R.string.weibosdk_demo_toast_auth_canceled, Toast.LENGTH_LONG).show();
+        }
 
+        @Override
+        public void onFailure(WbConnectErrorMessage errorMessage) {
+            Toast.makeText(LoginActivity.this, errorMessage.getErrorMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
 }
 

@@ -69,6 +69,9 @@
     <string name="umeng_socialize_female">梁子信1</string>
     <string name="share_content">梁子信1</string>
     <string name="albums_sendbyWBlog">梁子信2</string>
+    <string name="weibosdk_demo_toast_auth_success">授权成功</string>
+    <string name="weibosdk_demo_toast_auth_failed">授权失败</string>
+    <string name="weibosdk_demo_toast_auth_canceled">取消授权</string>
     <string name="ysbh">
        &#160;&#160;&#160;&#160; &#160;&#160;本网站仅作为用户物色交易对象，就货物和服务的交易进行协商，以及获取各类 与贸易相关的服务的地点。但是，本网站不能控制 交易所涉及的物品的质量、安全或合法性，商贸信息的真实 性或准确性，以及交易方履行其在贸易协议项下的各项义务的能力。本网站不能也不会控制交易各方能否履行协议义务。\n
         &#160;&#160;&#160;&#160; &#160;&#160;此外，您应注意到，与外国国民、未成年人或以欺诈手段行事的人进行交易的风险是客观存在的。 您可以对个人资料进行最大程度的控制。通常，您可以在不泄露任何个人信息的情况下访问本网站。 但是，有时我们需要您的信息，如您的联系电话。在我们从互联网获取您的个人信息前，我们会让您知道。\n
