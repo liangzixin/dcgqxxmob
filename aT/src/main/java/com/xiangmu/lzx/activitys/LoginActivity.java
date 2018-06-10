@@ -13,6 +13,7 @@ import android.os.Handler;
 import android.os.Message;
 import android.os.SystemClock;
 import android.support.v7.app.AppCompatActivity;
+import android.telecom.Call;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
@@ -57,9 +58,12 @@ import com.xiangmu.lzx.utils.XinWenURL;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.json.JSONTokener;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = LoginActivity.class.getName();
@@ -88,6 +92,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private  String openid="";
     /** 注意：SsoHandler 仅当 SDK 支持 SSO 时有效 */
     private SsoHandler mSsoHandler;
+    private Oauth2AccessToken mAccessToken;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +103,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
       //  mShareAPI = UMShareAPI.get(this);
         mTencent = Tencent.createInstance(mAppid, this);
-        WbSdk.install(this,new AuthInfo(this, ConstantsLzx.APP_KEY, ConstantsLzx.REDIRECT_URL, ConstantsLzx.SCOPE));
+     //   WbSdk.install(this,new AuthInfo(this, ConstantsLzx.APP_KEY, ConstantsLzx.REDIRECT_URL, ConstantsLzx.SCOPE));
         // 微博授权功能
         mSsoHandler = new SsoHandler(LoginActivity.this);
         initView();
@@ -250,7 +255,11 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 requestCode == Constants.REQUEST_APPBAR) {
             Tencent.onActivityResultData(requestCode,resultCode,data,loginListener);
         }
-
+        // SSO 授权回调
+        // 重要：发起 SSO 登陆的 Activity 必须重写 onActivityResults
+        if (mSsoHandler != null) {
+            mSsoHandler.authorizeCallBack(requestCode, resultCode, data);
+        }
         super.onActivityResult(requestCode, resultCode, data);
     }
 
@@ -333,26 +342,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     msg.what = 0;
 
                     mHandler.sendMessage(msg);
-//                    new Thread(){
-//
-//                        @Override
-//                        public void run() {
-//                            JSONObject json = (JSONObject)response;
-//                            if(json.has("figureurl")){
-//                                Bitmap bitmap = null;
-//                                try {
-//                                    bitmap = Utils.getbitmap(json.getString("figureurl_qq_2"));
-//                                } catch (JSONException e) {
-//
-//                                }
-//                                Message msg = new Message();
-//                                msg.obj = bitmap;
-//                                msg.what = 1;
-//                                mHandler.sendMessage(msg);
-//                            }
-//                        }
-//
-//                    }.start();
+
                 }
 
                 @Override
@@ -387,20 +377,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         e.printStackTrace();
                    }
                 addcustmer(openid,userName, profile_image_url);
-//                if (response.has("nickname")) {
-//                    try {
-//                //        Toast.makeText(LoginActivity.this, "返回!!!", Toast.LENGTH_SHORT).show();
-////                        mUserInfo.setVisibility(android.view.View.VISIBLE);
-//                       mUserInfo.setText(response.getString("nickname"));
-//
-//                    } catch (JSONException e) {
-//                        e.printStackTrace();
-//                    }
-//                }
+
             }else if(msg.what == 1){
                 Bitmap bitmap = (Bitmap)msg.obj;
-//                mUserLogo.setImageBitmap(bitmap);
-//                mUserLogo.setVisibility(android.view.View.VISIBLE);
+
             }
         }
 
@@ -491,15 +471,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             }
         }
     };
-//    @Override
-//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-////        super.onActivityResult(requestCode, resultCode, data);
-////        /**使用SSO授权必须添加如下代码 */
-////        UMSsoHandler ssoHandler = mController.getConfig().getSsoHandler(requestCode);
-////        if(ssoHandler != null){
-////            ssoHandler.authorizeCallBack(requestCode, resultCode, data);
-////        }
-//    }
+
     /**
      * 提交用户
      */
@@ -582,12 +554,49 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
            LoginActivity.this.runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-//                    mAccessToken = token;
-//                    if (mAccessToken.isSessionValid()) {
-//                        // 显示 Token
-//                        updateTokenView(false);
-                        // 保存 Token 到 SharedPreferences
-//                        AccessTokenKeeper.writeAccessToken(LoginActivity.this, mAccessToken);
+                   mAccessToken = token;
+                    if (mAccessToken.isSessionValid()) {
+                        Map<String,String> pramas =  new HashMap<>();
+                        pramas.put("access_token", mAccessToken.getToken());
+                        pramas.put("uid", mAccessToken.getUid());
+                        httpUtils = new HttpUtils();
+                        url = "https://api.weibo.com/2/users/show.json?access_token="+mAccessToken.getToken()+"&uid="+mAccessToken.getUid();
+                        handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
+                            @Override
+                            public void onSuccess(ResponseInfo<String> responseInfo) {
+
+                                String result = responseInfo.result;
+                            //    msg.obj=result;
+
+                                String jinbi ="";
+                                String customerid="";
+                                String shezhi="";
+
+                                try {
+                                    JSONObject response =  new JSONObject(result);
+                                    userName=response.getString("name");
+
+                                    openid=response.getString("idstr");
+                                    profile_image_url=response.getString("profile_image_url");
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                addcustmer(openid,userName, profile_image_url);
+
+
+
+                            }
+
+                            @Override
+                            public void onFailure(HttpException e, String s) {
+//                    Toast.makeText(WebProductinfoViewActivity.this, "留言请求失败", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+
+                    } else {
+                        // 应用程序签名不正确时，就会收到 Code，请确保签名正确
+                       // BleLog.e(values.getString("code", ""));
+                    }
                         Toast.makeText(LoginActivity.this,
                                 R.string.weibosdk_demo_toast_auth_success, Toast.LENGTH_SHORT).show();
 //                    }

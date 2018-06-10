@@ -23,10 +23,13 @@ import android.widget.Toast;
 ////import com.umeng.socialize.view.Config;
 //import com.umeng.socialize.PlatformConfig;
 //import com.umeng.socialize.UMShareAPI;
+import com.sina.weibo.sdk.WbSdk;
+import com.sina.weibo.sdk.auth.AuthInfo;
 import com.tencent.tauth.Tencent;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.listener.GlideImageLoader;
 import com.xiangmu.lzx.listener.GlidePauseOnScrollListener;
+import com.xiangmu.lzx.utils.ConstantsLzx;
 
 import org.xutils.x;
 
@@ -57,6 +60,7 @@ import cn.finalteam.galleryfinal.ThemeConfig;
         super.onCreate();
        // setSearchDB0(false);
         ctx = getApplicationContext();
+        WbSdk.install(this,new AuthInfo(this, ConstantsLzx.APP_KEY, ConstantsLzx.REDIRECT_URL, ConstantsLzx.SCOPE));
         if (mTencent == null) {
             mTencent = Tencent.createInstance(APP_ID, this);
         }

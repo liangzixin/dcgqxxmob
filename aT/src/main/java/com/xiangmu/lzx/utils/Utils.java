@@ -120,8 +120,6 @@ public class Utils {
      *
      * @param activity
      * @param message
-     * @param logLevel
-     *            填d, w, e分别代表debug, warn, error; 默认是debug
      */
     public static final void toastMessage(final Activity activity,
                                           final String message) {
@@ -137,5 +135,71 @@ public class Utils {
         Pattern p = Pattern.compile("^((13[0-9])|(14[0-9])|(15[0-9])|(18[0-9])|(17[0-9]))\\d{8}$");
         Matcher m = p.matcher(inputText);
         return m.matches();
+    }
+    public static Bitmap getImage(String Url) throws Exception {
+     // Bitmap  bitmap =null;
+        HttpURLConnection conn = null;
+        try {
+            URL mURL = new URL(Url);
+            conn = (HttpURLConnection) mURL.openConnection();
+            conn.setRequestMethod("GET"); //设置请求方法
+            conn.setConnectTimeout(10000); //设置连接服务器超时时间
+            conn.setReadTimeout(5000);  //设置读取数据超时时间
+
+            conn.connect(); //开始连接
+
+            int responseCode = conn.getResponseCode(); //得到服务器的响应码
+            if (responseCode == 200) {
+                //访问成功
+                InputStream is = conn.getInputStream(); //获得服务器返回的流数据
+                Bitmap bitmap = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap对象
+                return bitmap;
+
+            } else {
+                //访问失败
+                Log.d("lyf--", "访问失败===responseCode：" + responseCode);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.disconnect(); //断开连接
+            }
+        }
+        return null;
+
+//        try {
+//            URL url = new URL( Url);
+//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
+//            InputStream inputStream = connection.getInputStream();
+//            bitmap = BitmapFactory.decodeStream(inputStream);
+//          //  publishProgress(70);//这里是更新进度
+//            inputStream.close();
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//        return bitmap;
+
+//        try {
+//
+//            URL url = new URL(Url);
+//
+//            String responseCode = url.openConnection().getHeaderField(0);
+//
+//            if (responseCode.indexOf("200") < 0)
+//
+//                throw new Exception("图片文件不存在或路径错误，错误代码：" + responseCode);
+//
+//            return BitmapFactory.decodeStream(url.openStream());
+//
+//        } catch (IOException e) {
+//
+//            // TODO Auto-generated catch block
+//
+//            throw new Exception(e.getMessage());
+//
+//        }
+
     }
 }

@@ -10,9 +10,14 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
+import android.os.PersistableBundle;
 import android.preference.PreferenceManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
@@ -38,6 +43,11 @@ import com.lidroid.xutils.http.HttpHandler;
 import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
+import com.sina.weibo.sdk.api.ImageObject;
+import com.sina.weibo.sdk.api.TextObject;
+import com.sina.weibo.sdk.api.WeiboMultiMessage;
+import com.sina.weibo.sdk.share.WbShareCallback;
+import com.sina.weibo.sdk.share.WbShareHandler;
 import com.tencent.connect.common.Constants;
 import com.tencent.connect.share.QQShare;
 import com.tencent.tauth.IUiListener;
@@ -76,11 +86,18 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.InputStream;
 import java.lang.ref.WeakReference;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 
-public class WebProductinfoViewActivity extends AppCompatActivity {
+import cn.finalteam.galleryfinal.ImageLoader;
+
+//import com.nostra13.universalimageloader.core.ImageLoader;
+
+public class WebProductinfoViewActivity extends AppCompatActivity implements WbShareCallback {
     private XinWenXiData xinWenXiData;
     private XinWenURL xinWenURL=new XinWenURL();
     private XutilsGetData xutilsGetData = new XutilsGetData();
@@ -107,6 +124,13 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
     private Bundle params;
     private int shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
     private int mExtarFlag = 0x00;
+    private WbShareHandler shareHandler;
+    private int mShareType = SHARE_CLIENT;
+    public static final String KEY_SHARE_TYPE = "key_share_type";
+    public static final int SHARE_CLIENT = 1;
+    public static final int SHARE_ALL_IN_ONE = 2;
+    public static    Bitmap bitmap = null;
+    int flag = 0;
     //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
@@ -159,7 +183,147 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
             adapter.add(mockLiuyuan(j));
         }
         button.setOnClickListener(c);
+        mShareType = getIntent().getIntExtra(KEY_SHARE_TYPE, SHARE_CLIENT);
+        shareHandler = new WbShareHandler(this);
+      shareHandler.registerApp();
+     shareHandler.setProgressColor(0xff33b5e5);
     }
+    private Handler myhandler = new Handler() {
+        @Override
+        public void handleMessage(Message msg) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 0:
+                    bitmap = (Bitmap) msg.obj;
+               //     iv_icon.setImageBitmap(bitmap); //设置imageView显示的图片
+                    break;
+                case 1:
+                    Toast.makeText(WebProductinfoViewActivity.this, "图片加载失败", Toast.LENGTH_LONG).show();
+                    break;
+            }
+        }
+    };
+    @Override
+    protected void onNewIntent(Intent intent) {
+        super.onNewIntent(intent);
+        shareHandler.doResultIntent(intent,this);
+    }
+    /**
+     * 第三方应用发送请求消息到微博，唤起微博分享界面。
+     */
+    private void sendMessage(boolean hasText, boolean hasImage) {
+        sendMultiMessage(hasText, hasImage);
+    }
+    /**
+     * 第三方应用发送请求消息到微博，唤起微博分享界面。
+     */
+    private void sendMultiMessage(boolean hasText, boolean hasImage) {
+
+
+        WeiboMultiMessage weiboMessage = new WeiboMultiMessage();
+   if (hasText) {
+            weiboMessage.textObject = getTextObj();
+        }
+        if (hasImage) {
+           getBitmap();
+            weiboMessage.imageObject = getImageObj();
+        }
+//        if(multiImageCheckbox.isChecked()){
+//            weiboMessage.multiImageObject = getMultiImageObject();
+//        }
+//        if(videoCheckbox.isChecked()){
+//            weiboMessage.videoSourceObject = getVideoObject();
+//        }
+        shareHandler.shareMessage(weiboMessage, false);
+
+    }
+    /**
+     * 创建文本消息对象。
+     * @return 文本消息对象。
+     */
+    private TextObject getTextObj() {
+        TextObject textObject = new TextObject();
+        textObject.text = getSharedText();
+        textObject.title = "xxxx";
+        textObject.actionUrl = "http://www.baidu.com";
+        return textObject;
+    }
+    /**
+     * 创建图片消息对象。
+     * @return 图片消息对象。
+     */
+    public void getBitmap(){
+        Thread thread = new Thread(new Runnable() {
+            @Override
+            public void run() {
+                Bitmap bitmap = getImageFromNet(url);
+                if (bitmap != null) {
+                    Message msg = new Message();
+                    msg.what = 0;
+                    msg.obj = bitmap;
+                    myhandler.sendMessage(msg);
+                } else {
+                    Message msg = new Message();
+                    msg.what = 1;
+                    myhandler.sendMessage(msg);
+                }
+            }
+        });
+        thread.start();
+    }
+    private ImageObject getImageObj() {
+        ImageObject imageObject = new ImageObject();
+
+
+        imageObject.setImageObject(bitmap);
+        return imageObject;
+    }
+    private Bitmap getImageFromNet(String url) {
+        HttpURLConnection conn = null;
+        try {
+            URL mURL = new URL(url);
+            conn = (HttpURLConnection) mURL.openConnection();
+            conn.setRequestMethod("GET"); //设置请求方法
+            conn.setConnectTimeout(10000); //设置连接服务器超时时间
+            conn.setReadTimeout(5000);  //设置读取数据超时时间
+
+            conn.connect(); //开始连接
+
+            int responseCode = conn.getResponseCode(); //得到服务器的响应码
+            if (responseCode == 200) {
+                //访问成功
+                InputStream is = conn.getInputStream(); //获得服务器返回的流数据
+                Bitmap bitmap = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap对象
+                return bitmap;
+
+            } else {
+                //访问失败
+                Log.d("lyf--", "访问失败===responseCode：" + responseCode);
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if (conn != null) {
+                conn.disconnect(); //断开连接
+            }
+        }
+        return null;
+    }
+    /**
+     * 获取分享的文本模板。
+     */
+    private String getSharedText() {
+        int formatId = R.string.weibosdk_demo_share_text_template;
+        String format = getString(formatId);
+        String text = format;
+      //  if (mTextCheckbox.isChecked() || mImageCheckbox.isChecked()) {
+            text = "@大屁老师，这是一个很漂亮的小狗，朕甚是喜欢-_-!! #大屁老师#http://weibo.com/p/1005052052202067/home?from=page_100505&mod=TAB&is_all=1#place";
+      //  }
+        text = xinWenXiData.getDigest()+url;
+        return text;
+    }
+
     private void initview() {
         // final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
         //  final String url ="http://www.dcgqxx.com/product/product_select.html?id=29547";
@@ -774,9 +938,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
                         doShareToQQ(params);
                         break;
 
-                    case R.id.view_share_pengyou:
-                        // 分享到朋友圈
-                        //   onShare2Weixin();
+                    case R.id.view_share_wbsina:
+                        flag = 1;
+                      //  sendMessage(true,mImageCheckbox.isChecked());
+                        sendMessage(true,true);
                         break;
                     case R.id.share_cancel_btn:
                         // 取消
@@ -855,5 +1020,22 @@ public class WebProductinfoViewActivity extends AppCompatActivity {
             Utils.toastMessage(WebProductinfoViewActivity.this, "onError: " + e.errorMessage, "e");
         }
     };
+
+    @Override
+    public void onWbShareSuccess() {
+        Toast.makeText(this, R.string.weibosdk_demo_toast_share_success, Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onWbShareFail() {
+        Toast.makeText(this,
+                getString(R.string.weibosdk_demo_toast_share_failed) + "Error Message: ",
+                Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    public void onWbShareCancel() {
+        Toast.makeText(this, R.string.weibosdk_demo_toast_share_canceled, Toast.LENGTH_LONG).show();
+    }
 
 }
