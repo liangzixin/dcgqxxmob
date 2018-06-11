@@ -80,6 +80,7 @@ public class XinWen_productinfo  implements Serializable{
         private String jbPhone;
         private String agree ="0";// 是否显示
         private String ip;
+
         private  ProductCategory productcategory;
 
         public ProductCategory getProductcategory() {

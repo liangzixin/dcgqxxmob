@@ -231,6 +231,7 @@ public class SearchActivity extends AppCompatActivity {
 //                startActivity(intent);
 //                overridePendingTransition(R.anim.zcdh_set_in, R.anim.zcdh_alpha_out);
 //                layoutsearchResult.setVisibility(View.GONE);//隐藏搜索结果布局
+                Toast.makeText(SearchActivity.this,"单击了...",Toast.LENGTH_SHORT).show();
 //                queryDB();
                 frament2activity(i,toutiao_list);
             }
@@ -399,6 +400,7 @@ public class SearchActivity extends AppCompatActivity {
         xinWenXi.setZpxx(toutiao_list.get(pos).getZpxx());
         xinWenXi.setFwcs(toutiao_list.get(pos).getFwcs());
         xinWenXi.setGqxx(toutiao_list.get(pos).getGqxx());
+        xinWenXi.setDigest(toutiao_list.get(pos).getDigest());
         xinWenXi.setProductCategory(toutiao_list.get(pos).getProductcategory());
 //xinWenXi.setUploadFiles(toutiao_list.get(pos).getUploadFile());
         for(int i=0;i<toutiao_list.get(pos).getUploadFile().size();i++){
@@ -435,7 +437,8 @@ public class SearchActivity extends AppCompatActivity {
             case XinWen_adapter.TYPE_zhuanti:
             case XinWen_adapter.TYPE_zhibo:
                 LogUtils.e("xinwenadapter", "TYPE_zhibo==" + bujutype);
-                //  String urlzhibo = toutiao_list.get(pos).getUrl();
+                Toast.makeText(SearchActivity.this,"单击了...",Toast.LENGTH_SHORT).show();
+                //  String urlzhibo = toutiao_list.get(pos   Toast.makeText(SearchActivity.this,"单击了...",Toast.LENGTH_SHORT).show();).getUrl();
                 // String urlzhibo = toutiao_list.get(pos).getName();
 //                String urlzhibo ="http://www.dcgqxx.com/product/product_select.html;jsessionid=BC7ECA17265523CB85B11424B39DA43A?id=28904";
                 xinWenXi.setUrl("bbbbb");//详细页面url

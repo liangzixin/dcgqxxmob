@@ -95,6 +95,8 @@ import java.util.List;
 
 import cn.finalteam.galleryfinal.ImageLoader;
 
+import static com.xiangmu.lzx.Setting_Utils.TouXiangCache.readStream;
+
 //import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class WebProductinfoViewActivity extends AppCompatActivity implements WbShareCallback {
@@ -120,7 +122,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     private String  shezhi;
       private MyApplication app;
     private  String xinwentitle="";
-    private String url ="";
+    private String url ="",url0="";
     private Bundle params;
     private int shareType = QQShare.SHARE_TO_QQ_TYPE_DEFAULT;
     private int mExtarFlag = 0x00;
@@ -178,6 +180,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
             adapter.add(mockPhoto(i));
         }
+        if(potolist.size()>0){
+           url0="http://www.dcgqxx.com/upload/"+potolist.get(0).getPath();
+        }else{
+          url0="http://www.dcgqxx.com/css/images/dc.gif";
+        }
+        getBitmap();
         for (int j = 0; j <liuyuanlist.size(); j++) {
 
             adapter.add(mockLiuyuan(j));
@@ -225,7 +233,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
             weiboMessage.textObject = getTextObj();
         }
         if (hasImage) {
-           getBitmap();
+
             weiboMessage.imageObject = getImageObj();
         }
 //        if(multiImageCheckbox.isChecked()){
@@ -256,7 +264,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         Thread thread = new Thread(new Runnable() {
             @Override
             public void run() {
-                Bitmap bitmap = getImageFromNet(url);
+
+                Bitmap bitmap = getImageFromNet(url0);
                 if (bitmap != null) {
                     Message msg = new Message();
                     msg.what = 0;
@@ -273,8 +282,6 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     }
     private ImageObject getImageObj() {
         ImageObject imageObject = new ImageObject();
-
-
         imageObject.setImageObject(bitmap);
         return imageObject;
     }
@@ -293,7 +300,21 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
             if (responseCode == 200) {
                 //访问成功
                 InputStream is = conn.getInputStream(); //获得服务器返回的流数据
-                Bitmap bitmap = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap对象
+               // Bitmap bitmap = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap对象
+                if (is == null){
+                    throw new RuntimeException("stream is null");
+                }else{
+                    try {
+                        byte[] data=readStream(is);
+                        if(data!=null){
+                            bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                        }
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+
+                    is.close();
+                }
                 return bitmap;
 
             } else {
