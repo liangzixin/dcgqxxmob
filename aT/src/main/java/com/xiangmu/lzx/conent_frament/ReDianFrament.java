@@ -230,12 +230,12 @@ public class ReDianFrament extends Fragment {
         int pos;
         xinWenXi =new XinWenXiData();
         XinWen_productinfo.T18908805728Entity toutiao_listview= new XinWen_productinfo.T18908805728Entity();//获取记录
-        if (listads.size()==0) {//判断有没有轮播图如果没有就不添加轮播布局  布局就和原来一样
+       if (search){//判断有没有轮播图如果没有就不添加轮播布局  布局就和原来一样
             pos = position;
             toutiao_listview=toutiao_list.get(pos);
         } else {
           //  pos = position - 1;//有轮播图的时候点listview第二条才是数据list集合中的第一条
-            toutiao_listview=toutiao_list.get(position);
+            toutiao_listview=toutiao_list.get(position-1);
         }
         LogUtils.e("xinwenadapter", "postion==" + position);
         //    int bujutype = XinWen_adapter.getType(toutiao_list.get(pos).getId());
@@ -261,6 +261,7 @@ public class ReDianFrament extends Fragment {
         xinWenXi.setZpxx(toutiao_listview.getZpxx());
         xinWenXi.setFwcs(toutiao_listview.getFwcs());
         xinWenXi.setGqxx(toutiao_listview.getGqxx());
+        xinWenXi.setDigest(toutiao_listview.getDigest());
         xinWenXi.setProductCategory(toutiao_listview.getProductcategory());
 //xinWenXi.setUploadFiles(toutiao_listview.getUploadFile());
         for(int i=0;i<toutiao_listview.getUploadFile().size();i++){
