@@ -9,6 +9,7 @@ import android.graphics.BitmapFactory;
 import android.util.Log;
 import android.widget.Toast;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.HttpURLConnection;
@@ -169,37 +170,23 @@ public class Utils {
         }
         return null;
 
-//        try {
-//            URL url = new URL( Url);
-//            HttpURLConnection connection = (HttpURLConnection) url.openConnection();
-//            InputStream inputStream = connection.getInputStream();
-//            bitmap = BitmapFactory.decodeStream(inputStream);
-//          //  publishProgress(70);//这里是更新进度
-//            inputStream.close();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-//        return bitmap;
 
-//        try {
-//
-//            URL url = new URL(Url);
-//
-//            String responseCode = url.openConnection().getHeaderField(0);
-//
-//            if (responseCode.indexOf("200") < 0)
-//
-//                throw new Exception("图片文件不存在或路径错误，错误代码：" + responseCode);
-//
-//            return BitmapFactory.decodeStream(url.openStream());
-//
-//        } catch (IOException e) {
-//
-//            // TODO Auto-generated catch block
-//
-//            throw new Exception(e.getMessage());
-//
-//        }
+    }
 
+    public static byte[] bmpToByteArray(final Bitmap bmp, final boolean needRecycle) {
+        ByteArrayOutputStream output = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.PNG, 100, output);
+        if (needRecycle) {
+            bmp.recycle();
+        }
+
+        byte[] result = output.toByteArray();
+        try {
+            output.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return result;
     }
 }

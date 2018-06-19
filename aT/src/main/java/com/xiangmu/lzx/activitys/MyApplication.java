@@ -25,6 +25,8 @@ import android.widget.Toast;
 //import com.umeng.socialize.UMShareAPI;
 import com.sina.weibo.sdk.WbSdk;
 import com.sina.weibo.sdk.auth.AuthInfo;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.tauth.Tencent;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.listener.GlideImageLoader;
@@ -55,6 +57,7 @@ import cn.finalteam.galleryfinal.ThemeConfig;
     // QQ申请到的合法appId
     public  final String APP_ID="1105789263";
     public static Tencent mTencent;
+    private IWXAPI api;
     @Override
     public void onCreate() {
         super.onCreate();
@@ -64,6 +67,10 @@ import cn.finalteam.galleryfinal.ThemeConfig;
         if (mTencent == null) {
             mTencent = Tencent.createInstance(APP_ID, this);
         }
+        // 通过WXAPIFactory工厂，获取IWXAPI的实例
+        api = WXAPIFactory.createWXAPI(this, ConstantsLzx.APP_ID, true);
+        // 将该app注册到微信
+        api.registerApp(ConstantsLzx.APP_ID);
       //  Config.DEBUG = true;
 //        UMConfigure.setLogEnabled(true);
 //        //初始化组件化基础库, 统计SDK/推送SDK/分享SDK都必须调用此初始化接口
@@ -88,10 +95,17 @@ import cn.finalteam.galleryfinal.ThemeConfig;
 //                .setNoAnimcation(true)  // 设置是否显示动画
 //                .build();
 //        GalleryFinal.init(coreConfig);
+
+//        try {
+//            api.handleIntent(getIntent(), this);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
         x.Ext.init(this);
         //设置是否输出Debug
         x.Ext.setDebug(true);
     }
+
 
     public static MediaPlayer getMediaPlayer() {
         if (mPlayer == null) {

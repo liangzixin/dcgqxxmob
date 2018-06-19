@@ -26,10 +26,13 @@ public interface ConstantsLzx {
 
     //2045436852
     /** 当前 DEMO 应用的 APP_KEY，第三方应用应该使用自己的 APP_KEY 替换该 APP_KEY */
+    //新浪微博
     public static final String APP_KEY      = "3002552310";
+    //微信
+    public static final String APP_ID = "wxd2069cc9808ef318";
 
-    /** 
-     * 当前 DEMO 应用的回调页，第三方应用可以使用自己的回调页。
+    /** wxd2069cc9808ef318
+     * 当前 DEMO 应用的回调页，第三方应用可以使用自己的回调页。wx867555fdf410fafd
      * 
      * <p>
      * 注：关于授权回调页对移动客户端应用来说对用户是不可见的，所以定义为何种形式都将不影响，

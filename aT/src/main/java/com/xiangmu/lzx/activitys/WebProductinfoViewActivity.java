@@ -50,6 +50,12 @@ import com.sina.weibo.sdk.share.WbShareCallback;
 import com.sina.weibo.sdk.share.WbShareHandler;
 import com.tencent.connect.common.Constants;
 import com.tencent.connect.share.QQShare;
+import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
+import com.tencent.mm.opensdk.modelmsg.WXImageObject;
+import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXWebpageObject;
+import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
@@ -70,6 +76,7 @@ import com.xiangmu.lzx.holder.ArticleHolder;
 import com.xiangmu.lzx.holder.PhotoHolder;
 import com.xiangmu.lzx.holder.ProductArticleHolder;
 import com.xiangmu.lzx.jieping.ScreenShot;
+import com.xiangmu.lzx.utils.ConstantsLzx;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
@@ -133,12 +140,19 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     public static final int SHARE_ALL_IN_ONE = 2;
     public static    Bitmap bitmap = null;
     int flag = 0;
+    private static final int THUMB_SIZE = 150;
+    private int mTargetScene = SendMessageToWX.Req.WXSceneSession;
+
+    public static IWXAPI api;
     //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        api = WXAPIFactory.createWXAPI(this, ConstantsLzx.APP_ID);
+        // 将该app注册到微信
+        api.registerApp(ConstantsLzx.APP_ID);
         setContentView(R.layout.activity_productinfo_image);
         button = (ImageButton) findViewById(R.id.subbtn);
         edit = (EditText) findViewById(R.id.edit);
@@ -195,6 +209,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         shareHandler = new WbShareHandler(this);
       shareHandler.registerApp();
      shareHandler.setProgressColor(0xff33b5e5);
+
     }
     private Handler myhandler = new Handler() {
         @Override
@@ -915,11 +930,32 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
                 switch (v.getId()) {
 
+                    case R.id.view_share_pengyou:
+                        share2Wx(false);
+                        finish();
                     case R.id.view_share_weixin:
-                        // 分享到微信
-                    //    onShare2Weixin();
+//                        WXWebpageObject webpage = new WXWebpageObject();
+//                        // webpage.webpageUrl = "http://www.qq.com";
+//                        webpage.webpageUrl =url;
+//                        WXMediaMessage msg = new WXMediaMessage(webpage);
+////                        msg.title = "WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
+////                        msg.description = "WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
+//                        msg.title=xinWenXiData.getTitle();
+//                        msg.description=xinWenXiData.getDigest();
+////                     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_mr_button_connected_00_light);
+//
+//                        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
+//                        bitmap.recycle();
+//                        msg.thumbData = Utils.bmpToByteArray(thumbBmp, true);
+//
+//                        SendMessageToWX.Req req = new SendMessageToWX.Req();
+//                        req.transaction = buildTransaction("webpage");
+//                        req.message = msg;
+//                        req.scene = mTargetScene;
+//                        api.sendReq(req);
+                     share2Wx(true);
+                  //   finish();
                         break;
-
                     case R.id.view_share_qq:
                         params = new Bundle();
 
@@ -1058,5 +1094,38 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     public void onWbShareCancel() {
         Toast.makeText(this, R.string.weibosdk_demo_toast_share_canceled, Toast.LENGTH_LONG).show();
     }
+
+    private String buildTransaction(final String type) {
+        return (type == null) ? String.valueOf(System.currentTimeMillis()) : type + System.currentTimeMillis();
+    }
+    /**
+     * @param isShareFriend true 分享到朋友，false分享到朋友圈
+     */
+    private void share2Wx(boolean isShareFriend) {
+        // 分享到微信
+        WXWebpageObject webpage = new WXWebpageObject();
+        // webpage.webpageUrl = "http://www.qq.com";
+        webpage.webpageUrl =url;
+        WXMediaMessage msg = new WXMediaMessage(webpage);
+//                        msg.title = "WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
+//                        msg.description = "WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
+        msg.title=xinWenXiData.getTitle();
+        msg.description=xinWenXiData.getDigest();
+//                     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_mr_button_connected_00_light);
+
+        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
+        bitmap.recycle();
+        msg.thumbData = Utils.bmpToByteArray(thumbBmp, true);
+
+        SendMessageToWX.Req req = new SendMessageToWX.Req();
+        req.transaction = buildTransaction("webpage");
+        req.message = msg;
+      //  req.scene = mTargetScene;
+        req.scene = isShareFriend ? SendMessageToWX.Req.WXSceneSession : SendMessageToWX.Req.WXSceneTimeline;
+        api.sendReq(req);
+     finish();
+
+    }
+
 
 }

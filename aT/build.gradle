@@ -19,7 +19,7 @@ android {
         }
         vectorDrawables.useSupportLibrary = true
         versionCode
-        versionName "V1.1.05-20180606"
+        versionName "V1.1.05-201806012"
         multiDexEnabled true
      //  useOldManifestMerger true
         javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
@@ -88,4 +88,5 @@ dependencies {
     compile files('libs/utdid4all-1.1.5.3_proguard.jar')
     compile files('libs/xUtils.jar')
     compile 'com.sina.weibo.sdk:core:4.1.0:openDefaultRelease@aar'
+    compile files('libs/wechat-sdk-android-with-mta-1.3.4.jar')
 }
