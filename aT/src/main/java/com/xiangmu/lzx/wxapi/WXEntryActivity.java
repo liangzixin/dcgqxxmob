@@ -65,6 +65,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
         }
 
         Toast.makeText(this, result, Toast.LENGTH_LONG).show();
+       finish();
     }
     private void goToGetMsg() {
 //        Intent intent = new Intent(this, GetFromWXActivity.class);

@@ -199,7 +199,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         }else{
           url0="http://www.dcgqxx.com/css/images/dc.gif";
         }
-        getBitmap();
+
+    //    getBitmap();
         for (int j = 0; j <liuyuanlist.size(); j++) {
 
             adapter.add(mockLiuyuan(j));
@@ -932,7 +933,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
                     case R.id.view_share_pengyou:
                         share2Wx(false);
-                        finish();
+                   //     finish();
                     case R.id.view_share_weixin:
 //                        WXWebpageObject webpage = new WXWebpageObject();
 //                        // webpage.webpageUrl = "http://www.qq.com";
@@ -1111,10 +1112,17 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 //                        msg.description = "WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
         msg.title=xinWenXiData.getTitle();
         msg.description=xinWenXiData.getDigest();
-//                     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_mr_button_connected_00_light);
+       // Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
+        Bitmap bmp = null;
+        try {
+            bmp = Utils.getImage(url0);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
 
-        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
-        bitmap.recycle();
+        //     Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
+       // bitmap.recycle();
         msg.thumbData = Utils.bmpToByteArray(thumbBmp, true);
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();
@@ -1123,7 +1131,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
       //  req.scene = mTargetScene;
         req.scene = isShareFriend ? SendMessageToWX.Req.WXSceneSession : SendMessageToWX.Req.WXSceneTimeline;
         api.sendReq(req);
-     finish();
+     //finish();
 
     }
 
