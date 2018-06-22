@@ -194,13 +194,13 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
             adapter.add(mockPhoto(i));
         }
-        if(potolist.size()>0){
-           url0="http://www.dcgqxx.com/upload/"+potolist.get(0).getPath();
-        }else{
+//        if(potolist.size()>0){
+//           url0="http://www.dcgqxx.com/upload/"+potolist.get(0).getPath();
+//        }else{
           url0="http://www.dcgqxx.com/css/images/dc.gif";
-        }
+//        }
 
-    //    getBitmap();
+        getBitmap();
         for (int j = 0; j <liuyuanlist.size(); j++) {
 
             adapter.add(mockLiuyuan(j));
@@ -281,7 +281,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
             @Override
             public void run() {
 
-                Bitmap bitmap = getImageFromNet(url0);
+              //  Bitmap bitmap = getImageFromNet(url0);
+               bitmap = getImageFromNet(url0);
                 if (bitmap != null) {
                     Message msg = new Message();
                     msg.what = 0;
@@ -316,14 +317,15 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
             if (responseCode == 200) {
                 //访问成功
                 InputStream is = conn.getInputStream(); //获得服务器返回的流数据
-               // Bitmap bitmap = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap对象
+               Bitmap bitmap0 = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap0对象
+
                 if (is == null){
                     throw new RuntimeException("stream is null");
                 }else{
                     try {
                         byte[] data=readStream(is);
                         if(data!=null){
-                            bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+                            bitmap0 = BitmapFactory.decodeByteArray(data, 0, data.length);
                         }
                     } catch (Exception e) {
                         e.printStackTrace();
@@ -331,7 +333,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
                     is.close();
                 }
-                return bitmap;
+                return bitmap0;
 
             } else {
                 //访问失败
@@ -1113,13 +1115,13 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         msg.title=xinWenXiData.getTitle();
         msg.description=xinWenXiData.getDigest();
        // Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
-        Bitmap bmp = null;
-        try {
-            bmp = Utils.getImage(url0);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        Bitmap thumbBmp = Bitmap.createScaledBitmap(bmp, THUMB_SIZE, THUMB_SIZE, true);
+//        Bitmap bmp = null;
+//        try {
+//            bmp = Utils.getImage(url0);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
 
         //     Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
        // bitmap.recycle();
