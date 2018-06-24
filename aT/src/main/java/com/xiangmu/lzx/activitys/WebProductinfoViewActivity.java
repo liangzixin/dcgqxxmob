@@ -11,6 +11,9 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.ImageFormat;
+import android.graphics.Rect;
+import android.graphics.YuvImage;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.AsyncTask;
@@ -23,6 +26,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.util.Size;
 import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -92,6 +96,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
 import java.lang.ref.WeakReference;
@@ -142,7 +147,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     int flag = 0;
     private static final int THUMB_SIZE = 150;
     private int mTargetScene = SendMessageToWX.Req.WXSceneSession;
-
+    public static final int IMAGE_SIZE=32768;//微信分享图片大小限制
     public static IWXAPI api;
     //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
@@ -194,13 +199,14 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
             adapter.add(mockPhoto(i));
         }
-//        if(potolist.size()>0){
-//           url0="http://www.dcgqxx.com/upload/"+potolist.get(0).getPath();
-//        }else{
+        if(potolist.size()>0){
+           url0="http://www.dcgqxx.com/upload/"+potolist.get(0).getPath();
+        }else{
           url0="http://www.dcgqxx.com/css/images/dc.gif";
-//        }
-
-        getBitmap();
+        }
+     // url0="http://www.dcgqxx.com/upload/201504161049030140.jpg";
+        //     url0="http://www.dcgqxx.com/upload/201806221647510855.jpg";
+    //  getBitmap();
         for (int j = 0; j <liuyuanlist.size(); j++) {
 
             adapter.add(mockLiuyuan(j));
@@ -220,6 +226,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
                 case 0:
                     bitmap = (Bitmap) msg.obj;
                //     iv_icon.setImageBitmap(bitmap); //设置imageView显示的图片
+               //     Toast.makeText(WebProductinfoViewActivity.this, "图片加载成功", Toast.LENGTH_LONG).show();
                     break;
                 case 1:
                     Toast.makeText(WebProductinfoViewActivity.this, "图片加载失败", Toast.LENGTH_LONG).show();
@@ -282,7 +289,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
             public void run() {
 
               //  Bitmap bitmap = getImageFromNet(url0);
-               bitmap = getImageFromNet(url0);
+               bitmap = Utils.getbitmap(url0);
                 if (bitmap != null) {
                     Message msg = new Message();
                     msg.what = 0;
@@ -298,54 +305,38 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         thread.start();
     }
     private ImageObject getImageObj() {
+        bitmap = Utils.getbitmap(url0);
         ImageObject imageObject = new ImageObject();
         imageObject.setImageObject(bitmap);
         return imageObject;
     }
-    private Bitmap getImageFromNet(String url) {
-        HttpURLConnection conn = null;
+    private byte[] getImageFromNet(String url) {
         try {
-            URL mURL = new URL(url);
-            conn = (HttpURLConnection) mURL.openConnection();
-            conn.setRequestMethod("GET"); //设置请求方法
-            conn.setConnectTimeout(10000); //设置连接服务器超时时间
-            conn.setReadTimeout(5000);  //设置读取数据超时时间
+            URL picurl = new URL(url);
+            HttpURLConnection conn = (HttpURLConnection)picurl.openConnection(); // 获得连接
+            conn.setConnectTimeout(6000);//设置超时
+            conn.setDoInput(true);
+            conn.setUseCaches(false);//不缓存
+            conn.connect();
+            Bitmap bmp=BitmapFactory.decodeStream(conn.getInputStream());
 
-            conn.connect(); //开始连接
+            ByteArrayOutputStream output = new ByteArrayOutputStream();
 
-            int responseCode = conn.getResponseCode(); //得到服务器的响应码
-            if (responseCode == 200) {
-                //访问成功
-                InputStream is = conn.getInputStream(); //获得服务器返回的流数据
-               Bitmap bitmap0 = BitmapFactory.decodeStream(is); //根据流数据 创建一个bitmap0对象
-
-                if (is == null){
-                    throw new RuntimeException("stream is null");
-                }else{
-                    try {
-                        byte[] data=readStream(is);
-                        if(data!=null){
-                            bitmap0 = BitmapFactory.decodeByteArray(data, 0, data.length);
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                    }
-
-                    is.close();
-                }
-                return bitmap0;
-
-            } else {
-                //访问失败
-                Log.d("lyf--", "访问失败===responseCode：" + responseCode);
+            bmp.compress(Bitmap.CompressFormat.JPEG, 100, output);
+            int options = 100;
+            while (output.toByteArray().length > IMAGE_SIZE && options != 10) {
+                output.reset(); //清空baos
+                bmp.compress(Bitmap.CompressFormat.JPEG, options, output);//这里压缩options%，把压缩后的数据存放到baos中
+                options -= 10;
             }
+
+            bmp.recycle();
+            byte[] result = output.toByteArray();
+            output.close();
+            return result;
 
         } catch (Exception e) {
             e.printStackTrace();
-        } finally {
-            if (conn != null) {
-                conn.disconnect(); //断开连接
-            }
         }
         return null;
     }
@@ -356,10 +347,13 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         int formatId = R.string.weibosdk_demo_share_text_template;
         String format = getString(formatId);
         String text = format;
-      //  if (mTextCheckbox.isChecked() || mImageCheckbox.isChecked()) {
-            text = "@大屁老师，这是一个很漂亮的小狗，朕甚是喜欢-_-!! #大屁老师#http://weibo.com/p/1005052052202067/home?from=page_100505&mod=TAB&is_all=1#place";
-      //  }
-        text = xinWenXiData.getDigest()+url;
+
+        if(xinWenXiData.getXinwentext().length()>80){
+            text=xinWenXiData.getXinwentext().substring(0,80);
+        }else{
+            text=xinWenXiData.getXinwentext();
+        }
+        text =text+url;
         return text;
     }
 
@@ -406,56 +400,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
                 getpopuwindow(view);
             }
         });
-        //    mShareListener = new CustomShareListener(this);
-//        fenxiang.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//                public void onClick(View view) {
-//     //           ShareUtils.shareContent(WebProductinfoViewActivity.this, xinwentitle, url);
-////                       ShareUtils.shareQQZore(WebProductinfoViewActivity.this, xinwentitle, url);
-//                new ShareAction(WebProductinfoViewActivity.this)
-//                        .setDisplayList(SHARE_MEDIA.QQ, SHARE_MEDIA.QZONE,SHARE_MEDIA.WEIXIN,SHARE_MEDIA.WEIXIN_CIRCLE,SHARE_MEDIA.SINA)
-//                   //     .addButton("umeng_sharebutton_copy", "umeng_sharebutton_copy", "umeng_socialize_copy", "umeng_socialize_copy")
-//                      //  .addButton("umeng_sharebutton_copyurl", "umeng_sharebutton_copyurl", "umeng_socialize_copyurl", "umeng_socialize_copyurl")
-//                        .setShareboardclickCallback(new ShareBoardlistener() {
-//                            @Override
-//                            public void onclick(SnsPlatform snsPlatform, SHARE_MEDIA share_media) {
-////                                if (snsPlatform.mShowWord.equals("umeng_sharebutton_copy")) {
-////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制文本按钮", Toast.LENGTH_LONG).show();
-////                                } else if (snsPlatform.mShowWord.equals("umeng_sharebutton_copyurl")) {
-////                                    Toast.makeText(WebProductinfoViewActivity.this, "复制链接按钮", Toast.LENGTH_LONG).show();
-////
-////                                } else {
-//                                    UMWeb web = new UMWeb(url);
-//                                    web.setTitle(xinwentitle);
-//                                    web.setDescription(xinwentitle);
-//                                    web.setThumb(new UMImage(WebProductinfoViewActivity.this, R.drawable.ic_launcher));
-//                                    new ShareAction(WebProductinfoViewActivity.this).withMedia(web)
-//                                            .setPlatform(share_media)
-//                                            .setCallback(mShareListener)
-//                                            .share();
-////                                }
-//                            }
-//                        })
-//                       .open();
-//            }
-//        });
+
         fenxiang.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 showShareDialog();
-//                String   shareUrl="http://inews.gtimg.com/newsapp_bt/0/876781763/1000";
-//                Intent sendIntent = new Intent();
-//                sendIntent.setAction(Intent.ACTION_SEND);
-//                sendIntent.putExtra(Intent.EXTRA_TEXT, xinwentitle + "\n" + xinWenXiData.getXinwentext() + "\n" +shareUrl);
-//                sendIntent.setType("text/plain");
-////          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareImgUI");//微信朋友
-////          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qqfav.widget.QfavJumpActivity");//保存到QQ收藏
-////          sendIntent.setClassName("com.tencent.mobileqq", "cooperation.qlink.QlinkShareJumpActivity");//QQ面对面快传
-////          sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.qfileJumpActivity");//传给我的电脑
-//                sendIntent.setClassName("com.tencent.mobileqq", "com.tencent.mobileqq.activity.JumpActivity");//QQ好友或QQ群
-////          sendIntent.setClassName("com.tencent.mm", "com.tencent.mm.ui.tools.ShareToTimeLineUI");//微信朋友圈，仅支持分享图片
-//                //   startActivityForResult(sendIntent, QUN_QUEST);
-//                startActivityForResult(sendIntent, 1000);
+
 
             }
         });
@@ -479,42 +429,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 //        webView.setWebChromeClient(new WebChromeClient());// 支持运行特殊的javascript(例如：alert())
         final CustomProgressDialog progress=new CustomProgressDialog(this,"正在加载中.....",R.drawable.donghua_frame);
         progress.show();
-//        webView.loadUrl(url);
-        //设置打开页面的客户端WebViewClient,如果不设置,则调用系统默认浏览器打开地址
-        // 当点击超链地址后不会新打开浏览器来访问，而是始终在本app中浏览页面
-//        webView.setWebViewClient(new WebViewClient() {
-//            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-////                LogUtils.e("putongframenturl", "==" + url);
-//                view.loadUrl(url);
-//                return true;
-//            }
-//
-//            @Override
-//            public void onPageFinished(WebView view, String url) {
-//                progress.dismiss();
-//            }
-//        });
-//        webView.setWebChromeClient(new WebChromeClient(){
-//            public void onRequestFocus(WebView view) {
-//                super.onRequestFocus(view);
-//                view.requestFocus();
-//
-//            }
-//        });
 
-
-//        String data = XutilsGetData.getData(getActivity(), url, null);
-//        //判断本地数据是否存在  如果没有网络请求
-//        if (data != null) {
-//            getshowdata(data);
-//        } else {
-//            XutilsGetData.xUtilsHttp(getActivity(), url, url, new XutilsGetData.CallBackHttp() {
-//                @Override
-//                public void handleData(String data) {
-//                    getshowdata(data);
-//                }
-//            });
-//        }
     }
     /**
      * 提交的监听器
@@ -585,21 +500,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
         adapter.add(mockLiuyuan(0));
         return;
-//        }
-//        recyclerView.deferNotifyDataSetChanged();
-//      /  recyclerView.notifyDataSetChanged();
-//        recyclerView.getChildItemId(item_p)
-//      recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-        //  recyclerView.setAdapter(new SaveAdapter(WebProductinfoViewActivity.this,liuyuanlist));
-        //  MultiTypeAdapter adapter = new MultiTypeAdapter(this);
-        // adapter = new MultiTypeAdapter(WebProductinfoViewActivity.this);
-        //  adapter.registerViewType(Liuyuan.class, ProductArticleHolder.class);
-        // for (int i = 0;i <((List<ProductArticler>)liuyuanlist.get(0)).size(); i++) {
 
-//      adapter.add(mockLiuyuan(0));
-
-        // adapter.add(mockLiuyuan(i));
-        // }
     }
     //popuwindow设置
     private void getpopuwindow(View v) {
@@ -692,20 +593,12 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         int replaycount = xinWenXiData.getReplaycount();//获得跟帖数目  //收藏用
         int customerid0=0;
         int shezhitype0=1;
-     //   imageurl = new UMImage(this,"http://www.dcgqxx.com/css/images/dc2.png");
-     //   imageurl.setThumb(new UMImage(this, R.drawable.thumb));
-      //  if(username!=null);
-      //  if(SearchDB.createDb(app.getCtx(), "customerid")!=null)   customerid=Integer.parseInt(SearchDB.createDb(app.getCtx(), "customerid"));
+
 
         String clickcount=xinWenURL.getClickcount()+xinWenXiData.getId()+"&customerid="+customerid+"&shezhitype="+shezhitype0;
-    //    String clickcount0=xinWenURL.getCount();
-        //String data = xutilsGetData.getData(WebProductinfoViewActivity.this, clickcount, null);
-        // String data = SharedPreferencesUtil.getData(this, clickcount, "");
+
         UpData(clickcount);
-//        user_name = SearchDB.createDb(this, "userName");
-//        if(!user_name.equals(""))
-//        UpData(clickcount0);
-        //   UpCount(clickcount0);
+
         System.out.println("clickcount="+clickcount );
         Log.e("aa", "******xinwentitle*******" + xinwentitle);
         //拿到当前日期
@@ -777,19 +670,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     public Photo mockPhoto(int seed) {
         Photo photo = new Photo();
         photo.path=potolist.get(seed).getPath();
-//        photo.photoId = new int[]{
-//                R.drawable.img_sample1,
-//                R.drawable.img_sample2,
-//                R.drawable.img_sample3,
-//                R.drawable.img_sample4
-//        }[seed % 4];
-        //  photo.description = getResources().getStringArray(R.array.mock_img_desc)[seed % 4];
+
         photo.photoId = 0;
 
-        //  XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://www.dcgqxx.com/upload/"+potolist.get(0).getPath(),View().getContext(),false);
-        // XutilsGetData.xUtilsImageiv(photo.imagePicture, "http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg",this,true);
-//        BitmapUtils bitmapUtils = new BitmapUtils(this);
-//        bitmapUtils.display(photo.imagePicture,"http://img3.cache.netease.com/3g/2015/11/11/20151111084918c6c18.jpg");
         photo.description =xinWenXiData.getTitle();
         return photo;
     }
@@ -935,27 +818,10 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
                     case R.id.view_share_pengyou:
                         share2Wx(false);
-                   //     finish();
+                    //  finish();
+                        break;
                     case R.id.view_share_weixin:
-//                        WXWebpageObject webpage = new WXWebpageObject();
-//                        // webpage.webpageUrl = "http://www.qq.com";
-//                        webpage.webpageUrl =url;
-//                        WXMediaMessage msg = new WXMediaMessage(webpage);
-////                        msg.title = "WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
-////                        msg.description = "WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
-//                        msg.title=xinWenXiData.getTitle();
-//                        msg.description=xinWenXiData.getDigest();
-////                     Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_mr_button_connected_00_light);
-//
-//                        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
-//                        bitmap.recycle();
-//                        msg.thumbData = Utils.bmpToByteArray(thumbBmp, true);
-//
-//                        SendMessageToWX.Req req = new SendMessageToWX.Req();
-//                        req.transaction = buildTransaction("webpage");
-//                        req.message = msg;
-//                        req.scene = mTargetScene;
-//                        api.sendReq(req);
+
                      share2Wx(true);
                   //   finish();
                         break;
@@ -1110,22 +976,11 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         // webpage.webpageUrl = "http://www.qq.com";
         webpage.webpageUrl =url;
         WXMediaMessage msg = new WXMediaMessage(webpage);
-//                        msg.title = "WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title WebPage Title Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
-//                        msg.description = "WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description WebPage Description Very Long Very Long Very Long Very Long Very Long Very Long Very Long";
+
         msg.title=xinWenXiData.getTitle();
         msg.description=xinWenXiData.getDigest();
-       // Bitmap bmp = BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher);
-//        Bitmap bmp = null;
-//        try {
-//            bmp = Utils.getImage(url0);
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//        }
-        Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
 
-        //     Bitmap thumbBmp = Bitmap.createScaledBitmap(bitmap, THUMB_SIZE, THUMB_SIZE, true);
-       // bitmap.recycle();
-        msg.thumbData = Utils.bmpToByteArray(thumbBmp, true);
+        msg.thumbData =getImageFromNet(url0);
 
         SendMessageToWX.Req req = new SendMessageToWX.Req();
         req.transaction = buildTransaction("webpage");

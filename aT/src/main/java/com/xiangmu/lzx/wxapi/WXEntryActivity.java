@@ -21,7 +21,7 @@ import com.tencent.mm.opensdk.openapi.WXAPIFactory;
 import com.xiangmu.lzx.R;
 import com.xiangmu.lzx.utils.ConstantsLzx;
 
-//public class WXEntryActivity extends WXCallbackActivity {
+
 public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     private IWXAPI api;
 //
@@ -44,7 +44,7 @@ public class WXEntryActivity extends Activity implements IWXAPIEventHandler {
     public void onResp(BaseResp resp) {
         int result = 0;
 
-        Toast.makeText(this, "baseresp.getType = " + resp.getType(), Toast.LENGTH_SHORT).show();
+
 
         switch (resp.errCode) {
             case BaseResp.ErrCode.ERR_OK:
@@ -112,26 +112,7 @@ protected void onCreate(Bundle savedInstanceState) {
         setIntent(intent);
         api.handleIntent(intent, this);
     }
-    // 微信发送请求到第三方应用时，会回调到该方法
-//    @Override
-//    public void onReq(BaseReq baseReq) {
-//        Toast.makeText(this, "baseresp.getType = " , Toast.LENGTH_SHORT).show();
-//
-//    }
-//    // 第三方应用发送到微信的请求处理后的响应结果，会回调到该方法
-//    @Override
-//    public void onResp(BaseResp baseResp) {
-//        int result = 0;
-//        Toast.makeText(this, "baseresp.getType 1= " , Toast.LENGTH_SHORT).show();
-//
-//    }
-//    @Override
-//    protected void onNewIntent(Intent intent) {
-//        super.onNewIntent(intent);
-//
-//        setIntent(intent);
-//        api.handleIntent(intent, this);
-//    }
+
 
 
 }
