@@ -165,7 +165,7 @@ public class ReDianFrament extends Fragment {
 
              footview.setText("亲,到最后了.....");
 
-            footview.setTextSize(20);
+            footview.setTextSize(14);
             footview.setWidth(getActivity().getWindowManager().getDefaultDisplay().getWidth());
             footview.setGravity(Gravity.CENTER);
             toutiao_lv.getRefreshableView().addFooterView(footview);
