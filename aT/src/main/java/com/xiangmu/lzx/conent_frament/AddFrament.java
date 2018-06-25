@@ -97,7 +97,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
     private List<PhotoInfo> mSelectedPhotos=new ArrayList<PhotoInfo>();
     private List<String> listfile = new ArrayList<String>();
-    private List<File> list=new ArrayList<>();
+    private List<File> list;
     private List<String> imgstmppath=new ArrayList<String>();
   //  private ProductinfoAddAdapter mAdapter;
     private ChooseFramentAdapter lAdapter;
@@ -958,6 +958,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
             if(mSelectedPhotos.size()>0) {
+                list=new ArrayList<>();
                 for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
                     Log.i("F", filepath + "a0" + i + "jpg");
 
@@ -986,7 +987,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
             // params.addQueryStringParameter("product.gsdz","东川");
-            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
+            //   handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, params,new RequestCallBack<String>() {
+                handler = httpUtils.send(HttpRequest.HttpMethod.POST, url, params,new RequestCallBack<String>() {
                 @Override
                 public void onSuccess(ResponseInfo<String> responseInfo) {
 

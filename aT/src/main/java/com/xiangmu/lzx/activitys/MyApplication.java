@@ -79,22 +79,22 @@ import cn.finalteam.galleryfinal.ThemeConfig;
         //PushSDK初始化(如使用推送SDK，必须调用此方法)
    //     initUpush();
 //   UMShareAPI.get(this);
-//        ThemeConfig theme = new ThemeConfig.Builder().build();
+        ThemeConfig theme = new ThemeConfig.Builder().build();
 //        //配置功能
-//        FunctionConfig functionConfig = new FunctionConfig.Builder()
-//                .setEnableCamera(true)  // 设置相机
-//                .setEnableEdit(false)  // 设置是否可编辑
-//                .setEnableCrop(true)  // 设置是否可裁剪
-//                .setEnableRotate(true) // 设置是否可旋转
-//                .setCropSquare(true)
-//                .setEnablePreview(true)  // 设置是否可预览
-//                .build();
-//        CoreConfig coreConfig = new CoreConfig.Builder(this, new GlideImageLoader(), theme)
-//                .setFunctionConfig(functionConfig)
-//                .setPauseOnScrollListener(new GlidePauseOnScrollListener(false, true))
-//                .setNoAnimcation(true)  // 设置是否显示动画
-//                .build();
-//        GalleryFinal.init(coreConfig);
+        FunctionConfig functionConfig = new FunctionConfig.Builder()
+                .setEnableCamera(true)  // 设置相机
+                .setEnableEdit(false)  // 设置是否可编辑
+                .setEnableCrop(true)  // 设置是否可裁剪
+                .setEnableRotate(true) // 设置是否可旋转
+                .setCropSquare(true)
+                .setEnablePreview(true)  // 设置是否可预览
+                .build();
+        CoreConfig coreConfig = new CoreConfig.Builder(this, new GlideImageLoader(), theme)
+                .setFunctionConfig(functionConfig)
+                .setPauseOnScrollListener(new GlidePauseOnScrollListener(false, true))
+                .setNoAnimcation(true)  // 设置是否显示动画
+                .build();
+        GalleryFinal.init(coreConfig);
 
 //        try {
 //            api.handleIntent(getIntent(), this);
