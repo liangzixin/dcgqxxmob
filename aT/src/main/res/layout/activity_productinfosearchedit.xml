@@ -3,22 +3,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
     android:orientation="vertical">
     <!--<com.xiangmu.lzx.Pointprogressbar-->
-        <!--android:id="@+id/pointProgressBar"-->
-        <!--android:layout_width="70dp"-->
-        <!--android:layout_height="70dp"-->
-        <!--android:layout_centerinparent="true"-->
-        <!--custom:pointprogressbartype="withNumber"-->
-        <!--custom:pointprogressbarbg="@mipmap/ic_launcher"-->
-        <!--custom:firstcirclecolor="#FF888888"-->
-        <!--custom:secondcirclecolor="#ffffff"-->
-        <!--custom:linewidth="10dp"-->
-        <!--custom:totalpoint="10"-->
-        <!--custom:pointmargin="10dp"-->
-        <!--custom:pointprogressbartextsize="18sp"-->
-        <!--custom:pointprogressbartextcolor="#FF888888"-->
-        <!--custom:pointprogressbarmax="100">-->
+    <!--android:id="@+id/pointProgressBar"-->
+    <!--android:layout_width="70dp"-->
+    <!--android:layout_height="70dp"-->
+    <!--android:layout_centerinparent="true"-->
+    <!--custom:pointprogressbartype="withNumber"-->
+    <!--custom:pointprogressbarbg="@mipmap/ic_launcher"-->
+    <!--custom:firstcirclecolor="#FF888888"-->
+    <!--custom:secondcirclecolor="#ffffff"-->
+    <!--custom:linewidth="10dp"-->
+    <!--custom:totalpoint="10"-->
+    <!--custom:pointmargin="10dp"-->
+    <!--custom:pointprogressbartextsize="18sp"-->
+    <!--custom:pointprogressbartextcolor="#FF888888"-->
+    <!--custom:pointprogressbarmax="100">-->
 
     <!--</com.xiangmu.lzx.Pointprogressbar>-->
     <!-- titleBar-->
@@ -39,23 +40,25 @@
             android:src="@mipmap/back" />
 
         <TextView
+            android:id="@+id/bt_shenhe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
-            android:layout_toEndOf="@+id/back"
-            android:layout_toRightOf="@+id/back"
-            android:text="发布信息"
+            android:gravity="center_vertical|center_horizontal"
+            android:text="审核信息"
             android:textColor="@color/white"
-            android:textSize="15sp" />
+            android:textSize="18sp" />
+
         <TextView
             android:id="@+id/lv_searchjiekuo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
-            android:layout_marginRight="5dp"
-            android:text="搜索结果"
             android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
             android:scaleType="centerInside"
+            android:text="搜索结果"
             android:textColor="@color/white" />
     </RelativeLayout>
     <!--android:iconifiedByDefault表示搜索图标是否在输入框内。true效果更加-->
@@ -136,7 +139,6 @@
         android:visibility="gone">
 
 
-
         <!--TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -152,8 +154,7 @@
             android:id="@+id/lv_searchResult"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:clickable="true"
-            />
+            android:clickable="true" />
     </LinearLayout>
     <!-- 热词推荐
     <LinearLayout
@@ -186,7 +187,7 @@
             android:layout_height="match_parent"
             android:layout_marginTop="5dp"
             android:numColumns="2"></GridView> -->
-        <!--水平间方向间隔属性值android:horizontalSpacing-->
-        <!--竖直方向间隔属性值android:verticalSpacing-->
+    <!--水平间方向间隔属性值android:horizontalSpacing-->
+    <!--竖直方向间隔属性值android:verticalSpacing-->
     <!--</LinearLayout>-->
 </LinearLayout>

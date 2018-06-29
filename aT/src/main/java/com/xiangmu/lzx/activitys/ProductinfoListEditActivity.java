@@ -1,7 +1,9 @@
 package com.xiangmu.lzx.activitys;
 
 import android.annotation.SuppressLint;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -11,6 +13,7 @@ import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -51,6 +54,7 @@ import com.xiangmu.lzx.utils.XutilsGetData;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.List;
 
 //import com.google.android.gms.plus.model.people.Person;
@@ -120,7 +124,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
 
     private void bindViews() {
         back = (ImageButton) findViewById(R.id.back);
-
+        TextView shenhe= null;
+        shenhe= (TextView)findViewById(R.id.bt_shenhe);
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
 
@@ -164,6 +169,110 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
                   getData(url, false);//加载数据
 
 
+            }
+        });
+        shenhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new AlertDialog.Builder(this)
+                        // 设置对话框的图标
+                        .setIcon(R.drawable.icon_laucher)
+                        // 设置对话框的标题
+                        .setTitle("其它查询条件")
+                        // 设置对话框显示的View对象
+                        .setView(loginForm)
+                        // 为对话框设置一个“确定”按钮
+
+                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which) {
+                                map= new HashMap<String, String>();
+
+                                if (mCheckBox1.isChecked()) {
+
+                                    map.put("branchname", spinner1.getSelectedItem().toString());
+                                    map.put("mCheckBox1","1");
+                                }else{
+                                    map.put("mCheckBox1","0");
+                                    map.put("branchname", "");
+                                }
+
+                                if (mCheckBox2.isChecked()) {
+                                    map.put("name0",m2[spinner2.getSelectedItemPosition()].toString());
+                                    map.put("name1",mTextView.getText().toString());
+                                    map.put("mCheckBox2","1");
+                                }else{
+                                    map.put("name1", "");
+                                    map.put("name", "");
+                                    map.put("mCheckBox2","0");
+                                }
+
+                                if (mCheckBox3.isChecked()) {
+                                    int spin1 = mRadioGroup.getCheckedRadioButtonId();
+
+                                    switch (spin1) {
+                                        case R.id.radioButton1:
+                                            map.put("rzjk0", "已认证");
+                                            break;
+                                        case R.id.radioButton2:
+                                            map.put("rzjk0", "未认证");
+                                            break;
+                                        case R.id.radioButton3:
+                                            map.put("a29", "死亡");
+                                            break;
+                                    }
+                                }else{
+                                    map.put("rzjk0", "");
+                                    map.put("a29", "");
+                                }
+
+
+
+                                try {
+
+                                    YsryService ysryService = new YsryService();
+                                    count= ysryService.queryYsryOtherCount(map);
+//								count=ysrycount.getCount();
+                                    ysryList = ysryService.queryYsryOther(map);
+                                } catch (Exception e) {
+                                    // TODO: handle exception
+
+                                }
+
+
+                                otherquery=true;
+                                pages = (count + recPerPag - 1) / recPerPag;       //计算出总的页数
+
+                                tolpage.setText("记录数："+count);
+                                nowpage.setText("页码：" + (intFrist+1)+ "/" + pages);
+                                myAdapter = new MyAdapter(ysryList, 1);
+                                mListView.setAdapter(myAdapter);
+                                mListView.setPullLoadEnable(true);
+                                onLoad();
+//							} else {
+//								intFrist = pages;
+//								mListView.setPullLoadEnable(false);
+//							}
+//输入的内容会在页面上显示来因为是做来测试，所以功能不是很全，只写了username没有学password
+//						}, 2000);
+
+                                // 此处可执行登录处理
+                            }
+                        })
+                        // 为对话框设置一个“取消”按钮
+                        .setNegativeButton("取消", new DialogInterface.OnClickListener()
+                        {
+                            @Override
+                            public void onClick(DialogInterface dialog,
+                                                int which)
+                            {
+                                // 取消登录，不做任何事情
+                            }
+                        })
+                        // 创建并显示对话框
+                        .create()
+                        .show();
             }
         });
 
