@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="match_parent"
+			 android:layout_height="match_parent">
+
+	<LinearLayout
+		android:id="@+id/layoutnor0"
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_marginTop="10dp"
+		android:gravity="center"
+		android:orientation="horizontal">
+
+		<CheckBox
+			android:id="@+id/cbox1"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="15dp"
+			android:layout_weight="1"
+			android:text="今天"
+			android:textSize="16dp" />
+
+		<CheckBox
+			android:id="@+id/cbox2"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20dp"
+			android:layout_weight="1"
+			android:text="昨天"
+			android:textSize="16dp" />
+
+		<CheckBox
+			android:id="@+id/cbox3"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="20dp"
+			android:layout_weight="1"
+			android:text="昨天今天"
+			android:textSize="16dp" />
+	</LinearLayout>
+
+</TableLayout>
+

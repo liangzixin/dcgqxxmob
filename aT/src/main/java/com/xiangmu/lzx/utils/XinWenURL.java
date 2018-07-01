@@ -43,6 +43,16 @@ public class XinWenURL {
 
     String ProductArticlerDelMob=HttpUtil.BASE_URL+"product!ProductArticlerDelMob.action?id=";
     String clickagree=HttpUtil.BASE_URL+"product!Clickagree.action?id=";
+
+    public String getShenheagree() {
+        return shenheagree;
+    }
+
+    public void setShenheagree(String shenheagree) {
+        this.shenheagree = shenheagree;
+    }
+
+    String shenheagree=HttpUtil.BASE_URL+"product!Shenheagree.action?yesterday=";
     String repareFilterMob=HttpUtil.BASE_URL+"filter!repareMob.action?id=";
 
     public String getCheckuserMobile() {

@@ -12,8 +12,12 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
+import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
@@ -57,6 +61,8 @@ import java.util.Comparator;
 import java.util.HashMap;
 import java.util.List;
 
+import cn.finalteam.toolsfinal.logger.Logger;
+
 //import com.google.android.gms.plus.model.people.Person;
 
 //import com.xiangmu.lzx.CostomAdapter.SearchEditResultAdapter;
@@ -66,7 +72,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
     // Content View Elements
     private ImageButton back;
     private TextView noHotWords;
-    private TextView searchjiekuo;
+    private TextView searchjiekuo,shenhe;
     //  private ImageView clear_history;
     private LinearLayout layoutsearchResult;
     //  private RelativeLayout layout_sousuoHis;
@@ -89,6 +95,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
     private XinWenURL xinWenURL = new XinWenURL();
     private String url = null;
     private SimpleArcDialog mDialog;
+    private  AlertDialog dialog;
     private AlertView mAlertView1, mAlertView2;//避免创建重复View，先创建View，然后需要的时候show出来，推荐这个做法
     private Boolean isPause = false;
     private int id = 0;
@@ -124,7 +131,7 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
 
     private void bindViews() {
         back = (ImageButton) findViewById(R.id.back);
-        TextView shenhe= null;
+
         shenhe= (TextView)findViewById(R.id.bt_shenhe);
         noHotWords = (TextView) findViewById(R.id.noHotWords);
         layoutsearchResult = (LinearLayout) findViewById(R.id.searchResult);//搜索结果布局
@@ -171,129 +178,10 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
 
             }
         });
-        shenhe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new AlertDialog.Builder(this)
-                        // 设置对话框的图标
-                        .setIcon(R.drawable.icon_laucher)
-                        // 设置对话框的标题
-                        .setTitle("其它查询条件")
-                        // 设置对话框显示的View对象
-                        .setView(loginForm)
-                        // 为对话框设置一个“确定”按钮
-
-                        .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which) {
-                                map= new HashMap<String, String>();
-
-                                if (mCheckBox1.isChecked()) {
-
-                                    map.put("branchname", spinner1.getSelectedItem().toString());
-                                    map.put("mCheckBox1","1");
-                                }else{
-                                    map.put("mCheckBox1","0");
-                                    map.put("branchname", "");
-                                }
-
-                                if (mCheckBox2.isChecked()) {
-                                    map.put("name0",m2[spinner2.getSelectedItemPosition()].toString());
-                                    map.put("name1",mTextView.getText().toString());
-                                    map.put("mCheckBox2","1");
-                                }else{
-                                    map.put("name1", "");
-                                    map.put("name", "");
-                                    map.put("mCheckBox2","0");
-                                }
-
-                                if (mCheckBox3.isChecked()) {
-                                    int spin1 = mRadioGroup.getCheckedRadioButtonId();
-
-                                    switch (spin1) {
-                                        case R.id.radioButton1:
-                                            map.put("rzjk0", "已认证");
-                                            break;
-                                        case R.id.radioButton2:
-                                            map.put("rzjk0", "未认证");
-                                            break;
-                                        case R.id.radioButton3:
-                                            map.put("a29", "死亡");
-                                            break;
-                                    }
-                                }else{
-                                    map.put("rzjk0", "");
-                                    map.put("a29", "");
-                                }
-
-
-
-                                try {
-
-                                    YsryService ysryService = new YsryService();
-                                    count= ysryService.queryYsryOtherCount(map);
-//								count=ysrycount.getCount();
-                                    ysryList = ysryService.queryYsryOther(map);
-                                } catch (Exception e) {
-                                    // TODO: handle exception
-
-                                }
-
-
-                                otherquery=true;
-                                pages = (count + recPerPag - 1) / recPerPag;       //计算出总的页数
-
-                                tolpage.setText("记录数："+count);
-                                nowpage.setText("页码：" + (intFrist+1)+ "/" + pages);
-                                myAdapter = new MyAdapter(ysryList, 1);
-                                mListView.setAdapter(myAdapter);
-                                mListView.setPullLoadEnable(true);
-                                onLoad();
-//							} else {
-//								intFrist = pages;
-//								mListView.setPullLoadEnable(false);
-//							}
-//输入的内容会在页面上显示来因为是做来测试，所以功能不是很全，只写了username没有学password
-//						}, 2000);
-
-                                // 此处可执行登录处理
-                            }
-                        })
-                        // 为对话框设置一个“取消”按钮
-                        .setNegativeButton("取消", new DialogInterface.OnClickListener()
-                        {
-                            @Override
-                            public void onClick(DialogInterface dialog,
-                                                int which)
-                            {
-                                // 取消登录，不做任何事情
-                            }
-                        })
-                        // 创建并显示对话框
-                        .create()
-                        .show();
-            }
-        });
 
         inintClick();
     }
 
-    //    private void inintAdapter() {
-//
-//
-//
-//        layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-//
-//        searchProductinfoAdapter= new SearchProductinfoAdapter(toutiao_list,this);
-//
-//
-//        lv_searchResult.setAdapter(searchProductinfoAdapter);
-//        RecyclerView.ItemDecoration decoration = new MyDecoration(this);
-//        this.lv_searchResult.addItemDecoration(decoration);
-//        this.searchProductinfoAdapter.setOnItemClickListener(this);
-//        this.searchProductinfoAdapter.setOnItemLongClickListener(this);
-//    }
     MyGridViewAadapter adapterHistory = null;
 
     //查询数据库
@@ -363,6 +251,41 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
                 return true;
             }
         });
+        shenhe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                final  LayoutInflater factory = LayoutInflater.from(ProductinfoListEditActivity.this);
+                final View loginForm = factory.inflate(R.layout.formshenhe, null);
+                AlertDialog.Builder builder = new AlertDialog.Builder(ProductinfoListEditActivity.this);
+
+                builder.setTitle("审核信息");
+                builder.setView(loginForm);
+                final CheckBox cbox1 = (CheckBox) loginForm.findViewById(R.id.cbox1);
+                final CheckBox cbox2 = (CheckBox) loginForm.findViewById(R.id.cbox2);
+                final CheckBox cbox3 = (CheckBox) loginForm.findViewById(R.id.cbox3);
+                builder.setNegativeButton("取消", null);
+                builder.setPositiveButton("确定", null);
+                builder.setIcon(R.drawable.ic_launcher);
+                builder.create();
+                dialog = builder.create();
+                dialog.show();
+                dialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+
+                    @Override
+                    public void onClick(View v) {
+
+                        if(!cbox1.isChecked()&&!cbox2.isChecked()&&!cbox3.isChecked()){
+                            Toast.makeText(ProductinfoListEditActivity.this, "错误！要选一项！！", Toast.LENGTH_SHORT).show();
+                        }else {
+                            String shenhe0 = xinWenURL.getShenheagree()+cbox2.isChecked()+"&today="+cbox1.isChecked()+"&toyesday="+cbox3.isChecked();
+                            ShenheData(shenhe0);
+                         //   dialog.dismiss();
+                        }
+                    }
+                });
+            }
+
+        });
 
     }
 
@@ -424,11 +347,11 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
     }
     // 显示数据  或者分页加载数据
     private void getshowdata(String data, boolean refresh) {
-     //   toutiao_list.clear();
-        if (refresh) {
-
-            toutiao_list.clear();
-        }
+        toutiao_list.clear();
+//        if (refresh) {
+//
+//            toutiao_list.clear();
+//        }
 
         XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(data, 2);//传入类型和数据
         toutiao_list.addAll(toutiao_object.getT18908805728());
@@ -457,155 +380,8 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
         lv_searchResult.onPullUpRefreshComplete();//隐藏上拉头
         mDialog.dismiss();
 
-
-
-//        if (toutiao_adapter == null) {//在数据之后adapter之前增加轮播才会不anr
-//
-//            toutiao_adapter = new XinWenproductinfoBaseAdapter(getActivity(), toutiao_list0);
-//            toutiao_lv.getRefreshableView().setAdapter(toutiao_adapter);
-//        }
-//
-//        toutiao_adapter.setToutiao_list(toutiao_list0);//填充并刷新数据
-//        toutiao_lv.onPullDownRefreshComplete();//隐藏下拉头
-//        toutiao_lv.onPullUpRefreshComplete();//隐藏上拉头
     }
 
-//
-
-    ;
-//    private void getData(int flag,final  String url,final boolean refresh) {
-//        if (!url.equals("")) {
-//            httpUtils = new HttpUtils();
-//
-//            switch (flag) {
-//                case 1:
-//                    handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-//                        @Override
-//                        public void onSuccess(ResponseInfo<String> responseInfo) {
-//                            if (responseInfo.result != null) {
-//                                SharedPreferencesUtil.saveData(ProductinfoListEditActivity.this, url, responseInfo.result);
-//                                paserData(1, responseInfo.result,refresh);
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onFailure(HttpException e, String s) {
-//                            mDialog.dismiss();
-//                            Toast.makeText(ProductinfoListEditActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//                    break;
-//                case 2:
-//              httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
-//                    handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-//                        @Override
-//                        public void onSuccess(ResponseInfo<String> responseInfo) {
-//                            if (responseInfo.result != null) {
-//                                SharedPreferencesUtil.saveData(ProductinfoListEditActivity.this, url, responseInfo.result);
-//                                paserData(2, responseInfo.result,refresh);
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onFailure(HttpException e, String s) {
-//                            mDialog.dismiss();
-//                            Toast.makeText(ProductinfoListEditActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//                    break;
-//                case 3:
-//                    //       progressDialog = new CustomProgressDialog(this,"数据正在请求中...", R.anim.donghua_frame);
-////                    httpUtils.configCurrentHttpCacheExpiry(1000 * 10); //设置超时时间   10s
-//                    handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-//                        @Override
-//                        public void onSuccess(ResponseInfo<String> responseInfo) {
-//                            if (responseInfo.result != null) {
-//                                SharedPreferencesUtil.saveData(ProductinfoListEditActivity.this, url, responseInfo.result);
-//                                paserData(3, responseInfo.result,refresh);
-//                            }
-//                        }
-//
-//                        @Override
-//                        public void onFailure(HttpException e, String s) {
-//                            mDialog.dismiss();
-//                            Toast.makeText(ProductinfoListEditActivity.this, "数据请求失败", Toast.LENGTH_SHORT).show();
-//                        }
-//                    });
-//                    break;
-//            }
-//        }
-//    }
-
-//    private void paserData(int flag, String result,final boolean refresh) {
-//        switch (flag) {
-//            case 1:
-//                try {
-//                    JSONObject jsonObject = new JSONObject(result);
-//                    JSONArray jsonArray = jsonObject.getJSONArray("hotWordList");
-//                    for (int i = 0; i < jsonArray.length(); i++) {
-//                        JSONObject jo = jsonArray.getJSONObject(i);
-//                        String hotWord = jo.getString("title");
-//                        list.add(hotWord);
-//                    }
-//                    gridViewAadapter = new MyGridViewAadapter(list, this);
-////                    houtWord_gridview.setAdapter(gridViewAadapter);
-//                    noHotWords.setVisibility(View.GONE);
-//                } catch (JSONException e) {
-//                    e.printStackTrace();
-//                }
-//                break;
-//            case 2:
-//
-//                if (refresh) {
-//
-//                    toutiao_list.clear();
-//                }
-//                XinWen_productinfo toutiao_object = XinWenproductinfoJson.getdata(result, 2);//传入类型和数据
-//                toutiao_list.addAll(toutiao_object.getT18908805728());
-//
-//                searchjiekuo.setText("搜索结果: " + toutiao_object.getTotalRecords() + " 条记录");
-//
-//
-//                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-//
-//                searchProductinfoAdapter = new SearchProductinfoAdapter(toutiao_list, this);
-//
-//                lv_searchResult.getRefreshableView().setAdapter(searchProductinfoAdapter);
-//
-//                searchProductinfoAdapter.setOnItemClickListener(new SearchProductinfoAdapter.MyItemClickListener() {
-//                    @Override
-//                    public void onItemClick(View view, int postion) {
-//                        onItemClick1( view, postion);
-//                    }
-////
-////
-//                });
-//
-//                lv_searchResult.onPullDownRefreshComplete();//隐藏下拉头
-//                lv_searchResult.onPullUpRefreshComplete();//隐藏上拉头
-//                mDialog.dismiss();
-//                break;
-//            case 3:
-//                toutiao_list = new ArrayList<>();
-//
-//                XinWen_productinfo toutiao_object1 = XinWenproductinfoJson.getdata(result, 0);//传入类型和数据
-//                toutiao_list.addAll(toutiao_object1.getT18908805728());
-////                SearchBean searchBean = new Gson().fromJson(result, SearchBean.class);
-//                System.out.println("标题:" + toutiao_list.get(0).getName());
-////                LogUtils.e("---", searchBean.doc.result.get(0).name);
-//                searchjiekuo.setText("搜索结果: " + toutiao_object1.getTotalRecords() + " 条记录");
-//                //       layout_sousuoHis.setVisibility(View.GONE);//隐藏搜索历史
-//                //     progressDialog.dismiss();
-//                mDialog.dismiss();
-//                layoutsearchResult.setVisibility(View.VISIBLE);//显示搜索结果布局
-//
-//                searchProductinfoAdapter = new SearchProductinfoAdapter(toutiao_list, this);
-//
-//
-//                //   lv_searchResult.setAdapter(searchProductinfoAdapter);
-//                break;
-//        }
-//    }
 
     @Override
     protected void onDestroy() {
@@ -867,4 +643,30 @@ public class ProductinfoListEditActivity extends AppCompatActivity implements On
         }
     }
 
+    private void ShenheData( String url0) {
+        dialog.dismiss();
+        mDialog.show();
+        if (!url.equals("")) {
+            httpUtils = new HttpUtils();
+
+            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url0, new RequestCallBack<String>() {
+                @Override
+                public void onSuccess(ResponseInfo<String> responseInfo) {
+                    if (responseInfo.result.equals("true")) {
+                        Toast.makeText(ProductinfoListEditActivity.this, "审核成功", Toast.LENGTH_SHORT).show();
+                        isPause = true;
+
+                        onResume();
+                    }
+
+                }
+
+                @Override
+                public void onFailure(HttpException e, String s) {
+                    Toast.makeText(ProductinfoListEditActivity.this, "审核失败", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+        }
+    }
 }
