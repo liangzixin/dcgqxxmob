@@ -1,7 +1,9 @@
 package com.xiangmu.lzx.conent_frament;
 
 import android.app.AlertDialog;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
@@ -53,6 +55,7 @@ import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.Modle.Zpnl;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.Service.ProductInfoService;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
 import com.xiangmu.lzx.activitys.LoginActivity;
 import com.xiangmu.lzx.activitys.MainActivity;
@@ -71,8 +74,10 @@ import com.xiangmu.lzx.utils.XutilsGetData;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -151,6 +156,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     List  nl= Zpnl.getValues();
     List  xl= Edu.getValues();
     List  listcjfs= Fzfs.getValues();
+    private CustomProgressDialog progress;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -202,7 +208,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
     private void initView(View view) {
-
+        new CustomProgressDialog( getActivity(),"正在加载中.....",R.drawable.donghua_frame);
         fpxx = (TextView) view.findViewById(R.id.bt_fpxx);
         // setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (Spinner) view.findViewById(R.id.spin_articler);
@@ -550,6 +556,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         }
     };
     private void initview() throws   IOException{
+
 //        final String url = xinWenXiData.getUrl();//获得详细页面的url      //分享用
 //        final String xinwentitle = xinWenXiData.getTitle();//获得新闻标题     //分享用
 
@@ -647,7 +654,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        settings.setAppCacheEnabled(true);//是否使用缓存
 //        settings.setTextSize(WebSettings.TextSize.NORMAL);
 //        webView.setWebChromeClient(new WebChromeClient());// 支持运行特殊的javascript(例如：alert())
-        final CustomProgressDialog progress=new CustomProgressDialog( getActivity(),"正在加载中.....",R.drawable.donghua_frame);
+
         progress.show();
 //        webView.loadUrl(url);
         //设置打开页面的客户端WebViewClient,如果不设置,则调用系统默认浏览器打开地址
@@ -1015,68 +1022,96 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         }
     }
 
-   // @Override
-//    public void onItemClicked(int position) {
-//        if (position == mAdapter.getItemCount()-1) {
-//            startActivity(new Intent(this, PhotosActivity.class));
-//            EventBus.getDefault().postSticky(new EventEntry(mAdapter.getData(),EventEntry.SELECTED_PHOTOS_ID));
-//        }
-//    }
-//
-//    @Subscribe(threadMode = ThreadMode.MAIN)
-//    public void photosMessageEvent(EventEntry entries){
-//        if (entries.id == EventEntry.RECEIVED_PHOTOS_ID) {
-//            mAdapter.reloadList(entries.photos);
-//            mSelectedPhotos=entries.photos;
-//        }
-//    }
-//    @Subscribe(threadMode = ThreadMode.MAIN)
-//    public void photoMessageEvent(PhotoInfo entry){
-//        mAdapter.appendPhoto(entry);
-//    }
-//    private void UpCount(final String url) {
-//        if (!url.equals("")) {
-//            httpUtils = new HttpUtils();
-//
-//            handler = httpUtils.send(HttpRequest.HttpMethod.GET, url, new RequestCallBack<String>() {
-//                @Override
-//                public void onSuccess(ResponseInfo<String> responseInfo) {
-//                    if (responseInfo.result != null) {
-//                        SharedPreferencesUtil.saveData(this, url, responseInfo.result);
-//
-//
-//                    }
-//                }
-//
-//                @Override
-//                public void onFailure(HttpException e, String s) {
-//                    Toast.makeText(this, "数据请求失败", Toast.LENGTH_SHORT).show();
-//                }
-//            });
-//
-//        }
-//    }
+    /**
+     * 发布信息
+     *
+     * */
+    public void ProductinfoAdd() {
 
-//    @Override      public View getView(int position, View convertView, ViewGroup arg2) {
-//        if (convertView == null) {              convertView = inflater.inflate(R.layout.test_layout, null);          }
-//        /**           * 状态为1、2时需要显示Item，其他情况不显示Item           */
-//        int itemState = 0;          switch(itemState){
-//            case 1:
-//            convertView.setVisibility(View.VISIBLE);
-//                break;
-//            case 2:
-//                convertView.setVisibility(View.VISIBLE);
-//                break;
-//            default://下面这段代码就是让GridView中的指定的item不显示并且不占用界面空间的方法
-//                              convertView.setVisibility(View.GONE);
-//                             AbsListView.LayoutParams param = new AbsListView.LayoutParams(0, 0);
-//                // 将设置好的布局属性应用到GridView的Item上
-//                            convertView.setLayoutParams(param);
-//                                 break;
-//                       }
-//                  return convertView;
-//                    }
+        progress.show();
+//        testHandler.sendEmptyMessage(2);
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("name",name.getText());
+        map.put("gsdz",gsdz.getText());
+        map.put("gsmz",gsmz.getText() );
+        map.put("lxr",productinfo_lxr.getText() );
+        map.put("lxdh",productinfo_lxdh.getText() );
+        map.put("categoryId",articlerSpinner.getSelectedItemPosition() );
+        map.put("description",productinfo_content.getText() );
+        map.put("zpxx.sexrequest",spinner_sex.getSelectedItem() );
+        map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem() );
+        map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem() );
+        map.put("zpxx.edurequest",spinner_xl.getSelectedItem() );
+        map.put("zpxx.sxcy",sxcy.getText() );
+        map.put("zpxx.qjnl",qznl.getText() );
+        map.put("fwcs.jzmj",jzmj.getText() );
+        map.put("fwcs.fwzj",fwzj.getText() );
+        map.put("fwcs.fws",hxs.getText() );
+        map.put("fwcs.fwt",hxt.getText() );
+        map.put("fwcs.fww",hxw.getText() );
+        map.put("fwcs.fwzf",hxc.getText() );
+        map.put("fwcs.fwlj",fwlz.getText() );
+        map.put("fwcs.fwcj",fwzc.getText() );
+        map.put("fwcs.fzfsrequest", zjfs.getSelectedItem() );
+        map.put("gqxx.gqsl",gqsl.getText() );
+        if(mSelectedPhotos.size()>0) {
+            list=new ArrayList<>();
+            for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
+                Log.i("F", filepath + "a0" + i + "jpg");
 
+                String tmepName = null;
+                try {
+                    tmepName = PictureUtil.bitmapToPath(mSelectedPhotos.get(i).getPhotoPath());
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+//                   File file = new File(tmepName);
+//                   FileBody fileBody = new FileBody(file);
+
+                //存储临时文件名
+                imgstmppath.add(tmepName);
+                list.add(new File(tmepName));
+            }
+//            list.add(new File(filepath1));
+
+            for (int j = 0;j< mSelectedPhotos.size()-1; j++) {
+                map.put("upload[" + j + "]", list.get(j));
+            }
+
+        }
+
+     boolean str=false;
+        try {
+            ProductInfoService productInfoService = new ProductInfoService();
+
+            str=productInfoService.ProductinfoAdd(map);
+//
+        } catch (Exception e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        if(str) {
+            new AlertDialog.Builder(getActivity()).setTitle("发布信息成功！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                @Override
+                public void onClick(DialogInterface dialog, int which) {
+                    // TODO Auto-generated method stub
+                    PictureUtil.deleteImgTmp(imgstmppath);
+                    Intent intent = new Intent();
+                    intent.setClass( getActivity(), MainActivity.class);
+
+                    startActivity(intent);
+//                        setResult(RESULT_CODE, intent);
+                    getActivity().finish();
+
+                }
+            }).show();
+        }else{
+            Toast.makeText(getActivity(), "发布信息失败！！！", Toast.LENGTH_SHORT).show();
+        }
+
+    }
 
     public static boolean isMobileNO(String mobiles) {
         boolean flag = false;
