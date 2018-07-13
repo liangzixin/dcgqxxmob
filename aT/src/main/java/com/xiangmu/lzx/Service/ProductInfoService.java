@@ -125,8 +125,8 @@ public class ProductInfoService extends BaseService {
                     .openConnection();
             connection.setDoInput(true);
             connection.setDoOutput(true);
-//            connection.setReadTimeout(50000);
-            connection.setRequestMethod("POST");
+            //     connection.setReadTimeout(50000);
+              connection.setRequestMethod("POST");
             StringBuffer buffer = new StringBuffer();
             if (map != null && !map.isEmpty()) {
                 for (Map.Entry<String, String> entry : map.entrySet()) {

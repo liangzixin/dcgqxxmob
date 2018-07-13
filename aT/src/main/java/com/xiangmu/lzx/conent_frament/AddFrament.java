@@ -9,6 +9,8 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -25,7 +27,7 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
-import android.widget.MaterialEditText;
+//import android.widget.MaterialEditText;
 import android.widget.PopupWindow;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -97,7 +99,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     private List<XinWen_productinfo.T18908805728Entity.ProductArticlerEntity> liuyuanlist;
     private HttpUtils httpUtils;
     private HttpHandler<String> handler;
-   // private PullToRefreshListView mRecyclerView;
+    private static  boolean str=false;
     private ListView mRecyclerView;
 
     private List<PhotoInfo> mSelectedPhotos=new ArrayList<PhotoInfo>();
@@ -200,6 +202,35 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
     }
+    /**
+     * 数据加载完之后消除Loding对话框
+     * */
+    private Handler myHandler = new Handler(){
+        @Override
+        public void handleMessage(Message msg) {
+            progress.dismiss(); //消除Loding对话框
+            if(str) {
+                new AlertDialog.Builder(getActivity()).setTitle("发布信息成功！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        // TODO Auto-generated method stub
+                        PictureUtil.deleteImgTmp(imgstmppath);
+                        Intent intent = new Intent();
+                        intent.setClass( getActivity(), MainActivity.class);
+
+                        startActivity(intent);
+//                        setResult(RESULT_CODE, intent);
+                        getActivity().finish();
+
+                    }
+                }).show();
+            }else{
+                Toast.makeText(getActivity(), "发布信息失败！！！", Toast.LENGTH_SHORT).show();
+            }
+            super.handleMessage(msg);
+        }
+    };
     public View inFlater(LayoutInflater inflater) {
         view = inflater.inflate(R.layout.productinfoadd_content, null, false);
          initView(view);
@@ -208,7 +239,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
     private void initView(View view) {
-        new CustomProgressDialog( getActivity(),"正在加载中.....",R.drawable.donghua_frame);
+        progress=new CustomProgressDialog( getActivity(),"正在加载中.....",R.drawable.donghua_frame);
         fpxx = (TextView) view.findViewById(R.id.bt_fpxx);
         // setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (Spinner) view.findViewById(R.id.spin_articler);
@@ -532,8 +563,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                     String saveproduct = xinWenURL.getSaveproductinfo();
                     Toast.makeText(getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
-                    SaveData(saveproduct);
-
+                   // SaveData(saveproduct);
+                    ProductinfoAdd();
                 }
             });
 
@@ -1029,87 +1060,70 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     public void ProductinfoAdd() {
 
         progress.show();
-//        testHandler.sendEmptyMessage(2);
-        Map<String,Object> map = new HashMap<String,Object>();
-        map.put("name",name.getText());
-        map.put("gsdz",gsdz.getText());
-        map.put("gsmz",gsmz.getText() );
-        map.put("lxr",productinfo_lxr.getText() );
-        map.put("lxdh",productinfo_lxdh.getText() );
-        map.put("categoryId",articlerSpinner.getSelectedItemPosition() );
-        map.put("description",productinfo_content.getText() );
-        map.put("zpxx.sexrequest",spinner_sex.getSelectedItem() );
-        map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem() );
-        map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem() );
-        map.put("zpxx.edurequest",spinner_xl.getSelectedItem() );
-        map.put("zpxx.sxcy",sxcy.getText() );
-        map.put("zpxx.qjnl",qznl.getText() );
-        map.put("fwcs.jzmj",jzmj.getText() );
-        map.put("fwcs.fwzj",fwzj.getText() );
-        map.put("fwcs.fws",hxs.getText() );
-        map.put("fwcs.fwt",hxt.getText() );
-        map.put("fwcs.fww",hxw.getText() );
-        map.put("fwcs.fwzf",hxc.getText() );
-        map.put("fwcs.fwlj",fwlz.getText() );
-        map.put("fwcs.fwcj",fwzc.getText() );
-        map.put("fwcs.fzfsrequest", zjfs.getSelectedItem() );
-        map.put("gqxx.gqsl",gqsl.getText() );
-        if(mSelectedPhotos.size()>0) {
-            list=new ArrayList<>();
-            for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
-                Log.i("F", filepath + "a0" + i + "jpg");
-
-                String tmepName = null;
+        Thread t = new Thread(new Runnable() {
+            @Override
+            public void run() {
                 try {
-                    tmepName = PictureUtil.bitmapToPath(mSelectedPhotos.get(i).getPhotoPath());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                    //     progress.show();
+//        testHandler.sendEmptyMessage(2);
+                    Map<String,Object> map = new HashMap<String,Object>();
+                    map.put("name",name.getText());
+                    map.put("gsdz",gsdz.getText());
+                    map.put("gsmz",gsmz.getText() );
+                    map.put("lxr",productinfo_lxr.getText() );
+                    map.put("lxdh",productinfo_lxdh.getText() );
+                    map.put("categoryId",articlerSpinner.getSelectedItemPosition() );
+                    map.put("description",productinfo_content.getText() );
+                    map.put("zpxx.sexrequest",spinner_sex.getSelectedItem() );
+                    map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem() );
+                    map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem() );
+                    map.put("zpxx.edurequest",spinner_xl.getSelectedItem() );
+                    map.put("zpxx.sxcy",sxcy.getText() );
+                    map.put("zpxx.qjnl",qznl.getText() );
+                    map.put("fwcs.jzmj",jzmj.getText() );
+                    map.put("fwcs.fwzj",fwzj.getText() );
+                    map.put("fwcs.fws",hxs.getText() );
+                    map.put("fwcs.fwt",hxt.getText() );
+                    map.put("fwcs.fww",hxw.getText() );
+                    map.put("fwcs.fwzf",hxc.getText() );
+                    map.put("fwcs.fwlj",fwlz.getText() );
+                    map.put("fwcs.fwcj",fwzc.getText() );
+                    map.put("fwcs.fzfsrequest", zjfs.getSelectedItem() );
+                    map.put("gqxx.gqsl",gqsl.getText() );
+                    if(mSelectedPhotos.size()>0) {
+                        list=new ArrayList<>();
+                        for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
+                            Log.i("F", filepath + "a0" + i + "jpg");
 
-//                   File file = new File(tmepName);
-//                   FileBody fileBody = new FileBody(file);
+                            String tmepName = null;
 
-                //存储临时文件名
-                imgstmppath.add(tmepName);
-                list.add(new File(tmepName));
-            }
+                            tmepName = PictureUtil.bitmapToPath(mSelectedPhotos.get(i).getPhotoPath());
+
+                            //存储临时文件名
+                            imgstmppath.add(tmepName);
+                            list.add(new File(tmepName));
+                        }
 //            list.add(new File(filepath1));
 
-            for (int j = 0;j< mSelectedPhotos.size()-1; j++) {
-                map.put("upload[" + j + "]", list.get(j));
-            }
+                        for (int j = 0;j< mSelectedPhotos.size()-1; j++) {
+                            map.put("upload[" + j + "]", list.get(j));
+                        }
 
-        }
+                    }
+                    ProductInfoService productInfoService = new ProductInfoService();
 
-     boolean str=false;
-        try {
-            ProductInfoService productInfoService = new ProductInfoService();
-
-            str=productInfoService.ProductinfoAdd(map);
+                    str=productInfoService.ProductinfoAdd(map);
 //
-        } catch (Exception e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        if(str) {
-            new AlertDialog.Builder(getActivity()).setTitle("发布信息成功！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // TODO Auto-generated method stub
-                    PictureUtil.deleteImgTmp(imgstmppath);
-                    Intent intent = new Intent();
-                    intent.setClass( getActivity(), MainActivity.class);
-
-                    startActivity(intent);
-//                        setResult(RESULT_CODE, intent);
-                    getActivity().finish();
-
+                } catch (Exception e) {
+                    // TODO Auto-generated catch block
+                    e.printStackTrace();
                 }
-            }).show();
-        }else{
-            Toast.makeText(getActivity(), "发布信息失败！！！", Toast.LENGTH_SHORT).show();
-        }
+                myHandler.sendMessage(myHandler.obtainMessage());
+            }
+            });
+            t.start();
+
+
 
     }
 
