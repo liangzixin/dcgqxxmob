@@ -1066,30 +1066,31 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                 try {
                     //     progress.show();
 //        testHandler.sendEmptyMessage(2);
-                    Map<String,Object> map = new HashMap<String,Object>();
-                    map.put("name",name.getText());
-                    map.put("gsdz",gsdz.getText());
-                    map.put("gsmz",gsmz.getText() );
-                    map.put("lxr",productinfo_lxr.getText() );
-                    map.put("lxdh",productinfo_lxdh.getText() );
-                    map.put("categoryId",articlerSpinner.getSelectedItemPosition() );
-                    map.put("description",productinfo_content.getText() );
-                    map.put("zpxx.sexrequest",spinner_sex.getSelectedItem() );
-                    map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem() );
-                    map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem() );
-                    map.put("zpxx.edurequest",spinner_xl.getSelectedItem() );
-                    map.put("zpxx.sxcy",sxcy.getText() );
-                    map.put("zpxx.qjnl",qznl.getText() );
-                    map.put("fwcs.jzmj",jzmj.getText() );
-                    map.put("fwcs.fwzj",fwzj.getText() );
-                    map.put("fwcs.fws",hxs.getText() );
-                    map.put("fwcs.fwt",hxt.getText() );
-                    map.put("fwcs.fww",hxw.getText() );
-                    map.put("fwcs.fwzf",hxc.getText() );
-                    map.put("fwcs.fwlj",fwlz.getText() );
-                    map.put("fwcs.fwcj",fwzc.getText() );
-                    map.put("fwcs.fzfsrequest", zjfs.getSelectedItem() );
-                    map.put("gqxx.gqsl",gqsl.getText() );
+               Map<String,Object> map = new HashMap<String,Object>();
+
+                    map.put("name",name.getText().toString());
+                    map.put("gsdz",gsdz.getText().toString());
+                    map.put("gsmz",gsmz.getText().toString() );
+                    map.put("lxr",productinfo_lxr.getText().toString() );
+                    map.put("lxdh",productinfo_lxdh.getText().toString() );
+                    map.put("categoryId",articlerSpinner.getSelectedItemPosition()+"");
+//                    map.put("description",productinfo_content.getText().toString() );
+//                    map.put("zpxx.sexrequest",spinner_sex.getSelectedItem()+"" );
+//                    map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem()+"" );
+//                    map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem()+"" );
+//                    map.put("zpxx.edurequest",spinner_xl.getSelectedItem()+"" );
+//                    map.put("zpxx.sxcy",sxcy.getText().toString() );
+//                    map.put("zpxx.qjnl",qznl.getText().toString() );
+//                    map.put("fwcs.jzmj",jzmj.getText().toString() );
+//                    map.put("fwcs.fwzj",fwzj.getText().toString() );
+//                    map.put("fwcs.fws",hxs.getText().toString() );
+//                    map.put("fwcs.fwt",hxt.getText().toString() );
+//                    map.put("fwcs.fww",hxw.getText().toString() );
+//                    map.put("fwcs.fwzf",hxc.getText().toString() );
+//                    map.put("fwcs.fwlj",fwlz.getText().toString() );
+//                    map.put("fwcs.fwcj",fwzc.getText().toString() );
+//                    map.put("fwcs.fzfsrequest", zjfs.getSelectedItem()+"" );
+//                    map.put("gqxx.gqsl",gqsl.getText().toString() );
                     if(mSelectedPhotos.size()>0) {
                         list=new ArrayList<>();
                         for (int i = 0; i < mSelectedPhotos.size()-1; i++) {

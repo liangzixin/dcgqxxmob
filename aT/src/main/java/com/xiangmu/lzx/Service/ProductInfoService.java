@@ -12,6 +12,7 @@ import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.ObjectInputStream;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
@@ -114,7 +115,7 @@ public class ProductInfoService extends BaseService {
         }
         return productInfos;
    }
-    public  Boolean loginPostData(String path, Map<String, String> map) {
+    public  Boolean loginPostData(String path, Map<String, Object> map) {
         String json0;
         Boolean json=false;
         InputStream inputStream = null;
@@ -125,14 +126,15 @@ public class ProductInfoService extends BaseService {
                     .openConnection();
             connection.setDoInput(true);
             connection.setDoOutput(true);
-            //     connection.setReadTimeout(50000);
+           connection.setReadTimeout(50000);
               connection.setRequestMethod("POST");
             StringBuffer buffer = new StringBuffer();
             if (map != null && !map.isEmpty()) {
-                for (Map.Entry<String, String> entry : map.entrySet()) {
+                for (Map.Entry<String,Object> entry : map.entrySet()) {
+                    System.out.println("  "+entry.getKey()+":"+entry.getValue());
                     buffer.append(entry.getKey())
                             .append("=")
-                            .append(URLEncoder.encode(entry.getValue(), "utf-8"))
+                            .append(URLEncoder.encode(entry.getValue().toString(), "utf-8"))
                             .append("&");
                 }
                 buffer.deleteCharAt(buffer.length() - 1);
@@ -150,17 +152,10 @@ public class ProductInfoService extends BaseService {
                 byte[] data1=toolsHandler.InputStreamToByte(inputStream);
                 json0=new String(data1);
                // json=new Boolean(data1);
-                if(json0!=null)
+                if(json0!=null&json0.equals("true"))
                 {
-
-                    try {
-                        JSONObject jsonObject=new JSONObject(json0);
-                        json=jsonObject.getBoolean("productinfoadd");
-                    } catch (JSONException e) {
-                        e.printStackTrace();
-                    }
-
-                }
+                   json=true;
+                     }
             }
         } catch (MalformedURLException e) {
             // TODO Auto-generated catch block
