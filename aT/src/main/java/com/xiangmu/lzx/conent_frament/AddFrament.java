@@ -73,6 +73,9 @@ import com.xiangmu.lzx.utils.XinWenXiData;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
 import com.xiangmu.lzx.utils.XutilsGetData;
 
+import org.xutils.http.body.MultipartBody;
+import org.xutils.http.body.RequestBody;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -1094,10 +1097,10 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                       map.put("name",name.getText());
                     map.put("gsdz",gsdz.getText());
-                    map.put("gsmz",gsmz.getText()  );
-                    map.put("lxr",productinfo_lxr.getText()  );
-                    map.put("lxdh",productinfo_lxdh.getText()  );
-                    map.put("categoryId",articlerSpinner.getSelectedItemPosition()+"");
+                    map.put("gsmz",gsmz.getText());
+                    map.put("lxr",productinfo_lxr.getText());
+                    map.put("lxdh",productinfo_lxdh.getText());
+                    map.put("categoryId",(Integer)articlerSpinner.getSelectedItemPosition());
 //                    map.put("description",productinfo_content.getText()  );
 //                    map.put("zpxx.sexrequest",spinner_sex.getSelectedItem()+"" );
 //                    map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem()+"" );
@@ -1132,13 +1135,43 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                         for (int j = 0;j< mSelectedPhotos.size()-1; j++) {
                             map.put("upload[" + j + "]", list.get(j));
+                            Log.i("LZXF", filepath +"upload[" + j + "]"+"XXXXXXXXXX"+ list.get(j).toString());
                         }
 
                     }
+
                     ProductInfoService productInfoService = new ProductInfoService();
 
                     str=productInfoService.ProductinfoAdd(map);
 //
+//                    MultipartBody multipartBody = new MultipartBody.Builder()
+//                            .setType(MultipartBody.FORM)
+//                            .addFormDataPart("EquipmentCode", "11")
+//                            .addFormDataPart("Description", "故障分析")
+//                            .addFormDataPart("ReportUserCode", "07112168")
+//                            .addFormDataPart("imageFile", file.getName(), RequestBody.create(MediaType.parse("image/*"), file))
+//                            .addFormDataPart("imageFile2", file2.getName(), RequestBody.create(MediaType.parse("image/*"), file2))
+//                            .addFormDataPart("imageFile3", file3.getName(), RequestBody.create(MediaType.parse("image/*"), file3))
+//                            .build();
+//
+//                    RetrofitHelper.getInstance()
+//                            .getRequestService()
+//                            .createWorkOrder(multipartBody)
+//                            .subscribeOn(Schedulers.io())
+//                            .observeOn(AndroidSchedulers.mainThread())
+//                            .subscribe((t) -> {
+//                                mView.hiddenLoading();
+//                                if(t.getStatus() == 0){
+//                                    mView.onSuccess(t);
+//                                }else {
+//                                    mView.onFailed(t.getMessage());
+//                                }
+//                            }, (throwable) -> {
+//                                mView.hiddenLoading();
+//                                mView.showToast(throwable.getMessage());
+//                            });
+
+
                 } catch (Exception e) {
                     // TODO Auto-generated catch block
                     e.printStackTrace();
