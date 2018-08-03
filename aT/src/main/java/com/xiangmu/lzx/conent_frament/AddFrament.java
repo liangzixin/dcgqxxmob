@@ -42,6 +42,7 @@ import com.lidroid.xutils.http.ResponseInfo;
 import com.lidroid.xutils.http.callback.RequestCallBack;
 import com.lidroid.xutils.http.client.HttpRequest;
 import com.litao.android.lib.Utils.GridSpacingItemDecoration;
+import com.xiangmu.lzx.Bean.BaseResponse;
 import com.xiangmu.lzx.CostomAdapter.ChooseFramentAdapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoAddAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
@@ -57,12 +58,15 @@ import com.xiangmu.lzx.Modle.Sex;
 import com.xiangmu.lzx.Modle.UploadFile;
 import com.xiangmu.lzx.Modle.Zpnl;
 import com.xiangmu.lzx.R;
+import com.xiangmu.lzx.Service.FileUploadService;
+import com.xiangmu.lzx.Service.MultipartBuilder;
 import com.xiangmu.lzx.Service.ProductInfoService;
 import com.xiangmu.lzx.Setting_Utils.SearchDB;
 import com.xiangmu.lzx.activitys.LoginActivity;
 import com.xiangmu.lzx.activitys.MainActivity;
 import com.xiangmu.lzx.activitys.PictureActivity;
 import com.xiangmu.lzx.jieping.ScreenShot;
+import com.xiangmu.lzx.utils.Api;
 import com.xiangmu.lzx.utils.DateTime;
 import com.xiangmu.lzx.utils.LogUtils;
 import com.xiangmu.lzx.utils.MySqlOpenHelper;
@@ -83,11 +87,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import cn.finalteam.galleryfinal.GalleryFinal;
 import cn.finalteam.galleryfinal.model.PhotoInfo;
+import okhttp3.MediaType;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 //import com.litao.android.lib.entity.PhotoEntry;
 
@@ -1062,64 +1071,41 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
      * */
     public void ProductinfoAdd() {
 
+
         progress.show();
         Thread t = new Thread(new Runnable() {
             @Override
             public void run() {
                 try {
-                    //     progress.show();
-//        testHandler.sendEmptyMessage(2);
-               Map<String,Object> map = new HashMap<String,Object>();
 
-//                    map.put("name",name.getText().toString());
-//                    map.put("gsdz",gsdz.getText().toString());
-//                    map.put("gsmz",gsmz.getText().toString() );
-//                    map.put("lxr",productinfo_lxr.getText().toString() );
-//                    map.put("lxdh",productinfo_lxdh.getText().toString() );
-//                    map.put("categoryId",articlerSpinner.getSelectedItemPosition()+"");
-//                    map.put("description",productinfo_content.getText().toString() );
-//                    map.put("zpxx.sexrequest",spinner_sex.getSelectedItem()+"" );
-//                    map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem()+"" );
-//                    map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem()+"" );
-//                    map.put("zpxx.edurequest",spinner_xl.getSelectedItem()+"" );
-//                    map.put("zpxx.sxcy",sxcy.getText().toString() );
-//                    map.put("zpxx.qjnl",qznl.getText().toString() );
-//                    map.put("fwcs.jzmj",jzmj.getText().toString() );
-//                    map.put("fwcs.fwzj",fwzj.getText().toString() );
-//                    map.put("fwcs.fws",hxs.getText().toString() );
-//                    map.put("fwcs.fwt",hxt.getText().toString() );
-//                    map.put("fwcs.fww",hxw.getText().toString() );
-//                    map.put("fwcs.fwzf",hxc.getText().toString() );
-//                    map.put("fwcs.fwlj",fwlz.getText().toString() );
-//                    map.put("fwcs.fwcj",fwzc.getText().toString() );
-//                    map.put("fwcs.fzfsrequest", zjfs.getSelectedItem()+"" );
-//                    map.put("gqxx.gqsl",gqsl.getText().toString() );
+            ArrayList<File> list1 = new ArrayList<File>();
+               Map<String, okhttp3.RequestBody> map = new HashMap<String, okhttp3.RequestBody>();
 
-                      map.put("name",name.getText());
-                    map.put("gsdz",gsdz.getText());
-                    map.put("gsmz",gsmz.getText());
-                    map.put("lxr",productinfo_lxr.getText());
-                    map.put("lxdh",productinfo_lxdh.getText());
-                    map.put("categoryId",(Integer)articlerSpinner.getSelectedItemPosition());
-//                    map.put("description",productinfo_content.getText()  );
-//                    map.put("zpxx.sexrequest",spinner_sex.getSelectedItem()+"" );
-//                    map.put("zpxx.zpnlrequest",spinner_nl.getSelectedItem()+"" );
-//                    map.put("zpxx.gzdx",spinner_dxfw.getSelectedItem()+"" );
-//                    map.put("zpxx.edurequest",spinner_xl.getSelectedItem()+"" );
-//                    map.put("zpxx.sxcy",sxcy.getText().toString() );
-//                    map.put("zpxx.qjnl",qznl.getText().toString() );
-//                    map.put("fwcs.jzmj",jzmj.getText().toString() );
-//                    map.put("fwcs.fwzj",fwzj.getText().toString() );
-//                    map.put("fwcs.fws",hxs.getText().toString() );
-//                    map.put("fwcs.fwt",hxt.getText().toString() );
-//                    map.put("fwcs.fww",hxw.getText().toString() );
-//                    map.put("fwcs.fwzf",hxc.getText().toString() );
-//                    map.put("fwcs.fwlj",fwlz.getText().toString() );
-//                    map.put("fwcs.fwcj",fwzc.getText().toString() );
-//                    map.put("fwcs.fzfsrequest", zjfs.getSelectedItem()+"" );
-//                    map.put("gqxx.gqsl",gqsl.getText().toString() );
+                      map.put("name",ToRequestBody(name.getText().toString()));
+                    map.put("gsdz",ToRequestBody(gsdz.getText().toString()));
+                    map.put("gsmz",ToRequestBody(gsmz.getText().toString()));
+                    map.put("lxr",ToRequestBody(productinfo_lxr.getText().toString()));
+                    map.put("lxdh",ToRequestBody(productinfo_lxdh.getText().toString()));
+                    map.put("categoryId",ToRequestBody(articlerSpinner.getSelectedItemPosition()+""));
+                    map.put("description",ToRequestBody(productinfo_content.getText().toString()));
+                    map.put("zpxx.sexrequest",ToRequestBody(spinner_sex.getSelectedItem()+"" ));
+                    map.put("zpxx.zpnlrequest",ToRequestBody(spinner_nl.getSelectedItem()+"" ));
+                    map.put("zpxx.gzdx",ToRequestBody(spinner_dxfw.getSelectedItem()+"" ));
+                    map.put("zpxx.edurequest",ToRequestBody(spinner_xl.getSelectedItem()+"" ));
+                    map.put("zpxx.sxcy",ToRequestBody(sxcy.getText().toString() ));
+                    map.put("zpxx.qjnl",ToRequestBody(qznl.getText().toString() ));
+                    map.put("fwcs.jzmj",ToRequestBody(jzmj.getText().toString()) );
+                    map.put("fwcs.fwzj",ToRequestBody(fwzj.getText().toString() ));
+                    map.put("fwcs.fws",ToRequestBody(hxs.getText().toString()) );
+                    map.put("fwcs.fwt",ToRequestBody(hxt.getText().toString()) );
+                    map.put("fwcs.fww",ToRequestBody(hxw.getText().toString() ));
+                    map.put("fwcs.fwzf",ToRequestBody(hxc.getText().toString()) );
+                    map.put("fwcs.fwlj",ToRequestBody(fwlz.getText().toString()));
+                    map.put("fwcs.fwcj",ToRequestBody(fwzc.getText().toString()) );
+                    map.put("fwcs.fzfsrequest", ToRequestBody(zjfs.getSelectedItem()+"" ));
+                    map.put("gqxx.gqsl",ToRequestBody(gqsl.getText().toString() ));
                     if(mSelectedPhotos.size()>0) {
-                        list=new ArrayList<>();
+
                         for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
                             Log.i("F", filepath + "a0" + i + "jpg");
 
@@ -1129,47 +1115,13 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
                             //存储临时文件名
                             imgstmppath.add(tmepName);
-                            list.add(new File(tmepName));
+                            list1.add(new File(tmepName));
                         }
-//            list.add(new File(filepath1));
 
-                        for (int j = 0;j< mSelectedPhotos.size()-1; j++) {
-                            map.put("upload[" + j + "]", list.get(j));
-                            Log.i("LZXF", filepath +"upload[" + j + "]"+"XXXXXXXXXX"+ list.get(j).toString());
-                        }
 
                     }
+                    uploadFileParams(map,list1);
 
-                    ProductInfoService productInfoService = new ProductInfoService();
-
-                    str=productInfoService.ProductinfoAdd(map);
-//
-//                    MultipartBody multipartBody = new MultipartBody.Builder()
-//                            .setType(MultipartBody.FORM)
-//                            .addFormDataPart("EquipmentCode", "11")
-//                            .addFormDataPart("Description", "故障分析")
-//                            .addFormDataPart("ReportUserCode", "07112168")
-//                            .addFormDataPart("imageFile", file.getName(), RequestBody.create(MediaType.parse("image/*"), file))
-//                            .addFormDataPart("imageFile2", file2.getName(), RequestBody.create(MediaType.parse("image/*"), file2))
-//                            .addFormDataPart("imageFile3", file3.getName(), RequestBody.create(MediaType.parse("image/*"), file3))
-//                            .build();
-//
-//                    RetrofitHelper.getInstance()
-//                            .getRequestService()
-//                            .createWorkOrder(multipartBody)
-//                            .subscribeOn(Schedulers.io())
-//                            .observeOn(AndroidSchedulers.mainThread())
-//                            .subscribe((t) -> {
-//                                mView.hiddenLoading();
-//                                if(t.getStatus() == 0){
-//                                    mView.onSuccess(t);
-//                                }else {
-//                                    mView.onFailed(t.getMessage());
-//                                }
-//                            }, (throwable) -> {
-//                                mView.hiddenLoading();
-//                                mView.showToast(throwable.getMessage());
-//                            });
 
 
                 } catch (Exception e) {
@@ -1184,7 +1136,42 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
     }
+    private okhttp3.RequestBody ToRequestBody(String param){
+        okhttp3.RequestBody requestBody = okhttp3.RequestBody.create(MediaType.parse("text/plain"), param);
+        return requestBody;
+    }
+  /*
+    *图片和参数上传
+     */
 
+    private void uploadFileParams(Map<String, okhttp3.RequestBody> map, ArrayList<File> mFileList){
+        //先创建 service
+        FileUploadService service = Api.getDefault();
+        //构建要上传的文件
+        //  File file = new File(filename);
+        List<okhttp3.MultipartBody.Part> body = MultipartBuilder.filesToMultipartBodyParts(mFileList);
+//        String descriptionString = "image";
+//        okhttp3.RequestBody description = okhttp3.RequestBody.create(MediaType.parse("multipart/form-data"), descriptionString);
+//
+//        Call<BaseResponse<String>> call = service.uploadlzx(map,description, body);
+        Call<BaseResponse<String>> call = service.uploadlzx(map,body);
+        call.enqueue(new Callback<BaseResponse<String>>() {
+            @Override
+            public void onResponse(Call<BaseResponse<String>> call,
+                                   Response<BaseResponse<String>> response) {
+                System.out.println("success");
+                str=true;
+               // Logger.e("success:" + response.body().getResultMessage());
+            }
+
+            @Override
+            public void onFailure(Call<BaseResponse<String>> call, Throwable t) {
+                t.printStackTrace();
+              //  Logger.e("error:" + t.getMessage());
+                System.out.println("错误！");
+            }
+        });
+    }
     public static boolean isMobileNO(String mobiles) {
         boolean flag = false;
         try {
