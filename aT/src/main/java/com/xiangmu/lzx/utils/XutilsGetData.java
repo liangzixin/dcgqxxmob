@@ -120,8 +120,8 @@ public class XutilsGetData {
 //        BitmapDisplayConfig config=new BitmapDisplayConfig();
 //        final Animation alpha= AnimationUtils.loadAnimation(MainActivity.this,R.anim.alpha);
 //        config.setAnimation(alpha);
-        //第一个参数为上下文 第二个参数为缓冲路径(如果不写也会缓存到默认路径)
-//        callbackimage=callback;
+//        //第一个参数为上下文 第二个参数为缓冲路径(如果不写也会缓存到默认路径)
+//      callbackimage=callback;
 
         utils = new BitmapUtils(context, context.getFilesDir().getPath());//保存图片路径
 

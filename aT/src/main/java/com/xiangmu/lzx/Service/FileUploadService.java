@@ -32,7 +32,7 @@ public interface FileUploadService {
 
     @Multipart
     @POST("product!saveproductinfomob.action")
-    Call<BaseResponse<String>> uploadlzx(@PartMap Map<String, RequestBody> data,
+    Call<BaseResponse<Integer>> uploadlzx(@PartMap Map<String, RequestBody> data,
                                          @Part() List<MultipartBody.Part> parts);
 
     /**

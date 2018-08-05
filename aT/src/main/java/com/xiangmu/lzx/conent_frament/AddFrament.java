@@ -46,6 +46,7 @@ import com.xiangmu.lzx.Bean.BaseResponse;
 import com.xiangmu.lzx.CostomAdapter.ChooseFramentAdapter;
 import com.xiangmu.lzx.CostomAdapter.ProductinfoAddAdapter;
 import com.xiangmu.lzx.CostomProgressDialog.CustomProgressDialog;
+import com.xiangmu.lzx.CostomProgressDialog.SimpleArcDialog;
 import com.xiangmu.lzx.Modle.Article;
 import com.xiangmu.lzx.Modle.Dxfw;
 import com.xiangmu.lzx.Modle.Edu;
@@ -170,7 +171,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
     List  nl= Zpnl.getValues();
     List  xl= Edu.getValues();
     List  listcjfs= Fzfs.getValues();
-    private CustomProgressDialog progress;
+    private SimpleArcDialog progress;
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -221,26 +222,30 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
         @Override
         public void handleMessage(Message msg) {
             progress.dismiss(); //消除Loding对话框
-            if(str) {
-                new AlertDialog.Builder(getActivity()).setTitle("发布信息成功！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
-
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
+            super.handleMessage(msg);
+            switch (msg.what) {
+                case 1:
+                    Toast.makeText(getActivity(), "发布信息成功！！！", Toast.LENGTH_SHORT).show();
+//                new AlertDialog.Builder(getActivity()).setTitle("发布信息成功！").setPositiveButton("确定", new DialogInterface.OnClickListener() {
+//
+//                    @Override
+//                    public void onClick(DialogInterface dialog, int which) {
                         // TODO Auto-generated method stub
                         PictureUtil.deleteImgTmp(imgstmppath);
                         Intent intent = new Intent();
                         intent.setClass( getActivity(), MainActivity.class);
-
                         startActivity(intent);
 //                        setResult(RESULT_CODE, intent);
                         getActivity().finish();
 
-                    }
-                }).show();
-            }else{
+//                    }
+//                }).show();
+                    break;
+                case 0:
                 Toast.makeText(getActivity(), "发布信息失败！！！", Toast.LENGTH_SHORT).show();
+                    break;
             }
-            super.handleMessage(msg);
+
         }
     };
     public View inFlater(LayoutInflater inflater) {
@@ -251,7 +256,8 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
     private void initView(View view) {
-        progress=new CustomProgressDialog( getActivity(),"正在加载中.....",R.drawable.donghua_frame);
+        progress = new SimpleArcDialog(getActivity());
+
         fpxx = (TextView) view.findViewById(R.id.bt_fpxx);
         // setContentView(R.layout.activity_productinfo_add);
         articlerSpinner = (Spinner) view.findViewById(R.id.spin_articler);
@@ -574,7 +580,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
 
                     String saveproduct = xinWenURL.getSaveproductinfo();
-                    Toast.makeText(getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
+                  //  Toast.makeText(getActivity(), "发布中.....", Toast.LENGTH_LONG).show();
                    // SaveData(saveproduct);
                     ProductinfoAdd();
                 }
@@ -1004,9 +1010,6 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 
             params.addQueryStringParameter("gqxx.gqsl",gqsl.getText().toString());
 
-
-
-
             if(mSelectedPhotos.size()>0) {
                 list=new ArrayList<>();
                 for (int i = 0; i < mSelectedPhotos.size()-1; i++) {
@@ -1128,7 +1131,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
                     // TODO Auto-generated catch block
                     e.printStackTrace();
                 }
-                myHandler.sendMessage(myHandler.obtainMessage());
+            //    myHandler.sendMessage(myHandler.obtainMessage());
             }
             });
             t.start();
@@ -1145,6 +1148,7 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
      */
 
     private void uploadFileParams(Map<String, okhttp3.RequestBody> map, ArrayList<File> mFileList){
+
         //先创建 service
         FileUploadService service = Api.getDefault();
         //构建要上传的文件
@@ -1154,21 +1158,21 @@ public class AddFrament extends Fragment implements ChooseFramentAdapter.OnClick
 //        okhttp3.RequestBody description = okhttp3.RequestBody.create(MediaType.parse("multipart/form-data"), descriptionString);
 //
 //        Call<BaseResponse<String>> call = service.uploadlzx(map,description, body);
-        Call<BaseResponse<String>> call = service.uploadlzx(map,body);
-        call.enqueue(new Callback<BaseResponse<String>>() {
+        Call<BaseResponse<Integer>> call = service.uploadlzx(map,body);
+        call.enqueue(new Callback<BaseResponse<Integer>>() {
             @Override
-            public void onResponse(Call<BaseResponse<String>> call,
-                                   Response<BaseResponse<String>> response) {
-                System.out.println("success");
-                str=true;
-               // Logger.e("success:" + response.body().getResultMessage());
+            public void onResponse(Call<BaseResponse<Integer>> call,
+                                   Response<BaseResponse<Integer>> response) {
+                Message msg = new Message();
+                msg.what =response.body().getData();
+                myHandler.handleMessage(msg);
             }
 
             @Override
-            public void onFailure(Call<BaseResponse<String>> call, Throwable t) {
-                t.printStackTrace();
-              //  Logger.e("error:" + t.getMessage());
-                System.out.println("错误！");
+            public void onFailure(Call<BaseResponse<Integer>> call, Throwable t) {
+                Message msg = new Message();
+                msg.what = 1;
+                myHandler.handleMessage(msg);
             }
         });
     }

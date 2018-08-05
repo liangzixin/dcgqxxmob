@@ -1,6 +1,8 @@
 package com.xiangmu.lzx.CostomAdapter;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.os.Environment;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -15,6 +17,10 @@ import com.xiangmu.lzx.utils.XinWen_adapter;
 import com.xiangmu.lzx.utils.XinWen_productinfo;
 import com.xiangmu.lzx.utils.XutilsGetData;
 
+import java.io.File;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.List;
 
 /**
@@ -23,9 +29,10 @@ import java.util.List;
 public class XinWenproductinfoBaseAdapter extends BaseAdapter {
     //头条数据的listview的adapter
     private List<XinWen_productinfo.T18908805728Entity> toutiao_list;
-   // private List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> uploadFile_list;
+    // private List<XinWen_productinfo.T18908805728Entity.UploadFileEntity> uploadFile_list;
     private Context context;
-    private DateTime dateTime=new DateTime();
+    private DateTime dateTime = new DateTime();
+
     public XinWenproductinfoBaseAdapter(Context context, List<XinWen_productinfo.T18908805728Entity> toutiao_list) {
         this.context = context;
         this.toutiao_list = toutiao_list;
@@ -56,15 +63,13 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
     }
 
 
-
-
     //重写系统方法
     @Override
     public int getItemViewType(int position) {
         //String skipType = toutiao_list.get(position).getProductcategory().getId()+"";
 //        String skipType ="0";
 //        int type = XinWen_adapter.getType(skipType);
-        int type =toutiao_list.get(position).getLanmu();
+        int type = toutiao_list.get(position).getLanmu();
         return type;
     }
 
@@ -76,8 +81,8 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        XinWenXiData data=new XinWenXiData();//设置跳转详细页面数据类
-        int type=getItemViewType(i);
+        XinWenXiData data = new XinWenXiData();//设置跳转详细页面数据类
+        int type = getItemViewType(i);
         Viewholder putong = null;
         ViewholderZT zhuanti = null;
         ViewholderZB zhibo = null;
@@ -92,8 +97,8 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                     putong.toutiaop_title = (TextView) view.findViewById(R.id.toutiaop_title);
                     putong.toutiaop_replaycount = (TextView) view.findViewById(R.id.toutiaop_replaycount);
                     putong.toutiaop_digest = (TextView) view.findViewById(R.id.toutiaop_digest);
-                    putong.toutiaop_createDate= (TextView) view.findViewById(R.id.toutiaop_createDate);
-                    putong.toutiaop_articler= (TextView) view.findViewById(R.id.toutiaop_articler);
+                    putong.toutiaop_createDate = (TextView) view.findViewById(R.id.toutiaop_createDate);
+                    putong.toutiaop_articler = (TextView) view.findViewById(R.id.toutiaop_articler);
                     view.setTag(putong);
                     break;
                 case XinWen_adapter.TYPE_zhuanti:
@@ -120,7 +125,7 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                     view = View.inflate(context, R.layout.xinwen_toutiao_item_duotu, null);
                     duotu.toutiaodt_replaycount = (TextView) view.findViewById(R.id.toutiaodt_replaycount);
                     duotu.toutiaodt_articler = (TextView) view.findViewById(R.id.toutiaodt_articler);
-                    duotu.toutiaodt_createDate= (TextView) view.findViewById(R.id.toutiaodt_createDate);
+                    duotu.toutiaodt_createDate = (TextView) view.findViewById(R.id.toutiaodt_createDate);
                     duotu.toutiaodt_title = (TextView) view.findViewById(R.id.toutiaodt_title);
                     duotu.toutiaodt_imagesrc1 = (ImageView) view.findViewById(R.id.toutiaodt_imgsrc1);
                     duotu.toutiaodt_imagesrc2 = (ImageView) view.findViewById(R.id.toutiaodt_imgsrc2);
@@ -150,27 +155,28 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                 putong.toutiaop_title.setText(toutiao_list.get(i).getName() + "");
                 putong.toutiaop_replaycount.setText(toutiao_list.get(i).getClickcount() + "");
                 putong.toutiaop_digest.setText(toutiao_list.get(i).getDigest() + "");
-        putong.toutiaop_createDate.setText(dateTime.getMonthday(toutiao_list.get(i).getCreateTime()) + "");
-            //    System.out.println(toutiao_list.get(i).getName()+toutiao_list.get(i).getArticlers().size()+"");
-                putong.toutiaop_articler.setText(toutiao_list.get(i).getArticlers().size()+"");
-             //   putong.toutiaop_createDate.setText("05/09"+ "");
-                if(toutiao_list.get(i).getUploadFile().size()>0) {
+                putong.toutiaop_createDate.setText(dateTime.getMonthday(toutiao_list.get(i).getCreateTime()) + "");
+                //    System.out.println(toutiao_list.get(i).getName()+toutiao_list.get(i).getArticlers().size()+"");
+                putong.toutiaop_articler.setText(toutiao_list.get(i).getArticlers().size() + "");
+                //   putong.toutiaop_createDate.setText("05/09"+ "");
+
+                if((toutiao_list.get(i).getUploadFile().size()>0)) {
                     XutilsGetData.xUtilsImageiv(putong.toutiaop_imagesrc, "http://www.dcgqxx.com/upload/" + toutiao_list.get(i).getUploadFile().get(0).getPath(), context, false);
                     //       XutilsGetData.xUtilsImageiv(putong.toutiaop_imagesrc, toutiao_list.get(i).getUploadFile().get(i).getPath(), context,false);
-                }else{
+                } else {
                     XutilsGetData.xUtilsImageiv(putong.toutiaop_imagesrc, "http://www.dcgqxx.com/upload/dcgqxxbook.jpg", context, false);
 
                 }
-                    break;
+                break;
             case XinWen_adapter.TYPE_zhuanti:
                 zhuanti.toutiaozt_title.setText(toutiao_list.get(i).getName() + "");
                 zhuanti.toutiaozt_digest.setText(toutiao_list.get(i).getDigest() + "");
-             //   XutilsGetData.xUtilsImageiv(zhuanti.toutiaozt_imagesrc, toutiao_list.get(i).getImgsrc(), context,false);
+                //   XutilsGetData.xUtilsImageiv(zhuanti.toutiaozt_imagesrc, toutiao_list.get(i).getImgsrc(), context,false);
                 break;
             case XinWen_adapter.TYPE_zhibo:
                 zhibo.toutiaozb_title.setText(toutiao_list.get(i).getName() + "");
                 zhibo.toutiaozb_digest.setText(toutiao_list.get(i).getDigest() + "");
-            //    XutilsGetData.xUtilsImageiv(zhibo.toutiaozb_imagesrc, toutiao_list.get(i).getImgsrc(), context,false);
+                //    XutilsGetData.xUtilsImageiv(zhibo.toutiaozb_imagesrc, toutiao_list.get(i).getImgsrc(), context,false);
                 break;
             case XinWen_adapter.type_duotu:
                 duotu.toutiaodt_title.setText(toutiao_list.get(i).getName() + "");
@@ -181,10 +187,13 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
                 duotu.toutiaodt_createDate.setText(dateTime.getMonthday(toutiao_list.get(i).getCreateTime()) + "");
 
 
-               if(toutiao_list.get(i).getUploadFile().size()>0)    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc1, "http://www.dcgqxx.com/upload/"+toutiao_list.get(i).getUploadFile().get(0).getPath(), context,false);
-                if(toutiao_list.get(i).getUploadFile().size()>1)  XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc2,  "http://www.dcgqxx.com/upload/"+toutiao_list.get(i).getUploadFile().get(1).getPath(), context,false);
-                if(toutiao_list.get(i).getUploadFile().size()>2)  XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc3,  "http://www.dcgqxx.com/upload/"+toutiao_list.get(i).getUploadFile().get(2).getPath(), context,false);
-            //    List<XinWen_productinfo.T18908805728Entity.ImgextraEntity> imagextralist=toutiao_list.get(i).getImgextra();
+                if (toutiao_list.get(i).getUploadFile().size() > 0)
+                    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc1, "http://www.dcgqxx.com/upload/" + toutiao_list.get(i).getUploadFile().get(0).getPath(), context, false);
+                if (toutiao_list.get(i).getUploadFile().size() > 1)
+                    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc2, "http://www.dcgqxx.com/upload/" + toutiao_list.get(i).getUploadFile().get(1).getPath(), context, false);
+                if (toutiao_list.get(i).getUploadFile().size() > 2)
+                    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc3, "http://www.dcgqxx.com/upload/" + toutiao_list.get(i).getUploadFile().get(2).getPath(), context, false);
+                //    List<XinWen_productinfo.T18908805728Entity.ImgextraEntity> imagextralist=toutiao_list.get(i).getImgextra();
 //                if (imagextralist!=null){
 //                    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc2, imagextralist.get(0).getImgsrc(), context,false);
 //                    XutilsGetData.xUtilsImageiv(duotu.toutiaodt_imagesrc3, imagextralist.get(1).getImgsrc(), context,false);
@@ -203,11 +212,13 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
         TextView toutiaop_createDate;
         TextView toutiaop_articler;
     }
+
     public class ViewholderZT {
         ImageView toutiaozt_imagesrc;
         TextView toutiaozt_title;
         TextView toutiaozt_digest;
     }
+
     public class ViewholderZB {
         ImageView toutiaozb_imagesrc;
         TextView toutiaozb_title;
@@ -223,5 +234,6 @@ public class XinWenproductinfoBaseAdapter extends BaseAdapter {
         TextView toutiaodt_createDate;
         TextView toutiaodt_replaycount;
     }
-}
 
+
+    }

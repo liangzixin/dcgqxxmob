@@ -141,9 +141,9 @@ public class ProductInfoService extends BaseService {
                 buffer.deleteCharAt(buffer.length() - 1);
             }
             byte[] data = buffer.toString().getBytes();
-//            connection.setRequestProperty("Content-Type",
-//                    "application/x-www-form-urlencoded");
-            connection.setRequestProperty("Content-Type","multipart/form-data; boundary=" + BOUNDARY);
+            connection.setRequestProperty("Content-Type",
+                    "application/x-www-form-urlencoded");
+        //    connection.setRequestProperty("Content-Type","multipart/form-data; boundary=" + BOUNDARY);
             connection.setRequestProperty("Content-Length",
                     String.valueOf(data.length));
             outputStream = connection.getOutputStream();
