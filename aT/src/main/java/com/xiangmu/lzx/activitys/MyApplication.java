@@ -55,8 +55,8 @@ import cn.finalteam.galleryfinal.ThemeConfig;
     private static Context ctx;
     private Handler handler;
     // QQ申请到的合法appId
-    public  final String APP_ID="1105789263";
-    public static Tencent mTencent;
+  //  public  final String APP_ID="1105789263";
+   // public static Tencent mTencent;
     private IWXAPI api;
     @Override
     public void onCreate() {
@@ -64,9 +64,9 @@ import cn.finalteam.galleryfinal.ThemeConfig;
        // setSearchDB0(false);
         ctx = getApplicationContext();
         WbSdk.install(this,new AuthInfo(this, ConstantsLzx.APP_KEY, ConstantsLzx.REDIRECT_URL, ConstantsLzx.SCOPE));
-        if (mTencent == null) {
-            mTencent = Tencent.createInstance(APP_ID, this);
-        }
+//        if (mTencent == null) {
+//            mTencent = Tencent.createInstance(APP_ID, this);
+//        }
         // 通过WXAPIFactory工厂，获取IWXAPI的实例
         api = WXAPIFactory.createWXAPI(this, ConstantsLzx.APP_ID, true);
         // 将该app注册到微信

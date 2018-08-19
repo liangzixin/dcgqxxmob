@@ -26,6 +26,8 @@ public interface ConstantsLzx {
 
     //2045436852
     /** 当前 DEMO 应用的 APP_KEY，第三方应用应该使用自己的 APP_KEY 替换该 APP_KEY */
+    // QQ申请到的合法appId
+    public  final String APP_QQ="1105789263";
     //新浪微博
     public static final String APP_KEY      = "3002552310";
     //微信

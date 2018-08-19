@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
         app =new MyApplication();
-        mAppid =app.APP_ID;
+        mAppid =ConstantsLzx.APP_QQ;
         // Config.REDIRECT_URL = "http://sns.whalecloud.com";
         sp = getSharedPreferences("kk", Context.MODE_PRIVATE);
       //  mShareAPI = UMShareAPI.get(this);

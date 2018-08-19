@@ -149,6 +149,7 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
     private int mTargetScene = SendMessageToWX.Req.WXSceneSession;
     public static final int IMAGE_SIZE=32768;//微信分享图片大小限制
     public static IWXAPI api;
+    public static Tencent mTencent;
     //    private UMShareListener mShareListener;
   //  private ShareAction mShareAction;
     // MultiTypeAdapter adapter1;
@@ -216,6 +217,9 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
         shareHandler = new WbShareHandler(this);
       shareHandler.registerApp();
      shareHandler.setProgressColor(0xff33b5e5);
+        if ( mTencent == null) {
+            mTencent = Tencent.createInstance(ConstantsLzx.APP_QQ, this);
+        }
 
     }
     private Handler myhandler = new Handler() {
@@ -909,8 +913,8 @@ public class WebProductinfoViewActivity extends AppCompatActivity implements WbS
 
             @Override
             public void run() {
-                if (null !=app.getCtx()) {
-                    app.mTencent.shareToQQ(WebProductinfoViewActivity.this, params, qqShareListener);
+                if (null != mTencent) {
+                   mTencent.shareToQQ(WebProductinfoViewActivity.this, params, qqShareListener);
                 }
             }
         });
